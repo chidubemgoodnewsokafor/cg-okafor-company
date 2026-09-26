@@ -141,6 +141,11 @@ button {
 .menu-button {
   display: none;
 
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+
   width: 44px;
   height: 44px;
 
@@ -149,13 +154,6 @@ button {
 
   cursor: pointer;
 }
-
-.menu-button span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  margin: 5px auto;
-  background: var(--dark-teal);
 }
 
 
@@ -921,6 +919,12 @@ h2 {
 .footer-logo {
   color: var(--white);
 }
+.footer-logo {
+  position: static;
+  transform: none;
+  color: var(--white);
+}
+
 .footer-logo img {
   width: 150px;
   height: auto;
@@ -1004,7 +1008,7 @@ h2 {
 @media (max-width: 850px) {
 
   .site-header {
-    height: 72px;
+    height: 100px;
   }
 
   .menu-button {
@@ -1014,7 +1018,7 @@ h2 {
   .main-nav {
     position: absolute;
 
-    top: 72px;
+    top: 100px;
     left: 0;
 
     width: 100%;
