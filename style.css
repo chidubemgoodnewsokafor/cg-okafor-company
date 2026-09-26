@@ -862,7 +862,7 @@ h2 {
    ========================================================= */
 
 .careers-section {
-  min-height: 520px;
+  min-height: 500px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -872,7 +872,7 @@ h2 {
 }
 
 .careers-image {
-  min-height: 520px;
+  min-height:350px;
 
   border-radius: 0 50% 50% 0;
 }
