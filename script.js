@@ -97,18 +97,12 @@ function showSlide(index) {
 
   const slide = heroSlides[currentSlide];
 
-
   heroTitle.innerHTML = slide.title;
   heroText.textContent = slide.text;
   heroLink.href = slide.link;
 
-
-  if (heroImage) {
-
-    heroImage.src = slide.image;
-
-  }
-
+  heroImage.style.backgroundImage =
+    `url("${slide.image}")`;
 
   heroDots.forEach((dot, i) => {
 
@@ -119,7 +113,7 @@ function showSlide(index) {
 
   });
 
-}
+     }
 
 
 /* NEXT */
