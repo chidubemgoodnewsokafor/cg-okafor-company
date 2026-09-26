@@ -87,8 +87,8 @@ button {
 }
 
 .logo img {
-  width: 90px;
-  height: 90px;
+  width: 200px;
+  height: 200px;
   object-fit: contain;
   display: block;
 }
