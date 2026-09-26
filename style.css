@@ -55,6 +55,7 @@ button {
 /* =========================================================
    HEADER
    ========================================================= */
+
 .site-header {
   position: absolute;
   top: 0;
@@ -154,6 +155,13 @@ button {
 
   cursor: pointer;
 }
+
+.menu-button span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px auto;
+  background: var(--dark-teal);
 }
 
 
@@ -917,9 +925,6 @@ h2 {
 }
 
 .footer-logo {
-  color: var(--white);
-}
-.footer-logo {
   position: static;
   transform: none;
   color: var(--white);
@@ -931,6 +936,7 @@ h2 {
   display: block;
   filter: brightness(0) invert(1);
 }
+
 .footer-column {
   display: flex;
   flex-direction: column;
