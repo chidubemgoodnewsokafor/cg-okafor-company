@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="C.G. Okafor Co. is a family-owned company building businesses across agriculture, food, technology, energy and services.">
+  <title>C.G. Okafor Co. | Food, Agriculture & Technology</title>
 
-  <title>C.G. Okafor Co.</title>
+  <meta
+    name="description"
+    content="C.G. Okafor Co. is a food and agricultural solutions and technology company."
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,62 +20,40 @@
 
   <header class="site-header">
 
-    <a href="index.html" class="brand">
-      <div class="brand-mark">
-        <span>OK</span>
-      </div>
-
-      <div class="brand-text">
-        <strong>C.G. OKAFOR</strong>
-        <small>CO.</small>
-      </div>
+    <a href="index.html" class="logo">
+      <span class="logo-circle">OK</span>
+      <span class="logo-name">C.G. OKAFOR CO.</span>
     </a>
 
-
-    <button
-      class="menu-button"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      type="button"
-    >
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-
-    <nav class="nav" aria-label="Main navigation">
+    <nav class="main-nav">
 
       <a href="index.html">Home</a>
 
-      <a href="#businesses">
-        Our Businesses
-      </a>
+      <a href="#about">About Us</a>
 
-      <a href="#company">
-        Our Company
-      </a>
+      <a href="#businesses">Our Businesses</a>
 
-      <a href="#sustainability">
-        Sustainability
-      </a>
+      <a href="food-products.html">Food Products</a>
 
-      <a href="#insights">
-        Insights
-      </a>
+      <a href="#brands">Our Brands</a>
 
-      <a href="#careers">
-        Careers
-      </a>
+      <a href="#farmers">Farmers by Okafor</a>
 
-      <a href="#contact">
-        Contact
-      </a>
+      <a href="#insights">Insights</a>
+
+      <a href="#contact">Contact Us</a>
+
+      <a href="careers.html" class="nav-careers">Careers</a>
 
     </nav>
 
   </header>
-
 
 
   <main>
@@ -81,415 +62,270 @@
 
     <section class="hero">
 
+      <div class="hero-visual">
+
+        <!-- IMAGE PLACEHOLDER -->
+        <div class="hero-image placeholder-image">
+          <span>Add hero image</span>
+        </div>
+
+        <div class="hero-circle"></div>
+
+      </div>
+
+
       <div class="hero-content">
 
-        <p class="eyebrow">
-          C.G. OKAFOR CO.
-        </p>
+        <p class="eyebrow">C.G. OKAFOR CO.</p>
 
-        <h1>
-          Building businesses.
-          <span>Creating value.</span>
+        <h1 id="hero-title">
+          Food, agriculture<br>
+          and technology.
         </h1>
 
-        <p class="hero-description">
-          A family-owned company building businesses across
-          agriculture, food, technology, energy and services.
+        <p id="hero-text">
+          Solutions for food and agriculture.
         </p>
 
-        <a href="#businesses" class="button button-dark">
-          Explore our businesses
-          <span>→</span>
+        <a id="hero-link" href="#businesses" class="primary-button">
+          Explore
         </a>
 
       </div>
 
 
-      <!-- Circular visual -->
+      <div class="hero-controls">
 
-      <div class="hero-circle">
+        <button class="hero-arrow hero-prev" aria-label="Previous slide">
+          ←
+        </button>
 
-        <div class="hero-circle-line"></div>
-
-        <div class="hero-circle-center">
-
-          <strong>OK</strong>
-
-          <small>
-            OKAFOR<br>
-            COMPANY
-          </small>
-
+        <div class="hero-dots">
+          <button class="hero-dot active" data-slide="0"></button>
+          <button class="hero-dot" data-slide="1"></button>
+          <button class="hero-dot" data-slide="2"></button>
+          <button class="hero-dot" data-slide="3"></button>
         </div>
+
+        <button class="hero-arrow hero-next" aria-label="Next slide">
+          →
+        </button>
 
       </div>
 
     </section>
 
 
+    <!-- ================= ABOUT ================= -->
 
-    <!-- ================= OUR COMPANY ================= -->
+    <section class="section about-section" id="about">
 
-    <section class="section company-section" id="company">
-
-      <div class="section-label">
-        01 / OUR COMPANY
+      <div class="section-image circle-image placeholder-image">
+        <span>Add image</span>
       </div>
 
+      <div class="section-content">
 
-      <div class="two-column">
+        <p class="eyebrow">ABOUT US</p>
 
-        <div>
+        <h2>
+          C.G. Okafor Co.
+        </h2>
 
-          <h2>
-            One company.
-            <br>
-            Different businesses.
-            <br>
-            <em>One direction.</em>
-          </h2>
+        <p class="large-text">
+          We are a food and agricultural solutions and technology company.
+        </p>
 
-        </div>
-
-
-        <div class="company-copy">
-
-          <p class="large-text">
-            C.G. Okafor Co. is the family company behind
-            a growing group of businesses serving different
-            parts of everyday life and the economy.
-          </p>
-
-          <p>
-            We build and develop businesses with a long-term
-            view — bringing together entrepreneurship,
-            practical experience, technology and responsible
-            growth.
-          </p>
-
-          <a href="#businesses" class="text-link">
-            Discover the group →
-          </a>
-
-        </div>
+        <a href="about.html" class="text-link">
+          Explore About Us <span>→</span>
+        </a>
 
       </div>
 
     </section>
-
 
 
     <!-- ================= BUSINESSES ================= -->
 
-    <section class="businesses-section" id="businesses">
+    <section class="section businesses-section" id="businesses">
 
-      <div class="section-head">
+      <div class="section-heading">
 
-        <div>
+        <p class="eyebrow">OUR BUSINESSES</p>
 
-          <div class="section-label">
-            02 / OUR BUSINESSES
-          </div>
-
-          <h2>
-            Businesses built
-            <br>
-            to create value.
-          </h2>
-
-        </div>
-
-
-        <p>
-          Our companies operate across distinct sectors,
-          each with its own purpose and expertise.
-        </p>
+        <h2>Our businesses</h2>
 
       </div>
-
 
 
       <div class="business-grid">
 
 
-        <!-- AGRISCIENCE -->
+        <a href="okafor-agriscience.html" class="business-card">
 
-        <article class="business-card agriscience">
-
-          <div class="card-top">
-            <span>01</span>
-            <span>↗</span>
+          <div class="card-image placeholder-image">
+            <span>Add image</span>
           </div>
 
-          <div class="business-logo">
-            OA
+          <div class="card-body">
+            <span class="card-number">01</span>
+            <h3>Okafor Agriscience</h3>
+            <span class="card-link">Explore →</span>
           </div>
 
-          <div class="business-info">
+        </a>
 
-            <h3>
-              Okafor Agriscience
-            </h3>
 
-            <p>
-              Science-based agriculture and
-              agricultural solutions.
-            </p>
+        <a href="okafor-farm-technology.html" class="business-card">
 
+          <div class="card-image placeholder-image">
+            <span>Add image</span>
           </div>
 
-          <a href="#">
-            Explore business
-            <span>→</span>
-          </a>
-
-        </article>
-
-
-
-        <!-- FARM TECHNOLOGY -->
-
-        <article class="business-card farm-tech">
-
-          <div class="card-top">
-            <span>02</span>
-            <span>↗</span>
+          <div class="card-body">
+            <span class="card-number">02</span>
+            <h3>Okafor Farm Technology</h3>
+            <span class="card-link">Explore →</span>
           </div>
 
-          <div class="business-logo">
-            OFT
+        </a>
+
+
+        <a href="okafor-foods.html" class="business-card">
+
+          <div class="card-image placeholder-image">
+            <span>Add image</span>
           </div>
 
-          <div class="business-info">
-
-            <h3>
-              Okafor Farm Technology
-            </h3>
-
-            <p>
-              Technology, automation, design and
-              infrastructure for modern agriculture.
-            </p>
-
+          <div class="card-body">
+            <span class="card-number">03</span>
+            <h3>Okafor Foods</h3>
+            <span class="card-link">Explore →</span>
           </div>
 
-          <a href="#">
-            Explore business
-            <span>→</span>
-          </a>
-
-        </article>
+        </a>
 
 
+        <a href="soileva.html" class="business-card">
 
-        <!-- FOODS -->
-
-        <article class="business-card foods">
-
-          <div class="card-top">
-            <span>03</span>
-            <span>↗</span>
+          <div class="card-image placeholder-image">
+            <span>Add image</span>
           </div>
 
-          <div class="business-logo">
-            OF
+          <div class="card-body">
+            <span class="card-number">04</span>
+            <h3>Soileva</h3>
+            <span class="card-link">Explore →</span>
           </div>
 
-          <div class="business-info">
+        </a>
 
-            <h3>
-              Okafor Foods
-            </h3>
 
-            <p>
-              Food businesses connecting production,
-              processing and consumers.
-            </p>
+        <a href="okafor-investments.html" class="business-card">
 
+          <div class="card-image placeholder-image">
+            <span>Add image</span>
           </div>
 
-          <a href="#">
-            Explore business
-            <span>→</span>
-          </a>
-
-        </article>
-
-
-
-        <!-- SOILEVA -->
-
-        <article class="business-card soileva">
-
-          <div class="card-top">
-            <span>04</span>
-            <span>↗</span>
+          <div class="card-body">
+            <span class="card-number">05</span>
+            <h3>Okafor Investments</h3>
+            <span class="card-link">Explore →</span>
           </div>
 
-          <div class="business-logo">
-            S
-          </div>
-
-          <div class="business-info">
-
-            <h3>
-              Soileva
-            </h3>
-
-            <p>
-              A farming and food business built around
-              practical production and trade.
-            </p>
-
-          </div>
-
-          <a href="#">
-            Explore business
-            <span>→</span>
-          </a>
-
-        </article>
-
-
-
-        <!-- INVESTMENTS -->
-
-        <article class="business-card investments">
-
-          <div class="card-top">
-            <span>05</span>
-            <span>↗</span>
-          </div>
-
-          <div class="business-logo">
-            CI
-          </div>
-
-          <div class="business-info">
-
-            <h3>
-              C.G. Okafor Investments
-            </h3>
-
-            <p>
-              Investing in businesses, opportunities
-              and long-term growth.
-            </p>
-
-          </div>
-
-          <a href="#">
-            Explore business
-            <span>→</span>
-          </a>
-
-        </article>
-
-
-
-        <!-- FINE SERVICES -->
-
-        <article class="business-card fine-services">
-
-          <div class="card-top">
-            <span>06</span>
-            <span>↗</span>
-          </div>
-
-          <div class="business-logo">
-            FS
-          </div>
-
-          <div class="business-info">
-
-            <h3>
-              Okafor Fine Services
-            </h3>
-
-            <p>
-              Personal care, entertainment and
-              lifestyle services.
-            </p>
-
-          </div>
-
-          <a href="#">
-            Explore business
-            <span>→</span>
-          </a>
-
-        </article>
-
+        </a>
 
       </div>
 
     </section>
 
 
+    <!-- ================= FARMERS ================= -->
 
-    <!-- ================= GROUP STATEMENT ================= -->
+    <section class="farmers-section" id="farmers">
 
-    <section class="group-statement">
+      <div class="farmers-image placeholder-image">
+        <span>Add farmer image</span>
+      </div>
 
-      <div class="statement-circle"></div>
+      <div class="farmers-content">
 
-      <p class="eyebrow">
-        OUR APPROACH
-      </p>
+        <p class="eyebrow">FARMERS BY OKAFOR</p>
 
-      <h2>
-        We build for the
-        <br>
-        <span>long term.</span>
-      </h2>
+        <h2>
+          With farmers.
+        </h2>
 
-      <p class="statement-description">
-        From the businesses we operate to the opportunities
-        we pursue, our focus is on creating durable value.
-      </p>
+        <p>
+          The people we work with, the experiences they share and the relationship we build.
+        </p>
+
+        <a href="farmers-by-okafor.html" class="primary-button light-button">
+          Meet the farmers
+        </a>
+
+      </div>
 
     </section>
 
 
+    <!-- ================= BRANDS ================= -->
 
-    <!-- ================= SUSTAINABILITY ================= -->
+    <section class="brands-section" id="brands">
 
-    <section
-      class="section sustainability-section"
-      id="sustainability"
-    >
+      <div class="section-heading centered">
 
-      <div class="sustainability-box">
+        <p class="eyebrow">OUR BRANDS</p>
 
-        <div class="sustainability-art">
+        <h2>Our brands</h2>
 
-          <div class="art-ring"></div>
-
-          <div class="art-circle"></div>
-
-        </div>
+      </div>
 
 
-        <div class="sustainability-content">
+      <div class="brand-marquee">
 
-          <div class="section-label">
-            03 / SUSTAINABILITY
-          </div>
+        <div class="brand-track">
 
-          <h2>
-            Growth with
-            <br>
-            <em>responsibility.</em>
-          </h2>
+          <a href="idegro.html" class="brand-item">
+            <span>Idegro</span>
+          </a>
 
-          <p>
-            We believe businesses should create value while
-            considering the communities, resources and
-            environments in which they operate.
-          </p>
+          <a href="rainso.html" class="brand-item">
+            <span>Rainso</span>
+          </a>
 
-          <a href="#" class="text-link">
-            Our approach to sustainability →
+          <a href="soileva-fresh.html" class="brand-item">
+            <span>Soileva Fresh</span>
+          </a>
+
+          <a href="soileva-farms.html" class="brand-item">
+            <span>Soileva Farms</span>
+          </a>
+
+          <a href="azbred.html" class="brand-item">
+            <span>Azbred</span>
+          </a>
+
+          <!-- repeated for continuous movement -->
+
+          <a href="idegro.html" class="brand-item">
+            <span>Idegro</span>
+          </a>
+
+          <a href="rainso.html" class="brand-item">
+            <span>Rainso</span>
+          </a>
+
+          <a href="soileva-fresh.html" class="brand-item">
+            <span>Soileva Fresh</span>
+          </a>
+
+          <a href="soileva-farms.html" class="brand-item">
+            <span>Soileva Farms</span>
+          </a>
+
+          <a href="azbred.html" class="brand-item">
+            <span>Azbred</span>
           </a>
 
         </div>
@@ -498,182 +334,212 @@
 
     </section>
 
+
+    <!-- ================= FOOD PRODUCTS ================= -->
+
+    <section class="food-section">
+
+      <div class="food-intro">
+
+        <p class="eyebrow">FOOD PRODUCTS</p>
+
+        <h2>
+          Food for everyday life.
+        </h2>
+
+        <a href="food-products.html" class="text-link">
+          Explore Food Products <span>→</span>
+        </a>
+
+      </div>
+
+
+      <div class="food-grid">
+
+
+        <a href="food-products.html#grains" class="food-card">
+
+          <div class="food-card-image placeholder-image">
+            <span>Add image</span>
+          </div>
+
+          <h3>Grains</h3>
+
+          <span>Explore →</span>
+
+        </a>
+
+
+        <a href="food-products.html#edible-oil" class="food-card">
+
+          <div class="food-card-image placeholder-image">
+            <span>Add image</span>
+          </div>
+
+          <h3>Edible Oil</h3>
+
+          <span>Explore →</span>
+
+        </a>
+
+
+        <a href="food-products.html#tomato-products" class="food-card">
+
+          <div class="food-card-image placeholder-image">
+            <span>Add image</span>
+          </div>
+
+          <h3>Tomato Products</h3>
+
+          <span>Explore →</span>
+
+        </a>
+
+
+        <a href="food-products.html#seasoning-condiments" class="food-card">
+
+          <div class="food-card-image placeholder-image">
+            <span>Add image</span>
+          </div>
+
+          <h3>Seasoning &amp; Condiments</h3>
+
+          <span>Explore →</span>
+
+        </a>
+
+      </div>
+
+    </section>
 
 
     <!-- ================= INSIGHTS ================= -->
 
-    <section
-      class="section insights-section"
-      id="insights"
-    >
+    <section class="section insights-section" id="insights">
 
-      <div class="section-head">
+      <div class="section-heading">
 
-        <div>
+        <p class="eyebrow">INSIGHTS</p>
 
-          <div class="section-label">
-            04 / INSIGHTS
+        <h2>Ideas, stories &amp; knowledge.</h2>
+
+      </div>
+
+
+      <div class="insights-grid">
+
+
+        <a href="insights.html#agriculture" class="insight-card">
+
+          <div class="insight-image placeholder-image">
+            <span>Add image</span>
           </div>
 
-          <h2>
-            Ideas behind
-            <br>
-            the businesses.
-          </h2>
+          <div>
+            <p>Agriculture</p>
+            <h3>Explore agriculture</h3>
+            <span>→</span>
+          </div>
 
-        </div>
-
-        <a href="#" class="text-link">
-          View all insights →
         </a>
 
-      </div>
+
+        <a href="insights.html#food" class="insight-card">
+
+          <div class="insight-image placeholder-image">
+            <span>Add image</span>
+          </div>
+
+          <div>
+            <p>Food</p>
+            <h3>Explore food</h3>
+            <span>→</span>
+          </div>
+
+        </a>
 
 
+        <a href="insights.html#technology" class="insight-card">
 
-      <div class="insight-grid">
+          <div class="insight-image placeholder-image">
+            <span>Add image</span>
+          </div>
 
+          <div>
+            <p>Technology</p>
+            <h3>Explore technology</h3>
+            <span>→</span>
+          </div>
 
-        <article class="insight-card">
-
-          <span>
-            BUSINESS
-          </span>
-
-          <h3>
-            Why we build businesses
-            across different sectors
-          </h3>
-
-          <a href="#">
-            Read more →
-          </a>
-
-        </article>
+        </a>
 
 
+        <a href="insights.html#company" class="insight-card">
 
-        <article class="insight-card">
+          <div class="insight-image placeholder-image">
+            <span>Add image</span>
+          </div>
 
-          <span>
-            AGRICULTURE
-          </span>
+          <div>
+            <p>Company</p>
+            <h3>Explore company stories</h3>
+            <span>→</span>
+          </div>
 
-          <h3>
-            Building practical solutions
-            from real-world challenges
-          </h3>
-
-          <a href="#">
-            Read more →
-          </a>
-
-        </article>
-
-
-
-        <article class="insight-card">
-
-          <span>
-            COMPANY
-          </span>
-
-          <h3>
-            Our approach to building
-            for the long term
-          </h3>
-
-          <a href="#">
-            Read more →
-          </a>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= CAREERS ================= -->
-
-    <section
-      class="careers-section"
-      id="careers"
-    >
-
-      <div class="careers-inner">
-
-        <div class="section-label">
-          05 / CAREERS
-        </div>
-
-        <h2>
-          Build something
-          <br>
-          <em>that matters.</em>
-        </h2>
-
-        <p>
-          We are building businesses and looking for
-          people who want to build with us.
-        </p>
-
-        <a
-          href="mailto:cgokaforcompany@gmail.com"
-          class="button button-light"
-        >
-          Explore careers
-          <span>→</span>
         </a>
 
       </div>
 
     </section>
-
 
 
     <!-- ================= CONTACT ================= -->
 
-    <section
-      class="section contact-section"
-      id="contact"
-    >
+    <section class="contact-section" id="contact">
 
-      <div class="section-label">
-        06 / CONTACT
+      <div class="contact-circle"></div>
+
+      <div class="contact-content">
+
+        <p class="eyebrow">CONTACT US</p>
+
+        <h2>
+          Let's connect.
+        </h2>
+
+        <a href="#footer-contact" class="primary-button">
+          Contact Us
+        </a>
+
       </div>
 
-
-      <div class="two-column">
-
-        <div>
-
-          <h2>
-            Let's build
-            <br>
-            <em>together.</em>
-          </h2>
-
-        </div>
+    </section>
 
 
-        <div class="contact-copy">
+    <!-- ================= CAREERS ================= -->
 
-          <p>
-            For corporate enquiries, partnerships
-            and general information:
-          </p>
+    <section class="careers-section">
 
-          <a
-            href="mailto:cgokaforcompany@gmail.com"
-            class="contact-email"
-          >
-            cgokaforcompany@gmail.com
-          </a>
+      <div class="careers-image placeholder-image">
+        <span>Add careers image</span>
+      </div>
 
-        </div>
+      <div class="careers-content">
+
+        <p class="eyebrow">CAREERS</p>
+
+        <h2>
+          Be You.<br>
+          Be Okafor.
+        </h2>
+
+        <p>
+          Bring your ideas, your skills and your ambition.
+        </p>
+
+        <a href="careers.html" class="primary-button">
+          Explore Careers
+        </a>
 
       </div>
 
@@ -682,66 +548,74 @@
   </main>
 
 
-
   <!-- ================= FOOTER ================= -->
 
-  <footer class="footer">
+  <footer class="site-footer" id="footer-contact">
 
     <div class="footer-main">
 
-      <div>
+      <div class="footer-brand">
 
-        <div class="footer-brand">
-          C.G. OKAFOR <span>CO.</span>
-        </div>
+        <a href="index.html" class="logo footer-logo">
+          <span class="logo-circle">OK</span>
+          <span class="logo-name">C.G. OKAFOR CO.</span>
+        </a>
 
         <p>
-          Building businesses.
-          <br>
-          Creating value.
+          A food and agricultural solutions and technology company.
         </p>
 
       </div>
 
 
-      <div class="footer-links">
+      <div class="footer-column">
 
-        <div>
+        <h4>Company</h4>
 
-          <strong>Company</strong>
+        <a href="#about">About Us</a>
+        <a href="#businesses">Our Businesses</a>
+        <a href="#brands">Our Brands</a>
+        <a href="#farmers">Farmers by Okafor</a>
+        <a href="#insights">Insights</a>
+        <a href="careers.html">Careers</a>
 
-          <a href="#company">
-            Our Company
-          </a>
-
-          <a href="#businesses">
-            Our Businesses
-          </a>
-
-          <a href="#sustainability">
-            Sustainability
-          </a>
-
-        </div>
+      </div>
 
 
-        <div>
+      <div class="footer-column">
 
-          <strong>Connect</strong>
+        <h4>Businesses</h4>
 
-          <a href="#insights">
-            Insights
-          </a>
+        <a href="okafor-agriscience.html">Okafor Agriscience</a>
+        <a href="okafor-farm-technology.html">Okafor Farm Technology</a>
+        <a href="okafor-foods.html">Okafor Foods</a>
+        <a href="soileva.html">Soileva</a>
+        <a href="okafor-investments.html">Okafor Investments</a>
 
-          <a href="#careers">
-            Careers
-          </a>
+      </div>
 
-          <a href="#contact">
-            Contact
-          </a>
 
-        </div>
+      <div class="footer-column">
+
+        <h4>Food Products</h4>
+
+        <a href="food-products.html#grains">Grains</a>
+        <a href="food-products.html#edible-oil">Edible Oil</a>
+        <a href="food-products.html#tomato-products">Tomato Products</a>
+        <a href="food-products.html#seasoning-condiments">
+          Seasoning &amp; Condiments
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Contact</h4>
+
+        <a href="#contact">Contact Us</a>
+
+        <!-- Add actual contact details here later -->
 
       </div>
 
@@ -755,13 +629,12 @@
       </span>
 
       <span>
-        Family-owned
+        All rights reserved.
       </span>
 
     </div>
 
   </footer>
-
 
 
   <script src="script.js"></script>
