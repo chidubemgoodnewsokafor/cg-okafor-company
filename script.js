@@ -47,7 +47,7 @@ const heroTitle = document.getElementById("hero-title");
 const heroText = document.getElementById("hero-text");
 const heroLink = document.getElementById("hero-link");
 
-const heroImage = document.querySelector(".hero-image");
+const heroImage = document.getElementById("hero-image");
 
 const heroDots = document.querySelectorAll(".hero-dot");
 const previousButton = document.querySelector(".hero-prev");
@@ -60,28 +60,28 @@ const heroSlides = [
     title: "Food that brings us together.",
     text: "Food for everyday life.",
     link: "food-products.html",
-    image: ""
+    image: "hero-food.jpg"
   },
 
   {
     title: "Growing better.",
     text: "Agricultural solutions for farmers.",
     link: "okafor-agriscience.html",
-    image: ""
+    image: "hero-farm.jpg"
   },
 
   {
     title: "Seeds designed to grow.",
     text: "Explore Idegro.",
     link: "idegro.html",
-    image: ""
+    image: "hero-idegro.jpg"
   },
 
   {
     title: "Healthier animals. Better production.",
     text: "Explore animal health.",
     link: "okafor-agriscience.html#animal-health",
-    image: ""
+    image: "hero-animal-health.jpg"
   }
 
 ];
@@ -103,31 +103,9 @@ function showSlide(index) {
   heroLink.href = slide.link;
 
 
-  /*
-    When you are ready to add the actual hero images,
-    put the image path in the "image" field above.
+  if (heroImage) {
 
-    Example:
-
-    image: "images/family-meal.jpg"
-
-    The JavaScript will automatically use it.
-  */
-
-  if (slide.image) {
-
-    heroImage.style.backgroundImage =
-      `url("${slide.image}")`;
-
-    heroImage.querySelector("span").style.display =
-      "none";
-
-  } else {
-
-    heroImage.style.backgroundImage = "";
-
-    heroImage.querySelector("span").style.display =
-      "block";
+    heroImage.src = slide.image;
 
   }
 
