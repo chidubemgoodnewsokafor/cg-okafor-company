@@ -988,7 +988,77 @@ h2 {
 
   font-size: 11px;
 }
+/* =========================================================
+   IMAGE FIT & OVERFLOW CONTROL
+   ========================================================= */
 
+.hero-image,
+.circle-image,
+.card-image,
+.farmers-image,
+.food-card-image,
+.insight-image,
+.careers-image {
+  overflow: hidden;
+}
+
+/* Hero */
+.hero-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* About Us */
+.circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Our Businesses */
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Farmers */
+.farmers-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Food Products */
+.food-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Insights */
+.insight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Careers */
+.careers-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* =========================================================
    RESPONSIVE
