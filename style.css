@@ -83,6 +83,7 @@ button {
 /* =========================================================
    HERO MENU
    ========================================================= */
+
 .menu-button {
   position: absolute;
 
@@ -898,15 +899,12 @@ h2 {
 }
 
 @keyframes brandScroll {
-
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }
-
 }
 
 
@@ -1236,17 +1234,11 @@ h2 {
   overflow: hidden;
 }
 
-
-/* Hero */
-
 .hero-image {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-
-
-/* About Us */
 
 .circle-image img {
   width: 100%;
@@ -1256,9 +1248,6 @@ h2 {
 
   display: block;
 }
-
-
-/* Our Businesses */
 
 .card-image img {
   width: 100%;
@@ -1270,9 +1259,6 @@ h2 {
   display: block;
 }
 
-
-/* Farmers */
-
 .farmers-image img {
   width: 100%;
   height: 100%;
@@ -1281,9 +1267,6 @@ h2 {
 
   display: block;
 }
-
-
-/* Food Products */
 
 .food-card-image img {
   width: 100%;
@@ -1295,9 +1278,6 @@ h2 {
   display: block;
 }
 
-
-/* Insights */
-
 .insight-image img {
   width: 100%;
   height: 100%;
@@ -1307,9 +1287,6 @@ h2 {
 
   display: block;
 }
-
-
-/* Careers */
 
 .careers-image img {
   width: 100%;
@@ -1326,12 +1303,6 @@ h2 {
    ========================================================= */
 
 @media (max-width: 1100px) {
-
-  /*
-   * Keep the 4-business structure.
-   * Cards become slightly more compact instead of
-   * changing to 3 columns.
-   */
 
   .business-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -1375,10 +1346,6 @@ h2 {
 
 @media (max-width: 850px) {
 
-  /* =======================================================
-     HERO
-     ======================================================= */
-
   .hero {
     height: 100svh;
     min-height: 650px;
@@ -1402,9 +1369,6 @@ h2 {
     font-size: clamp(43px, 12vw, 72px);
   }
 
-
-  /* Mobile menu stays at lower center */
-
   .menu-button {
     left: 50%;
     right: auto;
@@ -1416,6 +1380,10 @@ h2 {
 
     width: 145px;
     height: 50px;
+  }
+
+  .menu-button img {
+    left: 8px;
   }
 
   .menu-button::before {
@@ -1432,9 +1400,6 @@ h2 {
   .menu-button::after {
     left: 88px;
   }
-
-
-  /* Hero controls remain full-screen */
 
   .hero-controls {
     inset: 0;
@@ -1462,18 +1427,12 @@ h2 {
     bottom: 90px;
   }
 
-
-  /* =======================================================
-     COMPANY NUMBERS
-     ======================================================= */
-
   .company-numbers {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .number-item {
     min-height: 160px;
-
     border-bottom: 1px solid var(--line);
   }
 
@@ -1490,21 +1449,10 @@ h2 {
     font-size: 48px;
   }
 
-
-  /* =======================================================
-     REST OF SITE
-     ======================================================= */
-
   .about-section {
     grid-template-columns: 1fr;
     gap: 50px;
   }
-
-
-  /*
-   * Four businesses become two columns
-   * on mobile/tablet.
-   */
 
   .business-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1521,21 +1469,16 @@ h2 {
 
   .farmers-section {
     min-height: 850px;
-
     display: block;
   }
 
   .farmers-image {
     position: relative;
-
     right: auto;
     top: auto;
-
     transform: none;
-
     width: min(500px, 90vw);
     height: min(500px, 90vw);
-
     margin: 0 auto 50px;
   }
 
@@ -1549,7 +1492,6 @@ h2 {
 
   .careers-image {
     min-height: 450px;
-
     border-radius: 0 0 50% 50%;
   }
 
@@ -1561,11 +1503,6 @@ h2 {
   .section {
     padding: 80px 0;
   }
-
-
-  /* =======================================================
-     HERO
-     ======================================================= */
 
   .hero-logo img {
     width: 180px;
@@ -1591,7 +1528,6 @@ h2 {
   .hero-arrow {
     width: 38px;
     height: 38px;
-
     font-size: 17px;
   }
 
@@ -1602,14 +1538,16 @@ h2 {
 
   .menu-button {
     bottom: 20px;
-
     width: 140px;
     height: 48px;
   }
 
+  .menu-button img {
+    left: 7px;
+  }
+
   .menu-button::before {
     left: 11px;
-
     width: 30px;
     height: 30px;
   }
@@ -1626,11 +1564,6 @@ h2 {
     bottom: 82px;
   }
 
-
-  /* =======================================================
-     BUSINESSES
-     ======================================================= */
-
   .business-grid {
     grid-template-columns: 1fr;
   }
@@ -1642,11 +1575,6 @@ h2 {
   .card-image {
     height: 270px;
   }
-
-
-  /* =======================================================
-     OTHER SECTIONS
-     ======================================================= */
 
   .food-grid,
   .insights-grid {
