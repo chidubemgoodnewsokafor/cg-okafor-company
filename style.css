@@ -503,7 +503,7 @@ h2 {
 }
 
 .business-card:nth-child(2) {
-  background: var(--teal);
+  background: var(--dark-red);
 }
 
 .business-card:nth-child(3) {
@@ -514,10 +514,6 @@ h2 {
 .business-card:nth-child(4) {
   background: #d9eee9;
   color: var(--dark-teal);
-}
-
-.business-card:nth-child(5) {
-  background: var(--dark-red);
 }
 
 .card-image {
