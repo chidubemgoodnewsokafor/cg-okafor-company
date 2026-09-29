@@ -88,20 +88,21 @@ button {
   position: absolute;
 
   left: 50%;
-  bottom: 30px;
+  bottom: 28px;
 
   transform: translateX(-50%);
 
-  width: 52px;
+  width: 155px;
   height: 52px;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+
+  padding-right: 18px;
 
   border: 0;
-  border-radius: 50%;
+  border-radius: 30px;
 
   background: var(--white);
 
@@ -112,17 +113,77 @@ button {
   box-shadow: 0 8px 25px rgba(0,0,0,0.14);
 }
 
-.menu-button span {
-  display: block;
 
-  width: 22px;
+/* Small Okafor logo */
+
+.menu-button::before {
+  content: "";
+
+  position: absolute;
+
+  left: 12px;
+  top: 50%;
+
+  width: 34px;
+  height: 34px;
+
+  transform: translateY(-50%);
+
+  background-image: url("cg-okafor-logo.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* MENU text */
+
+.menu-button::after {
+  content: "MENU";
+
+  position: absolute;
+
+  left: 92px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--dark-teal);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* Hamburger */
+
+.menu-button span {
+  position: absolute;
+
+  left: 62px;
+
+  width: 20px;
   height: 2px;
 
-  margin: 3px 0;
+  margin: 0;
 
   background: var(--dark-teal);
 
   transition: transform 0.25s ease;
+}
+
+.menu-button span:nth-child(1) {
+  top: 18px;
+}
+
+.menu-button span:nth-child(2) {
+  top: 25px;
+}
+
+.menu-button span:nth-child(3) {
+  top: 32px;
 }
 
 
@@ -332,8 +393,9 @@ h2 {
   position: relative;
 
   width: 100%;
-  height: 100vh;
-  min-height: 700px;
+  height: 100svh;
+  min-height: 620px;
+  max-height: 900px;
 
   overflow: hidden;
 
@@ -393,35 +455,9 @@ h2 {
 }
 
 
-/* LARGE CURVED SHAPE */
-
-.hero::after {
-  content: "";
-
-  position: absolute;
-
-  width: 115vw;
-  height: 115vw;
-
-  max-width: 1500px;
-  max-height: 1500px;
-
-  left: 50%;
-  bottom: -82%;
-
-  transform: translateX(-50%);
-
-  border-radius: 50%;
-
-  background: var(--white);
-
-  z-index: 3;
-
-  pointer-events: none;
-}
-
-
-/* HERO MESSAGE */
+/* =========================================================
+   HERO MESSAGE
+   ========================================================= */
 
 .hero-content {
   position: absolute;
@@ -461,50 +497,84 @@ h2 {
 .hero-controls {
   position: absolute;
 
-  left: 50%;
-  bottom: 35px;
-
-  transform: translateX(-50%);
+  inset: 0;
 
   z-index: 20;
 
-  display: flex;
-  align-items: center;
-
-  gap: 15px;
+  pointer-events: none;
 }
 
+
+/* SIDE ARROWS */
+
 .hero-arrow {
-  width: 38px;
-  height: 38px;
+  position: absolute;
+
+  top: 50%;
+
+  width: 46px;
+  height: 46px;
+
+  transform: translateY(-50%);
 
   border: 1px solid rgba(255,255,255,0.8);
 
   border-radius: 50%;
 
-  background: rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.18);
 
   color: var(--white);
 
   cursor: pointer;
+
+  pointer-events: auto;
+
+  font-size: 20px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hero-prev {
+  left: 30px;
+}
+
+.hero-next {
+  right: 30px;
 }
 
 .hero-arrow:hover {
   background: var(--white);
   color: var(--dark-teal);
+
+  transform: translateY(-50%) scale(1.05);
 }
 
+
+/* LOWER-LEFT DOTS */
+
 .hero-dots {
+  position: absolute;
+
+  left: 32px;
+  bottom: 35px;
+
   display: flex;
 
   align-items: center;
 
   gap: 7px;
+
+  pointer-events: auto;
 }
 
 .hero-dot {
   width: 7px;
   height: 7px;
+
+  padding: 0;
 
   border: 0;
 
@@ -513,6 +583,10 @@ h2 {
   background: rgba(255,255,255,0.6);
 
   cursor: pointer;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
 }
 
 .hero-dot.active {
@@ -666,7 +740,9 @@ h2 {
   color: var(--dark-teal);
 }
 
-/* Okafor Investments — intentionally subtle */
+
+/* Soileva */
+
 .business-card:nth-child(4) {
   background: #eef4f2;
   color: var(--dark-teal);
@@ -1026,14 +1102,18 @@ h2 {
 .careers-image {
   height: 420px;
   min-height: 0;
+
   border-radius: 0 50% 50% 0;
+
   overflow: hidden;
 }
 
 .careers-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
 }
 
@@ -1093,13 +1173,16 @@ h2 {
 .footer-logo img {
   width: 150px;
   height: auto;
+
   display: block;
+
   filter: brightness(0) invert(1);
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
+
   gap: 12px;
 }
 
@@ -1109,7 +1192,9 @@ h2 {
   color: var(--yellow);
 
   font-size: 13px;
+
   text-transform: uppercase;
+
   letter-spacing: 0.1em;
 }
 
@@ -1171,7 +1256,9 @@ h2 {
 .circle-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
 }
 
@@ -1181,8 +1268,10 @@ h2 {
 .card-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
+
   display: block;
 }
 
@@ -1192,7 +1281,9 @@ h2 {
 .farmers-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
 }
 
@@ -1202,8 +1293,10 @@ h2 {
 .food-card-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
+
   display: block;
 }
 
@@ -1213,8 +1306,10 @@ h2 {
 .insight-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
+
   display: block;
 }
 
@@ -1224,7 +1319,9 @@ h2 {
 .careers-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
 }
 
@@ -1290,6 +1387,7 @@ h2 {
   .hero {
     height: 100svh;
     min-height: 650px;
+    max-height: none;
   }
 
   .hero-logo {
@@ -1309,48 +1407,64 @@ h2 {
     font-size: clamp(43px, 12vw, 72px);
   }
 
-  .hero::after {
-    width: 155vw;
-    height: 155vw;
 
-    bottom: -104%;
-  }
-
-  .hero-controls {
-    bottom: 28px;
-  }
-
-  /*
-   * Mobile menu button moves away from the hero controls.
-   */
+  /* Mobile menu stays at lower center */
 
   .menu-button {
-    display: flex;
+    left: 50%;
+    right: auto;
 
-    left: auto;
-    right: 5%;
-    top: 50%;
+    bottom: 24px;
+    top: auto;
 
-    bottom: auto;
+    transform: translateX(-50%);
 
-    transform: translateY(-50%);
+    width: 145px;
+    height: 50px;
+  }
 
-    width: 44px;
-    height: 44px;
+  .menu-button::before {
+    left: 12px;
 
-    background: rgba(255,255,255,0.95);
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.14);
+    width: 32px;
+    height: 32px;
   }
 
   .menu-button span {
-    width: 24px;
-    height: 2px;
-    margin: 5px auto;
+    left: 60px;
+  }
+
+  .menu-button::after {
+    left: 88px;
+  }
+
+
+  /* Hero controls remain full-screen */
+
+  .hero-controls {
+    inset: 0;
+  }
+
+  .hero-prev {
+    left: 16px;
+  }
+
+  .hero-next {
+    right: 16px;
+  }
+
+  .hero-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hero-dots {
+    left: 20px;
+    bottom: 30px;
   }
 
   .main-nav {
-    bottom: 140px;
+    bottom: 90px;
   }
 
 
@@ -1391,8 +1505,10 @@ h2 {
     gap: 50px;
   }
 
+
   /*
-   * Four businesses become two columns on mobile/tablet.
+   * Four businesses become two columns
+   * on mobile/tablet.
    */
 
   .business-grid {
@@ -1410,6 +1526,7 @@ h2 {
 
   .farmers-section {
     min-height: 850px;
+
     display: block;
   }
 
@@ -1437,6 +1554,7 @@ h2 {
 
   .careers-image {
     min-height: 450px;
+
     border-radius: 0 0 50% 50%;
   }
 
@@ -1449,6 +1567,75 @@ h2 {
     padding: 80px 0;
   }
 
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .hero-logo img {
+    width: 135px;
+    height: 135px;
+  }
+
+  .hero-content {
+    bottom: 22%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 13vw, 60px);
+  }
+
+  .hero-prev {
+    left: 10px;
+  }
+
+  .hero-next {
+    right: 10px;
+  }
+
+  .hero-arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 17px;
+  }
+
+  .hero-dots {
+    left: 16px;
+    bottom: 28px;
+  }
+
+  .menu-button {
+    bottom: 20px;
+
+    width: 140px;
+    height: 48px;
+  }
+
+  .menu-button::before {
+    left: 11px;
+
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-button span {
+    left: 58px;
+  }
+
+  .menu-button::after {
+    left: 85px;
+  }
+
+  .main-nav {
+    bottom: 82px;
+  }
+
+
+  /* =======================================================
+     BUSINESSES
+     ======================================================= */
+
   .business-grid {
     grid-template-columns: 1fr;
   }
@@ -1460,6 +1647,11 @@ h2 {
   .card-image {
     height: 270px;
   }
+
+
+  /* =======================================================
+     OTHER SECTIONS
+     ======================================================= */
 
   .food-grid,
   .insights-grid {
