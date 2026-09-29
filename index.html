@@ -16,95 +16,147 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- ================= HERO ================= -->
 
-  <header class="site-header">
+<section class="hero">
 
-  <a href="index.html" class="logo">
+  <!-- LOGO OVER HERO -->
+  <a href="index.html" class="hero-logo">
     <img src="cg-okafor-logo.png" alt="C.G. Okafor Co. logo">
   </a>
 
-  <button class="menu-button" aria-label="Open menu" aria-expanded="false">
+
+  <!-- HERO IMAGE -->
+  <div class="hero-visual">
+
+    <div
+      id="hero-image"
+      class="hero-image"
+      style="background-image: url('hero-food.jpg');">
+    </div>
+
+  </div>
+
+
+  <!-- PERMANENT HERO MESSAGE -->
+  <div class="hero-content">
+
+    <h1>
+      Better farming,<br>
+      food for all.
+    </h1>
+
+  </div>
+
+
+  <!-- MENU -->
+  <button
+    class="menu-button"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-    <nav class="main-nav">
 
-      <a href="index.html">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#businesses">Our Businesses</a>
-      <a href="food-products.html">Food Products</a>
-      <a href="#brands">Our Brands</a>
-      <a href="#farmers">Farmers by Okafor</a>
-      <a href="#insights">Insights</a>
-      <a href="#contact">Contact Us</a>
-      <a href="careers.html" class="nav-careers">Careers</a>
+  <nav class="main-nav">
 
-    </nav>
+    <a href="index.html">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#businesses">Our Businesses</a>
+    <a href="food-products.html">Food Products</a>
+    <a href="#brands">Our Brands</a>
+    <a href="#farmers">Farmers by Okafor</a>
+    <a href="#insights">Insights</a>
+    <a href="#contact">Contact Us</a>
+    <a href="careers.html" class="nav-careers">Careers</a>
 
-  </header>
+  </nav>
 
 
-  <main>
+  <!-- HERO CONTROLS -->
+  <div class="hero-controls">
 
-    <!-- ================= HERO ================= -->
+    <button class="hero-arrow hero-prev" aria-label="Previous slide">
+      ←
+    </button>
 
-    <section class="hero">
+    <div class="hero-dots">
 
-      <div class="hero-visual">
+      <button class="hero-dot active" data-slide="0"></button>
+      <button class="hero-dot" data-slide="1"></button>
+      <button class="hero-dot" data-slide="2"></button>
+      <button class="hero-dot" data-slide="3"></button>
 
-  <div
-    id="hero-image"
-    class="hero-image"
-    style="background-image: url('hero-food.jpg');">
+    </div>
+
+    <button class="hero-arrow hero-next" aria-label="Next slide">
+      →
+    </button>
+
   </div>
 
-  <div class="hero-circle"></div>
-
-</div>
-
-      <div class="hero-content">
-
-        <p class="eyebrow">C.G. OKAFOR CO.</p>
-
-        <h1 id="hero-title">
-          Food, agriculture<br>
-          and technology.
-        </h1>
-
-        <p id="hero-text">
-          Solutions for food and agriculture.
-        </p>
-
-        <a id="hero-link" href="#businesses" class="primary-button">
-          Explore
-        </a>
-
-      </div>
+</section>
 
 
-      <div class="hero-controls">
+<!-- ================= COMPANY NUMBERS ================= -->
 
-        <button class="hero-arrow hero-prev" aria-label="Previous slide">
-          ←
-        </button>
+<section class="company-numbers" id="company-numbers">
 
-        <div class="hero-dots">
-          <button class="hero-dot active" data-slide="0"></button>
-          <button class="hero-dot" data-slide="1"></button>
-          <button class="hero-dot" data-slide="2"></button>
-          <button class="hero-dot" data-slide="3"></button>
-        </div>
+  <div class="number-item">
 
-        <button class="hero-arrow hero-next" aria-label="Next slide">
-          →
-        </button>
+    <strong
+      class="counter"
+      data-target="1000"
+      data-suffix="+"
+    >0</strong>
 
-      </div>
+    <span>Farmers</span>
 
-    </section>
+  </div>
+
+
+  <div class="number-item">
+
+    <strong
+      class="counter"
+      data-target="2000"
+      data-suffix="+"
+    >0</strong>
+
+    <span>Acres</span>
+
+  </div>
+
+
+  <div class="number-item">
+
+    <strong
+      class="counter"
+      data-target="15"
+      data-suffix="+"
+    >0</strong>
+
+    <span>Solutions</span>
+
+  </div>
+
+
+  <div class="number-item">
+
+    <strong
+      class="counter"
+      data-target="5"
+      data-suffix="+"
+    >0</strong>
+
+    <span>States</span>
+
+  </div>
+
+</section>
 
 
     <!-- ================= ABOUT ================= -->
