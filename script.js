@@ -43,49 +43,18 @@ if (menuButton && mainNav) {
 
 /* ================= HERO CAROUSEL ================= */
 
-const heroTitle = document.getElementById("hero-title");
-const heroText = document.getElementById("hero-text");
-const heroLink = document.getElementById("hero-link");
-
 const heroImage = document.getElementById("hero-image");
 
 const heroDots = document.querySelectorAll(".hero-dot");
 const previousButton = document.querySelector(".hero-prev");
 const nextButton = document.querySelector(".hero-next");
 
-
 const heroSlides = [
-
-  {
-    title: "Food that brings us together.",
-    text: "Food for everyday life.",
-    link: "food-products.html",
-    image: "hero-food.jpg"
-  },
-
-  {
-    title: "Growing better.",
-    text: "Agricultural solutions for farmers.",
-    link: "okafor-agriscience.html",
-    image: "hero-farm.jpg"
-  },
-
-  {
-    title: "Seeds designed to grow.",
-    text: "Explore Idegro.",
-    link: "idegro.html",
-    image: "hero-idegro.jpg"
-  },
-
-  {
-    title: "Healthier animals. Better production.",
-    text: "Explore animal health.",
-    link: "okafor-agriscience.html#animal-health",
-    image: "hero-animal-health.jpg"
-  }
-
+  "hero-food.jpg",
+  "hero-farm.jpg",
+  "hero-idegro.jpg",
+  "hero-animal-health.jpg"
 ];
-
 
 let currentSlide = 0;
 
@@ -95,14 +64,8 @@ function showSlide(index) {
   currentSlide =
     (index + heroSlides.length) % heroSlides.length;
 
-  const slide = heroSlides[currentSlide];
-
-  heroTitle.innerHTML = slide.title;
-  heroText.textContent = slide.text;
-  heroLink.href = slide.link;
-
   heroImage.style.backgroundImage =
-    `url("${slide.image}")`;
+    `url("${heroSlides[currentSlide]}")`;
 
   heroDots.forEach((dot, i) => {
 
@@ -113,7 +76,7 @@ function showSlide(index) {
 
   });
 
-     }
+}
 
 
 /* NEXT */
@@ -166,7 +129,7 @@ let heroTimer = setInterval(() => {
 }, 6500);
 
 
-/* Pause automatic movement while interacting */
+/* PAUSE WHILE VIEWING */
 
 const hero = document.querySelector(".hero");
 
@@ -195,7 +158,6 @@ if (hero) {
 /* INITIAL SLIDE */
 
 showSlide(0);
-
 /* =========================================================
    COMPANY NUMBER COUNTERS
    ========================================================= */
