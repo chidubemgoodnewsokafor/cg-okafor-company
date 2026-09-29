@@ -72,8 +72,8 @@ button {
 }
 
 .hero-logo img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 
   object-fit: contain;
   display: block;
@@ -92,8 +92,8 @@ button {
 
   transform: translateX(-50%);
 
-  width: 155px;
-  height: 52px;
+  width: 165px;
+  height: 56px;
 
   display: flex;
   align-items: center;
@@ -114,25 +114,22 @@ button {
 }
 
 
-/* Small Okafor logo */
+/* Small Okafor menu logo */
 
-.menu-button::before {
-  content: "";
-
+.menu-button img {
   position: absolute;
 
-  left: 12px;
+  left: 11px;
   top: 50%;
 
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
 
   transform: translateY(-50%);
 
-  background-image: url("cg-okafor-logo.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: contain;
+
+  display: block;
 }
 
 
@@ -143,7 +140,7 @@ button {
 
   position: absolute;
 
-  left: 92px;
+  left: 101px;
   top: 50%;
 
   transform: translateY(-50%);
@@ -162,7 +159,7 @@ button {
 .menu-button span {
   position: absolute;
 
-  left: 62px;
+  left: 69px;
 
   width: 20px;
   height: 2px;
@@ -174,16 +171,16 @@ button {
   transition: transform 0.25s ease;
 }
 
-.menu-button span:nth-child(1) {
-  top: 18px;
-}
-
 .menu-button span:nth-child(2) {
-  top: 25px;
+  top: 20px;
 }
 
 .menu-button span:nth-child(3) {
-  top: 32px;
+  top: 27px;
+}
+
+.menu-button span:nth-child(4) {
+  top: 34px;
 }
 
 
@@ -1395,8 +1392,8 @@ h2 {
   }
 
   .hero-logo img {
-    width: 145px;
-    height: 145px;
+    width: 180px;
+    height: 180px;
   }
 
   .hero-content {
@@ -1573,8 +1570,8 @@ h2 {
      ======================================================= */
 
   .hero-logo img {
-    width: 135px;
-    height: 135px;
+    width: 180px;
+    height: 180px;
   }
 
   .hero-content {
