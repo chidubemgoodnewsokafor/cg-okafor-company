@@ -195,3 +195,85 @@ if (hero) {
 /* INITIAL SLIDE */
 
 showSlide(0);
+
+/* =========================================================
+   COMPANY NUMBER COUNTERS
+   ========================================================= */
+
+const counterSection = document.querySelector(".company-numbers");
+const counters = document.querySelectorAll(".counter");
+
+let countersStarted = false;
+
+function startCounters() {
+
+  if (countersStarted) return;
+
+  countersStarted = true;
+
+  counters.forEach(counter => {
+
+    const target = Number(counter.dataset.target);
+    const suffix = counter.dataset.suffix || "";
+
+    const duration = 1800;
+    const startTime = performance.now();
+
+    function updateCounter(currentTime) {
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      const easedProgress =
+        1 - Math.pow(1 - progress, 3);
+
+      const currentValue =
+        Math.floor(target * easedProgress);
+
+      counter.textContent =
+        currentValue.toLocaleString() + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent =
+          target.toLocaleString() + suffix;
+      }
+
+    }
+
+    requestAnimationFrame(updateCounter);
+
+  });
+
+}
+
+
+/* Start once when the numbers enter the screen */
+
+if (counterSection) {
+
+  const counterObserver = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          startCounters();
+
+          counterObserver.disconnect();
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.35
+    }
+  );
+
+  counterObserver.observe(counterSection);
+
+                          }
