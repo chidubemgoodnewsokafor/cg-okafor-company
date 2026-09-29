@@ -83,7 +83,6 @@ button {
 /* =========================================================
    HERO MENU
    ========================================================= */
-
 .menu-button {
   position: absolute;
 
@@ -116,39 +115,21 @@ button {
 
 /* Small Okafor menu logo */
 
-.menu-button {
-  bottom: 20px;
-
-  width: 150px;
-  height: 52px;
-}
-
 .menu-button img {
-  left: 10px;
+  position: absolute;
 
-  width: 38px;
-  height: 38px;
+  left: 9px;
+  top: 50%;
+
+  width: 40px;
+  height: 40px;
+
+  transform: translateY(-50%);
+
+  object-fit: contain;
+  display: block;
 }
 
-.menu-button span {
-  left: 63px;
-}
-
-.menu-button span:nth-child(2) {
-  top: 18px;
-}
-
-.menu-button span:nth-child(3) {
-  top: 25px;
-}
-
-.menu-button span:nth-child(4) {
-  top: 32px;
-}
-
-.menu-button::after {
-  left: 91px;
-}
 
 /* MENU text */
 
