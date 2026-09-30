@@ -81,14 +81,16 @@ button {
 
 
 /* =========================================================
-   HERO MENU
+   SITE-WIDE FLOATING MENU
    ========================================================= */
 
-..menu-button {
+.menu-button {
   position: fixed;
 
   left: 50%;
   bottom: 28px;
+  top: auto;
+  right: auto;
 
   transform: translateX(-50%);
 
@@ -113,8 +115,8 @@ button {
   box-shadow: 0 8px 25px rgba(0,0,0,0.14);
 }
 
-/* Small Okafor menu logo */
 
+/* Small Okafor menu logo */
 
 .menu-button img {
   position: absolute;
@@ -130,6 +132,7 @@ button {
   object-fit: contain;
   display: block;
 }
+
 
 /* MENU text */
 
@@ -183,7 +186,7 @@ button {
 
 
 /* =========================================================
-   NAVIGATION OVER HERO
+   SITE-WIDE NAVIGATION
    ========================================================= */
 
 .main-nav {
@@ -191,10 +194,12 @@ button {
 
   left: 50%;
   bottom: 95px;
+  top: auto;
+  right: auto;
 
   transform: translateX(-50%);
 
-  z-index: 25;
+  z-index: 9998;
 
   display: none;
 
@@ -735,9 +740,6 @@ h2 {
   color: var(--dark-teal);
 }
 
-
-/* Soileva */
-
 .business-card:nth-child(4) {
   background: #eef4f2;
   color: var(--dark-teal);
@@ -901,6 +903,7 @@ h2 {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -1369,6 +1372,8 @@ h2 {
   }
 
   .menu-button {
+    position: fixed;
+
     left: 50%;
     right: auto;
 
@@ -1379,6 +1384,8 @@ h2 {
 
     width: 145px;
     height: 50px;
+
+    z-index: 9999;
   }
 
   .menu-button img {
@@ -1423,7 +1430,15 @@ h2 {
   }
 
   .main-nav {
+    position: fixed;
+
+    left: 50%;
     bottom: 90px;
+    top: auto;
+
+    transform: translateX(-50%);
+
+    z-index: 9998;
   }
 
   .company-numbers {
@@ -1536,9 +1551,15 @@ h2 {
   }
 
   .menu-button {
+    position: fixed;
+
+    left: 50%;
     bottom: 20px;
+
     width: 140px;
     height: 48px;
+
+    z-index: 9999;
   }
 
   .menu-button img {
@@ -1560,7 +1581,14 @@ h2 {
   }
 
   .main-nav {
+    position: fixed;
+
+    left: 50%;
     bottom: 82px;
+
+    transform: translateX(-50%);
+
+    z-index: 9998;
   }
 
   .business-grid {
