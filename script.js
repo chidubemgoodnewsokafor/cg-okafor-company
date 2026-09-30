@@ -41,29 +41,42 @@ if (menuButton && mainNav) {
 }
 
 
-/* ================= FIXED MENU SCROLL STATE ================= */
+/* ================= FIXED MENU SCROLL DIRECTION ================= */
 
 if (menuButton) {
 
+  let lastScrollY = window.scrollY;
+
   function updateMenuState() {
 
-    if (window.scrollY > 80) {
+    const currentScrollY = window.scrollY;
+
+    /* Scrolling DOWN */
+    if (currentScrollY > lastScrollY) {
 
       menuButton.classList.add("scrolled");
 
-    } else {
+    }
+
+    /* Scrolling UP */
+    else if (currentScrollY < lastScrollY) {
 
       menuButton.classList.remove("scrolled");
 
     }
+
+    /*
+      If scrolling stops, nothing changes.
+      The current menu state remains visible.
+    */
+
+    lastScrollY = currentScrollY;
 
   }
 
   window.addEventListener("scroll", updateMenuState, {
     passive: true
   });
-
-  updateMenuState();
 
 }
 
