@@ -41,6 +41,33 @@ if (menuButton && mainNav) {
 }
 
 
+/* ================= FIXED MENU SCROLL STATE ================= */
+
+if (menuButton) {
+
+  function updateMenuState() {
+
+    if (window.scrollY > 80) {
+
+      menuButton.classList.add("scrolled");
+
+    } else {
+
+      menuButton.classList.remove("scrolled");
+
+    }
+
+  }
+
+  window.addEventListener("scroll", updateMenuState, {
+    passive: true
+  });
+
+  updateMenuState();
+
+}
+
+
 /* ================= HERO CAROUSEL ================= */
 
 const heroImage = document.getElementById("hero-image");
@@ -158,6 +185,8 @@ if (hero) {
 /* INITIAL SLIDE */
 
 showSlide(0);
+
+
 /* =========================================================
    COMPANY NUMBER COUNTERS
    ========================================================= */
@@ -238,4 +267,4 @@ if (counterSection) {
 
   counterObserver.observe(counterSection);
 
-                          }
+}
