@@ -30,6 +30,7 @@ padding: 0;
 box-sizing: border-box;
 }
 
+
 html {
 scroll-behavior: smooth;
 }
@@ -81,8 +82,8 @@ display: block;
 HERO MENU
 ========================================================= */
 
-..menu-button {
-position: fixed;
+.menu-button {
+position: absolute;
 
 left: 50%;
 bottom: 28px;
@@ -105,7 +106,7 @@ background: var(--white);
 
 cursor: pointer;
 
-z-index: 9999;
+z-index: 30;
 
 box-shadow: 0 8px 25px rgba(0,0,0,0.14);
 }
@@ -181,7 +182,7 @@ NAVIGATION OVER HERO
 ========================================================= */
 
 .main-nav {
-position: fixed;
+position: absolute;
 
 left: 50%;
 bottom: 95px;
@@ -1343,12 +1344,12 @@ font-size: clamp(43px, 12vw, 72px);
 left: 50%;
 right: auto;
 
-bottom: 24px;
-top: auto;
+bottom: 24px;  
+top: auto;  
 
-transform: translateX(-50%);
+transform: translateX(-50%);  
 
-width: 145px;
+width: 145px;  
 height: 50px;
 
 }
@@ -1360,7 +1361,7 @@ left: 8px;
 .menu-button::before {
 left: 12px;
 
-width: 32px;
+width: 32px;  
 height: 32px;
 
 }
