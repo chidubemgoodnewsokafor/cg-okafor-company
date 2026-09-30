@@ -84,8 +84,8 @@ button {
    HERO MENU
    ========================================================= */
 
-.menu-button {
-  position: absolute;
+..menu-button {
+  position: fixed;
 
   left: 50%;
   bottom: 28px;
@@ -108,11 +108,10 @@ button {
 
   cursor: pointer;
 
-  z-index: 30;
+  z-index: 9999;
 
   box-shadow: 0 8px 25px rgba(0,0,0,0.14);
 }
-
 
 /* Small Okafor menu logo */
 
@@ -188,7 +187,7 @@ button {
    ========================================================= */
 
 .main-nav {
-  position: absolute;
+  position: fixed;
 
   left: 50%;
   bottom: 95px;
