@@ -111,7 +111,11 @@ background: var(--white);
 
 cursor: pointer;
 
-z-index: 9999;
+/*
+   Keep the hamburger above every section,
+   including Our Businesses and the Footer.
+*/
+z-index: 2147483647;
 
 box-shadow: 0 8px 25px rgba(0,0,0,0.14);
 
@@ -172,12 +176,20 @@ width: 250px;
 }
 
 .menu-button.scrolled::after {
-content: "BETTER FARMING, FOOD FOR ALL";
+content: "better farming,\A Food for all";
 
 left: 76px;
 
 font-size: 10px;
+font-weight: 800;
+
+line-height: 1.15;
+
 letter-spacing: 0.04em;
+
+white-space: pre-line;
+
+text-align: left;
 }
 
 /* Hamburger */
@@ -1404,6 +1416,8 @@ left: 88px;
 .menu-button.scrolled::after {
 left: 72px;
 font-size: 9px;
+line-height: 1.15;
+white-space: pre-line;
 }
 
 .hero-controls {
@@ -1565,6 +1579,8 @@ left: 85px;
 .menu-button.scrolled::after {
 left: 67px;
 font-size: 8px;
+line-height: 1.15;
+white-space: pre-line;
 }
 
 .main-nav {
