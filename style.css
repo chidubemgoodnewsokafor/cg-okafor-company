@@ -24,7 +24,7 @@ Corporate Website
 RESET
 ========================================================= */
 
-{
+* {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
@@ -82,7 +82,7 @@ display: block;
 HERO MENU
 ========================================================= */
 
-..menu-button {
+.menu-button {
 position: fixed;
 
 left: 50%;
