@@ -24,15 +24,17 @@ Corporate Website
 RESET
 ========================================================= */
 
-{
+* {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
 
-
 html {
 scroll-behavior: smooth;
+width: 100%;
+max-width: 100%;
+overflow-x: hidden;
 }
 
 body {
@@ -40,6 +42,9 @@ font-family: Arial, Helvetica, sans-serif;
 color: var(--black);
 background: var(--white);
 line-height: 1.5;
+width: 100%;
+max-width: 100%;
+overflow-x: hidden;
 }
 
 a {
@@ -83,7 +88,7 @@ HERO MENU
 ========================================================= */
 
 .menu-button {
-position: absolute;
+position: fixed;
 
 left: 50%;
 bottom: 28px;
@@ -106,9 +111,14 @@ background: var(--white);
 
 cursor: pointer;
 
-z-index: 30;
+z-index: 9999;
 
 box-shadow: 0 8px 25px rgba(0,0,0,0.14);
+
+transition:
+width 0.3s ease,
+background 0.3s ease,
+box-shadow 0.3s ease;
 }
 
 /* Small Okafor menu logo */
@@ -128,7 +138,7 @@ object-fit: contain;
 display: block;
 }
 
-/* MENU text */
+/* MENU / SCROLL MESSAGE */
 
 .menu-button::after {
 content: "MENU";
@@ -136,7 +146,7 @@ content: "MENU";
 position: absolute;
 
 left: 101px;
-top: calc(50% + 2px);
+top: 50%;
 
 transform: translateY(-50%);
 
@@ -146,6 +156,28 @@ font-size: 12px;
 font-weight: 800;
 
 letter-spacing: 0.08em;
+
+white-space: nowrap;
+
+transition:
+left 0.3s ease,
+font-size 0.3s ease,
+letter-spacing 0.3s ease;
+}
+
+/* Scrolled state */
+
+.menu-button.scrolled {
+width: 250px;
+}
+
+.menu-button.scrolled::after {
+content: "BETTER FARMING, FOOD FOR ALL";
+
+left: 76px;
+
+font-size: 10px;
+letter-spacing: 0.04em;
 }
 
 /* Hamburger */
@@ -1344,26 +1376,21 @@ font-size: clamp(43px, 12vw, 72px);
 left: 50%;
 right: auto;
 
-bottom: 24px;  
-top: auto;  
+bottom: 24px;
+top: auto;
 
-transform: translateX(-50%);  
+transform: translateX(-50%);
 
-width: 145px;  
+width: 145px;
 height: 50px;
+}
 
+.menu-button.scrolled {
+width: 235px;
 }
 
 .menu-button img {
 left: 8px;
-}
-
-.menu-button::before {
-left: 12px;
-
-width: 32px;  
-height: 32px;
-
 }
 
 .menu-button span {
@@ -1372,6 +1399,11 @@ left: 60px;
 
 .menu-button::after {
 left: 88px;
+}
+
+.menu-button.scrolled::after {
+left: 72px;
+font-size: 9px;
 }
 
 .hero-controls {
@@ -1514,14 +1546,12 @@ width: 140px;
 height: 48px;
 }
 
-.menu-button img {
-left: 7px;
+.menu-button.scrolled {
+width: 220px;
 }
 
-.menu-button::before {
-left: 11px;
-width: 30px;
-height: 30px;
+.menu-button img {
+left: 7px;
 }
 
 .menu-button span {
@@ -1530,6 +1560,11 @@ left: 58px;
 
 .menu-button::after {
 left: 85px;
+}
+
+.menu-button.scrolled::after {
+left: 67px;
+font-size: 8px;
 }
 
 .main-nav {
