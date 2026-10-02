@@ -24,6 +24,7 @@
   class="menu-button"
   aria-label="Open menu"
   aria-expanded="false"
+  type="button"
 >
   <img src="okafor-menu-logo.png" alt="Okafor">
 
@@ -41,28 +42,851 @@
 
 
 <!-- =========================================================
-     MAIN NAVIGATION
+     FULL-SCREEN MAIN NAVIGATION
      ========================================================= -->
 
-<nav class="main-nav">
+<nav
+  class="main-nav"
+  aria-hidden="true"
+  aria-label="Main navigation"
+>
 
-  <a href="index.html">Home</a>
+  <!-- NAVIGATION HEADER -->
 
-  <a href="#about">About Us</a>
+  <div class="nav-header">
 
-  <a href="#businesses">Our Businesses</a>
+    <button
+      class="nav-back"
+      type="button"
+      aria-label="Go back"
+    >
+      ←
+    </button>
 
-  <a href="food-products.html">Food Products</a>
+    <a
+      href="index.html"
+      class="nav-logo"
+      aria-label="C.G. Okafor Co. home"
+    >
+      <img
+        src="okafor-menu-logo.png"
+        alt="C.G. Okafor Co."
+      >
+    </a>
 
-  <a href="#brands">Our Brands</a>
+    <button
+      class="nav-close"
+      type="button"
+      aria-label="Close navigation"
+    >
+      ×
+    </button>
 
-  <a href="#farmers">Farmers by Okafor</a>
+  </div>
 
-  <a href="#insights">Insights</a>
 
-  <a href="#contact">Contact Us</a>
+  <!-- =======================================================
+       LEVEL 1 — MAIN MENU
+       ======================================================= -->
 
-  <a href="careers.html" class="nav-careers">Careers</a>
+  <div
+    class="nav-panel nav-panel-active"
+    data-panel="main"
+  >
+
+    <div class="nav-panel-inner">
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="about"
+      >
+        <span>ABOUT US</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="businesses"
+      >
+        <span>OUR BUSINESSES</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <div class="nav-divider"></div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="careers.html"
+      >
+        <span>CAREERS</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="insights.html"
+      >
+        <span>STORIES &amp; INSIGHTS</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="contact.html"
+      >
+        <span>CONTACT US</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LEVEL 2 — ABOUT US
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="about"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        ABOUT US
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="about.html"
+      >
+        <span>About Us Overview</span>
+      </a>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="explore-okafor"
+      >
+        <span>Explore Okafor</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="innovation"
+      >
+        <span>Innovation</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="leadership"
+      >
+        <span>Leadership</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <a
+        class="nav-item nav-link"
+        href="supplier-information.html"
+      >
+        <span>Supplier Information</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="history.html"
+      >
+        <span>History</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="events.html"
+      >
+        <span>Events</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LEVEL 3 — EXPLORE OKAFOR
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="explore-okafor"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        EXPLORE OKAFOR
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="our-approach.html"
+      >
+        <span>Our Approach</span>
+      </a>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="our-contribution"
+      >
+        <span>Our Contribution</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <a
+        class="nav-item nav-link"
+        href="okafor-brand.html"
+      >
+        <span>The Okafor Brand</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LEVEL 4 — OUR CONTRIBUTION
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="our-contribution"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        OUR CONTRIBUTION
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="our-contribution.html"
+      >
+        <span>Our Contribution Overview</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="farmers-by-okafor.html"
+      >
+        <span>Farmers by Okafor</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="giving-back.html"
+      >
+        <span>Giving Back to the Community</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LEVEL 3 — INNOVATION
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="innovation"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        INNOVATION
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="innovation.html"
+      >
+        <span>Innovation Overview</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LEVEL 3 — LEADERSHIP
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="leadership"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        LEADERSHIP
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="leadership.html"
+      >
+        <span>Leadership Overview</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LEVEL 2 — OUR BUSINESSES
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="businesses"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        OUR BUSINESSES
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="businesses.html"
+      >
+        <span>Business Overview</span>
+      </a>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="agriscience"
+      >
+        <span>Agriscience</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="farm-technology"
+      >
+        <span>Farm Technology</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="foods"
+      >
+        <span>Foods</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <a
+        class="nav-item nav-link"
+        href="all-products.html"
+      >
+        <span>All Products</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       LEVEL 3 — AGRISCIENCE
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="agriscience"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        AGRISCIENCE
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="okafor-agriscience.html"
+      >
+        <span>Agriscience Overview</span>
+      </a>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="crop-protection"
+      >
+        <span>Crop Protection</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="plant-nutrition"
+      >
+        <span>Plant Nutrition</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="seeds"
+      >
+        <span>Seeds</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="animal-health"
+      >
+        <span>Animal Health</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       CROP PROTECTION
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="crop-protection"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        CROP PROTECTION
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="crop-protection.html"
+      >
+        <span>Crop Protection Overview</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="weed-management.html"
+      >
+        <span>Weed Management</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="pest-management.html"
+      >
+        <span>Pest Management</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="disease-management.html"
+      >
+        <span>Disease Management</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       PLANT NUTRITION
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="plant-nutrition"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        PLANT NUTRITION
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="plant-nutrition.html"
+      >
+        <span>Plant Nutrition Overview</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="granular.html"
+      >
+        <span>Granular</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="micronutrients.html"
+      >
+        <span>Micronutrients</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="foliar.html"
+      >
+        <span>Foliar</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       SEEDS
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="seeds"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        SEEDS
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="seeds.html"
+      >
+        <span>Seeds Overview</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="field-seeds.html"
+      >
+        <span>Field Seeds</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="vegetable-seeds.html"
+      >
+        <span>Vegetable Seeds</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       ANIMAL HEALTH
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="animal-health"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        ANIMAL HEALTH
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="animal-health.html"
+      >
+        <span>Animal Health Overview</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="poultry-health.html"
+      >
+        <span>Poultry Health</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="swine-health.html"
+      >
+        <span>Swine / Pig Health</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       FARM TECHNOLOGY
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="farm-technology"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        FARM TECHNOLOGY
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="okafor-farm-technology.html"
+      >
+        <span>Farm Technology Overview</span>
+      </a>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="farm-automation"
+      >
+        <span>Farm Automation</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+
+      <button
+        class="nav-item nav-parent"
+        type="button"
+        data-target="farm-design"
+      >
+        <span>Farm Design &amp; Building</span>
+        <span class="nav-arrow">→</span>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       FARM AUTOMATION
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="farm-automation"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        FARM AUTOMATION
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="farm-automation.html"
+      >
+        <span>Farm Automation Overview</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       FARM DESIGN
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="farm-design"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        FARM DESIGN &amp; BUILDING
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="farm-design-building.html"
+      >
+        <span>Farm Design &amp; Building Overview</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =======================================================
+       FOODS
+       ======================================================= -->
+
+  <div
+    class="nav-panel"
+    data-panel="foods"
+  >
+
+    <div class="nav-panel-inner">
+
+      <div class="nav-section-title">
+        FOODS
+      </div>
+
+
+      <a
+        class="nav-item nav-link"
+        href="okafor-foods.html"
+      >
+        <span>Foods Overview</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="grains-oilseeds.html"
+      >
+        <span>Grains &amp; Oilseeds</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="poultry-eggs.html"
+      >
+        <span>Poultry &amp; Eggs</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="edible-oils.html"
+      >
+        <span>Edible Oils</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="seasonings-condiments.html"
+      >
+        <span>Seasonings &amp; Condiments</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="fruits-vegetables.html"
+      >
+        <span>Fruits &amp; Vegetables</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="food-sourcing.html"
+      >
+        <span>Food Sourcing</span>
+      </a>
+
+
+      <a
+        class="nav-item nav-link"
+        href="value-addition.html"
+      >
+        <span>Value Addition</span>
+      </a>
+
+    </div>
+
+  </div>
 
 </nav>
 
@@ -165,62 +989,23 @@
 <section class="company-numbers" id="company-numbers">
 
   <div class="number-item">
-
-    <strong
-      class="counter"
-      data-target="1000"
-      data-suffix="+"
-    >
-      0
-    </strong>
-
+    <strong class="counter" data-target="1000" data-suffix="+">0</strong>
     <span>Farmers</span>
-
   </div>
 
-
   <div class="number-item">
-
-    <strong
-      class="counter"
-      data-target="2000"
-      data-suffix="+"
-    >
-      0
-    </strong>
-
+    <strong class="counter" data-target="2000" data-suffix="+">0</strong>
     <span>Acres</span>
-
   </div>
 
-
   <div class="number-item">
-
-    <strong
-      class="counter"
-      data-target="15"
-      data-suffix="+"
-    >
-      0
-    </strong>
-
+    <strong class="counter" data-target="15" data-suffix="+">0</strong>
     <span>Solutions</span>
-
   </div>
 
-
   <div class="number-item">
-
-    <strong
-      class="counter"
-      data-target="5"
-      data-suffix="+"
-    >
-      0
-    </strong>
-
+    <strong class="counter" data-target="5" data-suffix="+">0</strong>
     <span>States</span>
-
   </div>
 
 </section>
@@ -291,12 +1076,10 @@
     >
 
       <div class="card-image">
-
         <img
           src="business-agriscience.jpg"
           alt="Agriscience"
         >
-
       </div>
 
       <div class="card-body">
@@ -320,12 +1103,10 @@
     >
 
       <div class="card-image">
-
         <img
           src="business-farm-technology.jpg"
           alt="Farm Technology"
         >
-
       </div>
 
       <div class="card-body">
@@ -349,12 +1130,10 @@
     >
 
       <div class="card-image">
-
         <img
           src="business-foods.jpg"
           alt="Foods"
         >
-
       </div>
 
       <div class="card-body">
@@ -378,12 +1157,10 @@
     >
 
       <div class="card-image">
-
         <img
           src="business-soileva.jpg"
           alt="Soileva"
         >
-
       </div>
 
       <div class="card-body">
@@ -482,7 +1259,6 @@
       <a href="azbred.html" class="brand-item">
         <span>Azbred</span>
       </a>
-
 
       <a href="idegro.html" class="brand-item">
         <span>Idegro</span>
@@ -612,9 +1388,7 @@
 
       </div>
 
-      <h3>
-        Seasoning &amp; Condiments
-      </h3>
+      <h3>Seasoning &amp; Condiments</h3>
 
       <span>Explore →</span>
 
@@ -642,109 +1416,73 @@
 
   <div class="insights-grid">
 
-    <a
-      href="insights.html#agriculture"
-      class="insight-card"
-    >
+    <a href="insights.html#agriculture" class="insight-card">
 
       <div class="insight-image">
-
         <img
           src="insight-agriculture.jpg"
           alt="Agriculture"
         >
-
       </div>
 
       <div>
-
         <p>Agriculture</p>
-
         <h3>Explore agriculture</h3>
-
         <span>→</span>
-
       </div>
 
     </a>
 
 
-    <a
-      href="insights.html#food"
-      class="insight-card"
-    >
+    <a href="insights.html#food" class="insight-card">
 
       <div class="insight-image">
-
         <img
           src="insight-food.jpg"
           alt="Food"
         >
-
       </div>
 
       <div>
-
         <p>Food</p>
-
         <h3>Explore food</h3>
-
         <span>→</span>
-
       </div>
 
     </a>
 
 
-    <a
-      href="insights.html#technology"
-      class="insight-card"
-    >
+    <a href="insights.html#technology" class="insight-card">
 
       <div class="insight-image">
-
         <img
           src="insight-technology.jpg"
           alt="Technology"
         >
-
       </div>
 
       <div>
-
         <p>Technology</p>
-
         <h3>Explore technology</h3>
-
         <span>→</span>
-
       </div>
 
     </a>
 
 
-    <a
-      href="insights.html#company"
-      class="insight-card"
-    >
+    <a href="insights.html#company" class="insight-card">
 
       <div class="insight-image">
-
         <img
           src="insight-company.jpg"
           alt="Company"
         >
-
       </div>
 
       <div>
-
         <p>Company</p>
-
         <h3>Explore company stories</h3>
-
         <span>→</span>
-
       </div>
 
     </a>
@@ -841,12 +1579,10 @@
         href="index.html"
         class="logo footer-logo"
       >
-
         <img
           src="cg-okafor-logo.png"
           alt="C.G. Okafor Co."
         >
-
       </a>
 
       <p>
@@ -862,25 +1598,15 @@
 
       <a href="#about">About Us</a>
 
-      <a href="#businesses">
-        Our Businesses
-      </a>
+      <a href="#businesses">Our Businesses</a>
 
-      <a href="#brands">
-        Our Brands
-      </a>
+      <a href="#brands">Our Brands</a>
 
-      <a href="#farmers">
-        Farmers by Okafor
-      </a>
+      <a href="#farmers">Farmers by Okafor</a>
 
-      <a href="#insights">
-        Insights
-      </a>
+      <a href="#insights">Insights</a>
 
-      <a href="careers.html">
-        Careers
-      </a>
+      <a href="careers.html">Careers</a>
 
     </div>
 
@@ -890,15 +1616,15 @@
       <h4>Businesses</h4>
 
       <a href="okafor-agriscience.html">
-        Okafor Agriscience
+        Agriscience
       </a>
 
       <a href="okafor-farm-technology.html">
-        Okafor Farm Technology
+        Farm Technology
       </a>
 
       <a href="okafor-foods.html">
-        Okafor Foods
+        Foods
       </a>
 
       <a href="soileva.html">
