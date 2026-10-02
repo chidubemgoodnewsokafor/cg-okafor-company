@@ -17,88 +17,30 @@ const mainNav =
 const navClose =
   document.querySelector(".nav-close");
 
-const navBack =
-  document.querySelector(".nav-back");
-
-const navPanels =
-  document.querySelectorAll(".nav-panel");
-
-const navParents =
-  document.querySelectorAll(".nav-parent");
-
-
-let navigationHistory = ["main"];
-
-
-/* =========================================================
-   SHOW NAVIGATION PANEL
-   ========================================================= */
-
-function showNavPanel(panelName) {
-
-  navPanels.forEach(panel => {
-
-    panel.classList.toggle(
-      "nav-panel-active",
-      panel.dataset.panel === panelName
-    );
-
-  });
-
-
-  const isMain =
-    panelName === "main";
-
-
-  if (navBack) {
-
-    navBack.classList.toggle(
-      "visible",
-      !isMain
-    );
-
-  }
-
-}
-
 
 /* =========================================================
    OPEN NAVIGATION
    ========================================================= */
 
-function openNavigation() {
+if (menuButton && mainNav) {
 
-  if (!mainNav || !menuButton) return;
+  menuButton.addEventListener("click", () => {
 
+    mainNav.classList.add("open");
 
-  navigationHistory = ["main"];
+    mainNav.setAttribute(
+      "aria-hidden",
+      "false"
+    );
 
+    document.body.classList.add("nav-open");
 
-  showNavPanel("main");
+    menuButton.setAttribute(
+      "aria-expanded",
+      "true"
+    );
 
-
-  mainNav.classList.add("open");
-
-  mainNav.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-
-  menuButton.classList.add(
-    "menu-hidden"
-  );
-
-
-  menuButton.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-
-
-  document.body.classList.add(
-    "nav-is-open"
-  );
+  });
 
 }
 
@@ -109,8 +51,7 @@ function openNavigation() {
 
 function closeNavigation() {
 
-  if (!mainNav || !menuButton) return;
-
+  if (!mainNav) return;
 
   mainNav.classList.remove("open");
 
@@ -119,41 +60,24 @@ function closeNavigation() {
     "true"
   );
 
+  document.body.classList.remove("nav-open");
 
-  menuButton.classList.remove(
-    "menu-hidden"
-  );
+  if (menuButton) {
 
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-  menuButton.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-
-  document.body.classList.remove(
-    "nav-is-open"
-  );
+  }
 
 
-  navigationHistory = ["main"];
-
+  /*
+    Always return navigation
+    to the main menu when closed.
+  */
 
   showNavPanel("main");
-
-}
-
-
-/* =========================================================
-   MENU BUTTON
-   ========================================================= */
-
-if (menuButton && mainNav) {
-
-  menuButton.addEventListener(
-    "click",
-    openNavigation
-  );
 
 }
 
@@ -173,105 +97,121 @@ if (navClose) {
 
 
 /* =========================================================
-   NAVIGATION PARENT BUTTONS
+   NAVIGATION PANELS
    ========================================================= */
 
-navParents.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    () => {
-
-      const target =
-        button.dataset.target;
+const navPanels =
+  document.querySelectorAll(".nav-panel");
 
 
-      if (!target) return;
+function showNavPanel(panelId) {
+
+  navPanels.forEach(panel => {
+
+    panel.classList.remove("active");
+
+  });
 
 
-      navigationHistory.push(
-        target
-      );
+  const targetPanel =
+    panelId === "main"
+      ? document.querySelector(".nav-panel-main")
+      : document.getElementById(panelId);
 
 
-      showNavPanel(
-        target
-      );
+  if (targetPanel) {
 
-    }
-  );
+    targetPanel.classList.add("active");
 
-});
+    /*
+      Start every new navigation level
+      at the top.
+    */
+
+    targetPanel.scrollTop = 0;
+
+  }
+
+}
 
 
 /* =========================================================
-   BACK BUTTON
+   OPEN DEEPER NAVIGATION LEVEL
    ========================================================= */
 
-if (navBack) {
+document
+  .querySelectorAll(".nav-has-children")
+  .forEach(button => {
 
-  navBack.addEventListener(
-    "click",
-    () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      if (
-        navigationHistory.length <= 1
-      ) {
+        const target =
+          button.dataset.target;
 
-        showNavPanel("main");
+        if (target) {
 
-        return;
+          showNavPanel(target);
+
+        }
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   BACK NAVIGATION
+   ========================================================= */
+
+document
+  .querySelectorAll(".nav-back")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const target =
+          button.dataset.back;
+
+        if (target) {
+
+          showNavPanel(target);
+
+        }
+
+      }
+    );
+
+  });
+
+
+/* =========================================================
+   CLOSE NAVIGATION AFTER DIRECT LINK
+   ========================================================= */
+
+document
+  .querySelectorAll(".nav-direct")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        closeNavigation();
 
       }
 
+    );
 
-      navigationHistory.pop();
-
-
-      const previousPanel =
-        navigationHistory[
-          navigationHistory.length - 1
-        ];
-
-
-      showNavPanel(
-        previousPanel
-      );
-
-    }
-  );
-
-}
+  });
 
 
 /* =========================================================
-   CLOSE NAVIGATION WHEN A PAGE LINK IS CLICKED
-   ========================================================= */
-
-if (mainNav) {
-
-  mainNav
-    .querySelectorAll(
-      "a.nav-link"
-    )
-    .forEach(link => {
-
-      link.addEventListener(
-        "click",
-        () => {
-
-          closeNavigation();
-
-        }
-      );
-
-    });
-
-}
-
-
-/* =========================================================
-   ESCAPE KEY CLOSES NAVIGATION
+   ESC KEY
    ========================================================= */
 
 document.addEventListener(
@@ -305,8 +245,9 @@ if (menuButton) {
   function updateMenuState() {
 
     /*
-      Do not change the menu while
-      the full-screen navigation is open.
+      Don't change the floating button
+      while the full-screen navigation
+      is open.
     */
 
     if (
@@ -347,7 +288,7 @@ if (menuButton) {
 
     /*
       SCROLLING UP
-      Immediately return to MENU
+      Return to MENU
     */
 
     else if (
@@ -364,7 +305,7 @@ if (menuButton) {
 
     /*
       If scrolling stops,
-      keep whatever state is currently visible.
+      keep current state.
     */
 
     lastScrollY =
@@ -389,28 +330,45 @@ if (menuButton) {
    ========================================================= */
 
 const heroImage =
-  document.getElementById("hero-image");
+  document.getElementById(
+    "hero-image"
+  );
 
 const heroDots =
-  document.querySelectorAll(".hero-dot");
+  document.querySelectorAll(
+    ".hero-dot"
+  );
 
 const previousButton =
-  document.querySelector(".hero-prev");
+  document.querySelector(
+    ".hero-prev"
+  );
 
 const nextButton =
-  document.querySelector(".hero-next");
+  document.querySelector(
+    ".hero-next"
+  );
 
 
 const heroSlides = [
+
   "hero-food.jpg",
+
   "hero-farm.jpg",
+
   "hero-idegro.jpg",
+
   "hero-animal-health.jpg"
+
 ];
 
 
 let currentSlide = 0;
 
+
+/* =========================================================
+   SHOW HERO SLIDE
+   ========================================================= */
 
 function showSlide(index) {
 
@@ -418,7 +376,10 @@ function showSlide(index) {
 
 
   currentSlide =
-    (index + heroSlides.length) %
+    (
+      index +
+      heroSlides.length
+    ) %
     heroSlides.length;
 
 
@@ -426,14 +387,16 @@ function showSlide(index) {
     `url("${heroSlides[currentSlide]}")`;
 
 
-  heroDots.forEach((dot, i) => {
+  heroDots.forEach(
+    (dot, i) => {
 
-    dot.classList.toggle(
-      "active",
-      i === currentSlide
-    );
+      dot.classList.toggle(
+        "active",
+        i === currentSlide
+      );
 
-  });
+    }
+  );
 
 }
 
@@ -482,36 +445,41 @@ if (previousButton) {
    HERO DOTS
    ========================================================= */
 
-heroDots.forEach(dot => {
+heroDots.forEach(
+  dot => {
 
-  dot.addEventListener(
-    "click",
-    () => {
+    dot.addEventListener(
+      "click",
+      () => {
 
-      showSlide(
-        Number(dot.dataset.slide)
-      );
+        showSlide(
+          Number(
+            dot.dataset.slide
+          )
+        );
 
-    }
-  );
+      }
+    );
 
-});
+  }
+);
 
 
 /* =========================================================
    AUTOMATIC HERO SLIDE
    ========================================================= */
 
-let heroTimer = setInterval(
-  () => {
+let heroTimer =
+  setInterval(
+    () => {
 
-    showSlide(
-      currentSlide + 1
-    );
+      showSlide(
+        currentSlide + 1
+      );
 
-  },
-  6500
-);
+    },
+    6500
+  );
 
 
 /* =========================================================
@@ -519,7 +487,9 @@ let heroTimer = setInterval(
    ========================================================= */
 
 const hero =
-  document.querySelector(".hero");
+  document.querySelector(
+    ".hero"
+  );
 
 
 if (hero) {
@@ -528,7 +498,9 @@ if (hero) {
     "mouseenter",
     () => {
 
-      clearInterval(heroTimer);
+      clearInterval(
+        heroTimer
+      );
 
     }
   );
@@ -538,16 +510,17 @@ if (hero) {
     "mouseleave",
     () => {
 
-      heroTimer = setInterval(
-        () => {
+      heroTimer =
+        setInterval(
+          () => {
 
-          showSlide(
-            currentSlide + 1
-          );
+            showSlide(
+              currentSlide + 1
+            );
 
-        },
-        6500
-      );
+          },
+          6500
+        );
 
     }
   );
@@ -587,85 +560,89 @@ function startCounters() {
   countersStarted = true;
 
 
-  counters.forEach(counter => {
+  counters.forEach(
+    counter => {
 
-    const target =
-      Number(
-        counter.dataset.target
-      );
-
-    const suffix =
-      counter.dataset.suffix || "";
-
-
-    const duration = 1800;
-
-    const startTime =
-      performance.now();
-
-
-    function updateCounter(
-      currentTime
-    ) {
-
-      const elapsed =
-        currentTime -
-        startTime;
-
-
-      const progress =
-        Math.min(
-          elapsed / duration,
-          1
+      const target =
+        Number(
+          counter.dataset.target
         );
 
-
-      const easedProgress =
-        1 -
-        Math.pow(
-          1 - progress,
-          3
-        );
+      const suffix =
+        counter.dataset.suffix ||
+        "";
 
 
-      const currentValue =
-        Math.floor(
-          target *
-          easedProgress
-        );
+      const duration =
+        1800;
+
+      const startTime =
+        performance.now();
 
 
-      counter.textContent =
-        currentValue.toLocaleString() +
-        suffix;
-
-
-      if (
-        progress < 1
+      function updateCounter(
+        currentTime
       ) {
 
-        requestAnimationFrame(
-          updateCounter
-        );
+        const elapsed =
+          currentTime -
+          startTime;
 
-      }
 
-      else {
+        const progress =
+          Math.min(
+            elapsed / duration,
+            1
+          );
+
+
+        const easedProgress =
+          1 -
+          Math.pow(
+            1 - progress,
+            3
+          );
+
+
+        const currentValue =
+          Math.floor(
+            target *
+            easedProgress
+          );
+
 
         counter.textContent =
-          target.toLocaleString() +
+          currentValue.toLocaleString() +
           suffix;
+
+
+        if (
+          progress < 1
+        ) {
+
+          requestAnimationFrame(
+            updateCounter
+          );
+
+        }
+
+        else {
+
+          counter.textContent =
+            target.toLocaleString() +
+            suffix;
+
+        }
 
       }
 
+
+      requestAnimationFrame(
+        updateCounter
+      );
+
     }
-
-
-    requestAnimationFrame(
-      updateCounter
-    );
-
-  });
+  );
 
 }
 
@@ -680,19 +657,21 @@ if (counterSection) {
     new IntersectionObserver(
       entries => {
 
-        entries.forEach(entry => {
+        entries.forEach(
+          entry => {
 
-          if (
-            entry.isIntersecting
-          ) {
+            if (
+              entry.isIntersecting
+            ) {
 
-            startCounters();
+              startCounters();
 
-            counterObserver.disconnect();
+              counterObserver.disconnect();
+
+            }
 
           }
-
-        });
+        );
 
       },
       {
