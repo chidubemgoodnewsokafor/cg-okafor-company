@@ -5,43 +5,291 @@
 
 
 /* =========================================================
-   MOBILE MENU
+   FULL-SCREEN NAVIGATION
    ========================================================= */
 
-const menuButton = document.querySelector(".menu-button");
-const mainNav = document.querySelector(".main-nav");
+const menuButton =
+  document.querySelector(".menu-button");
 
-if (menuButton && mainNav) {
+const mainNav =
+  document.querySelector(".main-nav");
 
-  menuButton.addEventListener("click", () => {
+const navClose =
+  document.querySelector(".nav-close");
 
-    const isOpen =
-      mainNav.classList.toggle("open");
+const navBack =
+  document.querySelector(".nav-back");
 
-    menuButton.setAttribute(
-      "aria-expanded",
-      isOpen ? "true" : "false"
+const navPanels =
+  document.querySelectorAll(".nav-panel");
+
+const navParents =
+  document.querySelectorAll(".nav-parent");
+
+
+let navigationHistory = ["main"];
+
+
+/* =========================================================
+   SHOW NAVIGATION PANEL
+   ========================================================= */
+
+function showNavPanel(panelName) {
+
+  navPanels.forEach(panel => {
+
+    panel.classList.toggle(
+      "nav-panel-active",
+      panel.dataset.panel === panelName
     );
 
   });
 
 
-  mainNav.querySelectorAll("a").forEach(link => {
+  const isMain =
+    panelName === "main";
 
-    link.addEventListener("click", () => {
 
-      mainNav.classList.remove("open");
+  if (navBack) {
 
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
+    navBack.classList.toggle(
+      "visible",
+      !isMain
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   OPEN NAVIGATION
+   ========================================================= */
+
+function openNavigation() {
+
+  if (!mainNav || !menuButton) return;
+
+
+  navigationHistory = ["main"];
+
+
+  showNavPanel("main");
+
+
+  mainNav.classList.add("open");
+
+  mainNav.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  menuButton.classList.add(
+    "menu-hidden"
+  );
+
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+
+
+  document.body.classList.add(
+    "nav-is-open"
+  );
+
+}
+
+
+/* =========================================================
+   CLOSE NAVIGATION
+   ========================================================= */
+
+function closeNavigation() {
+
+  if (!mainNav || !menuButton) return;
+
+
+  mainNav.classList.remove("open");
+
+  mainNav.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  menuButton.classList.remove(
+    "menu-hidden"
+  );
+
+
+  menuButton.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+
+  document.body.classList.remove(
+    "nav-is-open"
+  );
+
+
+  navigationHistory = ["main"];
+
+
+  showNavPanel("main");
+
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+if (menuButton && mainNav) {
+
+  menuButton.addEventListener(
+    "click",
+    openNavigation
+  );
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+if (navClose) {
+
+  navClose.addEventListener(
+    "click",
+    closeNavigation
+  );
+
+}
+
+
+/* =========================================================
+   NAVIGATION PARENT BUTTONS
+   ========================================================= */
+
+navParents.forEach(button => {
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      const target =
+        button.dataset.target;
+
+
+      if (!target) return;
+
+
+      navigationHistory.push(
+        target
+      );
+
+
+      showNavPanel(
+        target
+      );
+
+    }
+  );
+
+});
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+if (navBack) {
+
+  navBack.addEventListener(
+    "click",
+    () => {
+
+      if (
+        navigationHistory.length <= 1
+      ) {
+
+        showNavPanel("main");
+
+        return;
+
+      }
+
+
+      navigationHistory.pop();
+
+
+      const previousPanel =
+        navigationHistory[
+          navigationHistory.length - 1
+        ];
+
+
+      showNavPanel(
+        previousPanel
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   CLOSE NAVIGATION WHEN A PAGE LINK IS CLICKED
+   ========================================================= */
+
+if (mainNav) {
+
+  mainNav
+    .querySelectorAll(
+      "a.nav-link"
+    )
+    .forEach(link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          closeNavigation();
+
+        }
       );
 
     });
 
-  });
-
 }
+
+
+/* =========================================================
+   ESCAPE KEY CLOSES NAVIGATION
+   ========================================================= */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape" &&
+      mainNav &&
+      mainNav.classList.contains("open")
+    ) {
+
+      closeNavigation();
+
+    }
+
+  }
+);
 
 
 /* =========================================================
@@ -50,12 +298,32 @@ if (menuButton && mainNav) {
 
 if (menuButton) {
 
-  let lastScrollY = window.scrollY;
+  let lastScrollY =
+    window.scrollY;
 
 
   function updateMenuState() {
 
-    const currentScrollY = window.scrollY;
+    /*
+      Do not change the menu while
+      the full-screen navigation is open.
+    */
+
+    if (
+      mainNav &&
+      mainNav.classList.contains("open")
+    ) {
+
+      lastScrollY =
+        window.scrollY;
+
+      return;
+
+    }
+
+
+    const currentScrollY =
+      window.scrollY;
 
 
     /*
@@ -65,9 +333,14 @@ if (menuButton) {
       Food for all
     */
 
-    if (currentScrollY > lastScrollY) {
+    if (
+      currentScrollY >
+      lastScrollY
+    ) {
 
-      menuButton.classList.add("scrolled");
+      menuButton.classList.add(
+        "scrolled"
+      );
 
     }
 
@@ -77,9 +350,14 @@ if (menuButton) {
       Immediately return to MENU
     */
 
-    else if (currentScrollY < lastScrollY) {
+    else if (
+      currentScrollY <
+      lastScrollY
+    ) {
 
-      menuButton.classList.remove("scrolled");
+      menuButton.classList.remove(
+        "scrolled"
+      );
 
     }
 
@@ -89,7 +367,8 @@ if (menuButton) {
       keep whatever state is currently visible.
     */
 
-    lastScrollY = currentScrollY;
+    lastScrollY =
+      currentScrollY;
 
   }
 
@@ -288,10 +567,14 @@ showSlide(0);
    ========================================================= */
 
 const counterSection =
-  document.querySelector(".company-numbers");
+  document.querySelector(
+    ".company-numbers"
+  );
 
 const counters =
-  document.querySelectorAll(".counter");
+  document.querySelectorAll(
+    ".counter"
+  );
 
 
 let countersStarted = false;
@@ -307,7 +590,9 @@ function startCounters() {
   counters.forEach(counter => {
 
     const target =
-      Number(counter.dataset.target);
+      Number(
+        counter.dataset.target
+      );
 
     const suffix =
       counter.dataset.suffix || "";
@@ -319,10 +604,13 @@ function startCounters() {
       performance.now();
 
 
-    function updateCounter(currentTime) {
+    function updateCounter(
+      currentTime
+    ) {
 
       const elapsed =
-        currentTime - startTime;
+        currentTime -
+        startTime;
 
 
       const progress =
@@ -342,7 +630,8 @@ function startCounters() {
 
       const currentValue =
         Math.floor(
-          target * easedProgress
+          target *
+          easedProgress
         );
 
 
@@ -351,7 +640,9 @@ function startCounters() {
         suffix;
 
 
-      if (progress < 1) {
+      if (
+        progress < 1
+      ) {
 
         requestAnimationFrame(
           updateCounter
@@ -391,7 +682,9 @@ if (counterSection) {
 
         entries.forEach(entry => {
 
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting
+          ) {
 
             startCounters();
 
