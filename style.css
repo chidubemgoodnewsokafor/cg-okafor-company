@@ -121,7 +121,20 @@ FLOATING MENU
   transition:
     width 0.3s ease,
     background 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+
+/* =========================================================
+HIDE MENU WHILE NAVIGATION IS OPEN
+========================================================= */
+
+.menu-button.menu-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 
@@ -259,83 +272,466 @@ SCROLLED MENU STATE
 
 
 /* =========================================================
-NAVIGATION
+FULL-SCREEN NAVIGATION
 ========================================================= */
 
 .main-nav {
   position: fixed;
 
-  left: 50%;
-  bottom: 98px;
+  inset: 0;
 
-  transform: translateX(-50%);
+  width: 100%;
+  height: 100svh;
+
+  display: none;
+
+  flex-direction: column;
+
+  background: var(--white);
 
   z-index: 2147483646;
 
-  display: none;
+  overflow: hidden;
 
-  width: min(420px, 88%);
+  opacity: 0;
 
-  padding: 25px;
+  visibility: hidden;
 
-  flex-direction: column;
-  align-items: center;
+  pointer-events: none;
 
-  gap: 18px;
-
-  border-radius: 30px;
-
-  background: rgba(255,255,255,0.97);
-
-  box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
+
 
 .main-nav.open {
   display: flex;
+
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
 }
 
-.main-nav a {
+
+/* =========================================================
+NAVIGATION HEADER
+========================================================= */
+
+.nav-header {
   position: relative;
 
-  font-size: 14px;
-  font-weight: 700;
+  width: 100%;
 
-  color: var(--dark-teal);
+  height: 125px;
+
+  flex: 0 0 125px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid var(--line);
 }
 
-.main-nav a::after {
-  content: "";
 
+/* =========================================================
+NAVIGATION LOGO
+========================================================= */
+
+.nav-logo {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo img {
+  width: 105px;
+  height: 105px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================================================
+NAVIGATION CLOSE
+========================================================= */
+
+.nav-close {
   position: absolute;
 
-  left: 0;
-  bottom: -5px;
+  top: 50%;
+  right: 35px;
 
-  width: 0;
-  height: 2px;
+  transform: translateY(-50%);
 
-  background: var(--teal);
+  width: 52px;
+  height: 52px;
 
-  transition: width 0.25s ease;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--dark-teal);
+
+  cursor: pointer;
+
+  font-size: 38px;
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.main-nav a:hover::after {
-  width: 100%;
+.nav-close:hover {
+  background: var(--soft);
+
+  transform:
+    translateY(-50%)
+    rotate(90deg);
 }
 
-.nav-careers {
-  padding: 10px 18px;
 
-  border-radius: 30px;
+/* =========================================================
+NAVIGATION BACK
+========================================================= */
 
-  background: var(--dark-teal);
+.nav-back {
+  position: absolute;
 
-  color: var(--white) !important;
-}
+  top: 50%;
+  left: 35px;
 
-.nav-careers::after {
+  transform: translateY(-50%);
+
+  width: 52px;
+  height: 52px;
+
   display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--dark-teal);
+
+  cursor: pointer;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
+
+.nav-back.visible {
+  display: flex;
+}
+
+.nav-back:hover {
+  background: var(--soft);
+
+  transform:
+    translateY(-50%)
+    translateX(-3px);
+}
+
+
+/* =========================================================
+NAVIGATION PANELS
+========================================================= */
+
+.nav-panel {
+  flex: 1;
+
+  width: 100%;
+
+  min-height: 0;
+
+  display: none;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    var(--line)
+    transparent;
+}
+
+.nav-panel.nav-panel-active {
+  display: block;
+}
+
+
+.nav-panel-inner {
+  width: min(920px, 88%);
+
+  margin: 0 auto;
+
+  padding: 55px 0 140px;
+}
+
+
+/* =========================================================
+NAVIGATION SECTION TITLE
+========================================================= */
+
+.nav-section-title {
+  margin-bottom: 35px;
+
+  color: var(--teal);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+NAVIGATION ITEMS
+========================================================= */
+
+.nav-item {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 18px 0;
+
+  border: 0;
+
+  border-bottom: 1px solid var(--line);
+
+  background: transparent;
+
+  color: var(--dark-teal);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-size: clamp(24px, 3vw, 38px);
+
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.25s ease;
+}
+
+
+.nav-item:hover {
+  color: var(--teal);
+
+  padding-left: 10px;
+}
+
+
+.nav-item.nav-parent {
+  font-family: inherit;
+}
+
+
+.nav-item.nav-link {
+  text-decoration: none;
+}
+
+
+.nav-arrow {
+  flex: 0 0 auto;
+
+  margin-left: 25px;
+
+  color: var(--teal);
+
+  font-size: 28px;
+
+  font-weight: 400;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.nav-item:hover .nav-arrow {
+  transform: translateX(7px);
+}
+
+
+/* =========================================================
+NAVIGATION DIVIDER
+========================================================= */
+
+.nav-divider {
+  width: 100%;
+
+  height: 35px;
+}
+
+
+/* =========================================================
+BODY LOCK WHEN NAVIGATION IS OPEN
+========================================================= */
+
+body.nav-is-open {
+  overflow: hidden;
+}
+
+
+/* =========================================================
+RESPONSIVE NAVIGATION
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .nav-header {
+    height: 105px;
+
+    flex-basis: 105px;
+  }
+
+  .nav-logo img {
+    width: 85px;
+    height: 85px;
+  }
+
+  .nav-close {
+    right: 20px;
+
+    width: 46px;
+    height: 46px;
+
+    font-size: 34px;
+  }
+
+  .nav-back {
+    left: 20px;
+
+    width: 46px;
+    height: 46px;
+
+    font-size: 25px;
+  }
+
+  .nav-panel-inner {
+    width: 88%;
+
+    padding-top: 40px;
+
+    padding-bottom: 120px;
+  }
+
+  .nav-section-title {
+    margin-bottom: 25px;
+  }
+
+  .nav-item {
+    min-height: 62px;
+
+    font-size: clamp(21px, 5.5vw, 31px);
+  }
+
+  .nav-arrow {
+    font-size: 23px;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .nav-header {
+    height: 92px;
+
+    flex-basis: 92px;
+  }
+
+  .nav-logo img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .nav-close {
+    right: 12px;
+
+    width: 44px;
+    height: 44px;
+
+    font-size: 32px;
+  }
+
+  .nav-back {
+    left: 12px;
+
+    width: 44px;
+    height: 44px;
+
+    font-size: 23px;
+  }
+
+  .nav-panel-inner {
+    width: 90%;
+
+    padding-top: 30px;
+
+    padding-bottom: 100px;
+  }
+
+  .nav-item {
+    min-height: 58px;
+
+    padding: 16px 0;
+
+    font-size: clamp(19px, 6vw, 27px);
+  }
+
+  .nav-arrow {
+    margin-left: 15px;
+
+    font-size: 21px;
+  }
+
+}
+
 
 
 /* =========================================================
