@@ -280,39 +280,29 @@ FULL-SCREEN NAVIGATION
 
   inset: 0;
 
-  width: 100%;
-  height: 100svh;
+  z-index: 2147483646;
 
   display: none;
 
-  flex-direction: column;
+  width: 100%;
+  height: 100svh;
+
+  padding: 0;
 
   background: var(--white);
 
-  z-index: 2147483646;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-  overflow: hidden;
+  flex-direction: column;
 
-  opacity: 0;
+  transform: none;
 
-  visibility: hidden;
-
-  pointer-events: none;
-
-  transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease;
+  box-shadow: none;
 }
-
 
 .main-nav.open {
   display: flex;
-
-  opacity: 1;
-
-  visibility: visible;
-
-  pointer-events: auto;
 }
 
 
@@ -325,51 +315,30 @@ NAVIGATION HEADER
 
   width: 100%;
 
-  height: 125px;
-
-  flex: 0 0 125px;
+  min-height: 150px;
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
 }
-
-
-/* =========================================================
-NAVIGATION LOGO
-========================================================= */
 
 .nav-logo {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-logo img {
-  width: 105px;
-  height: 105px;
+  width: 125px;
+  height: 125px;
 
   object-fit: contain;
 
   display: block;
 }
 
-
-/* =========================================================
-NAVIGATION CLOSE
-========================================================= */
-
 .nav-close {
   position: absolute;
 
-  top: 50%;
+  top: 28px;
   right: 35px;
-
-  transform: translateY(-50%);
 
   width: 52px;
   height: 52px;
@@ -381,83 +350,27 @@ NAVIGATION CLOSE
 
   border: 0;
 
-  border-radius: 50%;
-
   background: transparent;
 
   color: var(--dark-teal);
 
-  cursor: pointer;
-
-  font-size: 38px;
+  font-size: 42px;
 
   font-weight: 300;
 
   line-height: 1;
 
+  cursor: pointer;
+
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .nav-close:hover {
-  background: var(--soft);
+  transform: rotate(90deg);
 
-  transform:
-    translateY(-50%)
-    rotate(90deg);
-}
-
-
-/* =========================================================
-NAVIGATION BACK
-========================================================= */
-
-.nav-back {
-  position: absolute;
-
-  top: 50%;
-  left: 35px;
-
-  transform: translateY(-50%);
-
-  width: 52px;
-  height: 52px;
-
-  display: none;
-
-  align-items: center;
-  justify-content: center;
-
-  border: 0;
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: var(--dark-teal);
-
-  cursor: pointer;
-
-  font-size: 27px;
-
-  line-height: 1;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.nav-back.visible {
-  display: flex;
-}
-
-.nav-back:hover {
-  background: var(--soft);
-
-  transform:
-    translateY(-50%)
-    translateX(-3px);
+  color: var(--teal);
 }
 
 
@@ -466,53 +379,21 @@ NAVIGATION PANELS
 ========================================================= */
 
 .nav-panel {
-  flex: 1;
-
-  width: 100%;
-
-  min-height: 0;
-
   display: none;
 
-  overflow-y: auto;
-
-  overflow-x: hidden;
-
-  scrollbar-width: thin;
-
-  scrollbar-color:
-    var(--line)
-    transparent;
-}
-
-.nav-panel.nav-panel-active {
-  display: block;
-}
-
-
-.nav-panel-inner {
-  width: min(920px, 88%);
+  width: min(900px, 88%);
 
   margin: 0 auto;
 
-  padding: 55px 0 140px;
+  padding: 35px 0 150px;
+
+  flex-direction: column;
+
+  align-items: stretch;
 }
 
-
-/* =========================================================
-NAVIGATION SECTION TITLE
-========================================================= */
-
-.nav-section-title {
-  margin-bottom: 35px;
-
-  color: var(--teal);
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
+.nav-panel.active {
+  display: flex;
 }
 
 
@@ -521,8 +402,6 @@ NAVIGATION ITEMS
 ========================================================= */
 
 .nav-item {
-  position: relative;
-
   width: 100%;
 
   min-height: 72px;
@@ -536,7 +415,6 @@ NAVIGATION ITEMS
   padding: 18px 0;
 
   border: 0;
-
   border-bottom: 1px solid var(--line);
 
   background: transparent;
@@ -545,55 +423,49 @@ NAVIGATION ITEMS
 
   text-align: left;
 
-  cursor: pointer;
-
-  font-size: clamp(24px, 3vw, 38px);
+  font-size: clamp(25px, 3vw, 42px);
 
   font-weight: 700;
 
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
+
+  cursor: pointer;
 
   transition:
     color 0.2s ease,
-    padding-left 0.25s ease;
+    padding-left 0.2s ease;
 }
-
 
 .nav-item:hover {
   color: var(--teal);
 
-  padding-left: 10px;
+  padding-left: 8px;
 }
 
-
-.nav-item.nav-parent {
-  font-family: inherit;
-}
-
-
-.nav-item.nav-link {
+.nav-direct {
   text-decoration: none;
 }
 
 
-.nav-arrow {
-  flex: 0 0 auto;
+/* =========================================================
+NAVIGATION ARROW
+========================================================= */
 
-  margin-left: 25px;
+.nav-arrow {
+  margin-left: 30px;
 
   color: var(--teal);
 
-  font-size: 28px;
+  font-size: 1.1em;
 
-  font-weight: 400;
+  font-weight: 300;
 
   transition:
-    transform 0.25s ease;
+    transform 0.2s ease;
 }
 
-
 .nav-item:hover .nav-arrow {
-  transform: translateX(7px);
+  transform: translateX(6px);
 }
 
 
@@ -604,15 +476,83 @@ NAVIGATION DIVIDER
 .nav-divider {
   width: 100%;
 
-  height: 35px;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: var(--dark-teal);
+
+  opacity: 0.25;
 }
 
 
 /* =========================================================
-BODY LOCK WHEN NAVIGATION IS OPEN
+BACK BUTTON
 ========================================================= */
 
-body.nav-is-open {
+.nav-back {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+
+  padding: 8px 0 22px;
+
+  border: 0;
+
+  border-bottom: 1px solid var(--line);
+
+  background: transparent;
+
+  color: var(--teal);
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+}
+
+.nav-back span:first-child {
+  font-size: 25px;
+
+  font-weight: 300;
+
+  line-height: 1;
+}
+
+.nav-back:hover {
+  color: var(--dark-teal);
+}
+
+
+/* =========================================================
+MENU BUTTON — HIDDEN WHEN NAVIGATION IS OPEN
+========================================================= */
+
+body.nav-open .menu-button {
+  visibility: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+PREVENT PAGE SCROLL WHEN NAVIGATION IS OPEN
+========================================================= */
+
+body.nav-open {
   overflow: hidden;
 }
 
