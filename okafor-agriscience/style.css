@@ -18,15 +18,15 @@ OKAFOR AGRISCIENCE
 RESET
 ========================================================= */
 
-{
+* {
 box-sizing: border-box;
 margin: 0;
 padding: 0;
 }
 
-
 html {
 scroll-behavior: smooth;
+width: 100%;
 }
 
 body {
@@ -34,6 +34,7 @@ font-family: Arial, Helvetica, sans-serif;
 color: var(--dark-teal);
 background: var(--white);
 overflow-x: hidden;
+width: 100%;
 }
 
 a {
@@ -71,7 +72,7 @@ align-items: center;
 }
 
 .brand img {
-width: 180px;
+width: 210px;
 height: auto;
 max-height: 65px;
 display: block;
@@ -391,8 +392,8 @@ align-items: center;
 }
 
 .nav-brand img {
-width: 150px;
-max-height: 65px;
+width: 200px;
+max-height: 80px;
 object-fit: contain;
 }
 
@@ -728,7 +729,7 @@ padding: 13px 17px;
 }
 
 .brand img {
-width: 180px;
+width: 210px;
 max-height: 65px;
 }
 
