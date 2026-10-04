@@ -217,68 +217,319 @@ button {
 }
 
 
-/* =========================================================
-   PROGRESSIVE NAV PANELS
+ /* =========================================================
+   PROGRESSIVE NAVIGATION
    ========================================================= */
 
-.nav-panel {
-  position: absolute;
-  inset: 30px 7vw 70px;
-  padding-left: 0;
-  background: var(--dark-teal);
-  overflow-y: auto;
-  transform: translateX(105%);
-  transition: transform 0.3s ease;
-  z-index: 2;
+.main-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  /* WHITE NAVIGATION */
+  background: var(--white);
+  color: var(--dark-teal);
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
 }
 
-.nav-item.active > .nav-panel {
-  transform: translateX(0);
+.main-nav.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.nav-panel .nav-back {
-  display: block;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.65);
-  padding: 0 0 28px;
-  text-align: left;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-}
 
-.nav-panel > a,
-.nav-panel > .nested > .nav-parent {
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-  padding: 17px 0;
-  background: transparent;
-  color: var(--white);
+/* ---------------------------------------------------------
+   NAV TOP
+   --------------------------------------------------------- */
+
+.nav-top {
+  height: 90px;
+  padding: 18px 28px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-align: left;
-  font-size: clamp(18px, 2.5vw, 28px);
+
+  background: var(--white);
+}
+
+.nav-logo img {
+  width: 150px;
+  max-height: 54px;
+  object-fit: contain;
+}
+
+.nav-close {
+  width: 54px;
+  height: 54px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: var(--dark-teal);
+  color: var(--white);
+
+  font-size: 34px;
+  line-height: 1;
+
   cursor: pointer;
 }
 
-.nav-panel > .nested {
+
+/* ---------------------------------------------------------
+   NAV CONTENT
+   --------------------------------------------------------- */
+
+.nav-content {
+  position: relative;
+
+  height: calc(100vh - 90px);
+
+  padding: 30px 7vw 70px;
+
+  overflow: hidden;
+
+  background: var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   NAV ITEMS
+   --------------------------------------------------------- */
+
+.nav-item {
   position: static;
 }
 
-.nav-panel > .nested > .nav-panel {
-  inset: 30px 7vw 70px;
+
+/* ---------------------------------------------------------
+   FIRST LEVEL
+   --------------------------------------------------------- */
+
+.nav-parent,
+.nav-direct {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 1px solid var(--line);
+
+  background: transparent;
+  color: var(--dark-teal);
+
+  padding: 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: left;
+
+  font-size: clamp(21px, 3vw, 36px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+
+  cursor: pointer;
+}
+
+.nav-parent span {
+  font-size: 1.4em;
+  font-weight: 300;
+}
+
+.nav-direct {
+  display: flex;
+}
+
+.dealer-link {
+  color: var(--red);
+}
+
+
+/* ---------------------------------------------------------
+   EVERY PANEL IS A SEPARATE FULL LAYER
+   --------------------------------------------------------- */
+
+.nav-panel {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 30px 7vw 70px;
+
+  background: var(--white);
+  color: var(--dark-teal);
+
+  overflow-y: auto;
+
+  /*
+    IMPORTANT:
+    Hidden panels are completely invisible and
+    cannot sit underneath another panel.
+  */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateX(105%);
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease,
+    visibility 0.3s ease;
+
+  z-index: 10;
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE PANEL
+   --------------------------------------------------------- */
+
+.nav-item.active > .nav-panel {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  z-index: 20;
+}
+
+
+/* ---------------------------------------------------------
+   NESTED PANELS
+   --------------------------------------------------------- */
+
+.nav-panel .nav-item {
+  position: static;
+}
+
+
+/*
+  Every nested panel uses exactly the same screen-sized
+  layer. It therefore completely covers the previous level.
+*/
+
+.nav-panel .nav-item > .nav-panel {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 30px 7vw 70px;
+
+  z-index: 30;
+}
+
+
+/* ---------------------------------------------------------
+   BACK BUTTON
+   --------------------------------------------------------- */
+
+.nav-panel .nav-back {
+  display: block;
+
+  width: 100%;
+
+  border: 0;
+  background: transparent;
+  color: rgba(7, 69, 64, 0.55);
+
+  padding: 0 0 28px;
+
+  text-align: left;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   PANEL LINKS
+   --------------------------------------------------------- */
+
+.nav-panel > a,
+.nav-panel > .nav-item > .nav-parent {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 1px solid var(--line);
+
+  padding: 17px 0;
+
+  background: transparent;
+  color: var(--dark-teal);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-align: left;
+
+  font-size: clamp(18px, 2.5vw, 28px);
+
+  cursor: pointer;
 }
 
 .nav-panel > a:hover,
-.nav-panel > .nested > .nav-parent:hover {
-  color: var(--yellow);
+.nav-panel > .nav-item > .nav-parent:hover {
+  color: var(--teal);
 }
 
+
+/* ---------------------------------------------------------
+   BRAND LEVEL
+   --------------------------------------------------------- */
+
+.nav-brand {
+  width: 100%;
+
+  padding: 15px 0 25px;
+
+  border-bottom: 1px solid var(--line);
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand img {
+  width: 150px;
+  max-height: 65px;
+  object-fit: contain;
+}
+
+.nav-brand-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--dark-teal);
+}
+
+
+/* ---------------------------------------------------------
+   CATALOGUE LINKS
+   --------------------------------------------------------- */
+
+.catalogue-link {
+  font-weight: 600;
+}
+
+.catalogue-link span {
+  font-size: 0.65em;
+  color: var(--teal);
+}
 
 /* =========================================================
    HERO
@@ -609,9 +860,21 @@ button {
     min-height: 48px;
   }
 
+  @media (max-width: 800px) {
+
   .nav-top {
     height: 75px;
     padding: 13px 17px;
+  }
+
+  .nav-content {
+    height: calc(100vh - 75px);
+    padding: 20px 22px 50px;
+  }
+
+  .nav-panel,
+  .nav-panel .nav-item > .nav-panel {
+    padding: 20px 22px 50px;
   }
 
   .nav-close {
@@ -619,14 +882,7 @@ button {
     height: 48px;
   }
 
-  .nav-content {
-    padding: 20px 22px 50px;
-  }
-
-  .nav-panel,
-  .nav-panel > .nested > .nav-panel {
-    inset: 20px 22px 50px;
-  }
+}
 
   .hero-content {
     padding: 0 22px 70px;
