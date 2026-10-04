@@ -1,142 +1,115 @@
-/* =========================================
-   OKAFOR AGRISCIENCE MENU
-========================================= */
+/* =========================================================
+   OKAFOR AGRISCIENCE NAVIGATION
+   ========================================================= */
 
-const menuTrigger = document.getElementById("menuTrigger");
+const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
 const navClose = document.getElementById("navClose");
 
+const navItems = document.querySelectorAll(".nav-item");
+
+
+// ---------------------------------------------------------
+// OPEN MENU
+// ---------------------------------------------------------
+
 function openMenu() {
   mainNav.classList.add("open");
-  menuTrigger.classList.add("active");
-  menuTrigger.setAttribute("aria-label", "Close menu");
   document.body.classList.add("menu-open");
+  menuButton.setAttribute("aria-expanded", "true");
 }
+
+
+// ---------------------------------------------------------
+// CLOSE MENU
+// ---------------------------------------------------------
 
 function closeMenu() {
   mainNav.classList.remove("open");
-  menuTrigger.classList.remove("active");
-  menuTrigger.setAttribute("aria-label", "Open menu");
   document.body.classList.remove("menu-open");
+  menuButton.setAttribute("aria-expanded", "false");
+
+  // Close every navigation level
+  navItems.forEach(item => {
+    item.classList.remove("active");
+  });
 }
 
-menuTrigger.addEventListener("click", function () {
-  if (mainNav.classList.contains("open")) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
-});
+
+// ---------------------------------------------------------
+// MENU BUTTON
+// ---------------------------------------------------------
+
+menuButton.addEventListener("click", openMenu);
 
 navClose.addEventListener("click", closeMenu);
 
 
-/* Close when a menu link is selected */
+// ---------------------------------------------------------
+// OPEN A NAVIGATION LEVEL
+// ---------------------------------------------------------
 
-document.querySelectorAll(".main-nav a").forEach(function (link) {
-  link.addEventListener("click", function () {
-    closeMenu();
+document.querySelectorAll(".nav-parent").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const parent = button.closest(".nav-item");
+
+    if (!parent) return;
+
+    parent.classList.add("active");
+
   });
+
 });
 
 
-/* Close with Escape */
+// ---------------------------------------------------------
+// BACK BUTTON
+// ---------------------------------------------------------
 
-document.addEventListener("keydown", function (event) {
+document.querySelectorAll(".nav-back").forEach(button => {
+
+  button.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    const panel = button.closest(".nav-panel");
+
+    if (!panel) return;
+
+    const parentItem = panel.parentElement;
+
+    if (parentItem) {
+      parentItem.classList.remove("active");
+    }
+
+  });
+
+});
+
+
+// ---------------------------------------------------------
+// ESCAPE
+// ---------------------------------------------------------
+
+document.addEventListener("keydown", event => {
+
   if (event.key === "Escape") {
     closeMenu();
   }
+
 });
 
 
-/* =========================================
-   PRODUCT CATALOGUE
-========================================= */
+// ---------------------------------------------------------
+// CLOSE WHEN DIRECT LINK IS SELECTED
+// ---------------------------------------------------------
 
-const products = [
-  {
-    name: "Crop Protection Solutions",
-    category: "crop",
-    description: "Solutions for weed, pest and disease management."
-  },
-  {
-    name: "Vegetable Seeds",
-    category: "seed",
-    description: "Seed solutions for commercial vegetable production."
-  },
-  {
-    name: "Field Seeds",
-    category: "seed",
-    description: "Seeds for important field crops."
-  },
-  {
-    name: "Poultry Health Solutions",
-    category: "animal",
-    description: "Solutions supporting healthier poultry production."
-  },
-  {
-    name: "Swine Health Solutions",
-    category: "animal",
-    description: "Solutions supporting healthier pig production."
-  },
-  {
-    name: "Farmcare Products",
-    category: "farmcare",
-    description: "Practical products and support for everyday farm needs."
-  }
-];
+document.querySelectorAll(".nav-panel a, .nav-direct").forEach(link => {
 
-const productGrid = document.getElementById("productGrid");
-const productSearch = document.getElementById("productSearch");
-const productFilter = document.getElementById("productFilter");
-
-function renderProducts() {
-
-  const searchTerm = productSearch.value.toLowerCase().trim();
-  const selectedCategory = productFilter.value;
-
-  const filteredProducts = products.filter(function (product) {
-
-    const matchesSearch =
-      product.name.toLowerCase().includes(searchTerm) ||
-      product.description.toLowerCase().includes(searchTerm);
-
-    const matchesCategory =
-      selectedCategory === "all" ||
-      product.category === selectedCategory;
-
-    return matchesSearch && matchesCategory;
+  link.addEventListener("click", () => {
+    closeMenu();
   });
 
-  productGrid.innerHTML = "";
-
-  if (filteredProducts.length === 0) {
-    productGrid.innerHTML = `
-      <div class="product-card">
-        <h3>No products found.</h3>
-        <p>Try another search or category.</p>
-      </div>
-    `;
-    return;
-  }
-
-  filteredProducts.forEach(function (product) {
-
-    const card = document.createElement("article");
-
-    card.className = "product-card";
-
-    card.innerHTML = `
-      <small>${product.category}</small>
-      <h3>${product.name}</h3>
-      <p>${product.description}</p>
-    `;
-
-    productGrid.appendChild(card);
-  });
-}
-
-productSearch.addEventListener("input", renderProducts);
-productFilter.addEventListener("change", renderProducts);
-
-renderProducts();
+});
