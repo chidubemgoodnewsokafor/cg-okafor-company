@@ -1,0 +1,1162 @@
+/* =========================================================
+   OKAFOR AGRISCIENCE
+   Main Stylesheet
+   ========================================================= */
+
+:root {
+  --yellow: #FFE500;
+  --teal: #01998E;
+  --dark-teal: #074540;
+  --red: #99010C;
+  --dark-red: #360005;
+  --white: #ffffff;
+  --black: #111111;
+  --light: #f5f7f6;
+  --border: #dfe5e3;
+  --shadow: 0 20px 50px rgba(7, 69, 64, 0.14);
+  --radius: 22px;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================================================
+   FLOATING MENU BUTTON
+   ========================================================= */
+
+.menu-button {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  width: 165px;
+  min-height: 56px;
+  padding: 8px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  background: var(--white);
+  color: var(--dark-teal);
+
+  border-radius: 999px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+
+  z-index: 2147483647;
+
+  transition:
+    width 0.35s ease,
+    box-shadow 0.25s ease;
+}
+
+.menu-button:hover {
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
+}
+
+.menu-button img {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+}
+
+.menu-icon {
+  width: 23px;
+  height: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--dark-teal);
+  border-radius: 5px;
+}
+
+.menu-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* Scrolled state */
+
+.menu-button.scrolled {
+  width: 270px;
+  justify-content: center;
+}
+
+.menu-button .scroll-message {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1.05;
+  text-align: left;
+}
+
+.menu-button.scrolled .menu-label {
+  display: none;
+}
+
+.menu-button.scrolled .scroll-message {
+  display: flex;
+}
+
+.scroll-message span:first-child {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.scroll-message span:last-child {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   FULL SCREEN NAVIGATION
+   ========================================================= */
+
+.main-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483646;
+
+  background: var(--white);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.main-nav.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-header {
+  height: 90px;
+  padding: 20px 5vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.nav-close {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--light);
+  color: var(--dark-teal);
+
+  font-size: 30px;
+  line-height: 1;
+}
+
+.nav-close:hover {
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+.nav-panel {
+  display: none;
+  height: calc(100svh - 90px);
+  overflow-y: auto;
+  padding: 55px 7vw 140px;
+}
+
+.nav-panel.active {
+  display: block;
+}
+
+.nav-title {
+  max-width: 900px;
+  margin-bottom: 35px;
+
+  color: var(--dark-teal);
+  font-size: clamp(38px, 6vw, 78px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.nav-list {
+  max-width: 1000px;
+  border-top: 1px solid var(--border);
+}
+
+.nav-item {
+  width: 100%;
+  min-height: 72px;
+  padding: 18px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--dark-teal);
+  font-size: clamp(19px, 2vw, 28px);
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.nav-item:hover {
+  color: var(--teal);
+}
+
+.nav-arrow {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.nav-back {
+  margin-bottom: 30px;
+
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  height: 100svh;
+  max-height: 920px;
+
+  background: var(--dark-teal);
+  overflow: hidden;
+}
+
+.hero-images {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.hero-image {
+  position: relative;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0.08) 40%,
+      rgba(0, 0, 0, 0.52) 100%
+    );
+}
+
+.hero-image:first-child {
+  background-image: url("farmers.jpg");
+}
+
+.hero-image:last-child {
+  background-image: url("animal-production.jpg");
+}
+
+.hero-logo {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 150px;
+  height: 150px;
+
+  object-fit: contain;
+
+  z-index: 4;
+}
+
+.hero-content {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+
+  width: min(900px, 88%);
+  text-align: center;
+
+  color: var(--white);
+  z-index: 3;
+}
+
+.hero-content h1 {
+  margin-bottom: 15px;
+
+  font-size: clamp(45px, 7vw, 92px);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  font-weight: 800;
+}
+
+.hero-content p {
+  max-width: 650px;
+  margin: 0 auto;
+
+  font-size: clamp(17px, 2vw, 23px);
+  line-height: 1.45;
+}
+
+.hero-actions {
+  margin-top: 28px;
+
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+  padding: 0 25px;
+
+  border-radius: 999px;
+
+  background: var(--yellow);
+  color: var(--dark-teal);
+
+  font-weight: 800;
+}
+
+.hero-button:hover {
+  background: var(--white);
+}
+
+.hero-button.secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.hero-button.secondary:hover {
+  background: var(--white);
+  color: var(--dark-teal);
+}
+
+/* =========================================================
+   GENERAL SECTION
+   ========================================================= */
+
+.section {
+  padding: 110px 6vw;
+}
+
+.section-heading {
+  max-width: 850px;
+  margin-bottom: 55px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  color: var(--dark-teal);
+
+  font-size: clamp(38px, 5vw, 70px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.section-heading p {
+  margin-top: 20px;
+  max-width: 680px;
+
+  color: #4b5b59;
+  font-size: 18px;
+}
+
+/* =========================================================
+   FARMER FINDER
+   ========================================================= */
+
+.farmer-finder {
+  background: var(--light);
+}
+
+.farmer-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.farmer-card {
+  position: relative;
+  min-height: 300px;
+  padding: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: var(--white);
+  border-radius: var(--radius);
+
+  overflow: hidden;
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.farmer-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 28px 60px rgba(7, 69, 64, 0.18);
+}
+
+.farmer-card h3 {
+  color: var(--dark-teal);
+  font-size: 29px;
+  line-height: 1;
+}
+
+.farmer-card p {
+  margin-top: 12px;
+  color: #566562;
+}
+
+.farmer-card a {
+  margin-top: 22px;
+
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.farmer-card.red {
+  background: var(--red);
+  color: var(--white);
+}
+
+.farmer-card.red h3,
+.farmer-card.red p,
+.farmer-card.red a {
+  color: var(--white);
+}
+
+.farmer-card.yellow {
+  background: var(--yellow);
+}
+
+.farmer-card.teal {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.farmer-card.teal h3,
+.farmer-card.teal p,
+.farmer-card.teal a {
+  color: var(--white);
+}
+
+/* =========================================================
+   SOLUTION CARDS
+   ========================================================= */
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.solution-card {
+  position: relative;
+  min-height: 390px;
+  padding: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: var(--dark-teal);
+  border-radius: var(--radius);
+
+  color: var(--white);
+  overflow: hidden;
+
+  box-shadow: var(--shadow);
+}
+
+.solution-card:nth-child(2) {
+  background: var(--teal);
+}
+
+.solution-card:nth-child(3) {
+  background: var(--red);
+}
+
+.solution-card h3 {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.solution-card p {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.solution-card a {
+  margin-top: 24px;
+  color: var(--yellow);
+  font-weight: 800;
+}
+
+/* =========================================================
+   SEEDS
+   ========================================================= */
+
+.seeds-section {
+  background: var(--light);
+}
+
+.seed-family {
+  margin-bottom: 70px;
+}
+
+.seed-family:last-child {
+  margin-bottom: 0;
+}
+
+.seed-family-header {
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.seed-family-header h3 {
+  color: var(--dark-teal);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+}
+
+.seed-family-header p {
+  max-width: 430px;
+  color: #53615f;
+}
+
+.crop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.crop-card {
+  min-height: 145px;
+  padding: 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: var(--white);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 28px rgba(7, 69, 64, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.crop-card:hover {
+  transform: translateY(-4px);
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+.crop-card strong {
+  font-size: 19px;
+}
+
+.crop-card span {
+  margin-top: 6px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.crop-card:hover span {
+  color: var(--yellow);
+}
+
+/* =========================================================
+   BRAND / SEED PARTNER
+   ========================================================= */
+
+.brand-strip {
+  margin-top: 45px;
+  padding: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  border-radius: var(--radius);
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+.brand-strip strong {
+  font-size: 27px;
+}
+
+.brand-strip p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* =========================================================
+   ANIMAL HEALTH
+   ========================================================= */
+
+.animal-health {
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+.animal-health .section-heading h2 {
+  color: var(--white);
+}
+
+.animal-health .section-heading p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.animal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.animal-card {
+  padding: 40px;
+  min-height: 390px;
+
+  background: var(--white);
+  color: var(--dark-teal);
+
+  border-radius: var(--radius);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.animal-card h3 {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.animal-card ul {
+  margin-top: 25px;
+  padding-left: 20px;
+}
+
+.animal-card li {
+  margin-bottom: 9px;
+  color: #52615f;
+}
+
+.animal-card a {
+  margin-top: 20px;
+  color: var(--red);
+  font-weight: 800;
+}
+
+/* =========================================================
+   FARMCARE
+   ========================================================= */
+
+.farmcare {
+  background: var(--yellow);
+}
+
+.farmcare-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.farmcare h2 {
+  color: var(--dark-teal);
+
+  font-size: clamp(45px, 6vw, 82px);
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+.farmcare p {
+  margin-top: 22px;
+  max-width: 650px;
+
+  color: #374d49;
+  font-size: 18px;
+}
+
+.farmcare-list {
+  padding: 35px;
+
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.farmcare-list a {
+  display: block;
+  padding: 18px 0;
+
+  border-bottom: 1px solid var(--border);
+
+  color: var(--dark-teal);
+  font-weight: 800;
+}
+
+.farmcare-list a:first-child {
+  padding-top: 0;
+}
+
+.farmcare-list a:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* =========================================================
+   PRODUCTS
+   ========================================================= */
+
+.products {
+  background: var(--white);
+}
+
+.product-search {
+  max-width: 850px;
+  margin-bottom: 45px;
+
+  display: flex;
+  gap: 10px;
+}
+
+.product-search input {
+  flex: 1;
+  min-height: 58px;
+  padding: 0 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  outline: none;
+}
+
+.product-search input:focus {
+  border-color: var(--teal);
+}
+
+.product-search button {
+  min-height: 58px;
+  padding: 0 30px;
+
+  border-radius: 999px;
+
+  background: var(--dark-teal);
+  color: var(--white);
+
+  font-weight: 800;
+}
+
+.product-search button:hover {
+  background: var(--teal);
+}
+
+.product-placeholder {
+  min-height: 250px;
+  padding: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: var(--light);
+  border-radius: var(--radius);
+
+  color: #5d6a68;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+  background: var(--red);
+  color: var(--white);
+}
+
+.contact .section-heading h2 {
+  color: var(--white);
+}
+
+.contact .section-heading p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: var(--radius);
+}
+
+.contact-card h3 {
+  margin-bottom: 10px;
+  color: var(--yellow);
+  font-size: 20px;
+}
+
+.contact-card p,
+.contact-card a {
+  color: var(--white);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  padding: 70px 6vw 110px;
+
+  background: #031f1d;
+  color: var(--white);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 50px;
+
+  padding-bottom: 55px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-logo {
+  width: 105px;
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  max-width: 400px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-column h4 {
+  margin-bottom: 20px;
+
+  color: var(--yellow);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-column a {
+  display: block;
+  margin-bottom: 10px;
+
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.footer-column a:hover {
+  color: var(--yellow);
+}
+
+.footer-bottom {
+  padding-top: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .section {
+    padding: 85px 5vw;
+  }
+
+  .farmer-cards,
+  .solution-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .crop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .farmcare-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .menu-button {
+    bottom: 18px;
+    min-height: 52px;
+    width: 150px;
+  }
+
+  .menu-button.scrolled {
+    width: 235px;
+  }
+
+  .menu-button img {
+    width: 27px;
+    height: 27px;
+  }
+
+  .nav-header {
+    height: 75px;
+    padding: 14px 5vw;
+  }
+
+  .nav-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-panel {
+    height: calc(100svh - 75px);
+    padding: 40px 6vw 110px;
+  }
+
+  .hero {
+    min-height: 720px;
+    height: 100svh;
+  }
+
+  .hero-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+  }
+
+  .hero-image:first-child {
+    background-position: center;
+  }
+
+  .hero-image:last-child {
+    background-position: center;
+  }
+
+  .hero-logo {
+    width: 105px;
+    height: 105px;
+    top: 18px;
+  }
+
+  .hero-content {
+    bottom: 85px;
+    width: 88%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(42px, 13vw, 65px);
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 70px 5vw;
+  }
+
+  .section-heading {
+    margin-bottom: 38px;
+  }
+
+  .section-heading h2 {
+    font-size: 43px;
+  }
+
+  .farmer-cards,
+  .solution-grid,
+  .animal-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .farmer-card {
+    min-height: 260px;
+  }
+
+  .solution-card {
+    min-height: 310px;
+  }
+
+  .crop-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .crop-card {
+    min-height: 125px;
+    padding: 18px;
+  }
+
+  .seed-family-header {
+    display: block;
+  }
+
+  .seed-family-header p {
+    margin-top: 12px;
+  }
+
+  .animal-card {
+    min-height: 320px;
+    padding: 30px;
+  }
+
+  .animal-card h3 {
+    font-size: 35px;
+  }
+
+  .brand-strip {
+    display: block;
+  }
+
+  .brand-strip p {
+    margin-top: 10px;
+  }
