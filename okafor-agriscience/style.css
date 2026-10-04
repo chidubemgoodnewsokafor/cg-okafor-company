@@ -18,11 +18,12 @@ OKAFOR AGRISCIENCE
 RESET
 ========================================================= */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  }
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
 
 html {
 scroll-behavior: smooth;
@@ -70,7 +71,7 @@ align-items: center;
 }
 
 .brand img {
-width: 210px;
+width: 180px;
 height: auto;
 max-height: 65px;
 display: block;
@@ -390,8 +391,8 @@ align-items: center;
 }
 
 .nav-brand img {
-width: 200px;
-max-height: 80px;
+width: 150px;
+max-height: 65px;
 object-fit: contain;
 }
 
@@ -691,4 +692,127 @@ gap: 13px;
 }
 
 .footer-column h3 {
-font-size: 
+font-size: 12px;
+letter-spacing: 0.1em;
+margin-bottom: 10px;
+}
+
+.footer-column a {
+color: rgba(255,255,255,0.72);
+font-size: 14px;
+}
+
+.footer-column a:hover {
+color: var(--yellow);
+}
+
+.footer-bottom {
+border-top: 1px solid rgba(255,255,255,0.15);
+padding-top: 22px;
+display: flex;
+justify-content: space-between;
+gap: 20px;
+color: rgba(255,255,255,0.5);
+font-size: 11px;
+}
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+.site-header {
+height: 88px;
+padding: 13px 17px;
+}
+
+.brand img {
+width: 180px;
+max-height: 65px;
+}
+
+.nav-logo img {
+width: 180px;
+max-height: 65px;
+}
+
+.menu-button {
+min-width: 105px;
+min-height: 48px;
+}
+
+.nav-top {
+height: 75px;
+padding: 13px 17px;
+}
+
+.nav-content {
+height: calc(100vh - 75px);
+padding: 20px 22px 50px;
+}
+
+.nav-panel,
+.nav-panel .nav-item > .nav-panel {
+padding: 20px 22px 50px;
+}
+
+.nav-close {
+width: 48px;
+height: 48px;
+}
+
+.hero-content {
+padding: 0 22px 70px;
+}
+
+.hero h1 {
+font-size: clamp(48px, 16vw, 75px);
+}
+
+.hero-copy {
+font-size: 16px;
+}
+
+.section {
+padding: 80px 22px;
+}
+
+.intro {
+grid-template-columns: 1fr;
+gap: 25px;
+}
+
+.feature-grid {
+grid-template-columns: 1fr;
+}
+
+.farmcare-section {
+padding: 80px 22px;
+}
+
+.footer-top {
+grid-template-columns: 1fr 1fr;
+gap: 45px 25px;
+}
+
+.footer-brand {
+grid-column: 1 / -1;
+}
+
+.footer-bottom {
+flex-direction: column;
+}
+
+}
+
+/* =========================================================
+FOOTER / BRAND LOGO
+========================================================= */
+
+.brand-logo {
+width: 110px;
+height: auto;
+display: block;
+object-fit: contain;
+}
