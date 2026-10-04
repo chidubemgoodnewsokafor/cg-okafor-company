@@ -76,7 +76,7 @@ align-items: center;
 }
 
 .brand img {
-width: 230px;
+width: 210px;
 height: auto;
 display: block;
 object-fit: contain;
@@ -395,7 +395,7 @@ align-items: center;
 }
 
 .nav-brand img {
-width: 240px;
+width: 250px;
 max-height: 80px;
 object-fit: contain;
 }
@@ -732,7 +732,7 @@ padding: 13px 17px;
 }
 
 .brand img {
-width: 230px;
+width: 210px;
 display: block;
 object-fit: contain;
 }
