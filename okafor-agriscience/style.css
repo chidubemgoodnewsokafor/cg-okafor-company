@@ -76,7 +76,7 @@ align-items: center;
 }
 
 .brand img {
-width: 200px;
+width: 180px;
 height: auto;
 display: block;
 object-fit: contain;
@@ -732,7 +732,7 @@ padding: 13px 17px;
 }
 
 .brand img {
-width: 200px;
+width: 180px;
 display: block;
 object-fit: contain;
 }
