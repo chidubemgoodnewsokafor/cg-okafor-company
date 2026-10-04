@@ -6,8 +6,6 @@ const menuButton = document.getElementById("menuButton");
 const mainNav = document.getElementById("mainNav");
 const navClose = document.getElementById("navClose");
 
-const navItems = document.querySelectorAll(".nav-item");
-
 
 // ---------------------------------------------------------
 // OPEN MENU
@@ -29,8 +27,8 @@ function closeMenu() {
   document.body.classList.remove("menu-open");
   menuButton.setAttribute("aria-expanded", "false");
 
-  // Close every navigation level
-  navItems.forEach(item => {
+  // Completely reset every navigation level
+  document.querySelectorAll(".nav-item.active").forEach(item => {
     item.classList.remove("active");
   });
 }
@@ -46,16 +44,37 @@ navClose.addEventListener("click", closeMenu);
 
 
 // ---------------------------------------------------------
-// OPEN A NAVIGATION LEVEL
+// OPEN NAVIGATION LEVEL
 // ---------------------------------------------------------
 
 document.querySelectorAll(".nav-parent").forEach(button => {
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", function () {
 
-    const parent = button.closest(".nav-item");
+    const parent = this.closest(".nav-item");
 
     if (!parent) return;
+
+    /*
+      Close other navigation items on the SAME level.
+
+      This is the important fix:
+      Vegetable Seeds and Field Seeds can never
+      remain open at the same time.
+    */
+    const parentContainer = parent.parentElement;
+
+    if (parentContainer) {
+      parentContainer.querySelectorAll(":scope > .nav-item.active").forEach(item => {
+        if (item !== parent) {
+          item.classList.remove("active");
+
+          item.querySelectorAll(".nav-item.active").forEach(child => {
+            child.classList.remove("active");
+          });
+        }
+      });
+    }
 
     parent.classList.add("active");
 
@@ -70,19 +89,24 @@ document.querySelectorAll(".nav-parent").forEach(button => {
 
 document.querySelectorAll(".nav-back").forEach(button => {
 
-  button.addEventListener("click", (event) => {
+  button.addEventListener("click", function (event) {
 
     event.stopPropagation();
 
-    const panel = button.closest(".nav-panel");
+    const panel = this.closest(".nav-panel");
 
     if (!panel) return;
 
-    const parentItem = panel.parentElement;
+    const parentItem = panel.closest(".nav-item");
 
-    if (parentItem) {
-      parentItem.classList.remove("active");
-    }
+    if (!parentItem) return;
+
+    parentItem.classList.remove("active");
+
+    // Also reset anything deeper inside that level
+    parentItem.querySelectorAll(".nav-item.active").forEach(item => {
+      item.classList.remove("active");
+    });
 
   });
 
@@ -103,13 +127,11 @@ document.addEventListener("keydown", event => {
 
 
 // ---------------------------------------------------------
-// CLOSE WHEN DIRECT LINK IS SELECTED
+// CLOSE AFTER DIRECT LINK
 // ---------------------------------------------------------
 
 document.querySelectorAll(".nav-panel a, .nav-direct").forEach(link => {
 
-  link.addEventListener("click", () => {
-    closeMenu();
-  });
+  link.addEventListener("click", closeMenu);
 
 });
