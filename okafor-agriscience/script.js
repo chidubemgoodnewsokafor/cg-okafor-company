@@ -1,1558 +1,492 @@
 /* =========================================================
    OKAFOR AGRISCIENCE
-   Marketing Website
+   script.js
    ========================================================= */
 
-:root {
-  --yellow: #ffe500;
-  --teal: #01998e;
-  --dark-teal: #074540;
-  --red: #99010c;
-  --dark-red: #360005;
-
-  --white: #ffffff;
-  --black: #111111;
-  --soft: #f4f7f6;
-  --soft-teal: #e8f2f0;
-  --line: #dce6e3;
+document.addEventListener("DOMContentLoaded", () => {
 
-  --max-width: 1280px;
-  --radius: 28px;
-}
+  /* =======================================================
+     MENU
+     ======================================================= */
 
+  const menuTrigger = document.getElementById("menuTrigger");
+  const megaMenu = document.getElementById("megaMenu");
+  const menuClose = document.getElementById("menuClose");
 
-/* =========================================================
-   RESET
-   ========================================================= */
+  function openMenu() {
+    if (!megaMenu || !menuTrigger) return;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    megaMenu.classList.add("open");
+    megaMenu.setAttribute("aria-hidden", "false");
 
-html {
-  scroll-behavior: smooth;
-  width: 100%;
-  overflow-x: hidden;
-}
+    menuTrigger.classList.add("active");
+    menuTrigger.setAttribute("aria-expanded", "true");
 
-body {
-  width: 100%;
-  overflow-x: hidden;
+    document.body.classList.add("menu-open");
+  }
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  function closeMenu() {
+    if (!megaMenu || !menuTrigger) return;
 
-  color: var(--black);
-  background: var(--white);
+    megaMenu.classList.remove("open");
+    megaMenu.setAttribute("aria-hidden", "true");
 
-  line-height: 1.5;
-}
+    menuTrigger.classList.remove("active");
+    menuTrigger.setAttribute("aria-expanded", "false");
 
-img {
-  max-width: 100%;
-}
+    document.body.classList.remove("menu-open");
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  if (menuTrigger) {
+    menuTrigger.addEventListener("click", () => {
 
-button,
-input,
-select {
-  font: inherit;
-}
+      if (megaMenu.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
 
+    });
+  }
 
-/* =========================================================
-   GENERAL
-   ========================================================= */
+  if (menuClose) {
+    menuClose.addEventListener("click", closeMenu);
+  }
 
-.container {
-  width: min(var(--max-width), 90%);
-  margin: 0 auto;
-}
 
-.section {
-  padding: 110px 0;
-}
+  /* =======================================================
+     CLOSE MENU WHEN A NAVIGATION LINK IS CLICKED
+     ======================================================= */
 
-.eyebrow {
-  margin-bottom: 14px;
+  if (megaMenu) {
 
-  color: var(--teal);
+    const menuLinks = megaMenu.querySelectorAll("a");
+
+    menuLinks.forEach(link => {
+
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+
+    });
+
+  }
+
+
+  /* =======================================================
+     ESCAPE KEY CLOSES MENU
+     ======================================================= */
+
+  document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+
+  });
+
+
+  /* =======================================================
+     PRODUCT DATA
+     ======================================================= */
+
+  const products = [
+
+    {
+      name: "Okafor Crop Protection",
+      category: "Crop Protection",
+      crop: "Multiple Crops",
+      description:
+        "Crop protection solutions for weed, pest and disease management."
+    },
+
+    {
+      name: "IDEGRO Watermelon",
+      category: "Seeds",
+      crop: "Watermelon",
+      description:
+        "Vegetable seed solution for watermelon production."
+    },
+
+    {
+      name: "IDEGRO Cucumber",
+      category: "Seeds",
+      crop: "Cucumber",
+      description:
+        "Vegetable seed solution for cucumber production."
+    },
+
+    {
+      name: "IDEGRO Tomato",
+      category: "Seeds",
+      crop: "Tomato",
+      description:
+        "Vegetable seed solution for tomato production."
+    },
+
+    {
+      name: "IDEGRO Pepper",
+      category: "Seeds",
+      crop: "Pepper",
+      description:
+        "Vegetable seed solution for pepper production."
+    },
+
+    {
+      name: "IDEGRO Cabbage",
+      category: "Seeds",
+      crop: "Cabbage",
+      description:
+        "Vegetable seed solution for cabbage production."
+    },
+
+    {
+      name: "DUGROW Corn",
+      category: "Seeds",
+      crop: "Corn",
+      description:
+        "Field seed solution for corn production."
+    },
+
+    {
+      name: "DUGROW Soybean",
+      category: "Seeds",
+      crop: "Soybean",
+      description:
+        "Field seed solution for soybean production."
+    },
+
+    {
+      name: "DUGROW Groundnut",
+      category: "Seeds",
+      crop: "Groundnut",
+      description:
+        "Field seed solution for groundnut production."
+    },
+
+    {
+      name: "DUGROW Rice",
+      category: "Seeds",
+      crop: "Rice",
+      description:
+        "Field seed solution for rice production."
+    },
+
+    {
+      name: "DUGROW Wheat",
+      category: "Seeds",
+      crop: "Wheat",
+      description:
+        "Field seed solution for wheat production."
+    },
+
+    {
+      name: "Poultry Respiratory Care",
+      category: "Animal Health",
+      crop: "Poultry",
+      description:
+        "Solutions supporting poultry affected by respiratory problems."
+    },
+
+    {
+      name: "Poultry Coccidiosis Care",
+      category: "Animal Health",
+      crop: "Poultry",
+      description:
+        "Solutions supporting poultry health and coccidiosis management."
+    },
+
+    {
+      name: "Poultry Parasite Care",
+      category: "Animal Health",
+      crop: "Poultry",
+      description:
+        "Solutions for worms and parasites in poultry production."
+    },
+
+    {
+      name: "Poultry Heat Stress Support",
+      category: "Animal Health",
+      crop: "Poultry",
+      description:
+        "Support solutions for heat stress and dehydration."
+    },
+
+    {
+      name: "Swine Respiratory Care",
+      category: "Animal Health",
+      crop: "Swine",
+      description:
+        "Solutions supporting respiratory health in pigs."
+    },
+
+    {
+      name: "Swine Piglet Care",
+      category: "Animal Health",
+      crop: "Swine",
+      description:
+        "Solutions supporting piglet and grower health."
+    },
+
+    {
+      name: "Swine Parasite Care",
+      category: "Animal Health",
+      crop: "Swine",
+      description:
+        "Solutions for worms and parasites in swine production."
+    }
+
+  ];
+
+
+  /* =======================================================
+     PRODUCT ELEMENTS
+     ======================================================= */
+
+  const productGrid = document.getElementById("productGrid");
+  const productSearch = document.getElementById("productSearch");
+  const productFilter = document.getElementById("productFilter");
+
+
+  /* =======================================================
+     RENDER PRODUCTS
+     ======================================================= */
+
+  function renderProducts(list) {
+
+    if (!productGrid) return;
+
+    productGrid.innerHTML = "";
+
+    if (list.length === 0) {
+
+      productGrid.innerHTML = `
+        <div class="product-empty">
+          <h3>No products found.</h3>
+          <p>
+            Try another crop, problem or product category.
+          </p>
+        </div>
+      `;
+
+      return;
+    }
+
+
+    list.forEach(product => {
 
-  font-size: 12px;
-  font-weight: 800;
+      const card = document.createElement("article");
+
+      card.className = "product-card";
 
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
+      card.innerHTML = `
+        <div>
 
-h1,
-h2,
-h3,
-h4 {
-  line-height: 1.08;
-}
+          <small>
+            ${product.category}
+          </small>
 
-h2 {
-  color: var(--dark-teal);
+          <h3>
+            ${product.name}
+          </h3>
 
-  font-size: clamp(38px, 5vw, 68px);
+          <p>
+            <strong>${product.crop}</strong>
+          </p>
 
-  letter-spacing: -.045em;
-}
+          <p>
+            ${product.description}
+          </p>
 
-.section-intro {
-  max-width: 650px;
+        </div>
 
-  margin-top: 20px;
+        <a href="#dealer">
+          Find a Dealer →
+        </a>
+      `;
 
-  color: #526662;
+      productGrid.appendChild(card);
 
-  font-size: 18px;
-  line-height: 1.7;
-}
+    });
 
-.text-link {
-  display: inline-flex;
+  }
 
-  align-items: center;
-  gap: 10px;
 
-  margin-top: 25px;
+  /* =======================================================
+     FILTER PRODUCTS
+     ======================================================= */
 
-  color: var(--dark-teal);
+  function filterProducts() {
 
-  font-size: 14px;
-  font-weight: 800;
-}
+    const searchTerm =
+      productSearch
+        ? productSearch.value.toLowerCase().trim()
+        : "";
 
-.text-link span {
-  color: var(--teal);
+    const category =
+      productFilter
+        ? productFilter.value
+        : "all";
 
-  font-size: 20px;
 
-  transition: transform .2s ease;
-}
+    const filtered = products.filter(product => {
 
-.text-link:hover span {
-  transform: translateX(5px);
-}
+      const matchesCategory =
+        category === "all" ||
+        product.category === category;
 
 
-/* =========================================================
-   TOP UTILITY BAR
-   ========================================================= */
+      const searchableText = `
+        ${product.name}
+        ${product.category}
+        ${product.crop}
+        ${product.description}
+      `.toLowerCase();
 
-.top-bar {
-  position: relative;
-  z-index: 50;
 
-  width: 100%;
+      const matchesSearch =
+        searchableText.includes(searchTerm);
 
-  background: var(--dark-teal);
 
-  color: var(--white);
-}
+      return matchesCategory && matchesSearch;
 
-.top-bar-inner {
-  width: min(var(--max-width), 90%);
-  min-height: 42px;
+    });
 
-  margin: 0 auto;
 
-  display: flex;
+    renderProducts(filtered);
 
-  align-items: center;
-  justify-content: flex-end;
+  }
 
-  gap: 25px;
-}
 
-.top-bar a {
-  color: rgba(255,255,255,.88);
+  if (productSearch) {
+    productSearch.addEventListener("input", filterProducts);
+  }
 
-  font-size: 11px;
-  font-weight: 700;
+  if (productFilter) {
+    productFilter.addEventListener("change", filterProducts);
+  }
 
-  letter-spacing: .06em;
 
-  transition: color .2s ease;
-}
+  /* =======================================================
+     INITIAL PRODUCT DISPLAY
+     ======================================================= */
 
-.top-bar a:hover {
-  color: var(--yellow);
-}
+  renderProducts(products);
 
 
-/* =========================================================
-   MAIN HEADER
-   ========================================================= */
+  /* =======================================================
+     SMOOTH SCROLL FOR INTERNAL LINKS
+     ======================================================= */
 
-.site-header {
-  position: relative;
-  z-index: 40;
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-  width: 100%;
+    link.addEventListener("click", event => {
 
-  background: var(--white);
+      const targetId =
+        link.getAttribute("href");
 
-  border-bottom: 1px solid rgba(7,69,64,.08);
+      if (!targetId || targetId === "#") {
+        return;
+      }
 
-  box-shadow:
-    0 4px 18px rgba(7,69,64,.05);
-}
+      const target =
+        document.querySelector(targetId);
 
-.header-inner {
-  width: min(var(--max-width), 92%);
-  min-height: 88px;
+      if (!target) {
+        return;
+      }
 
-  margin: 0 auto;
+      event.preventDefault();
 
-  display: flex;
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
 
-  align-items: center;
-  justify-content: space-between;
+    });
 
-  gap: 35px;
-}
+  });
 
 
-/* =========================================================
-   LOGO
-   ========================================================= */
+  /* =======================================================
+     ACTIVE DEALER BUTTON VISIBILITY
+     ======================================================= */
 
-.site-logo {
-  display: flex;
+  const dealerButton = document.querySelector(".dealer-quick");
 
-  align-items: center;
+  function updateDealerButton() {
 
-  flex-shrink: 0;
-}
+    if (!dealerButton) return;
 
-.site-logo img {
-  width: 155px;
-  height: auto;
+    if (window.scrollY > 250) {
+      dealerButton.classList.add("visible");
+    } else {
+      dealerButton.classList.remove("visible");
+    }
 
-  display: block;
-}
+  }
 
+  window.addEventListener("scroll", updateDealerButton, {
+    passive: true
+  });
 
-/* =========================================================
-   MAIN NAVIGATION
-   ========================================================= */
+  updateDealerButton();
 
-.main-menu {
-  display: flex;
 
-  align-items: center;
+  /* =======================================================
+     REVEAL ANIMATION
+     ======================================================= */
 
-  gap: clamp(20px, 2.5vw, 38px);
+  const revealItems = document.querySelectorAll(
+    ".solution-card, .crop-card, .product-card, .insight-grid article"
+  );
 
-  margin-left: auto;
-}
+  if ("IntersectionObserver" in window) {
 
-.main-menu a {
-  position: relative;
+    const observer = new IntersectionObserver(
+      entries => {
 
-  color: var(--dark-teal);
+        entries.forEach(entry => {
 
-  font-size: 13px;
-  font-weight: 700;
+          if (entry.isIntersecting) {
 
-  white-space: nowrap;
-}
+            entry.target.classList.add("revealed");
 
-.main-menu a::after {
-  content: "";
+            observer.unobserve(entry.target);
 
-  position: absolute;
+          }
 
-  left: 0;
-  bottom: -8px;
+        });
 
-  width: 0;
-  height: 2px;
-
-  background: var(--teal);
-
-  transition: width .25s ease;
-}
-
-.main-menu a:hover::after,
-.main-menu a.active::after {
-  width: 100%;
-}
-
-
-/* =========================================================
-   FIND A DEALER
-   ========================================================= */
-
-.dealer-button {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 44px;
-
-  padding: 0 20px;
-
-  border-radius: 30px;
-
-  background: var(--yellow);
-
-  color: var(--dark-teal);
-
-  font-size: 12px;
-  font-weight: 800;
-
-  white-space: nowrap;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
-}
-
-.dealer-button:hover {
-  transform: translateY(-2px);
-
-  background: #f3d900;
-}
-
-
-/* =========================================================
-   MOBILE MENU BUTTON
-   ========================================================= */
-
-.mobile-menu-button {
-  display: none;
-
-  width: 46px;
-  height: 46px;
-
-  border: 0;
-
-  border-radius: 50%;
-
-  background: var(--dark-teal);
-
-  color: var(--white);
-
-  cursor: pointer;
-}
-
-.mobile-menu-button span {
-  display: block;
-
-  width: 19px;
-  height: 2px;
-
-  margin: 4px auto;
-
-  background: currentColor;
-}
-
-
-/* =========================================================
-   HERO
-   ========================================================= */
-
-.hero {
-  position: relative;
-
-  min-height: 650px;
-  height: 76vh;
-  max-height: 820px;
-
-  overflow: hidden;
-
-  background: var(--dark-teal);
-}
-
-.hero-image {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-image: url("hero-agriscience.jpg");
-
-  background-size: cover;
-  background-position: center;
-
-  background-repeat: no-repeat;
-}
-
-.hero-image::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.56) 0%,
-      rgba(0,0,0,.28) 45%,
-      rgba(0,0,0,.08) 100%
+      },
+      {
+        threshold: 0.12
+      }
     );
-}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
 
-  width: min(var(--max-width), 90%);
+    revealItems.forEach(item => {
+      observer.observe(item);
+    });
 
-  height: 100%;
-
-  margin: 0 auto;
-
-  display: flex;
-
-  align-items: center;
-}
-
-.hero-copy {
-  max-width: 650px;
-
-  padding-top: 30px;
-}
-
-.hero-copy .eyebrow {
-  color: var(--yellow);
-}
-
-.hero-copy h1 {
-  color: var(--white);
-
-  font-size: clamp(48px, 7vw, 92px);
-
-  letter-spacing: -.055em;
-}
-
-.hero-copy p {
-  max-width: 540px;
-
-  margin-top: 24px;
-
-  color: rgba(255,255,255,.9);
-
-  font-size: clamp(17px, 2vw, 21px);
-
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
-  margin-top: 32px;
-}
-
-.hero-button {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 50px;
-
-  padding: 0 25px;
-
-  border-radius: 30px;
-
-  background: var(--yellow);
-
-  color: var(--dark-teal);
-
-  font-size: 13px;
-  font-weight: 800;
-
-  transition:
-    transform .2s ease,
-    background .2s ease;
-}
-
-.hero-button:hover {
-  transform: translateY(-3px);
-
-  background: var(--white);
-}
-
-.hero-button-outline {
-  background: rgba(255,255,255,.08);
-
-  border: 1px solid rgba(255,255,255,.65);
-
-  color: var(--white);
-}
-
-.hero-button-outline:hover {
-  background: var(--white);
-
-  color: var(--dark-teal);
-}
-
-
-/* =========================================================
-   HERO DEALER LINK
-   ========================================================= */
-
-.hero-dealer {
-  position: absolute;
-
-  right: 5%;
-  bottom: 35px;
-
-  z-index: 4;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  padding: 12px 19px;
-
-  border-radius: 30px;
-
-  background: rgba(255,255,255,.94);
-
-  color: var(--dark-teal);
-
-  font-size: 12px;
-  font-weight: 800;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.16);
-
-  transition:
-    transform .2s ease;
-}
-
-.hero-dealer:hover {
-  transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   SOLUTIONS INTRO
-   ========================================================= */
-
-.solutions-intro {
-  display: grid;
-
-  grid-template-columns: .8fr 1.2fr;
-
-  gap: 80px;
-
-  align-items: end;
-}
-
-.solutions-intro h2 {
-  max-width: 500px;
-}
-
-.solutions-intro-copy {
-  max-width: 620px;
-}
-
-
-/* =========================================================
-   SOLUTION CARDS
-   ========================================================= */
-
-.solution-grid {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 18px;
-
-  margin-top: 55px;
-}
-
-.solution-card {
-  position: relative;
-
-  min-height: 390px;
-
-  padding: 30px;
-
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  background: var(--soft);
-
-  box-shadow:
-    0 12px 35px rgba(7,69,64,.06);
-
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
-}
-
-.solution-card:hover {
-  transform: translateY(-7px);
-
-  box-shadow:
-    0 22px 50px rgba(7,69,64,.13);
-}
-
-.solution-number {
-  color: var(--teal);
-
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: .12em;
-}
-
-.solution-card h3 {
-  margin-top: 100px;
-
-  color: var(--dark-teal);
-
-  font-size: 26px;
-
-  letter-spacing: -.03em;
-}
-
-.solution-card p {
-  margin-top: 15px;
-
-  color: #61716e;
-
-  font-size: 14px;
-
-  line-height: 1.65;
-}
-
-.solution-icon {
-  position: absolute;
-
-  right: -35px;
-  bottom: -40px;
-
-  width: 170px;
-  height: 170px;
-
-  border-radius: 50%;
-
-  background: var(--soft-teal);
-
-  opacity: .9;
-}
-
-.solution-card:nth-child(2) .solution-icon {
-  background: rgba(255,229,0,.45);
-}
-
-.solution-card:nth-child(3) .solution-icon {
-  background: rgba(1,153,142,.18);
-}
-
-.solution-card:nth-child(4) .solution-icon {
-  background: rgba(153,1,12,.12);
-}
-
-
-/* =========================================================
-   FEATURED PRODUCTS
-   ========================================================= */
-
-.products-section {
-  background: var(--soft);
-}
-
-.products-heading {
-  display: flex;
-
-  align-items: end;
-  justify-content: space-between;
-
-  gap: 30px;
-}
-
-.products-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 24px;
-
-  margin-top: 55px;
-}
-
-.product-card {
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  background: var(--white);
-
-  box-shadow:
-    0 10px 35px rgba(7,69,64,.07);
-
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-7px);
-
-  box-shadow:
-    0 22px 55px rgba(7,69,64,.13);
-}
-
-.product-image {
-  position: relative;
-
-  height: 300px;
-
-  overflow: hidden;
-
-  background: var(--soft-teal);
-}
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition: transform .5s ease;
-}
-
-.product-card:hover .product-image img {
-  transform: scale(1.04);
-}
-
-.product-category {
-  position: absolute;
-
-  left: 20px;
-  top: 20px;
-
-  padding: 7px 12px;
-
-  border-radius: 20px;
-
-  background: var(--white);
-
-  color: var(--teal);
-
-  font-size: 10px;
-  font-weight: 800;
-
-  letter-spacing: .08em;
-
-  text-transform: uppercase;
-}
-
-.product-info {
-  padding: 25px;
-}
-
-.product-info h3 {
-  color: var(--dark-teal);
-
-  font-size: 23px;
-}
-
-.product-info p {
-  margin-top: 10px;
-
-  color: #687873;
-
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   SCIENCE FEATURE
-   ========================================================= */
-
-.science-section {
-  background: var(--dark-teal);
-
-  color: var(--white);
-}
-
-.science-layout {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 80px;
-
-  align-items: center;
-}
-
-.science-image {
-  min-height: 520px;
-
-  overflow: hidden;
-
-  border-radius: 40px 40px 40px 120px;
-
-  background: var(--teal);
-}
-
-.science-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-.science-copy .eyebrow {
-  color: var(--yellow);
-}
-
-.science-copy h2 {
-  color: var(--white);
-}
-
-.science-copy p:not(.eyebrow) {
-  margin-top: 25px;
-
-  max-width: 550px;
-
-  color: rgba(255,255,255,.75);
-
-  font-size: 17px;
-
-  line-height: 1.7;
-}
-
-.science-button {
-  margin-top: 30px;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 23px;
-
-  border-radius: 30px;
-
-  background: var(--yellow);
-
-  color: var(--dark-teal);
-
-  font-size: 13px;
-  font-weight: 800;
-}
-
-
-/* =========================================================
-   FARMER CTA
-   ========================================================= */
-
-.farmer-section {
-  padding: 100px 0;
-}
-
-.farmer-box {
-  position: relative;
-
-  min-height: 420px;
-
-  overflow: hidden;
-
-  display: flex;
-
-  align-items: center;
-
-  padding: 70px;
-
-  border-radius: 40px;
-
-  background: var(--yellow);
-}
-
-.farmer-copy {
-  position: relative;
-  z-index: 2;
-
-  max-width: 600px;
-}
-
-.farmer-copy h2 {
-  color: var(--dark-teal);
-}
-
-.farmer-copy p {
-  margin-top: 20px;
-
-  max-width: 510px;
-
-  color: #365c57;
-
-  font-size: 17px;
-}
-
-.farmer-button {
-  display: inline-flex;
-
-  margin-top: 28px;
-
-  padding: 14px 24px;
-
-  border-radius: 30px;
-
-  background: var(--dark-teal);
-
-  color: var(--white);
-
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.farmer-circle {
-  position: absolute;
-
-  right: -120px;
-  top: -140px;
-
-  width: 520px;
-  height: 520px;
-
-  border-radius: 50%;
-
-  background: rgba(255,255,255,.35);
-}
-
-
-/* =========================================================
-   INSIGHTS
-   ========================================================= */
-
-.insights-heading {
-  display: flex;
-
-  align-items: end;
-  justify-content: space-between;
-
-  gap: 30px;
-}
-
-.insights-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 22px;
-
-  margin-top: 50px;
-}
-
-.insight-card {
-  overflow: hidden;
-
-  border-radius: 28px;
-
-  background: var(--white);
-
-  border: 1px solid var(--line);
-
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
-}
-
-.insight-card:hover {
-  transform: translateY(-6px);
-
-  box-shadow:
-    0 18px 45px rgba(7,69,64,.1);
-}
-
-.insight-image {
-  height: 230px;
-
-  background: var(--soft-teal);
-
-  overflow: hidden;
-}
-
-.insight-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-.insight-body {
-  padding: 25px;
-}
-
-.insight-body span {
-  color: var(--teal);
-
-  font-size: 10px;
-  font-weight: 800;
-
-  letter-spacing: .12em;
-
-  text-transform: uppercase;
-}
-
-.insight-body h3 {
-  margin-top: 10px;
-
-  color: var(--dark-teal);
-
-  font-size: 21px;
-}
-
-.insight-body p {
-  margin-top: 12px;
-
-  color: #687873;
-
-  font-size: 14px;
-}
-
-
-/* =========================================================
-   DEALER CTA
-   ========================================================= */
-
-.dealer-section {
-  padding: 0 0 110px;
-}
-
-.dealer-box {
-  position: relative;
-
-  overflow: hidden;
-
-  min-height: 300px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-
-  padding: 60px;
-
-  border-radius: 40px;
-
-  background: var(--teal);
-}
-
-.dealer-box::before,
-.dealer-box::after {
-  content: "";
-
-  position: absolute;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(255,255,255,.2);
-}
-
-.dealer-box::before {
-  width: 430px;
-  height: 430px;
-
-  left: -180px;
-  top: -220px;
-}
-
-.dealer-box::after {
-  width: 350px;
-  height: 350px;
-
-  right: -130px;
-  bottom: -220px;
-}
-
-.dealer-content {
-  position: relative;
-
-  z-index: 2;
-
-  max-width: 650px;
-}
-
-.dealer-content h2 {
-  color: var(--white);
-}
-
-.dealer-content p {
-  margin-top: 18px;
-
-  color: rgba(255,255,255,.78);
-
-  font-size: 16px;
-}
-
-.dealer-main-button {
-  display: inline-flex;
-
-  margin-top: 27px;
-
-  padding: 15px 28px;
-
-  border-radius: 30px;
-
-  background: var(--yellow);
-
-  color: var(--dark-teal);
-
-  font-size: 13px;
-  font-weight: 800;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.site-footer {
-  background: #031f1d;
-
-  color: var(--white);
-}
-
-.footer-main {
-  width: min(var(--max-width), 90%);
-
-  margin: 0 auto;
-
-  padding: 75px 0 55px;
-
-  display: grid;
-
-  grid-template-columns: 1.5fr repeat(3, 1fr);
-
-  gap: 50px;
-}
-
-.footer-logo img {
-  width: 155px;
-
-  display: block;
-
-  filter: brightness(0) invert(1);
-}
-
-.footer-brand p {
-  max-width: 280px;
-
-  margin-top: 20px;
-
-  color: rgba(255,255,255,.62);
-
-  font-size: 13px;
-
-  line-height: 1.7;
-}
-
-.footer-column {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 11px;
-}
-
-.footer-column h4 {
-  margin-bottom: 10px;
-
-  color: var(--yellow);
-
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: .12em;
-
-  text-transform: uppercase;
-}
-
-.footer-column a {
-  color: rgba(255,255,255,.65);
-
-  font-size: 13px;
-
-  transition: color .2s ease;
-}
-
-.footer-column a:hover {
-  color: var(--white);
-}
-
-
-/* =========================================================
-   FOOTER DEALER
-   ========================================================= */
-
-.footer-dealer {
-  width: min(var(--max-width), 90%);
-
-  margin: 0 auto;
-
-  padding: 35px 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
-
-  border-top: 1px solid rgba(255,255,255,.1);
-  border-bottom: 1px solid rgba(255,255,255,.1);
-}
-
-.footer-dealer p {
-  color: rgba(255,255,255,.7);
-
-  font-size: 14px;
-}
-
-.footer-dealer a {
-  display: inline-flex;
-
-  padding: 12px 20px;
-
-  border-radius: 25px;
-
-  background: var(--yellow);
-
-  color: var(--dark-teal);
-
-  font-size: 12px;
-  font-weight: 800;
-}
-
-
-/* =========================================================
-   FOOTER BOTTOM
-   ========================================================= */
-
-.footer-bottom {
-  width: min(var(--max-width), 90%);
-
-  margin: 0 auto;
-
-  padding: 22px 0;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  color: rgba(255,255,255,.4);
-
-  font-size: 11px;
-}
-
-
-/* =========================================================
-   RESPONSIVE — 1050px
-   ========================================================= */
-
-@media (max-width: 1050px) {
-
-  .main-menu {
-    gap: 18px;
   }
 
-  .main-menu a {
-    font-size: 12px;
-  }
+});
 
-  .solution-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+Now you have the three matching files
 
-  .science-layout {
-    gap: 50px;
-  }
+Replace these three files only inside:
 
-  .footer-main {
-    grid-template-columns: 1.5fr repeat(3, 1fr);
-    gap: 30px;
-  }
+"cg-okafor-company → okafor-agriscience"
 
-}
+- "index.html"
+- "style.css"
+- "script.js"
 
+Keep "okafor-logo.png".
 
-/* =========================================================
-   RESPONSIVE — 850px
-   ========================================================= */
+Then commit/publish the changes and open:
 
-@media (max-width: 850px) {
+"/cg-okafor-company/okafor-agriscience/"
 
-  .top-bar-inner {
-    justify-content: center;
-  }
-
-  .header-inner {
-    min-height: 76px;
-  }
-
-  .main-menu,
-  .header-inner > .dealer-button {
-    display: none;
-  }
-
-  .mobile-menu-button {
-    display: block;
-  }
-
-  .site-logo img {
-    width: 135px;
-  }
-
-
-  .hero {
-    height: 75svh;
-
-    min-height: 600px;
-  }
-
-  .hero-copy {
-    max-width: 600px;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(45px, 11vw, 72px);
-  }
-
-  .hero-dealer {
-    right: 20px;
-    bottom: 25px;
-  }
-
-
-  .solutions-intro {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
-
-  .products-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .science-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .science-image {
-    min-height: 420px;
-  }
-
-  .insights-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE — 600px
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-  .section {
-    padding: 80px 0;
-  }
-
-  .top-bar-inner {
-    min-height: 38px;
-  }
-
-  .top-bar a {
-    font-size: 9px;
-  }
-
-  .header-inner {
-    width: 90%;
-  }
-
-  .site-logo img {
-    width: 125px;
-  }
-
-
-  .hero {
-    min-height: 570px;
-    height: 75svh;
-  }
-
-  .hero-image {
-    background-position: 58% center;
-  }
-
-  .hero-image::after {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0,0,0,.2),
-        rgba(0,0,0,.6)
-      );
-  }
-
-  .hero-content {
-    width: 88%;
-
-    align-items: flex-end;
-
-    padding-bottom: 105px;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(43px, 13vw, 62px);
-  }
-
-  .hero-copy p {
-    font-size: 15px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-
-    align-items: stretch;
-
-    max-width: 260px;
-  }
-
-  .hero-button {
-    width: 100%;
-  }
-
-  .hero-dealer {
-    left: 50%;
-    right: auto;
-
-    transform: translateX(-50%);
-
-    bottom: 20px;
-
-    white-space: nowrap;
-  }
-
-  .hero-dealer:hover {
-    transform: translateX(-50%) translateY(-2px);
-  }
-
-
-  .solution-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .solution-card {
-    min-height: 340px;
-  }
-
-  .solution-card h3 {
-    margin-top: 80px;
-  }
-
-
-  .products-heading,
-  .insights-heading {
-    display: block;
-  }
-
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-image {
-    height: 260px;
-  }
-
-
-  .science-image {
-    min-height: 330px;
-
-    border-radius: 30px 30px 30px 80px;
-  }
-
-
-  .farmer-box {
-    min-height: 400px;
-
-    padding: 45px 30px;
-  }
-
-
-  .insights-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .dealer-section {
-    padding-bottom: 80px;
-  }
-
-  .dealer-box {
-    padding: 55px 25px;
-  }
-
-
-  .footer-main {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-  }
-
-  .footer-brand {
-    grid-column: auto;
-  }
-
-  .footer-dealer {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-}
+One important point: the product names in "script.js" are placeholder catalogue entries, not claims that those exact products are currently commercially available in Nigeria. As you give me the real Okafor products, we should replace those entries with the actual products.
