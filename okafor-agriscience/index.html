@@ -3,397 +3,488 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Okafor Agriscience — agricultural products, crop solutions, seeds, plant nutrition and animal health for farmers.">
   <title>Okafor Agriscience</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="site-header">
-  <a href="index.html" class="brand">
-    <img src="okafor-logo.png" alt="Okafor Agriscience">
-  </a>
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="okafor-logo.png" alt="Okafor Agriscience">
+    </a>
 
-  <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
-    <span class="menu-icon">
-      <i></i>
-      <i></i>
-      <i></i>
-    </span>
-    <span class="menu-label">MENU</span>
-  </button>
-</header>
+    <button class="menu-button" id="menuButton" aria-label="Open navigation">
+      <span class="menu-label">MENU</span>
+      <span class="menu-icon">
+        <i></i>
+        <i></i>
+      </span>
+    </button>
+  </header>
 
 
-<!-- FULL SCREEN MENU -->
-<div class="main-nav" id="mainNav">
+  <!-- =====================================================
+       FULL SCREEN NAVIGATION
+  ====================================================== -->
+  <div class="main-nav" id="mainNav">
 
-  <div class="nav-top">
-    <span>OKAFOR AGRISCIENCE</span>
-    <button class="nav-close" id="navClose" aria-label="Close menu">×</button>
-  </div>
+    <div class="nav-top">
+      <a href="index.html" class="nav-logo">
+        <img src="okafor-logo.png" alt="Okafor Agriscience">
+      </a>
 
-  <div class="nav-content">
-
-    <div class="nav-column">
-      <h3>CROP PROTECTION</h3>
-      <a href="#crop-protection">Weed Management</a>
-      <a href="#crop-protection">Disease Management</a>
-      <a href="#crop-protection">Pest Control</a>
+      <button class="nav-close" id="navClose" aria-label="Close navigation">
+        ×
+      </button>
     </div>
 
-    <div class="nav-column">
-      <h3>SEEDS</h3>
 
-      <h4>Vegetable Seeds</h4>
-      <a href="#seeds">Watermelon</a>
-      <a href="#seeds">Cucumber</a>
-      <a href="#seeds">Tomato</a>
-      <a href="#seeds">Pepper</a>
-      <a href="#seeds">Cabbage</a>
-      <a href="#seeds">Carrot</a>
-      <a href="#seeds">Onion</a>
-      <a href="#seeds">Okra</a>
-      <a href="#seeds">French Bean</a>
-      <a href="#seeds">Yardlong Bean</a>
-      <a href="#seeds">Lettuce</a>
-      <a href="#seeds">Sweet Corn</a>
-      <a href="#seeds">Eggplant</a>
-      <a href="#seeds">Cauliflower</a>
-      <a href="#seeds">Chinese Cabbage</a>
+    <div class="nav-content">
 
-      <h4 class="field-title">Field Seeds</h4>
-      <a href="#seeds">Corn</a>
-      <a href="#seeds">Soybean</a>
-      <a href="#seeds">Groundnut</a>
-      <a href="#seeds">Rice</a>
-      <a href="#seeds">Wheat</a>
-    </div>
+      <!-- CROP PROTECTION -->
+      <div class="nav-item">
+        <button class="nav-parent">
+          CROP PROTECTION
+          <span>›</span>
+        </button>
 
-    <div class="nav-column">
-      <h3>ANIMAL HEALTH</h3>
+        <div class="nav-panel">
+          <button class="nav-back">← CROP PROTECTION</button>
 
-      <h4>Poultry</h4>
-      <a href="#animal-health">Coughing & Respiratory Problems</a>
-      <a href="#animal-health">Diarrhea & Coccidiosis</a>
-      <a href="#animal-health">Worms & Parasites</a>
-      <a href="#animal-health">Heat Stress & Dehydration</a>
-      <a href="#animal-health">Soft Eggs & Leg Weakness</a>
-      <a href="#animal-health">Feed Safety & Biosecurity</a>
-
-      <h4 class="field-title">Pig / Swine</h4>
-      <a href="#animal-health">Respiratory Problems & Pneumonia</a>
-      <a href="#animal-health">Breeding & Fertility</a>
-      <a href="#animal-health">Piglet & Grower Diarrhea</a>
-      <a href="#animal-health">Worms & Parasites</a>
-      <a href="#animal-health">Feed Quality & Biosecurity</a>
-      <a href="#animal-health">Newborn Care</a>
-    </div>
-
-    <div class="nav-column nav-simple">
-      <h3>BRANDS</h3>
-      <a href="#idegro">IDEGRO</a>
-      <a href="#dugrow">DUGROW</a>
-
-      <h3>OKAFOR FARMCARE</h3>
-      <a href="#farmcare">Farmcare</a>
-
-      <h3>PRODUCTS</h3>
-      <a href="#products">Product Catalogue</a>
-
-      <h3>FIND A DEALER</h3>
-      <a href="#dealer">Find a Dealer</a>
-    </div>
-
-  </div>
-</div>
-
-
-<main>
-
-  <!-- HERO -->
-  <section class="hero">
-    <img src="hero-agriculture.jpg" alt="Farmer in a field">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-      <span class="eyebrow">OKAFOR AGRISCIENCE</span>
-      <h1>Solutions for better crops and healthier animals.</h1>
-      <p>
-        Practical agricultural solutions for farmers, producers and growers.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#solutions" class="button button-light">Explore solutions</a>
-        <a href="#dealer" class="button button-outline">Find a dealer</a>
+          <a href="weed-management.html">Weed Management</a>
+          <a href="pest-management.html">Pest Management</a>
+          <a href="disease-management.html">Disease Management</a>
+        </div>
       </div>
-    </div>
-  </section>
 
 
-  <!-- INTRO -->
-  <section class="intro section">
-    <div>
-      <span class="eyebrow">FOR FARMERS</span>
-      <h2>Solutions that work on the farm.</h2>
-    </div>
+      <!-- PLANT NUTRITION -->
+      <div class="nav-item">
+        <button class="nav-parent">
+          PLANT NUTRITION
+          <span>›</span>
+        </button>
 
-    <p>
-      From seeds and crop protection to animal health and farmcare,
-      Okafor Agriscience connects farmers with practical products,
-      information and support.
-    </p>
-  </section>
+        <div class="nav-panel">
+          <button class="nav-back">← PLANT NUTRITION</button>
 
-
-  <!-- SOLUTIONS -->
-  <section class="section" id="solutions">
-    <div class="section-heading">
-      <span class="eyebrow">SOLUTIONS</span>
-      <h2>Find the right solution.</h2>
-    </div>
-
-    <div class="solution-grid">
-
-      <a href="#crop-protection" class="solution-card">
-        <img src="crop-protection.jpg" alt="Crop protection">
-        <div>
-          <span>01</span>
-          <h3>Crop Protection</h3>
-          <p>Solutions for weeds, pests and crop diseases.</p>
+          <a href="micronutrients.html">Micronutrients</a>
+          <a href="foliar.html">Foliar</a>
+          <a href="granular-npk.html">Granular NPK</a>
         </div>
+      </div>
+
+
+      <!-- SEEDS -->
+      <div class="nav-item">
+        <button class="nav-parent">
+          SEEDS
+          <span>›</span>
+        </button>
+
+        <div class="nav-panel">
+
+          <button class="nav-back">← SEEDS</button>
+
+
+          <!-- VEGETABLE SEEDS -->
+          <div class="nav-item nested">
+            <button class="nav-parent">
+              VEGETABLE SEEDS
+              <span>›</span>
+            </button>
+
+            <div class="nav-panel">
+              <button class="nav-back">← VEGETABLE SEEDS</button>
+
+              <a href="watermelon.html">Watermelon</a>
+              <a href="cucumber.html">Cucumber</a>
+              <a href="tomato.html">Tomato</a>
+              <a href="pepper.html">Pepper</a>
+              <a href="cabbage.html">Cabbage</a>
+              <a href="carrot.html">Carrot</a>
+              <a href="onion.html">Onion</a>
+              <a href="okra.html">Okra</a>
+              <a href="french-bean.html">French Bean</a>
+              <a href="yardlong-bean.html">Yardlong Bean</a>
+              <a href="lettuce.html">Lettuce</a>
+              <a href="sweet-corn.html">Sweet Corn</a>
+              <a href="eggplant.html">Eggplant</a>
+              <a href="cauliflower.html">Cauliflower</a>
+              <a href="chinese-cabbage.html">Chinese Cabbage</a>
+
+            </div>
+          </div>
+
+
+          <!-- FIELD SEEDS -->
+          <div class="nav-item nested">
+            <button class="nav-parent">
+              FIELD SEEDS
+              <span>›</span>
+            </button>
+
+            <div class="nav-panel">
+              <button class="nav-back">← FIELD SEEDS</button>
+
+              <a href="corn.html">Corn</a>
+              <a href="soybean.html">Soybean</a>
+              <a href="groundnut.html">Groundnut</a>
+              <a href="rice.html">Rice</a>
+              <a href="wheat.html">Wheat</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ANIMAL HEALTH -->
+      <div class="nav-item">
+        <button class="nav-parent">
+          ANIMAL HEALTH
+          <span>›</span>
+        </button>
+
+        <div class="nav-panel">
+
+          <button class="nav-back">← ANIMAL HEALTH</button>
+
+
+          <!-- POULTRY -->
+          <div class="nav-item nested">
+            <button class="nav-parent">
+              POULTRY
+              <span>›</span>
+            </button>
+
+            <div class="nav-panel">
+              <button class="nav-back">← POULTRY</button>
+
+              <a href="poultry-respiratory.html">
+                Coughing & Respiratory Problems
+              </a>
+
+              <a href="poultry-diarrhea.html">
+                Diarrhea & Coccidiosis
+              </a>
+
+              <a href="poultry-worms.html">
+                Worms & Parasites
+              </a>
+
+              <a href="poultry-heat-stress.html">
+                Heat Stress & Dehydration
+              </a>
+
+              <a href="poultry-eggs-legs.html">
+                Soft Eggs & Leg Weakness
+              </a>
+
+              <a href="poultry-feed-biosecurity.html">
+                Feed Safety & Biosecurity
+              </a>
+            </div>
+          </div>
+
+
+          <!-- SWINE -->
+          <div class="nav-item nested">
+            <button class="nav-parent">
+              SWINE
+              <span>›</span>
+            </button>
+
+            <div class="nav-panel">
+              <button class="nav-back">← SWINE</button>
+
+              <a href="swine-respiratory.html">
+                Respiratory Problems & Pneumonia
+              </a>
+
+              <a href="swine-breeding.html">
+                Breeding & Fertility
+              </a>
+
+              <a href="swine-diarrhea.html">
+                Piglet & Grower Diarrhea
+              </a>
+
+              <a href="swine-worms.html">
+                Worms & Parasites
+              </a>
+
+              <a href="swine-feed-biosecurity.html">
+                Feed Quality & Biosecurity
+              </a>
+
+              <a href="swine-newborn-care.html">
+                Newborn Care
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- FARMCARE -->
+      <a class="nav-direct" href="farmcare.html">
+        OKAFOR FARMCARE
       </a>
 
-      <a href="#seeds" class="solution-card">
-        <img src="seeds.jpg" alt="Seeds">
-        <div>
-          <span>02</span>
-          <h3>Seeds</h3>
-          <p>Vegetable and field seeds for productive farming.</p>
-        </div>
-      </a>
 
-      <a href="#animal-health" class="solution-card">
-        <img src="animal-health.jpg" alt="Animal health">
-        <div>
-          <span>03</span>
-          <h3>Animal Health</h3>
-          <p>Support for healthier poultry and swine production.</p>
-        </div>
-      </a>
-
-      <a href="#farmcare" class="solution-card">
-        <img src="farmcare.jpg" alt="Farmcare">
-        <div>
-          <span>04</span>
-          <h3>Okafor Farmcare</h3>
-          <p>Practical support for everyday farm needs.</p>
-        </div>
+      <!-- DEALER -->
+      <a class="nav-direct dealer-link" href="find-a-dealer.html">
+        FIND A DEALER
       </a>
 
     </div>
-  </section>
+  </div>
 
 
-  <!-- CROP PROTECTION -->
-  <section class="feature section" id="crop-protection">
-    <div class="feature-image">
-      <img src="crop-protection.jpg" alt="Crop protection">
-    </div>
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+  <main>
 
-    <div class="feature-content">
-      <span class="eyebrow">CROP PROTECTION</span>
-      <h2>Protect the crop. Protect the harvest.</h2>
+    <section class="hero">
 
-      <p>
-        Explore solutions for weed management, disease management
-        and pest control.
-      </p>
+      <div class="hero-image"></div>
 
-      <a href="#products" class="text-link">View products →</a>
-    </div>
-  </section>
+      <div class="hero-overlay"></div>
 
+      <div class="hero-content">
+        <p class="eyebrow">OKAFOR AGRISCIENCE</p>
 
-  <!-- SEEDS -->
-  <section class="section light-section" id="seeds">
+        <h1>
+          Agriculture<br>
+          made better.
+        </h1>
 
-    <div class="section-heading">
-      <span class="eyebrow">SEEDS</span>
-      <h2>Seeds for the crops you grow.</h2>
-    </div>
-
-    <div class="brand-grid">
-
-      <article class="brand-card" id="idegro">
-        <span class="brand-number">01</span>
-        <h3>IDEGRO</h3>
-        <p>
-          Vegetable seed solutions for farmers growing
-          high-value crops.
+        <p class="hero-copy">
+          Products, knowledge and practical solutions
+          for farmers and producers.
         </p>
-        <a href="#products">Explore vegetable seeds →</a>
-      </article>
 
-      <article class="brand-card" id="dugrow">
-        <span class="brand-number">02</span>
-        <h3>DUGROW</h3>
+        <div class="hero-actions">
+          <a href="find-a-dealer.html" class="button button-light">
+            Find a Dealer
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+    <section class="intro section">
+
+      <div class="section-label">
+        FOR FARMERS
+      </div>
+
+      <div class="intro-content">
+
+        <h2>
+          Helping farmers grow with confidence.
+        </h2>
+
         <p>
-          Field seed solutions for important commercial crops.
+          Okafor Agriscience provides agricultural products,
+          information and practical support for crop and
+          animal production.
         </p>
-        <a href="#products">Explore field seeds →</a>
-      </article>
 
-    </div>
-  </section>
-
-
-  <!-- ANIMAL HEALTH -->
-  <section class="feature reverse section" id="animal-health">
-    <div class="feature-image">
-      <img src="animal-health.jpg" alt="Animal health">
-    </div>
-
-    <div class="feature-content">
-      <span class="eyebrow">ANIMAL HEALTH</span>
-      <h2>Healthier animals. Better production.</h2>
-
-      <p>
-        Practical animal health solutions for poultry and swine
-        producers.
-      </p>
-
-      <div class="mini-links">
-        <a href="#products">Poultry →</a>
-        <a href="#products">Pig / Swine →</a>
       </div>
-    </div>
-  </section>
+
+    </section>
 
 
-  <!-- PRODUCTS -->
-  <section class="section products-section" id="products">
+    <!-- =====================================================
+         FEATURED CROPS
+    ====================================================== -->
+    <section class="featured section">
 
-    <div class="section-heading">
-      <span class="eyebrow">PRODUCTS</span>
-      <h2>Product catalogue.</h2>
-      <p>
-        Explore available Okafor Agriscience products and solutions.
-      </p>
-    </div>
+      <div class="section-heading">
+        <div class="section-label">EXPLORE</div>
 
-    <div class="product-tools">
-      <input
-        type="search"
-        id="productSearch"
-        placeholder="Search products..."
-      >
-
-      <select id="productFilter">
-        <option value="all">All products</option>
-        <option value="crop">Crop Protection</option>
-        <option value="seed">Seeds</option>
-        <option value="animal">Animal Health</option>
-        <option value="farmcare">Farmcare</option>
-      </select>
-    </div>
-
-    <div class="product-grid" id="productGrid"></div>
-
-  </section>
+        <h2>
+          For the crops you grow.
+        </h2>
+      </div>
 
 
-  <!-- FARMCARE -->
-  <section class="feature section" id="farmcare">
+      <div class="feature-grid">
 
-    <div class="feature-image">
-      <img src="farmcare.jpg" alt="Farmcare">
-    </div>
-
-    <div class="feature-content">
-      <span class="eyebrow">OKAFOR FARMCARE</span>
-      <h2>Practical support for the farm.</h2>
-
-      <p>
-        Products, information and practical solutions that help
-        farmers handle everyday production challenges.
-      </p>
-
-      <a href="#products" class="text-link">Explore Farmcare →</a>
-    </div>
-
-  </section>
+        <a href="watermelon.html" class="feature-card">
+          <div class="card-image watermelon-image"></div>
+          <div class="card-body">
+            <span>SEEDS</span>
+            <h3>Watermelon</h3>
+            <p>Explore watermelon seed varieties.</p>
+          </div>
+        </a>
 
 
-  <!-- DEALER -->
-  <section class="dealer-section" id="dealer">
+        <a href="cucumber.html" class="feature-card">
+          <div class="card-image cucumber-image"></div>
+          <div class="card-body">
+            <span>SEEDS</span>
+            <h3>Cucumber</h3>
+            <p>Explore cucumber seed varieties.</p>
+          </div>
+        </a>
 
-    <div class="dealer-inner">
 
-      <div>
-        <span class="eyebrow">WHERE TO BUY</span>
-        <h2>Find an Okafor Agriscience dealer.</h2>
+        <a href="corn.html" class="feature-card">
+          <div class="card-image corn-image"></div>
+          <div class="card-body">
+            <span>FIELD SEEDS</span>
+            <h3>Corn</h3>
+            <p>Explore corn seed solutions.</p>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FARMCARE
+    ====================================================== -->
+    <section class="farmcare-section">
+
+      <div class="farmcare-content">
+
+        <p class="section-label">
+          OKAFOR FARMCARE
+        </p>
+
+        <h2>
+          Practical support for the farm.
+        </h2>
+
         <p>
-          Looking for a product or solution? Find a dealer
-          serving your area.
+          Information and practical resources to help
+          farmers handle everyday production challenges.
+        </p>
+
+        <a href="farmcare.html" class="text-link">
+          Explore Farmcare →
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DEALER
+    ====================================================== -->
+    <section class="dealer-section section">
+
+      <div class="dealer-content">
+
+        <p class="section-label">
+          WHERE TO BUY
+        </p>
+
+        <h2>
+          Find an Okafor Agriscience dealer.
+        </h2>
+
+        <p>
+          Looking for a product or agricultural solution?
+          Find a dealer serving your area.
+        </p>
+
+        <a href="find-a-dealer.html" class="button button-dark">
+          Find a Dealer
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <img src="okafor-logo.png" alt="Okafor Agriscience">
+
+        <p>
+          Agricultural products and solutions
+          for farmers and producers.
         </p>
       </div>
 
-      <a href="mailto:info@okaforagriscience.com"
-         class="button button-light">
-        Find a dealer
-      </a>
 
-    </div>
+      <div class="footer-column">
 
-  </section>
+        <h3>Explore</h3>
 
-</main>
+        <a href="weed-management.html">Weed Management</a>
+        <a href="pest-management.html">Pest Management</a>
+        <a href="disease-management.html">Disease Management</a>
+        <a href="farmcare.html">Okafor Farmcare</a>
 
-
-<footer class="footer">
-
-  <div class="footer-main">
-
-    <div>
-      <img src="okafor-logo.png" alt="Okafor Agriscience" class="footer-logo">
-
-      <p>
-        Agricultural solutions and products for farmers and producers.
-      </p>
-    </div>
-
-    <div class="footer-links">
-
-      <div>
-        <strong>Solutions</strong>
-        <a href="#crop-protection">Crop Protection</a>
-        <a href="#seeds">Seeds</a>
-        <a href="#animal-health">Animal Health</a>
-        <a href="#farmcare">Farmcare</a>
       </div>
 
-      <div>
-        <strong>Products</strong>
-        <a href="#products">Product Catalogue</a>
-        <a href="#dealer">Find a Dealer</a>
+
+      <div class="footer-column">
+
+        <h3>Seeds</h3>
+
+        <a href="watermelon.html">Watermelon</a>
+        <a href="cucumber.html">Cucumber</a>
+        <a href="tomato.html">Tomato</a>
+        <a href="corn.html">Corn</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Help</h3>
+
+        <a href="find-a-dealer.html">Find a Dealer</a>
+
       </div>
 
     </div>
 
-  </div>
 
-  <div class="footer-bottom">
-    <span>Okafor Agriscience</span>
-    <span>A business of C.G. Okafor Co.</span>
-    <span>© 2026</span>
-  </div>
+    <div class="footer-bottom">
+      <span>
+        Okafor Agriscience — A business of C.G. Okafor Co.
+      </span>
 
-</footer>
+      <span>
+        © 2026 C.G. Okafor Co. All rights reserved.
+      </span>
+    </div>
+
+  </footer>
 
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
