@@ -1,936 +1,817 @@
 /* =========================================================
-   OKAFOR AGRISCIENCE
-   ========================================================= */
+OKAFOR AGRISCIENCE
+========================================================= */
 
 :root {
-  --yellow: #FFE500;
-  --teal: #01998E;
-  --dark-teal: #074540;
-  --red: #99010C;
-  --dark-red: #360005;
-  --white: #ffffff;
-  --black: #111111;
-  --light: #f4f5f2;
-  --line: rgba(7, 69, 64, 0.15);
+--yellow: #FFE500;
+--teal: #01998E;
+--dark-teal: #074540;
+--red: #99010C;
+--dark-red: #360005;
+--white: #ffffff;
+--black: #111111;
+--light: #f4f5f2;
+--line: rgba(7, 69, 64, 0.15);
 }
 
-
 /* =========================================================
-   RESET
-   ========================================================= */
+RESET
+========================================================= */
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+  }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--dark-teal);
-  background: var(--white);
-  overflow-x: hidden;
+font-family: Arial, Helvetica, sans-serif;
+color: var(--dark-teal);
+background: var(--white);
+overflow-x: hidden;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+color: inherit;
+text-decoration: none;
 }
 
 button {
-  font: inherit;
+font: inherit;
 }
 
-
 /* =========================================================
-   HEADER
-   ========================================================= */
+HEADER
+========================================================= */
 
 .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 88px;
-  padding: 18px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 9998;
-  pointer-events: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 88px;
+padding: 18px 28px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 9998;
+pointer-events: none;
+background: var(--white);
 }
 
 .brand {
-  pointer-events: auto;
-  display: inline-flex;
-  align-items: center;
+pointer-events: auto;
+display: inline-flex;
+align-items: center;
 }
 
 .brand img {
-  width: 150px;
-  max-height: 54px;
-  object-fit: contain;
+width: 180px;
+height: auto;
+max-height: 65px;
+display: block;
+object-fit: contain;
 }
 
-
 /* =========================================================
-   MENU BUTTON
-   ========================================================= */
+MENU BUTTON
+========================================================= */
 
 .menu-button {
-  pointer-events: auto;
-  border: 0;
-  background: var(--white);
-  color: var(--dark-teal);
-  min-width: 125px;
-  min-height: 54px;
-  border-radius: 999px;
-  padding: 9px 15px 9px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+pointer-events: auto;
+border: 0;
+background: var(--white);
+color: var(--dark-teal);
+min-width: 125px;
+min-height: 54px;
+border-radius: 999px;
+padding: 9px 15px 9px 20px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 18px;
+cursor: pointer;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .menu-label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 0.08em;
 }
 
 .menu-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--dark-teal);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+background: var(--dark-teal);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 5px;
 }
 
 .menu-icon i {
-  width: 12px;
-  height: 1px;
-  background: var(--white);
+width: 12px;
+height: 1px;
+background: var(--white);
 }
-
 
 /* =========================================================
-   FULL SCREEN NAV
-   ========================================================= */
+FULL SCREEN NAV
+========================================================= */
 
 .main-nav {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: var(--dark-teal);
-  color: var(--white);
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
+position: fixed;
+inset: 0;
+z-index: 9999;
+
+background: var(--white);
+color: var(--dark-teal);
+
+visibility: hidden;
+opacity: 0;
+transform: translateY(10px);
+
+transition:
+opacity 0.25s ease,
+transform 0.25s ease,
+visibility 0.25s ease;
 }
 
 .main-nav.open {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
+visibility: visible;
+opacity: 1;
+transform: translateY(0);
 }
 
+/* ---------------------------------------------------------
+NAV TOP
+--------------------------------------------------------- */
+
 .nav-top {
-  height: 90px;
-  padding: 18px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+height: 90px;
+padding: 18px 28px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+background: var(--white);
 }
 
 .nav-logo img {
-  width: 150px;
-  max-height: 54px;
-  object-fit: contain;
+width: 180px;
+height: auto;
+max-height: 65px;
+object-fit: contain;
 }
 
 .nav-close {
-  width: 54px;
-  height: 54px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--dark-teal);
-  font-size: 34px;
-  line-height: 1;
-  cursor: pointer;
+width: 54px;
+height: 54px;
+
+border: 0;
+border-radius: 50%;
+
+background: var(--dark-teal);
+color: var(--white);
+
+font-size: 34px;
+line-height: 1;
+
+cursor: pointer;
 }
+
+/* ---------------------------------------------------------
+NAV CONTENT
+--------------------------------------------------------- */
 
 .nav-content {
-  position: relative;
-  height: calc(100vh - 90px);
-  padding: 30px 7vw 70px;
-  overflow: hidden;
+position: relative;
+
+height: calc(100vh - 90px);
+
+padding: 30px 7vw 70px;
+
+overflow: hidden;
+
+background: var(--white);
 }
 
+/* ---------------------------------------------------------
+NAV ITEMS
+--------------------------------------------------------- */
+
 .nav-item {
-  position: static;
+position: static;
 }
+
+/* ---------------------------------------------------------
+FIRST LEVEL
+--------------------------------------------------------- */
 
 .nav-parent,
 .nav-direct {
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
-  background: transparent;
-  color: var(--white);
-  padding: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: left;
-  font-size: clamp(21px, 3vw, 36px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  cursor: pointer;
+width: 100%;
+
+border: 0;
+border-bottom: 1px solid var(--line);
+
+background: transparent;
+color: var(--dark-teal);
+
+padding: 20px 0;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+text-align: left;
+
+font-size: clamp(21px, 3vw, 36px);
+font-weight: 600;
+letter-spacing: -0.02em;
+
+cursor: pointer;
 }
 
 .nav-parent span {
-  font-size: 1.4em;
-  font-weight: 300;
+font-size: 1.4em;
+font-weight: 300;
 }
 
 .nav-direct {
-  display: flex;
+display: flex;
 }
 
 .dealer-link {
-  color: var(--yellow);
+color: var(--red);
 }
-
-
- /* =========================================================
-   PROGRESSIVE NAVIGATION
-   ========================================================= */
-
-.main-nav {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-
-  /* WHITE NAVIGATION */
-  background: var(--white);
-  color: var(--dark-teal);
-
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(10px);
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
-}
-
-.main-nav.open {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
 /* ---------------------------------------------------------
-   NAV TOP
-   --------------------------------------------------------- */
-
-.nav-top {
-  height: 90px;
-  padding: 18px 28px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  background: var(--white);
-}
-
-.nav-logo img {
-  width: 150px;
-  max-height: 54px;
-  object-fit: contain;
-}
-
-.nav-close {
-  width: 54px;
-  height: 54px;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: var(--dark-teal);
-  color: var(--white);
-
-  font-size: 34px;
-  line-height: 1;
-
-  cursor: pointer;
-}
-
-
-/* ---------------------------------------------------------
-   NAV CONTENT
-   --------------------------------------------------------- */
-
-.nav-content {
-  position: relative;
-
-  height: calc(100vh - 90px);
-
-  padding: 30px 7vw 70px;
-
-  overflow: hidden;
-
-  background: var(--white);
-}
-
-
-/* ---------------------------------------------------------
-   NAV ITEMS
-   --------------------------------------------------------- */
-
-.nav-item {
-  position: static;
-}
-
-
-/* ---------------------------------------------------------
-   FIRST LEVEL
-   --------------------------------------------------------- */
-
-.nav-parent,
-.nav-direct {
-  width: 100%;
-
-  border: 0;
-  border-bottom: 1px solid var(--line);
-
-  background: transparent;
-  color: var(--dark-teal);
-
-  padding: 20px 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  text-align: left;
-
-  font-size: clamp(21px, 3vw, 36px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-
-  cursor: pointer;
-}
-
-.nav-parent span {
-  font-size: 1.4em;
-  font-weight: 300;
-}
-
-.nav-direct {
-  display: flex;
-}
-
-.dealer-link {
-  color: var(--red);
-}
-
-
-/* ---------------------------------------------------------
-   EVERY PANEL IS A SEPARATE FULL LAYER
-   --------------------------------------------------------- */
+EVERY PANEL IS A SEPARATE FULL LAYER
+--------------------------------------------------------- */
 
 .nav-panel {
-  position: absolute;
+position: absolute;
 
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
 
-  padding: 30px 7vw 70px;
+padding: 30px 7vw 70px;
 
-  background: var(--white);
-  color: var(--dark-teal);
+background: var(--white);
+color: var(--dark-teal);
 
-  overflow-y: auto;
+overflow-y: auto;
 
-  /*
-    IMPORTANT:
-    Hidden panels are completely invisible and
-    cannot sit underneath another panel.
-  */
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+visibility: hidden;
+opacity: 0;
+pointer-events: none;
 
-  transform: translateX(105%);
+transform: translateX(105%);
 
-  transition:
-    transform 0.3s ease,
-    opacity 0.2s ease,
-    visibility 0.3s ease;
+transition:
+transform 0.3s ease,
+opacity 0.2s ease,
+visibility 0.3s ease;
 
-  z-index: 10;
+z-index: 10;
 }
 
-
 /* ---------------------------------------------------------
-   ACTIVE PANEL
-   --------------------------------------------------------- */
+ACTIVE PANEL
+--------------------------------------------------------- */
 
 .nav-item.active > .nav-panel {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(0);
-  z-index: 20;
+visibility: visible;
+opacity: 1;
+pointer-events: auto;
+transform: translateX(0);
+z-index: 20;
 }
 
-
 /* ---------------------------------------------------------
-   NESTED PANELS
-   --------------------------------------------------------- */
+NESTED PANELS
+--------------------------------------------------------- */
 
 .nav-panel .nav-item {
-  position: static;
+position: static;
 }
-
-
-/*
-  Every nested panel uses exactly the same screen-sized
-  layer. It therefore completely covers the previous level.
-*/
 
 .nav-panel .nav-item > .nav-panel {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
 
-  padding: 30px 7vw 70px;
+padding: 30px 7vw 70px;
 
-  z-index: 30;
+z-index: 30;
 }
 
-
 /* ---------------------------------------------------------
-   BACK BUTTON
-   --------------------------------------------------------- */
+BACK BUTTON
+--------------------------------------------------------- */
 
 .nav-panel .nav-back {
-  display: block;
+display: block;
 
-  width: 100%;
+width: 100%;
 
-  border: 0;
-  background: transparent;
-  color: rgba(7, 69, 64, 0.55);
+border: 0;
+background: transparent;
+color: rgba(7, 69, 64, 0.55);
 
-  padding: 0 0 28px;
+padding: 0 0 28px;
 
-  text-align: left;
+text-align: left;
 
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 0.08em;
 
-  cursor: pointer;
+cursor: pointer;
 }
 
-
 /* ---------------------------------------------------------
-   PANEL LINKS
-   --------------------------------------------------------- */
+PANEL LINKS
+--------------------------------------------------------- */
 
 .nav-panel > a,
 .nav-panel > .nav-item > .nav-parent {
-  width: 100%;
+width: 100%;
 
-  border: 0;
-  border-bottom: 1px solid var(--line);
+border: 0;
+border-bottom: 1px solid var(--line);
 
-  padding: 17px 0;
+padding: 17px 0;
 
-  background: transparent;
-  color: var(--dark-teal);
+background: transparent;
+color: var(--dark-teal);
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+display: flex;
+align-items: center;
+justify-content: space-between;
 
-  text-align: left;
+text-align: left;
 
-  font-size: clamp(18px, 2.5vw, 28px);
+font-size: clamp(18px, 2.5vw, 28px);
 
-  cursor: pointer;
+cursor: pointer;
 }
 
 .nav-panel > a:hover,
 .nav-panel > .nav-item > .nav-parent:hover {
-  color: var(--teal);
+color: var(--teal);
 }
 
-
 /* ---------------------------------------------------------
-   BRAND LEVEL
-   --------------------------------------------------------- */
+BRAND LEVEL
+--------------------------------------------------------- */
 
 .nav-brand {
-  width: 100%;
+width: 100%;
 
-  padding: 15px 0 25px;
+padding: 15px 0 25px;
 
-  border-bottom: 1px solid var(--line);
+border-bottom: 1px solid var(--line);
 
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 }
 
 .nav-brand img {
-  width: 150px;
-  max-height: 65px;
-  object-fit: contain;
+width: 150px;
+max-height: 65px;
+object-fit: contain;
 }
 
 .nav-brand-name {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--dark-teal);
+font-size: 26px;
+font-weight: 700;
+color: var(--dark-teal);
 }
 
-
 /* ---------------------------------------------------------
-   CATALOGUE LINKS
-   --------------------------------------------------------- */
+CATALOGUE LINKS
+--------------------------------------------------------- */
 
 .catalogue-link {
-  font-weight: 600;
+font-weight: 600;
 }
 
 .catalogue-link span {
-  font-size: 0.65em;
-  color: var(--teal);
+font-size: 0.65em;
+color: var(--teal);
 }
 
 /* =========================================================
-   HERO
-   ========================================================= */
+HERO
+========================================================= */
 
 .hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  background: var(--dark-teal);
+position: relative;
+min-height: 100svh;
+display: flex;
+align-items: flex-end;
+overflow: hidden;
+background: var(--dark-teal);
 }
 
 .hero-image {
-  position: absolute;
-  inset: 0;
-  background:
-    url("hero-agriculture.jpg")
-    center / cover no-repeat;
+position: absolute;
+inset: 0;
+background:
+url("hero-agriculture.jpg")
+center / cover no-repeat;
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.63),
-      rgba(0, 0, 0, 0.25),
-      rgba(0, 0, 0, 0.08)
-    );
+position: absolute;
+inset: 0;
+background:
+linear-gradient(
+90deg,
+rgba(0, 0, 0, 0.63),
+rgba(0, 0, 0, 0.25),
+rgba(0, 0, 0, 0.08)
+);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 0 7vw 10vh;
-  color: var(--white);
+position: relative;
+z-index: 1;
+max-width: 800px;
+padding: 0 7vw 10vh;
+color: var(--white);
 }
 
 .eyebrow,
 .section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  margin-bottom: 18px;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 0.13em;
+margin-bottom: 18px;
 }
 
 .hero h1 {
-  font-size: clamp(55px, 8vw, 120px);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-  margin-bottom: 28px;
+font-size: clamp(55px, 8vw, 120px);
+line-height: 0.92;
+letter-spacing: -0.06em;
+margin-bottom: 28px;
 }
 
 .hero-copy {
-  max-width: 510px;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
+max-width: 510px;
+font-size: 18px;
+line-height: 1.6;
+margin-bottom: 30px;
 }
 
-
 /* =========================================================
-   BUTTONS
-   ========================================================= */
+BUTTONS
+========================================================= */
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  padding: 0 24px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-height: 52px;
+padding: 0 24px;
+border-radius: 999px;
+font-size: 13px;
+font-weight: 700;
 }
 
 .button-light {
-  background: var(--white);
-  color: var(--dark-teal);
+background: var(--white);
+color: var(--dark-teal);
 }
 
 .button-dark {
-  background: var(--dark-teal);
-  color: var(--white);
+background: var(--dark-teal);
+color: var(--white);
 }
 
-
 /* =========================================================
-   GENERAL SECTIONS
-   ========================================================= */
+GENERAL SECTIONS
+========================================================= */
 
 .section {
-  padding: 120px 7vw;
+padding: 120px 7vw;
 }
 
 .intro {
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr;
-  gap: 50px;
+display: grid;
+grid-template-columns: 0.6fr 1.4fr;
+gap: 50px;
 }
 
 .intro h2,
 .section-heading h2,
 .dealer-content h2,
 .farmcare-content h2 {
-  max-width: 800px;
-  font-size: clamp(38px, 5vw, 72px);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
+max-width: 800px;
+font-size: clamp(38px, 5vw, 72px);
+line-height: 0.98;
+letter-spacing: -0.05em;
 }
 
 .intro p {
-  max-width: 650px;
-  margin-top: 30px;
-  font-size: 20px;
-  line-height: 1.65;
+max-width: 650px;
+margin-top: 30px;
+font-size: 20px;
+line-height: 1.65;
 }
 
-
 /* =========================================================
-   FEATURED
-   ========================================================= */
+FEATURED
+========================================================= */
 
 .featured {
-  background: var(--light);
+background: var(--light);
 }
 
 .section-heading {
-  margin-bottom: 55px;
+margin-bottom: 55px;
 }
 
 .feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
 }
 
 .feature-card {
-  background: var(--white);
-  overflow: hidden;
-  transition: transform 0.25s ease;
+background: var(--white);
+overflow: hidden;
+transition: transform 0.25s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+transform: translateY(-5px);
 }
 
 .card-image {
-  aspect-ratio: 1.25 / 1;
-  background-position: center;
-  background-size: cover;
+aspect-ratio: 1.25 / 1;
+background-position: center;
+background-size: cover;
 }
 
 .watermelon-image {
-  background-image: url("watermelon.jpg");
+background-image: url("watermelon.jpg");
 }
 
 .cucumber-image {
-  background-image: url("cucumber.jpg");
+background-image: url("cucumber.jpg");
 }
 
 .corn-image {
-  background-image: url("corn.jpg");
+background-image: url("corn.jpg");
 }
 
 .card-body {
-  padding: 28px;
+padding: 28px;
 }
 
 .card-body span {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.12em;
 }
 
 .card-body h3 {
-  margin: 12px 0;
-  font-size: 28px;
+margin: 12px 0;
+font-size: 28px;
 }
 
 .card-body p {
-  color: rgba(7, 69, 64, 0.7);
-  line-height: 1.5;
+color: rgba(7, 69, 64, 0.7);
+line-height: 1.5;
 }
 
-
 /* =========================================================
-   FARMCARE
-   ========================================================= */
+FARMCARE
+========================================================= */
 
 .farmcare-section {
-  min-height: 70vh;
-  padding: 100px 7vw;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(7, 69, 64, 0.96),
-      rgba(7, 69, 64, 0.82)
-    ),
-    url("farmcare.jpg") center / cover;
-  color: var(--white);
+min-height: 70vh;
+padding: 100px 7vw;
+display: flex;
+align-items: center;
+background:
+linear-gradient(
+90deg,
+rgba(7, 69, 64, 0.96),
+rgba(7, 69, 64, 0.82)
+),
+url("farmcare.jpg") center / cover;
+color: var(--white);
 }
 
 .farmcare-content {
-  max-width: 760px;
+max-width: 760px;
 }
 
 .farmcare-content p:not(.section-label) {
-  max-width: 620px;
-  margin: 28px 0;
-  font-size: 19px;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.8);
+max-width: 620px;
+margin: 28px 0;
+font-size: 19px;
+line-height: 1.65;
+color: rgba(255,255,255,0.8);
 }
 
 .text-link {
-  display: inline-block;
-  font-weight: 700;
-  border-bottom: 1px solid rgba(255,255,255,0.6);
-  padding-bottom: 5px;
+display: inline-block;
+font-weight: 700;
+border-bottom: 1px solid rgba(255,255,255,0.6);
+padding-bottom: 5px;
 }
 
-
 /* =========================================================
-   DEALER
-   ========================================================= */
+DEALER
+========================================================= */
 
 .dealer-section {
-  background: var(--yellow);
+background: var(--yellow);
 }
 
 .dealer-content {
-  max-width: 850px;
+max-width: 850px;
 }
 
 .dealer-content p:not(.section-label) {
-  max-width: 600px;
-  margin: 28px 0;
-  font-size: 19px;
-  line-height: 1.6;
+max-width: 600px;
+margin: 28px 0;
+font-size: 19px;
+line-height: 1.6;
 }
 
-
 /* =========================================================
-   FOOTER
-   ========================================================= */
+FOOTER
+========================================================= */
 
 .site-footer {
-  background: var(--dark-red);
-  color: var(--white);
-  padding: 75px 7vw 25px;
+background: var(--dark-red);
+color: var(--white);
+padding: 75px 7vw 25px;
 }
 
 .footer-top {
-  display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
-  gap: 50px;
-  padding-bottom: 65px;
+display: grid;
+grid-template-columns: 2fr repeat(3, 1fr);
+gap: 50px;
+padding-bottom: 65px;
 }
 
 .footer-brand img {
-  width: 160px;
-  margin-bottom: 25px;
+width: 160px;
+margin-bottom: 25px;
 }
 
 .footer-brand p {
-  max-width: 300px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
+max-width: 300px;
+color: rgba(255,255,255,0.7);
+line-height: 1.6;
 }
 
 .footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
+display: flex;
+flex-direction: column;
+gap: 13px;
 }
 
 .footer-column h3 {
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
+font-size: 12px;
+letter-spacing: 0.1em;
+margin-bottom: 10px;
 }
 
 .footer-column a {
-  color: rgba(255,255,255,0.72);
-  font-size: 14px;
+color: rgba(255,255,255,0.72);
+font-size: 14px;
 }
 
 .footer-column a:hover {
-  color: var(--yellow);
+color: var(--yellow);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.15);
-  padding-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: rgba(255,255,255,0.5);
-  font-size: 11px;
+border-top: 1px solid rgba(255,255,255,0.15);
+padding-top: 22px;
+display: flex;
+justify-content: space-between;
+gap: 20px;
+color: rgba(255,255,255,0.5);
+font-size: 11px;
 }
 
-
 /* =========================================================
-   MOBILE
-   ========================================================= */
+MOBILE
+========================================================= */
 
 @media (max-width: 800px) {
 
-  .site-header {
-    height: 75px;
-    padding: 13px 17px;
-  }
+.site-header {
+height: 88px;
+padding: 13px 17px;
+}
 
-  .brand img,
-  .nav-logo img {
-    width: 125px;
-  }
+.brand img {
+width: 180px;
+max-height: 65px;
+}
 
-  .menu-button {
-    min-width: 105px;
-    min-height: 48px;
-  }
+.nav-logo img {
+width: 180px;
+max-height: 65px;
+}
 
-  @media (max-width: 800px) {
+.menu-button {
+min-width: 105px;
+min-height: 48px;
+}
 
-  .nav-top {
-    height: 75px;
-    padding: 13px 17px;
-  }
+.nav-top {
+height: 75px;
+padding: 13px 17px;
+}
 
-  .nav-content {
-    height: calc(100vh - 75px);
-    padding: 20px 22px 50px;
-  }
+.nav-content {
+height: calc(100vh - 75px);
+padding: 20px 22px 50px;
+}
 
-  .nav-panel,
-  .nav-panel .nav-item > .nav-panel {
-    padding: 20px 22px 50px;
-  }
+.nav-panel,
+.nav-panel .nav-item > .nav-panel {
+padding: 20px 22px 50px;
+}
 
-  .nav-close {
-    width: 48px;
-    height: 48px;
-  }
+.nav-close {
+width: 48px;
+height: 48px;
+}
+
+.hero-content {
+padding: 0 22px 70px;
+}
+
+.hero h1 {
+font-size: clamp(48px, 16vw, 75px);
+}
+
+.hero-copy {
+font-size: 16px;
+}
+
+.section {
+padding: 80px 22px;
+}
+
+.intro {
+grid-template-columns: 1fr;
+gap: 25px;
+}
+
+.feature-grid {
+grid-template-columns: 1fr;
+}
+
+.farmcare-section {
+padding: 80px 22px;
+}
+
+.footer-top {
+grid-template-columns: 1fr 1fr;
+gap: 45px 25px;
+}
+
+.footer-brand {
+grid-column: 1 / -1;
+}
+
+.footer-bottom {
+flex-direction: column;
+}
 
 }
 
-  .hero-content {
-    padding: 0 22px 70px;
-  }
-
-  .hero h1 {
-    font-size: clamp(48px, 16vw, 75px);
-  }
-
-  .hero-copy {
-    font-size: 16px;
-  }
-
-  .section {
-    padding: 80px 22px;
-  }
-
-  .intro {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .farmcare-section {
-    padding: 80px 22px;
-  }
-
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
-    gap: 45px 25px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-  }
-
-}
+/* =========================================================
+FOOTER / BRAND LOGO
+========================================================= */
 
 .brand-logo {
-  width: 110px;
-  height: auto;
-  display: block;
-  object-fit: contain;
+width: 110px;
+height: auto;
+display: block;
+object-fit: contain;
 }
