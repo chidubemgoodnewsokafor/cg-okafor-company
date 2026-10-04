@@ -927,3 +927,10 @@ button {
   }
 
 }
+
+.brand-logo {
+  width: 110px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
