@@ -281,7 +281,7 @@ button {
     align-items: center;
     justify-content: center;
 
-    padding: 4px;
+    padding: 0;
     overflow: hidden;
 
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
@@ -293,10 +293,9 @@ button {
 .hero-logo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
     display: block;
+    object-fit: contain;
 }
-
 
 
 /* =========================================================
