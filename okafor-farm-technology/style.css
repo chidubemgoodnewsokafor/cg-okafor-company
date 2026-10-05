@@ -1423,3 +1423,42 @@ button {
         grid-template-columns: 1fr;
     }
 }
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.reveal-element {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-element.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   EXPANDED CARD
+   ========================================================= */
+
+.large-card.expanded .card-content > p:not(.card-number) {
+    max-height: 300px;
+}
+
+
+/* =========================================================
+   MISSING IMAGE FALLBACK
+   ========================================================= */
+
+.image-missing {
+    background:
+        linear-gradient(
+            135deg,
+            var(--dark-red),
+            var(--black)
+        );
+}
