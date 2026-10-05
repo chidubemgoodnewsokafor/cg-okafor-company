@@ -3,11 +3,6 @@
    Main Website Styles
    ========================================================= */
 
-
-/* =========================================================
-   ROOT
-   ========================================================= */
-
 :root {
     --red: #99010C;
     --dark-red: #360005;
@@ -25,6 +20,10 @@
     --dark-grey: #4d4d4a;
 
     --max-width: 1400px;
+
+    --radius-small: 12px;
+    --radius-medium: 22px;
+    --radius-large: 32px;
 
     --transition: 0.35s ease;
 }
@@ -85,7 +84,7 @@ button {
 
 .section {
     width: 100%;
-    padding: 120px 6vw;
+    padding: 125px 6vw;
 }
 
 .section-label {
@@ -140,6 +139,7 @@ button {
     min-height: 52px;
     margin-top: 30px;
     padding: 0 28px;
+    border-radius: 999px;
     background: var(--red);
     color: var(--white);
     font-size: 0.8rem;
@@ -261,7 +261,7 @@ button {
 
 
 /* =========================================================
-   FLOATING OKAFOR LOGO
+   FLOATING LOGO
    ========================================================= */
 
 .hero-logo {
@@ -314,6 +314,7 @@ button {
     min-height: 68px;
     padding: 0 22px;
     border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 999px;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     color: var(--white);
@@ -358,6 +359,7 @@ button {
     width: 42px;
     height: 42px;
     border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
     color: var(--white);
     font-size: 1rem;
     transition:
@@ -454,6 +456,8 @@ button {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     min-height: 700px;
+    overflow: hidden;
+    border-radius: var(--radius-large);
     background: var(--black);
     color: var(--white);
 }
@@ -466,6 +470,11 @@ button {
 .about-image img {
     height: 100%;
     object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.about-grid:hover .about-image img {
+    transform: scale(1.03);
 }
 
 .about-content {
@@ -498,62 +507,70 @@ button {
 
 /* =========================================================
    SECTION TOP
-   ========================================================= */
+   ========================================================== */
 
 .section-top {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 50px;
-    margin-bottom: 55px;
+    margin-bottom: 38px;
 }
 
 .section-top > div:first-child {
     max-width: 900px;
 }
 
-.carousel-controls {
+
+/* =========================================================
+   CAROUSEL
+   ========================================================= */
+
+.horizontal-carousel {
     display: flex;
-    gap: 8px;
-    flex-shrink: 0;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 5px 2px 12px;
 }
 
-.carousel-controls button {
+.horizontal-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* arrows BELOW cards, aligned right */
+.carousel-controls-bottom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.carousel-controls-bottom button {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 52px;
     height: 52px;
     border: 1px solid var(--black);
+    border-radius: 50%;
+    background: transparent;
     font-size: 1.1rem;
     transition:
         background var(--transition),
-        color var(--transition);
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
 }
 
-.carousel-controls button:hover {
+.carousel-controls-bottom button:hover {
     background: var(--red);
     border-color: var(--red);
     color: var(--white);
-}
-
-
-/* =========================================================
-   HORIZONTAL CAROUSEL
-   ========================================================= */
-
-.horizontal-carousel {
-    display: flex;
-    gap: 22px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    padding-bottom: 10px;
-}
-
-.horizontal-carousel::-webkit-scrollbar {
-    display: none;
+    transform: translateY(-3px);
 }
 
 
@@ -567,6 +584,7 @@ button {
     min-height: 600px;
     overflow: hidden;
     scroll-snap-align: start;
+    border-radius: var(--radius-large);
     background: var(--black);
     color: var(--white);
 }
@@ -604,7 +622,7 @@ button {
     right: 0;
     bottom: 0;
     z-index: 2;
-    padding: 42px;
+    padding: 44px;
 }
 
 .card-number {
@@ -652,7 +670,7 @@ button {
 
 
 /* =========================================================
-   PLACEHOLDER CARD
+   PLACEHOLDER
    ========================================================= */
 
 .card-placeholder {
@@ -667,7 +685,7 @@ button {
 }
 
 .card-placeholder-content {
-    padding: 42px;
+    padding: 44px;
 }
 
 .card-placeholder-content > span {
@@ -706,6 +724,7 @@ button {
     height: 590px;
     overflow: hidden;
     scroll-snap-align: start;
+    border-radius: var(--radius-large);
     color: var(--white);
     background: var(--black);
 }
@@ -788,25 +807,27 @@ button {
 
 .topics-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
     margin-top: 75px;
-    background: var(--light-grey);
-    border: 1px solid var(--light-grey);
 }
 
 .topic-card {
-    min-height: 390px;
-    padding: 38px 32px;
+    min-height: 340px;
+    padding: 40px;
+    border: 1px solid var(--light-grey);
+    border-radius: var(--radius-medium);
     background: var(--white);
     transition:
         background var(--transition),
-        color var(--transition);
+        color var(--transition),
+        transform var(--transition),
+        border-color var(--transition);
 }
 
 .topic-number {
     display: block;
-    margin-bottom: 80px;
+    margin-bottom: 70px;
     color: var(--red);
     font-size: 0.7rem;
     font-weight: 800;
@@ -815,12 +836,13 @@ button {
 
 .topic-card h3 {
     margin-bottom: 15px;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     line-height: 1;
     letter-spacing: -0.03em;
 }
 
 .topic-card p {
+    max-width: 540px;
     color: var(--dark-grey);
     font-size: 0.9rem;
     line-height: 1.65;
@@ -838,7 +860,9 @@ button {
 
 .topic-card:hover {
     background: var(--red);
+    border-color: var(--red);
     color: var(--white);
+    transform: translateY(-5px);
 }
 
 .topic-card:hover .topic-number,
@@ -981,7 +1005,7 @@ button {
     justify-content: center;
     overflow: hidden;
     background:
-        url("assets/farm-choice.jpg")
+        url("farm-choice.jpg")
         center / cover
         no-repeat;
     color: var(--white);
@@ -1037,6 +1061,7 @@ button {
     min-height: 65px;
     padding: 0 22px;
     border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 999px;
     background: rgba(0, 0, 0, 0.2);
     font-size: 0.85rem;
     font-weight: 800;
@@ -1287,21 +1312,18 @@ button {
         min-height: 360px;
     }
 
+    .about-grid {
+        border-radius: var(--radius-medium);
+    }
+
     .about-content {
         padding: 65px 7vw;
-    }
-
-    .section-top {
-        display: block;
-    }
-
-    .carousel-controls {
-        margin-top: 30px;
     }
 
     .large-card {
         flex-basis: 84vw;
         min-height: 520px;
+        border-radius: var(--radius-medium);
     }
 
     .card-content {
@@ -1312,9 +1334,19 @@ button {
         font-size: 2.3rem;
     }
 
+    .carousel-controls-bottom {
+        margin-top: 20px;
+    }
+
+    .carousel-controls-bottom button {
+        width: 46px;
+        height: 46px;
+    }
+
     .solution-card {
         flex-basis: 82vw;
         height: 520px;
+        border-radius: var(--radius-medium);
     }
 
     .solution-content {
@@ -1328,6 +1360,7 @@ button {
 
     .topic-card {
         min-height: 320px;
+        border-radius: var(--radius-medium);
     }
 
     .topic-number {
@@ -1423,6 +1456,8 @@ button {
         grid-template-columns: 1fr;
     }
 }
+
+
 /* =========================================================
    SCROLL REVEAL
    ========================================================= */
