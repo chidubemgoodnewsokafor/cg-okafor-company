@@ -265,37 +265,38 @@ button {
 /* =========================================================
    FLOATING LOGO
    ========================================================= */
-
 .hero-logo {
     position: absolute;
-    top: 7%;
+    top: 6%;
     left: 50%;
     z-index: 20;
+
     width: 220px;
     height: 220px;
+
+    border-radius: 50%;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+    overflow: hidden;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+
     transform: translateX(-50%);
     pointer-events: none;
 }
 
-.hero-logo-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 220px;
-    height: 220px;
-    padding: 18px;
-    border-radius: 50%;
-    background: var(--white);
-    box-shadow:
-        0 20px 55px rgba(0, 0, 0, 0.28),
-        0 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.hero-logo-circle img {
+.hero-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
 }
+
 
 
 /* =========================================================
