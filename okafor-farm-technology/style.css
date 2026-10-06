@@ -290,12 +290,14 @@ button {
 }
 
 .hero-logo img {
-    width: 125%;
-    height: 125%;
-    max-width: none;
-    max-height: none;
+    width: 220px;
+    height: 220px;
     object-fit: contain;
+    object-position: center center;
     display: block;
+
+    transform: scale(1.18);
+    transform-origin: center center;
 }
 
 
