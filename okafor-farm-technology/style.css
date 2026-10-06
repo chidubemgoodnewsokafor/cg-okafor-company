@@ -283,21 +283,21 @@ button {
 
     overflow: hidden;
 
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-
     transform: translateX(-50%);
     pointer-events: none;
 }
 
 .hero-logo img {
-    width: 220px;
-    height: 220px;
+    width: 250px;
+    height: 250px;
+    max-width: none;
+    max-height: none;
+
+    display: block;
     object-fit: contain;
     object-position: center center;
-    display: block;
 
-    transform: scale(1.18);
-    transform-origin: center center;
+    flex-shrink: 0;
 }
 
 
