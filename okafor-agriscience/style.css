@@ -537,7 +537,76 @@ margin-top: 30px;
 font-size: 20px;
 line-height: 1.65;
 }
+/* =========================================================
+ANIMAL HEALTH
+========================================================= */
 
+.animal-health {
+  background: var(--white);
+  overflow: hidden;
+}
+
+.animal-health-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 10px;
+}
+
+.animal-health-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.animal-health-card {
+  flex: 0 0 calc(50% - 10px);
+  min-width: 320px;
+  background: var(--light);
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.25s ease;
+}
+
+.animal-health-card:hover {
+  transform: translateY(-5px);
+}
+
+.animal-health-image {
+  aspect-ratio: 1.25 / 1;
+  background-position: center;
+  background-size: cover;
+}
+
+.poultry-health-image {
+  background-image: url("poultry-health.jpg");
+}
+
+.swine-health-image {
+  background-image: url("pig-health.jpg");
+}
+
+.animal-health-body {
+  padding: 28px;
+}
+
+.animal-health-body span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.animal-health-body h3 {
+  margin: 12px 0;
+  font-size: 28px;
+}
+
+.animal-health-body p {
+  color: rgba(7, 69, 64, 0.7);
+  line-height: 1.5;
+  max-width: 500px;
+}
 /* =========================================================
 FEATURED
 ========================================================= */
