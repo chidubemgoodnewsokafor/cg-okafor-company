@@ -1,96 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================================================
+   OKAFOR FARM TECHNOLOGY — POULTRY
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
 
     /* =====================================================
        CURRENT YEAR
     ====================================================== */
 
-    const currentYear = document.getElementById("current-year");
+    const year = document.getElementById("currentYear");
 
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
+    if (year) {
+        year.textContent = new Date().getFullYear();
     }
-
-
-    /* =====================================================
-       HEADER SCROLL STATE
-    ====================================================== */
-
-    const header = document.querySelector(".site-header");
-
-    function updateHeader() {
-
-        if (!header) {
-            return;
-        }
-
-        if (window.scrollY > 40) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    }
-
-    updateHeader();
-
-    window.addEventListener(
-        "scroll",
-        updateHeader,
-        { passive: true }
-    );
 
 
     /* =====================================================
        DESKTOP DROPDOWNS
     ====================================================== */
 
-    const dropdownButtons =
-        document.querySelectorAll(".nav-dropdown-button");
+    const dropdowns = document.querySelectorAll(".nav-dropdown");
 
-    dropdownButtons.forEach((button) => {
+    dropdowns.forEach(function (dropdown) {
 
-        button.addEventListener("click", (event) => {
+        const button = dropdown.querySelector(
+            ".nav-dropdown-button"
+        );
 
-            event.preventDefault();
+        if (!button) return;
 
-            const dropdown =
-                button.closest(".nav-dropdown");
+        button.addEventListener("click", function (event) {
 
-            if (!dropdown) {
-                return;
-            }
+            event.stopPropagation();
 
-            const isOpen =
-                dropdown.classList.contains("open");
+            dropdowns.forEach(function (otherDropdown) {
 
-            document
-                .querySelectorAll(".nav-dropdown.open")
-                .forEach((item) => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove("open");
+                }
 
-                    item.classList.remove("open");
+            });
 
-                    const itemButton =
-                        item.querySelector(
-                            ".nav-dropdown-button"
-                        );
-
-                    if (itemButton) {
-                        itemButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-                    }
-                });
-
-            if (!isOpen) {
-
-                dropdown.classList.add("open");
-
-                button.setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
-
-            }
+            dropdown.classList.toggle("open");
 
         });
 
@@ -98,34 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CLOSE DESKTOP DROPDOWNS WHEN CLICKING OUTSIDE
+       CLOSE DESKTOP DROPDOWNS
     ====================================================== */
 
-    document.addEventListener("click", (event) => {
+    document.addEventListener("click", function (event) {
 
-        if (
-            !event.target.closest(".nav-dropdown")
-        ) {
+        if (!event.target.closest(".nav-dropdown")) {
 
-            document
-                .querySelectorAll(".nav-dropdown.open")
-                .forEach((dropdown) => {
-
-                    dropdown.classList.remove("open");
-
-                    const button =
-                        dropdown.querySelector(
-                            ".nav-dropdown-button"
-                        );
-
-                    if (button) {
-                        button.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-                    }
-
-                });
+            dropdowns.forEach(function (dropdown) {
+                dropdown.classList.remove("open");
+            });
 
         }
 
@@ -136,29 +69,25 @@ document.addEventListener("DOMContentLoaded", () => {
        MOBILE MENU
     ====================================================== */
 
-    const mobileMenuButton =
-        document.querySelector(
-            ".mobile-menu-button"
-        );
+    const mobileButton =
+        document.getElementById("mobileMenuButton");
 
-    if (mobileMenuButton && header) {
+    const mobileNav =
+        document.getElementById("mobileNav");
 
-        mobileMenuButton.addEventListener(
-            "click",
-            () => {
+    if (mobileButton && mobileNav) {
 
-                const isOpen =
-                    header.classList.toggle(
-                        "mobile-open"
-                    );
+        mobileButton.addEventListener("click", function () {
 
-                mobileMenuButton.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
+            const isOpen =
+                mobileNav.classList.toggle("active");
 
-            }
-        );
+            mobileButton.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
 
     }
 
@@ -167,35 +96,27 @@ document.addEventListener("DOMContentLoaded", () => {
        MOBILE SUBMENUS
     ====================================================== */
 
-    const mobileNavGroups =
-        document.querySelectorAll(
-            ".mobile-nav-group"
-        );
+    const mobileTitles =
+        document.querySelectorAll(".mobile-nav-title");
 
-    mobileNavGroups.forEach((group) => {
+    mobileTitles.forEach(function (title) {
 
-        const button =
-            group.querySelector("button");
+        title.addEventListener("click", function () {
 
-        if (!button) {
-            return;
-        }
+            const submenu =
+                title.nextElementSibling;
 
-        button.addEventListener("click", () => {
+            if (!submenu) return;
 
             const isOpen =
-                group.classList.contains("open");
+                submenu.classList.toggle("active");
 
-            mobileNavGroups.forEach((otherGroup) => {
+            const symbol =
+                title.querySelector("span");
 
-                otherGroup.classList.remove("open");
-
-            });
-
-            if (!isOpen) {
-
-                group.classList.add("open");
-
+            if (symbol) {
+                symbol.textContent =
+                    isOpen ? "−" : "+";
             }
 
         });
@@ -204,26 +125,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       CLOSE MOBILE MENU AFTER LINK CLICK
+       CLOSE MOBILE MENU AFTER CLICKING A LINK
     ====================================================== */
 
     const mobileLinks =
-        document.querySelectorAll(
-            ".mobile-nav a"
-        );
+        document.querySelectorAll(".mobile-nav a");
 
-    mobileLinks.forEach((link) => {
+    mobileLinks.forEach(function (link) {
 
-        link.addEventListener("click", () => {
+        link.addEventListener("click", function () {
 
-            if (header) {
-                header.classList.remove(
-                    "mobile-open"
-                );
+            if (mobileNav) {
+                mobileNav.classList.remove("active");
             }
 
-            if (mobileMenuButton) {
-                mobileMenuButton.setAttribute(
+            if (mobileButton) {
+                mobileButton.setAttribute(
                     "aria-expanded",
                     "false"
                 );
@@ -235,138 +152,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       EXPAND / COLLAPSE "MORE" CONTENT
+       ESCAPE KEY
     ====================================================== */
 
-    const expandButtons =
-        document.querySelectorAll(
-            ".expand-button"
-        );
+    document.addEventListener("keydown", function (event) {
 
-    expandButtons.forEach((button) => {
+        if (event.key === "Escape") {
 
-        button.addEventListener("click", () => {
-
-            const content =
-                button.nextElementSibling;
-
-            if (
-                !content ||
-                !content.classList.contains(
-                    "expand-content"
-                )
-            ) {
-                return;
-            }
-
-            const isExpanded =
-                button.getAttribute(
-                    "aria-expanded"
-                ) === "true";
-
-
-            /* ---------------------------------------------
-               Close other cards in the same group
-            ---------------------------------------------- */
-
-            const parent =
-                button.closest(
-                    ".design-card, .solution-row, .services-content"
-                );
-
-            if (parent) {
-
-                const otherButtons =
-                    parent.parentElement
-                        ?.querySelectorAll(
-                            ".expand-button"
-                        );
-
-                if (otherButtons) {
-
-                    otherButtons.forEach(
-                        (otherButton) => {
-
-                            if (
-                                otherButton !== button
-                            ) {
-
-                                otherButton.setAttribute(
-                                    "aria-expanded",
-                                    "false"
-                                );
-
-                                const otherContent =
-                                    otherButton.nextElementSibling;
-
-                                if (
-                                    otherContent &&
-                                    otherContent.classList.contains(
-                                        "expand-content"
-                                    )
-                                ) {
-
-                                    otherContent.classList.remove(
-                                        "open"
-                                    );
-
-                                }
-
-                            }
-
-                        }
-                    );
-
-                }
-
-            }
-
-
-            /* ---------------------------------------------
-               Toggle selected content
-            ---------------------------------------------- */
-
-            button.setAttribute(
-                "aria-expanded",
-                String(!isExpanded)
-            );
-
-            content.classList.toggle(
-                "open",
-                !isExpanded
-            );
-
-        });
-
-    });
-
-
-    /* =====================================================
-       CLOSE MOBILE NAV WHEN RESIZING TO DESKTOP
-    ====================================================== */
-
-    window.addEventListener("resize", () => {
-
-        if (
-            window.innerWidth > 700 &&
-            header
-        ) {
-
-            header.classList.remove(
-                "mobile-open"
-            );
-
-            mobileNavGroups.forEach((group) => {
-                group.classList.remove("open");
+            dropdowns.forEach(function (dropdown) {
+                dropdown.classList.remove("open");
             });
 
-            if (mobileMenuButton) {
+            if (mobileNav) {
+                mobileNav.classList.remove("active");
+            }
 
-                mobileMenuButton.setAttribute(
+            if (mobileButton) {
+                mobileButton.setAttribute(
                     "aria-expanded",
                     "false"
                 );
-
             }
 
         }
@@ -378,29 +183,19 @@ document.addEventListener("DOMContentLoaded", () => {
        SMOOTH ANCHOR SCROLL
     ====================================================== */
 
-    const anchorLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
-    anchorLinks.forEach((link) => {
-
-        link.addEventListener("click", (event) => {
+        link.addEventListener("click", function (event) {
 
             const targetId =
                 link.getAttribute("href");
 
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
+            if (!targetId || targetId === "#") {
                 return;
             }
 
             const target =
-                document.querySelector(
-                    targetId
-                );
+                document.querySelector(targetId);
 
             if (!target) {
                 return;
@@ -408,16 +203,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
 
+            const header =
+                document.querySelector(".site-header");
+
             const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
+                header ? header.offsetHeight : 0;
 
             const targetPosition =
                 target.getBoundingClientRect().top +
-                window.scrollY -
-                headerHeight -
-                20;
+                window.pageYOffset -
+                headerHeight;
 
             window.scrollTo({
                 top: targetPosition,
@@ -427,69 +222,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-
-
-    /* =====================================================
-       KEYBOARD ACCESSIBILITY
-    ====================================================== */
-
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (event.key !== "Escape") {
-                return;
-            }
-
-            /* Close desktop dropdowns */
-
-            document
-                .querySelectorAll(
-                    ".nav-dropdown.open"
-                )
-                .forEach((dropdown) => {
-
-                    dropdown.classList.remove(
-                        "open"
-                    );
-
-                    const button =
-                        dropdown.querySelector(
-                            ".nav-dropdown-button"
-                        );
-
-                    if (button) {
-
-                        button.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                    }
-
-                });
-
-
-            /* Close mobile menu */
-
-            if (header) {
-
-                header.classList.remove(
-                    "mobile-open"
-                );
-
-            }
-
-            if (mobileMenuButton) {
-
-                mobileMenuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            }
-
-        }
-    );
 
 });
