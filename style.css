@@ -2951,3 +2951,606 @@ RESPONSIVE — 560px
   }
 
 }
+
+/* =========================================================
+   OUR BUSINESSES PAGE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   BUSINESS PAGE HERO
+--------------------------------------------------------- */
+
+.business-page-hero {
+  width: 100%;
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background: var(--soft);
+  overflow: hidden;
+}
+
+.business-page-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 8vw;
+}
+
+.business-page-hero-content .eyebrow {
+  margin-bottom: 28px;
+}
+
+.business-page-hero-content h1 {
+  margin: 0;
+  color: var(--dark-teal);
+  font-size: clamp(52px, 6vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+
+.business-page-hero-content p {
+  max-width: 580px;
+  margin: 38px 0 0;
+  color: #3f4c49;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.business-page-hero-image {
+  min-height: 720px;
+  overflow: hidden;
+}
+
+.business-page-hero-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   BUSINESS INTRODUCTION
+--------------------------------------------------------- */
+
+.business-introduction {
+  width: min(var(--max-width), 90%);
+  margin: 0 auto;
+  padding: 130px 0;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.business-introduction-heading h2 {
+  margin: 20px 0 0;
+  color: var(--dark-teal);
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.business-introduction-text {
+  padding-top: 12px;
+}
+
+.business-introduction-text p {
+  max-width: 680px;
+  margin: 0 0 28px;
+  color: #44504d;
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+.business-introduction-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   BUSINESS AREAS
+--------------------------------------------------------- */
+
+.business-areas {
+  width: min(var(--max-width), 90%);
+  margin: 0 auto;
+  padding: 0 0 130px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.business-area-card {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 50px rgba(7, 69, 64, 0.08);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.business-area-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 65px rgba(7, 69, 64, 0.14);
+}
+
+.business-area-image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.business-area-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.business-area-card:hover .business-area-image img {
+  transform: scale(1.05);
+}
+
+.business-area-content {
+  padding: 42px 42px 46px;
+}
+
+.business-number {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.business-area-content h2 {
+  margin: 0 0 20px;
+  color: var(--dark-teal);
+  font-size: clamp(30px, 3vw, 45px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.business-area-content p {
+  max-width: 620px;
+  margin: 0;
+  color: #4b5754;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   BUSINESS TAGS
+--------------------------------------------------------- */
+
+.business-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.business-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 15px;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  color: var(--dark-teal);
+  background: #f8faf9;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------
+   BUSINESS CARD ACCENTS
+--------------------------------------------------------- */
+
+.agriscience-card .business-number {
+  color: var(--teal);
+}
+
+.technology-card .business-number {
+  color: var(--red);
+}
+
+.foods-card .business-number {
+  color: #8a7600;
+}
+
+.soileva-card .business-number {
+  color: var(--dark-red);
+}
+
+
+/* ---------------------------------------------------------
+   BUSINESS LINKS
+--------------------------------------------------------- */
+
+.business-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 34px;
+  color: var(--dark-teal);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.business-link span {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.business-link:hover {
+  color: var(--red);
+  gap: 18px;
+}
+
+.business-link:hover span {
+  transform: translateX(4px);
+}
+
+
+/* ---------------------------------------------------------
+   HOW OUR BUSINESSES CONNECT
+--------------------------------------------------------- */
+
+.business-connection {
+  width: 100%;
+  padding: 130px 5vw;
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+.business-connection-heading {
+  width: min(var(--max-width), 90%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.business-connection-heading .eyebrow {
+  color: var(--yellow);
+}
+
+.business-connection-heading h2 {
+  margin: 22px 0 25px;
+  color: var(--white);
+  font-size: clamp(45px, 5vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.business-connection-heading p {
+  width: min(680px, 100%);
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.business-flow {
+  width: min(1180px, 100%);
+  margin: 85px auto 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+  gap: 25px;
+}
+
+.flow-item {
+  min-height: 190px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.055);
+  text-align: center;
+}
+
+.flow-item > span {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--yellow);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.flow-item strong {
+  display: block;
+  color: var(--white);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.flow-item small {
+  display: block;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.flow-arrow {
+  color: var(--yellow);
+  font-size: 30px;
+  font-weight: 300;
+}
+
+
+/* ---------------------------------------------------------
+   ALL PRODUCTS SECTION
+--------------------------------------------------------- */
+
+.all-products-section {
+  width: min(var(--max-width), 90%);
+  margin: 0 auto;
+  padding: 130px 0;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.all-products-content h2 {
+  margin: 20px 0 25px;
+  color: var(--dark-teal);
+  font-size: clamp(42px, 5vw, 70px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.all-products-content p {
+  max-width: 550px;
+  margin: 0;
+  color: #4b5754;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.all-products-image {
+  min-height: 500px;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.all-products-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* ---------------------------------------------------------
+   PRIMARY BUTTON
+--------------------------------------------------------- */
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 34px;
+  padding: 17px 25px;
+  border-radius: 100px;
+  background: var(--dark-teal);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    gap 0.25s ease;
+}
+
+.primary-button span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.primary-button:hover {
+  background: var(--red);
+  transform: translateY(-2px);
+  gap: 19px;
+}
+
+
+/* =========================================================
+   OUR BUSINESSES — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .business-page-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .business-page-hero-content {
+    padding: 120px 7vw 80px;
+  }
+
+  .business-page-hero-image {
+    min-height: 500px;
+  }
+
+  .business-introduction {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 100px 0;
+  }
+
+  .business-areas {
+    grid-template-columns: 1fr;
+    padding-bottom: 100px;
+  }
+
+  .business-flow {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .flow-arrow {
+    display: none;
+  }
+
+  .all-products-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 100px 0;
+  }
+
+  .all-products-image {
+    min-height: 420px;
+  }
+
+  .all-products-image img {
+    min-height: 420px;
+  }
+
+}
+
+
+/* =========================================================
+   OUR BUSINESSES — MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .business-page-hero-content {
+    padding: 100px 6vw 60px;
+  }
+
+  .business-page-hero-content h1 {
+    font-size: clamp(46px, 13vw, 64px);
+  }
+
+  .business-page-hero-content p {
+    margin-top: 28px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .business-page-hero-image {
+    min-height: 380px;
+  }
+
+  .business-introduction {
+    width: 88%;
+    padding: 85px 0;
+  }
+
+  .business-introduction-heading h2 {
+    font-size: clamp(40px, 11vw, 55px);
+  }
+
+  .business-introduction-text p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .business-areas {
+    width: 88%;
+    gap: 24px;
+    padding-bottom: 85px;
+  }
+
+  .business-area-image {
+    height: 270px;
+  }
+
+  .business-area-content {
+    padding: 32px 26px 36px;
+  }
+
+  .business-area-content h2 {
+    font-size: 31px;
+  }
+
+  .business-area-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .business-tags {
+    gap: 7px;
+  }
+
+  .business-tags span {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .business-link {
+    margin-top: 28px;
+  }
+
+  .business-connection {
+    padding: 90px 6vw;
+  }
+
+  .business-connection-heading h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .business-connection-heading p {
+    font-size: 16px;
+  }
+
+  .business-flow {
+    width: 100%;
+    margin-top: 55px;
+    grid-template-columns: 1fr;
+  }
+
+  .flow-item {
+    min-height: 155px;
+  }
+
+  .all-products-section {
+    width: 88%;
+    padding: 85px 0;
+  }
+
+  .all-products-content h2 {
+    font-size: clamp(40px, 11vw, 55px);
+  }
+
+  .all-products-content p {
+    font-size: 16px;
+  }
+
+  .all-products-image {
+    min-height: 320px;
+    border-radius: 24px;
+  }
+
+  .all-products-image img {
+    min-height: 320px;
+  }
+
+  .primary-button {
+    padding: 15px 21px;
+    font-size: 14px;
+  }
+
+  }
