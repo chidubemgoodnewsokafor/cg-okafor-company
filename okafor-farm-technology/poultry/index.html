@@ -1,848 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Poultry | Okafor Farm Technology</title>
+  <title>Okafor Farm Technology | Poultry</title>
 
-    <meta
-        name="description"
-        content="Okafor Farm Technology provides poultry farm design, building solutions and equipment for modern poultry farms."
-    >
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
-    <header class="site-header" id="siteHeader">
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
-        <div class="header-inner">
+  <header class="site-header">
 
-            <a href="../index.html" class="brand">
-                <img src="okafor-logo.png" alt="Okafor Farm Technology">
-            </a>
+    <a href="../index.html" class="brand">
+      <img src="okafor-logo.png" alt="Okafor Farm Technology">
+    </a>
 
-            <nav class="desktop-nav">
+    <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
+      MENU
+    </button>
 
-                <a href="../index.html" class="nav-link">Home</a>
+  </header>
 
-                <!-- FARM DESIGN -->
-                <div class="nav-dropdown">
 
-                    <button class="nav-dropdown-button" type="button">
-                        Farm Design &amp; Building
-                        <span>⌄</span>
-                    </button>
+  <!-- =====================================================
+       FULL SCREEN NAVIGATION
+  ====================================================== -->
 
-                    <div class="dropdown-menu">
+  <div class="menu-overlay" id="menuOverlay">
 
-                        <a href="egg-layer/index.html">
-                            <strong>Egg Layer</strong>
-                            <small>Design and building for layer farms</small>
-                        </a>
+    <div class="menu-top">
 
-                        <a href="broiler/index.html">
-                            <strong>Broiler</strong>
-                            <small>Design and building for broiler farms</small>
-                        </a>
+      <img
+        src="okafor-logo.png"
+        alt="Okafor"
+        class="menu-logo"
+      >
 
-                    </div>
+      <button
+        class="menu-close"
+        id="menuClose"
+        aria-label="Close menu"
+      >
+        ×
+      </button>
 
-                </div>
+    </div>
 
 
-                <!-- AUTOMATION -->
-                <div class="nav-dropdown">
+    <!-- MAIN MENU -->
 
-                    <button class="nav-dropdown-button" type="button">
-                        Automation / Solutions
-                        <span>⌄</span>
-                    </button>
+    <div class="menu-view active" id="mainMenu">
 
-                    <div class="dropdown-menu">
+      <a href="../index.html" class="menu-link">
+        <span>HOME</span>
+      </a>
 
-                        <a href="feeding-watering/index.html">
-                            <strong>Feeding &amp; Watering</strong>
-                            <small>Reliable feeding and drinking systems</small>
-                        </a>
+      <button class="menu-link menu-open" data-target="designMenu">
+        <span>FARM DESIGN &amp; BUILDING</span>
+        <span class="arrow">›</span>
+      </button>
 
-                        <a href="manure-management/index.html">
-                            <strong>Manure Management</strong>
-                            <small>Systems for cleaner farm operations</small>
-                        </a>
+      <button class="menu-link menu-open" data-target="automationMenu">
+        <span>AUTOMATION / SOLUTIONS</span>
+        <span class="arrow">›</span>
+      </button>
 
-                        <a href="egg-collection/index.html">
-                            <strong>Egg Collection</strong>
-                            <small>Solutions for efficient egg handling</small>
-                        </a>
+    </div>
 
-                        <a href="brooding-debeaking/index.html">
-                            <strong>Brooding &amp; Debeaking</strong>
-                            <small>Equipment for early-stage production</small>
-                        </a>
 
-                        <a href="climate-control-lighting/index.html">
-                            <strong>Climate Control / Lighting</strong>
-                            <small>Farm environment and lighting solutions</small>
-                        </a>
+    <!-- FARM DESIGN MENU -->
 
-                        <a href="monitoring/index.html">
-                            <strong>Monitoring</strong>
-                            <small>Better visibility across your farm</small>
-                        </a>
+    <div class="menu-view" id="designMenu">
 
-                    </div>
+      <button class="menu-back" data-back="mainMenu">
+        <span>←</span>
+        <span>FARM DESIGN &amp; BUILDING</span>
+      </button>
 
-                </div>
+      <a href="egg-layer/index.html" class="menu-link">
+        <span>EGG LAYER</span>
+        <span class="arrow">›</span>
+      </a>
 
+      <a href="broiler/index.html" class="menu-link">
+        <span>BROILER</span>
+        <span class="arrow">›</span>
+      </a>
 
-                <a href="#contact" class="nav-link">Contact Us</a>
+    </div>
 
-            </nav>
 
+    <!-- AUTOMATION MENU -->
 
-            <button
-                class="mobile-menu-button"
-                id="mobileMenuButton"
-                aria-label="Open menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <div class="menu-view" id="automationMenu">
 
-        </div>
+      <button class="menu-back" data-back="mainMenu">
+        <span>←</span>
+        <span>AUTOMATION / SOLUTIONS</span>
+      </button>
 
+      <a href="feeding-watering/index.html" class="menu-link">
+        <span>FEEDING &amp; WATERING</span>
+        <span class="arrow">›</span>
+      </a>
 
-        <!-- MOBILE NAV -->
-        <div class="mobile-nav" id="mobileNav">
+      <a href="manure-management/index.html" class="menu-link">
+        <span>MANURE MANAGEMENT</span>
+        <span class="arrow">›</span>
+      </a>
 
-            <a href="../index.html">Home</a>
+      <a href="egg-collection/index.html" class="menu-link">
+        <span>EGG COLLECTION</span>
+        <span class="arrow">›</span>
+      </a>
 
-            <div class="mobile-nav-group">
+      <a href="brooding-debeaking/index.html" class="menu-link">
+        <span>BROODING &amp; DEBEAKING</span>
+        <span class="arrow">›</span>
+      </a>
 
-                <button class="mobile-nav-title" type="button">
-                    Farm Design &amp; Building
-                    <span>+</span>
-                </button>
+      <a href="climate-control-lighting/index.html" class="menu-link">
+        <span>CLIMATE CONTROL / LIGHTING</span>
+        <span class="arrow">›</span>
+      </a>
 
-                <div class="mobile-submenu">
+      <a href="monitoring/index.html" class="menu-link">
+        <span>MONITORING</span>
+        <span class="arrow">›</span>
+      </a>
 
-                    <a href="egg-layer/index.html">
-                        Egg Layer
-                    </a>
+    </div>
 
-                    <a href="broiler/index.html">
-                        Broiler
-                    </a>
+  </div>
 
-                </div>
 
-            </div>
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
+  <main>
 
-            <div class="mobile-nav-group">
+    <section class="poultry-hero">
 
-                <button class="mobile-nav-title" type="button">
-                    Automation / Solutions
-                    <span>+</span>
-                </button>
+      <div class="hero-image"></div>
 
-                <div class="mobile-submenu">
+      <div class="hero-overlay"></div>
 
-                    <a href="feeding-watering/index.html">
-                        Feeding &amp; Watering
-                    </a>
+      <div class="hero-content">
 
-                    <a href="manure-management/index.html">
-                        Manure Management
-                    </a>
+        <p class="eyebrow">OKAFOR FARM TECHNOLOGY</p>
 
-                    <a href="egg-collection/index.html">
-                        Egg Collection
-                    </a>
+        <h1>
+          Better-designed poultry farms.
+        </h1>
 
-                    <a href="brooding-debeaking/index.html">
-                        Brooding &amp; Debeaking
-                    </a>
+        <p class="hero-text">
+          Practical farm design, equipment and automation
+          for modern poultry production.
+        </p>
 
-                    <a href="climate-control-lighting/index.html">
-                        Climate Control / Lighting
-                    </a>
+        <a href="#looking-for" class="hero-button">
+          EXPLORE POULTRY SOLUTIONS
+        </a>
 
-                    <a href="monitoring/index.html">
-                        Monitoring
-                    </a>
+      </div>
 
-                </div>
+      <div class="scroll-indicator">
+        <span>SCROLL</span>
+        <span class="scroll-arrow">↓</span>
+      </div>
 
-            </div>
-
-
-            <a href="#contact">Contact Us</a>
-
-        </div>
-
-    </header>
-
-
-    <main>
-
-        <!-- =================================================
-             HERO
-        ================================================== -->
-        <section class="hero">
-
-            <div class="hero-image">
-                <img
-                    src="hero-poultry.jpg"
-                    alt="Modern poultry farm"
-                >
-            </div>
-
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content">
-
-                <p class="eyebrow">OKAFOR FARM TECHNOLOGY</p>
-
-                <h1>
-                    Technology for<br>
-                    modern poultry farms.
-                </h1>
-
-                <p class="hero-text">
-                    From farm design and building to equipment and
-                    automation, we help you create poultry farms
-                    designed for efficient production.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#farm-design" class="button button-red">
-                        Build Your Farm
-                    </a>
-
-                    <a href="#solutions" class="button button-light">
-                        Explore Equipment
-                    </a>
-
-                </div>
-
-            </div>
-
-            <a href="#start" class="scroll-indicator">
-                <span></span>
-                Scroll
-            </a>
-
-        </section>
-
-
-        <!-- =================================================
-             INTRO
-        ================================================== -->
-        <section class="intro section" id="start">
-
-            <div class="container intro-grid">
-
-                <div>
-
-                    <p class="eyebrow red-text">
-                        POULTRY
-                    </p>
-
-                    <h2>
-                        Build it right.<br>
-                        Equip it well.
-                    </h2>
-
-                </div>
-
-                <div>
-
-                    <p class="large-text">
-                        A good poultry farm starts with the right
-                        design and the right equipment.
-                    </p>
-
-                    <p>
-                        Okafor Farm Technology brings farm design,
-                        building and poultry technology together to
-                        help farmers create practical production
-                        environments.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             WHAT ARE YOU LOOKING FOR?
-        ================================================== -->
-        <section class="looking section-light">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow red-text">
-                        START HERE
-                    </p>
-
-                    <h2>
-                        What are you looking for?
-                    </h2>
-
-                </div>
-
-
-                <div class="choice-grid">
-
-                    <a href="#farm-design" class="choice-card">
-
-                        <span class="choice-number">01</span>
-
-                        <div>
-
-                            <h3>
-                                I want to build a poultry farm
-                            </h3>
-
-                            <p>
-                                Explore farm design and building
-                                options for egg layers and broilers.
-                            </p>
-
-                            <span class="card-link">
-                                See farm designs →
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <a href="#solutions" class="choice-card">
-
-                        <span class="choice-number">02</span>
-
-                        <div>
-
-                            <h3>
-                                I need poultry equipment
-                            </h3>
-
-                            <p>
-                                Find equipment and technology for
-                                feeding, cleaning, egg collection,
-                                climate and monitoring.
-                            </p>
-
-                            <span class="card-link">
-                                See equipment →
-                            </span>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             FARM DESIGN
-        ================================================== -->
-        <section class="farm-design section" id="farm-design">
-
-            <div class="container">
-
-                <div class="section-heading split-heading">
-
-                    <div>
-
-                        <p class="eyebrow red-text">
-                            FARM DESIGN &amp; BUILDING
-                        </p>
-
-                        <h2>
-                            Designed for<br>
-                            the way you farm.
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        Whether you are building an egg-layer farm
-                        or a broiler farm, we can help you plan the
-                        farm around your production needs.
-                    </p>
-
-                </div>
-
-
-                <div class="design-grid">
-
-                    <a
-                        href="egg-layer/index.html"
-                        class="design-card"
-                    >
-
-                        <div class="card-image">
-                            <img
-                                src="egg-layer.jpg"
-                                alt="Egg layer farm"
-                            >
-                        </div>
-
-                        <div class="design-content">
-
-                            <p class="card-label">
-                                FARM DESIGN
-                            </p>
-
-                            <h3>
-                                Egg Layer
-                            </h3>
-
-                            <p>
-                                Farm design and building solutions
-                                for egg production.
-                            </p>
-
-                            <span class="arrow-link">
-                                Explore Egg Layer →
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <a
-                        href="broiler/index.html"
-                        class="design-card"
-                    >
-
-                        <div class="card-image">
-                            <img
-                                src="broiler.jpg"
-                                alt="Broiler farm"
-                            >
-                        </div>
-
-                        <div class="design-content">
-
-                            <p class="card-label">
-                                FARM DESIGN
-                            </p>
-
-                            <h3>
-                                Broiler
-                            </h3>
-
-                            <p>
-                                Farm design and building solutions
-                                for broiler production.
-                            </p>
-
-                            <span class="arrow-link">
-                                Explore Broiler →
-                            </span>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SOLUTIONS
-        ================================================== -->
-        <section class="solutions section-light" id="solutions">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow red-text">
-                        AUTOMATION / SOLUTIONS
-                    </p>
-
-                    <h2>
-                        Equipment for better<br>
-                        poultry production.
-                    </h2>
-
-                    <p>
-                        Choose the equipment or farm technology
-                        you need.
-                    </p>
-
-                </div>
-
-
-                <div class="solutions-grid">
-
-                    <a
-                        href="feeding-watering/index.html"
-                        class="solution-card"
-                    >
-                        <span>01</span>
-                        <h3>Feeding &amp; Watering</h3>
-                        <p>
-                            Equipment for efficient feeding and
-                            reliable access to water.
-                        </p>
-                        <strong>Explore →</strong>
-                    </a>
-
-
-                    <a
-                        href="manure-management/index.html"
-                        class="solution-card"
-                    >
-                        <span>02</span>
-                        <h3>Manure Management</h3>
-                        <p>
-                            Solutions that support cleaner and
-                            more manageable poultry houses.
-                        </p>
-                        <strong>Explore →</strong>
-                    </a>
-
-
-                    <a
-                        href="egg-collection/index.html"
-                        class="solution-card"
-                    >
-                        <span>03</span>
-                        <h3>Egg Collection</h3>
-                        <p>
-                            Equipment designed to make egg
-                            collection easier and more efficient.
-                        </p>
-                        <strong>Explore →</strong>
-                    </a>
-
-
-                    <a
-                        href="brooding-debeaking/index.html"
-                        class="solution-card"
-                    >
-                        <span>04</span>
-                        <h3>Brooding &amp; Debeaking</h3>
-                        <p>
-                            Equipment and solutions for important
-                            stages of poultry production.
-                        </p>
-                        <strong>Explore →</strong>
-                    </a>
-
-
-                    <a
-                        href="climate-control-lighting/index.html"
-                        class="solution-card"
-                    >
-                        <span>05</span>
-                        <h3>Climate Control / Lighting</h3>
-                        <p>
-                            Technology for managing the poultry
-                            house environment.
-                        </p>
-                        <strong>Explore →</strong>
-                    </a>
-
-
-                    <a
-                        href="monitoring/index.html"
-                        class="solution-card"
-                    >
-                        <span>06</span>
-                        <h3>Monitoring</h3>
-                        <p>
-                            Technology that helps you see what is
-                            happening across your farm.
-                        </p>
-                        <strong>Explore →</strong>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             FARM CHALLENGES
-        ================================================== -->
-        <section class="challenges section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow red-text">
-                        FARM CHALLENGES
-                    </p>
-
-                    <h2>
-                        Better systems.<br>
-                        Better control.
-                    </h2>
-
-                </div>
-
-
-                <div class="challenge-list">
-
-                    <div class="challenge">
-                        <span>01</span>
-                        <h3>Poor Air Quality</h3>
-                        <p>
-                            Farm design and climate systems can
-                            help create a better environment.
-                        </p>
-                    </div>
-
-                    <div class="challenge">
-                        <span>02</span>
-                        <h3>Uneven Feeding</h3>
-                        <p>
-                            The right feeding system can support
-                            more consistent access to feed.
-                        </p>
-                    </div>
-
-                    <div class="challenge">
-                        <span>03</span>
-                        <h3>Delayed Information</h3>
-                        <p>
-                            Monitoring technology gives farmers
-                            better visibility.
-                        </p>
-                    </div>
-
-                    <div class="challenge">
-                        <span>04</span>
-                        <h3>Poor House Design</h3>
-                        <p>
-                            Good planning starts before construction
-                            begins.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SERVICES
-        ================================================== -->
-        <section class="services section-dark">
-
-            <div class="container services-grid">
-
-                <div>
-
-                    <p class="eyebrow">
-                        OUR SERVICES
-                    </p>
-
-                    <h2>
-                        From planning<br>
-                        to production.
-                    </h2>
-
-                </div>
-
-                <div class="services-copy">
-
-                    <p>
-                        We work with farmers and producers on
-                        poultry farm design, building and
-                        technology solutions.
-                    </p>
-
-                    <ul>
-                        <li>Farm planning</li>
-                        <li>Farm design &amp; building</li>
-                        <li>Equipment selection</li>
-                        <li>Technology solutions</li>
-                        <li>Farm support</li>
-                    </ul>
-
-                    <a href="#contact" class="button button-red">
-                        Talk to Us
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             CTA
-        ================================================== -->
-        <section class="cta">
-
-            <img
-                src="poultry-cta.jpg"
-                alt="Poultry farming"
-            >
-
-            <div class="cta-overlay"></div>
-
-            <div class="container cta-content">
-
-                <p class="eyebrow">
-                    OKAFOR FARM TECHNOLOGY
-                </p>
-
-                <h2>
-                    Let's build a better<br>
-                    poultry farm.
-                </h2>
-
-                <p>
-                    Tell us what you are planning and let's
-                    discuss the right approach for your farm.
-                </p>
-
-                <a href="#contact" class="button button-red">
-                    Contact Us
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
+    </section>
 
 
     <!-- =====================================================
-         FOOTER / CONTACT
+         WHAT ARE YOU LOOKING FOR
     ====================================================== -->
-    <footer class="site-footer" id="contact">
 
-        <div class="container">
+    <section class="looking-section" id="looking-for">
 
-            <div class="footer-top">
+      <div class="section-heading">
 
-                <div class="footer-brand">
+        <p class="eyebrow dark">
+          POULTRY
+        </p>
 
-                    <img
-                        src="okafor-logo-white.png"
-                        alt="Okafor Farm Technology"
-                    >
+        <h2>What are you looking for?</h2>
 
-                    <p>
-                        Technology and solutions for modern
-                        poultry and swine farms.
-                    </p>
+        <p>
+          Choose the type of poultry operation or solution
+          you want to explore.
+        </p>
 
-                </div>
+      </div>
 
 
-                <div class="footer-column">
+      <div class="solution-carousel">
 
-                    <h4>Farm Design</h4>
+        <button class="carousel-arrow prev" id="prevCard">
+          ‹
+        </button>
 
-                    <a href="egg-layer/index.html">
-                        Egg Layer
-                    </a>
+        <div class="solution-track" id="solutionTrack">
 
-                    <a href="broiler/index.html">
-                        Broiler
-                    </a>
+          <a href="egg-layer/index.html" class="solution-card">
 
-                </div>
+            <div
+              class="card-image"
+              style="background-image:url('egg-layer.jpg');"
+            ></div>
 
+            <div class="card-content">
 
-                <div class="footer-column">
+              <span class="card-label">
+                FARM DESIGN &amp; BUILDING
+              </span>
 
-                    <h4>Solutions</h4>
+              <h3>Egg Layer</h3>
 
-                    <a href="feeding-watering/index.html">
-                        Feeding &amp; Watering
-                    </a>
+              <p>
+                Farm design and equipment solutions
+                for efficient layer production.
+              </p>
 
-                    <a href="manure-management/index.html">
-                        Manure Management
-                    </a>
-
-                    <a href="egg-collection/index.html">
-                        Egg Collection
-                    </a>
-
-                    <a href="monitoring/index.html">
-                        Monitoring
-                    </a>
-
-                </div>
-
-
-                <div class="footer-column">
-
-                    <h4>Contact</h4>
-
-                    <a href="mailto:info@cgokafor.com">
-                        info@cgokafor.com
-                    </a>
-
-                    <a href="../index.html">
-                        Okafor Farm Technology
-                    </a>
-
-                </div>
+              <span class="card-arrow">→</span>
 
             </div>
 
+          </a>
 
-            <div class="footer-bottom">
 
-                <p>
-                    Okafor Farm Technology — A business of
-                    C.G. Okafor Co.
-                </p>
+          <a href="broiler/index.html" class="solution-card">
 
-                <p>
-                    © <span id="currentYear"></span>
-                    C.G. Okafor Co. All rights reserved.
-                </p>
+            <div
+              class="card-image"
+              style="background-image:url('broiler.jpg');"
+            ></div>
+
+            <div class="card-content">
+
+              <span class="card-label">
+                FARM DESIGN &amp; BUILDING
+              </span>
+
+              <h3>Broiler</h3>
+
+              <p>
+                Practical farm layouts and equipment
+                for modern broiler production.
+              </p>
+
+              <span class="card-arrow">→</span>
 
             </div>
+
+          </a>
+
+
+          <a href="feeding-watering/index.html" class="solution-card">
+
+            <div
+              class="card-image"
+              style="background-image:url('feeding-watering.jpg');"
+            ></div>
+
+            <div class="card-content">
+
+              <span class="card-label">
+                AUTOMATION / SOLUTIONS
+              </span>
+
+              <h3>Feeding &amp; Watering</h3>
+
+              <p>
+                Equipment designed to deliver feed
+                and water consistently across the house.
+              </p>
+
+              <span class="card-arrow">→</span>
+
+            </div>
+
+          </a>
 
         </div>
 
-    </footer>
+        <button class="carousel-arrow next" id="nextCard">
+          ›
+        </button>
+
+      </div>
+
+    </section>
 
 
-    <script src="script.js"></script>
+    <!-- =====================================================
+         FARM DESIGN
+    ====================================================== -->
+
+    <section class="simple-section">
+
+      <div class="simple-image">
+        <img src="hero-poultry.jpg" alt="Poultry farm">
+      </div>
+
+      <div class="simple-content">
+
+        <p class="eyebrow dark">
+          FARM DESIGN &amp; BUILDING
+        </p>
+
+        <h2>
+          Designed around your farm.
+        </h2>
+
+        <p>
+          From the layout of the house to the equipment
+          inside it, we help create poultry facilities
+          suited to the way you want to produce.
+        </p>
+
+        <a href="#looking-for" class="outline-button">
+          EXPLORE FARM DESIGN
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         AUTOMATION
+    ====================================================== -->
+
+    <section class="automation-section">
+
+      <div class="simple-content light">
+
+        <p class="eyebrow">
+          AUTOMATION / SOLUTIONS
+        </p>
+
+        <h2>
+          Equipment that works for the farm.
+        </h2>
+
+        <p>
+          Practical poultry equipment for feeding,
+          watering, manure handling, climate control,
+          egg collection and monitoring.
+        </p>
+
+        <a href="#looking-for" class="light-button">
+          EXPLORE SOLUTIONS
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer" id="contact">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+
+        <img
+          src="okafor-logo-white.png"
+          alt="Okafor"
+        >
+
+        <p>
+          Practical technology and solutions
+          for better poultry and swine farming.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>FARM TECHNOLOGY</h4>
+
+        <a href="../index.html">Home</a>
+
+        <a href="egg-layer/index.html">Egg Layer</a>
+
+        <a href="broiler/index.html">Broiler</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>CONTACT</h4>
+
+        <p>Talk to our team about your farm.</p>
+
+        <a href="mailto:info@cgokafor.com">
+          info@cgokafor.com
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        Okafor Farm Technology
+      </span>
+
+      <span>
+        A business of C.G. Okafor Co. © 2026
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
 
 </body>
 </html>
