@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Okafor Farm Technology | Swine</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <header class="site-header">
+
+    <a href="../index.html" class="brand">
+      <img src="../assets/okafor-logo-white.png" alt="Okafor">
+    </a>
+
+    <button
+      class="menu-trigger"
+      id="menuTrigger"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      <span class="hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <span class="menu-label">MENU</span>
+    </button>
+
+  </header>
+
+
+  <!-- =====================================================
+       FULL SCREEN NAVIGATION
+  ====================================================== -->
+  <div
+    class="menu-overlay"
+    id="menuOverlay"
+    aria-hidden="true"
+  >
+
+    <div class="menu-top">
+
+      <a href="../index.html" class="menu-logo">
+        <img src="../assets/okafor-logo.png" alt="Okafor">
+      </a>
+
+      <button
+        class="menu-close"
+        id="menuClose"
+        type="button"
+        aria-label="Close navigation"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <!-- ===================================================
+         MAIN MENU
+    ==================================================== -->
+    <nav class="menu-view active" id="mainMenu">
+
+      <a href="../index.html" class="menu-item">
+        HOME
+      </a>
+
+      <button
+        class="menu-item menu-open"
+        type="button"
+        data-target="farmDesignMenu"
+      >
+        <span>FARM DESIGN &amp; BUILDING</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+      <button
+        class="menu-item menu-open"
+        type="button"
+        data-target="solutionsMenu"
+      >
+        <span>AUTOMATION / SOLUTIONS</span>
+        <span class="menu-arrow">›</span>
+      </button>
+
+    </nav>
+
+
+    <!-- ===================================================
+         FARM DESIGN MENU
+    ==================================================== -->
+    <nav class="menu-view" id="farmDesignMenu">
+
+      <button
+        class="menu-back"
+        type="button"
+        data-target="mainMenu"
+      >
+        <span class="back-arrow">←</span>
+        <span>FARM DESIGN &amp; BUILDING</span>
+      </button>
+
+      <a
+        href="sow-farm/index.html"
+        class="menu-item menu-destination"
+      >
+        <span>SOW FARM</span>
+      </a>
+
+      <a
+        href="fattening-farm/index.html"
+        class="menu-item menu-destination"
+      >
+        <span>FATTENING FARM</span>
+      </a>
+
+      <a
+        href="dual-need/index.html"
+        class="menu-item menu-destination"
+      >
+        <span>DUAL-NEED FARM</span>
+      </a>
+
+    </nav>
+
+
+    <!-- ===================================================
+         AUTOMATION / SOLUTIONS MENU
+    ==================================================== -->
+    <nav class="menu-view" id="solutionsMenu">
+
+      <button
+        class="menu-back"
+        type="button"
+        data-target="mainMenu"
+      >
+        <span class="back-arrow">←</span>
+        <span>AUTOMATION / SOLUTIONS</span>
+      </button>
+
+      <a
+        href="manure-cleaning/index.html"
+        class="menu-item menu-destination"
+      >
+        <span>MANURE &amp; CLEANING</span>
+      </a>
+
+      <a
+        href="feeding-drinking/index.html"
+        class="menu-item menu-destination"
+      >
+        <span>FEEDING &amp; DRINKING</span>
+      </a>
+
+      <a
+        href="weather-control-heating/index.html"
+        class="menu-item menu-destination"
+      >
+        <span>WEATHER CONTROL / HEATING</span>
+      </a>
+
+      <a
+        href="monitoring/index.html"
+        class="menu-item menu-destination"
+      >
+        <span>MONITORING</span>
+      </a>
+
+    </nav>
+
+  </div>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-image"></div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          OKAFOR FARM TECHNOLOGY
+        </p>
+
+        <h1>
+          Better-designed<br>
+          swine farms.
+        </h1>
+
+        <p class="hero-text">
+          Practical farm design, equipment and automation
+          for modern swine production.
+        </p>
+
+        <a href="#explore" class="hero-button">
+          EXPLORE SWINE SOLUTIONS
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         WHAT ARE YOU LOOKING FOR?
+    ==================================================== -->
+    <section
+      class="explore-section"
+      id="explore"
+    >
+
+      <div class="section-heading">
+
+        <p class="eyebrow red-text">
+          SWINE
+        </p>
+
+        <h2>
+          What are you looking for?
+        </h2>
+
+        <p>
+          Choose the type of swine operation or solution
+          you want to explore.
+        </p>
+
+      </div>
+
+
+      <div class="solution-grid">
+
+        <!-- SOW FARM -->
+        <a
+          href="sow-farm/index.html"
+          class="solution-card"
+        >
+
+          <div class="card-image sow-farm-image"></div>
+
+          <div class="card-content">
+
+            <span class="card-number">
+              01
+            </span>
+
+            <h3>
+              Sow Farm
+            </h3>
+
+            <p>
+              Farm design and equipment solutions
+              for efficient sow and breeding operations.
+            </p>
+
+            <span class="card-link">
+              EXPLORE
+              <span>→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FATTENING FARM -->
+        <a
+          href="fattening-farm/index.html"
+          class="solution-card"
+        >
+
+          <div class="card-image fattening-farm-image"></div>
+
+          <div class="card-content">
+
+            <span class="card-number">
+              02
+            </span>
+
+            <h3>
+              Fattening Farm
+            </h3>
+
+            <p>
+              Practical farm layouts and equipment
+              for efficient pig growing and finishing.
+            </p>
+
+            <span class="card-link">
+              EXPLORE
+              <span>→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FEEDING & DRINKING -->
+        <a
+          href="feeding-drinking/index.html"
+          class="solution-card"
+        >
+
+          <div class="card-image feeding-drinking-image"></div>
+
+          <div class="card-content">
+
+            <span class="card-number">
+              03
+            </span>
+
+            <h3>
+              Feeding &amp; Drinking
+            </h3>
+
+            <p>
+              Equipment designed to deliver feed
+              and water consistently across the farm.
+            </p>
+
+            <span class="card-link">
+              EXPLORE
+              <span>→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         SUPPORT
+    ==================================================== -->
+    <section class="support-section">
+
+      <div class="support-inner">
+
+        <p class="eyebrow">
+          OKAFOR FARM TECHNOLOGY
+        </p>
+
+        <h2>
+          Technology built around<br>
+          the way your farm works.
+        </h2>
+
+        <p>
+          From farm design and building to practical
+          automation, we help swine producers create
+          better working environments and more efficient
+          production systems.
+        </p>
+
+        <a
+          href="#contact"
+          class="dark-button"
+        >
+          TALK TO OUR TEAM
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer
+    class="site-footer"
+    id="contact"
+  >
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <img
+          src="../assets/okafor-logo-white.png"
+          alt="Okafor"
+        >
+
+        <p>
+          Practical technology and solutions for
+          better poultry and swine farming.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          FARM TECHNOLOGY
+        </h4>
+
+        <a href="../index.html">
+          Home
+        </a>
+
+        <a href="sow-farm/index.html">
+          Sow Farm
+        </a>
+
+        <a href="fattening-farm/index.html">
+          Fattening Farm
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          CONTACT
+        </h4>
+
+        <p>
+          Talk to our team about your farm.
+        </p>
+
+        <a href="mailto:info@cgokafor.com">
+          info@cgokafor.com
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <p>
+        Okafor Farm Technology
+        <span>•</span>
+        A business of C.G. Okafor Co.
+      </p>
+
+      <p>
+        © 2026 C.G. Okafor Co.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
