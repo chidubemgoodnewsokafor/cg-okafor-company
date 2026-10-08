@@ -1,85 +1,201 @@
-const menuTrigger = document.getElementById("menuTrigger");
-const menuOverlay = document.getElementById("menuOverlay");
-const menuClose = document.getElementById("menuClose");
+/* =========================================================
+   OKAFOR FARM TECHNOLOGY — POULTRY NAVIGATION
+   ========================================================= */
 
-const menuViews = document.querySelectorAll(".menu-view");
-const menuOpenButtons = document.querySelectorAll(".menu-open");
-const menuBackButtons = document.querySelectorAll(".menu-back");
-const menuLinks = document.querySelectorAll(".menu-view a");
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuTrigger = document.getElementById("menuTrigger");
+  const menuOverlay = document.getElementById("menuOverlay");
+  const menuClose = document.getElementById("menuClose");
+
+  const menuViews = document.querySelectorAll(".menu-view");
+  const menuOpenButtons = document.querySelectorAll(".menu-open");
+  const menuBackButtons = document.querySelectorAll(".menu-back");
+  const menuLinks = document.querySelectorAll(".menu-view a");
 
 
-function showMenu(viewId) {
-  menuViews.forEach(function(view) {
-    view.classList.remove("active");
-  });
+  /* =======================================================
+     SHOW A MENU VIEW
+  ======================================================= */
 
-  const view = document.getElementById(viewId);
+  function showMenu(viewId) {
 
-  if (view) {
-    view.classList.add("active");
+    menuViews.forEach(function (view) {
+      view.classList.remove("active");
+    });
+
+    const targetView = document.getElementById(viewId);
+
+    if (targetView) {
+      targetView.classList.add("active");
+    }
   }
-}
 
 
-function openMenu() {
-  menuOverlay.classList.add("open");
-  document.body.classList.add("menu-open");
+  /* =======================================================
+     OPEN MAIN MENU
+  ======================================================= */
 
-  showMenu("mainMenu");
-}
+  function openMenu() {
 
+    if (!menuOverlay) return;
 
-function closeMenu() {
-  menuOverlay.classList.remove("open");
-  document.body.classList.remove("menu-open");
+    menuOverlay.classList.add("open");
 
-  showMenu("mainMenu");
-}
+    menuOverlay.setAttribute("aria-hidden", "false");
 
+    document.body.classList.add("menu-open");
 
-/* MENU button */
+    if (menuTrigger) {
+      menuTrigger.setAttribute("aria-expanded", "true");
+    }
 
-if (menuTrigger) {
-  menuTrigger.addEventListener("click", openMenu);
-}
-
-
-/* X button */
-
-if (menuClose) {
-  menuClose.addEventListener("click", closeMenu);
-}
-
-
-/* Open submenu */
-
-menuOpenButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    showMenu(button.dataset.target);
-  });
-});
-
-
-/* Back button */
-
-menuBackButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    showMenu(button.dataset.back);
-  });
-});
-
-
-/* Close menu when a destination link is selected */
-
-menuLinks.forEach(function(link) {
-  link.addEventListener("click", closeMenu);
-});
-
-
-/* ESC key */
-
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeMenu();
+    showMenu("mainMenu");
   }
+
+
+  /* =======================================================
+     CLOSE MENU
+  ======================================================= */
+
+  function closeMenu() {
+
+    if (!menuOverlay) return;
+
+    menuOverlay.classList.remove("open");
+
+    menuOverlay.setAttribute("aria-hidden", "true");
+
+    document.body.classList.remove("menu-open");
+
+    if (menuTrigger) {
+      menuTrigger.setAttribute("aria-expanded", "false");
+    }
+
+    showMenu("mainMenu");
+  }
+
+
+  /* =======================================================
+     MENU BUTTON
+  ======================================================= */
+
+  if (menuTrigger) {
+
+    menuTrigger.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      if (menuOverlay.classList.contains("open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+
+    });
+
+  }
+
+
+  /* =======================================================
+     CLOSE BUTTON
+  ======================================================= */
+
+  if (menuClose) {
+
+    menuClose.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      closeMenu();
+
+    });
+
+  }
+
+
+  /* =======================================================
+     OPEN SUBMENU
+  ======================================================= */
+
+  menuOpenButtons.forEach(function (button) {
+
+    button.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      const target = button.getAttribute("data-target");
+
+      if (target) {
+        showMenu(target);
+      }
+
+    });
+
+  });
+
+
+  /* =======================================================
+     BACK BUTTON
+  ======================================================= */
+
+  menuBackButtons.forEach(function (button) {
+
+    button.addEventListener("click", function (event) {
+
+      event.preventDefault();
+
+      const target = button.getAttribute("data-target");
+
+      if (target) {
+        showMenu(target);
+      }
+
+    });
+
+  });
+
+
+  /* =======================================================
+     NORMAL LINKS
+  ======================================================= */
+
+  menuLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+      closeMenu();
+    });
+
+  });
+
+
+  /* =======================================================
+     ESC KEY
+  ======================================================= */
+
+  document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+
+  });
+
+
+  /* =======================================================
+     CLOSE MENU WHEN CLICKING OUTSIDE CONTENT
+     ======================================================= */
+
+  if (menuOverlay) {
+
+    menuOverlay.addEventListener("click", function (event) {
+
+      if (event.target === menuOverlay) {
+        closeMenu();
+      }
+
+    });
+
+  }
+
 });
