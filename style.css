@@ -2953,3 +2953,567 @@ RESPONSIVE — 560px
 }
 
 
+/* =========================================================
+   OUR BUSINESSES PAGE
+   C.G. OKAFOR CO.
+   ========================================================= */
+
+
+/* =========================================================
+   BUSINESS HERO
+   ========================================================= */
+
+.business-hero {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+  height: 82svh;
+  max-height: 900px;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  background: var(--dark-teal);
+}
+
+.business-hero > img,
+.business-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.business-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 31, 29, 0.08) 0%,
+    rgba(3, 31, 29, 0.25) 40%,
+    rgba(3, 31, 29, 0.88) 100%
+  );
+}
+
+.business-hero-content {
+  position: relative;
+  z-index: 3;
+  width: min(var(--max-width), 90%);
+  margin: 0 auto;
+  padding: 100px 0 110px;
+}
+
+.business-hero-content .eyebrow {
+  color: var(--yellow);
+}
+
+.business-hero-content h1 {
+  max-width: 1000px;
+  color: var(--white);
+  font-size: clamp(58px, 9vw, 118px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.business-hero-content p:not(.eyebrow) {
+  max-width: 680px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   BUSINESS INTRODUCTION
+   ========================================================= */
+
+.business-intro {
+  width: min(var(--max-width), 90%);
+  margin: 0 auto;
+  padding: 130px 0;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.business-intro h2 {
+  max-width: 620px;
+  font-size: clamp(40px, 5vw, 70px);
+  letter-spacing: -0.045em;
+}
+
+.business-intro p {
+  color: #334d49;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.75;
+}
+
+.business-intro p + p {
+  margin-top: 22px;
+}
+
+
+/* =========================================================
+   BUSINESS PORTFOLIO
+   ========================================================= */
+
+.businesses-page-grid {
+  width: 100%;
+  padding: 120px 5%;
+  background: var(--soft);
+}
+
+.businesses-page-grid > h2,
+.businesses-page-grid > .eyebrow {
+  width: min(var(--max-width), 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.businesses-page-grid > h2 {
+  margin-bottom: 25px;
+  font-size: clamp(42px, 6vw, 78px);
+  letter-spacing: -0.055em;
+}
+
+.businesses-page-grid > p {
+  width: min(700px, 100%);
+  margin: 0 auto 65px 0;
+  color: #526763;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.business-page-card {
+  position: relative;
+  min-width: 0;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 32px;
+  background: var(--white);
+  box-shadow: 0 8px 30px rgba(7, 69, 64, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.business-page-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(7, 69, 64, 0.13);
+}
+
+.business-page-card > img,
+.business-page-card-image {
+  width: 100%;
+  height: 280px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.business-page-card > div,
+.business-page-card-content {
+  padding: 30px;
+}
+
+.business-page-card .eyebrow {
+  margin-bottom: 15px;
+}
+
+.business-page-card h3 {
+  margin-bottom: 18px;
+  color: var(--dark-teal);
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.business-page-card p {
+  color: #526763;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.business-page-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  color: var(--dark-teal);
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.business-page-card a:hover {
+  color: var(--teal);
+  gap: 18px;
+}
+
+.business-page-card a span {
+  color: var(--teal);
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   CONNECTION BETWEEN OUR BUSINESSES
+   ========================================================= */
+
+.business-connection {
+  position: relative;
+  padding: 130px 7%;
+  overflow: hidden;
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+.business-connection-inner {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.business-connection h2 {
+  max-width: 850px;
+  margin-bottom: 30px;
+  color: var(--white);
+  font-size: clamp(42px, 6vw, 78px);
+  letter-spacing: -0.05em;
+}
+
+.business-connection .eyebrow {
+  color: var(--yellow);
+}
+
+.business-connection > p,
+.business-connection-inner > p {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+.business-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 65px;
+}
+
+.business-flow > div {
+  min-height: 220px;
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.045);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.business-flow > div:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.business-flow h3 {
+  margin-bottom: 18px;
+  color: var(--yellow);
+  font-size: 25px;
+}
+
+.business-flow p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   OUR PRODUCTS AND FOOD SUPPLY
+   ========================================================= */
+
+.business-products {
+  position: relative;
+  width: 100%;
+  padding: 130px 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 90px;
+  background: var(--yellow);
+}
+
+.business-products-content {
+  max-width: 650px;
+}
+
+.business-products h2 {
+  margin-bottom: 28px;
+  color: var(--dark-teal);
+  font-size: clamp(42px, 5.5vw, 76px);
+  letter-spacing: -0.05em;
+}
+
+.business-products p:not(.eyebrow) {
+  margin-bottom: 22px;
+  color: #334d49;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.business-products > img,
+.business-products-image {
+  width: 100%;
+  min-height: 400px;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 48% 48% 30px 30px;
+}
+
+.business-products .primary-button {
+  margin-top: 12px;
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+.business-products .primary-button:hover {
+  background: var(--teal);
+}
+
+
+/* =========================================================
+   BUSINESS PAGE ACCESSIBILITY
+   ========================================================= */
+
+.business-page-card:focus-within,
+.business-products a:focus-visible,
+.business-page-card a:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 5px;
+}
+
+
+/* =========================================================
+   OUR BUSINESSES — TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .business-hero {
+    min-height: 620px;
+    height: 76svh;
+  }
+
+  .business-hero-content {
+    padding: 80px 0 90px;
+  }
+
+  .business-intro {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 90px 0;
+  }
+
+  .businesses-page-grid {
+    padding: 90px 5%;
+  }
+
+  .businesses-page-grid > p {
+    margin-bottom: 45px;
+  }
+
+  .business-page-card {
+    min-height: 0;
+  }
+
+  .business-page-card > img,
+  .business-page-card-image {
+    height: 250px;
+  }
+
+  .business-page-card > div,
+  .business-page-card-content {
+    padding: 25px;
+  }
+
+  .business-connection {
+    padding: 95px 6%;
+  }
+
+  .business-flow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 45px;
+  }
+
+  .business-flow > div {
+    min-height: 0;
+  }
+
+  .business-products {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 90px 7%;
+  }
+
+  .business-products > img,
+  .business-products-image {
+    min-height: 350px;
+    max-height: 500px;
+    border-radius: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   OUR BUSINESSES — MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .business-hero {
+    min-height: 590px;
+    height: 78svh;
+  }
+
+  .business-hero-content {
+    width: 88%;
+    padding: 70px 0 80px;
+  }
+
+  .business-hero-content h1 {
+    font-size: clamp(48px, 13vw, 68px);
+  }
+
+  .business-hero-content p:not(.eyebrow) {
+    margin-top: 22px;
+    font-size: 16px;
+  }
+
+  .business-intro {
+    width: 86%;
+    gap: 25px;
+    padding: 80px 0;
+  }
+
+  .business-intro h2 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+
+  .business-intro p {
+    font-size: 17px;
+  }
+
+  .businesses-page-grid {
+    padding: 80px 6%;
+  }
+
+  .businesses-page-grid > h2 {
+    font-size: clamp(38px, 10vw, 55px);
+  }
+
+  .businesses-page-grid > p {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .business-page-card {
+    border-radius: 25px;
+  }
+
+  .business-page-card > img,
+  .business-page-card-image {
+    height: 235px;
+  }
+
+  .business-page-card > div,
+  .business-page-card-content {
+    padding: 24px;
+  }
+
+  .business-page-card h3 {
+    font-size: 27px;
+  }
+
+  .business-connection {
+    padding: 80px 7%;
+  }
+
+  .business-connection h2 {
+    font-size: clamp(38px, 10vw, 55px);
+  }
+
+  .business-connection > p,
+  .business-connection-inner > p {
+    font-size: 16px;
+  }
+
+  .business-flow > div {
+    padding: 25px;
+    border-radius: 22px;
+  }
+
+  .business-flow h3 {
+    font-size: 22px;
+  }
+
+  .business-products {
+    padding: 80px 7%;
+    gap: 35px;
+  }
+
+  .business-products h2 {
+    font-size: clamp(38px, 10vw, 55px);
+  }
+
+  .business-products p:not(.eyebrow) {
+    font-size: 16px;
+  }
+
+  .business-products > img,
+  .business-products-image {
+    min-height: 280px;
+    border-radius: 25px;
+  }
+
+}
+
+
+/* =========================================================
+   END OF OUR BUSINESSES PAGE
+   ========================================================= */
+/* OUR BUSINESSES CARD GRID */
+
+.businesses-page-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 1100px) {
+  .businesses-page-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .businesses-page-cards {
+    grid-template-columns: 1fr;
+  }
+}
