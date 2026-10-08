@@ -16,21 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       DESKTOP DROPDOWNS
+       DESKTOP DROPDOWN NAVIGATION
     ====================================================== */
 
-    const dropdowns = document.querySelectorAll(".nav-dropdown");
+    const dropdowns =
+        document.querySelectorAll(".nav-dropdown");
 
     dropdowns.forEach(function (dropdown) {
 
-        const button = dropdown.querySelector(
-            ".nav-dropdown-button"
-        );
+        const button =
+            dropdown.querySelector(".nav-dropdown-button");
 
-        if (!button) return;
+        if (!button) {
+            return;
+        }
 
         button.addEventListener("click", function (event) {
 
+            event.preventDefault();
             event.stopPropagation();
 
             dropdowns.forEach(function (otherDropdown) {
@@ -49,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLOSE DESKTOP DROPDOWNS
+       CLOSE DROPDOWN WHEN CLICKING OUTSIDE
     ====================================================== */
 
     document.addEventListener("click", function (event) {
@@ -74,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const mobileNav =
         document.getElementById("mobileNav");
+
 
     if (mobileButton && mobileNav) {
 
@@ -106,7 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const submenu =
                 title.nextElementSibling;
 
-            if (!submenu) return;
+            if (!submenu) {
+                return;
+            }
 
             const isOpen =
                 submenu.classList.toggle("active");
@@ -115,8 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 title.querySelector("span");
 
             if (symbol) {
+
                 symbol.textContent =
                     isOpen ? "−" : "+";
+
             }
 
         });
@@ -125,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CLOSE MOBILE MENU AFTER CLICKING A LINK
+       MOBILE LINK CLICK
     ====================================================== */
 
     const mobileLinks =
@@ -180,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       SMOOTH ANCHOR SCROLL
+       SMOOTH INTERNAL LINKS
     ====================================================== */
 
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -209,13 +217,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const headerHeight =
                 header ? header.offsetHeight : 0;
 
-            const targetPosition =
+            const position =
                 target.getBoundingClientRect().top +
                 window.pageYOffset -
                 headerHeight;
 
             window.scrollTo({
-                top: targetPosition,
+                top: position,
                 behavior: "smooth"
             });
 
