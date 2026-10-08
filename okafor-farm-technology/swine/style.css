@@ -356,7 +356,7 @@ button {
   inset: 0;
 
   background-image:
-    url("../assets/swine-farm.jpg");
+    url("swine-farm.jpg");
 
   background-size: cover;
   background-position: center center;
@@ -565,17 +565,17 @@ button {
 
 .sow-farm-image {
   background-image:
-    url("../assets/sow-farm.jpg");
+    url("sow-farm.jpg");
 }
 
 .fattening-farm-image {
   background-image:
-    url("../assets/fattening-farm.jpg");
+    url("fattening-farm.jpg");
 }
 
 .feeding-drinking-image {
   background-image:
-    url("../assets/feeding-drinking.jpg");
+    url("feeding-drinking.jpg");
 }
 
 
