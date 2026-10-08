@@ -1,234 +1,155 @@
 /* =========================================================
-   OKAFOR FARM TECHNOLOGY — POULTRY
-========================================================= */
+   OKAFOR FARM TECHNOLOGY — POULTRY SCRIPT
+   ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    /* =====================================================
-       CURRENT YEAR
-    ====================================================== */
+/* =========================================================
+   MENU
+   ========================================================= */
 
-    const year = document.getElementById("currentYear");
+const menuTrigger = document.getElementById("menuTrigger");
+const menuOverlay = document.getElementById("menuOverlay");
+const menuClose = document.getElementById("menuClose");
 
-    if (year) {
-        year.textContent = new Date().getFullYear();
-    }
+const menuViews = document.querySelectorAll(".menu-view");
+const menuOpenButtons = document.querySelectorAll(".menu-open");
+const menuBackButtons = document.querySelectorAll(".menu-back");
+const menuLinks = document.querySelectorAll(".menu-view a");
 
 
-    /* =====================================================
-       DESKTOP DROPDOWN NAVIGATION
-    ====================================================== */
+function showMenuView(viewId) {
 
-    const dropdowns =
-        document.querySelectorAll(".nav-dropdown");
+  menuViews.forEach(view => {
+    view.classList.remove("active");
+  });
 
-    dropdowns.forEach(function (dropdown) {
+  const target = document.getElementById(viewId);
 
-        const button =
-            dropdown.querySelector(".nav-dropdown-button");
+  if (target) {
+    target.classList.add("active");
+  }
 
-        if (!button) {
-            return;
-        }
+}
 
-        button.addEventListener("click", function (event) {
 
-            event.preventDefault();
-            event.stopPropagation();
+function openMenu() {
 
-            dropdowns.forEach(function (otherDropdown) {
+  menuOverlay.classList.add("open");
 
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove("open");
-                }
+  document.body.classList.add("menu-open");
 
-            });
+  showMenuView("mainMenu");
 
-            dropdown.classList.toggle("open");
+}
 
-        });
 
-    });
+function closeMenu() {
 
+  menuOverlay.classList.remove("open");
 
-    /* =====================================================
-       CLOSE DROPDOWN WHEN CLICKING OUTSIDE
-    ====================================================== */
+  document.body.classList.remove("menu-open");
 
-    document.addEventListener("click", function (event) {
+  showMenuView("mainMenu");
 
-        if (!event.target.closest(".nav-dropdown")) {
+}
 
-            dropdowns.forEach(function (dropdown) {
-                dropdown.classList.remove("open");
-            });
 
-        }
+/* Open menu */
 
-    });
+menuTrigger.addEventListener("click", openMenu);
 
 
-    /* =====================================================
-       MOBILE MENU
-    ====================================================== */
+/* Close menu */
 
-    const mobileButton =
-        document.getElementById("mobileMenuButton");
+menuClose.addEventListener("click", closeMenu);
 
-    const mobileNav =
-        document.getElementById("mobileNav");
 
+/* Open submenu */
 
-    if (mobileButton && mobileNav) {
+menuOpenButtons.forEach(button => {
 
-        mobileButton.addEventListener("click", function () {
+  button.addEventListener("click", () => {
 
-            const isOpen =
-                mobileNav.classList.toggle("active");
+    const target = button.dataset.target;
 
-            mobileButton.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+    showMenuView(target);
 
-        });
+  });
 
-    }
+});
 
 
-    /* =====================================================
-       MOBILE SUBMENUS
-    ====================================================== */
+/* Back */
 
-    const mobileTitles =
-        document.querySelectorAll(".mobile-nav-title");
+menuBackButtons.forEach(button => {
 
-    mobileTitles.forEach(function (title) {
+  button.addEventListener("click", () => {
 
-        title.addEventListener("click", function () {
+    const target = button.dataset.back;
 
-            const submenu =
-                title.nextElementSibling;
+    showMenuView(target);
 
-            if (!submenu) {
-                return;
-            }
+  });
 
-            const isOpen =
-                submenu.classList.toggle("active");
+});
 
-            const symbol =
-                title.querySelector("span");
 
-            if (symbol) {
+/* Close after normal navigation */
 
-                symbol.textContent =
-                    isOpen ? "−" : "+";
+menuLinks.forEach(link => {
 
-            }
+  link.addEventListener("click", () => {
 
-        });
+    closeMenu();
 
-    });
+  });
 
+});
 
-    /* =====================================================
-       MOBILE LINK CLICK
-    ====================================================== */
 
-    const mobileLinks =
-        document.querySelectorAll(".mobile-nav a");
+/* Escape key */
 
-    mobileLinks.forEach(function (link) {
+document.addEventListener("keydown", event => {
 
-        link.addEventListener("click", function () {
+  if (event.key === "Escape") {
 
-            if (mobileNav) {
-                mobileNav.classList.remove("active");
-            }
+    closeMenu();
 
-            if (mobileButton) {
-                mobileButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-            }
+  }
 
-        });
+});
 
-    });
 
+/* =========================================================
+   SOLUTION CARD CAROUSEL
+   ========================================================= */
 
-    /* =====================================================
-       ESCAPE KEY
-    ====================================================== */
+const solutionTrack = document.getElementById("solutionTrack");
 
-    document.addEventListener("keydown", function (event) {
+const prevCard = document.getElementById("prevCard");
 
-        if (event.key === "Escape") {
+const nextCard = document.getElementById("nextCard");
 
-            dropdowns.forEach(function (dropdown) {
-                dropdown.classList.remove("open");
-            });
 
-            if (mobileNav) {
-                mobileNav.classList.remove("active");
-            }
+function scrollCards(amount) {
 
-            if (mobileButton) {
-                mobileButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-            }
+  solutionTrack.scrollBy({
+    left: amount,
+    behavior: "smooth"
+  });
 
-        }
+}
 
-    });
 
+nextCard.addEventListener("click", () => {
 
-    /* =====================================================
-       SMOOTH INTERNAL LINKS
-    ====================================================== */
+  scrollCards(360);
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+});
 
-        link.addEventListener("click", function (event) {
 
-            const targetId =
-                link.getAttribute("href");
+prevCard.addEventListener("click", () => {
 
-            if (!targetId || targetId === "#") {
-                return;
-            }
-
-            const target =
-                document.querySelector(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            event.preventDefault();
-
-            const header =
-                document.querySelector(".site-header");
-
-            const headerHeight =
-                header ? header.offsetHeight : 0;
-
-            const position =
-                target.getBoundingClientRect().top +
-                window.pageYOffset -
-                headerHeight;
-
-            window.scrollTo({
-                top: position,
-                behavior: "smooth"
-            });
-
-        });
-
-    });
+  scrollCards(-360);
 
 });
