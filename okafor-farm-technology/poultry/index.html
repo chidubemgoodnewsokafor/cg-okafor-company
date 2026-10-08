@@ -7,6 +7,7 @@
   <title>Okafor Farm Technology | Poultry</title>
 
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -14,15 +15,26 @@
   <!-- =====================================================
        HEADER
   ====================================================== -->
-
   <header class="site-header">
 
     <a href="../index.html" class="brand">
-      <img src="okafor-logo.png" alt="Okafor Farm Technology">
+      <img src="../assets/okafor-logo-white.png" alt="Okafor">
     </a>
 
-    <button class="menu-trigger" id="menuTrigger" aria-label="Open menu">
-      MENU
+    <button
+      class="menu-trigger"
+      id="menuTrigger"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      <span class="hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <span class="menu-label">MENU</span>
     </button>
 
   </header>
@@ -31,21 +43,19 @@
   <!-- =====================================================
        FULL SCREEN NAVIGATION
   ====================================================== -->
-
-  <div class="menu-overlay" id="menuOverlay">
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
 
     <div class="menu-top">
 
-      <img
-        src="okafor-logo.png"
-        alt="Okafor"
-        class="menu-logo"
-      >
+      <a href="../index.html" class="menu-logo">
+        <img src="../assets/okafor-logo.png" alt="Okafor">
+      </a>
 
       <button
         class="menu-close"
         id="menuClose"
-        aria-label="Close menu"
+        type="button"
+        aria-label="Close navigation"
       >
         ×
       </button>
@@ -54,88 +64,101 @@
 
 
     <!-- MAIN MENU -->
+    <nav class="menu-view active" id="mainMenu">
 
-    <div class="menu-view active" id="mainMenu">
-
-      <a href="../index.html" class="menu-link">
-        <span>HOME</span>
+      <a href="../index.html" class="menu-item">
+        HOME
       </a>
 
-      <button class="menu-link menu-open" data-target="designMenu">
+      <button
+        class="menu-item menu-open"
+        type="button"
+        data-target="farmDesignMenu"
+      >
         <span>FARM DESIGN &amp; BUILDING</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </button>
 
-      <button class="menu-link menu-open" data-target="automationMenu">
+      <button
+        class="menu-item menu-open"
+        type="button"
+        data-target="solutionsMenu"
+      >
         <span>AUTOMATION / SOLUTIONS</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </button>
 
-    </div>
+    </nav>
 
 
     <!-- FARM DESIGN MENU -->
+    <nav class="menu-view" id="farmDesignMenu">
 
-    <div class="menu-view" id="designMenu">
-
-      <button class="menu-back" data-back="mainMenu">
-        <span>←</span>
+      <button
+        class="menu-back"
+        type="button"
+        data-target="mainMenu"
+      >
+        <span class="back-arrow">←</span>
         <span>FARM DESIGN &amp; BUILDING</span>
       </button>
 
-      <a href="egg-layer/index.html" class="menu-link">
+      <a href="egg-layer/index.html" class="menu-item menu-destination">
         <span>EGG LAYER</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-      <a href="broiler/index.html" class="menu-link">
+      <a href="broiler/index.html" class="menu-item menu-destination">
         <span>BROILER</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-    </div>
+    </nav>
 
 
-    <!-- AUTOMATION MENU -->
+    <!-- AUTOMATION / SOLUTIONS MENU -->
+    <nav class="menu-view" id="solutionsMenu">
 
-    <div class="menu-view" id="automationMenu">
-
-      <button class="menu-back" data-back="mainMenu">
-        <span>←</span>
+      <button
+        class="menu-back"
+        type="button"
+        data-target="mainMenu"
+      >
+        <span class="back-arrow">←</span>
         <span>AUTOMATION / SOLUTIONS</span>
       </button>
 
-      <a href="feeding-watering/index.html" class="menu-link">
+      <a href="feeding-watering/index.html" class="menu-item menu-destination">
         <span>FEEDING &amp; WATERING</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-      <a href="manure-management/index.html" class="menu-link">
+      <a href="manure-management/index.html" class="menu-item menu-destination">
         <span>MANURE MANAGEMENT</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-      <a href="egg-collection/index.html" class="menu-link">
+      <a href="egg-collection/index.html" class="menu-item menu-destination">
         <span>EGG COLLECTION</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-      <a href="brooding-debeaking/index.html" class="menu-link">
+      <a href="brooding-debeaking/index.html" class="menu-item menu-destination">
         <span>BROODING &amp; DEBEAKING</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-      <a href="climate-control-lighting/index.html" class="menu-link">
+      <a href="climate-control-lighting/index.html" class="menu-item menu-destination">
         <span>CLIMATE CONTROL / LIGHTING</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-      <a href="monitoring/index.html" class="menu-link">
+      <a href="monitoring/index.html" class="menu-item menu-destination">
         <span>MONITORING</span>
-        <span class="arrow">›</span>
+        <span class="menu-arrow">›</span>
       </a>
 
-    </div>
+    </nav>
 
   </div>
 
@@ -143,10 +166,9 @@
   <!-- =====================================================
        HERO
   ====================================================== -->
-
   <main>
 
-    <section class="poultry-hero">
+    <section class="hero">
 
       <div class="hero-image"></div>
 
@@ -157,7 +179,8 @@
         <p class="eyebrow">OKAFOR FARM TECHNOLOGY</p>
 
         <h1>
-          Better-designed poultry farms.
+          Better-designed<br>
+          poultry farms.
         </h1>
 
         <p class="hero-text">
@@ -165,33 +188,30 @@
           for modern poultry production.
         </p>
 
-        <a href="#looking-for" class="hero-button">
+        <a href="#explore" class="hero-button">
           EXPLORE POULTRY SOLUTIONS
+          <span>→</span>
         </a>
 
-      </div>
-
-      <div class="scroll-indicator">
-        <span>SCROLL</span>
-        <span class="scroll-arrow">↓</span>
       </div>
 
     </section>
 
 
-    <!-- =====================================================
-         WHAT ARE YOU LOOKING FOR
-    ====================================================== -->
-
-    <section class="looking-section" id="looking-for">
+    <!-- ===================================================
+         WHAT ARE YOU LOOKING FOR?
+    ==================================================== -->
+    <section class="explore-section" id="explore">
 
       <div class="section-heading">
 
-        <p class="eyebrow dark">
+        <p class="eyebrow red-text">
           POULTRY
         </p>
 
-        <h2>What are you looking for?</h2>
+        <h2>
+          What are you looking for?
+        </h2>
 
         <p>
           Choose the type of poultry operation or solution
@@ -201,133 +221,80 @@
       </div>
 
 
-      <div class="solution-carousel">
+      <div class="solution-grid">
 
-        <button class="carousel-arrow prev" id="prevCard">
-          ‹
-        </button>
+        <a href="egg-layer/index.html" class="solution-card">
 
-        <div class="solution-track" id="solutionTrack">
+          <div class="card-image egg-layer-image"></div>
 
-          <a href="egg-layer/index.html" class="solution-card">
+          <div class="card-content">
 
-            <div
-              class="card-image"
-              style="background-image:url('egg-layer.jpg');"
-            ></div>
+            <span class="card-number">01</span>
 
-            <div class="card-content">
+            <h3>Egg Layer</h3>
 
-              <span class="card-label">
-                FARM DESIGN &amp; BUILDING
-              </span>
+            <p>
+              Farm design and equipment solutions
+              for efficient layer production.
+            </p>
 
-              <h3>Egg Layer</h3>
+            <span class="card-link">
+              EXPLORE
+              <span>→</span>
+            </span>
 
-              <p>
-                Farm design and equipment solutions
-                for efficient layer production.
-              </p>
+          </div>
 
-              <span class="card-arrow">→</span>
-
-            </div>
-
-          </a>
+        </a>
 
 
-          <a href="broiler/index.html" class="solution-card">
+        <a href="broiler/index.html" class="solution-card">
 
-            <div
-              class="card-image"
-              style="background-image:url('broiler.jpg');"
-            ></div>
+          <div class="card-image broiler-image"></div>
 
-            <div class="card-content">
+          <div class="card-content">
 
-              <span class="card-label">
-                FARM DESIGN &amp; BUILDING
-              </span>
+            <span class="card-number">02</span>
 
-              <h3>Broiler</h3>
+            <h3>Broiler</h3>
 
-              <p>
-                Practical farm layouts and equipment
-                for modern broiler production.
-              </p>
+            <p>
+              Practical farm layouts and equipment
+              for modern broiler production.
+            </p>
 
-              <span class="card-arrow">→</span>
+            <span class="card-link">
+              EXPLORE
+              <span>→</span>
+            </span>
 
-            </div>
+          </div>
 
-          </a>
+        </a>
 
 
-          <a href="feeding-watering/index.html" class="solution-card">
+        <a href="feeding-watering/index.html" class="solution-card">
 
-            <div
-              class="card-image"
-              style="background-image:url('feeding-watering.jpg');"
-            ></div>
+          <div class="card-image feeding-image"></div>
 
-            <div class="card-content">
+          <div class="card-content">
 
-              <span class="card-label">
-                AUTOMATION / SOLUTIONS
-              </span>
+            <span class="card-number">03</span>
 
-              <h3>Feeding &amp; Watering</h3>
+            <h3>Feeding &amp; Watering</h3>
 
-              <p>
-                Equipment designed to deliver feed
-                and water consistently across the house.
-              </p>
+            <p>
+              Equipment designed to deliver feed
+              and water consistently across the house.
+            </p>
 
-              <span class="card-arrow">→</span>
+            <span class="card-link">
+              EXPLORE
+              <span>→</span>
+            </span>
 
-            </div>
+          </div>
 
-          </a>
-
-        </div>
-
-        <button class="carousel-arrow next" id="nextCard">
-          ›
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FARM DESIGN
-    ====================================================== -->
-
-    <section class="simple-section">
-
-      <div class="simple-image">
-        <img src="hero-poultry.jpg" alt="Poultry farm">
-      </div>
-
-      <div class="simple-content">
-
-        <p class="eyebrow dark">
-          FARM DESIGN &amp; BUILDING
-        </p>
-
-        <h2>
-          Designed around your farm.
-        </h2>
-
-        <p>
-          From the layout of the house to the equipment
-          inside it, we help create poultry facilities
-          suited to the way you want to produce.
-        </p>
-
-        <a href="#looking-for" class="outline-button">
-          EXPLORE FARM DESIGN
         </a>
 
       </div>
@@ -335,30 +302,32 @@
     </section>
 
 
-    <!-- =====================================================
-         AUTOMATION
-    ====================================================== -->
+    <!-- ===================================================
+         SUPPORT
+    ==================================================== -->
+    <section class="support-section">
 
-    <section class="automation-section">
-
-      <div class="simple-content light">
+      <div class="support-inner">
 
         <p class="eyebrow">
-          AUTOMATION / SOLUTIONS
+          OKAFOR FARM TECHNOLOGY
         </p>
 
         <h2>
-          Equipment that works for the farm.
+          Technology built around<br>
+          the way your farm works.
         </h2>
 
         <p>
-          Practical poultry equipment for feeding,
-          watering, manure handling, climate control,
-          egg collection and monitoring.
+          From farm design and building to practical
+          automation, we help poultry producers create
+          better working environments and more efficient
+          production systems.
         </p>
 
-        <a href="#looking-for" class="light-button">
-          EXPLORE SOLUTIONS
+        <a href="#contact" class="dark-button">
+          TALK TO OUR TEAM
+          <span>→</span>
         </a>
 
       </div>
@@ -371,21 +340,20 @@
   <!-- =====================================================
        FOOTER
   ====================================================== -->
-
   <footer class="site-footer" id="contact">
 
-    <div class="footer-main">
+    <div class="footer-top">
 
       <div class="footer-brand">
 
         <img
-          src="okafor-logo-white.png"
+          src="../assets/okafor-logo-white.png"
           alt="Okafor"
         >
 
         <p>
-          Practical technology and solutions
-          for better poultry and swine farming.
+          Practical technology and solutions for
+          better poultry and swine farming.
         </p>
 
       </div>
@@ -396,9 +364,7 @@
         <h4>FARM TECHNOLOGY</h4>
 
         <a href="../index.html">Home</a>
-
         <a href="egg-layer/index.html">Egg Layer</a>
-
         <a href="broiler/index.html">Broiler</a>
 
       </div>
@@ -408,7 +374,9 @@
 
         <h4>CONTACT</h4>
 
-        <p>Talk to our team about your farm.</p>
+        <p>
+          Talk to our team about your farm.
+        </p>
 
         <a href="mailto:info@cgokafor.com">
           info@cgokafor.com
@@ -421,20 +389,19 @@
 
     <div class="footer-bottom">
 
-      <span>
+      <p>
         Okafor Farm Technology
-      </span>
+        <span>•</span>
+        A business of C.G. Okafor Co.
+      </p>
 
-      <span>
-        A business of C.G. Okafor Co. © 2026
-      </span>
+      <p>
+        © 2026 C.G. Okafor Co.
+      </p>
 
     </div>
 
   </footer>
-
-
-  <script src="script.js"></script>
 
 </body>
 </html>
