@@ -396,7 +396,7 @@ button {
   inset: 0;
 
   background-image:
-    url("../assets/poultry-farm.jpg");
+    url("poultry-farm.jpg");
 
   background-size: cover;
 
@@ -632,17 +632,17 @@ button {
 
 .egg-layer-image {
   background-image:
-    url("../assets/egg-layer.jpg");
+    url("egg-layer.jpg");
 }
 
 .broiler-image {
   background-image:
-    url("../assets/broiler.jpg");
+    url("broiler.jpg");
 }
 
 .feeding-image {
   background-image:
-    url("../assets/feeding-watering.jpg");
+    url("feeding-watering.jpg");
 }
 
 
