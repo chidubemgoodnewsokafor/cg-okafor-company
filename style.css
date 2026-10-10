@@ -114,19 +114,13 @@ button {
     visibility 0.2s ease;
 }
 
-/* =========================================================
-   HIDE MENU WHILE NAVIGATION IS OPEN
-   ========================================================= */
-
 .menu-button.menu-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-/* =========================================================
-   MENU LOGO
-   ========================================================= */
+/* MENU LOGO */
 
 .menu-button > img {
   position: absolute;
@@ -142,9 +136,7 @@ button {
   pointer-events: none;
 }
 
-/* =========================================================
-   HAMBURGER ICON
-   ========================================================= */
+/* HAMBURGER ICON */
 
 .menu-button > span:not(.menu-label) {
   position: absolute;
@@ -173,9 +165,7 @@ button {
   top: 34px;
 }
 
-/* =========================================================
-   MENU TEXT
-   ========================================================= */
+/* MENU TEXT */
 
 .menu-label {
   position: absolute;
@@ -195,9 +185,7 @@ button {
   white-space: nowrap;
 }
 
-/* =========================================================
-   SCROLL SLOGAN
-   ========================================================= */
+/* SCROLL SLOGAN */
 
 .menu-label-slogan {
   display: none;
@@ -217,9 +205,7 @@ button {
   white-space: nowrap;
 }
 
-/* =========================================================
-   SCROLLED MENU STATE
-   ========================================================= */
+/* SCROLLED MENU STATE */
 
 .menu-button.scrolled {
   width: 270px;
@@ -262,9 +248,7 @@ button {
   display: flex;
 }
 
-/* =========================================================
-   NAVIGATION HEADER
-   ========================================================= */
+/* NAVIGATION HEADER */
 
 .nav-header {
   position: relative;
@@ -316,9 +300,7 @@ button {
   color: var(--teal);
 }
 
-/* =========================================================
-   NAVIGATION PANELS
-   ========================================================= */
+/* NAVIGATION PANELS */
 
 .nav-panel {
   display: none;
@@ -335,9 +317,7 @@ button {
   display: flex;
 }
 
-/* =========================================================
-   NAVIGATION ITEMS
-   ========================================================= */
+/* NAVIGATION ITEMS */
 
 .nav-item {
   width: 100%;
@@ -376,9 +356,7 @@ button {
   text-decoration: none;
 }
 
-/* =========================================================
-   NAVIGATION ARROW
-   ========================================================= */
+/* NAVIGATION ARROW */
 
 .nav-arrow {
   margin-left: 30px;
@@ -393,9 +371,7 @@ button {
   transform: translateX(6px);
 }
 
-/* =========================================================
-   NAVIGATION DIVIDER
-   ========================================================= */
+/* NAVIGATION DIVIDER */
 
 .nav-divider {
   width: 100%;
@@ -406,9 +382,7 @@ button {
   opacity: 0.25;
 }
 
-/* =========================================================
-   BACK BUTTON
-   ========================================================= */
+/* BACK BUTTON */
 
 .nav-back {
   width: 100%;
@@ -444,27 +418,17 @@ button {
   color: var(--dark-teal);
 }
 
-/* =========================================================
-   MENU BUTTON — HIDDEN WHEN NAVIGATION IS OPEN
-   ========================================================= */
-
 body.nav-open .menu-button {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
 
-/* =========================================================
-   PREVENT PAGE SCROLL WHEN NAVIGATION IS OPEN
-   ========================================================= */
-
 body.nav-open {
   overflow: hidden;
 }
 
-/* =========================================================
-   RESPONSIVE NAVIGATION
-   ========================================================= */
+/* RESPONSIVE NAVIGATION */
 
 @media (max-width: 850px) {
   .nav-header {
@@ -472,7 +436,7 @@ body.nav-open {
     flex-basis: 105px;
   }
 
-  .nav-logo img {
+  .nav-logo {
     width: 85px;
     height: 85px;
   }
@@ -485,20 +449,13 @@ body.nav-open {
   }
 
   .nav-back {
-    left: 20px;
-    width: 46px;
-    height: 46px;
-    font-size: 25px;
+    font-size: 13px;
   }
 
-  .nav-panel-inner {
+  .nav-panel {
     width: 88%;
     padding-top: 40px;
     padding-bottom: 120px;
-  }
-
-  .nav-section-title {
-    margin-bottom: 25px;
   }
 
   .nav-item {
@@ -514,10 +471,11 @@ body.nav-open {
 @media (max-width: 560px) {
   .nav-header {
     height: 92px;
+    min-height: 92px;
     flex-basis: 92px;
   }
 
-  .nav-logo img {
+  .nav-logo {
     width: 76px;
     height: 76px;
   }
@@ -529,14 +487,7 @@ body.nav-open {
     font-size: 32px;
   }
 
-  .nav-back {
-    left: 12px;
-    width: 44px;
-    height: 44px;
-    font-size: 23px;
-  }
-
-  .nav-panel-inner {
+  .nav-panel {
     width: 90%;
     padding-top: 30px;
     padding-bottom: 100px;
@@ -720,9 +671,7 @@ h2 {
   z-index: 2;
 }
 
-/* =========================================================
-   HERO MESSAGE
-   ========================================================= */
+/* HERO MESSAGE */
 
 .hero-content {
   position: absolute;
@@ -746,9 +695,7 @@ h2 {
   text-shadow: 0 3px 20px rgba(0,0,0,0.25);
 }
 
-/* =========================================================
-   HERO CONTROLS
-   ========================================================= */
+/* HERO CONTROLS */
 
 .hero-controls {
   position: absolute;
@@ -881,7 +828,6 @@ h2 {
 
 /* =========================================================
    ABOUT
-   Rounded rectangle instead of circle
    ========================================================= */
 
 .about-section {
@@ -914,8 +860,8 @@ h2 {
 }
 
 /* =========================================================
-   BUSINESSES
-   Four horizontal cards on desktop
+   BUSINESSES — HORIZONTAL CARD CAROUSEL
+   Four cards side by side on desktop
    ========================================================= */
 
 .businesses-section {
@@ -924,13 +870,48 @@ h2 {
 }
 
 .section-heading {
-  margin-bottom: 55px;
+  margin-bottom: 35px;
 }
+
+/*
+   The business grid becomes a horizontal scrolling row.
+   It keeps the original card colors and rounded corners.
+*/
 
 .business-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 66px) / 4);
+  grid-template-columns: unset;
+
   gap: 22px;
+
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 8px 3px 24px;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) #e8eeec;
+}
+
+.business-grid::-webkit-scrollbar {
+  height: 7px;
+}
+
+.business-grid::-webkit-scrollbar-track {
+  background: #e8eeec;
+  border-radius: 10px;
+}
+
+.business-grid::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 10px;
 }
 
 .business-card {
@@ -945,13 +926,15 @@ h2 {
   background: var(--dark-teal);
   color: var(--white);
 
+  scroll-snap-align: start;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 .business-card:hover {
-  transform: translateY(-9px);
+  transform: translateY(-5px);
 
   box-shadow: 0 25px 55px rgba(7,69,64,0.18);
 }
@@ -1011,8 +994,56 @@ h2 {
 }
 
 /* =========================================================
+   CARD CAROUSEL CONTROLS
+   Add these buttons below the card row in the HTML
+   ========================================================= */
+
+.card-carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.card-carousel-button {
+  width: 48px;
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--dark-teal);
+  border-radius: 50%;
+
+  background: var(--white);
+  color: var(--dark-teal);
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.card-carousel-button:hover {
+  background: var(--dark-teal);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.card-carousel-button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+/* =========================================================
    FARMERS
-   Rounded rectangle instead of circle
    ========================================================= */
 
 .farmers-section {
@@ -1129,7 +1160,7 @@ h2 {
 }
 
 /* =========================================================
-   FOOD
+   FOOD — HORIZONTAL CARD CAROUSEL
    ========================================================= */
 
 .food-section {
@@ -1138,7 +1169,8 @@ h2 {
 
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
-  gap: 70px;
+  gap: 50px;
+  align-items: start;
 }
 
 .food-intro {
@@ -1149,10 +1181,47 @@ h2 {
   max-width: 420px;
 }
 
+/*
+   Food cards remain in a horizontal row on desktop.
+   Additional cards can be reached by scrolling.
+*/
+
 .food-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 20px) / 2);
+  grid-template-columns: unset;
+
   gap: 20px;
+
+  min-width: 0;
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 8px 3px 22px;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) rgba(7,69,64,0.12);
+}
+
+.food-grid::-webkit-scrollbar {
+  height: 7px;
+}
+
+.food-grid::-webkit-scrollbar-track {
+  background: rgba(7,69,64,0.12);
+  border-radius: 10px;
+}
+
+.food-grid::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 10px;
 }
 
 .food-card {
@@ -1160,13 +1229,15 @@ h2 {
   overflow: hidden;
 
   background: var(--white);
-  border-radius: 35px;
+  border-radius: 28px;
+
+  scroll-snap-align: start;
 
   transition: transform 0.25s ease;
 }
 
 .food-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .food-card-image {
@@ -1285,7 +1356,6 @@ h2 {
 
 /* =========================================================
    CAREERS
-   Rounded rectangle instead of curved circle edge
    ========================================================= */
 
 .careers-section {
@@ -1337,8 +1407,6 @@ h2 {
   color: var(--white);
 }
 
-/* FOOTER MAIN */
-
 .footer-main {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
@@ -1348,8 +1416,6 @@ h2 {
   grid-template-columns: 1.6fr repeat(4, 1fr);
   gap: 45px;
 }
-
-/* FOOTER BRAND */
 
 .footer-brand p {
   max-width: 260px;
@@ -1372,8 +1438,6 @@ h2 {
   display: block;
   filter: brightness(0) invert(1);
 }
-
-/* FOOTER COLUMNS */
 
 .footer-column {
   display: flex;
@@ -1406,9 +1470,7 @@ h2 {
   transform: translateX(3px);
 }
 
-/* =========================================================
-   CONTACT + SOCIAL
-   ========================================================= */
+/* FOOTER CONTACT + SOCIAL */
 
 .footer-contact-social {
   width: min(var(--max-width), 90%);
@@ -1506,8 +1568,6 @@ h2 {
   transform: translateY(-3px);
 }
 
-/* FUTURE SOCIAL LINKS */
-
 .social-placeholder {
   opacity: .55;
   cursor: default;
@@ -1520,9 +1580,7 @@ h2 {
   transform: none;
 }
 
-/* =========================================================
-   FOOTER BOTTOM
-   ========================================================= */
+/* FOOTER BOTTOM */
 
 .footer-bottom {
   width: min(var(--max-width), 90%);
@@ -1535,54 +1593,6 @@ h2 {
 
   color: rgba(255,255,255,.45);
   font-size: 11px;
-}
-
-/* =========================================================
-   FOOTER RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1100px) {
-  .footer-main {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 700px) {
-  .footer-main {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px 25px;
-  }
-
-  .footer-brand {
-    grid-column: 1 / -1;
-  }
-
-  .footer-contact-social {
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 35px;
-  }
-}
-
-@media (max-width: 560px) {
-  .footer-main {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-brand {
-    grid-column: auto;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
 }
 
 /* =========================================================
@@ -1605,49 +1615,22 @@ h2 {
   background-repeat: no-repeat;
 }
 
-.circle-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.farmers-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.food-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-.insight-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
+.circle-image img,
+.card-image img,
+.farmers-image img,
+.food-card-image img,
+.insight-image img,
 .careers-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.card-image img,
+.food-card-image img,
+.insight-image img {
+  object-position: center;
 }
 
 /* =========================================================
@@ -1656,8 +1639,8 @@ h2 {
 
 @media (max-width: 1100px) {
   .business-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
+    grid-auto-columns: calc((100% - 44px) / 3);
+    gap: 16px;
   }
 
   .business-card {
@@ -1682,6 +1665,11 @@ h2 {
 
   .footer-main {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .food-section {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 35px;
   }
 }
 
@@ -1763,10 +1751,6 @@ h2 {
     line-height: 1.25;
   }
 
-  .hero-controls {
-    inset: 0;
-  }
-
   .hero-prev {
     left: 16px;
   }
@@ -1812,10 +1796,10 @@ h2 {
     gap: 50px;
   }
 
-  /* Two business cards per row on tablet */
+  /* Two business cards visible at once */
 
   .business-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: calc((100% - 18px) / 2);
     gap: 18px;
   }
 
@@ -1848,6 +1832,15 @@ h2 {
 
   .food-section {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .food-intro {
+    padding: 10px 0;
+  }
+
+  .food-grid {
+    grid-auto-columns: calc((100% - 20px) / 2);
   }
 
   .careers-section {
@@ -1858,6 +1851,60 @@ h2 {
     height: 450px;
     min-height: 0;
     border-radius: 28px;
+  }
+
+  .footer-main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-contact-social {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .about-page-intro-grid,
+  .leadership-inner,
+  .supplier-inner,
+  .brand-story-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-story-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-story-number {
+    font-size: 80px;
+  }
+
+  .about-feature-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-feature-image {
+    min-height: 500px;
+    max-height: 600px;
+  }
+
+  .about-feature-content {
+    padding: 80px 8%;
+  }
+
+  .brand-story-mark {
+    width: min(430px, 85vw);
+    border-radius: 28px;
+  }
+
+  .leadership-links {
+    margin-top: 50px;
   }
 }
 
@@ -1947,25 +1994,57 @@ h2 {
     line-height: 1.25;
   }
 
+  /* One business card visible at a time; swipe sideways */
+
   .business-grid {
-    grid-template-columns: 1fr;
+    grid-auto-columns: 88%;
+    gap: 15px;
+    padding-bottom: 20px;
   }
 
   .business-card {
-    min-height: 470px;
+    min-height: 450px;
   }
 
   .card-image {
-    height: 270px;
+    height: 250px;
   }
 
-  .food-grid,
+  .card-body {
+    padding: 22px;
+  }
+
+  .card-body h3 {
+    min-height: auto;
+  }
+
+  .card-carousel-controls {
+    margin-top: 8px;
+  }
+
+  .card-carousel-button {
+    width: 43px;
+    height: 43px;
+  }
+
+  /* Food cards scroll horizontally on phones */
+
+  .food-grid {
+    grid-auto-columns: 88%;
+    gap: 15px;
+  }
+
+  .food-card-image {
+    height: 220px;
+  }
+
   .insights-grid {
     grid-template-columns: 1fr;
   }
 
   .footer-main {
     grid-template-columns: 1fr 1fr;
+    gap: 40px 25px;
   }
 
   .footer-brand {
@@ -1974,7 +2053,76 @@ h2 {
 
   .footer-bottom {
     flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
+  }
+
+  /* ABOUT US PAGE */
+
+  .about-hero {
+    min-height: 590px;
+  }
+
+  .about-hero-content {
+    left: 6%;
+    bottom: 12%;
+    width: 88%;
+  }
+
+  .about-hero-content h1 {
+    font-size: clamp(48px, 14vw, 65px);
+  }
+
+  .about-hero-content > p:last-child {
+    font-size: 16px;
+  }
+
+  .about-page-intro {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .about-story-section {
+    padding: 85px 7%;
+  }
+
+  .about-feature-image {
+    min-height: 380px;
+  }
+
+  .about-feature-content {
+    padding: 70px 7%;
+  }
+
+  .brand-story-section {
+    padding: 80px 7%;
+  }
+
+  .leadership-section {
+    padding: 85px 7%;
+  }
+
+  .about-subsection .section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .supplier-inner {
+    gap: 40px;
+  }
+
+  .history-content {
+    margin-left: 0;
+  }
+
+  .events-placeholder {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px;
+  }
+
+  .event-placeholder-number {
+    font-size: 50px;
   }
 }
 
@@ -2049,9 +2197,7 @@ h2 {
   line-height: 1.45;
 }
 
-/* =========================================================
-   ABOUT INTRO
-   ========================================================= */
+/* ABOUT INTRO */
 
 .about-page-intro {
   padding-top: 140px;
@@ -2084,9 +2230,7 @@ h2 {
   margin-bottom: 0;
 }
 
-/* =========================================================
-   STORY SECTIONS
-   ========================================================= */
+/* STORY SECTIONS */
 
 .about-story-section {
   position: relative;
@@ -2156,9 +2300,7 @@ h2 {
   color: rgba(255,255,255,.16);
 }
 
-/* =========================================================
-   FARMERS FEATURE
-   ========================================================= */
+/* FARMERS FEATURE */
 
 .about-feature-section {
   display: grid;
@@ -2203,10 +2345,7 @@ h2 {
   margin-top: 15px;
 }
 
-/* =========================================================
-   BRAND STORY
-   Rounded rectangle instead of circle
-   ========================================================= */
+/* BRAND STORY */
 
 .brand-story-section {
   min-height: 650px;
@@ -2255,9 +2394,7 @@ h2 {
   object-fit: contain;
 }
 
-/* =========================================================
-   LEADERSHIP
-   ========================================================= */
+/* LEADERSHIP */
 
 .leadership-section {
   padding: 130px 7%;
@@ -2323,9 +2460,7 @@ h2 {
   font-size: 25px;
 }
 
-/* =========================================================
-   ABOUT SUBSECTIONS
-   ========================================================= */
+/* ABOUT SUBSECTIONS */
 
 .about-subsection {
   background: var(--white);
@@ -2354,9 +2489,7 @@ h2 {
   color: var(--white);
 }
 
-/* =========================================================
-   SUPPLIER INFORMATION
-   ========================================================= */
+/* SUPPLIER INFORMATION */
 
 .supplier-section {
   background: var(--yellow);
@@ -2388,9 +2521,7 @@ h2 {
   margin-top: 15px;
 }
 
-/* =========================================================
-   HISTORY
-   ========================================================= */
+/* HISTORY */
 
 .history-section {
   background: var(--white);
@@ -2409,9 +2540,7 @@ h2 {
   line-height: 1.7;
 }
 
-/* =========================================================
-   EVENTS
-   ========================================================= */
+/* EVENTS */
 
 .events-section {
   background: var(--soft);
@@ -2460,17 +2589,13 @@ h2 {
   line-height: 1.6;
 }
 
-/* =========================================================
-   ANCHOR OFFSET
-   ========================================================= */
+/* ANCHOR OFFSET */
 
 [id] {
   scroll-margin-top: 20px;
 }
 
-/* =========================================================
-   ABOUT PAGE RESPONSIVE
-   ========================================================= */
+/* ABOUT PAGE RESPONSIVE */
 
 @media (max-width: 850px) {
   .about-hero {
