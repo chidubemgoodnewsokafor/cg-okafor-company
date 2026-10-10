@@ -71,12 +71,6 @@ function closeNavigation() {
 
   }
 
-
-  /*
-    Always return navigation
-    to the main menu when closed.
-  */
-
   showNavPanel("main");
 
 }
@@ -112,21 +106,14 @@ function showNavPanel(panelId) {
 
   });
 
-
   const targetPanel =
     panelId === "main"
       ? document.querySelector(".nav-panel-main")
       : document.getElementById(panelId);
 
-
   if (targetPanel) {
 
     targetPanel.classList.add("active");
-
-    /*
-      Start every new navigation level
-      at the top.
-    */
 
     targetPanel.scrollTop = 0;
 
@@ -199,12 +186,7 @@ document
 
     link.addEventListener(
       "click",
-      () => {
-
-        closeNavigation();
-
-      }
-
+      closeNavigation
     );
 
   });
@@ -238,81 +220,36 @@ document.addEventListener(
 
 if (menuButton) {
 
-  let lastScrollY =
-    window.scrollY;
-
+  let lastScrollY = window.scrollY;
 
   function updateMenuState() {
-
-    /*
-      Don't change the floating button
-      while the full-screen navigation
-      is open.
-    */
 
     if (
       mainNav &&
       mainNav.classList.contains("open")
     ) {
 
-      lastScrollY =
-        window.scrollY;
+      lastScrollY = window.scrollY;
 
       return;
 
     }
 
+    const currentScrollY = window.scrollY;
 
-    const currentScrollY =
-      window.scrollY;
+    if (currentScrollY > lastScrollY) {
 
+      menuButton.classList.add("scrolled");
 
-    /*
-      SCROLLING DOWN
-      Show:
-      better farming,
-      Food for all
-    */
+    } else if (currentScrollY < lastScrollY) {
 
-    if (
-      currentScrollY >
-      lastScrollY
-    ) {
-
-      menuButton.classList.add(
-        "scrolled"
-      );
+      menuButton.classList.remove("scrolled");
 
     }
 
-
-    /*
-      SCROLLING UP
-      Return to MENU
-    */
-
-    else if (
-      currentScrollY <
-      lastScrollY
-    ) {
-
-      menuButton.classList.remove(
-        "scrolled"
-      );
-
-    }
-
-
-    /*
-      If scrolling stops,
-      keep current state.
-    */
-
-    lastScrollY =
-      currentScrollY;
+    lastScrollY = currentScrollY;
 
   }
-
 
   window.addEventListener(
     "scroll",
@@ -330,34 +267,23 @@ if (menuButton) {
    ========================================================= */
 
 const heroImage =
-  document.getElementById(
-    "hero-image"
-  );
+  document.getElementById("hero-image");
 
 const heroDots =
-  document.querySelectorAll(
-    ".hero-dot"
-  );
+  document.querySelectorAll(".hero-dot");
 
 const previousButton =
-  document.querySelector(
-    ".hero-prev"
-  );
+  document.querySelector(".hero-prev");
 
 const nextButton =
-  document.querySelector(
-    ".hero-next"
-  );
+  document.querySelector(".hero-next");
 
 
 const heroSlides = [
 
   "hero-food.jpg",
-
   "hero-farm.jpg",
-
   "hero-idegro.jpg",
-
   "hero-animal-health.jpg"
 
 ];
@@ -374,35 +300,28 @@ function showSlide(index) {
 
   if (!heroImage) return;
 
-
   currentSlide =
     (
-      index +
-      heroSlides.length
-    ) %
-    heroSlides.length;
-
+      index + heroSlides.length
+    ) % heroSlides.length;
 
   heroImage.style.backgroundImage =
     `url("${heroSlides[currentSlide]}")`;
 
+  heroDots.forEach((dot, i) => {
 
-  heroDots.forEach(
-    (dot, i) => {
+    dot.classList.toggle(
+      "active",
+      i === currentSlide
+    );
 
-      dot.classList.toggle(
-        "active",
-        i === currentSlide
-      );
-
-    }
-  );
+  });
 
 }
 
 
 /* =========================================================
-   NEXT SLIDE
+   NEXT HERO SLIDE
    ========================================================= */
 
 if (nextButton) {
@@ -411,9 +330,7 @@ if (nextButton) {
     "click",
     () => {
 
-      showSlide(
-        currentSlide + 1
-      );
+      showSlide(currentSlide + 1);
 
     }
   );
@@ -422,7 +339,7 @@ if (nextButton) {
 
 
 /* =========================================================
-   PREVIOUS SLIDE
+   PREVIOUS HERO SLIDE
    ========================================================= */
 
 if (previousButton) {
@@ -431,9 +348,7 @@ if (previousButton) {
     "click",
     () => {
 
-      showSlide(
-        currentSlide - 1
-      );
+      showSlide(currentSlide - 1);
 
     }
   );
@@ -445,82 +360,440 @@ if (previousButton) {
    HERO DOTS
    ========================================================= */
 
-heroDots.forEach(
-  dot => {
+heroDots.forEach(dot => {
 
-    dot.addEventListener(
-      "click",
-      () => {
+  dot.addEventListener(
+    "click",
+    () => {
 
-        showSlide(
-          Number(
-            dot.dataset.slide
-          )
-        );
+      showSlide(
+        Number(dot.dataset.slide)
+      );
 
-      }
-    );
+    }
+  );
 
-  }
-);
+});
 
 
 /* =========================================================
    AUTOMATIC HERO SLIDE
    ========================================================= */
 
-let heroTimer =
-  setInterval(
-    () => {
-
-      showSlide(
-        currentSlide + 1
-      );
-
-    },
-    6500
-  );
+let heroTimer = null;
 
 
-/* =========================================================
-   PAUSE HERO WHILE VIEWING
-   ========================================================= */
+function startHeroTimer() {
+
+  if (!heroImage) return;
+
+  clearInterval(heroTimer);
+
+  heroTimer = setInterval(() => {
+
+    showSlide(currentSlide + 1);
+
+  }, 6500);
+
+}
+
+
+function stopHeroTimer() {
+
+  clearInterval(heroTimer);
+
+}
+
 
 const hero =
-  document.querySelector(
-    ".hero"
-  );
+  document.querySelector(".hero");
 
 
 if (hero) {
 
   hero.addEventListener(
     "mouseenter",
+    stopHeroTimer
+  );
+
+  hero.addEventListener(
+    "mouseleave",
+    startHeroTimer
+  );
+
+  hero.addEventListener(
+    "focusin",
+    stopHeroTimer
+  );
+
+  hero.addEventListener(
+    "focusout",
+    startHeroTimer
+  );
+
+}
+
+
+showSlide(0);
+
+startHeroTimer();
+
+
+/* =========================================================
+   HORIZONTAL BUSINESS AND FOOD CARD ROWS
+
+   These are ordinary horizontally scrollable rows.
+   They do not autoplay or switch slides automatically.
+
+   Supported interactions:
+   - Arrow buttons
+   - Touch swiping
+   - Trackpad horizontal scrolling
+   - Mouse click-and-drag
+   ========================================================= */
+
+function setupHorizontalCardRow(
+  rowSelector,
+  rowLabel
+) {
+
+  const row =
+    document.querySelector(rowSelector);
+
+  if (!row) return;
+
+
+  /* -----------------------------------------------
+     CREATE LEFT AND RIGHT ARROW BUTTONS
+     ----------------------------------------------- */
+
+  const controls =
+    document.createElement("div");
+
+  controls.className =
+    "card-carousel-controls";
+
+  controls.setAttribute(
+    "aria-label",
+    `${rowLabel} scrolling controls`
+  );
+
+
+  const leftButton =
+    document.createElement("button");
+
+  leftButton.type = "button";
+
+  leftButton.className =
+    "card-carousel-button";
+
+  leftButton.setAttribute(
+    "aria-label",
+    `Scroll ${rowLabel} left`
+  );
+
+  leftButton.innerHTML = "&#8592;";
+
+
+  const rightButton =
+    document.createElement("button");
+
+  rightButton.type = "button";
+
+  rightButton.className =
+    "card-carousel-button";
+
+  rightButton.setAttribute(
+    "aria-label",
+    `Scroll ${rowLabel} right`
+  );
+
+  rightButton.innerHTML = "&#8594;";
+
+
+  controls.appendChild(leftButton);
+  controls.appendChild(rightButton);
+
+
+  /* -----------------------------------------------
+     INSERT CONTROLS AFTER THE CARD ROW
+     ----------------------------------------------- */
+
+  row.insertAdjacentElement(
+    "afterend",
+    controls
+  );
+
+
+  /* -----------------------------------------------
+     CALCULATE SCROLL DISTANCE
+     ----------------------------------------------- */
+
+  function getScrollDistance() {
+
+    const firstCard =
+      row.firstElementChild;
+
+    if (!firstCard) {
+
+      return row.clientWidth * 0.8;
+
+    }
+
+    const cardWidth =
+      firstCard.getBoundingClientRect().width;
+
+    const rowStyles =
+      window.getComputedStyle(row);
+
+    const gap =
+      parseFloat(rowStyles.columnGap) ||
+      parseFloat(rowStyles.gap) ||
+      0;
+
+    /*
+      Move approximately one card at a time,
+      keeping the row horizontally scrollable.
+    */
+
+    return cardWidth + gap;
+
+  }
+
+
+  /* -----------------------------------------------
+     ARROW BUTTON BEHAVIOR
+     ----------------------------------------------- */
+
+  leftButton.addEventListener(
+    "click",
     () => {
 
-      clearInterval(
-        heroTimer
-      );
+      row.scrollBy({
+        left: -getScrollDistance(),
+        behavior: "smooth"
+      });
 
     }
   );
 
 
-  hero.addEventListener(
-    "mouseleave",
+  rightButton.addEventListener(
+    "click",
     () => {
 
-      heroTimer =
-        setInterval(
-          () => {
+      row.scrollBy({
+        left: getScrollDistance(),
+        behavior: "smooth"
+      });
 
-            showSlide(
-              currentSlide + 1
-            );
+    }
+  );
 
-          },
-          6500
-        );
+
+  /* -----------------------------------------------
+     UPDATE ARROW AVAILABILITY
+     ----------------------------------------------- */
+
+  function updateArrowStates() {
+
+    const maxScrollLeft =
+      row.scrollWidth - row.clientWidth;
+
+    const canScroll =
+      maxScrollLeft > 2;
+
+    leftButton.disabled =
+      !canScroll || row.scrollLeft <= 2;
+
+    rightButton.disabled =
+      !canScroll ||
+      row.scrollLeft >= maxScrollLeft - 2;
+
+    controls.classList.toggle(
+      "is-scrollable",
+      canScroll
+    );
+
+  }
+
+
+  row.addEventListener(
+    "scroll",
+    updateArrowStates,
+    {
+      passive: true
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    updateArrowStates
+  );
+
+
+  /*
+    Wait for layout to settle before checking
+    the initial scroll position.
+  */
+
+  requestAnimationFrame(updateArrowStates);
+
+
+  /* -----------------------------------------------
+     MOUSE CLICK-AND-DRAG
+
+     Touchscreens keep their native swipe behavior.
+     Mouse dragging scrolls the row without turning
+     it into an autoplay carousel.
+     ----------------------------------------------- */
+
+  let isDragging = false;
+
+  let dragStartX = 0;
+
+  let initialScrollLeft = 0;
+
+  let dragDistance = 0;
+
+
+  row.addEventListener(
+    "mousedown",
+    event => {
+
+      /*
+        Only respond to the main mouse button.
+      */
+
+      if (event.button !== 0) return;
+
+      /*
+        Don't start dragging from interactive
+        controls such as buttons.
+      */
+
+      if (
+        event.target.closest(
+          "button, input, select, textarea"
+        )
+      ) {
+
+        return;
+
+      }
+
+      isDragging = true;
+
+      dragDistance = 0;
+
+      dragStartX = event.pageX;
+
+      initialScrollLeft = row.scrollLeft;
+
+      row.classList.add("is-dragging");
+
+    }
+  );
+
+
+  window.addEventListener(
+    "mousemove",
+    event => {
+
+      if (!isDragging) return;
+
+      const distance =
+        event.pageX - dragStartX;
+
+      dragDistance = Math.max(
+        dragDistance,
+        Math.abs(distance)
+      );
+
+      row.scrollLeft =
+        initialScrollLeft - distance;
+
+    }
+  );
+
+
+  function finishDragging() {
+
+    if (!isDragging) return;
+
+    isDragging = false;
+
+    row.classList.remove("is-dragging");
+
+
+    /*
+      If the user dragged the row, suppress the
+      click that would otherwise activate a card.
+    */
+
+    if (dragDistance > 6) {
+
+      row.dataset.dragged = "true";
+
+      setTimeout(() => {
+
+        delete row.dataset.dragged;
+
+      }, 0);
+
+    }
+
+  }
+
+
+  window.addEventListener(
+    "mouseup",
+    finishDragging
+  );
+
+
+  window.addEventListener(
+    "blur",
+    finishDragging
+  );
+
+
+  /*
+    Prevent accidental navigation when a mouse
+    drag ends on a linked card.
+  */
+
+  row.addEventListener(
+    "click",
+    event => {
+
+      if (row.dataset.dragged === "true") {
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+        delete row.dataset.dragged;
+
+      }
+
+    },
+    true
+  );
+
+
+  /* -----------------------------------------------
+     PREVENT NATIVE IMAGE DRAGGING
+
+     This helps keep dragging the row feeling smooth.
+     ----------------------------------------------- */
+
+  row.addEventListener(
+    "dragstart",
+    event => {
+
+      event.preventDefault();
 
     }
   );
@@ -529,10 +802,18 @@ if (hero) {
 
 
 /* =========================================================
-   INITIAL HERO SLIDE
+   INITIALIZE HORIZONTAL CARD ROWS
    ========================================================= */
 
-showSlide(0);
+setupHorizontalCardRow(
+  ".business-grid",
+  "business cards"
+);
+
+setupHorizontalCardRow(
+  ".food-grid",
+  "food cards"
+);
 
 
 /* =========================================================
@@ -540,14 +821,10 @@ showSlide(0);
    ========================================================= */
 
 const counterSection =
-  document.querySelector(
-    ".company-numbers"
-  );
+  document.querySelector(".company-numbers");
 
 const counters =
-  document.querySelectorAll(
-    ".counter"
-  );
+  document.querySelectorAll(".counter");
 
 
 let countersStarted = false;
@@ -560,89 +837,54 @@ function startCounters() {
   countersStarted = true;
 
 
-  counters.forEach(
-    counter => {
+  counters.forEach(counter => {
 
-      const target =
-        Number(
-          counter.dataset.target
-        );
+    const target =
+      Number(counter.dataset.target);
 
-      const suffix =
-        counter.dataset.suffix ||
-        "";
+    const suffix =
+      counter.dataset.suffix || "";
 
+    const duration = 1800;
 
-      const duration =
-        1800;
-
-      const startTime =
-        performance.now();
+    const startTime = performance.now();
 
 
-      function updateCounter(
-        currentTime
-      ) {
+    function updateCounter(currentTime) {
 
-        const elapsed =
-          currentTime -
-          startTime;
+      const elapsed =
+        currentTime - startTime;
 
+      const progress =
+        Math.min(elapsed / duration, 1);
 
-        const progress =
-          Math.min(
-            elapsed / duration,
-            1
-          );
+      const easedProgress =
+        1 - Math.pow(1 - progress, 3);
 
+      const currentValue =
+        Math.floor(target * easedProgress);
 
-        const easedProgress =
-          1 -
-          Math.pow(
-            1 - progress,
-            3
-          );
+      counter.textContent =
+        currentValue.toLocaleString() + suffix;
 
 
-        const currentValue =
-          Math.floor(
-            target *
-            easedProgress
-          );
+      if (progress < 1) {
 
+        requestAnimationFrame(updateCounter);
+
+      } else {
 
         counter.textContent =
-          currentValue.toLocaleString() +
-          suffix;
-
-
-        if (
-          progress < 1
-        ) {
-
-          requestAnimationFrame(
-            updateCounter
-          );
-
-        }
-
-        else {
-
-          counter.textContent =
-            target.toLocaleString() +
-            suffix;
-
-        }
+          target.toLocaleString() + suffix;
 
       }
 
-
-      requestAnimationFrame(
-        updateCounter
-      );
-
     }
-  );
+
+
+    requestAnimationFrame(updateCounter);
+
+  });
 
 }
 
@@ -651,27 +893,26 @@ function startCounters() {
    START COUNTERS WHEN VISIBLE
    ========================================================= */
 
-if (counterSection) {
+if (
+  counterSection &&
+  "IntersectionObserver" in window
+) {
 
   const counterObserver =
     new IntersectionObserver(
       entries => {
 
-        entries.forEach(
-          entry => {
+        entries.forEach(entry => {
 
-            if (
-              entry.isIntersecting
-            ) {
+          if (entry.isIntersecting) {
 
-              startCounters();
+            startCounters();
 
-              counterObserver.disconnect();
-
-            }
+            counterObserver.disconnect();
 
           }
-        );
+
+        });
 
       },
       {
@@ -679,9 +920,10 @@ if (counterSection) {
       }
     );
 
+  counterObserver.observe(counterSection);
 
-  counterObserver.observe(
-    counterSection
-  );
+} else if (counterSection) {
+
+  startCounters();
 
 }
