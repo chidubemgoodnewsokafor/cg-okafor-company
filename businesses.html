@@ -8,668 +8,955 @@
 
   <meta
     name="description"
-    content="Explore the businesses of C.G. Okafor Co., connecting agricultural science, farm technology, food production and commercial farming."
+    content="Explore the businesses of C.G. Okafor Co., spanning agricultural science, farm technology, food production, sourcing and farming."
   >
 
   <link rel="stylesheet" href="style.css">
 
-  <script src="script.js" defer></script>
+  <style>
+    /* =====================================================
+       OUR BUSINESSES PAGE
+       ===================================================== */
+
+    .businesses-hero {
+      min-height: 68vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 150px 8% 80px;
+      position: relative;
+      overflow: hidden;
+      background: #074540;
+      color: #fff;
+    }
+
+    .businesses-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 40, 36, 0.94) 0%,
+          rgba(3, 40, 36, 0.75) 48%,
+          rgba(3, 40, 36, 0.15) 100%
+        ),
+        url("business-agriscience.jpg") center / cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .businesses-hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .businesses-hero .eyebrow {
+      color: #FFE500;
+      margin-bottom: 22px;
+    }
+
+    .businesses-hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      margin: 0 0 28px;
+      max-width: 850px;
+    }
+
+    .businesses-hero p:not(.eyebrow) {
+      max-width: 650px;
+      font-size: clamp(1rem, 1.7vw, 1.3rem);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .businesses-intro {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+      padding: 110px 8%;
+    }
+
+    .businesses-intro h2 {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 0;
+      color: #074540;
+    }
+
+    .businesses-intro-copy {
+      max-width: 700px;
+    }
+
+    .businesses-intro-copy p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin: 0 0 20px;
+    }
+
+    .business-carousel-section {
+      padding: 85px 0 100px;
+      overflow: hidden;
+      background: #f5f6f1;
+    }
+
+    .business-carousel-heading {
+      padding: 0 8%;
+      margin-bottom: 42px;
+    }
+
+    .business-carousel-heading .eyebrow {
+      color: #01998E;
+    }
+
+    .business-carousel-heading h2 {
+      color: #074540;
+      font-size: clamp(2.3rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 0;
+    }
+
+    .business-carousel {
+      padding-left: 8%;
+    }
+
+    .business-track {
+      display: flex;
+      gap: 26px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0 8% 22px 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .business-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .business-detail-card {
+      flex: 0 0 min(72%, 850px);
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+      scroll-snap-align: start;
+      box-shadow: 0 12px 40px rgba(7, 69, 64, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .business-detail-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(7, 69, 64, 0.13);
+    }
+
+    .business-detail-image {
+      min-height: 100%;
+      overflow: hidden;
+      background: #e6ece6;
+    }
+
+    .business-detail-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .business-detail-card:hover .business-detail-image img {
+      transform: scale(1.04);
+    }
+
+    .business-detail-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(26px, 4vw, 52px);
+    }
+
+    .business-detail-number {
+      color: #01998E;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+
+    .business-detail-content h3 {
+      color: #074540;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 0 0 20px;
+    }
+
+    .business-detail-content p {
+      color: #4b5754;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0 0 28px;
+    }
+
+    .business-detail-link {
+      color: #074540;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .business-detail-link span {
+      color: #01998E;
+      font-size: 1.4rem;
+      transition: transform 0.2s ease;
+    }
+
+    .business-detail-card:hover .business-detail-link span {
+      transform: translateX(5px);
+    }
+
+    .business-carousel-controls {
+      padding: 20px 8% 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+    }
+
+    .business-carousel-arrow {
+      width: 54px;
+      height: 54px;
+      border: 1px solid #074540;
+      border-radius: 50%;
+      background: transparent;
+      color: #074540;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .business-carousel-arrow:hover:not(:disabled) {
+      background: #074540;
+      color: #fff;
+    }
+
+    .business-carousel-arrow:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .business-carousel-status {
+      margin-right: auto;
+      color: #52605b;
+      font-size: 0.9rem;
+      padding-left: 8%;
+    }
+
+    .business-approach {
+      padding: 110px 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .business-approach-image {
+      height: 500px;
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    .business-approach-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .business-approach-content h2 {
+      color: #074540;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 25px;
+    }
+
+    .business-approach-content p:not(.eyebrow) {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin: 0 0 22px;
+    }
+
+    .business-approach-content .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .business-cta {
+      background: #074540;
+      color: #fff;
+      padding: 90px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .business-cta h2 {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 18px;
+    }
+
+    .business-cta p:not(.eyebrow) {
+      max-width: 650px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .business-cta .eyebrow {
+      color: #FFE500;
+    }
+
+    .business-cta .primary-button {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .businesses-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .business-detail-card {
+        flex-basis: 84%;
+        grid-template-columns: 1fr;
+      }
+
+      .business-detail-image {
+        height: 260px;
+        min-height: 260px;
+      }
+
+      .business-detail-image img {
+        height: 260px;
+        min-height: 260px;
+      }
+
+      .business-detail-content {
+        min-height: 320px;
+      }
+
+      .business-approach {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .business-approach-image {
+        height: 380px;
+      }
+
+      .business-cta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .businesses-hero {
+        min-height: 72vh;
+        padding: 130px 7% 65px;
+      }
+
+      .businesses-hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+      }
+
+      .businesses-intro,
+      .business-approach {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .business-carousel-heading {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .business-carousel {
+        padding-left: 7%;
+      }
+
+      .business-track {
+        gap: 16px;
+        padding-right: 7%;
+      }
+
+      .business-detail-card {
+        flex-basis: 92%;
+        border-radius: 17px;
+      }
+
+      .business-detail-content {
+        padding: 28px;
+      }
+
+      .business-carousel-controls {
+        padding-right: 7%;
+      }
+
+      .business-approach-image {
+        height: 300px;
+      }
+
+      .business-cta {
+        padding: 75px 7%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .business-track {
+        scroll-behavior: auto;
+      }
+
+      .business-detail-card,
+      .business-detail-image img,
+      .business-detail-link span {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- =========================================================
+     FLOATING MENU
+     ========================================================= -->
+
+<button
+  class="menu-button"
+  aria-label="Open menu"
+  aria-expanded="false"
+  type="button"
+>
+  <img src="okafor-menu-logo.png" alt="Okafor">
+
+  <span></span>
+  <span></span>
+  <span></span>
+
+  <span class="menu-label menu-label-menu">MENU</span>
+
+  <span class="menu-label menu-label-slogan">
+    <span>better farming,</span>
+    <span>Food for all</span>
+  </span>
+</button>
+
+
+<!-- =========================================================
+     MAIN NAVIGATION
+     ========================================================= -->
+
+<nav class="main-nav" aria-hidden="true">
+
+  <div class="nav-header">
+
+    <img
+      src="okafor-menu-logo.png"
+      alt="Okafor"
+      class="nav-logo"
+    >
+
+    <button
+      class="nav-close"
+      type="button"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <!-- MAIN MENU -->
+
+  <div class="nav-panel nav-panel-main active">
+
+    <button class="nav-item nav-has-children"
+      data-target="about-panel" type="button">
+      <span>ABOUT US</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <button class="nav-item nav-has-children"
+      data-target="businesses-panel" type="button">
+      <span>OUR BUSINESSES</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <div class="nav-divider"></div>
+
+    <a href="careers.html" class="nav-item nav-direct">CAREERS</a>
+    <a href="insights.html" class="nav-item nav-direct">STORIES &amp; INSIGHTS</a>
+    <a href="contact.html" class="nav-item nav-direct">CONTACT US</a>
+
+  </div>
+
+
+  <!-- ABOUT US -->
+
+  <div class="nav-panel" id="about-panel">
+
+    <button class="nav-back" type="button" data-back="main">
+      <span>←</span><span>ABOUT US</span>
+    </button>
+
+    <a href="about.html" class="nav-item nav-direct">About Us Overview</a>
+
+    <button class="nav-item nav-has-children"
+      data-target="explore-panel" type="button">
+      <span>Explore Okafor</span><span class="nav-arrow">›</span>
+    </button>
+
+    <a href="innovation.html" class="nav-item nav-direct">Innovation</a>
+
+    <button class="nav-item nav-has-children"
+      data-target="leadership-panel" type="button">
+      <span>Leadership</span><span class="nav-arrow">›</span>
+    </button>
+
+    <a href="supplier-information.html" class="nav-item nav-direct">Supplier Information</a>
+    <a href="history.html" class="nav-item nav-direct">History</a>
+    <a href="events.html" class="nav-item nav-direct">Events</a>
+
+  </div>
+
+
+  <!-- EXPLORE OKAFOR -->
+
+  <div class="nav-panel" id="explore-panel">
+
+    <button class="nav-back" type="button" data-back="about-panel">
+      <span>←</span><span>EXPLORE OKAFOR</span>
+    </button>
+
+    <a href="our-approach.html" class="nav-item nav-direct">Our Approach</a>
+
+    <button class="nav-item nav-has-children"
+      data-target="contribution-panel" type="button">
+      <span>Our Contribution</span><span class="nav-arrow">›</span>
+    </button>
+
+    <a href="okafor-brand.html" class="nav-item nav-direct">The Okafor Brand</a>
+
+  </div>
+
+
+  <!-- OUR CONTRIBUTION -->
+
+  <div class="nav-panel" id="contribution-panel">
+
+    <button class="nav-back" type="button" data-back="explore-panel">
+      <span>←</span><span>OUR CONTRIBUTION</span>
+    </button>
+
+    <a href="our-contribution.html" class="nav-item nav-direct">Our Contribution Overview</a>
+    <a href="farmers-by-okafor.html" class="nav-item nav-direct">Farmers by Okafor</a>
+    <a href="giving-back.html" class="nav-item nav-direct">Giving Back to the Community</a>
+
+  </div>
+
+
+  <!-- LEADERSHIP -->
+
+  <div class="nav-panel" id="leadership-panel">
+
+    <button class="nav-back" type="button" data-back="about-panel">
+      <span>←</span><span>LEADERSHIP</span>
+    </button>
+
+    <a href="leadership.html" class="nav-item nav-direct">Leadership Overview</a>
+    <a href="management.html" class="nav-item nav-direct">Management</a>
+    <a href="division-leadership.html" class="nav-item nav-direct">Division Leadership</a>
+
+  </div>
+
+
+  <!-- OUR BUSINESSES -->
+
+  <div class="nav-panel" id="businesses-panel">
+
+    <button class="nav-back" type="button" data-back="main">
+      <span>←</span><span>OUR BUSINESSES</span>
+    </button>
+
+    <a href="businesses.html" class="nav-item nav-direct">Business Overview</a>
+
+    <button class="nav-item nav-has-children"
+      data-target="agriscience-panel" type="button">
+      <span>Agriscience</span><span class="nav-arrow">›</span>
+    </button>
+
+    <button class="nav-item nav-has-children"
+      data-target="farm-technology-panel" type="button">
+      <span>Farm Technology</span><span class="nav-arrow">›</span>
+    </button>
+
+    <button class="nav-item nav-has-children"
+      data-target="foods-panel" type="button">
+      <span>Foods</span><span class="nav-arrow">›</span>
+    </button>
+
+    <a href="all-products.html" class="nav-item nav-direct">All Products</a>
+
+  </div>
+
+
+  <!-- AGRISCIENCE -->
+
+  <div class="nav-panel" id="agriscience-panel">
+
+    <button class="nav-back" type="button" data-back="businesses-panel">
+      <span>←</span><span>AGRISCIENCE</span>
+    </button>
+
+    <a href="okafor-agriscience.html" class="nav-item nav-direct">Agriscience Overview</a>
+
+    <button class="nav-item nav-has-children"
+      data-target="crop-protection-panel" type="button">
+      <span>Crop Protection</span><span class="nav-arrow">›</span>
+    </button>
+
+    <button class="nav-item nav-has-children"
+      data-target="plant-nutrition-panel" type="button">
+      <span>Plant Nutrition</span><span class="nav-arrow">›</span>
+    </button>
+
+    <button class="nav-item nav-has-children"
+      data-target="seeds-panel" type="button">
+      <span>Seeds</span><span class="nav-arrow">›</span>
+    </button>
+
+    <button class="nav-item nav-has-children"
+      data-target="animal-health-panel" type="button">
+      <span>Animal Health</span><span class="nav-arrow">›</span>
+    </button>
+
+  </div>
+
+
+  <!-- CROP PROTECTION -->
+
+  <div class="nav-panel" id="crop-protection-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>CROP PROTECTION</span>
+    </button>
+
+    <a href="crop-protection.html" class="nav-item nav-direct">Crop Protection Overview</a>
+    <a href="weed-management.html" class="nav-item nav-direct">Weed Management</a>
+    <a href="pest-management.html" class="nav-item nav-direct">Pest Management</a>
+    <a href="disease-management.html" class="nav-item nav-direct">Disease Management</a>
+
+  </div>
+
+
+  <!-- PLANT NUTRITION -->
+
+  <div class="nav-panel" id="plant-nutrition-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>PLANT NUTRITION</span>
+    </button>
+
+    <a href="plant-nutrition.html" class="nav-item nav-direct">Plant Nutrition Overview</a>
+    <a href="granular.html" class="nav-item nav-direct">Granular</a>
+    <a href="micronutrients.html" class="nav-item nav-direct">Micronutrients</a>
+    <a href="foliar.html" class="nav-item nav-direct">Foliar</a>
+
+  </div>
+
+
+  <!-- SEEDS -->
+
+  <div class="nav-panel" id="seeds-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>SEEDS</span>
+    </button>
+
+    <a href="seeds.html" class="nav-item nav-direct">Seeds Overview</a>
+    <a href="field-seeds.html" class="nav-item nav-direct">Field Seeds</a>
+    <a href="vegetable-seeds.html" class="nav-item nav-direct">Vegetable Seeds</a>
+
+  </div>
+
+
+  <!-- ANIMAL HEALTH -->
+
+  <div class="nav-panel" id="animal-health-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>ANIMAL HEALTH</span>
+    </button>
+
+    <a href="animal-health.html" class="nav-item nav-direct">Animal Health Overview</a>
+    <a href="poultry-health.html" class="nav-item nav-direct">Poultry Health</a>
+    <a href="swine-health.html" class="nav-item nav-direct">Swine / Pig Health</a>
+
+  </div>
+
+
+  <!-- FARM TECHNOLOGY -->
+
+  <div class="nav-panel" id="farm-technology-panel">
+
+    <button class="nav-back" type="button" data-back="businesses-panel">
+      <span>←</span><span>FARM TECHNOLOGY</span>
+    </button>
+
+    <a href="okafor-farm-technology.html" class="nav-item nav-direct">Farm Technology Overview</a>
+
+    <button class="nav-item nav-has-children"
+      data-target="farm-automation-panel" type="button">
+      <span>Farm Automation</span><span class="nav-arrow">›</span>
+    </button>
+
+    <a href="farm-design-building.html" class="nav-item nav-direct">Farm Design &amp; Building</a>
+
+  </div>
+
+
+  <!-- FARM AUTOMATION -->
+
+  <div class="nav-panel" id="farm-automation-panel">
+
+    <button class="nav-back" type="button" data-back="farm-technology-panel">
+      <span>←</span><span>FARM AUTOMATION</span>
+    </button>
+
+    <a href="farm-automation.html" class="nav-item nav-direct">Farm Automation Overview</a>
+    <a href="poultry-automation.html" class="nav-item nav-direct">Poultry Automation</a>
+    <a href="swine-automation.html" class="nav-item nav-direct">Swine Automation</a>
+
+  </div>
+
+
+  <!-- FOODS -->
+
+  <div class="nav-panel" id="foods-panel">
+
+    <button class="nav-back" type="button" data-back="businesses-panel">
+      <span>←</span><span>FOODS</span>
+    </button>
+
+    <a href="okafor-foods.html" class="nav-item nav-direct">Foods Overview</a>
+    <a href="grains-oilseeds.html" class="nav-item nav-direct">Grains &amp; Oilseeds</a>
+    <a href="poultry-eggs.html" class="nav-item nav-direct">Poultry &amp; Eggs</a>
+    <a href="edible-oils.html" class="nav-item nav-direct">Edible Oils</a>
+    <a href="seasonings-condiments.html" class="nav-item nav-direct">Seasonings &amp; Condiments</a>
+    <a href="fruit-vegetables.html" class="nav-item nav-direct">Fruit &amp; Vegetables</a>
+    <a href="food-sourcing.html" class="nav-item nav-direct">Food Sourcing</a>
+    <a href="value-addition.html" class="nav-item nav-direct">Value Addition</a>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="businesses-hero">
+
+  <div class="businesses-hero-content">
+
+    <p class="eyebrow">OUR BUSINESSES</p>
+
+    <h1>
+      From better farming<br>
+      to food for all.
+    </h1>
+
+    <p>
+      Our businesses connect agricultural science, farm technology,
+      farming and food. Together, they support the people who produce
+      our food and help create practical solutions across the food
+      and agricultural value chain.
+    </p>
+
+  </div>
+
+</section>
+
+
+<main>
+
   <!-- =====================================================
-       OUR BUSINESSES HERO
-  ====================================================== -->
+       INTRODUCTION
+       ===================================================== -->
 
-  <main>
+  <section class="businesses-intro">
 
-    <section class="business-hero">
-
-      <img
-        src="business-foods.jpg"
-        alt="Agriculture and food production"
-      >
-
-      <div class="business-hero-content">
-
-        <p class="eyebrow">C.G. OKAFOR CO.</p>
-
-        <h1>
-          Our businesses.<br>
-          One connected future.
-        </h1>
-
-        <p>
-          We bring together agricultural science, farm technology,
-          food production and commercial farming to help strengthen
-          the connection between farmers, food and the communities
-          we serve.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         INTRODUCTION
-    ====================================================== -->
-
-    <section class="business-intro">
-
-      <div>
-        <p class="eyebrow">WHAT WE DO</p>
-
-        <h2>
-          Better farming.<br>
-          Food for all.
-        </h2>
-      </div>
-
-      <div>
-
-        <p>
-          C.G. Okafor Co. is a food and agricultural solutions and
-          technology company focused on creating practical value
-          across the agricultural and food supply chain.
-        </p>
-
-        <p>
-          Our businesses approach agriculture from different but
-          complementary directions. We support farming through
-          science and technology, participate in food production
-          and processing, and develop commercial activities that
-          connect agricultural output with market opportunities.
-        </p>
-
-        <p>
-          Together, these activities reflect our commitment to
-          productive farming, dependable food supply and long-term
-          agricultural development.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         OUR BUSINESSES
-    ====================================================== -->
-
-    <section class="businesses-page-grid" id="our-businesses">
-
-      <p class="eyebrow">OUR BUSINESS PORTFOLIO</p>
+    <div>
+      <p class="eyebrow">WHAT WE DO</p>
 
       <h2>
         Different capabilities.<br>
-        Shared purpose.
+        A shared purpose.
       </h2>
+    </div>
+
+    <div class="businesses-intro-copy">
 
       <p>
-        Each business contributes to our wider ambition of improving
-        agriculture, supporting farmers and helping food move from
-        production to the people who need it.
+        C.G. Okafor Co. is a food and agricultural solutions and
+        technology company. Our work spans the practical needs of
+        farmers, the technologies that support agricultural production,
+        and the sourcing, production and development of food.
       </p>
 
+      <p>
+        Each business has its own area of focus. Together, they reflect
+        our commitment to improving farming, strengthening food supply
+        and creating value throughout the agricultural and food system.
+      </p>
 
-      <div class="businesses-page-cards">
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       BUSINESS CAROUSEL
+       ===================================================== -->
+
+  <section class="business-carousel-section" id="business-list">
+
+    <div class="business-carousel-heading">
+
+      <p class="eyebrow">OUR BUSINESS AREAS</p>
+
+      <h2>Explore our businesses.</h2>
+
+    </div>
+
+
+    <div class="business-carousel">
+
+      <div
+        class="business-track"
+        id="business-track"
+        aria-label="Our businesses"
+      >
 
         <!-- AGRISCIENCE -->
 
-        <article class="business-page-card">
+        <a
+          href="okafor-agriscience.html"
+          class="business-detail-card"
+        >
 
-          <img
-            src="business-agriscience.jpg"
-            alt="Agricultural science and crop production"
-            loading="lazy"
-          >
+          <div class="business-detail-image">
 
-          <div class="business-page-card-content">
+            <img
+              src="business-agriscience.jpg"
+              alt="Agricultural science and crop production"
+              loading="lazy"
+            >
 
-            <p class="eyebrow">01 / AGRICULTURAL SCIENCE</p>
+          </div>
+
+          <div class="business-detail-content">
+
+            <span class="business-detail-number">01 / AGRICULTURE</span>
 
             <h3>Okafor Agriscience</h3>
 
             <p>
-              Science-based agricultural products and solutions
-              supporting crop production, plant nutrition, seeds
-              and animal health. Our focus is helping farmers
-              improve productivity through practical agricultural
-              knowledge and innovation.
+              Science-based agricultural solutions that help farmers
+              protect crops, improve plant nutrition, access seeds and
+              support animal health.
             </p>
 
-            <a href="okafor-agriscience/">
+            <span class="business-detail-link">
               Explore Agriscience <span>→</span>
-            </a>
+            </span>
 
           </div>
 
-        </article>
+        </a>
 
 
         <!-- FARM TECHNOLOGY -->
 
-        <article class="business-page-card">
+        <a
+          href="okafor-farm-technology.html"
+          class="business-detail-card"
+        >
 
-          <img
-            src="business-farm-technology.jpg"
-            alt="Modern agricultural equipment and farm technology"
-            loading="lazy"
-          >
+          <div class="business-detail-image">
 
-          <div class="business-page-card-content">
+            <img
+              src="business-farm-technology.jpg"
+              alt="Farm technology and modern agricultural production"
+              loading="lazy"
+            >
 
-            <p class="eyebrow">02 / FARM INNOVATION</p>
+          </div>
+
+          <div class="business-detail-content">
+
+            <span class="business-detail-number">02 / TECHNOLOGY</span>
 
             <h3>Okafor Farm Technology</h3>
 
             <p>
-              Technology, farm design, automation and practical
-              solutions designed to support more efficient
-              agricultural operations and modern livestock farming.
+              Farm design, automation and practical technology
+              solutions designed to help poultry and swine producers
+              manage operations and improve farm performance.
             </p>
 
-            <a href="technology/index.html">
+            <span class="business-detail-link">
               Explore Farm Technology <span>→</span>
-            </a>
+            </span>
 
           </div>
 
-        </article>
-
-
-        <!-- OKAFOR FOODS -->
-
-        <article class="business-page-card" id="foods">
-
-          <img
-            src="business-foods.jpg"
-            alt="Food products and agricultural produce"
-            loading="lazy"
-          >
-
-          <div class="business-page-card-content">
-
-            <p class="eyebrow">03 / FOOD AND SUPPLY</p>
-
-            <h3>Okafor Foods</h3>
-
-            <p>
-              Food sourcing, agricultural commodities, poultry
-              and eggs, edible oils, fruit and vegetables, and
-              value-added food products. Our focus is connecting
-              agricultural production with food markets and
-              consumers.
-            </p>
-
-            <a href="#food-activities">
-              Explore Our Food Activities <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- SOILEVA -->
-
-        <article class="business-page-card">
-
-          <img
-            src="business-soileva.jpg"
-            alt="Commercial farming and agricultural production"
-            loading="lazy"
-          >
-
-          <div class="business-page-card-content">
-
-            <p class="eyebrow">04 / COMMERCIAL FARMING</p>
-
-            <h3>Soileva</h3>
-
-            <p>
-              Commercial farming, agricultural production,
-              processing and agro-trading activities that
-              contribute to our participation in the food
-              and agricultural value chain.
-            </p>
-
-            <a href="#soileva">
-              Discover Soileva <span>→</span>
-            </a>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         HOW OUR BUSINESSES CONNECT
-    ====================================================== -->
-
-    <section class="business-connection">
-
-      <div class="business-connection-inner">
-
-        <p class="eyebrow">ONE CONNECTED APPROACH</p>
-
-        <h2>
-          From agricultural knowledge to food on the table.
-        </h2>
-
-        <p>
-          Agriculture creates opportunities at every stage, from
-          the inputs and technology farmers need to the produce
-          they grow and the food markets ultimately receive.
-          Our businesses operate across complementary parts
-          of this journey.
-        </p>
-
-
-        <div class="business-flow">
-
-          <div>
-
-            <h3>01. Enable</h3>
-
-            <p>
-              Agricultural science and farm technology provide
-              products, knowledge and practical capabilities
-              that support farming operations.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <h3>02. Produce</h3>
-
-            <p>
-              Commercial farming and agricultural production
-              contribute to the supply of crops, livestock
-              products and other agricultural commodities.
-            </p>
-
-          </div>
-
-
-          <div>
-
-            <h3>03. Connect</h3>
-
-            <p>
-              Food sourcing, processing and trading help connect
-              agricultural output with markets, businesses
-              and consumers.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         OKAFOR FOODS ACTIVITIES
-    ====================================================== -->
-
-    <section class="business-products" id="food-activities">
-
-      <div class="business-products-content">
-
-        <p class="eyebrow">OKAFOR FOODS</p>
-
-        <h2>
-          Connecting agricultural produce with food markets.
-        </h2>
-
-        <p>
-          Food systems depend on more than production alone.
-          Sourcing, handling, processing and distribution all
-          play important roles in making agricultural products
-          available to people and businesses.
-        </p>
-
-        <p>
-          Our food activities are focused on agricultural
-          commodities, poultry and eggs, edible oils, fruit
-          and vegetables, seasonings and other value-added
-          food opportunities.
-        </p>
-
-        <a href="index.html#food" class="primary-button">
-          Discover Our Food Business
         </a>
 
-      </div>
 
+        <!-- FOODS -->
 
-      <img
-        src="all-products.jpg"
-        alt="Agricultural produce and food products"
-        loading="lazy"
-      >
-
-    </section>
-
-
-    <!-- =====================================================
-         SOILEVA
-    ====================================================== -->
-
-    <section class="business-intro" id="soileva">
-
-      <div>
-
-        <p class="eyebrow">COMMERCIAL FARMING</p>
-
-        <h2>
-          Growing agricultural opportunities.
-        </h2>
-
-      </div>
-
-      <div>
-
-        <p>
-          Soileva represents our participation in commercial
-          farming, agricultural production, processing and
-          agro-trading.
-        </p>
-
-        <p>
-          Through these activities, Soileva contributes to
-          our wider understanding of farming realities,
-          agricultural markets and the work involved in
-          bringing produce from farms to market.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         EXPLORE THE COMPANY
-    ====================================================== -->
-
-    <section class="contact-section">
-
-      <div class="contact-circle"></div>
-
-      <div class="contact-content">
-
-        <p class="eyebrow">C.G. OKAFOR CO.</p>
-
-        <h2>
-          Let's build a better<br>
-          agricultural future.
-        </h2>
-
-        <a href="index.html#contact" class="primary-button">
-          Contact Us
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- =====================================================
-       FLOATING MENU BUTTON
-  ====================================================== -->
-
-  <button
-    class="menu-button"
-    type="button"
-    aria-label="Open navigation menu"
-    aria-expanded="false"
-    aria-controls="main-navigation"
-  >
-
-    <img
-      src="okafor-menu-logo.png"
-      alt=""
-    >
-
-    <span></span>
-    <span></span>
-    <span></span>
-
-    <span class="menu-label menu-label-menu">MENU</span>
-
-    <span class="menu-label menu-label-slogan">
-      <span>better farming,</span>
-      <span>Food for all</span>
-    </span>
-
-  </button>
-
-
-  <!-- =====================================================
-       FULL-SCREEN NAVIGATION
-  ====================================================== -->
-
-  <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
-
-    <div class="nav-header">
-
-      <a href="index.html" aria-label="C.G. Okafor Co. homepage">
-
-        <img
-          src="okafor-menu-logo.png"
-          alt="C.G. Okafor Co."
-          class="nav-logo"
+        <a
+          href="okafor-foods.html"
+          class="business-detail-card"
         >
 
-      </a>
+          <div class="business-detail-image">
 
-      <button
-        class="nav-close"
-        type="button"
-        aria-label="Close navigation"
-      >
-        ×
-      </button>
-
-    </div>
-
-
-    <!-- MAIN MENU -->
-
-    <div class="nav-panel active" id="main-panel">
-
-      <a class="nav-item nav-direct" href="about.html">
-        About Us <span class="nav-arrow">→</span>
-      </a>
-
-      <a class="nav-item nav-direct" href="businesses.html">
-        Our Businesses <span class="nav-arrow">→</span>
-      </a>
-
-      <a class="nav-item nav-direct" href="careers.html">
-        Careers <span class="nav-arrow">→</span>
-      </a>
-
-      <a class="nav-item nav-direct" href="stories.html">
-        Stories &amp; Insights <span class="nav-arrow">→</span>
-      </a>
-
-      <a class="nav-item nav-direct" href="index.html#contact">
-        Contact Us <span class="nav-arrow">→</span>
-      </a>
-
-    </div>
-
-  </nav>
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer class="site-footer">
-
-    <div class="footer-main">
-
-
-      <!-- BRAND -->
-
-      <div class="footer-brand">
-
-        <a href="index.html" class="footer-logo">
-
-          <img
-            src="cg-okafor-logo.png"
-            alt="C.G. Okafor Co."
-            loading="lazy"
-          >
-
-        </a>
-
-        <p>
-          A food and agricultural solutions and technology company.
-          Better farming, food for all.
-        </p>
-
-      </div>
-
-
-      <!-- COMPANY -->
-
-      <div class="footer-column">
-
-        <h4>Company</h4>
-
-        <a href="about.html">About Us</a>
-        <a href="businesses.html">Our Businesses</a>
-        <a href="careers.html">Careers</a>
-        <a href="stories.html">Stories &amp; Insights</a>
-        <a href="index.html#contact">Contact Us</a>
-
-      </div>
-
-
-      <!-- BUSINESSES -->
-
-      <div class="footer-column">
-
-        <h4>Our Businesses</h4>
-
-        <a href="okafor-agriscience/">Okafor Agriscience</a>
-        <a href="technology/index.html">Farm Technology</a>
-        <a href="#foods">Okafor Foods</a>
-        <a href="#soileva">Soileva</a>
-        <a href="index.html">C.G. Okafor Investments</a>
-
-      </div>
-
-
-      <!-- FOOD -->
-
-      <div class="footer-column">
-
-        <h4>Okafor Foods</h4>
-
-        <a href="#food-activities">Grains &amp; Oilseeds</a>
-        <a href="#food-activities">Poultry &amp; Eggs</a>
-        <a href="#food-activities">Edible Oils</a>
-        <a href="#food-activities">Seasonings &amp; Condiments</a>
-        <a href="#food-activities">Fruit &amp; Vegetables</a>
-        <a href="#food-activities">Food Sourcing</a>
-        <a href="#food-activities">Value Addition</a>
-
-      </div>
-
-
-      <!-- MORE INFORMATION -->
-
-      <div class="footer-column">
-
-        <h4>More Information</h4>
-
-        <a href="about.html#our-approach">Our Approach</a>
-        <a href="about.html#innovation">Innovation</a>
-        <a href="about.html#leadership">Leadership</a>
-        <a href="about.html#supplier-information">Supplier Information</a>
-
-      </div>
-
-    </div>
-
-
-    <!-- CONTACT AND SOCIAL -->
-
-    <div class="footer-contact-social">
-
-      <div class="footer-contact-block">
-
-        <span class="footer-social-label">Get in touch</span>
-
-        <a href="index.html#contact" class="footer-whatsapp">
-          Contact C.G. Okafor Co.
-        </a>
-
-      </div>
-
-
-      <div class="footer-social-block">
-
-        <span class="footer-social-label">Follow our journey</span>
-
-        <div class="footer-social-links">
-
-          <!-- Add official social media links when available. -->
-
-          <span
-            class="social-link social-placeholder"
-            aria-label="Social media link coming soon"
-          >
-            +
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- FOOTER BOTTOM -->
-
-    <div class="footer-bottom">
-
-      <p>
-        © <span id="copyright-year">2026</span> C.G. Okafor Co.
-        All rights reserved.
-      </p>
-
-      <p>Food and agricultural solutions and technology.</p>
-
-    </div>
-
-  </footer>
-
-
-  <script>
-    const copyrightYear = document.getElementById("copyright-year");
-
-    if (copyrightYear) {
-      copyrightYear.textContent = new Date().getFullYear();
-    }
-  </script>
-
-</body>
-</html>
+            <
