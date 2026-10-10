@@ -70,6 +70,8 @@
       margin: 0;
     }
 
+    /* INTRODUCTION */
+
     .businesses-intro {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -95,6 +97,8 @@
       line-height: 1.9;
       margin: 0 0 20px;
     }
+
+    /* BUSINESS CAROUSEL */
 
     .business-carousel-section {
       padding: 85px 0 100px;
@@ -133,6 +137,7 @@
       padding: 0 8% 22px 0;
       scrollbar-width: none;
       -ms-overflow-style: none;
+      overscroll-behavior-x: contain;
     }
 
     .business-track::-webkit-scrollbar {
@@ -152,12 +157,19 @@
       text-decoration: none;
       scroll-snap-align: start;
       box-shadow: 0 12px 40px rgba(7, 69, 64, 0.07);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
     .business-detail-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 48px rgba(7, 69, 64, 0.13);
+    }
+
+    .business-detail-card:focus-visible {
+      outline: 3px solid #01998E;
+      outline-offset: 4px;
     }
 
     .business-detail-image {
@@ -229,45 +241,18 @@
       transform: translateX(5px);
     }
 
-    .business-carousel-controls {
-      padding: 20px 8% 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 14px;
-    }
-
-    .business-carousel-arrow {
-      width: 54px;
-      height: 54px;
-      border: 1px solid #074540;
-      border-radius: 50%;
-      background: transparent;
-      color: #074540;
-      font-size: 1.5rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-
-    .business-carousel-arrow:hover:not(:disabled) {
-      background: #074540;
-      color: #fff;
-    }
-
-    .business-carousel-arrow:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
+    /* Uses the shared carousel-control classes from style.css. */
 
     .business-carousel-status {
       margin-right: auto;
       color: #52605b;
       font-size: 0.9rem;
       padding-left: 8%;
+      align-self: center;
+      white-space: nowrap;
     }
+
+    /* CONNECTED VALUE CHAIN */
 
     .business-approach {
       padding: 110px 8%;
@@ -310,6 +295,8 @@
       gap: 10px;
     }
 
+    /* CALL TO ACTION */
+
     .business-cta {
       background: #074540;
       color: #fff;
@@ -340,6 +327,8 @@
     .business-cta .primary-button {
       flex-shrink: 0;
     }
+
+    /* TABLET */
 
     @media (max-width: 900px) {
       .businesses-intro {
@@ -383,6 +372,8 @@
       }
     }
 
+    /* MOBILE */
+
     @media (max-width: 600px) {
       .businesses-hero {
         min-height: 72vh;
@@ -422,8 +413,8 @@
         padding: 28px;
       }
 
-      .business-carousel-controls {
-        padding-right: 7%;
+      .business-carousel-status {
+        padding-left: 0;
       }
 
       .business-approach-image {
@@ -500,19 +491,24 @@
 
   </div>
 
-
   <!-- MAIN MENU -->
 
   <div class="nav-panel nav-panel-main active">
 
-    <button class="nav-item nav-has-children"
-      data-target="about-panel" type="button">
+    <button
+      class="nav-item nav-has-children"
+      data-target="about-panel"
+      type="button"
+    >
       <span>ABOUT US</span>
       <span class="nav-arrow">›</span>
     </button>
 
-    <button class="nav-item nav-has-children"
-      data-target="businesses-panel" type="button">
+    <button
+      class="nav-item nav-has-children"
+      data-target="businesses-panel"
+      type="button"
+    >
       <span>OUR BUSINESSES</span>
       <span class="nav-arrow">›</span>
     </button>
@@ -525,7 +521,6 @@
 
   </div>
 
-
   <!-- ABOUT US -->
 
   <div class="nav-panel" id="about-panel">
@@ -536,16 +531,24 @@
 
     <a href="about.html" class="nav-item nav-direct">About Us Overview</a>
 
-    <button class="nav-item nav-has-children"
-      data-target="explore-panel" type="button">
-      <span>Explore Okafor</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="explore-panel"
+      type="button"
+    >
+      <span>Explore Okafor</span>
+      <span class="nav-arrow">›</span>
     </button>
 
     <a href="innovation.html" class="nav-item nav-direct">Innovation</a>
 
-    <button class="nav-item nav-has-children"
-      data-target="leadership-panel" type="button">
-      <span>Leadership</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="leadership-panel"
+      type="button"
+    >
+      <span>Leadership</span>
+      <span class="nav-arrow">›</span>
     </button>
 
     <a href="supplier-information.html" class="nav-item nav-direct">Supplier Information</a>
@@ -553,7 +556,6 @@
     <a href="events.html" class="nav-item nav-direct">Events</a>
 
   </div>
-
 
   <!-- EXPLORE OKAFOR -->
 
@@ -565,15 +567,18 @@
 
     <a href="our-approach.html" class="nav-item nav-direct">Our Approach</a>
 
-    <button class="nav-item nav-has-children"
-      data-target="contribution-panel" type="button">
-      <span>Our Contribution</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="contribution-panel"
+      type="button"
+    >
+      <span>Our Contribution</span>
+      <span class="nav-arrow">›</span>
     </button>
 
     <a href="okafor-brand.html" class="nav-item nav-direct">The Okafor Brand</a>
 
   </div>
-
 
   <!-- OUR CONTRIBUTION -->
 
@@ -589,7 +594,6 @@
 
   </div>
 
-
   <!-- LEADERSHIP -->
 
   <div class="nav-panel" id="leadership-panel">
@@ -604,7 +608,6 @@
 
   </div>
 
-
   <!-- OUR BUSINESSES -->
 
   <div class="nav-panel" id="businesses-panel">
@@ -615,25 +618,36 @@
 
     <a href="businesses.html" class="nav-item nav-direct">Business Overview</a>
 
-    <button class="nav-item nav-has-children"
-      data-target="agriscience-panel" type="button">
-      <span>Agriscience</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="agriscience-panel"
+      type="button"
+    >
+      <span>Agriscience</span>
+      <span class="nav-arrow">›</span>
     </button>
 
-    <button class="nav-item nav-has-children"
-      data-target="farm-technology-panel" type="button">
-      <span>Farm Technology</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="farm-technology-panel"
+      type="button"
+    >
+      <span>Farm Technology</span>
+      <span class="nav-arrow">›</span>
     </button>
 
-    <button class="nav-item nav-has-children"
-      data-target="foods-panel" type="button">
-      <span>Foods</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="foods-panel"
+      type="button"
+    >
+      <span>Foods</span>
+      <span class="nav-arrow">›</span>
     </button>
 
     <a href="all-products.html" class="nav-item nav-direct">All Products</a>
 
   </div>
-
 
   <!-- AGRISCIENCE -->
 
@@ -645,28 +659,43 @@
 
     <a href="okafor-agriscience.html" class="nav-item nav-direct">Agriscience Overview</a>
 
-    <button class="nav-item nav-has-children"
-      data-target="crop-protection-panel" type="button">
-      <span>Crop Protection</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="crop-protection-panel"
+      type="button"
+    >
+      <span>Crop Protection</span>
+      <span class="nav-arrow">›</span>
     </button>
 
-    <button class="nav-item nav-has-children"
-      data-target="plant-nutrition-panel" type="button">
-      <span>Plant Nutrition</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="plant-nutrition-panel"
+      type="button"
+    >
+      <span>Plant Nutrition</span>
+      <span class="nav-arrow">›</span>
     </button>
 
-    <button class="nav-item nav-has-children"
-      data-target="seeds-panel" type="button">
-      <span>Seeds</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="seeds-panel"
+      type="button"
+    >
+      <span>Seeds</span>
+      <span class="nav-arrow">›</span>
     </button>
 
-    <button class="nav-item nav-has-children"
-      data-target="animal-health-panel" type="button">
-      <span>Animal Health</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="animal-health-panel"
+      type="button"
+    >
+      <span>Animal Health</span>
+      <span class="nav-arrow">›</span>
     </button>
 
   </div>
-
 
   <!-- CROP PROTECTION -->
 
@@ -683,7 +712,6 @@
 
   </div>
 
-
   <!-- PLANT NUTRITION -->
 
   <div class="nav-panel" id="plant-nutrition-panel">
@@ -699,7 +727,6 @@
 
   </div>
 
-
   <!-- SEEDS -->
 
   <div class="nav-panel" id="seeds-panel">
@@ -713,7 +740,6 @@
     <a href="vegetable-seeds.html" class="nav-item nav-direct">Vegetable Seeds</a>
 
   </div>
-
 
   <!-- ANIMAL HEALTH -->
 
@@ -729,7 +755,6 @@
 
   </div>
 
-
   <!-- FARM TECHNOLOGY -->
 
   <div class="nav-panel" id="farm-technology-panel">
@@ -740,15 +765,18 @@
 
     <a href="okafor-farm-technology.html" class="nav-item nav-direct">Farm Technology Overview</a>
 
-    <button class="nav-item nav-has-children"
-      data-target="farm-automation-panel" type="button">
-      <span>Farm Automation</span><span class="nav-arrow">›</span>
+    <button
+      class="nav-item nav-has-children"
+      data-target="farm-automation-panel"
+      type="button"
+    >
+      <span>Farm Automation</span>
+      <span class="nav-arrow">›</span>
     </button>
 
     <a href="farm-design-building.html" class="nav-item nav-direct">Farm Design &amp; Building</a>
 
   </div>
-
 
   <!-- FARM AUTOMATION -->
 
@@ -763,7 +791,6 @@
     <a href="swine-automation.html" class="nav-item nav-direct">Swine Automation</a>
 
   </div>
-
 
   <!-- FOODS -->
 
@@ -816,9 +843,7 @@
 
 <main>
 
-  <!-- =====================================================
-       INTRODUCTION
-       ===================================================== -->
+  <!-- INTRODUCTION -->
 
   <section class="businesses-intro">
 
@@ -851,9 +876,7 @@
   </section>
 
 
-  <!-- =====================================================
-       BUSINESS CAROUSEL
-       ===================================================== -->
+  <!-- BUSINESS CAROUSEL -->
 
   <section class="business-carousel-section" id="business-list">
 
@@ -865,13 +888,13 @@
 
     </div>
 
-
     <div class="business-carousel">
 
       <div
         class="business-track"
         id="business-track"
         aria-label="Our businesses"
+        tabindex="0"
       >
 
         <!-- AGRISCIENCE -->
@@ -904,7 +927,7 @@
             </p>
 
             <span class="business-detail-link">
-              Explore Agriscience <span>→</span>
+              Explore Agriscience <span aria-hidden="true">→</span>
             </span>
 
           </div>
@@ -942,7 +965,7 @@
             </p>
 
             <span class="business-detail-link">
-              Explore Farm Technology <span>→</span>
+              Explore Farm Technology <span aria-hidden="true">→</span>
             </span>
 
           </div>
@@ -959,4 +982,567 @@
 
           <div class="business-detail-image">
 
-            <
+            <img
+              src="business-foods.jpg"
+              alt="Food production and agricultural commodities"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="business-detail-content">
+
+            <span class="business-detail-number">03 / FOOD</span>
+
+            <h3>Okafor Foods</h3>
+
+            <p>
+              Food sourcing, agricultural commodities, food production
+              and value addition focused on connecting agricultural
+              output with the needs of consumers and food markets.
+            </p>
+
+            <span class="business-detail-link">
+              Explore Foods <span aria-hidden="true">→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- SOILEVA -->
+
+        <a
+          href="soileva.html"
+          class="business-detail-card"
+        >
+
+          <div class="business-detail-image">
+
+            <img
+              src="business-soileva.jpg"
+              alt="Commercial farming and agricultural production"
+              loading="lazy"
+            >
+
+          </div>
+
+          <div class="business-detail-content">
+
+            <span class="business-detail-number">04 / FARMING</span>
+
+            <h3>Soileva</h3>
+
+            <p>
+              A farming and food business focused on commercial
+              agricultural production, processing and agro-trading.
+              Soileva contributes to our connection with farming
+              and the supply of agricultural produce.
+            </p>
+
+            <span class="business-detail-link">
+              Explore Soileva <span aria-hidden="true">→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- CAROUSEL CONTROLS
+           Reuses the shared stylesheet's control and button classes. -->
+
+      <div class="card-carousel-controls business-carousel-controls">
+
+        <span
+          class="business-carousel-status"
+          id="business-carousel-status"
+          aria-live="polite"
+        >
+          01 / 04
+        </span>
+
+        <button
+          class="card-carousel-button"
+          id="business-prev"
+          type="button"
+          aria-label="Previous business"
+          disabled
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <button
+          class="card-carousel-button"
+          id="business-next"
+          type="button"
+          aria-label="Next business"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONNECTED VALUE CHAIN -->
+
+  <section class="business-approach">
+
+    <div class="business-approach-image">
+
+      <img
+        src="farmers-by-okafor.jpg"
+        alt="Farmers working in agricultural production"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="business-approach-content">
+
+      <p class="eyebrow">OUR APPROACH</p>
+
+      <h2>
+        Supporting farming.<br>
+        Strengthening food.
+      </h2>
+
+      <p>
+        Agriculture and food are closely connected. Farmers need access
+        to appropriate inputs, reliable technology and markets for
+        their produce. Food businesses need dependable sources of
+        agricultural products and effective ways to bring food to market.
+      </p>
+
+      <p>
+        Our business areas allow us to work across these needs while
+        developing capabilities suited to each market. Our long-term
+        ambition is to help create stronger connections between
+        agricultural production and food supply.
+      </p>
+
+      <a href="about.html" class="text-link">
+        Learn about C.G. Okafor Co. <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CAREERS / CALL TO ACTION -->
+
+  <section class="business-cta">
+
+    <div>
+
+      <p class="eyebrow">GROW WITH US</p>
+
+      <h2>
+        Help shape the future<br>
+        of farming and food.
+      </h2>
+
+      <p>
+        We welcome people, partners and suppliers who share our interest
+        in practical agricultural solutions and a stronger food system.
+      </p>
+
+    </div>
+
+    <a href="contact.html" class="primary-button light-button">
+      Contact Us
+    </a>
+
+  </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="site-footer" id="footer-contact">
+
+  <div class="footer-main">
+
+    <!-- BRAND -->
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="logo footer-logo">
+
+        <img
+          src="cg-okafor-logo.png"
+          alt="C.G. Okafor Co."
+        >
+
+      </a>
+
+      <p>
+        A food and agricultural solutions and technology company.
+      </p>
+
+    </div>
+
+
+    <!-- ABOUT US -->
+
+    <div class="footer-column">
+
+      <h4>About Us</h4>
+
+      <a href="about.html">About Us Overview</a>
+      <a href="innovation.html">Innovation</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="supplier-information.html">Supplier Information</a>
+      <a href="history.html">History</a>
+      <a href="events.html">Events</a>
+
+    </div>
+
+
+    <!-- OUR BUSINESSES -->
+
+    <div class="footer-column">
+
+      <h4>Our Businesses</h4>
+
+      <a href="businesses.html">Business Overview</a>
+      <a href="okafor-agriscience.html">Agriscience</a>
+      <a href="okafor-farm-technology.html">Farm Technology</a>
+      <a href="okafor-foods.html">Foods</a>
+      <a href="okafor-investments.html">Okafor Investments</a>
+
+    </div>
+
+
+    <!-- FOODS -->
+
+    <div class="footer-column">
+
+      <h4>Foods</h4>
+
+      <a href="okafor-foods.html">Foods Overview</a>
+      <a href="grains-oilseeds.html">Grains &amp; Oilseeds</a>
+      <a href="poultry-eggs.html">Poultry &amp; Eggs</a>
+      <a href="fruit-vegetables.html">Fruit &amp; Vegetables</a>
+      <a href="seasonings-condiments.html">Seasonings &amp; Condiments</a>
+      <a href="edible-oils.html">Edible Oils</a>
+      <a href="tomato-products.html">Tomato Products</a>
+      <a href="food-sourcing.html">Food Sourcing</a>
+      <a href="value-addition.html">Value Addition</a>
+
+    </div>
+
+
+    <!-- EXPLORE OKAFOR -->
+
+    <div class="footer-column">
+
+      <h4>Explore Okafor</h4>
+
+      <a href="our-approach.html">Our Approach</a>
+      <a href="our-contribution.html">Our Contribution</a>
+      <a href="okafor-brand.html">The Okafor Brand</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+
+  </div>
+
+
+  <!-- CONTACT AND SOCIAL -->
+
+  <div class="footer-contact-social">
+
+    <div class="footer-contact-block">
+
+      <span class="footer-social-label">CONTACT</span>
+
+      <a
+        href="https://wa.me/2349060485238"
+        class="footer-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0
+            C5.55 0 .24 5.31.24 11.84
+            c0 2.09.55 4.13 1.59 5.93L.17 24
+            l6.37-1.67a11.85 11.85 0 0 0 5.54 1.37h.01
+            c6.53 0 11.84-5.31 11.84-11.84
+            0-3.16-1.23-6.13-3.41-8.38z
+            M12.09 21.67h-.01
+            a9.83 9.83 0 0 1-5.01-1.38l-.36-.21
+            -3.78.99 1.01-3.68-.23-.38
+            a9.82 9.82 0 0 1-1.51-5.17
+            C2.2 6.42 6.62 2 12.08 2
+            c2.65 0 5.14 1.03 7.01 2.9
+            a9.84 9.84 0 0 1 2.91 7
+            c0 5.45-4.43 9.77-9.91 9.77z
+            M17.48 14.59
+            c-.3-.15-1.78-.88-2.06-.98
+            -.28-.1-.48-.15-.68.15
+            -.2.3-.78.98-.95 1.18
+            -.17.2-.35.22-.65.07
+            -.3-.15-1.26-.46-2.4-1.48
+            -.89-.79-1.49-1.77-1.66-2.07
+            -.17-.3-.02-.46.13-.61
+            .13-.13.3-.35.45-.52
+            .15-.17.2-.3.3-.5
+            .1-.2.05-.37-.02-.52
+            -.07-.15-.68-1.64-.93-2.25
+            -.24-.59-.49-.51-.68-.52
+            -.17-.01-.37-.01-.57-.01
+            -.2 0-.52.07-.79.37
+            -.27.3-1.04 1.02-1.04 2.48
+            0 1.46 1.06 2.87 1.21 3.07
+            .15.2 2.09 3.19 5.07 4.48
+            .71.31 1.26.5 1.69.64
+            .71.23 1.36.2 1.87.12
+            .57-.08 1.78-.73 2.03-1.43
+            .25-.7.25-1.3.17-1.43
+            -.07-.12-.27-.2-.57-.35z"
+          />
+        </svg>
+
+        <span>0906 048 5238</span>
+
+      </a>
+
+    </div>
+
+
+    <div class="footer-social-block">
+
+      <span class="footer-social-label">FOLLOW US</span>
+
+      <div class="footer-social-links">
+
+        <a
+          href="https://www.facebook.com/share/1BuxKzeTvz/"
+          class="social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="C.G. Okafor Co. on Facebook"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.67.33-1 1-1z"
+            />
+          </svg>
+
+        </a>
+
+
+        <a
+          href="#"
+          class="social-link social-placeholder"
+          aria-label="TikTok coming soon"
+          title="TikTok link coming soon"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M19.59 6.69A4.83 4.83 0 0 1 15.5 4
+              v8.25a6.75 6.75 0 1 1-6.75-6.75
+              c.14 0 .28.01.42.02v3.74
+              a3.04 3.04 0 1 0 2.58 3V0h3.75
+              a4.83 4.83 0 0 0 4.09 4.09v2.6z"
+            />
+          </svg>
+
+        </a>
+
+
+        <a
+          href="#"
+          class="social-link social-placeholder"
+          aria-label="X coming soon"
+          title="X link coming soon"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.56
+              l-5.14-6.72L5.17 22H1.91l7.6-8.69L1.5 2h6.72
+              l4.64 6.14L18.244 2zm-1.15 17.86h1.81
+              L7.22 4.05H5.28L17.094 19.86z"
+            />
+          </svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
+
+  <div class="footer-bottom">
+
+    <span>© 2026 C.G. Okafor Co.</span>
+    <span>All rights reserved.</span>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     EXISTING SITE SCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
+
+<!-- =========================================================
+     BUSINESS CAROUSEL SCRIPT
+     ========================================================= -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.getElementById("business-track");
+    const previousButton = document.getElementById("business-prev");
+    const nextButton = document.getElementById("business-next");
+    const status = document.getElementById("business-carousel-status");
+
+    if (!track || !previousButton || !nextButton || !status) {
+      return;
+    }
+
+    const cards = Array.from(
+      track.querySelectorAll(".business-detail-card")
+    );
+
+    if (!cards.length) {
+      return;
+    }
+
+    let scrollUpdateFrame = null;
+
+    function getCurrentIndex() {
+      const trackRect = track.getBoundingClientRect();
+
+      /*
+       * Find the card whose left edge is closest to the
+       * visible starting edge of the carousel.
+       */
+      let closestIndex = 0;
+      let smallestDistance = Infinity;
+
+      cards.forEach(function (card, index) {
+        const cardRect = card.getBoundingClientRect();
+        const distance = Math.abs(cardRect.left - trackRect.left);
+
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
+    }
+
+    function updateControls() {
+      const index = getCurrentIndex();
+
+      status.textContent =
+        String(index + 1).padStart(2, "0") +
+        " / " +
+        String(cards.length).padStart(2, "0");
+
+      previousButton.disabled = index === 0;
+      nextButton.disabled = index === cards.length - 1;
+    }
+
+    function scheduleControlUpdate() {
+      if (scrollUpdateFrame !== null) {
+        cancelAnimationFrame(scrollUpdateFrame);
+      }
+
+      scrollUpdateFrame = requestAnimationFrame(function () {
+        updateControls();
+        scrollUpdateFrame = null;
+      });
+    }
+
+    function moveToCard(index) {
+      const safeIndex = Math.max(
+        0,
+        Math.min(index, cards.length - 1)
+      );
+
+      const trackRect = track.getBoundingClientRect();
+      const cardRect = cards[safeIndex].getBoundingClientRect();
+
+      /*
+       * Calculate the card's target position relative to the
+       * carousel's current scroll position. This avoids relying
+       * on offsetLeft, which can vary with the page layout.
+       */
+      const targetLeft =
+        track.scrollLeft + cardRect.left - trackRect.left;
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      track.scrollTo({
+        left: targetLeft,
+        behavior: reduceMotion ? "auto" : "smooth"
+      });
+    }
+
+    previousButton.addEventListener("click", function () {
+      moveToCard(getCurrentIndex() - 1);
+    });
+
+    nextButton.addEventListener("click", function () {
+      moveToCard(getCurrentIndex() + 1);
+    });
+
+    track.addEventListener("scroll", scheduleControlUpdate, {
+      passive: true
+    });
+
+    window.addEventListener("resize", scheduleControlUpdate);
+
+    /*
+     * Recalculate after images load because their dimensions
+     * can affect the carousel's layout.
+     */
+    track.querySelectorAll("img").forEach(function (img) {
+      if (!img.complete) {
+        img.addEventListener("load", scheduleControlUpdate, {
+          once: true
+        });
+
+        img.addEventListener("error", scheduleControlUpdate, {
+          once: true
+        });
+      }
+    });
+
+    updateControls();
+  });
+</script>
+
+</body>
+</html>
