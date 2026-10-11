@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Agriscience | C.G. Okafor Co.</title>
+  <title>Okafor Agriscience | C.G. Okafor Co.</title>
 
   <meta
     name="description"
-    content="Explore Agriscience at C.G. Okafor Co. Our work spans crop protection, plant nutrition, seeds and animal health, supporting farmers and food production."
+    content="Explore Okafor Agriscience, part of C.G. Okafor Co., providing agricultural solutions across crop protection, plant nutrition, seeds and animal health."
   >
 
   <link rel="stylesheet" href="style.css">
@@ -16,115 +16,379 @@
 
 <body class="agriscience-page">
 
-  <!-- SITE NAVIGATION -->
-  <!-- Keep this navigation consistent with the corporate website. -->
+  <!-- FLOATING MENU BUTTON -->
+  <button
+    class="menu-button"
+    aria-label="Open menu"
+    aria-expanded="false"
+    type="button"
+  >
+    <img src="okafor-menu-logo.png" alt="Okafor">
 
-  <button class="menu-button" id="menuButton" aria-label="Open navigation">
-    <span class="menu-button-label">MENU</span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <span class="menu-label menu-label-menu">MENU</span>
+
+    <span class="menu-label menu-label-slogan">
+      <span>better farming,</span>
+      <span>Food for all</span>
+    </span>
   </button>
 
-  <nav class="main-nav" id="mainNav" aria-hidden="true">
+
+  <!-- FULL-SCREEN NAVIGATION -->
+  <nav class="main-nav" aria-hidden="true">
 
     <div class="nav-header">
-
-      <a href="index.html" class="nav-logo" aria-label="C.G. Okafor Co. homepage">
-        <img src="cg-okafor-logo.png" alt="C.G. Okafor Co.">
+      <a
+        class="nav-logo"
+        href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/index.html"
+        aria-label="C.G. Okafor Co. homepage"
+      >
+        <img src="okafor-menu-logo.png" alt="C.G. Okafor Co.">
       </a>
 
-      <button class="nav-close" id="navClose" aria-label="Close navigation">
+      <button
+        class="nav-close"
+        type="button"
+        aria-label="Close navigation"
+      >
         &times;
       </button>
+    </div>
+
+
+    <!-- MAIN MENU -->
+    <div class="nav-panel nav-panel-main active">
+
+      <button class="nav-has-children" data-target="about-panel" type="button">
+        ABOUT US
+      </button>
+
+      <button class="nav-has-children" data-target="businesses-panel" type="button">
+        OUR BUSINESSES
+      </button>
+
+      <div class="nav-divider"></div>
+
+      <a class="nav-direct" href="careers.html">CAREERS</a>
+      <a class="nav-direct" href="insights.html">STORIES &amp; INSIGHTS</a>
+      <a class="nav-direct" href="contact.html">CONTACT US</a>
 
     </div>
 
-    <div class="nav-panel">
 
-      <a href="about.html" class="nav-item">ABOUT US</a>
+    <!-- ABOUT US -->
+    <div class="nav-panel" id="about-panel">
 
-      <div class="nav-divider"></div>
+      <button class="nav-back" data-back="main" type="button">
+        &larr; BACK
+      </button>
 
-      <a href="businesses.html" class="nav-item">OUR BUSINESSES</a>
+      <a class="nav-direct" href="about.html">About Us Overview</a>
 
-      <div class="nav-submenu">
+      <button class="nav-has-children" data-target="explore-panel" type="button">
+        Explore Okafor
+      </button>
 
-        <a href="agriscience.html" class="nav-item active">
-          AGRISCIENCE
-        </a>
+      <button class="nav-has-children" data-target="contribution-panel" type="button">
+        Our Contribution
+      </button>
 
-        <a href="farm-technology.html" class="nav-item">
-          FARM TECHNOLOGY
-        </a>
+      <a class="nav-direct" href="okafor-brand.html">The Okafor Brand</a>
+      <a class="nav-direct" href="innovation.html">Innovation</a>
 
-        <a href="okafor-foods.html" class="nav-item">
-          FOODS
-        </a>
+      <button class="nav-has-children" data-target="leadership-panel" type="button">
+        Leadership
+      </button>
 
-      </div>
+      <a class="nav-direct" href="supplier-information.html">Supplier Information</a>
+      <a class="nav-direct" href="history.html">Our History</a>
+      <a class="nav-direct" href="events.html">Events</a>
 
-      <div class="nav-divider"></div>
+    </div>
 
-      <a href="careers.html" class="nav-item">CAREERS</a>
 
-      <a href="stories.html" class="nav-item">
-        STORIES &amp; INSIGHTS
+    <!-- EXPLORE OKAFOR -->
+    <div class="nav-panel" id="explore-panel">
+
+      <button class="nav-back" data-back="about-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="our-approach.html">Our Approach</a>
+      <a class="nav-direct" href="our-contribution.html">Our Contribution</a>
+
+    </div>
+
+
+    <!-- OUR CONTRIBUTION -->
+    <div class="nav-panel" id="contribution-panel">
+
+      <button class="nav-back" data-back="about-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="our-contribution.html">Our Contribution Overview</a>
+      <a class="nav-direct" href="farmers-by-okafor.html">Farmers by Okafor</a>
+      <a class="nav-direct" href="giving-back.html">Giving Back</a>
+
+    </div>
+
+
+    <!-- LEADERSHIP -->
+    <div class="nav-panel" id="leadership-panel">
+
+      <button class="nav-back" data-back="about-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="leadership.html">Leadership Overview</a>
+      <a class="nav-direct" href="management.html">Management</a>
+      <a class="nav-direct" href="division-leadership.html">Division Leadership</a>
+
+    </div>
+
+
+    <!-- OUR BUSINESSES -->
+    <div class="nav-panel" id="businesses-panel">
+
+      <button class="nav-back" data-back="main" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="businesses.html">Business Overview</a>
+
+      <button class="nav-has-children" data-target="agriscience-panel" type="button">
+        Agriscience
+      </button>
+
+      <button class="nav-has-children" data-target="farm-technology-panel" type="button">
+        Farm Technology
+      </button>
+
+      <button class="nav-has-children" data-target="foods-panel" type="button">
+        Foods
+      </button>
+
+      <a class="nav-direct" href="all-products.html">All Products</a>
+
+    </div>
+
+
+    <!-- AGRISCIENCE -->
+    <div class="nav-panel" id="agriscience-panel">
+
+      <button class="nav-back" data-back="businesses-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="okafor-agriscience.html">
+        Agriscience Overview
       </a>
 
-      <a href="contact.html" class="nav-item">CONTACT US</a>
+      <button class="nav-has-children" data-target="crop-protection-panel" type="button">
+        Crop Protection
+      </button>
+
+      <button class="nav-has-children" data-target="plant-nutrition-panel" type="button">
+        Plant Nutrition
+      </button>
+
+      <button class="nav-has-children" data-target="seeds-panel" type="button">
+        Seeds
+      </button>
+
+      <button class="nav-has-children" data-target="animal-health-panel" type="button">
+        Animal Health
+      </button>
+
+      <a
+        class="nav-direct"
+        href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/"
+      >
+        Visit Agriscience Website
+      </a>
+
+    </div>
+
+
+    <!-- CROP PROTECTION -->
+    <div class="nav-panel" id="crop-protection-panel">
+
+      <button class="nav-back" data-back="agriscience-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="crop-protection.html">Crop Protection Overview</a>
+      <a class="nav-direct" href="weed-management.html">Weed Management</a>
+      <a class="nav-direct" href="pest-management.html">Pest Management</a>
+      <a class="nav-direct" href="disease-management.html">Disease Management</a>
+
+    </div>
+
+
+    <!-- PLANT NUTRITION -->
+    <div class="nav-panel" id="plant-nutrition-panel">
+
+      <button class="nav-back" data-back="agriscience-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="plant-nutrition.html">Plant Nutrition Overview</a>
+      <a class="nav-direct" href="granular.html">Granular Fertilizers</a>
+      <a class="nav-direct" href="micronutrients.html">Micronutrients</a>
+      <a class="nav-direct" href="foliar.html">Foliar Nutrition</a>
+
+    </div>
+
+
+    <!-- SEEDS -->
+    <div class="nav-panel" id="seeds-panel">
+
+      <button class="nav-back" data-back="agriscience-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="seeds.html">Seeds Overview</a>
+      <a class="nav-direct" href="field-seeds.html">Field Seeds</a>
+      <a class="nav-direct" href="vegetable-seeds.html">Vegetable Seeds</a>
+
+    </div>
+
+
+    <!-- ANIMAL HEALTH -->
+    <div class="nav-panel" id="animal-health-panel">
+
+      <button class="nav-back" data-back="agriscience-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="animal-health.html">Animal Health Overview</a>
+      <a class="nav-direct" href="poultry-health.html">Poultry Health</a>
+      <a class="nav-direct" href="swine-health.html">Swine Health</a>
+
+    </div>
+
+
+    <!-- FARM TECHNOLOGY -->
+    <div class="nav-panel" id="farm-technology-panel">
+
+      <button class="nav-back" data-back="businesses-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="okafor-farm-technology.html">
+        Farm Technology Overview
+      </a>
+
+      <a class="nav-direct" href="farm-design-building.html">
+        Farm Design &amp; Building
+      </a>
+
+      <a class="nav-direct" href="farm-automation.html">
+        Farm Automation
+      </a>
+
+      <a class="nav-direct" href="poultry-automation.html">
+        Poultry Automation
+      </a>
+
+      <a class="nav-direct" href="swine-automation.html">
+        Swine Automation
+      </a>
+
+      <a
+        class="nav-direct"
+        href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-farm-technology/"
+      >
+        Visit Farm Technology Website
+      </a>
+
+    </div>
+
+
+    <!-- FARM AUTOMATION -->
+    <div class="nav-panel" id="farm-automation-panel">
+
+      <button class="nav-back" data-back="farm-technology-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="farm-automation.html">Farm Automation Overview</a>
+      <a class="nav-direct" href="poultry-automation.html">Poultry Automation</a>
+      <a class="nav-direct" href="swine-automation.html">Swine Automation</a>
+
+    </div>
+
+
+    <!-- FOODS -->
+    <div class="nav-panel" id="foods-panel">
+
+      <button class="nav-back" data-back="businesses-panel" type="button">
+        &larr; BACK
+      </button>
+
+      <a class="nav-direct" href="okafor-foods.html">Foods Overview</a>
+      <a class="nav-direct" href="grains-oilseeds.html">Grains &amp; Oilseeds</a>
+      <a class="nav-direct" href="poultry-eggs.html">Poultry &amp; Eggs</a>
+      <a class="nav-direct" href="edible-oils.html">Edible Oils</a>
+      <a class="nav-direct" href="seasonings-condiments.html">Seasonings &amp; Condiments</a>
+      <a class="nav-direct" href="fruit-vegetables.html">Fruit &amp; Vegetables</a>
+      <a class="nav-direct" href="food-sourcing.html">Food Sourcing</a>
+      <a class="nav-direct" href="value-addition.html">Value Addition</a>
 
     </div>
 
   </nav>
 
 
+  <!-- AGRISCIENCE HERO -->
+  <header class="agriscience-hero">
+
+    <div class="agriscience-hero-image" role="img" aria-label="Agriculture and crop production"></div>
+
+    <div class="agriscience-hero-content">
+
+      <p class="eyebrow">C.G. OKAFOR CO. / OUR BUSINESSES</p>
+
+      <h1>
+        Okafor<br>
+        <span>Agriscience</span>
+      </h1>
+
+      <p class="agriscience-hero-tagline">
+        Science that nourishes.
+      </p>
+
+      <p class="agriscience-hero-description">
+        Agricultural solutions that support farmers, strengthen food
+        production and contribute to a more productive agricultural sector.
+      </p>
+
+      <a href="#agriscience-focus" class="button button-primary">
+        Explore Our Focus Areas
+      </a>
+
+    </div>
+
+  </header>
+
+
   <main>
 
-    <!-- HERO -->
-
-    <section class="agriscience-hero">
-
-      <div class="agriscience-hero-image"></div>
-
-      <div class="agriscience-hero-content">
-
-        <span class="eyebrow">C.G. OKAFOR CO. / AGRISCIENCE</span>
-
-        <h1>
-          Better science.<br>
-          Better farming.
-        </h1>
-
-        <p>
-          Practical agricultural solutions that help farmers protect crops,
-          nourish plants, choose the right seeds and support animal health.
-        </p>
-
-        <a
-          href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-          class="primary-button"
-        >
-          Explore Okafor Agriscience
-          <span aria-hidden="true">↗</span>
-        </a>
-
-      </div>
-
-      <div class="agriscience-hero-caption">
-        Supporting farmers. Strengthening food production.
-      </div>
-
-    </section>
-
-
     <!-- INTRODUCTION -->
-
-    <section class="section agriscience-intro">
+    <section class="agriscience-intro section-padding">
 
       <div class="agriscience-intro-heading">
 
-        <span class="eyebrow">OUR AGRISCIENCE BUSINESS</span>
+        <p class="eyebrow">OUR AGRISCIENCE BUSINESS</p>
 
         <h2>
-          Helping farmers meet the challenges of growing food.
+          Supporting the people<br>
+          who grow our food.
         </h2>
 
       </div>
@@ -132,44 +396,39 @@
       <div class="agriscience-intro-copy">
 
         <p>
-          Agriculture depends on the decisions farmers make every day.
-          The health of a crop, the nutrients available to plants, the
-          quality of seed and the health of livestock all influence
-          productivity and the food that reaches people.
+          Okafor Agriscience is the agricultural solutions business of
+          C.G. Okafor Co. It brings together products and solutions
+          designed to help farmers manage crop production, nourish plants,
+          access quality seeds and support animal health.
         </p>
 
         <p>
-          Through Okafor Agriscience, C.G. Okafor Co. brings together
-          agricultural products, knowledge and practical solutions
-          designed around the needs of farmers and food producers.
+          Our focus is on practical agricultural needs and the role that
+          reliable solutions play in farming, food production and the
+          wider agricultural value chain.
         </p>
-
-        <a href="businesses.html" class="text-link">
-          Explore our businesses <span aria-hidden="true">→</span>
-        </a>
 
       </div>
 
     </section>
 
 
-    <!-- FOCUS AREAS -->
+    <!-- AGRISCIENCE FOCUS AREAS -->
+    <section
+      class="agriscience-focus-section section-padding"
+      id="agriscience-focus"
+    >
 
-    <section class="section agriscience-focus">
-
-      <div class="agriscience-section-heading">
+      <div class="section-heading">
 
         <div>
-          <span class="eyebrow">OUR AREAS OF FOCUS</span>
-
-          <h2>
-            Solutions for different needs on the farm.
-          </h2>
+          <p class="eyebrow">WHAT WE DO</p>
+          <h2>Our focus areas</h2>
         </div>
 
         <p>
-          From crop establishment to plant health and animal production,
-          explore the areas in which Okafor Agriscience works.
+          Explore the key areas through which Okafor Agriscience serves
+          agricultural production.
         </p>
 
       </div>
@@ -178,145 +437,141 @@
       <div class="agriscience-focus-grid">
 
         <!-- CROP PROTECTION -->
-
         <article class="agriscience-focus-card">
 
-          <a
-            href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-            class="agriscience-focus-image crop-protection-image"
-            aria-label="Explore crop protection"
-          >
-            <span class="agriscience-card-number">01</span>
-            <span class="agriscience-card-arrow" aria-hidden="true">↗</span>
+          <a href="crop-protection.html" class="agriscience-focus-link">
+
+            <div class="agriscience-focus-image crop-protection-image">
+              <img
+                src="hero-farm.jpg"
+                alt="Crop production and field management"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="agriscience-focus-content">
+
+              <p class="focus-number">01</p>
+
+              <h3>Crop Protection</h3>
+
+              <p>
+                Solutions for managing weeds, pests and crop diseases
+                throughout the growing season.
+              </p>
+
+              <span class="text-link">
+                Explore Crop Protection <span aria-hidden="true">→</span>
+              </span>
+
+            </div>
+
           </a>
-
-          <div class="agriscience-focus-body">
-
-            <span class="eyebrow">CROP PROTECTION</span>
-
-            <h3>Protecting crop potential.</h3>
-
-            <p>
-              Solutions that help farmers manage weeds, pests and diseases
-              that threaten crop health and productivity.
-            </p>
-
-            <a
-              href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-              class="text-link"
-            >
-              Explore crop protection <span aria-hidden="true">→</span>
-            </a>
-
-          </div>
 
         </article>
 
 
         <!-- PLANT NUTRITION -->
-
         <article class="agriscience-focus-card">
 
-          <a
-            href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-            class="agriscience-focus-image plant-nutrition-image"
-            aria-label="Explore plant nutrition"
-          >
-            <span class="agriscience-card-number">02</span>
-            <span class="agriscience-card-arrow" aria-hidden="true">↗</span>
+          <a href="plant-nutrition.html" class="agriscience-focus-link">
+
+            <div class="agriscience-focus-image plant-nutrition-image">
+              <img
+                src="hero-food.jpg"
+                alt="Agricultural production and plant growth"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="agriscience-focus-content">
+
+              <p class="focus-number">02</p>
+
+              <h3>Plant Nutrition</h3>
+
+              <p>
+                Fertilizer and plant nutrition solutions designed to
+                support crop growth and productive farming.
+              </p>
+
+              <span class="text-link">
+                Explore Plant Nutrition <span aria-hidden="true">→</span>
+              </span>
+
+            </div>
+
           </a>
-
-          <div class="agriscience-focus-body">
-
-            <span class="eyebrow">PLANT NUTRITION</span>
-
-            <h3>Supporting stronger growth.</h3>
-
-            <p>
-              Plant nutrition solutions that help farmers address crop
-              nutrient needs throughout the growing cycle.
-            </p>
-
-            <a
-              href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-              class="text-link"
-            >
-              Explore plant nutrition <span aria-hidden="true">→</span>
-            </a>
-
-          </div>
 
         </article>
 
 
         <!-- SEEDS -->
-
         <article class="agriscience-focus-card">
 
-          <a
-            href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-            class="agriscience-focus-image seeds-image"
-            aria-label="Explore seeds"
-          >
-            <span class="agriscience-card-number">03</span>
-            <span class="agriscience-card-arrow" aria-hidden="true">↗</span>
+          <a href="seeds.html" class="agriscience-focus-link">
+
+            <div class="agriscience-focus-image seeds-image">
+              <img
+                src="hero-idegro.jpg"
+                alt="Seed solutions for agricultural production"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="agriscience-focus-content">
+
+              <p class="focus-number">03</p>
+
+              <h3>Seeds</h3>
+
+              <p>
+                Field and vegetable seed solutions to support different
+                crops, farming systems and production needs.
+              </p>
+
+              <span class="text-link">
+                Explore Seeds <span aria-hidden="true">→</span>
+              </span>
+
+            </div>
+
           </a>
-
-          <div class="agriscience-focus-body">
-
-            <span class="eyebrow">SEEDS</span>
-
-            <h3>Starting with the right seed.</h3>
-
-            <p>
-              Seed solutions for farmers growing vegetables and field crops,
-              with varieties selected for different production needs.
-            </p>
-
-            <a
-              href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-              class="text-link"
-            >
-              Explore seeds <span aria-hidden="true">→</span>
-            </a>
-
-          </div>
 
         </article>
 
 
         <!-- ANIMAL HEALTH -->
-
         <article class="agriscience-focus-card">
 
-          <a
-            href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-            class="agriscience-focus-image animal-health-image"
-            aria-label="Explore animal health"
-          >
-            <span class="agriscience-card-number">04</span>
-            <span class="agriscience-card-arrow" aria-hidden="true">↗</span>
+          <a href="animal-health.html" class="agriscience-focus-link">
+
+            <div class="agriscience-focus-image animal-health-image">
+              <img
+                src="hero-animal-health.jpg"
+                alt="Animal health and livestock production"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="agriscience-focus-content">
+
+              <p class="focus-number">04</p>
+
+              <h3>Animal Health</h3>
+
+              <p>
+                Animal health solutions supporting livestock management,
+                poultry production and swine farming.
+              </p>
+
+              <span class="text-link">
+                Explore Animal Health <span aria-hidden="true">→</span>
+              </span>
+
+            </div>
+
           </a>
-
-          <div class="agriscience-focus-body">
-
-            <span class="eyebrow">ANIMAL HEALTH</span>
-
-            <h3>Supporting healthier animals.</h3>
-
-            <p>
-              Practical animal health solutions for livestock producers,
-              supporting responsible and productive animal farming.
-            </p>
-
-            <a
-              href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-              class="text-link"
-            >
-              Explore animal health <span aria-hidden="true">→</span>
-            </a>
-
-          </div>
 
         </article>
 
@@ -325,28 +580,34 @@
     </section>
 
 
-    <!-- CONNECTION TO FARMERS AND FOOD -->
+    <!-- FARMERS FEATURE -->
+    <section class="agriscience-farmer-section section-padding">
 
-    <section class="agriscience-farmer-section">
+      <div class="agriscience-farmer-image">
+        <img
+          src="farmers-by-okafor.jpg"
+          alt="Farmers working in agricultural production"
+          loading="lazy"
+        >
+      </div>
 
-      <div class="agriscience-farmer-image"></div>
+      <div class="agriscience-farmer-copy">
 
-      <div class="agriscience-farmer-content">
-
-        <span class="eyebrow">WITH FARMERS</span>
+        <p class="eyebrow">BUILT AROUND FARMING</p>
 
         <h2>
-          Better farming starts with understanding the farm.
+          Agricultural solutions<br>
+          with farmers in mind.
         </h2>
 
         <p>
-          Every farm faces its own conditions and challenges. Our focus
-          is on connecting agricultural products and practical knowledge
-          with the people who grow crops and produce food.
+          Farming is central to food production. We believe agricultural
+          solutions should respond to real production needs and help
+          farmers work towards stronger, more reliable outcomes.
         </p>
 
-        <a href="farmers-by-okafor.html" class="primary-button">
-          Farmers by Okafor <span aria-hidden="true">→</span>
+        <a href="farmers-by-okafor.html" class="button button-secondary">
+          Discover Farmers by Okafor
         </a>
 
       </div>
@@ -355,37 +616,43 @@
 
 
     <!-- SPECIALIST WEBSITE CTA -->
+    <section class="agriscience-specialist-section section-padding">
 
-    <section class="section agriscience-explore">
+      <div class="agriscience-specialist-copy">
 
-      <div class="agriscience-explore-copy">
-
-        <span class="eyebrow">DISCOVER OKAFOR AGRISCIENCE</span>
+        <p class="eyebrow">EXPLORE OUR SOLUTIONS</p>
 
         <h2>
-          Looking for products and specific solutions?
+          Discover Okafor Agriscience products.
         </h2>
 
         <p>
-          Visit the Okafor Agriscience website to explore our specialist
-          agricultural offerings, including crop protection, plant
-          nutrition, seeds and animal health.
+          Visit our specialist Agriscience website to explore the
+          available products and solutions across our focus areas.
         </p>
 
         <a
-          href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/index.html"
-          class="primary-button"
+          href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/"
+          class="button button-primary"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
-          Visit Okafor Agriscience
+          Visit Agriscience Website
           <span aria-hidden="true">↗</span>
         </a>
 
       </div>
 
-      <div class="agriscience-explore-mark" aria-hidden="true">
-        <span>O</span>
+      <div class="agriscience-specialist-mark">
+
+        <img
+          src="cg-okafor-logo.png"
+          alt="C.G. Okafor Co."
+          loading="lazy"
+        >
+
+        <p>Science that nourishes.</p>
+
       </div>
 
     </section>
@@ -394,14 +661,13 @@
 
 
   <!-- CORPORATE FOOTER -->
-
-  <footer class="site-footer">
+  <footer class="site-footer" id="footer-contact">
 
     <div class="footer-main">
 
       <div class="footer-brand">
 
-        <a href="index.html" class="footer-logo">
+        <a href="index.html" aria-label="C.G. Okafor Co. homepage">
           <img src="cg-okafor-logo.png" alt="C.G. Okafor Co.">
         </a>
 
@@ -409,49 +675,100 @@
           A food and agricultural solutions and technology company.
         </p>
 
-        <p class="footer-tagline">
-          Better farming, food for all.
-        </p>
+        <p class="footer-tagline">Better farming, food for all.</p>
 
       </div>
 
 
       <div class="footer-column">
 
-        <h4>About Us</h4>
+        <h3>About Us</h3>
 
         <a href="about.html">About Us Overview</a>
-        <a href="our-approach.html">Our Approach</a>
-        <a href="our-contribution.html">Our Contribution</a>
         <a href="innovation.html">Innovation</a>
         <a href="leadership.html">Leadership</a>
-        <a href="history.html">History</a>
+        <a href="supplier-information.html">Supplier Information</a>
+        <a href="history.html">Our History</a>
+        <a href="events.html">Events</a>
 
       </div>
 
 
       <div class="footer-column">
 
-        <h4>Our Businesses</h4>
+        <h3>Our Businesses</h3>
 
         <a href="businesses.html">Business Overview</a>
-        <a href="agriscience.html">Agriscience</a>
-        <a href="farm-technology.html">Farm Technology</a>
-        <a href="okafor-foods.html">Foods</a>
+        <a href="okafor-agriscience.html">Okafor Agriscience</a>
+        <a href="okafor-farm-technology.html">Okafor Farm Technology</a>
+        <a href="okafor-foods.html">Okafor Foods</a>
         <a href="soileva.html">Soileva</a>
-        <a href="all-products.html">All Products</a>
+        <a href="okafor-investments.html">C.G. Okafor Investments</a>
 
       </div>
 
 
       <div class="footer-column">
 
-        <h4>Explore Okafor</h4>
+        <h3>Foods</h3>
 
+        <a href="okafor-foods.html">Foods Overview</a>
+        <a href="grains-oilseeds.html">Grains &amp; Oilseeds</a>
+        <a href="poultry-eggs.html">Poultry &amp; Eggs</a>
+        <a href="fruit-vegetables.html">Fruit &amp; Vegetables</a>
+        <a href="seasonings-condiments.html">Seasonings &amp; Condiments</a>
+        <a href="edible-oils.html">Edible Oils</a>
+        <a href="tomato-products.html">Tomato Products</a>
+        <a href="food-sourcing.html">Food Sourcing</a>
+        <a href="value-addition.html">Value Addition</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>Explore Okafor</h3>
+
+        <a href="our-approach.html">Our Approach</a>
+        <a href="our-contribution.html">Our Contribution</a>
         <a href="farmers-by-okafor.html">Farmers by Okafor</a>
         <a href="careers.html">Careers</a>
-        <a href="stories.html">Stories &amp; Insights</a>
         <a href="contact.html">Contact Us</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-contact-row">
+
+      <div class="footer-contact">
+
+        <span>Contact us</span>
+
+        <a href="https://wa.me/2349060485238" target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+
+        <a href="tel:+2349060485238">
+          0906 048 5238
+        </a>
+
+      </div>
+
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.facebook.com/share/1BuxKzeTvz/"
+          target="_blank"
+          rel="noopener"
+        >
+          Facebook
+        </a>
+
+        <a href="#" aria-label="TikTok">TikTok</a>
+        <a href="#" aria-label="X">X</a>
 
       </div>
 
@@ -460,11 +777,9 @@
 
     <div class="footer-bottom">
 
-      <span>
-        © 2026 C.G. Okafor Co. All rights reserved.
-      </span>
+      <p>&copy; 2026 C.G. Okafor Co. All rights reserved.</p>
 
-      <a href="index.html">Back to home ↑</a>
+      <a href="index.html">Back to homepage ↑</a>
 
     </div>
 
