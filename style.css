@@ -2710,3 +2710,588 @@ h2 {
     font-size: 50px;
   }
 }
+
+/* =========================================================
+   C.G. OKAFOR CO. — AGRISCIENCE OVERVIEW
+========================================================= */
+
+.agriscience-overview {
+  --agri-yellow: #FFE500;
+  --agri-teal: #01998E;
+  --agri-dark-teal: #074540;
+  --agri-red: #99010C;
+  --agri-dark-red: #360005;
+  --agri-light: #F4F5F2;
+
+  color: var(--agri-dark-teal);
+  background: #ffffff;
+}
+
+.agriscience-overview *,
+.agriscience-overview *::before,
+.agriscience-overview *::after {
+  box-sizing: border-box;
+}
+
+.agriscience-overview a {
+  text-decoration: none;
+}
+
+.agri-eyebrow,
+.agri-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+}
+
+.agri-section-label {
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.agri-hero {
+  padding: 150px 6vw 80px;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 55px;
+  min-height: 650px;
+  background: #ffffff;
+}
+
+.agri-hero-content {
+  max-width: 590px;
+}
+
+.agri-eyebrow {
+  margin-bottom: 28px;
+}
+
+.agri-hero h1 {
+  margin: 0 0 28px;
+  font-size: clamp(55px, 7vw, 100px);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  font-weight: 600;
+}
+
+.agri-hero-description {
+  max-width: 470px;
+  margin-bottom: 32px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.agri-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 54px;
+  padding: 15px 23px;
+  background: var(--agri-dark-teal);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.agri-button:hover {
+  background: var(--agri-red);
+}
+
+.agri-hero-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.agri-hero-image {
+  min-height: 410px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 18px 45px rgba(7, 69, 64, 0.12);
+}
+
+.agri-hero-image-one {
+  background-image: url("okafor-agriscience/hero-agriculture.jpg");
+}
+
+.agri-hero-image-two {
+  margin-top: 55px;
+  background-image: url("okafor-agriscience/poultry-health.jpg");
+}
+
+.agri-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    transparent 48%
+  );
+}
+
+.agri-hero-image span {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  bottom: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.agri-introduction {
+  padding: 100px 9vw;
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 50px;
+  background: var(--agri-light);
+}
+
+.agri-introduction-content {
+  max-width: 850px;
+}
+
+.agri-introduction h2 {
+  max-width: 760px;
+  margin-bottom: 28px;
+  font-size: clamp(38px, 5vw, 66px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.agri-introduction p:not(.agri-section-label) {
+  max-width: 730px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOCUS AREAS
+========================================================= */
+
+.agri-focus-section {
+  padding: 110px 7vw;
+}
+
+.agri-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 65px;
+}
+
+.agri-section-heading h2 {
+  max-width: 750px;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.agri-heading-description {
+  max-width: 390px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.agri-focus-card {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  min-height: 330px;
+  margin-bottom: 30px;
+  background: var(--agri-light);
+  overflow: hidden;
+}
+
+.agri-focus-card:nth-of-type(even) {
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.agri-focus-card:nth-of-type(even) .agri-focus-image {
+  order: 2;
+}
+
+.agri-focus-image {
+  position: relative;
+  display: block;
+  min-height: 330px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.agri-focus-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.28),
+    transparent 45%
+  );
+  transition: background 0.25s ease;
+}
+
+.agri-focus-image:hover::after {
+  background: rgba(7, 69, 64, 0.12);
+}
+
+.agri-image-number {
+  position: absolute;
+  z-index: 1;
+  left: 25px;
+  bottom: 22px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.agri-image-crop {
+  background-image:
+    url("okafor-agriscience/hero-agriculture.jpg");
+}
+
+.agri-image-nutrition {
+  background-image:
+    url("okafor-agriscience/farmcare.jpg");
+}
+
+.agri-image-seeds {
+  background-image:
+    url("okafor-agriscience/watermelon.jpg");
+}
+
+.agri-image-animal {
+  background-image:
+    url("okafor-agriscience/poultry-health.jpg");
+}
+
+.agri-focus-content {
+  padding: clamp(30px, 5vw, 65px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.agri-focus-content .agri-section-label {
+  margin-bottom: 18px;
+}
+
+.agri-focus-content h3 {
+  max-width: 500px;
+  margin-bottom: 22px;
+  font-size: clamp(30px, 3.5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.agri-focus-content p:not(.agri-section-label) {
+  max-width: 500px;
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(7, 69, 64, 0.8);
+}
+
+.agri-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--agri-teal);
+  color: var(--agri-dark-teal);
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.agri-text-link:hover {
+  color: var(--agri-red);
+}
+
+
+/* =========================================================
+   FIND A SOLUTION
+========================================================= */
+
+.agri-solutions-cta {
+  padding: 100px 8vw;
+  background: var(--agri-dark-teal);
+  color: #ffffff;
+}
+
+.agri-solutions-content {
+  max-width: 850px;
+}
+
+.agri-solutions-cta h2 {
+  max-width: 800px;
+  margin-bottom: 25px;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.agri-solutions-cta p:not(.agri-section-label) {
+  max-width: 650px;
+  margin-bottom: 32px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.agri-solutions-cta .agri-section-label {
+  color: var(--agri-yellow);
+}
+
+.agri-button-light {
+  background: var(--agri-yellow);
+  color: var(--agri-dark-teal);
+}
+
+.agri-button-light:hover {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   FARM TECHNOLOGY
+========================================================= */
+
+.agri-technology-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  background: var(--agri-light);
+}
+
+.agri-technology-image {
+  min-height: 420px;
+  background:
+    url("okafor-agriscience/farmcare.jpg")
+    center / cover no-repeat;
+}
+
+.agri-technology-content {
+  padding: clamp(40px, 7vw, 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.agri-technology-content h2 {
+  margin-bottom: 25px;
+  font-size: clamp(38px, 4.5vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.agri-technology-content p:not(.agri-section-label) {
+  max-width: 550px;
+  margin-bottom: 22px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CLOSING SECTION
+========================================================= */
+
+.agri-closing {
+  padding: 100px 8vw;
+  background: #ffffff;
+}
+
+.agri-closing h2 {
+  margin-bottom: 35px;
+  font-size: clamp(55px, 8vw, 105px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .agri-hero {
+    padding: 130px 5vw 70px;
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .agri-hero-visual {
+    max-width: 700px;
+  }
+
+  .agri-hero-image {
+    min-height: 330px;
+  }
+
+  .agri-introduction {
+    padding: 80px 6vw;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .agri-focus-section {
+    padding: 80px 5vw;
+  }
+
+  .agri-section-heading {
+    display: block;
+  }
+
+  .agri-heading-description {
+    margin-top: 25px;
+  }
+
+  .agri-focus-card,
+  .agri-focus-card:nth-of-type(even) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .agri-focus-content {
+    padding: 30px;
+  }
+
+  .agri-technology-content {
+    padding: 40px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .agri-hero {
+    padding: 115px 22px 55px;
+  }
+
+  .agri-hero h1 {
+    font-size: clamp(52px, 15vw, 78px);
+  }
+
+  .agri-hero-description {
+    font-size: 16px;
+  }
+
+  .agri-hero-visual {
+    gap: 10px;
+  }
+
+  .agri-hero-image {
+    min-height: 245px;
+  }
+
+  .agri-hero-image-two {
+    margin-top: 28px;
+  }
+
+  .agri-hero-image span {
+    left: 12px;
+    bottom: 12px;
+    font-size: 11px;
+  }
+
+  .agri-introduction {
+    padding: 65px 22px;
+  }
+
+  .agri-introduction h2 {
+    font-size: 42px;
+  }
+
+  .agri-introduction p:not(.agri-section-label) {
+    font-size: 16px;
+  }
+
+  .agri-focus-section {
+    padding: 70px 22px;
+  }
+
+  .agri-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .agri-section-heading h2 {
+    font-size: 44px;
+  }
+
+  .agri-focus-card,
+  .agri-focus-card:nth-of-type(even) {
+    grid-template-columns: 1fr;
+    margin-bottom: 24px;
+  }
+
+  .agri-focus-card:nth-of-type(even) .agri-focus-image {
+    order: 0;
+  }
+
+  .agri-focus-image {
+    min-height: 240px;
+  }
+
+  .agri-focus-content {
+    padding: 28px 23px 32px;
+  }
+
+  .agri-focus-content h3 {
+    font-size: 34px;
+  }
+
+  .agri-solutions-cta {
+    padding: 75px 22px;
+  }
+
+  .agri-solutions-cta h2 {
+    font-size: 46px;
+  }
+
+  .agri-technology-section {
+    grid-template-columns: 1fr;
+  }
+
+  .agri-technology-image {
+    min-height: 260px;
+  }
+
+  .agri-technology-content {
+    padding: 60px 22px;
+  }
+
+  .agri-technology-content h2 {
+    font-size: 43px;
+  }
+
+  .agri-closing {
+    padding: 75px 22px;
+  }
+
+  .agri-closing h2 {
+    font-size: 65px;
+  }
+
+     }
