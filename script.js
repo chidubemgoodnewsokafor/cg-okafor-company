@@ -440,9 +440,9 @@ startHeroTimer();
 
 
 /* =========================================================
-   HORIZONTAL BUSINESS, FOOD AND AGRISCIENCE CARD ROWS
+   HORIZONTAL BUSINESS AND FOOD CARD ROWS
 
-   These are horizontally scrollable rows.
+   These are ordinary horizontally scrollable rows.
    They do not autoplay or switch slides automatically.
 
    Supported interactions:
@@ -813,17 +813,6 @@ setupHorizontalCardRow(
 setupHorizontalCardRow(
   ".food-grid",
   "food cards"
-);
-
-/*
-  NEW: The four Agriscience focus areas use the
-  same horizontal scrolling behavior and arrow
-  controls as the existing business and food rows.
-*/
-
-setupHorizontalCardRow(
-  ".agriscience-focus-grid",
-  "Agriscience focus areas"
 );
 
 
