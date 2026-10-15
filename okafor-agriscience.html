@@ -1,1 +1,1549 @@
-agriscience overview page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Okafor Agriscience | C.G. Okafor Co.</title>
+
+  <meta
+    name="description"
+    content="Discover Okafor Agriscience, supporting farmers through crop protection, plant nutrition, seeds and animal health."
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =====================================================
+       OKAFOR AGRISCIENCE
+       Page-specific styles. Shared styles remain in style.css.
+       ===================================================== */
+
+    .agriscience-hero {
+      min-height: 68vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 150px 8% 80px;
+      position: relative;
+      overflow: hidden;
+      background: #074540;
+      color: #fff;
+    }
+
+    .agriscience-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 40, 36, 0.94) 0%,
+          rgba(3, 40, 36, 0.75) 48%,
+          rgba(3, 40, 36, 0.15) 100%
+        ),
+        url("agriscience-hero.jpg") center / cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .agriscience-hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .agriscience-hero .eyebrow {
+      color: #FFE500;
+      margin-bottom: 22px;
+    }
+
+    .agriscience-hero h1 {
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      margin: 0 0 28px;
+      max-width: 850px;
+    }
+
+    .agriscience-hero p:not(.eyebrow) {
+      max-width: 650px;
+      font-size: clamp(1rem, 1.7vw, 1.3rem);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* INTRODUCTION */
+
+    .agriscience-intro {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+      padding: 110px 8%;
+    }
+
+    .agriscience-intro h2 {
+      color: #074540;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 0;
+    }
+
+    .agriscience-intro-copy {
+      max-width: 700px;
+    }
+
+    .agriscience-intro-copy p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin: 0 0 20px;
+    }
+
+    /* FOCUS AREAS */
+
+    .agriscience-areas {
+      padding: 85px 0 100px;
+      overflow: hidden;
+      background: #f5f6f1;
+    }
+
+    .agriscience-areas-heading {
+      padding: 0 8%;
+      margin-bottom: 42px;
+    }
+
+    .agriscience-areas-heading .eyebrow {
+      color: #01998E;
+    }
+
+    .agriscience-areas-heading h2 {
+      color: #074540;
+      font-size: clamp(2.3rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 18px;
+    }
+
+    .agriscience-areas-heading > p:not(.eyebrow) {
+      max-width: 700px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .agriscience-carousel {
+      padding-left: 8%;
+    }
+
+    .agriscience-track {
+      display: flex;
+      gap: 26px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0 8% 22px 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      overscroll-behavior-x: contain;
+    }
+
+    .agriscience-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .agriscience-card {
+      flex: 0 0 min(72%, 850px);
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+      scroll-snap-align: start;
+      box-shadow: 0 12px 40px rgba(7, 69, 64, 0.07);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .agriscience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(7, 69, 64, 0.13);
+    }
+
+    .agriscience-card:focus-visible {
+      outline: 3px solid #01998E;
+      outline-offset: 4px;
+    }
+
+    .agriscience-card-image {
+      min-height: 100%;
+      overflow: hidden;
+      background: #e6ece6;
+    }
+
+    .agriscience-card-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .agriscience-card:hover .agriscience-card-image img {
+      transform: scale(1.04);
+    }
+
+    .agriscience-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(26px, 4vw, 52px);
+    }
+
+    .agriscience-card-number {
+      color: #01998E;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+
+    .agriscience-card-content h3 {
+      color: #074540;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 0 0 20px;
+    }
+
+    .agriscience-card-content p {
+      color: #4b5754;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0 0 28px;
+    }
+
+    .agriscience-card-link {
+      color: #074540;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .agriscience-card-link span {
+      color: #01998E;
+      font-size: 1.4rem;
+      transition: transform 0.2s ease;
+    }
+
+    .agriscience-card:hover .agriscience-card-link span {
+      transform: translateX(5px);
+    }
+
+    .agriscience-carousel-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 8% 0;
+    }
+
+    .agriscience-carousel-status {
+      margin-right: auto;
+      color: #52605b;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .agriscience-carousel-controls .card-carousel-button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* OUR APPROACH */
+
+    .agriscience-approach {
+      padding: 110px 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .agriscience-approach-image {
+      height: 500px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #e6ece6;
+    }
+
+    .agriscience-approach-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .agriscience-approach-content h2 {
+      color: #074540;
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 25px;
+    }
+
+    .agriscience-approach-content p:not(.eyebrow) {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin: 0 0 22px;
+    }
+
+    .agriscience-approach-content .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* SPECIALIST SITE CTA */
+
+    .agriscience-cta {
+      background: #074540;
+      color: #fff;
+      padding: 90px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .agriscience-cta h2 {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 12px 0 18px;
+    }
+
+    .agriscience-cta p:not(.eyebrow) {
+      max-width: 650px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .agriscience-cta .eyebrow {
+      color: #FFE500;
+    }
+
+    .agriscience-cta .primary-button {
+      flex-shrink: 0;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .agriscience-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      .agriscience-card {
+        flex-basis: 84%;
+        grid-template-columns: 1fr;
+      }
+
+      .agriscience-card-image {
+        height: 260px;
+        min-height: 260px;
+      }
+
+      .agriscience-card-image img {
+        height: 260px;
+        min-height: 260px;
+      }
+
+      .agriscience-card-content {
+        min-height: 320px;
+      }
+
+      .agriscience-approach {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .agriscience-approach-image {
+        height: 380px;
+      }
+
+      .agriscience-cta {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      .agriscience-hero {
+        min-height: 72vh;
+        padding: 130px 7% 65px;
+      }
+
+      .agriscience-hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+      }
+
+      .agriscience-intro,
+      .agriscience-approach {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .agriscience-areas-heading {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .agriscience-carousel {
+        padding-left: 7%;
+      }
+
+      .agriscience-track {
+        gap: 16px;
+        padding-right: 7%;
+      }
+
+      .agriscience-card {
+        flex-basis: 92%;
+        border-radius: 17px;
+      }
+
+      .agriscience-card-content {
+        padding: 28px;
+      }
+
+      .agriscience-carousel-controls {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      .agriscience-approach-image {
+        height: 300px;
+      }
+
+      .agriscience-cta {
+        padding: 75px 7%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .agriscience-track {
+        scroll-behavior: auto;
+      }
+
+      .agriscience-card,
+      .agriscience-card-image img,
+      .agriscience-card-link span {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     FLOATING MENU — ORIGINAL
+     ========================================================= -->
+
+<button
+  class="menu-button"
+  aria-label="Open menu"
+  aria-expanded="false"
+  type="button"
+>
+  <img src="okafor-menu-logo.png" alt="Okafor">
+
+  <span></span>
+  <span></span>
+  <span></span>
+
+  <span class="menu-label menu-label-menu">MENU</span>
+
+  <span class="menu-label menu-label-slogan">
+    <span>better farming,</span>
+    <span>Food for all</span>
+  </span>
+</button>
+
+
+<!-- =========================================================
+     MAIN NAVIGATION — COPIED FROM YOUR ORIGINAL
+     ========================================================= -->
+
+<nav class="main-nav" aria-hidden="true">
+
+  <div class="nav-header">
+
+    <a
+      href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/index.html"
+      class="nav-logo-link"
+      aria-label="Go to C.G. Okafor Co. homepage"
+    >
+      <img
+        src="okafor-menu-logo.png"
+        alt="C.G. Okafor Co."
+        class="nav-logo"
+      >
+    </a>
+
+    <button
+      class="nav-close"
+      type="button"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+
+  </div>
+
+  <!-- MAIN MENU -->
+
+  <div class="nav-panel nav-panel-main active">
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="about-panel"
+      type="button"
+    >
+      <span>ABOUT US</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="businesses-panel"
+      type="button"
+    >
+      <span>OUR BUSINESSES</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <div class="nav-divider"></div>
+
+    <a href="careers.html" class="nav-item nav-direct">CAREERS</a>
+    <a href="insights.html" class="nav-item nav-direct">STORIES &amp; INSIGHTS</a>
+    <a href="contact.html" class="nav-item nav-direct">CONTACT US</a>
+
+  </div>
+
+  <!-- ABOUT US -->
+
+  <div class="nav-panel" id="about-panel">
+
+    <button class="nav-back" type="button" data-back="main">
+      <span>←</span><span>ABOUT US</span>
+    </button>
+
+    <a href="about.html" class="nav-item nav-direct">About Us Overview</a>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="explore-panel"
+      type="button"
+    >
+      <span>Explore Okafor</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <a href="innovation.html" class="nav-item nav-direct">Innovation</a>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="leadership-panel"
+      type="button"
+    >
+      <span>Leadership</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <a href="supplier-information.html" class="nav-item nav-direct">Supplier Information</a>
+    <a href="history.html" class="nav-item nav-direct">History</a>
+    <a href="events.html" class="nav-item nav-direct">Events</a>
+
+  </div>
+
+  <!-- EXPLORE OKAFOR -->
+
+  <div class="nav-panel" id="explore-panel">
+
+    <button class="nav-back" type="button" data-back="about-panel">
+      <span>←</span><span>EXPLORE OKAFOR</span>
+    </button>
+
+    <a href="our-approach.html" class="nav-item nav-direct">Our Approach</a>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="contribution-panel"
+      type="button"
+    >
+      <span>Our Contribution</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <a href="okafor-brand.html" class="nav-item nav-direct">The Okafor Brand</a>
+
+  </div>
+
+  <!-- OUR CONTRIBUTION -->
+
+  <div class="nav-panel" id="contribution-panel">
+
+    <button class="nav-back" type="button" data-back="explore-panel">
+      <span>←</span><span>OUR CONTRIBUTION</span>
+    </button>
+
+    <a href="our-contribution.html" class="nav-item nav-direct">Our Contribution Overview</a>
+    <a href="farmers-by-okafor.html" class="nav-item nav-direct">Farmers by Okafor</a>
+    <a href="giving-back.html" class="nav-item nav-direct">Giving Back to the Community</a>
+
+  </div>
+
+  <!-- LEADERSHIP -->
+
+  <div class="nav-panel" id="leadership-panel">
+
+    <button class="nav-back" type="button" data-back="about-panel">
+      <span>←</span><span>LEADERSHIP</span>
+    </button>
+
+    <a href="leadership.html" class="nav-item nav-direct">Leadership Overview</a>
+    <a href="management.html" class="nav-item nav-direct">Management</a>
+    <a href="division-leadership.html" class="nav-item nav-direct">Division Leadership</a>
+
+  </div>
+
+  <!-- OUR BUSINESSES -->
+
+  <div class="nav-panel" id="businesses-panel">
+
+    <button class="nav-back" type="button" data-back="main">
+      <span>←</span><span>OUR BUSINESSES</span>
+    </button>
+
+    <a href="businesses.html" class="nav-item nav-direct">Business Overview</a>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="agriscience-panel"
+      type="button"
+    >
+      <span>Agriscience</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="farm-technology-panel"
+      type="button"
+    >
+      <span>Farm Technology</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="foods-panel"
+      type="button"
+    >
+      <span>Foods</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <a href="all-products.html" class="nav-item nav-direct">All Products</a>
+
+  </div>
+
+  <!-- AGRISCIENCE -->
+
+  <div class="nav-panel" id="agriscience-panel">
+
+    <button class="nav-back" type="button" data-back="businesses-panel">
+      <span>←</span><span>AGRISCIENCE</span>
+    </button>
+
+    <a href="okafor-agriscience.html" class="nav-item nav-direct">Agriscience Overview</a>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="crop-protection-panel"
+      type="button"
+    >
+      <span>Crop Protection</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="plant-nutrition-panel"
+      type="button"
+    >
+      <span>Plant Nutrition</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="seeds-panel"
+      type="button"
+    >
+      <span>Seeds</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="animal-health-panel"
+      type="button"
+    >
+      <span>Animal Health</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+  </div>
+
+  <!-- CROP PROTECTION -->
+
+  <div class="nav-panel" id="crop-protection-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>CROP PROTECTION</span>
+    </button>
+
+    <a href="crop-protection.html" class="nav-item nav-direct">Crop Protection Overview</a>
+    <a href="weed-management.html" class="nav-item nav-direct">Weed Management</a>
+    <a href="pest-management.html" class="nav-item nav-direct">Pest Management</a>
+    <a href="disease-management.html" class="nav-item nav-direct">Disease Management</a>
+
+  </div>
+
+  <!-- PLANT NUTRITION -->
+
+  <div class="nav-panel" id="plant-nutrition-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>PLANT NUTRITION</span>
+    </button>
+
+    <a href="plant-nutrition.html" class="nav-item nav-direct">Plant Nutrition Overview</a>
+    <a href="granular.html" class="nav-item nav-direct">Granular</a>
+    <a href="micronutrients.html" class="nav-item nav-direct">Micronutrients</a>
+    <a href="foliar.html" class="nav-item nav-direct">Foliar</a>
+
+  </div>
+
+  <!-- SEEDS -->
+
+  <div class="nav-panel" id="seeds-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>SEEDS</span>
+    </button>
+
+    <a href="seeds.html" class="nav-item nav-direct">Seeds Overview</a>
+    <a href="field-seeds.html" class="nav-item nav-direct">Field Seeds</a>
+    <a href="vegetable-seeds.html" class="nav-item nav-direct">Vegetable Seeds</a>
+
+  </div>
+
+  <!-- ANIMAL HEALTH -->
+
+  <div class="nav-panel" id="animal-health-panel">
+
+    <button class="nav-back" type="button" data-back="agriscience-panel">
+      <span>←</span><span>ANIMAL HEALTH</span>
+    </button>
+
+    <a href="animal-health.html" class="nav-item nav-direct">Animal Health Overview</a>
+    <a href="poultry-health.html" class="nav-item nav-direct">Poultry Health</a>
+    <a href="swine-health.html" class="nav-item nav-direct">Swine / Pig Health</a>
+
+  </div>
+
+  <!-- FARM TECHNOLOGY -->
+
+  <div class="nav-panel" id="farm-technology-panel">
+
+    <button class="nav-back" type="button" data-back="businesses-panel">
+      <span>←</span><span>FARM TECHNOLOGY</span>
+    </button>
+
+    <a href="okafor-farm-technology.html" class="nav-item nav-direct">Farm Technology Overview</a>
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="farm-automation-panel"
+      type="button"
+    >
+      <span>Farm Automation</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <a href="farm-design-building.html" class="nav-item nav-direct">Farm Design &amp; Building</a>
+
+  </div>
+
+  <!-- FARM AUTOMATION -->
+
+  <div class="nav-panel" id="farm-automation-panel">
+
+    <button class="nav-back" type="button" data-back="farm-technology-panel">
+      <span>←</span><span>FARM AUTOMATION</span>
+    </button>
+
+    <a href="farm-automation.html" class="nav-item nav-direct">Farm Automation Overview</a>
+    <a href="poultry-automation.html" class="nav-item nav-direct">Poultry Automation</a>
+    <a href="swine-automation.html" class="nav-item nav-direct">Swine Automation</a>
+
+  </div>
+
+  <!-- FOODS -->
+
+  <div class="nav-panel" id="foods-panel">
+
+    <button class="nav-back" type="button" data-back="businesses-panel">
+      <span>←</span><span>FOODS</span>
+    </button>
+
+    <a href="okafor-foods.html" class="nav-item nav-direct">Foods Overview</a>
+    <a href="grains-oilseeds.html" class="nav-item nav-direct">Grains &amp; Oilseeds</a>
+    <a href="poultry-eggs.html" class="nav-item nav-direct">Poultry &amp; Eggs</a>
+    <a href="edible-oils.html" class="nav-item nav-direct">Edible Oils</a>
+    <a href="fruit-vegetables.html" class="nav-item nav-direct">Fruit &amp; Vegetables</a>
+    <a href="food-sourcing.html" class="nav-item nav-direct">Food Sourcing</a>
+    <a href="value-addition.html" class="nav-item nav-direct">Value Addition</a>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="agriscience-hero">
+
+  <div class="agriscience-hero-content">
+
+    <p class="eyebrow">OKAFOR AGRISCIENCE</p>
+
+    <h1>
+      Science that<br>
+      nourishes.
+    </h1>
+
+    <p>
+      We provide agricultural inputs and solutions to support farmers
+      in growing crops, protecting plants and maintaining animal health.
+    </p>
+
+  </div>
+
+</section>
+
+
+<main>
+
+  <!-- INTRODUCTION -->
+
+  <section class="agriscience-intro">
+
+    <div>
+      <p class="eyebrow">ABOUT AGRISCIENCE</p>
+
+      <h2>
+        Helping farmers<br>
+        grow with confidence.
+      </h2>
+    </div>
+
+    <div class="agriscience-intro-copy">
+
+      <p>
+        Okafor Agriscience supports farmers with products and solutions
+        for crop protection, plant nutrition, seeds and animal health.
+      </p>
+
+      <p>
+        Our focus is practical: helping farmers find suitable agricultural
+        inputs for their crops and livestock, with support for the needs
+        of different farming operations.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOUR AGRISCIENCE AREAS -->
+
+  <section class="agriscience-areas" id="agriscience-areas">
+
+    <div class="agriscience-areas-heading">
+
+      <p class="eyebrow">OUR FOCUS AREAS</p>
+
+      <h2>Explore Agriscience.</h2>
+
+      <p>
+        Explore our four areas of focus and find solutions suited
+        to your farming needs.
+      </p>
+
+    </div>
+
+    <div class="agriscience-carousel">
+
+      <div
+        class="agriscience-track"
+        id="agriscience-track"
+        aria-label="Agriscience focus areas"
+        tabindex="0"
+      >
+
+        <!-- CROP PROTECTION -->
+
+        <a
+          href="crop-protection.html"
+          class="agriscience-card"
+        >
+
+          <div class="agriscience-card-image">
+            <img
+              src="agriscience-crop-protection.jpg"
+              alt="Farmer inspecting a crop for weeds, pests and disease"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="agriscience-card-content">
+
+            <span class="agriscience-card-number">01 / CROP CARE</span>
+
+            <h3>Crop Protection</h3>
+
+            <p>
+              Solutions to help farmers manage weeds, pests and
+              crop diseases throughout the growing season.
+            </p>
+
+            <span class="agriscience-card-link">
+              Explore Crop Protection
+              <span aria-hidden="true">→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- PLANT NUTRITION -->
+
+        <a
+          href="plant-nutrition.html"
+          class="agriscience-card"
+        >
+
+          <div class="agriscience-card-image">
+            <img
+              src="agriscience-plant-nutrition.jpg"
+              alt="Healthy growing plants in a cultivated field"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="agriscience-card-content">
+
+            <span class="agriscience-card-number">02 / PLANT GROWTH</span>
+
+            <h3>Plant Nutrition</h3>
+
+            <p>
+              Fertilizers and plant nutrition products to support
+              healthy growth and crop development.
+            </p>
+
+            <span class="agriscience-card-link">
+              Explore Plant Nutrition
+              <span aria-hidden="true">→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- SEEDS -->
+
+        <a
+          href="seeds.html"
+          class="agriscience-card"
+        >
+
+          <div class="agriscience-card-image">
+            <img
+              src="agriscience-seeds.jpg"
+              alt="Seeds prepared for planting"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="agriscience-card-content">
+
+            <span class="agriscience-card-number">03 / SEEDS</span>
+
+            <h3>Seeds</h3>
+
+            <p>
+              Seed options for farmers growing vegetables and
+              field crops, selected for different farming needs.
+            </p>
+
+            <span class="agriscience-card-link">
+              Explore Seeds
+              <span aria-hidden="true">→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- ANIMAL HEALTH -->
+
+        <a
+          href="animal-health.html"
+          class="agriscience-card"
+        >
+
+          <div class="agriscience-card-image">
+            <img
+              src="agriscience-animal-health.jpg"
+              alt="Healthy poultry in a well-managed farm"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="agriscience-card-content">
+
+            <span class="agriscience-card-number">04 / LIVESTOCK</span>
+
+            <h3>Animal Health</h3>
+
+            <p>
+              Products and solutions to support poultry and pig
+              health as part of responsible livestock management.
+            </p>
+
+            <span class="agriscience-card-link">
+              Explore Animal Health
+              <span aria-hidden="true">→</span>
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+
+      <!-- CAROUSEL CONTROLS -->
+
+      <div class="agriscience-carousel-controls">
+
+        <span
+          class="agriscience-carousel-status"
+          id="agriscience-carousel-status"
+          aria-live="polite"
+        >
+          01 / 04
+        </span>
+
+        <button
+          class="card-carousel-button"
+          id="agriscience-prev"
+          type="button"
+          aria-label="Previous focus area"
+          disabled
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <button
+          class="card-carousel-button"
+          id="agriscience-next"
+          type="button"
+          aria-label="Next focus area"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OUR APPROACH -->
+
+  <section class="agriscience-approach">
+
+    <div class="agriscience-approach-image">
+
+      <img
+        src="agriscience-farmer.jpg"
+        alt="Farmer working among growing crops"
+        loading="lazy"
+      >
+
+    </div>
+
+    <div class="agriscience-approach-content">
+
+      <p class="eyebrow">OUR APPROACH</p>
+
+      <h2>
+        Practical solutions<br>
+        for everyday farming.
+      </h2>
+
+      <p>
+        Every farm has its own needs. Crop type, soil, weather,
+        livestock and farming methods all influence the products
+        farmers require.
+      </p>
+
+      <p>
+        We aim to make relevant agricultural inputs easier to find
+        and help farmers explore the options available for their
+        farming operations.
+      </p>
+
+      <a href="businesses.html" class="text-link">
+        Explore our businesses
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- SPECIALIST AGRISCIENCE SITE -->
+
+  <section class="agriscience-cta">
+
+    <div>
+
+      <p class="eyebrow">EXPLORE OUR OFFERINGS</p>
+
+      <h2>
+        Find the right products<br>
+        for your farm.
+      </h2>
+
+      <p>
+        Visit our Agriscience product site to explore our available
+        agricultural products and solutions.
+      </p>
+
+    </div>
+
+    <a
+      href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/"
+      class="primary-button light-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Visit Agriscience
+    </a>
+
+  </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER — COPIED FROM YOUR ORIGINAL
+     ========================================================= -->
+
+<footer class="site-footer" id="footer-contact">
+
+  <div class="footer-main">
+
+    <!-- BRAND -->
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="logo footer-logo">
+
+        <img
+          src="cg-okafor-logo.png"
+          alt="C.G. Okafor Co."
+        >
+
+      </a>
+
+      <p>
+        A food and agricultural solutions and technology company.
+      </p>
+
+    </div>
+
+
+    <!-- ABOUT US -->
+
+    <div class="footer-column">
+
+      <h4>About Us</h4>
+
+      <a href="about.html">About Us Overview</a>
+      <a href="innovation.html">Innovation</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="supplier-information.html">Supplier Information</a>
+      <a href="history.html">History</a>
+      <a href="events.html">Events</a>
+
+    </div>
+
+
+    <!-- OUR BUSINESSES -->
+
+    <div class="footer-column">
+
+      <h4>Our Businesses</h4>
+
+      <a href="businesses.html">Business Overview</a>
+      <a href="okafor-agriscience.html">Agriscience</a>
+      <a href="okafor-farm-technology.html">Farm Technology</a>
+      <a href="okafor-foods.html">Foods</a>
+      <a href="okafor-investments.html">Okafor Investments</a>
+
+    </div>
+
+
+    <!-- FOODS -->
+
+    <div class="footer-column">
+
+      <h4>Foods</h4>
+
+      <a href="okafor-foods.html">Foods Overview</a>
+      <a href="grains-oilseeds.html">Grains &amp; Oilseeds</a>
+      <a href="poultry-eggs.html">Poultry &amp; Eggs</a>
+      <a href="fruit-vegetables.html">Fruit &amp; Vegetables</a>
+      <a href="edible-oils.html">Edible Oils</a>
+      <a href="food-sourcing.html">Food Sourcing</a>
+      <a href="value-addition.html">Value Addition</a>
+
+    </div>
+
+
+    <!-- EXPLORE OKAFOR -->
+
+    <div class="footer-column">
+
+      <h4>Explore Okafor</h4>
+
+      <a href="our-approach.html">Our Approach</a>
+      <a href="our-contribution.html">Our Contribution</a>
+      <a href="okafor-brand.html">The Okafor Brand</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+
+  </div>
+
+
+  <!-- CONTACT AND SOCIAL -->
+
+  <div class="footer-contact-social">
+
+    <div class="footer-contact-block">
+
+      <span class="footer-social-label">CONTACT</span>
+
+      <a
+        href="https://wa.me/2349060485238"
+        class="footer-whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0
+            C5.55 0 .24 5.31.24 11.84
+            c0 2.09.55 4.13 1.59 5.93L.17 24
+            l6.37-1.67a11.85 11.85 0 0 0 5.54 1.37h.01
+            c6.53 0 11.84-5.31 11.84-11.84
+            0-3.16-1.23-6.13-3.41-8.38z
+            M12.09 21.67h-.01
+            a9.83 9.83 0 0 1-5.01-1.38l-.36-.21
+            -3.78.99 1.01-3.68-.23-.38
+            a9.82 9.82 0 0 1-1.51-5.17
+            C2.2 6.42 6.62 2 12.08 2
+            c2.65 0 5.14 1.03 7.01 2.9
+            a9.84 9.84 0 0 1 2.91 7
+            c0 5.45-4.43 9.77-9.91 9.77z
+            M17.48 14.59
+            c-.3-.15-1.78-.88-2.06-.98
+            -.28-.1-.48-.15-.68.15
+            -.2.3-.78.98-.95 1.18
+            -.17.2-.35.22-.65.07
+            -.3-.15-1.26-.46-2.4-1.48
+            -.89-.79-1.49-1.77-1.66-2.07
+            -.17-.3-.02-.46.13-.61
+            .13-.13.3-.35.45-.52
+            .15-.17.2-.3.3-.5
+            .1-.2.05-.37-.02-.52
+            -.07-.15-.68-1.64-.93-2.25
+            -.24-.59-.49-.51-.68-.52
+            -.17-.01-.37-.01-.57-.01
+            -.2 0-.52.07-.79.37
+            -.27.3-1.04 1.02-1.04 2.48
+            0 1.46 1.06 2.87 1.21 3.07
+            .15.2 2.09 3.19 5.07 4.48
+            .71.31 1.26.5 1.69.64
+            .71.23 1.36.2 1.87.12
+            .57-.08 1.78-.73 2.03-1.43
+            .25-.7.25-1.3.17-1.43
+            -.07-.12-.27-.2-.57-.35z"
+          />
+        </svg>
+
+        <span>0906 048 5238</span>
+
+      </a>
+
+    </div>
+
+
+    <div class="footer-social-block">
+
+      <span class="footer-social-label">FOLLOW US</span>
+
+      <div class="footer-social-links">
+
+        <a
+          href="https://www.facebook.com/share/1BuxKzeTvz/"
+          class="social-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="C.G. Okafor Co. on Facebook"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.67.33-1 1-1z"
+            />
+          </svg>
+
+        </a>
+
+
+        <a
+          href="#"
+          class="social-link social-placeholder"
+          aria-label="TikTok coming soon"
+          title="TikTok link coming soon"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M19.59 6.69A4.83 4.83 0 0 1 15.5 4
+              v8.25a6.75 6.75 0 1 1-6.75-6.75
+              c.14 0 .28.01.42.02v3.74
+              a3.04 3.04 0 1 0 2.58 3V0h3.75
+              a4.83 4.83 0 0 0 4.09 4.09v2.6z"
+            />
+          </svg>
+
+        </a>
+
+
+        <a
+          href="#"
+          class="social-link social-placeholder"
+          aria-label="X coming soon"
+          title="X link coming soon"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.56
+              l-5.14-6.72L5.17 22H1.91l7.6-8.69L1.5 2h6.72
+              l4.64 6.14L18.244 2zm-1.15 17.86h1.81
+              L7.22 4.05H5.28L17.094 19.86z"
+            />
+          </svg>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
+
+  <div class="footer-bottom">
+
+    <span>© 2026 C.G. Okafor Co.</span>
+    <span>All rights reserved.</span>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     EXISTING SITE SCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
+
+<!-- =========================================================
+     AGRISCIENCE CAROUSEL SCRIPT
+     ========================================================= -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.getElementById("agriscience-track");
+    const previousButton = document.getElementById("agriscience-prev");
+    const nextButton = document.getElementById("agriscience-next");
+    const status = document.getElementById("agriscience-carousel-status");
+
+    if (!track || !previousButton || !nextButton || !status) {
+      return;
+    }
+
+    const cards = Array.from(
+      track.querySelectorAll(".agriscience-card")
+    );
+
+    if (!cards.length) {
+      return;
+    }
+
+    let updateFrame = null;
+
+    function getCurrentIndex() {
+      const trackRect = track.getBoundingClientRect();
+      let closestIndex = 0;
+      let smallestDistance = Infinity;
+
+      cards.forEach(function (card, index) {
+        const cardRect = card.getBoundingClientRect();
+        const distance = Math.abs(cardRect.left - trackRect.left);
+
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      return closestIndex;
+    }
+
+    function updateControls() {
+      const index = getCurrentIndex();
+
+      status.textContent =
+        String(index + 1).padStart(2, "0") +
+        " / " +
+        String(cards.length).padStart(2, "0");
+
+      previousButton.disabled = index === 0;
+      nextButton.disabled = index === cards.length - 1;
+    }
+
+    function scheduleUpdate() {
+      if (updateFrame !== null) {
+        cancelAnimationFrame(updateFrame);
+      }
+
+      updateFrame = requestAnimationFrame(function () {
+        updateControls();
+        updateFrame = null;
+      });
+    }
+
+    function moveToCard(index) {
+      const safeIndex = Math.max(
+        0,
+        Math.min(index, cards.length - 1)
+      );
+
+      const trackRect = track.getBoundingClientRect();
+      const cardRect = cards[safeIndex].getBoundingClientRect();
+
+      const targetLeft =
+        track.scrollLeft + cardRect.left - trackRect.left;
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      track.scrollTo({
+        left: targetLeft,
+        behavior: reduceMotion ? "auto" : "smooth"
+      });
+    }
+
+    previousButton.addEventListener("click", function () {
+      moveToCard(getCurrentIndex() - 1);
+    });
+
+    nextButton.addEventListener("click", function () {
+      moveToCard(getCurrentIndex() + 1);
+    });
+
+    track.addEventListener("scroll", scheduleUpdate, {
+      passive: true
+    });
+
+    window.addEventListener("resize", scheduleUpdate);
+
+    track.querySelectorAll("img").forEach(function (img) {
+      if (!img.complete) {
+        img.addEventListener("load", scheduleUpdate, {
+          once: true
+        });
+
+        img.addEventListener("error", scheduleUpdate, {
+          once: true
+        });
+      }
+    });
+
+    updateControls();
+  });
+</script>
+
+</body>
+</html>
