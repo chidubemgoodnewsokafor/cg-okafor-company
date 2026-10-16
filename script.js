@@ -393,7 +393,7 @@ function startHeroTimer() {
 
     showSlide(currentSlide + 1);
 
-  }, 6500);
+  }, 1500);
 
 }
 
