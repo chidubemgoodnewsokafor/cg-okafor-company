@@ -1,892 +1,2417 @@
 /* =========================================================
-OKAFOR AGRISCIENCE
+   OKAFOR AGRISCIENCE
+   Main Stylesheet
 ========================================================= */
 
 :root {
---yellow: #FFE500;
---teal: #01998E;
---dark-teal: #074540;
---red: #99010C;
---dark-red: #360005;
---white: #ffffff;
---black: #111111;
---light: #f4f5f2;
---line: rgba(7, 69, 64, 0.15);
+  --yellow: #FFE500;
+  --teal: #01998E;
+  --dark-teal: #074540;
+  --red: #99010C;
+  --dark-red: #360005;
+
+  --white: #ffffff;
+  --black: #111111;
+  --light: #f4f5f2;
+  --muted: #6b7470;
+  --line: rgba(7, 69, 64, 0.15);
+
+  --max-width: 1280px;
+  --radius: 32px;
+  --small-radius: 20px;
+
+  --shadow:
+    0 18px 50px rgba(7, 69, 64, 0.09);
+
+  --transition: 0.3s ease;
 }
 
+
 /* =========================================================
-RESET
+   RESET
 ========================================================= */
 
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-scroll-behavior: smooth;
-width: 100%;
-max-width: 100%;
-overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
-font-family: Arial, Helvetica, sans-serif;
-color: var(--dark-teal);
-background: var(--white);
-overflow-x: hidden;
-width: 100%;
-max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark-teal);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 a {
-color: inherit;
-text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-font: inherit;
+  font: inherit;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--dark-teal);
+}
+
+
 /* =========================================================
-HEADER
+   HEADER
 ========================================================= */
 
 .site-header {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-max-width: 100%;
-height: 88px;
-padding: 18px 28px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-z-index: 9998;
-pointer-events: none;
-background: var(--white);
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 26px 5.5%;
+
+  color: var(--white);
 }
 
 .brand {
-pointer-events: auto;
-display: inline-flex;
-align-items: center;
+  display: inline-flex;
+  align-items: center;
+  width: 175px;
+  min-height: 44px;
 }
 
 .brand img {
-width: 180px;
-height: auto;
-display: block;
-object-fit: contain;
+  width: 100%;
+  max-height: 65px;
+  object-fit: contain;
+  object-position: left center;
 }
 
-/* =========================================================
-MENU BUTTON
-========================================================= */
-
 .menu-button {
-pointer-events: auto;
-border: 0;
-background: var(--white);
-color: var(--dark-teal);
-min-width: 125px;
-min-height: 54px;
-border-radius: 999px;
-padding: 9px 15px 9px 20px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 18px;
-cursor: pointer;
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  min-height: 54px;
+  padding: 0 23px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 100px;
+
+  color: var(--white);
+  background: rgba(7, 69, 64, 0.25);
+
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.menu-button:hover {
+  color: var(--dark-teal);
+  background: var(--yellow);
+  border-color: var(--yellow);
 }
 
 .menu-label {
-font-size: 12px;
-font-weight: 700;
-letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
 }
 
 .menu-icon {
-width: 30px;
-height: 30px;
-border-radius: 50%;
-background: var(--dark-teal);
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  width: 19px;
 }
 
 .menu-icon i {
-width: 12px;
-height: 1px;
-background: var(--white);
+  display: block;
+  width: 19px;
+  height: 2px;
+
+  background: currentColor;
+  transition: transform var(--transition);
 }
 
+
 /* =========================================================
-FULL SCREEN NAV
+   FULL-SCREEN NAVIGATION
 ========================================================= */
 
 .main-nav {
-position: fixed;
-inset: 0;
-z-index: 9999;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
 
-background: var(--white);
-color: var(--dark-teal);
+  display: flex;
+  flex-direction: column;
 
-visibility: hidden;
-opacity: 0;
-transform: translateY(10px);
+  padding: 25px 5.5% 35px;
 
-transition:
-opacity 0.25s ease,
-transform 0.25s ease,
-visibility 0.25s ease;
+  background: var(--dark-teal);
+  color: var(--white);
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateY(-12px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
 }
 
 .main-nav.open {
-visibility: visible;
-opacity: 1;
-transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
-/* ---------------------------------------------------------
-NAV TOP
---------------------------------------------------------- */
-
 .nav-top {
-height: 90px;
-padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-display: flex;
-align-items: center;
-justify-content: space-between;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+}
 
-background: var(--white);
+.nav-logo {
+  display: block;
+  width: 175px;
 }
 
 .nav-logo img {
-width: 200px;
-height: auto;
-max-height: 65px;
-object-fit: contain;
+  width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .nav-close {
-width: 54px;
-height: 54px;
+  display: grid;
+  place-items: center;
 
-border: 0;
-border-radius: 50%;
+  width: 48px;
+  height: 48px;
 
-background: var(--dark-teal);
-color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
 
-font-size: 34px;
-line-height: 1;
+  background: transparent;
+  color: var(--white);
 
-cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: all var(--transition);
 }
 
-/* ---------------------------------------------------------
-NAV CONTENT
---------------------------------------------------------- */
+.nav-close:hover {
+  color: var(--dark-teal);
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
 
 .nav-content {
-position: relative;
+  position: relative;
+  flex: 1;
 
-height: calc(100vh - 90px);
+  width: 100%;
+  max-width: 1100px;
+  margin: 20px auto 0;
 
-padding: 30px 7vw 70px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 
-overflow: hidden;
-
-background: var(--white);
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) transparent;
 }
-
-/* ---------------------------------------------------------
-NAV ITEMS
---------------------------------------------------------- */
 
 .nav-item {
-position: static;
+  position: relative;
 }
-
-/* ---------------------------------------------------------
-FIRST LEVEL
---------------------------------------------------------- */
 
 .nav-parent,
 .nav-direct {
-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
 
-border: 0;
-border-bottom: 1px solid var(--line);
+  width: 100%;
+  padding: 15px 0;
 
-background: transparent;
-color: var(--dark-teal);
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
-padding: 20px 0;
+  background: transparent;
+  color: var(--white);
 
-display: flex;
-align-items: center;
-justify-content: space-between;
+  text-align: left;
+  font-size: clamp(17px, 2.3vw, 25px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
 
-text-align: left;
+  cursor: pointer;
 
-font-size: clamp(21px, 3vw, 36px);
-font-weight: 600;
-letter-spacing: -0.02em;
-
-cursor: pointer;
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
 }
 
-.nav-parent span {
-font-size: 1.4em;
-font-weight: 300;
+.nav-parent > span {
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--yellow);
+  transition: transform var(--transition);
+}
+
+.nav-parent:hover,
+.nav-direct:hover {
+  color: var(--yellow);
+  padding-left: 8px;
+}
+
+.nav-parent:hover > span {
+  transform: translateX(5px);
 }
 
 .nav-direct {
-display: flex;
+  display: flex;
 }
 
-.dealer-link {
-color: var(--red);
+.nav-direct.dealer-link {
+  display: inline-flex;
+  justify-content: center;
+
+  width: auto;
+  margin-top: 25px;
+  padding: 15px 23px;
+
+  border: 0;
+  border-radius: 100px;
+
+  background: var(--yellow);
+  color: var(--dark-teal);
+
+  font-size: 12px;
+  letter-spacing: 0.07em;
 }
 
-/* ---------------------------------------------------------
-EVERY PANEL IS A SEPARATE FULL LAYER
---------------------------------------------------------- */
+.nav-direct.dealer-link:hover {
+  padding-left: 23px;
+  background: var(--white);
+  color: var(--dark-teal);
+}
 
 .nav-panel {
-position: absolute;
+  position: absolute;
+  inset: 0;
 
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
+  display: none;
+  flex-direction: column;
 
-padding: 30px 7vw 70px;
+  min-height: 100%;
+  padding-bottom: 25px;
 
-background: var(--white);
-color: var(--dark-teal);
-
-overflow-y: auto;
-
-visibility: hidden;
-opacity: 0;
-pointer-events: none;
-
-transform: translateX(105%);
-
-transition:
-transform 0.3s ease,
-opacity 0.2s ease,
-visibility 0.3s ease;
-
-z-index: 10;
+  background: var(--dark-teal);
 }
 
-/* ---------------------------------------------------------
-ACTIVE PANEL
---------------------------------------------------------- */
-
-.nav-item.active > .nav-panel {
-visibility: visible;
-opacity: 1;
-pointer-events: auto;
-transform: translateX(0);
-z-index: 20;
+.nav-item.panel-open > .nav-panel {
+  display: flex;
 }
 
-/* ---------------------------------------------------------
-NESTED PANELS
---------------------------------------------------------- */
+.nav-back {
+  align-self: flex-start;
 
-.nav-panel .nav-item {
-position: static;
+  margin: 0 0 14px;
+  padding: 8px 0;
+
+  border: 0;
+  background: transparent;
+  color: var(--yellow);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
 }
 
-.nav-panel .nav-item > .nav-panel {
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
+.nav-panel > a:not(.nav-brand) {
+  display: block;
 
-padding: 30px 7vw 70px;
+  padding: 11px 0;
 
-z-index: 30;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition:
+    color var(--transition),
+    padding-left var(--transition);
 }
 
-/* ---------------------------------------------------------
-BACK BUTTON
---------------------------------------------------------- */
-
-.nav-panel .nav-back {
-display: block;
-
-width: 100%;
-
-border: 0;
-background: transparent;
-color: rgba(7, 69, 64, 0.55);
-
-padding: 0 0 28px;
-
-text-align: left;
-
-font-size: 13px;
-font-weight: 700;
-letter-spacing: 0.08em;
-
-cursor: pointer;
+.nav-panel > a:hover {
+  padding-left: 7px;
+  color: var(--yellow);
 }
-
-/* ---------------------------------------------------------
-PANEL LINKS
---------------------------------------------------------- */
-
-.nav-panel > a,
-.nav-panel > .nav-item > .nav-parent {
-width: 100%;
-
-border: 0;
-border-bottom: 1px solid var(--line);
-
-padding: 17px 0;
-
-background: transparent;
-color: var(--dark-teal);
-
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-text-align: left;
-
-font-size: clamp(18px, 2.5vw, 28px);
-
-cursor: pointer;
-}
-
-.nav-panel > a:hover,
-.nav-panel > .nav-item > .nav-parent:hover {
-color: var(--teal);
-}
-
-/* ---------------------------------------------------------
-BRAND LEVEL
---------------------------------------------------------- */
 
 .nav-brand {
-width: 100%;
-
-padding: 15px 0 25px;
-
-border-bottom: 1px solid var(--line);
-
-display: flex;
-align-items: center;
+  display: block;
+  width: 130px;
+  margin: 8px 0 16px;
 }
 
 .nav-brand img {
-width: 250px;
-max-height: 80px;
-object-fit: contain;
+  width: 100%;
+  max-height: 65px;
+  object-fit: contain;
+  object-position: left center;
 }
 
-.nav-brand-name {
-font-size: 26px;
-font-weight: 700;
-color: var(--dark-teal);
-}
-
-/* ---------------------------------------------------------
-CATALOGUE LINKS
---------------------------------------------------------- */
-
-.catalogue-link {
-font-weight: 600;
-}
-
-.catalogue-link span {
-font-size: 0.65em;
-color: var(--teal);
-}
 
 /* =========================================================
-HERO
-========================================================= */
-
-.hero {
-position: relative;
-min-height: 100svh;
-display: flex;
-align-items: flex-end;
-overflow: hidden;
-background: var(--dark-teal);
-}
-
-.hero-image {
-position: absolute;
-inset: 0;
-background:
-url("hero-agriculture.jpg")
-center / cover no-repeat;
-}
-
-.hero-overlay {
-position: absolute;
-inset: 0;
-background:
-linear-gradient(
-90deg,
-rgba(0, 0, 0, 0.63),
-rgba(0, 0, 0, 0.25),
-rgba(0, 0, 0, 0.08)
-);
-}
-
-.hero-content {
-position: relative;
-z-index: 1;
-max-width: 800px;
-padding: 0 7vw 10vh;
-color: var(--white);
-}
-
-.eyebrow,
-.section-label {
-font-size: 11px;
-font-weight: 700;
-letter-spacing: 0.13em;
-margin-bottom: 18px;
-}
-
-.hero h1 {
-font-size: clamp(55px, 8vw, 120px);
-line-height: 0.92;
-letter-spacing: -0.06em;
-margin-bottom: 28px;
-}
-
-.hero-copy {
-max-width: 510px;
-font-size: 18px;
-line-height: 1.6;
-margin-bottom: 30px;
-}
-
-/* =========================================================
-BUTTONS
-========================================================= */
-
-.button {
-display: inline-flex;
-align-items: center;
-justify-content: center;
-min-height: 52px;
-padding: 0 24px;
-border-radius: 999px;
-font-size: 13px;
-font-weight: 700;
-}
-
-.button-light {
-background: var(--white);
-color: var(--dark-teal);
-}
-
-.button-dark {
-background: var(--dark-teal);
-color: var(--white);
-}
-
-/* =========================================================
-GENERAL SECTIONS
+   GENERAL SECTIONS
 ========================================================= */
 
 .section {
-padding: 120px 7vw;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 5.5%;
 }
 
-.intro {
-display: grid;
-grid-template-columns: 0.6fr 1.4fr;
-gap: 50px;
+.section-heading {
+  max-width: 740px;
+  margin-bottom: 45px;
 }
 
-.intro h2,
+.section-label,
+.eyebrow {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--teal);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
 .section-heading h2,
-.dealer-content h2,
-.farmcare-content h2 {
-max-width: 800px;
-font-size: clamp(38px, 5vw, 72px);
-line-height: 0.98;
-letter-spacing: -0.05em;
+.category-intro-copy h2,
+.resources-band-copy h2,
+.dealer-content h2 {
+  color: var(--dark-teal);
+
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
 }
 
-.intro p {
-max-width: 650px;
-margin-top: 30px;
-font-size: 20px;
-line-height: 1.65;
+.heading-copy {
+  max-width: 550px;
+  margin-top: 18px;
+
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
 }
+
+
 /* =========================================================
-ANIMAL HEALTH
+   BUTTONS
 ========================================================= */
 
-.animal-health {
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  min-height: 54px;
+  padding: 14px 22px;
+
+  border: 1px solid transparent;
+  border-radius: 100px;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.3;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.button span {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-light {
+  color: var(--dark-teal);
+  background: var(--yellow);
+}
+
+.button-light:hover {
   background: var(--white);
-  overflow: hidden;
 }
 
-.animal-health-scroll {
+.button-outline {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+}
+
+.button-outline:hover {
+  color: var(--dark-teal);
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.button-dark {
+  color: var(--white);
+  background: var(--dark-teal);
+}
+
+.button-dark:hover {
+  background: var(--teal);
+}
+
+.button-outline-dark {
+  color: var(--dark-teal);
+  border-color: var(--dark-teal);
+  background: transparent;
+}
+
+.button-outline-dark:hover {
+  color: var(--white);
+  background: var(--dark-teal);
+}
+
+
+/* =========================================================
+   HERO CAROUSEL
+========================================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+
   display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  padding-bottom: 10px;
-}
+  align-items: center;
 
-.animal-health-scroll::-webkit-scrollbar {
-  display: none;
-}
+  min-height: 700px;
+  min-height: min(850px, 100svh);
 
-.animal-health-card {
-  flex: 0 0 calc(50% - 10px);
-  min-width: 320px;
-  background: var(--light);
+  padding: 150px 8% 115px;
+
   overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 0.25s ease;
+
+  background: var(--dark-teal);
+  color: var(--white);
 }
 
-.animal-health-card:hover {
-  transform: translateY(-5px);
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background-image: var(--hero-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transform: scale(1.04);
+
+  transition:
+    opacity 1s ease,
+    transform 6s ease;
 }
 
-.animal-health-image {
-  aspect-ratio: 1.25 / 1;
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 39, 35, 0.94) 0%,
+      rgba(3, 39, 35, 0.75) 42%,
+      rgba(3, 39, 35, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 39, 35, 0.38),
+      transparent 60%
+    );
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 0 0;
+
+  animation: heroEnter 0.8s ease both;
+}
+
+.hero .eyebrow {
+  color: var(--yellow);
+}
+
+.hero h1 {
+  max-width: 820px;
+
+  font-size: clamp(48px, 7.8vw, 94px);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.99;
+}
+
+.hero-copy {
+  max-width: 560px;
+  margin-top: 25px;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.85;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  margin-top: 33px;
+}
+
+.hero-controls {
+  position: absolute;
+  right: 8%;
+  bottom: 45px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  cursor: pointer;
+  transition:
+    width var(--transition),
+    background var(--transition);
+}
+
+.hero-dot.active {
+  width: 30px;
+  border-radius: 100px;
+  background: var(--yellow);
+}
+
+.hero-slide-count {
+  margin-left: 10px;
+
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+#slideCurrent {
+  color: var(--yellow);
+}
+
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   CATEGORY SHORTCUTS
+========================================================= */
+
+.finder {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.finder-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  align-items: end;
+
+  max-width: none;
+}
+
+.finder-heading .section-label {
+  grid-column: 1 / -1;
+  margin-bottom: 14px;
+}
+
+.finder-heading h2 {
+  color: var(--dark-teal);
+
+  font-size: clamp(35px, 4.7vw, 55px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1.04;
+}
+
+.finder-heading .heading-copy {
+  max-width: 420px;
+  margin: 0 0 5px auto;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+.shortcut-card {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 235px;
+  padding: 24px;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  background-color: var(--dark-teal);
+  background-position: center;
+  background-size: cover;
+
+  color: var(--white);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.shortcut-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 39, 35, 0.1),
+      rgba(3, 39, 35, 0.9)
+    );
+
+  transition: opacity var(--transition);
+}
+
+.shortcut-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.shortcut-number {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.shortcut-title {
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+.shortcut-arrow {
+  position: absolute;
+  right: 22px;
+  bottom: 23px;
+
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+
+  font-size: 19px;
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    color var(--transition);
+}
+
+.shortcut-card:hover .shortcut-arrow {
+  transform: rotate(-45deg);
+  color: var(--dark-teal);
+  background: var(--yellow);
+  border-color: var(--yellow);
+}
+
+.shortcut-crop {
+  background-image: url("crop-protection.jpg");
+}
+
+.shortcut-nutrition {
+  background-image: url("plant-nutrition.jpg");
+}
+
+.shortcut-seeds {
+  background-image: url("vegetable-seeds.jpg");
+}
+
+.shortcut-animal {
+  background-image: url("poultry-health.jpg");
+}
+
+
+/* =========================================================
+   CATEGORY INTRODUCTIONS
+========================================================= */
+
+.catalogue-section {
+  padding-top: 65px;
+  padding-bottom: 105px;
+}
+
+.category-intro {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 85px);
+
+  margin-bottom: 50px;
+}
+
+.category-intro.reverse {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.category-intro.reverse .category-photo {
+  order: 2;
+}
+
+.category-photo {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 390px;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  background-color: #dce7d8;
   background-position: center;
   background-size: cover;
 }
 
-.poultry-health-image {
-  background-image: url("poultry-health.jpg");
+.category-photo::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(3, 39, 35, 0.55),
+      transparent 55%
+    );
 }
 
-.swine-health-image {
-  background-image: url("pig-health.jpg");
+.category-photo > span {
+  position: absolute;
+  left: 25px;
+  bottom: 23px;
+
+  color: var(--white);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
 }
 
-.animal-health-body {
-  padding: 28px;
+.photo-crop {
+  background-image: url("crop-protection.jpg");
 }
 
-.animal-health-body span {
+.photo-nutrition {
+  background-image: url("plant-nutrition.jpg");
+}
+
+.category-intro-copy {
+  max-width: 500px;
+}
+
+.category-intro-copy p:not(.section-label) {
+  max-width: 450px;
+  margin-top: 21px;
+
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS
+========================================================= */
+
+.product-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.product-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  border: 1px solid var(--line);
+  border-radius: var(--small-radius);
+  overflow: hidden;
+
+  background: var(--white);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(1, 153, 142, 0.4);
+  box-shadow: var(--shadow);
+}
+
+.product-photo {
+  position: relative;
+
+  min-height: 225px;
+
+  background-color: #dce7d8;
+  background-position: center;
+  background-size: cover;
+
+  transition: background-size var(--transition);
+}
+
+.product-photo > span {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+
+  display: grid;
+  place-items: center;
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+  color: var(--dark-teal);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.photo-weed {
+  background-image: url("weed-management.jpg");
+}
+
+.photo-pest {
+  background-image: url("pest-management.jpg");
+}
+
+.photo-disease {
+  background-image: url("disease-management.jpg");
+}
+
+.photo-micro {
+  background-image: url("micronutrients.jpg");
+}
+
+.photo-foliar {
+  background-image: url("foliar.jpg");
+}
+
+.photo-npk {
+  background-image: url("granular-npk.jpg");
+}
+
+.product-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 24px;
+}
+
+.product-card-body small {
+  margin-bottom: 10px;
+
+  color: var(--teal);
+
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.12em;
 }
 
-.animal-health-body h3 {
-  margin: 12px 0;
-  font-size: 28px;
+.product-card-body h3 {
+  color: var(--dark-teal);
+
+  font-size: clamp(20px, 2.2vw, 25px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
 }
 
-.animal-health-body p {
-  color: rgba(7, 69, 64, 0.7);
+.product-card-body p {
+  margin-top: 13px;
+  margin-bottom: 25px;
+
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.product-card-body b {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: auto;
+
+  color: var(--dark-teal);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.product-card-body b i {
+  font-size: 17px;
+  font-style: normal;
+
+  transition: transform var(--transition);
+}
+
+.product-card:hover .product-card-body b i {
+  transform: translate(4px, -3px);
+}
+
+
+/* =========================================================
+   SEED SECTION
+========================================================= */
+
+.seed-section {
+  max-width: none;
+  padding-top: 105px;
+  padding-bottom: 110px;
+
+  background: var(--light);
+}
+
+.seed-section > .section-heading,
+.seed-family {
+  width: 100%;
+  max-width: calc(var(--max-width) - 0px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.seed-heading {
+  margin-bottom: 55px;
+}
+
+.seed-family {
+  margin-top: 55px;
+}
+
+.seed-family-intro {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 45px;
+
+  margin-bottom: 30px;
+}
+
+.seed-family-photo {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 250px;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  background-color: #d9e5d4;
+  background-position: center;
+  background-size: cover;
+}
+
+.seed-family-photo::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(3, 39, 35, 0.5),
+      transparent 65%
+    );
+}
+
+.seed-family-photo > span {
+  position: absolute;
+  left: 23px;
+  bottom: 20px;
+
+  padding: 8px 14px;
+
+  border-radius: 100px;
+
+  background: var(--yellow);
+  color: var(--dark-teal);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.photo-vegetable-seeds {
+  background-image: url("vegetable-seeds.jpg");
+}
+
+.photo-field-seeds {
+  background-image: url("field-seeds.jpg");
+}
+
+.seed-family-intro > div:last-child {
+  max-width: 490px;
+}
+
+.seed-family-intro h3 {
+  color: var(--dark-teal);
+
+  font-size: clamp(27px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+.seed-family-intro p:not(.section-label) {
+  max-width: 420px;
+  margin-top: 13px;
+
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 19px;
+  padding-bottom: 5px;
+
+  border-bottom: 1px solid var(--teal);
+
+  color: var(--dark-teal);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition:
+    color var(--transition),
+    gap var(--transition);
+}
+
+.inline-link:hover {
+  gap: 21px;
+  color: var(--teal);
+}
+
+.inline-link span {
+  font-size: 16px;
+}
+
+.seed-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.field-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.seed-card {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  min-height: 210px;
+  padding: 17px;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  background-color: var(--dark-teal);
+  background-position: center;
+  background-size: cover;
+
+  color: var(--white);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.seed-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(3, 39, 35, 0.95) 0%,
+      rgba(3, 39, 35, 0.45) 55%,
+      rgba(3, 39, 35, 0.05) 100%
+    );
+
+  transition: opacity var(--transition);
+}
+
+.seed-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.seed-card-number {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+
+  display: grid;
+  place-items: center;
+
+  width: 29px;
+  height: 29px;
+
+  border-radius: 50%;
+
+  background: var(--yellow);
+  color: var(--dark-teal);
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.seed-card h4 {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.seed-card p {
+  margin-top: 5px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 10px;
   line-height: 1.5;
-  max-width: 500px;
 }
+
+.seed-card-arrow {
+  position: absolute;
+  right: 13px;
+  bottom: 14px;
+
+  display: grid;
+  place-items: center;
+
+  width: 29px;
+  height: 29px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+
+  font-size: 15px;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.seed-card:hover .seed-card-arrow {
+  background: var(--yellow);
+  color: var(--dark-teal);
+  border-color: var(--yellow);
+}
+
+
 /* =========================================================
-FEATURED
+   ANIMAL HEALTH
 ========================================================= */
 
-.featured {
-background: var(--light);
+.animal-section {
+  padding-top: 105px;
+  padding-bottom: 110px;
 }
 
-.section-heading {
-margin-bottom: 55px;
+.animal-section > .section-heading {
+  margin-bottom: 55px;
 }
 
-.feature-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
+.animal-family {
+  margin-top: 55px;
 }
 
-.feature-card {
-background: var(--white);
-overflow: hidden;
-transition: transform 0.25s ease;
+.animal-family-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+
+  margin-bottom: 27px;
 }
 
-.feature-card:hover {
-transform: translateY(-5px);
+.animal-family-heading h3 {
+  color: var(--dark-teal);
+
+  font-size: clamp(27px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
 }
 
-.card-image {
-aspect-ratio: 1.25 / 1;
-background-position: center;
-background-size: cover;
+.animal-family-photo {
+  position: relative;
+  isolation: isolate;
+
+  min-height: 230px;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+
+  background-color: #d9e5d4;
+  background-position: center;
+  background-size: cover;
 }
 
-.watermelon-image {
-background-image: url("watermelon.jpg");
+.animal-family-photo::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(3, 39, 35, 0.55),
+      transparent 65%
+    );
 }
 
-.cucumber-image {
-background-image: url("cucumber.jpg");
+.animal-family-photo > span {
+  position: absolute;
+  left: 22px;
+  bottom: 18px;
+
+  color: var(--white);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
 }
 
-.corn-image {
-background-image: url("corn.jpg");
+.photo-poultry {
+  background-image: url("poultry-health.jpg");
 }
 
-.card-body {
-padding: 28px;
+.photo-swine {
+  background-image: url("pig-health.jpg");
 }
 
-.card-body span {
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 0.12em;
+.animal-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
 }
 
-.card-body h3 {
-margin: 12px 0;
-font-size: 28px;
+.animal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-height: 185px;
+  padding: 22px;
+
+  border: 1px solid var(--line);
+  border-radius: 20px;
+
+  background: var(--white);
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
 }
 
-.card-body p {
-color: rgba(7, 69, 64, 0.7);
-line-height: 1.5;
+.animal-card:hover {
+  transform: translateY(-5px);
+  background: #f6fbf9;
+  box-shadow: var(--shadow);
 }
+
+.animal-card-icon {
+  display: grid;
+  place-items: center;
+
+  width: 37px;
+  height: 37px;
+  margin-bottom: 17px;
+
+  border-radius: 12px;
+
+  background: rgba(1, 153, 142, 0.12);
+  color: var(--teal);
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.animal-card h4 {
+  color: var(--dark-teal);
+
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.animal-card p {
+  margin-top: 9px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.animal-card-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: auto;
+  padding-top: 18px;
+
+  color: var(--dark-teal);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.animal-card-link span {
+  font-size: 16px;
+  transition: transform var(--transition);
+}
+
+.animal-card:hover .animal-card-link span {
+  transform: translate(3px, -3px);
+}
+
+.swine-family {
+  padding-top: 50px;
+  border-top: 1px solid var(--line);
+}
+
 
 /* =========================================================
-FARMCARE
+   FARMER RESOURCES BANNER
 ========================================================= */
 
-.farmcare-section {
-min-height: 70vh;
-padding: 100px 7vw;
-display: flex;
-align-items: center;
-background:
-linear-gradient(
-90deg,
-rgba(7, 69, 64, 0.96),
-rgba(7, 69, 64, 0.82)
-),
-url("farmcare.jpg") center / cover;
-color: var(--white);
+.resources-band {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 490px;
+  padding: 80px 8%;
+
+  overflow: hidden;
+
+  background: var(--dark-teal);
+  color: var(--white);
 }
 
-.farmcare-content {
-max-width: 760px;
+.resources-band-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("farmcare.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
-.farmcare-content p:not(.section-label) {
-max-width: 620px;
-margin: 28px 0;
-font-size: 19px;
-line-height: 1.65;
-color: rgba(255,255,255,0.8);
+.resources-band::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  content: "";
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 39, 35, 0.95) 0%,
+      rgba(3, 39, 35, 0.82) 45%,
+      rgba(3, 39, 35, 0.25) 100%
+    );
 }
 
-.text-link {
-display: inline-block;
-font-weight: 700;
-border-bottom: 1px solid rgba(255,255,255,0.6);
-padding-bottom: 5px;
+.resources-band-copy {
+  max-width: 680px;
 }
+
+.resources-band-copy .section-label {
+  color: var(--yellow);
+}
+
+.resources-band-copy h2 {
+  color: var(--white);
+}
+
+.resources-band-copy > p:not(.section-label) {
+  max-width: 520px;
+  margin-top: 20px;
+  margin-bottom: 27px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 15px;
+  line-height: 1.85;
+}
+
 
 /* =========================================================
-DEALER
+   STORE FINDER / CONTACT
 ========================================================= */
 
 .dealer-section {
-background: var(--yellow);
+  display: flex;
+  justify-content: center;
+
+  padding-top: 105px;
+  padding-bottom: 105px;
+
+  text-align: center;
 }
 
 .dealer-content {
-max-width: 850px;
+  width: 100%;
+  max-width: 760px;
 }
 
-.dealer-content p:not(.section-label) {
-max-width: 600px;
-margin: 28px 0;
-font-size: 19px;
-line-height: 1.6;
+.dealer-content h2 {
+  font-size: clamp(35px, 5vw, 58px);
 }
+
+.dealer-content > p:not(.section-label) {
+  max-width: 590px;
+  margin: 20px auto 0;
+
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.dealer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 13px;
+
+  margin-top: 30px;
+}
+
 
 /* =========================================================
-FOOTER
+   FOOTER
 ========================================================= */
 
 .site-footer {
-background: var(--dark-red);
-color: var(--white);
-padding: 75px 7vw 25px;
+  padding: 70px 5.5% 25px;
+
+  background: var(--dark-teal);
+  color: var(--white);
 }
 
 .footer-top {
-display: grid;
-grid-template-columns: 2fr repeat(3, 1fr);
-gap: 50px;
-padding-bottom: 65px;
-}
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 45px;
 
-.footer-brand img {
-width: 160px;
-margin-bottom: 25px;
-}
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
 
-.footer-brand p {
-max-width: 300px;
-color: rgba(255,255,255,0.7);
-line-height: 1.6;
-}
-
-.footer-column {
-display: flex;
-flex-direction: column;
-gap: 13px;
-}
-
-.footer-column h3 {
-font-size: 12px;
-letter-spacing: 0.1em;
-margin-bottom: 10px;
-}
-
-.footer-column a {
-color: rgba(255,255,255,0.72);
-font-size: 14px;
-}
-
-.footer-column a:hover {
-color: var(--yellow);
-}
-
-.footer-bottom {
-border-top: 1px solid rgba(255,255,255,0.15);
-padding-top: 22px;
-display: flex;
-justify-content: space-between;
-gap: 20px;
-color: rgba(255,255,255,0.5);
-font-size: 11px;
-}
-
-/* =========================================================
-MOBILE
-========================================================= */
-
-@media (max-width: 800px) {
-
-.site-header {
-height: 88px;
-padding: 13px 17px;
-}
-
-.brand img {
-width: 180px;
-display: block;
-object-fit: contain;
-}
-
-.nav-logo img {
-width: 200px;
-max-height: 65px;
-}
-
-.menu-button {
-min-width: 105px;
-min-height: 48px;
-}
-
-.nav-top {
-height: 75px;
-padding: 13px 17px;
-}
-
-.nav-content {
-height: calc(100vh - 75px);
-padding: 20px 22px 50px;
-}
-
-.nav-panel,
-.nav-panel .nav-item > .nav-panel {
-padding: 20px 22px 50px;
-}
-
-.nav-close {
-width: 48px;
-height: 48px;
-}
-
-.hero-content {
-padding: 0 22px 70px;
-}
-
-.hero h1 {
-font-size: clamp(48px, 16vw, 75px);
-}
-
-.hero-copy {
-font-size: 16px;
-}
-
-.section {
-padding: 80px 22px;
-}
-
-.intro {
-grid-template-columns: 1fr;
-gap: 25px;
-}
-
-.feature-grid {
-grid-template-columns: 1fr;
-}
-
-.farmcare-section {
-padding: 80px 22px;
-}
-
-.footer-top {
-grid-template-columns: 1fr 1fr;
-gap: 45px 25px;
+  padding-bottom: 55px;
 }
 
 .footer-brand {
-grid-column: 1 / -1;
+  max-width: 280px;
+}
+
+.footer-brand > a {
+  display: inline-block;
+  width: 180px;
+}
+
+.footer-brand img {
+  width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer-brand p {
+  margin-top: 20px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.footer-column h3 {
+  margin-bottom: 7px;
+
+  color: var(--yellow);
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 12px;
+  line-height: 1.6;
+
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.footer-column a:hover {
+  transform: translateX(3px);
+  color: var(--yellow);
 }
 
 .footer-bottom {
-flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 11px;
+  line-height: 1.7;
 }
 
-}
 
 /* =========================================================
-FOOTER / BRAND LOGO
+   IMAGE FALLBACKS
+   If an image is missing, the background colour remains.
 ========================================================= */
 
-.brand-logo {
-width: 110px;
-height: auto;
-display: block;
-object-fit: contain;
+.photo-crop,
+.photo-nutrition,
+.photo-weed,
+.photo-pest,
+.photo-disease,
+.photo-micro,
+.photo-foliar,
+.photo-npk,
+.photo-vegetable-seeds,
+.photo-field-seeds,
+.photo-poultry,
+.photo-swine {
+  background-color: #dce7d8;
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .section {
+    padding-right: 4.5%;
+    padding-left: 4.5%;
+  }
+
+  .shortcut-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shortcut-card {
+    min-height: 220px;
+  }
+
+  .seed-card-grid,
+  .field-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .animal-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .category-photo {
+    min-height: 340px;
+  }
+
+  .product-photo {
+    min-height: 190px;
+  }
+
+  .resources-band {
+    min-height: 450px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .site-header {
+    padding: 18px 5%;
+  }
+
+  .brand {
+    width: 135px;
+  }
+
+  .brand img {
+    max-height: 52px;
+  }
+
+  .menu-button {
+    min-height: 45px;
+    padding: 0 15px;
+    gap: 11px;
+  }
+
+  .menu-label {
+    font-size: 10px;
+  }
+
+  .main-nav {
+    padding: 18px 5% 25px;
+  }
+
+  .nav-top {
+    padding-bottom: 17px;
+  }
+
+  .nav-logo {
+    width: 140px;
+  }
+
+  .nav-logo img {
+    max-height: 48px;
+  }
+
+  .nav-close {
+    width: 42px;
+    height: 42px;
+    font-size: 27px;
+  }
+
+  .nav-content {
+    margin-top: 14px;
+  }
+
+  .nav-parent,
+  .nav-direct {
+    padding: 14px 0;
+    font-size: 17px;
+  }
+
+  .nav-panel > a:not(.nav-brand) {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .nav-direct.dealer-link {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 10px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: 690px;
+    min-height: min(780px, 100svh);
+
+    padding: 135px 6% 105px;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 39, 35, 0.88),
+        rgba(3, 39, 35, 0.5)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(3, 39, 35, 0.5),
+        transparent
+      );
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 12vw, 68px);
+    letter-spacing: -0.065em;
+  }
+
+  .hero-copy {
+    margin-top: 21px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 27px;
+  }
+
+  .hero-actions .button {
+    min-height: 48px;
+    padding: 12px 16px;
+    gap: 12px;
+    font-size: 11px;
+  }
+
+  .hero-controls {
+    right: auto;
+    left: 6%;
+    bottom: 30px;
+  }
+
+
+  /* SECTION SPACING */
+
+  .section {
+    padding: 72px 5%;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2,
+  .category-intro-copy h2,
+  .resources-band-copy h2,
+  .dealer-content h2 {
+    font-size: clamp(34px, 9vw, 46px);
+  }
+
+  .heading-copy {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+
+  /* SHORTCUTS */
+
+  .finder-heading {
+    display: block;
+  }
+
+  .finder-heading .heading-copy {
+    margin: 16px 0 0;
+  }
+
+  .shortcut-grid {
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .shortcut-card {
+    min-height: 190px;
+    padding: 17px;
+    border-radius: 23px;
+  }
+
+  .shortcut-title {
+    font-size: clamp(21px, 6vw, 27px);
+  }
+
+  .shortcut-arrow {
+    right: 13px;
+    bottom: 13px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+
+  /* CATEGORY INTRO */
+
+  .catalogue-section {
+    padding-top: 30px;
+    padding-bottom: 75px;
+  }
+
+  .category-intro,
+  .category-intro.reverse {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-bottom: 30px;
+  }
+
+  .category-intro.reverse .category-photo {
+    order: 0;
+  }
+
+  .category-photo {
+    min-height: 260px;
+    border-radius: 24px;
+  }
+
+  .category-intro-copy p:not(.section-label) {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+
+  /* PRODUCT CARDS */
+
+  .product-grid.three {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .product-card {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: stretch;
+
+    border-radius: 19px;
+  }
+
+  .product-photo {
+    min-height: 240px;
+    height: 100%;
+  }
+
+  .product-card-body {
+    padding: 18px 15px;
+  }
+
+  .product-card-body small {
+    font-size: 9px;
+  }
+
+  .product-card-body h3 {
+    font-size: 19px;
+  }
+
+  .product-card-body p {
+    margin-top: 9px;
+    margin-bottom: 16px;
+
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .product-card-body b {
+    gap: 6px;
+    font-size: 10px;
+  }
+
+
+  /* SEEDS */
+
+  .seed-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .seed-heading {
+    margin-bottom: 30px;
+  }
+
+  .seed-family {
+    margin-top: 40px;
+  }
+
+  .seed-family-intro {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 23px;
+  }
+
+  .seed-family-photo {
+    min-height: 220px;
+    border-radius: 24px;
+  }
+
+  .seed-family-intro h3 {
+    font-size: 30px;
+  }
+
+  .seed-family-intro p:not(.section-label) {
+    font-size: 14px;
+  }
+
+  .seed-card-grid,
+  .field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .seed-card {
+    min-height: 180px;
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .seed-card h4 {
+    font-size: 15px;
+  }
+
+  .seed-card p {
+    max-width: 90%;
+    font-size: 10px;
+  }
+
+  .seed-card-number {
+    top: 10px;
+    left: 10px;
+
+    width: 25px;
+    height: 25px;
+  }
+
+  .seed-card-arrow {
+    right: 9px;
+    bottom: 10px;
+
+    width: 25px;
+    height: 25px;
+  }
+
+
+  /* ANIMAL HEALTH */
+
+  .animal-section {
+    padding-top: 75px;
+    padding-bottom: 80px;
+  }
+
+  .animal-section > .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .animal-family {
+    margin-top: 40px;
+  }
+
+  .animal-family-heading {
+    grid-template-columns: 1fr;
+    gap: 19px;
+    margin-bottom: 22px;
+  }
+
+  .animal-family-heading h3 {
+    font-size: 30px;
+  }
+
+  .animal-family-photo {
+    min-height: 210px;
+    border-radius: 23px;
+  }
+
+  .animal-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .animal-card {
+    min-height: 195px;
+    padding: 15px;
+    border-radius: 17px;
+  }
+
+  .animal-card-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 13px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  .animal-card h4 {
+    font-size: 14px;
+  }
+
+  .animal-card p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .animal-card-link {
+    gap: 6px;
+    padding-top: 14px;
+    font-size: 10px;
+  }
+
+  .swine-family {
+    padding-top: 35px;
+  }
+
+
+  /* RESOURCES */
+
+  .resources-band {
+    min-height: 450px;
+    padding: 65px 6%;
+  }
+
+  .resources-band::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 39, 35, 0.92),
+        rgba(3, 39, 35, 0.65)
+      );
+  }
+
+  .resources-band-copy > p:not(.section-label) {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .resources-band-copy .button {
+    max-width: 100%;
+    gap: 12px;
+    font-size: 11px;
+  }
+
+
+  /* STORE / CONTACT */
+
+  .dealer-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .dealer-content > p:not(.section-label) {
+    font-size: 14px;
+  }
+
+  .dealer-actions {
+    gap: 10px;
+  }
+
+  .dealer-actions .button {
+    min-height: 48px;
+    padding: 12px 17px;
+    font-size: 11px;
+  }
+
+
+  /* FOOTER */
+
+  .site-footer {
+    padding: 55px 5% 22px;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 20px;
+
+    padding-bottom: 35px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 350px;
+  }
+
+  .footer-brand > a {
+    width: 155px;
+  }
+
+  .footer-brand p {
+    margin-top: 14px;
+    font-size: 12px;
+  }
+
+  .footer-column {
+    gap: 10px;
+  }
+
+  .footer-column h3 {
+    font-size: 12px;
+  }
+
+  .footer-column a {
+    font-size: 11px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    padding-top: 20px;
+
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .brand {
+    width: 120px;
+  }
+
+  .menu-button {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-actions .button {
+    padding: 11px 13px;
+    gap: 8px;
+  }
+
+  .shortcut-card {
+    min-height: 165px;
+    padding: 13px;
+  }
+
+  .shortcut-title {
+    font-size: 21px;
+  }
+
+  .product-card {
+    grid-template-columns: 0.75fr 1.25fr;
+  }
+
+  .product-photo {
+    min-height: 250px;
+  }
+
+  .product-card-body {
+    padding: 14px 12px;
+  }
+
+  .product-card-body h3 {
+    font-size: 17px;
+  }
+
+  .seed-card {
+    min-height: 165px;
+    padding: 11px;
+  }
+
+  .animal-card {
+    padding: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
 }
