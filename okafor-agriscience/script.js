@@ -58,14 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
       navClose.addEventListener("click", closeNavigation);
     }
 
-    /*
-      Nested navigation:
-      - Opens the selected panel.
-      - Closes competing panels at the same level.
-      - Supports multiple levels, such as Seeds > Vegetable Seeds.
-      - Keeps the parent panel visible while navigating deeper.
-    */
-
     mainNav.querySelectorAll(".nav-parent").forEach(function (button) {
       button.setAttribute("aria-expanded", "false");
 
@@ -77,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const isAlreadyOpen = currentItem.classList.contains("panel-open");
-
         const parentContainer = currentItem.parentElement;
 
         if (parentContainer) {
@@ -114,11 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    /*
-      Back buttons close the current level.
-      They do not close the entire navigation.
-    */
-
     mainNav.querySelectorAll(".nav-back").forEach(function (button) {
       button.addEventListener("click", function () {
         const currentItem = button.closest(".nav-item");
@@ -142,19 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    /*
-      Normal navigation links close the full-screen menu.
-    */
-
     mainNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         closeNavigation();
       });
     });
-
-    /*
-      Escape closes the menu.
-    */
 
     document.addEventListener("keydown", function (event) {
       if (
@@ -165,10 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
         menuButton.focus();
       }
     });
-
-    /*
-      Clicking outside the navigation closes it.
-    */
 
     document.addEventListener("click", function (event) {
       if (!mainNav.classList.contains("open")) {
@@ -489,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =======================================================
-     POULTRY HEALTH CARDS
+     POULTRY PRODUCT CARDS
   ======================================================= */
 
   const poultryHealth = [
@@ -497,49 +471,49 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Performance & Gut Health",
       link: "poultry-performance-gut-health.html",
       description:
-        "Explore gut health, digestion and flock performance topics."
+        "Products supporting poultry digestion, gut health and flock performance."
     },
     {
       title: "Coughing & Respiratory Problems",
       link: "poultry-respiratory.html",
       description:
-        "Learn about common respiratory signs in poultry."
+        "Products for poultry respiratory health and related production needs."
     },
     {
       title: "Diarrhea & Coccidiosis",
       link: "poultry-diarrhea.html",
       description:
-        "Explore common causes of digestive problems in poultry."
+        "Products for poultry digestive health and coccidiosis management."
     },
     {
       title: "Worms & Parasites",
       link: "poultry-worms.html",
       description:
-        "Learn about parasite risks and flock management."
+        "Products for poultry worm and parasite control."
     },
     {
       title: "Heat Stress & Dehydration",
       link: "poultry-heat-stress.html",
       description:
-        "Explore ways to recognise and manage heat stress risks."
+        "Products supporting poultry during periods of heat stress and dehydration."
     },
     {
       title: "Egg Performance & Calcium Deficiency",
       link: "poultry-egg-performance.html",
       description:
-        "Learn about laying performance, nutrition and eggshell quality."
+        "Products supporting laying performance, calcium supply and eggshell quality."
     },
     {
       title: "Feed Safety & Biosecurity",
       link: "poultry-feed-biosecurity.html",
       description:
-        "Explore feed hygiene and practical biosecurity measures."
+        "Products for poultry feed hygiene and biosecurity needs."
     }
   ];
 
 
   /* =======================================================
-     SWINE HEALTH CARDS
+     SWINE PRODUCT CARDS
   ======================================================= */
 
   const swineHealth = [
@@ -547,43 +521,43 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Performance & Gut Health",
       link: "swine-performance-gut-health.html",
       description:
-        "Explore digestion, nutrition and growth performance topics."
+        "Products supporting pig digestion, gut health and growth performance."
     },
     {
       title: "Respiratory Problems & Pneumonia",
       link: "swine-respiratory.html",
       description:
-        "Learn about respiratory signs and herd health concerns."
+        "Products for swine respiratory health and related production needs."
     },
     {
       title: "Breeding & Fertility",
       link: "swine-breeding.html",
       description:
-        "Explore reproductive performance and breeding management."
+        "Products supporting swine breeding, reproduction and fertility."
     },
     {
       title: "Piglet & Grower Diarrhea",
       link: "swine-diarrhea.html",
       description:
-        "Learn about digestive problems affecting young and growing pigs."
+        "Products for digestive health in piglets and growing pigs."
     },
     {
       title: "Worms & Parasites",
       link: "swine-worms.html",
       description:
-        "Explore parasite management and herd health."
+        "Products for swine worm and parasite control."
     },
     {
       title: "Feed Quality & Biosecurity",
       link: "swine-feed-biosecurity.html",
       description:
-        "Learn about feed hygiene and biosecurity practices."
+        "Products for swine feed hygiene and biosecurity needs."
     },
     {
       title: "Newborn Care",
       link: "swine-newborn-care.html",
       description:
-        "Explore early piglet care and newborn management."
+        "Products supporting newborn piglet health and early-life care."
     }
   ];
 
