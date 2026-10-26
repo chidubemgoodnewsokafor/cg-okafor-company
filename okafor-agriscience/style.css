@@ -1803,15 +1803,9 @@ main {
 
   object-fit: contain;
   object-position: left center;
-}
 
-.footer-brand p {
-  max-width: 300px;
-  margin: 20px 0 0;
-
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 13px;
-  line-height: 1.85;
+  /* Display the logo in white against the dark footer */
+  filter: brightness(0) invert(1);
 }
 
 .footer-column {
