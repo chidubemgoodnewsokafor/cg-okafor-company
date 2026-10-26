@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "tomato.jpg"
     },
     {
-      name: "Pepper",
+      name: "Peppers",
       link: "pepper-catalogue.html",
       image: "pepper.jpg"
     },
@@ -350,14 +350,9 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "okra.jpg"
     },
     {
-      name: "French Bean",
+      name: "Green Beans",
       link: "french-bean-catalogue.html",
       image: "french-bean.jpg"
-    },
-    {
-      name: "Yardlong Bean",
-      link: "yardlong-bean-catalogue.html",
-      image: "yardlong-bean.jpg"
     },
     {
       name: "Lettuce",
@@ -373,16 +368,6 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Eggplant",
       link: "eggplant-catalogue.html",
       image: "eggplant.jpg"
-    },
-    {
-      name: "Cauliflower",
-      link: "cauliflower-catalogue.html",
-      image: "cauliflower.jpg"
-    },
-    {
-      name: "Chinese Cabbage",
-      link: "chinese-cabbage-catalogue.html",
-      image: "chinese-cabbage.jpg"
     }
   ];
 
