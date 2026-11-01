@@ -272,7 +272,7 @@ button {
 .hero-logo {
     position: absolute;
     top: 35px;
-    left: 50%;
+    left: 35%;
     transform: translateX(-50%);
     z-index: 20;
 }
