@@ -923,7 +923,7 @@ h2 {
 
   border-radius: 28px;
 
-  background: var(--dark-teal);
+  background: var(--teal);
   color: var(--white);
 
   scroll-snap-align: start;
