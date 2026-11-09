@@ -275,6 +275,9 @@ const heroContent =
 const heroTitle =
   document.getElementById("hero-title");
 
+const heroDescription =
+  document.getElementById("hero-description");
+
 const heroLink =
   document.getElementById("hero-link");
 
@@ -292,7 +295,7 @@ const hero =
 
 
 /* =========================================================
-   SLIDE CONTENT
+   HERO SLIDE CONTENT
    ========================================================= */
 
 const heroSlides = [
@@ -302,9 +305,12 @@ const heroSlides = [
     background: "#074540",
     textColor: "#ffffff",
 
-    text: "Better farming, food for all — different capabilities, a shared focus.",
+    title: "Better farming,<br>food for all.",
 
-    link: "",
+    description:
+      "C.G. Okafor — Different capabilities, a shared focus.",
+
+    link: "index.html",
     showLink: false
   },
 
@@ -313,7 +319,10 @@ const heroSlides = [
     background: "#01998E",
     textColor: "#ffffff",
 
-    text: "Okafor Agriscience empowers farmers with solutions for crop, poultry and pig farming.",
+    title: "Okafor<br>Agriscience",
+
+    description:
+      "Empowering farmers with solutions for crop, poultry and pig farming.",
 
     link: "okafor-agriscience.html",
     showLink: true
@@ -324,7 +333,10 @@ const heroSlides = [
     background: "#99010C",
     textColor: "#ffffff",
 
-    text: "Okafor Farm Technology advances poultry and pig farming through practical farm technology.",
+    title: "Okafor Farm<br>Technology",
+
+    description:
+      "Practical farm technology for modern agricultural operations.",
 
     link: "okafor-farm-technology/",
     showLink: true
@@ -335,7 +347,10 @@ const heroSlides = [
     background: "#F1C400",
     textColor: "#074540",
 
-    text: "Okafor Grains & Oilseeds connects agricultural production with sourcing and value addition.",
+    title: "Grains &<br>Oilseeds",
+
+    description:
+      "Connecting agricultural production with grain and oilseed sourcing and value addition.",
 
     link: "okafor-grains&oilseeds.html",
     showLink: true
@@ -348,12 +363,19 @@ let currentSlide = 0;
 
 
 /* =========================================================
-   DISPLAY SLIDE
+   DISPLAY HERO SLIDE
    ========================================================= */
 
 function showSlide(index) {
 
-  if (!heroImage || !heroContent || !heroTitle) return;
+  if (
+    !heroImage ||
+    !heroContent ||
+    !heroTitle ||
+    !heroDescription
+  ) {
+    return;
+  }
 
   currentSlide =
     (index + heroSlides.length) % heroSlides.length;
@@ -373,7 +395,10 @@ function showSlide(index) {
     slide.textColor
   );
 
-  heroTitle.textContent = slide.text;
+  heroTitle.innerHTML = slide.title;
+
+  heroDescription.textContent =
+    slide.description;
 
   if (heroLink) {
 
@@ -397,19 +422,32 @@ function showSlide(index) {
 
 
 /* =========================================================
-   NEXT AND PREVIOUS
+   NEXT SLIDE
    ========================================================= */
 
 if (nextButton) {
+
   nextButton.addEventListener("click", () => {
+
     showSlide(currentSlide + 1);
+
   });
+
 }
 
+
+/* =========================================================
+   PREVIOUS SLIDE
+   ========================================================= */
+
 if (previousButton) {
+
   previousButton.addEventListener("click", () => {
+
     showSlide(currentSlide - 1);
+
   });
+
 }
 
 
@@ -420,14 +458,16 @@ if (previousButton) {
 heroDots.forEach(dot => {
 
   dot.addEventListener("click", () => {
+
     showSlide(Number(dot.dataset.slide));
+
   });
 
 });
 
 
 /* =========================================================
-   AUTOMATIC SLIDESHOW
+   AUTOMATIC HERO SLIDESHOW
    ========================================================= */
 
 let heroTimer = null;
@@ -439,26 +479,56 @@ function startHeroTimer() {
   clearInterval(heroTimer);
 
   heroTimer = setInterval(() => {
+
     showSlide(currentSlide + 1);
+
   }, 6500);
 
 }
 
+
 function stopHeroTimer() {
+
   clearInterval(heroTimer);
+
 }
+
+
+/* =========================================================
+   PAUSE SLIDESHOW ON HOVER / FOCUS
+   ========================================================= */
 
 if (hero) {
 
-  hero.addEventListener("mouseenter", stopHeroTimer);
-  hero.addEventListener("mouseleave", startHeroTimer);
+  hero.addEventListener(
+    "mouseenter",
+    stopHeroTimer
+  );
 
-  hero.addEventListener("focusin", stopHeroTimer);
-  hero.addEventListener("focusout", startHeroTimer);
+  hero.addEventListener(
+    "mouseleave",
+    startHeroTimer
+  );
+
+  hero.addEventListener(
+    "focusin",
+    stopHeroTimer
+  );
+
+  hero.addEventListener(
+    "focusout",
+    startHeroTimer
+  );
 
 }
 
+
+/* =========================================================
+   INITIALIZE HERO
+   ========================================================= */
+
 showSlide(0);
+
 startHeroTimer();
 
 
