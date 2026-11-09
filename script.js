@@ -453,15 +453,164 @@ if (previousButton) {
 
 
 /* =========================================================
+   HERO CAROUSEL
+   ========================================================= */
+
+const heroImage =
+  document.getElementById("hero-image");
+
+const heroContent =
+  document.querySelector(".hero-content");
+
+const heroTitle =
+  document.getElementById("hero-title");
+
+const heroLink =
+  document.getElementById("hero-link");
+
+const heroDots =
+  document.querySelectorAll(".hero-dot");
+
+const previousButton =
+  document.querySelector(".hero-prev");
+
+const nextButton =
+  document.querySelector(".hero-next");
+
+const hero =
+  document.querySelector(".hero");
+
+
+/* =========================================================
+   SLIDE CONTENT
+   ========================================================= */
+
+const heroSlides = [
+
+  {
+    image: "hero-all.jpg",
+    background: "#074540",
+    textColor: "#ffffff",
+
+    text: "Better farming, food for all — different capabilities, a shared focus.",
+
+    link: "",
+    showLink: false
+  },
+
+  {
+    image: "hero-agriscience.jpg",
+    background: "#01998E",
+    textColor: "#ffffff",
+
+    text: "Okafor Agriscience empowers farmers with solutions for crop, poultry and pig farming.",
+
+    link: "okafor-agriscience.html",
+    showLink: true
+  },
+
+  {
+    image: "hero-farm-technology.jpg",
+    background: "#99010C",
+    textColor: "#ffffff",
+
+    text: "Okafor Farm Technology advances poultry and pig farming through practical farm technology.",
+
+    link: "okafor-farm-technology/",
+    showLink: true
+  },
+
+  {
+    image: "hero-grains-oilseeds.jpg",
+    background: "#F1C400",
+    textColor: "#074540",
+
+    text: "Okafor Grains & Oilseeds connects agricultural production with sourcing and value addition.",
+
+    link: "okafor-grains&oilseeds.html",
+    showLink: true
+  }
+
+];
+
+
+let currentSlide = 0;
+
+
+/* =========================================================
+   DISPLAY SLIDE
+   ========================================================= */
+
+function showSlide(index) {
+
+  if (!heroImage || !heroContent || !heroTitle) return;
+
+  currentSlide =
+    (index + heroSlides.length) % heroSlides.length;
+
+  const slide = heroSlides[currentSlide];
+
+  heroImage.style.backgroundImage =
+    `url("${slide.image}")`;
+
+  heroContent.style.setProperty(
+    "--hero-panel",
+    slide.background
+  );
+
+  heroContent.style.setProperty(
+    "--hero-text",
+    slide.textColor
+  );
+
+  heroTitle.textContent = slide.text;
+
+  if (heroLink) {
+
+    heroLink.href = slide.link;
+
+    heroLink.style.display =
+      slide.showLink ? "inline-flex" : "none";
+
+  }
+
+  heroDots.forEach((dot, i) => {
+
+    dot.classList.toggle(
+      "active",
+      i === currentSlide
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   NEXT AND PREVIOUS
+   ========================================================= */
+
+if (nextButton) {
+  nextButton.addEventListener("click", () => {
+    showSlide(currentSlide + 1);
+  });
+}
+
+if (previousButton) {
+  previousButton.addEventListener("click", () => {
+    showSlide(currentSlide - 1);
+  });
+}
+
+
+/* =========================================================
    DOT NAVIGATION
    ========================================================= */
 
 heroDots.forEach(dot => {
 
   dot.addEventListener("click", () => {
-
     showSlide(Number(dot.dataset.slide));
-
   });
 
 });
@@ -473,7 +622,6 @@ heroDots.forEach(dot => {
 
 let heroTimer = null;
 
-
 function startHeroTimer() {
 
   if (!hero) return;
@@ -481,37 +629,28 @@ function startHeroTimer() {
   clearInterval(heroTimer);
 
   heroTimer = setInterval(() => {
-
     showSlide(currentSlide + 1);
-
   }, 6500);
 
 }
 
-
 function stopHeroTimer() {
-
   clearInterval(heroTimer);
-
 }
-
 
 if (hero) {
 
   hero.addEventListener("mouseenter", stopHeroTimer);
-
   hero.addEventListener("mouseleave", startHeroTimer);
 
   hero.addEventListener("focusin", stopHeroTimer);
-
   hero.addEventListener("focusout", startHeroTimer);
 
 }
 
-
 showSlide(0);
-
 startHeroTimer();
+
 
 /* =========================================================
    HORIZONTAL BUSINESS AND FOOD CARD ROWS
