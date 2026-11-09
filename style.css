@@ -873,11 +873,6 @@ h2 {
   margin-bottom: 35px;
 }
 
-/*
-   The business grid becomes a horizontal scrolling row.
-   It keeps the original card colors and rounded corners.
-*/
-
 .business-grid {
   display: grid;
   grid-auto-flow: column;
@@ -935,7 +930,6 @@ h2 {
 
 .business-card:hover {
   transform: translateY(-5px);
-
   box-shadow: 0 25px 55px rgba(7,69,64,0.18);
 }
 
@@ -995,7 +989,6 @@ h2 {
 
 /* =========================================================
    CARD CAROUSEL CONTROLS
-   Add these buttons below the card row in the HTML
    ========================================================= */
 
 .card-carousel-controls {
@@ -1181,11 +1174,6 @@ h2 {
   max-width: 420px;
 }
 
-/*
-   Food cards remain in a horizontal row on desktop.
-   Additional cards can be reached by scrolling.
-*/
-
 .food-grid {
   display: grid;
   grid-auto-flow: column;
@@ -1312,6 +1300,115 @@ h2 {
 .insight-card span {
   color: var(--red);
   font-size: 18px;
+}
+
+/* =========================================================
+   OUR HISTORY — CORPORATE FEATURE
+   ========================================================= */
+
+.history-feature {
+  position: relative;
+  width: 100%;
+  padding: 90px 5%;
+  overflow: hidden;
+  background: var(--dark-teal);
+  isolation: isolate;
+}
+
+.history-feature::before {
+  content: "OUR STORY";
+  position: absolute;
+  right: -20px;
+  bottom: -55px;
+  color: rgba(255,255,255,0.035);
+  font-size: clamp(100px, 18vw, 250px);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.history-image-link {
+  position: relative;
+  display: block;
+  width: min(1280px, 100%);
+  height: 570px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #032f2b;
+  isolation: isolate;
+}
+
+.history-image-link > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.history-image-link:hover > img {
+  transform: scale(1.035);
+}
+
+.history-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 65px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,31,29,0.88) 0%,
+      rgba(3,31,29,0.55) 45%,
+      rgba(3,31,29,0.05) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3,31,29,0.65),
+      transparent 65%
+    );
+  transition: background 0.4s ease;
+}
+
+.history-overlay .eyebrow {
+  color: var(--yellow);
+  margin-bottom: 22px;
+}
+
+.history-overlay h2 {
+  max-width: 750px;
+  color: var(--white);
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.history-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 35px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(255,255,255,0.65);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.history-image-link:hover .history-link {
+  color: var(--yellow);
+  border-color: var(--yellow);
 }
 
 /* =========================================================
@@ -1906,6 +2003,23 @@ h2 {
   .leadership-links {
     margin-top: 50px;
   }
+
+  .history-feature {
+    padding: 65px 5%;
+  }
+
+  .history-image-link {
+    height: 500px;
+    border-radius: 24px;
+  }
+
+  .history-overlay {
+    padding: 40px;
+  }
+
+  .history-overlay h2 {
+    font-size: clamp(46px, 9vw, 70px);
+  }
 }
 
 /* =========================================================
@@ -2055,6 +2169,41 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+  }
+
+  /* HISTORY FEATURE */
+
+  .history-feature {
+    padding: 45px 5%;
+  }
+
+  .history-image-link {
+    height: 480px;
+    border-radius: 22px;
+  }
+
+  .history-overlay {
+    padding: 27px;
+    background:
+      linear-gradient(
+        0deg,
+        rgba(3,31,29,0.92) 0%,
+        rgba(3,31,29,0.45) 65%,
+        rgba(3,31,29,0.08) 100%
+      );
+  }
+
+  .history-overlay .eyebrow {
+    margin-bottom: 17px;
+  }
+
+  .history-overlay h2 {
+    font-size: clamp(43px, 11vw, 57px);
+  }
+
+  .history-link {
+    margin-top: 25px;
+    font-size: 13px;
   }
 
   /* ABOUT US PAGE */
@@ -2521,7 +2670,7 @@ h2 {
   margin-top: 15px;
 }
 
-/* HISTORY */
+/* HISTORY PAGE CONTENT */
 
 .history-section {
   background: var(--white);
