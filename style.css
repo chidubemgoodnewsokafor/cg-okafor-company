@@ -4,8 +4,8 @@
    ========================================================= */
 
 :root {
-  --yellow: #F1C400;
-  --teal: #08796F;
+  --yellow: #FFE500;
+  --teal: #01998E;
   --dark-teal: #074540;
   --red: #99010C;
   --dark-red: #360005;
@@ -104,7 +104,7 @@ button {
   cursor: pointer;
   z-index: 2147483647;
 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.14);
 
   transition:
     width 0.3s ease,
@@ -593,7 +593,7 @@ h2 {
   background:
     radial-gradient(
       circle at 30% 25%,
-      rgba(8, 121, 111, 0.16),
+      rgba(255, 229, 0, 0.28),
       transparent 30%
     ),
     linear-gradient(135deg, #dce9e6, #b8d6d1);
@@ -609,7 +609,7 @@ h2 {
   padding: 8px 13px;
   border-radius: 20px;
 
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255,255,255,0.72);
 
   font-size: 11px;
   font-weight: 700;
@@ -663,9 +663,9 @@ h2 {
   background:
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.22) 0%,
-      rgba(0, 0, 0, 0.08) 35%,
-      rgba(0, 0, 0, 0.48) 100%
+      rgba(0,0,0,0.22) 0%,
+      rgba(0,0,0,0.08) 35%,
+      rgba(0,0,0,0.48) 100%
     );
 
   z-index: 2;
@@ -692,7 +692,7 @@ h2 {
   line-height: 0.98;
   letter-spacing: -0.05em;
 
-  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 3px 20px rgba(0,0,0,0.25);
 }
 
 /* HERO CONTROLS */
@@ -713,10 +713,10 @@ h2 {
 
   transform: translateY(-50%);
 
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255,255,255,0.8);
   border-radius: 50%;
 
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(0,0,0,0.18);
   color: var(--white);
 
   cursor: pointer;
@@ -764,7 +764,7 @@ h2 {
   border: 0;
   border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255,255,255,0.6);
   cursor: pointer;
 
   transition:
@@ -861,6 +861,7 @@ h2 {
 
 /* =========================================================
    BUSINESSES — HORIZONTAL CARD CAROUSEL
+   Four cards side by side on desktop
    ========================================================= */
 
 .businesses-section {
@@ -871,6 +872,11 @@ h2 {
 .section-heading {
   margin-bottom: 35px;
 }
+
+/*
+   The business grid becomes a horizontal scrolling row.
+   It keeps the original card colors and rounded corners.
+*/
 
 .business-grid {
   display: grid;
@@ -917,7 +923,7 @@ h2 {
 
   border-radius: 28px;
 
-  background: var(--teal);
+  background: var(--dark-teal);
   color: var(--white);
 
   scroll-snap-align: start;
@@ -929,35 +935,22 @@ h2 {
 
 .business-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 25px 55px rgba(7, 69, 64, 0.18);
+
+  box-shadow: 0 25px 55px rgba(7,69,64,0.18);
 }
-
-/* Agriscience */
-
-.business-card:nth-child(1) {
-  background: var(--teal);
-  color: var(--white);
-}
-
-/* Farm Technology */
 
 .business-card:nth-child(2) {
-  background: var(--red);
-  color: var(--white);
+  background: var(--dark-red);
 }
-
-/* Grains & Oilseeds */
 
 .business-card:nth-child(3) {
   background: var(--yellow);
   color: var(--dark-teal);
 }
 
-/* Fourth business card */
-
 .business-card:nth-child(4) {
-  background: var(--dark-teal);
-  color: var(--white);
+  background: #eef4f2;
+  color: var(--dark-teal);
 }
 
 .card-image {
@@ -969,8 +962,8 @@ h2 {
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.12)
+      rgba(255,255,255,0.5),
+      rgba(255,255,255,0.12)
     );
 }
 
@@ -1002,6 +995,7 @@ h2 {
 
 /* =========================================================
    CARD CAROUSEL CONTROLS
+   Add these buttons below the card row in the HTML
    ========================================================= */
 
 .card-carousel-controls {
@@ -1044,7 +1038,7 @@ h2 {
 }
 
 .card-carousel-button:focus-visible {
-  outline: 3px solid var(--teal);
+  outline: 3px solid var(--yellow);
   outline-offset: 3px;
 }
 
@@ -1093,12 +1087,12 @@ h2 {
   max-width: 480px;
   margin: 25px 0 30px;
 
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255,255,255,0.8);
   font-size: 18px;
 }
 
 .light-button {
-  background: var(--white);
+  background: var(--yellow);
   color: var(--dark-teal);
 }
 
@@ -1171,7 +1165,7 @@ h2 {
 
 .food-section {
   padding: 120px 5%;
-  background: var(--soft);
+  background: var(--yellow);
 
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
@@ -1186,6 +1180,11 @@ h2 {
 .food-intro h2 {
   max-width: 420px;
 }
+
+/*
+   Food cards remain in a horizontal row on desktop.
+   Additional cards can be reached by scrolling.
+*/
 
 .food-grid {
   display: grid;
@@ -1208,7 +1207,7 @@ h2 {
   overscroll-behavior-x: contain;
 
   scrollbar-width: thin;
-  scrollbar-color: var(--teal) rgba(7, 69, 64, 0.12);
+  scrollbar-color: var(--teal) rgba(7,69,64,0.12);
 }
 
 .food-grid::-webkit-scrollbar {
@@ -1216,7 +1215,7 @@ h2 {
 }
 
 .food-grid::-webkit-scrollbar-track {
-  background: rgba(7, 69, 64, 0.12);
+  background: rgba(7,69,64,0.12);
   border-radius: 10px;
 }
 
@@ -1311,117 +1310,8 @@ h2 {
 }
 
 .insight-card span {
-  color: var(--dark-teal);
+  color: var(--red);
   font-size: 18px;
-}
-
-/* =========================================================
-   OUR HISTORY — CORPORATE FEATURE
-   ========================================================= */
-
-.history-feature {
-  position: relative;
-  width: 100%;
-  padding: 90px 5%;
-  overflow: hidden;
-  background: var(--dark-teal);
-  isolation: isolate;
-}
-
-.history-feature::before {
-  content: "OUR STORY";
-  position: absolute;
-  right: -20px;
-  bottom: -55px;
-  color: rgba(255, 255, 255, 0.035);
-  font-size: clamp(100px, 18vw, 250px);
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-.history-image-link {
-  position: relative;
-  display: block;
-  width: min(1280px, 100%);
-  height: 570px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 28px;
-  background: #032f2b;
-  isolation: isolate;
-}
-
-.history-image-link > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.8s ease;
-}
-
-.history-image-link:hover > img {
-  transform: scale(1.035);
-}
-
-.history-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 65px;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(3, 31, 29, 0.88) 0%,
-      rgba(3, 31, 29, 0.55) 45%,
-      rgba(3, 31, 29, 0.05) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(3, 31, 29, 0.65),
-      transparent 65%
-    );
-  transition: background 0.4s ease;
-}
-
-.history-overlay .eyebrow {
-  color: var(--teal);
-  margin-bottom: 22px;
-}
-
-.history-overlay h2 {
-  max-width: 750px;
-  color: var(--white);
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
-}
-
-.history-link {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 35px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 800;
-  transition:
-    color 0.25s ease,
-    border-color 0.25s ease,
-    gap 0.25s ease;
-}
-
-.history-image-link:hover .history-link {
-  color: var(--teal);
-  border-color: var(--teal);
 }
 
 /* =========================================================
@@ -1437,7 +1327,7 @@ h2 {
   justify-content: center;
 
   overflow: hidden;
-  background: var(--dark-teal);
+  background: var(--teal);
 }
 
 .contact-circle {
@@ -1447,7 +1337,7 @@ h2 {
   height: 620px;
 
   border-radius: 50%;
-  background: #0b514b;
+  background: var(--yellow);
 
   right: -180px;
   top: -160px;
@@ -1474,7 +1364,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  background: var(--dark-teal);
+  background: var(--dark-red);
   color: var(--white);
 }
 
@@ -1505,7 +1395,7 @@ h2 {
 
 .careers-content p:not(.eyebrow) {
   margin: 25px 0 30px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255,255,255,0.8);
 }
 
 /* =========================================================
@@ -1523,7 +1413,7 @@ h2 {
   padding: 80px 0 65px;
 
   display: grid;
-  grid-template-columns: 1.6fr repeat(3, 1fr);
+  grid-template-columns: 1.6fr repeat(4, 1fr);
   gap: 45px;
 }
 
@@ -1531,7 +1421,7 @@ h2 {
   max-width: 260px;
   margin-top: 20px;
 
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255,255,255,.65);
   font-size: 13px;
   line-height: 1.7;
 }
@@ -1558,21 +1448,21 @@ h2 {
 .footer-column h4 {
   margin-bottom: 10px;
 
-  color: var(--teal);
+  color: var(--yellow);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
 }
 
 .footer-column a {
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255,255,255,.68);
   font-size: 13px;
   line-height: 1.5;
 
   transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+    color .2s ease,
+    transform .2s ease;
 }
 
 .footer-column a:hover {
@@ -1592,7 +1482,7 @@ h2 {
   align-items: flex-end;
   gap: 70px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .footer-contact-block,
@@ -1603,12 +1493,12 @@ h2 {
 }
 
 .footer-social-label {
-  color: var(--teal);
+  color: var(--yellow);
 
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
 }
 
 /* WHATSAPP */
@@ -1618,12 +1508,12 @@ h2 {
   align-items: center;
   gap: 10px;
 
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255,255,255,.78);
   font-size: 14px;
 
   transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+    color .2s ease,
+    transform .2s ease;
 }
 
 .footer-whatsapp svg {
@@ -1653,16 +1543,16 @@ h2 {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255,255,255,.2);
   border-radius: 50%;
 
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255,255,255,.75);
 
   transition:
-    color 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    color .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
 }
 
 .social-link svg {
@@ -1672,21 +1562,21 @@ h2 {
 }
 
 .social-link:hover {
-  color: var(--white);
-  background: var(--teal);
-  border-color: var(--teal);
+  color: var(--dark-teal);
+  background: var(--yellow);
+  border-color: var(--yellow);
   transform: translateY(-3px);
 }
 
 .social-placeholder {
-  opacity: 0.55;
+  opacity: .55;
   cursor: default;
 }
 
 .social-placeholder:hover {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255,255,255,.75);
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255,255,255,.2);
   transform: none;
 }
 
@@ -1701,7 +1591,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
 
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255,255,255,.45);
   font-size: 11px;
 }
 
@@ -2016,23 +1906,6 @@ h2 {
   .leadership-links {
     margin-top: 50px;
   }
-
-  .history-feature {
-    padding: 65px 5%;
-  }
-
-  .history-image-link {
-    height: 500px;
-    border-radius: 24px;
-  }
-
-  .history-overlay {
-    padding: 40px;
-  }
-
-  .history-overlay h2 {
-    font-size: clamp(46px, 9vw, 70px);
-  }
 }
 
 /* =========================================================
@@ -2184,41 +2057,6 @@ h2 {
     gap: 8px;
   }
 
-  /* HISTORY FEATURE */
-
-  .history-feature {
-    padding: 45px 5%;
-  }
-
-  .history-image-link {
-    height: 480px;
-    border-radius: 22px;
-  }
-
-  .history-overlay {
-    padding: 27px;
-    background:
-      linear-gradient(
-        0deg,
-        rgba(3, 31, 29, 0.92) 0%,
-        rgba(3, 31, 29, 0.45) 65%,
-        rgba(3, 31, 29, 0.08) 100%
-      );
-  }
-
-  .history-overlay .eyebrow {
-    margin-bottom: 17px;
-  }
-
-  .history-overlay h2 {
-    font-size: clamp(43px, 11vw, 57px);
-  }
-
-  .history-link {
-    margin-top: 25px;
-    font-size: 13px;
-  }
-
   /* ABOUT US PAGE */
 
   .about-hero {
@@ -2325,9 +2163,9 @@ h2 {
   background:
     linear-gradient(
       180deg,
-      rgba(7, 69, 64, 0.18) 0%,
-      rgba(7, 69, 64, 0.12) 35%,
-      rgba(3, 31, 29, 0.78) 100%
+      rgba(7,69,64,0.18) 0%,
+      rgba(7,69,64,0.12) 35%,
+      rgba(3,31,29,0.78) 100%
     );
 }
 
@@ -2340,21 +2178,21 @@ h2 {
 }
 
 .about-hero-content .eyebrow {
-  color: var(--teal);
+  color: var(--yellow);
 }
 
 .about-hero-content h1 {
   color: var(--white);
   font-size: clamp(55px, 8vw, 110px);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
+  line-height: .92;
+  letter-spacing: -.06em;
 }
 
 .about-hero-content > p:last-child {
   max-width: 650px;
   margin-top: 30px;
 
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255,255,255,.85);
   font-size: clamp(17px, 2vw, 23px);
   line-height: 1.45;
 }
@@ -2368,7 +2206,7 @@ h2 {
 
 .about-page-intro-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: .9fr 1.1fr;
   gap: 100px;
   align-items: start;
 }
@@ -2405,15 +2243,15 @@ h2 {
 }
 
 .contribution-section {
-  background: var(--soft);
+  background: var(--yellow);
 }
 
 .giving-section {
-  background: var(--dark-teal);
+  background: var(--teal);
 }
 
 .innovation-section {
-  background: #032f2b;
+  background: var(--dark-teal);
 }
 
 .about-story-inner {
@@ -2426,11 +2264,11 @@ h2 {
 }
 
 .about-story-number {
-  color: rgba(7, 69, 64, 0.18);
+  color: rgba(7,69,64,.18);
   font-size: clamp(70px, 10vw, 150px);
   font-weight: 800;
-  line-height: 0.8;
-  letter-spacing: -0.07em;
+  line-height: .8;
+  letter-spacing: -.07em;
 }
 
 .about-story-content {
@@ -2459,7 +2297,7 @@ h2 {
 
 .giving-section .about-story-number,
 .innovation-section .about-story-number {
-  color: rgba(255, 255, 255, 0.16);
+  color: rgba(255,255,255,.16);
 }
 
 /* FARMERS FEATURE */
@@ -2498,7 +2336,7 @@ h2 {
 .about-feature-content p:not(.eyebrow) {
   max-width: 570px;
   margin-bottom: 22px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255,255,255,.78);
   font-size: 18px;
   line-height: 1.65;
 }
@@ -2547,7 +2385,7 @@ h2 {
   justify-content: center;
 
   border-radius: 28px;
-  background: var(--soft);
+  background: var(--yellow);
 }
 
 .brand-story-mark img {
@@ -2608,8 +2446,8 @@ h2 {
   font-weight: 700;
 
   transition:
-    padding-left 0.25s ease,
-    color 0.25s ease;
+    padding-left .25s ease,
+    color .25s ease;
 }
 
 .leadership-links a:hover {
@@ -2643,7 +2481,7 @@ h2 {
 }
 
 .dark-subsection {
-  background: var(--dark-teal);
+  background: var(--dark-red);
 }
 
 .dark-subsection h2,
@@ -2654,7 +2492,7 @@ h2 {
 /* SUPPLIER INFORMATION */
 
 .supplier-section {
-  background: var(--soft);
+  background: var(--yellow);
 }
 
 .supplier-inner {
@@ -2683,7 +2521,7 @@ h2 {
   margin-top: 15px;
 }
 
-/* HISTORY PAGE CONTENT */
+/* HISTORY */
 
 .history-section {
   background: var(--white);
@@ -2734,7 +2572,7 @@ h2 {
 
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: .14em;
 }
 
 .events-placeholder h3 {
