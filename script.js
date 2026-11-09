@@ -262,12 +262,25 @@ if (menuButton) {
 }
 
 
-/* =========================================================
+
+        /* =========================================================
    HERO CAROUSEL
    ========================================================= */
 
 const heroImage =
   document.getElementById("hero-image");
+
+const heroContent =
+  document.querySelector(".hero-content");
+
+const heroTitle =
+  document.getElementById("hero-title");
+
+const heroDescription =
+  document.getElementById("hero-description");
+
+const heroLink =
+  document.getElementById("hero-link");
 
 const heroDots =
   document.querySelectorAll(".hero-dot");
@@ -278,13 +291,71 @@ const previousButton =
 const nextButton =
   document.querySelector(".hero-next");
 
+const hero =
+  document.querySelector(".hero");
+
+
+/* =========================================================
+   HERO SLIDE CONTENT
+   ========================================================= */
 
 const heroSlides = [
 
-  "hero-food.jpg",
-  "hero-farm.jpg",
-  "hero-idegro.jpg",
-  "hero-animal-health.jpg"
+  {
+    image: "hero-all.jpg",
+    background: "#074540",
+    textColor: "#ffffff",
+
+    title: "Better farming,<br>food for all.",
+
+    description:
+      "C.G. Okafor — Different capabilities, a shared focus.",
+
+    link: "index.html",
+    showLink: false
+  },
+
+  {
+    image: "hero-agriscience.jpg",
+    background: "#01998E",
+    textColor: "#ffffff",
+
+    title: "Okafor<br>Agriscience",
+
+    description:
+      "Empowering farmers with solutions for crop, poultry and pig farming.",
+
+    link: "okafor-agriscience.html",
+    showLink: true
+  },
+
+  {
+    image: "hero-farm-technology.jpg",
+    background: "#99010C",
+    textColor: "#ffffff",
+
+    title: "Okafor Farm<br>Technology",
+
+    description:
+      "Practical farm technology for modern agricultural operations.",
+
+    link: "okafor-farm-technology/",
+    showLink: true
+  },
+
+  {
+    image: "hero-grains-oilseeds.jpg",
+    background: "#F1C400",
+    textColor: "#074540",
+
+    title: "Grains &<br>Oilseeds",
+
+    description:
+      "Connecting agricultural production with grain and oilseed sourcing and value addition.",
+
+    link: "okafor-grains&oilseeds.html",
+    showLink: true
+  }
 
 ];
 
@@ -293,20 +364,51 @@ let currentSlide = 0;
 
 
 /* =========================================================
-   SHOW HERO SLIDE
+   DISPLAY HERO SLIDE
    ========================================================= */
 
 function showSlide(index) {
 
-  if (!heroImage) return;
+  if (
+    !heroImage ||
+    !heroContent ||
+    !heroTitle ||
+    !heroDescription
+  ) {
+    return;
+  }
 
   currentSlide =
-    (
-      index + heroSlides.length
-    ) % heroSlides.length;
+    (index + heroSlides.length) % heroSlides.length;
+
+  const slide = heroSlides[currentSlide];
 
   heroImage.style.backgroundImage =
-    `url("${heroSlides[currentSlide]}")`;
+    `url("${slide.image}")`;
+
+  heroContent.style.setProperty(
+    "--hero-panel",
+    slide.background
+  );
+
+  heroContent.style.setProperty(
+    "--hero-text",
+    slide.textColor
+  );
+
+  heroTitle.innerHTML = slide.title;
+
+  heroDescription.textContent =
+    slide.description;
+
+  if (heroLink) {
+
+    heroLink.href = slide.link;
+
+    heroLink.style.display =
+      slide.showLink ? "inline-flex" : "none";
+
+  }
 
   heroDots.forEach((dot, i) => {
 
@@ -321,63 +423,52 @@ function showSlide(index) {
 
 
 /* =========================================================
-   NEXT HERO SLIDE
+   NEXT SLIDE
    ========================================================= */
 
 if (nextButton) {
 
-  nextButton.addEventListener(
-    "click",
-    () => {
+  nextButton.addEventListener("click", () => {
 
-      showSlide(currentSlide + 1);
+    showSlide(currentSlide + 1);
 
-    }
-  );
+  });
 
 }
 
 
 /* =========================================================
-   PREVIOUS HERO SLIDE
+   PREVIOUS SLIDE
    ========================================================= */
 
 if (previousButton) {
 
-  previousButton.addEventListener(
-    "click",
-    () => {
+  previousButton.addEventListener("click", () => {
 
-      showSlide(currentSlide - 1);
+    showSlide(currentSlide - 1);
 
-    }
-  );
+  });
 
 }
 
 
 /* =========================================================
-   HERO DOTS
+   DOT NAVIGATION
    ========================================================= */
 
 heroDots.forEach(dot => {
 
-  dot.addEventListener(
-    "click",
-    () => {
+  dot.addEventListener("click", () => {
 
-      showSlide(
-        Number(dot.dataset.slide)
-      );
+    showSlide(Number(dot.dataset.slide));
 
-    }
-  );
+  });
 
 });
 
 
 /* =========================================================
-   AUTOMATIC HERO SLIDE
+   AUTOMATIC SLIDESHOW
    ========================================================= */
 
 let heroTimer = null;
@@ -385,7 +476,7 @@ let heroTimer = null;
 
 function startHeroTimer() {
 
-  if (!heroImage) return;
+  if (!hero) return;
 
   clearInterval(heroTimer);
 
@@ -405,31 +496,15 @@ function stopHeroTimer() {
 }
 
 
-const hero =
-  document.querySelector(".hero");
-
-
 if (hero) {
 
-  hero.addEventListener(
-    "mouseenter",
-    stopHeroTimer
-  );
+  hero.addEventListener("mouseenter", stopHeroTimer);
 
-  hero.addEventListener(
-    "mouseleave",
-    startHeroTimer
-  );
+  hero.addEventListener("mouseleave", startHeroTimer);
 
-  hero.addEventListener(
-    "focusin",
-    stopHeroTimer
-  );
+  hero.addEventListener("focusin", stopHeroTimer);
 
-  hero.addEventListener(
-    "focusout",
-    startHeroTimer
-  );
+  hero.addEventListener("focusout", startHeroTimer);
 
 }
 
@@ -437,7 +512,6 @@ if (hero) {
 showSlide(0);
 
 startHeroTimer();
-
 
 /* =========================================================
    HORIZONTAL BUSINESS AND FOOD CARD ROWS
