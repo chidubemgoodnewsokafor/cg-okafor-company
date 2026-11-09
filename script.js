@@ -18,27 +18,17 @@ const navClose =
   document.querySelector(".nav-close");
 
 
-/* =========================================================
-   OPEN NAVIGATION
-   ========================================================= */
-
 if (menuButton && mainNav) {
 
   menuButton.addEventListener("click", () => {
 
     mainNav.classList.add("open");
 
-    mainNav.setAttribute(
-      "aria-hidden",
-      "false"
-    );
+    mainNav.setAttribute("aria-hidden", "false");
 
     document.body.classList.add("nav-open");
 
-    menuButton.setAttribute(
-      "aria-expanded",
-      "true"
-    );
+    menuButton.setAttribute("aria-expanded", "true");
 
   });
 
@@ -55,19 +45,13 @@ function closeNavigation() {
 
   mainNav.classList.remove("open");
 
-  mainNav.setAttribute(
-    "aria-hidden",
-    "true"
-  );
+  mainNav.setAttribute("aria-hidden", "true");
 
   document.body.classList.remove("nav-open");
 
   if (menuButton) {
 
-    menuButton.setAttribute(
-      "aria-expanded",
-      "false"
-    );
+    menuButton.setAttribute("aria-expanded", "false");
 
   }
 
@@ -75,10 +59,6 @@ function closeNavigation() {
 
 }
 
-
-/* =========================================================
-   CLOSE BUTTON
-   ========================================================= */
 
 if (navClose) {
 
@@ -123,28 +103,24 @@ function showNavPanel(panelId) {
 
 
 /* =========================================================
-   OPEN DEEPER NAVIGATION LEVEL
+   OPEN NAVIGATION LEVEL
    ========================================================= */
 
 document
   .querySelectorAll(".nav-has-children")
   .forEach(button => {
 
-    button.addEventListener(
-      "click",
-      () => {
+    button.addEventListener("click", () => {
 
-        const target =
-          button.dataset.target;
+      const target = button.dataset.target;
 
-        if (target) {
+      if (target) {
 
-          showNavPanel(target);
-
-        }
+        showNavPanel(target);
 
       }
-    );
+
+    });
 
   });
 
@@ -157,27 +133,23 @@ document
   .querySelectorAll(".nav-back")
   .forEach(button => {
 
-    button.addEventListener(
-      "click",
-      () => {
+    button.addEventListener("click", () => {
 
-        const target =
-          button.dataset.back;
+      const target = button.dataset.back;
 
-        if (target) {
+      if (target) {
 
-          showNavPanel(target);
-
-        }
+        showNavPanel(target);
 
       }
-    );
+
+    });
 
   });
 
 
 /* =========================================================
-   CLOSE NAVIGATION AFTER DIRECT LINK
+   CLOSE NAVIGATION AFTER LINK
    ========================================================= */
 
 document
@@ -193,29 +165,26 @@ document
 
 
 /* =========================================================
-   ESC KEY
+   ESCAPE KEY
    ========================================================= */
 
-document.addEventListener(
-  "keydown",
-  event => {
+document.addEventListener("keydown", event => {
 
-    if (
-      event.key === "Escape" &&
-      mainNav &&
-      mainNav.classList.contains("open")
-    ) {
+  if (
+    event.key === "Escape" &&
+    mainNav &&
+    mainNav.classList.contains("open")
+  ) {
 
-      closeNavigation();
-
-    }
+    closeNavigation();
 
   }
-);
+
+});
 
 
 /* =========================================================
-   FLOATING MENU SCROLL BEHAVIOR
+   FLOATING MENU SCROLL BEHAVIOUR
    ========================================================= */
 
 if (menuButton) {
@@ -254,9 +223,7 @@ if (menuButton) {
   window.addEventListener(
     "scroll",
     updateMenuState,
-    {
-      passive: true
-    }
+    { passive: true }
   );
 
 }
@@ -266,8 +233,11 @@ if (menuButton) {
    HERO CAROUSEL
    ========================================================= */
 
-const heroImage =
-  document.getElementById("hero-image");
+const hero =
+  document.querySelector(".hero");
+
+const heroSlides =
+  document.querySelectorAll(".hero-slide");
 
 const heroDots =
   document.querySelectorAll(".hero-dot");
@@ -279,34 +249,39 @@ const nextButton =
   document.querySelector(".hero-next");
 
 
-const heroSlides = [
-
-  "hero-food.jpg",
-  "hero-farm.jpg",
-  "hero-idegro.jpg",
-  "hero-animal-health.jpg"
-
-];
-
-
 let currentSlide = 0;
+
+let heroTimer = null;
+
+const HERO_INTERVAL = 5000;
 
 
 /* =========================================================
-   SHOW HERO SLIDE
+   SHOW SLIDE
    ========================================================= */
 
 function showSlide(index) {
 
-  if (!heroImage) return;
+  if (!heroSlides.length) return;
 
   currentSlide =
-    (
-      index + heroSlides.length
-    ) % heroSlides.length;
+    (index + heroSlides.length) % heroSlides.length;
 
-  heroImage.style.backgroundImage =
-    `url("${heroSlides[currentSlide]}")`;
+
+  heroSlides.forEach((slide, i) => {
+
+    slide.classList.toggle(
+      "active",
+      i === currentSlide
+    );
+
+    slide.setAttribute(
+      "aria-hidden",
+      i === currentSlide ? "false" : "true"
+    );
+
+  });
+
 
   heroDots.forEach((dot, i) => {
 
@@ -315,43 +290,46 @@ function showSlide(index) {
       i === currentSlide
     );
 
+    dot.setAttribute(
+      "aria-current",
+      i === currentSlide ? "true" : "false"
+    );
+
   });
 
 }
 
 
 /* =========================================================
-   NEXT HERO SLIDE
+   NEXT SLIDE
    ========================================================= */
 
 if (nextButton) {
 
-  nextButton.addEventListener(
-    "click",
-    () => {
+  nextButton.addEventListener("click", () => {
 
-      showSlide(currentSlide + 1);
+    showSlide(currentSlide + 1);
 
-    }
-  );
+    restartHeroTimer();
+
+  });
 
 }
 
 
 /* =========================================================
-   PREVIOUS HERO SLIDE
+   PREVIOUS SLIDE
    ========================================================= */
 
 if (previousButton) {
 
-  previousButton.addEventListener(
-    "click",
-    () => {
+  previousButton.addEventListener("click", () => {
 
-      showSlide(currentSlide - 1);
+    showSlide(currentSlide - 1);
 
-    }
-  );
+    restartHeroTimer();
+
+  });
 
 }
 
@@ -362,51 +340,56 @@ if (previousButton) {
 
 heroDots.forEach(dot => {
 
-  dot.addEventListener(
-    "click",
-    () => {
+  dot.addEventListener("click", () => {
 
-      showSlide(
-        Number(dot.dataset.slide)
-      );
+    showSlide(Number(dot.dataset.slide));
 
-    }
-  );
+    restartHeroTimer();
+
+  });
 
 });
 
 
 /* =========================================================
-   AUTOMATIC HERO SLIDE
+   HERO AUTOPLAY
    ========================================================= */
-
-let heroTimer = null;
-
 
 function startHeroTimer() {
 
-  if (!heroImage) return;
+  if (!hero) return;
 
-  clearInterval(heroTimer);
+  stopHeroTimer();
+
+  if (document.hidden) return;
 
   heroTimer = setInterval(() => {
 
     showSlide(currentSlide + 1);
 
-  }, 1500);
+  }, HERO_INTERVAL);
 
 }
 
 
 function stopHeroTimer() {
 
-  clearInterval(heroTimer);
+  if (heroTimer) {
+
+    clearInterval(heroTimer);
+
+    heroTimer = null;
+
+  }
 
 }
 
 
-const hero =
-  document.querySelector(".hero");
+function restartHeroTimer() {
+
+  startHeroTimer();
+
+}
 
 
 if (hero) {
@@ -431,6 +414,23 @@ if (hero) {
     startHeroTimer
   );
 
+  document.addEventListener(
+    "visibilitychange",
+    () => {
+
+      if (document.hidden) {
+
+        stopHeroTimer();
+
+      } else {
+
+        startHeroTimer();
+
+      }
+
+    }
+  );
+
 }
 
 
@@ -440,16 +440,7 @@ startHeroTimer();
 
 
 /* =========================================================
-   HORIZONTAL BUSINESS AND FOOD CARD ROWS
-
-   These are ordinary horizontally scrollable rows.
-   They do not autoplay or switch slides automatically.
-
-   Supported interactions:
-   - Arrow buttons
-   - Touch swiping
-   - Trackpad horizontal scrolling
-   - Mouse click-and-drag
+   HORIZONTAL CARD ROWS
    ========================================================= */
 
 function setupHorizontalCardRow(
@@ -463,20 +454,11 @@ function setupHorizontalCardRow(
   if (!row) return;
 
 
-  /* -----------------------------------------------
-     CREATE LEFT AND RIGHT ARROW BUTTONS
-     ----------------------------------------------- */
-
   const controls =
     document.createElement("div");
 
   controls.className =
     "card-carousel-controls";
-
-  controls.setAttribute(
-    "aria-label",
-    `${rowLabel} scrolling controls`
-  );
 
 
   const leftButton =
@@ -512,22 +494,15 @@ function setupHorizontalCardRow(
 
 
   controls.appendChild(leftButton);
+
   controls.appendChild(rightButton);
 
-
-  /* -----------------------------------------------
-     INSERT CONTROLS AFTER THE CARD ROW
-     ----------------------------------------------- */
 
   row.insertAdjacentElement(
     "afterend",
     controls
   );
 
-
-  /* -----------------------------------------------
-     CALCULATE SCROLL DISTANCE
-     ----------------------------------------------- */
 
   function getScrollDistance() {
 
@@ -543,72 +518,53 @@ function setupHorizontalCardRow(
     const cardWidth =
       firstCard.getBoundingClientRect().width;
 
-    const rowStyles =
+    const styles =
       window.getComputedStyle(row);
 
     const gap =
-      parseFloat(rowStyles.columnGap) ||
-      parseFloat(rowStyles.gap) ||
+      parseFloat(styles.columnGap) ||
+      parseFloat(styles.gap) ||
       0;
-
-    /*
-      Move approximately one card at a time,
-      keeping the row horizontally scrollable.
-    */
 
     return cardWidth + gap;
 
   }
 
 
-  /* -----------------------------------------------
-     ARROW BUTTON BEHAVIOR
-     ----------------------------------------------- */
+  leftButton.addEventListener("click", () => {
 
-  leftButton.addEventListener(
-    "click",
-    () => {
+    row.scrollBy({
+      left: -getScrollDistance(),
+      behavior: "smooth"
+    });
 
-      row.scrollBy({
-        left: -getScrollDistance(),
-        behavior: "smooth"
-      });
-
-    }
-  );
+  });
 
 
-  rightButton.addEventListener(
-    "click",
-    () => {
+  rightButton.addEventListener("click", () => {
 
-      row.scrollBy({
-        left: getScrollDistance(),
-        behavior: "smooth"
-      });
+    row.scrollBy({
+      left: getScrollDistance(),
+      behavior: "smooth"
+    });
 
-    }
-  );
+  });
 
-
-  /* -----------------------------------------------
-     UPDATE ARROW AVAILABILITY
-     ----------------------------------------------- */
 
   function updateArrowStates() {
 
-    const maxScrollLeft =
+    const maxScroll =
       row.scrollWidth - row.clientWidth;
 
     const canScroll =
-      maxScrollLeft > 2;
+      maxScroll > 2;
 
     leftButton.disabled =
       !canScroll || row.scrollLeft <= 2;
 
     rightButton.disabled =
       !canScroll ||
-      row.scrollLeft >= maxScrollLeft - 2;
+      row.scrollLeft >= maxScroll - 2;
 
     controls.classList.toggle(
       "is-scrollable",
@@ -621,9 +577,7 @@ function setupHorizontalCardRow(
   row.addEventListener(
     "scroll",
     updateArrowStates,
-    {
-      passive: true
-    }
+    { passive: true }
   );
 
 
@@ -633,21 +587,10 @@ function setupHorizontalCardRow(
   );
 
 
-  /*
-    Wait for layout to settle before checking
-    the initial scroll position.
-  */
-
   requestAnimationFrame(updateArrowStates);
 
 
-  /* -----------------------------------------------
-     MOUSE CLICK-AND-DRAG
-
-     Touchscreens keep their native swipe behavior.
-     Mouse dragging scrolls the row without turning
-     it into an autoplay carousel.
-     ----------------------------------------------- */
+  /* MOUSE DRAG */
 
   let isDragging = false;
 
@@ -658,64 +601,45 @@ function setupHorizontalCardRow(
   let dragDistance = 0;
 
 
-  row.addEventListener(
-    "mousedown",
-    event => {
+  row.addEventListener("mousedown", event => {
 
-      /*
-        Only respond to the main mouse button.
-      */
+    if (event.button !== 0) return;
 
-      if (event.button !== 0) return;
+    if (
+      event.target.closest(
+        "button, input, select, textarea"
+      )
+    ) return;
 
-      /*
-        Don't start dragging from interactive
-        controls such as buttons.
-      */
+    isDragging = true;
 
-      if (
-        event.target.closest(
-          "button, input, select, textarea"
-        )
-      ) {
+    dragDistance = 0;
 
-        return;
+    dragStartX = event.pageX;
 
-      }
+    initialScrollLeft = row.scrollLeft;
 
-      isDragging = true;
+    row.classList.add("is-dragging");
 
-      dragDistance = 0;
-
-      dragStartX = event.pageX;
-
-      initialScrollLeft = row.scrollLeft;
-
-      row.classList.add("is-dragging");
-
-    }
-  );
+  });
 
 
-  window.addEventListener(
-    "mousemove",
-    event => {
+  window.addEventListener("mousemove", event => {
 
-      if (!isDragging) return;
+    if (!isDragging) return;
 
-      const distance =
-        event.pageX - dragStartX;
+    const distance =
+      event.pageX - dragStartX;
 
-      dragDistance = Math.max(
-        dragDistance,
-        Math.abs(distance)
-      );
+    dragDistance = Math.max(
+      dragDistance,
+      Math.abs(distance)
+    );
 
-      row.scrollLeft =
-        initialScrollLeft - distance;
+    row.scrollLeft =
+      initialScrollLeft - distance;
 
-    }
-  );
+  });
 
 
   function finishDragging() {
@@ -725,12 +649,6 @@ function setupHorizontalCardRow(
     isDragging = false;
 
     row.classList.remove("is-dragging");
-
-
-    /*
-      If the user dragged the row, suppress the
-      click that would otherwise activate a card.
-    */
 
     if (dragDistance > 6) {
 
@@ -752,17 +670,11 @@ function setupHorizontalCardRow(
     finishDragging
   );
 
-
   window.addEventListener(
     "blur",
     finishDragging
   );
 
-
-  /*
-    Prevent accidental navigation when a mouse
-    drag ends on a linked card.
-  */
 
   row.addEventListener(
     "click",
@@ -783,12 +695,6 @@ function setupHorizontalCardRow(
   );
 
 
-  /* -----------------------------------------------
-     PREVENT NATIVE IMAGE DRAGGING
-
-     This helps keep dragging the row feeling smooth.
-     ----------------------------------------------- */
-
   row.addEventListener(
     "dragstart",
     event => {
@@ -802,7 +708,7 @@ function setupHorizontalCardRow(
 
 
 /* =========================================================
-   INITIALIZE HORIZONTAL CARD ROWS
+   INITIALIZE CARD ROWS
    ========================================================= */
 
 setupHorizontalCardRow(
@@ -817,7 +723,7 @@ setupHorizontalCardRow(
 
 
 /* =========================================================
-   COMPANY NUMBER COUNTERS
+   COMPANY COUNTERS
    ========================================================= */
 
 const counterSection =
@@ -890,7 +796,7 @@ function startCounters() {
 
 
 /* =========================================================
-   START COUNTERS WHEN VISIBLE
+   COUNTER OBSERVER
    ========================================================= */
 
 if (
