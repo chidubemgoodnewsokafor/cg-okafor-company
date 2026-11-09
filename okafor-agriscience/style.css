@@ -37,14 +37,13 @@ scroll-padding-top: calc(var(--header-height) + 20px);
 }
 
 body {
-margin: 0;
-color: var(--dark-teal);
-background: var(--white);
-font-family: Comfortaa, sans-serif;
-line-height: 1.6;
-overflow-x: hidden;
+  margin: 0;
+  color: var(--dark-teal);
+  background: var(--white);
+  font-family: 'Comfortaa', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
-
 body.nav-open {
 overflow: hidden;
 }
