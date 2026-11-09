@@ -1,893 +1,929 @@
+/* =========================================================
+   C.G. OKAFOR CO.
+   Main Website Script
+   ========================================================= */
+
 
 /* =========================================================
-C.G. OKAFOR CO.
-Main Website Script
-========================================================= */
-
-/* =========================================================
-FULL-SCREEN NAVIGATION
-========================================================= */
+   FULL-SCREEN NAVIGATION
+   ========================================================= */
 
 const menuButton =
-document.querySelector(".menu-button");
+  document.querySelector(".menu-button");
 
 const mainNav =
-document.querySelector(".main-nav");
+  document.querySelector(".main-nav");
 
 const navClose =
-document.querySelector(".nav-close");
+  document.querySelector(".nav-close");
+
 
 /* =========================================================
-OPEN NAVIGATION
-========================================================= */
+   OPEN NAVIGATION
+   ========================================================= */
 
 if (menuButton && mainNav) {
 
-menuButton.addEventListener("click", () => {
+  menuButton.addEventListener("click", () => {
 
-mainNav.classList.add("open");  
+    mainNav.classList.add("open");
 
-mainNav.setAttribute(  
-  "aria-hidden",  
-  "false"  
-);  
+    mainNav.setAttribute(
+      "aria-hidden",
+      "false"
+    );
 
-document.body.classList.add("nav-open");  
+    document.body.classList.add("nav-open");
 
-menuButton.setAttribute(  
-  "aria-expanded",  
-  "true"  
-);
+    menuButton.setAttribute(
+      "aria-expanded",
+      "true"
+    );
 
-});
+  });
 
 }
 
+
 /* =========================================================
-CLOSE NAVIGATION
-========================================================= */
+   CLOSE NAVIGATION
+   ========================================================= */
 
 function closeNavigation() {
 
-if (!mainNav) return;
+  if (!mainNav) return;
 
-mainNav.classList.remove("open");
+  mainNav.classList.remove("open");
 
-mainNav.setAttribute(
-"aria-hidden",
-"true"
-);
+  mainNav.setAttribute(
+    "aria-hidden",
+    "true"
+  );
 
-document.body.classList.remove("nav-open");
+  document.body.classList.remove("nav-open");
 
-if (menuButton) {
+  if (menuButton) {
 
-menuButton.setAttribute(  
-  "aria-expanded",  
-  "false"  
-);
+    menuButton.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+  }
+
+  showNavPanel("main");
 
 }
 
-showNavPanel("main");
-
-}
 
 /* =========================================================
-CLOSE BUTTON
-========================================================= */
+   CLOSE BUTTON
+   ========================================================= */
 
 if (navClose) {
 
-navClose.addEventListener(
-"click",
-closeNavigation
-);
+  navClose.addEventListener(
+    "click",
+    closeNavigation
+  );
 
 }
 
+
 /* =========================================================
-NAVIGATION PANELS
-========================================================= */
+   NAVIGATION PANELS
+   ========================================================= */
 
 const navPanels =
-document.querySelectorAll(".nav-panel");
+  document.querySelectorAll(".nav-panel");
+
 
 function showNavPanel(panelId) {
 
-navPanels.forEach(panel => {
+  navPanels.forEach(panel => {
 
-panel.classList.remove("active");
+    panel.classList.remove("active");
 
-});
+  });
 
-const targetPanel =
-panelId === "main"
-? document.querySelector(".nav-panel-main")
-: document.getElementById(panelId);
+  const targetPanel =
+    panelId === "main"
+      ? document.querySelector(".nav-panel-main")
+      : document.getElementById(panelId);
 
-if (targetPanel) {
+  if (targetPanel) {
 
-targetPanel.classList.add("active");  
+    targetPanel.classList.add("active");
 
-targetPanel.scrollTop = 0;
+    targetPanel.scrollTop = 0;
+
+  }
 
 }
 
-}
 
 /* =========================================================
-OPEN DEEPER NAVIGATION LEVEL
-========================================================= */
+   OPEN DEEPER NAVIGATION LEVEL
+   ========================================================= */
 
 document
-.querySelectorAll(".nav-has-children")
-.forEach(button => {
+  .querySelectorAll(".nav-has-children")
+  .forEach(button => {
 
-button.addEventListener(  
-  "click",  
-  () => {  
+    button.addEventListener(
+      "click",
+      () => {
 
-    const target =  
-      button.dataset.target;  
+        const target =
+          button.dataset.target;
 
-    if (target) {  
+        if (target) {
 
-      showNavPanel(target);  
+          showNavPanel(target);
 
-    }  
+        }
 
-  }  
-);
+      }
+    );
 
-});
+  });
+
 
 /* =========================================================
-BACK NAVIGATION
-========================================================= */
+   BACK NAVIGATION
+   ========================================================= */
 
 document
-.querySelectorAll(".nav-back")
-.forEach(button => {
+  .querySelectorAll(".nav-back")
+  .forEach(button => {
 
-button.addEventListener(  
-  "click",  
-  () => {  
+    button.addEventListener(
+      "click",
+      () => {
 
-    const target =  
-      button.dataset.back;  
+        const target =
+          button.dataset.back;
 
-    if (target) {  
+        if (target) {
 
-      showNavPanel(target);  
+          showNavPanel(target);
 
-    }  
+        }
 
-  }  
-);
+      }
+    );
 
-});
+  });
+
 
 /* =========================================================
-CLOSE NAVIGATION AFTER DIRECT LINK
-========================================================= */
+   CLOSE NAVIGATION AFTER DIRECT LINK
+   ========================================================= */
 
 document
-.querySelectorAll(".nav-direct")
-.forEach(link => {
+  .querySelectorAll(".nav-direct")
+  .forEach(link => {
 
-link.addEventListener(  
-  "click",  
-  closeNavigation  
-);
+    link.addEventListener(
+      "click",
+      closeNavigation
+    );
 
-});
+  });
+
 
 /* =========================================================
-ESC KEY
-========================================================= */
+   ESC KEY
+   ========================================================= */
 
 document.addEventListener(
-"keydown",
-event => {
+  "keydown",
+  event => {
 
-if (  
-  event.key === "Escape" &&  
-  mainNav &&  
-  mainNav.classList.contains("open")  
-) {  
+    if (
+      event.key === "Escape" &&
+      mainNav &&
+      mainNav.classList.contains("open")
+    ) {
 
-  closeNavigation();  
+      closeNavigation();
 
-}
+    }
 
-}
+  }
 );
 
+
 /* =========================================================
-FLOATING MENU SCROLL BEHAVIOR
-========================================================= */
+   FLOATING MENU SCROLL BEHAVIOR
+   ========================================================= */
 
 if (menuButton) {
 
-let lastScrollY = window.scrollY;
+  let lastScrollY = window.scrollY;
 
-function updateMenuState() {
+  function updateMenuState() {
 
-if (  
-  mainNav &&  
-  mainNav.classList.contains("open")  
-) {  
+    if (
+      mainNav &&
+      mainNav.classList.contains("open")
+    ) {
 
-  lastScrollY = window.scrollY;  
+      lastScrollY = window.scrollY;
 
-  return;  
+      return;
 
-}  
+    }
 
-const currentScrollY = window.scrollY;  
+    const currentScrollY = window.scrollY;
 
-if (currentScrollY > lastScrollY) {  
+    if (currentScrollY > lastScrollY) {
 
-  menuButton.classList.add("scrolled");  
+      menuButton.classList.add("scrolled");
 
-} else if (currentScrollY < lastScrollY) {  
+    } else if (currentScrollY < lastScrollY) {
 
-  menuButton.classList.remove("scrolled");  
+      menuButton.classList.remove("scrolled");
 
-}  
+    }
 
-lastScrollY = currentScrollY;
+    lastScrollY = currentScrollY;
+
+  }
+
+  window.addEventListener(
+    "scroll",
+    updateMenuState,
+    {
+      passive: true
+    }
+  );
 
 }
 
-window.addEventListener(
-"scroll",
-updateMenuState,
-{
-passive: true
-}
-);
-
-}
 
 /* =========================================================
-HERO CAROUSEL
-========================================================= */
+   HERO CAROUSEL
+   ========================================================= */
 
 const heroImage =
-document.getElementById("hero-image");
+  document.getElementById("hero-image");
 
 const heroDots =
-document.querySelectorAll(".hero-dot");
+  document.querySelectorAll(".hero-dot");
 
 const previousButton =
-document.querySelector(".hero-prev");
+  document.querySelector(".hero-prev");
 
 const nextButton =
-document.querySelector(".hero-next");
+  document.querySelector(".hero-next");
+
 
 const heroSlides = [
 
-"hero-food.jpg",
-"hero-farm.jpg",
-"hero-idegro.jpg",
-"hero-animal-health.jpg"
+  "hero-food.jpg",
+  "hero-farm.jpg",
+  "hero-idegro.jpg",
+  "hero-animal-health.jpg"
 
 ];
 
+
 let currentSlide = 0;
 
+
 /* =========================================================
-SHOW HERO SLIDE
-========================================================= */
+   SHOW HERO SLIDE
+   ========================================================= */
 
 function showSlide(index) {
 
-if (!heroImage) return;
+  if (!heroImage) return;
 
-currentSlide =
-(
-index + heroSlides.length
-) % heroSlides.length;
+  currentSlide =
+    (
+      index + heroSlides.length
+    ) % heroSlides.length;
 
-heroImage.style.backgroundImage =
-url("${heroSlides[currentSlide]}");
+  heroImage.style.backgroundImage =
+    `url("${heroSlides[currentSlide]}")`;
 
-heroDots.forEach((dot, i) => {
+  heroDots.forEach((dot, i) => {
 
-dot.classList.toggle(  
-  "active",  
-  i === currentSlide  
-);
+    dot.classList.toggle(
+      "active",
+      i === currentSlide
+    );
 
-});
+  });
 
 }
 
+
 /* =========================================================
-NEXT HERO SLIDE
-========================================================= */
+   NEXT HERO SLIDE
+   ========================================================= */
 
 if (nextButton) {
 
-nextButton.addEventListener(
-"click",
-() => {
+  nextButton.addEventListener(
+    "click",
+    () => {
 
-showSlide(currentSlide + 1);  
+      showSlide(currentSlide + 1);
+
+    }
+  );
 
 }
 
-);
-
-}
 
 /* =========================================================
-PREVIOUS HERO SLIDE
-========================================================= */
+   PREVIOUS HERO SLIDE
+   ========================================================= */
 
 if (previousButton) {
 
-previousButton.addEventListener(
-"click",
-() => {
+  previousButton.addEventListener(
+    "click",
+    () => {
 
-showSlide(currentSlide - 1);  
+      showSlide(currentSlide - 1);
+
+    }
+  );
 
 }
 
-);
-
-}
 
 /* =========================================================
-HERO DOTS
-========================================================= */
+   HERO DOTS
+   ========================================================= */
 
 heroDots.forEach(dot => {
 
-dot.addEventListener(
-"click",
-() => {
+  dot.addEventListener(
+    "click",
+    () => {
 
-showSlide(  
-    Number(dot.dataset.slide)  
-  );  
+      showSlide(
+        Number(dot.dataset.slide)
+      );
 
-}
-
-);
+    }
+  );
 
 });
 
+
 /* =========================================================
-AUTOMATIC HERO SLIDE
-========================================================= */
+   AUTOMATIC HERO SLIDE
+   ========================================================= */
 
 let heroTimer = null;
 
+
 function startHeroTimer() {
 
-if (!heroImage) return;
+  if (!heroImage) return;
 
-clearInterval(heroTimer);
+  clearInterval(heroTimer);
 
-heroTimer = setInterval(() => {
+  heroTimer = setInterval(() => {
 
-showSlide(currentSlide + 1);
+    showSlide(currentSlide + 1);
 
-}, 1500);
+  }, 6500);
 
 }
+
 
 function stopHeroTimer() {
 
-clearInterval(heroTimer);
+  clearInterval(heroTimer);
 
 }
 
+
 const hero =
-document.querySelector(".hero");
+  document.querySelector(".hero");
+
 
 if (hero) {
 
-hero.addEventListener(
-"mouseenter",
-stopHeroTimer
-);
+  hero.addEventListener(
+    "mouseenter",
+    stopHeroTimer
+  );
 
-hero.addEventListener(
-"mouseleave",
-startHeroTimer
-);
+  hero.addEventListener(
+    "mouseleave",
+    startHeroTimer
+  );
 
-hero.addEventListener(
-"focusin",
-stopHeroTimer
-);
+  hero.addEventListener(
+    "focusin",
+    stopHeroTimer
+  );
 
-hero.addEventListener(
-"focusout",
-startHeroTimer
-);
+  hero.addEventListener(
+    "focusout",
+    startHeroTimer
+  );
 
 }
+
 
 showSlide(0);
 
 startHeroTimer();
 
+
 /* =========================================================
-HORIZONTAL BUSINESS AND FOOD CARD ROWS
+   HORIZONTAL BUSINESS AND FOOD CARD ROWS
 
-These are ordinary horizontally scrollable rows.
-They do not autoplay or switch slides automatically.
+   These are ordinary horizontally scrollable rows.
+   They do not autoplay or switch slides automatically.
 
-Supported interactions:
-
-Arrow buttons
-
-Touch swiping
-
-Trackpad horizontal scrolling
-
-Mouse click-and-drag
-========================================================= */
-
+   Supported interactions:
+   - Arrow buttons
+   - Touch swiping
+   - Trackpad horizontal scrolling
+   - Mouse click-and-drag
+   ========================================================= */
 
 function setupHorizontalCardRow(
-rowSelector,
-rowLabel
+  rowSelector,
+  rowLabel
 ) {
 
-const row =
-document.querySelector(rowSelector);
+  const row =
+    document.querySelector(rowSelector);
 
-if (!row) return;
+  if (!row) return;
 
-/* -----------------------------------------------
-CREATE LEFT AND RIGHT ARROW BUTTONS
------------------------------------------------ */
 
-const controls =
-document.createElement("div");
+  /* -----------------------------------------------
+     CREATE LEFT AND RIGHT ARROW BUTTONS
+     ----------------------------------------------- */
 
-controls.className =
-"card-carousel-controls";
+  const controls =
+    document.createElement("div");
 
-controls.setAttribute(
-"aria-label",
-${rowLabel} scrolling controls
-);
+  controls.className =
+    "card-carousel-controls";
 
-const leftButton =
-document.createElement("button");
+  controls.setAttribute(
+    "aria-label",
+    `${rowLabel} scrolling controls`
+  );
 
-leftButton.type = "button";
 
-leftButton.className =
-"card-carousel-button";
+  const leftButton =
+    document.createElement("button");
 
-leftButton.setAttribute(
-"aria-label",
-Scroll ${rowLabel} left
-);
+  leftButton.type = "button";
 
-leftButton.innerHTML = "←";
+  leftButton.className =
+    "card-carousel-button";
 
-const rightButton =
-document.createElement("button");
+  leftButton.setAttribute(
+    "aria-label",
+    `Scroll ${rowLabel} left`
+  );
 
-rightButton.type = "button";
+  leftButton.innerHTML = "&#8592;";
 
-rightButton.className =
-"card-carousel-button";
 
-rightButton.setAttribute(
-"aria-label",
-Scroll ${rowLabel} right
-);
+  const rightButton =
+    document.createElement("button");
 
-rightButton.innerHTML = "→";
+  rightButton.type = "button";
 
-controls.appendChild(leftButton);
-controls.appendChild(rightButton);
+  rightButton.className =
+    "card-carousel-button";
 
-/* -----------------------------------------------
-INSERT CONTROLS AFTER THE CARD ROW
------------------------------------------------ */
+  rightButton.setAttribute(
+    "aria-label",
+    `Scroll ${rowLabel} right`
+  );
 
-row.insertAdjacentElement(
-"afterend",
-controls
-);
+  rightButton.innerHTML = "&#8594;";
 
-/* -----------------------------------------------
-CALCULATE SCROLL DISTANCE
------------------------------------------------ */
 
-function getScrollDistance() {
+  controls.appendChild(leftButton);
+  controls.appendChild(rightButton);
 
-const firstCard =  
-  row.firstElementChild;  
 
-if (!firstCard) {  
+  /* -----------------------------------------------
+     INSERT CONTROLS AFTER THE CARD ROW
+     ----------------------------------------------- */
 
-  return row.clientWidth * 0.8;  
+  row.insertAdjacentElement(
+    "afterend",
+    controls
+  );
 
-}  
 
-const cardWidth =  
-  firstCard.getBoundingClientRect().width;  
+  /* -----------------------------------------------
+     CALCULATE SCROLL DISTANCE
+     ----------------------------------------------- */
 
-const rowStyles =  
-  window.getComputedStyle(row);  
+  function getScrollDistance() {
 
-const gap =  
-  parseFloat(rowStyles.columnGap) ||  
-  parseFloat(rowStyles.gap) ||  
-  0;  
+    const firstCard =
+      row.firstElementChild;
 
-/*  
-  Move approximately one card at a time,  
-  keeping the row horizontally scrollable.  
-*/  
+    if (!firstCard) {
 
-return cardWidth + gap;
+      return row.clientWidth * 0.8;
+
+    }
+
+    const cardWidth =
+      firstCard.getBoundingClientRect().width;
+
+    const rowStyles =
+      window.getComputedStyle(row);
+
+    const gap =
+      parseFloat(rowStyles.columnGap) ||
+      parseFloat(rowStyles.gap) ||
+      0;
+
+    /*
+      Move approximately one card at a time,
+      keeping the row horizontally scrollable.
+    */
+
+    return cardWidth + gap;
+
+  }
+
+
+  /* -----------------------------------------------
+     ARROW BUTTON BEHAVIOR
+     ----------------------------------------------- */
+
+  leftButton.addEventListener(
+    "click",
+    () => {
+
+      row.scrollBy({
+        left: -getScrollDistance(),
+        behavior: "smooth"
+      });
+
+    }
+  );
+
+
+  rightButton.addEventListener(
+    "click",
+    () => {
+
+      row.scrollBy({
+        left: getScrollDistance(),
+        behavior: "smooth"
+      });
+
+    }
+  );
+
+
+  /* -----------------------------------------------
+     UPDATE ARROW AVAILABILITY
+     ----------------------------------------------- */
+
+  function updateArrowStates() {
+
+    const maxScrollLeft =
+      row.scrollWidth - row.clientWidth;
+
+    const canScroll =
+      maxScrollLeft > 2;
+
+    leftButton.disabled =
+      !canScroll || row.scrollLeft <= 2;
+
+    rightButton.disabled =
+      !canScroll ||
+      row.scrollLeft >= maxScrollLeft - 2;
+
+    controls.classList.toggle(
+      "is-scrollable",
+      canScroll
+    );
+
+  }
+
+
+  row.addEventListener(
+    "scroll",
+    updateArrowStates,
+    {
+      passive: true
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    updateArrowStates
+  );
+
+
+  /*
+    Wait for layout to settle before checking
+    the initial scroll position.
+  */
+
+  requestAnimationFrame(updateArrowStates);
+
+
+  /* -----------------------------------------------
+     MOUSE CLICK-AND-DRAG
+
+     Touchscreens keep their native swipe behavior.
+     Mouse dragging scrolls the row without turning
+     it into an autoplay carousel.
+     ----------------------------------------------- */
+
+  let isDragging = false;
+
+  let dragStartX = 0;
+
+  let initialScrollLeft = 0;
+
+  let dragDistance = 0;
+
+
+  row.addEventListener(
+    "mousedown",
+    event => {
+
+      /*
+        Only respond to the main mouse button.
+      */
+
+      if (event.button !== 0) return;
+
+      /*
+        Don't start dragging from interactive
+        controls such as buttons.
+      */
+
+      if (
+        event.target.closest(
+          "button, input, select, textarea"
+        )
+      ) {
+
+        return;
+
+      }
+
+      isDragging = true;
+
+      dragDistance = 0;
+
+      dragStartX = event.pageX;
+
+      initialScrollLeft = row.scrollLeft;
+
+      row.classList.add("is-dragging");
+
+    }
+  );
+
+
+  window.addEventListener(
+    "mousemove",
+    event => {
+
+      if (!isDragging) return;
+
+      const distance =
+        event.pageX - dragStartX;
+
+      dragDistance = Math.max(
+        dragDistance,
+        Math.abs(distance)
+      );
+
+      row.scrollLeft =
+        initialScrollLeft - distance;
+
+    }
+  );
+
+
+  function finishDragging() {
+
+    if (!isDragging) return;
+
+    isDragging = false;
+
+    row.classList.remove("is-dragging");
+
+
+    /*
+      If the user dragged the row, suppress the
+      click that would otherwise activate a card.
+    */
+
+    if (dragDistance > 6) {
+
+      row.dataset.dragged = "true";
+
+      setTimeout(() => {
+
+        delete row.dataset.dragged;
+
+      }, 0);
+
+    }
+
+  }
+
+
+  window.addEventListener(
+    "mouseup",
+    finishDragging
+  );
+
+
+  window.addEventListener(
+    "blur",
+    finishDragging
+  );
+
+
+  /*
+    Prevent accidental navigation when a mouse
+    drag ends on a linked card.
+  */
+
+  row.addEventListener(
+    "click",
+    event => {
+
+      if (row.dataset.dragged === "true") {
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+        delete row.dataset.dragged;
+
+      }
+
+    },
+    true
+  );
+
+
+  /* -----------------------------------------------
+     PREVENT NATIVE IMAGE DRAGGING
+
+     This helps keep dragging the row feeling smooth.
+     ----------------------------------------------- */
+
+  row.addEventListener(
+    "dragstart",
+    event => {
+
+      event.preventDefault();
+
+    }
+  );
 
 }
 
-/* -----------------------------------------------
-ARROW BUTTON BEHAVIOR
------------------------------------------------ */
-
-leftButton.addEventListener(
-"click",
-() => {
-
-row.scrollBy({  
-    left: -getScrollDistance(),  
-    behavior: "smooth"  
-  });  
-
-}
-
-);
-
-rightButton.addEventListener(
-"click",
-() => {
-
-row.scrollBy({  
-    left: getScrollDistance(),  
-    behavior: "smooth"  
-  });  
-
-}
-
-);
-
-/* -----------------------------------------------
-UPDATE ARROW AVAILABILITY
------------------------------------------------ */
-
-function updateArrowStates() {
-
-const maxScrollLeft =  
-  row.scrollWidth - row.clientWidth;  
-
-const canScroll =  
-  maxScrollLeft > 2;  
-
-leftButton.disabled =  
-  !canScroll || row.scrollLeft <= 2;  
-
-rightButton.disabled =  
-  !canScroll ||  
-  row.scrollLeft >= maxScrollLeft - 2;  
-
-controls.classList.toggle(  
-  "is-scrollable",  
-  canScroll  
-);
-
-}
-
-row.addEventListener(
-"scroll",
-updateArrowStates,
-{
-passive: true
-}
-);
-
-window.addEventListener(
-"resize",
-updateArrowStates
-);
-
-/*
-Wait for layout to settle before checking
-the initial scroll position.
-*/
-
-requestAnimationFrame(updateArrowStates);
-
-/* -----------------------------------------------
-MOUSE CLICK-AND-DRAG
-
-Touchscreens keep their native swipe behavior.  
- Mouse dragging scrolls the row without turning  
- it into an autoplay carousel.  
- ----------------------------------------------- */
-
-let isDragging = false;
-
-let dragStartX = 0;
-
-let initialScrollLeft = 0;
-
-let dragDistance = 0;
-
-row.addEventListener(
-"mousedown",
-event => {
-
-/*  
-    Only respond to the main mouse button.  
-  */  
-
-  if (event.button !== 0) return;  
-
-  /*  
-    Don't start dragging from interactive  
-    controls such as buttons.  
-  */  
-
-  if (  
-    event.target.closest(  
-      "button, input, select, textarea"  
-    )  
-  ) {  
-
-    return;  
-
-  }  
-
-  isDragging = true;  
-
-  dragDistance = 0;  
-
-  dragStartX = event.pageX;  
-
-  initialScrollLeft = row.scrollLeft;  
-
-  row.classList.add("is-dragging");  
-
-}
-
-);
-
-window.addEventListener(
-"mousemove",
-event => {
-
-if (!isDragging) return;  
-
-  const distance =  
-    event.pageX - dragStartX;  
-
-  dragDistance = Math.max(  
-    dragDistance,  
-    Math.abs(distance)  
-  );  
-
-  row.scrollLeft =  
-    initialScrollLeft - distance;  
-
-}
-
-);
-
-function finishDragging() {
-
-if (!isDragging) return;  
-
-isDragging = false;  
-
-row.classList.remove("is-dragging");  
-
-
-/*  
-  If the user dragged the row, suppress the  
-  click that would otherwise activate a card.  
-*/  
-
-if (dragDistance > 6) {  
-
-  row.dataset.dragged = "true";  
-
-  setTimeout(() => {  
-
-    delete row.dataset.dragged;  
-
-  }, 0);  
-
-}
-
-}
-
-window.addEventListener(
-"mouseup",
-finishDragging
-);
-
-window.addEventListener(
-"blur",
-finishDragging
-);
-
-/*
-Prevent accidental navigation when a mouse
-drag ends on a linked card.
-*/
-
-row.addEventListener(
-"click",
-event => {
-
-if (row.dataset.dragged === "true") {  
-
-    event.preventDefault();  
-
-    event.stopPropagation();  
-
-    delete row.dataset.dragged;  
-
-  }  
-
-},  
-true
-
-);
-
-/* -----------------------------------------------
-PREVENT NATIVE IMAGE DRAGGING
-
-This helps keep dragging the row feeling smooth.  
- ----------------------------------------------- */
-
-row.addEventListener(
-"dragstart",
-event => {
-
-event.preventDefault();  
-
-}
-
-);
-
-}
 
 /* =========================================================
-INITIALIZE HORIZONTAL CARD ROWS
-========================================================= */
+   INITIALIZE HORIZONTAL CARD ROWS
+   ========================================================= */
 
 setupHorizontalCardRow(
-".business-grid",
-"business cards"
+  ".business-grid",
+  "business cards"
 );
 
 setupHorizontalCardRow(
-".food-grid",
-"food cards"
+  ".food-grid",
+  "food cards"
 );
+
 
 /* =========================================================
-COMPANY NUMBER COUNTERS
-========================================================= */
+   COMPANY NUMBER COUNTERS
+   ========================================================= */
 
 const counterSection =
-document.querySelector(".company-numbers");
+  document.querySelector(".company-numbers");
 
 const counters =
-document.querySelectorAll(".counter");
+  document.querySelectorAll(".counter");
+
 
 let countersStarted = false;
 
+
 function startCounters() {
 
-if (countersStarted) return;
+  if (countersStarted) return;
 
-countersStarted = true;
-
-counters.forEach(counter => {
-
-const target =  
-  Number(counter.dataset.target);  
-
-const suffix =  
-  counter.dataset.suffix || "";  
-
-const duration = 1800;  
-
-const startTime = performance.now();  
+  countersStarted = true;
 
 
-function updateCounter(currentTime) {  
+  counters.forEach(counter => {
 
-  const elapsed =  
-    currentTime - startTime;  
+    const target =
+      Number(counter.dataset.target);
 
-  const progress =  
-    Math.min(elapsed / duration, 1);  
+    const suffix =
+      counter.dataset.suffix || "";
 
-  const easedProgress =  
-    1 - Math.pow(1 - progress, 3);  
+    const duration = 1800;
 
-  const currentValue =  
-    Math.floor(target * easedProgress);  
-
-  counter.textContent =  
-    currentValue.toLocaleString() + suffix;  
+    const startTime = performance.now();
 
 
-  if (progress < 1) {  
+    function updateCounter(currentTime) {
 
-    requestAnimationFrame(updateCounter);  
+      const elapsed =
+        currentTime - startTime;
 
-  } else {  
+      const progress =
+        Math.min(elapsed / duration, 1);
 
-    counter.textContent =  
-      target.toLocaleString() + suffix;  
+      const easedProgress =
+        1 - Math.pow(1 - progress, 3);
 
-  }  
+      const currentValue =
+        Math.floor(target * easedProgress);
 
-}  
+      counter.textContent =
+        currentValue.toLocaleString() + suffix;
 
 
-requestAnimationFrame(updateCounter);
+      if (progress < 1) {
 
-});
+        requestAnimationFrame(updateCounter);
+
+      } else {
+
+        counter.textContent =
+          target.toLocaleString() + suffix;
+
+      }
+
+    }
+
+
+    requestAnimationFrame(updateCounter);
+
+  });
 
 }
 
+
 /* =========================================================
-START COUNTERS WHEN VISIBLE
-========================================================= */
+   START COUNTERS WHEN VISIBLE
+   ========================================================= */
 
 if (
-counterSection &&
-"IntersectionObserver" in window
+  counterSection &&
+  "IntersectionObserver" in window
 ) {
 
-const counterObserver =
-new IntersectionObserver(
-entries => {
+  const counterObserver =
+    new IntersectionObserver(
+      entries => {
 
-entries.forEach(entry => {  
+        entries.forEach(entry => {
 
-      if (entry.isIntersecting) {  
+          if (entry.isIntersecting) {
 
-        startCounters();  
+            startCounters();
 
-        counterObserver.disconnect();  
+            counterObserver.disconnect();
 
-      }  
+          }
 
-    });  
+        });
 
-  },  
-  {  
-    threshold: 0.35  
-  }  
-);
+      },
+      {
+        threshold: 0.35
+      }
+    );
 
-counterObserver.observe(counterSection);
+  counterObserver.observe(counterSection);
 
 } else if (counterSection) {
 
-startCounters();
+  startCounters();
 
 }
