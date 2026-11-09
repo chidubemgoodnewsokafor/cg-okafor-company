@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>C.G. Okafor Co. | Food, Agriculture &amp; Technology</title>
+  <title>C.G. Okafor Co. | Food, Agriculture & Technology</title>
 
   <meta
     name="description"
     content="C.G. Okafor Co. is a food and agricultural solutions and technology company."
   >
+
+  <meta name="theme-color" content="#063d39">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,12 +20,14 @@
 <body>
 
   <!-- FLOATING MENU -->
+
   <button
     class="menu-button"
     aria-label="Open menu"
     aria-expanded="false"
     type="button"
   >
+
     <img src="okafor-menu-logo.png" alt="C.G. Okafor Co.">
 
     <span></span>
@@ -35,24 +40,24 @@
       <span>better farming,</span>
       <span>Food for all</span>
     </span>
+
   </button>
 
 
   <!-- MAIN NAVIGATION -->
+
   <nav class="main-nav" aria-hidden="true">
 
     <div class="nav-header">
 
-      <a
-        href="index.html"
-        class="nav-logo-link"
-        aria-label="Go to C.G. Okafor Co. homepage"
-      >
+      <a href="index.html" class="nav-logo-link">
+
         <img
           src="okafor-menu-logo.png"
           alt="C.G. Okafor Co."
           class="nav-logo"
         >
+
       </a>
 
       <button
@@ -67,6 +72,7 @@
 
 
     <!-- MAIN MENU -->
+
     <div class="nav-panel nav-panel-main active">
 
       <button
@@ -74,17 +80,11 @@
         data-target="about-panel"
         type="button"
       >
-        <span>ABOUT US</span>
-        <span class="nav-arrow">›</span>
-      </button>
 
-      <button
-        class="nav-item nav-has-children"
-        data-target="businesses-panel"
-        type="button"
-      >
-        <span>OUR BUSINESSES</span>
+        <span>ABOUT US</span>
+
         <span class="nav-arrow">›</span>
+
       </button>
 
       <div class="nav-divider"></div>
@@ -101,60 +101,26 @@
 
 
     <!-- ABOUT US -->
-<div class="nav-panel" id="about-panel">
 
-  <button
-    class="nav-back"
-    type="button"
-    data-back="main"
-  >
-    <span>←</span>
-    <span>ABOUT US</span>
-  </button>
-
-  <a href="about.html" class="nav-item nav-direct">
-    About Us
-  </a>
-
-  <a href="history.html" class="nav-item nav-direct">
-    Our History
-  </a>
-
-</div>
-
-    <!-- OUR BUSINESSES -->
-    <div class="nav-panel" id="businesses-panel">
+    <div class="nav-panel" id="about-panel">
 
       <button
         class="nav-back"
         type="button"
         data-back="main"
       >
+
         <span>←</span>
-        <span>OUR BUSINESSES</span>
+        <span>ABOUT US</span>
+
       </button>
 
-      <a href="businesses.html" class="nav-item nav-direct">
-        Business Overview
+      <a href="about.html" class="nav-item nav-direct">
+        About Us
       </a>
 
-      <a href="okafor-agriscience.html" class="nav-item nav-direct">
-        Agriscience
-      </a>
-
-      <a href="okafor-farm-technology.html" class="nav-item nav-direct">
-        Farm Technology
-      </a>
-
-      <a href="okafor-grains&amp;oilseeds.html" class="nav-item nav-direct">
-        Grains &amp; Oilseeds
-      </a>
-
-      <a
-        href="https://chidubemgoodnewsokafor.github.io/soileva/"
-        class="nav-item nav-direct"
-      >
-        Soileva
+      <a href="history.html" class="nav-item nav-direct">
+        Our History
       </a>
 
     </div>
@@ -162,34 +128,215 @@
   </nav>
 
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- HERO CAROUSEL -->
 
-    <a href="index.html" class="hero-logo">
-      <img
-        src="cg-okafor-logo.png"
-        alt="C.G. Okafor Co. logo"
-      >
-    </a>
+  <section class="hero" aria-label="C.G. Okafor Co. businesses">
 
-    <div class="hero-visual">
+    <div class="hero-track">
 
-      <div
-        id="hero-image"
-        class="hero-image"
-        style="background-image: url('hero-food.jpg');"
-      ></div>
+
+      <!-- SLIDE 1: CORPORATE -->
+
+      <article class="hero-slide hero-slide-corporate active">
+
+        <div class="hero-copy">
+
+          <div class="hero-copy-inner">
+
+            <p class="hero-overline">
+              C.G. OKAFOR COMPANY
+            </p>
+
+            <h1>
+              C.G. OKAFOR<br>
+              COMPANY
+            </h1>
+
+            <p class="hero-description">
+              Different capabilities.<br>
+              A shared purpose.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-photo">
+
+          <img
+            src="hero-food.jpg"
+            alt="Agriculture and food production"
+          >
+
+        </div>
+
+      </article>
+
+
+      <!-- SLIDE 2: AGRISCIENCE -->
+
+      <article class="hero-slide hero-slide-agriscience">
+
+        <div class="hero-copy">
+
+          <div class="hero-copy-inner">
+
+            <p class="hero-overline">
+              C.G. OKAFOR COMPANY
+            </p>
+
+            <h2>
+              OKAFOR<br>
+              AGRISCIENCE
+            </h2>
+
+            <p class="hero-description">
+
+              Empowering farmers in crop and livestock
+              production with dependable agricultural
+              inputs, technical knowledge and practical
+              solutions.
+
+            </p>
+
+            <a
+              href="okafor-agriscience.html"
+              class="hero-learn-more"
+            >
+
+              Learn More
+
+              <span>→</span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-photo">
+
+          <img
+            src="hero-idegro.jpg"
+            alt="Agricultural crop production"
+          >
+
+        </div>
+
+      </article>
+
+
+      <!-- SLIDE 3: FARM TECHNOLOGY -->
+
+      <article class="hero-slide hero-slide-technology">
+
+        <div class="hero-copy">
+
+          <div class="hero-copy-inner">
+
+            <p class="hero-overline">
+              C.G. OKAFOR COMPANY
+            </p>
+
+            <h2>
+              OKAFOR<br>
+              FARM TECHNOLOGY
+            </h2>
+
+            <p class="hero-description">
+
+              Bringing modern farm systems, equipment
+              and technology closer to farmers and
+              food producers.
+
+            </p>
+
+            <a
+              href="okafor-farm-technology.html"
+              class="hero-learn-more"
+            >
+
+              Learn More
+
+              <span>→</span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-photo">
+
+          <img
+            src="hero-farm.jpg"
+            alt="Modern farm technology"
+          >
+
+        </div>
+
+      </article>
+
+
+      <!-- SLIDE 4: GRAINS AND OILSEEDS -->
+
+      <article class="hero-slide hero-slide-grains">
+
+        <div class="hero-copy">
+
+          <div class="hero-copy-inner">
+
+            <p class="hero-overline">
+              C.G. OKAFOR COMPANY
+            </p>
+
+            <h2>
+              GRAINS &amp;<br>
+              OILSEEDS
+            </h2>
+
+            <p class="hero-description">
+
+              Connecting agricultural production
+              with grain and oilseed markets through
+              sourcing, trade and value addition.
+
+            </p>
+
+            <a
+              href="okafor-grains&amp;oilseeds.html"
+              class="hero-learn-more"
+            >
+
+              Learn More
+
+              <span>→</span>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-photo">
+
+          <img
+            src="business-foods.jpg"
+            alt="Grain and oilseed production"
+          >
+
+        </div>
+
+      </article>
 
     </div>
 
-    <div class="hero-content">
 
-      <h1>
-        Better farming,<br>
-        food for all.
-      </h1>
-
-    </div>
+    <!-- HERO CONTROLS -->
 
     <div class="hero-controls">
 
@@ -201,37 +348,39 @@
         ←
       </button>
 
+
       <div class="hero-dots">
 
         <button
           class="hero-dot active"
           type="button"
           data-slide="0"
-          aria-label="Slide 1"
+          aria-label="Corporate slide"
         ></button>
 
         <button
           class="hero-dot"
           type="button"
           data-slide="1"
-          aria-label="Slide 2"
+          aria-label="Agriscience slide"
         ></button>
 
         <button
           class="hero-dot"
           type="button"
           data-slide="2"
-          aria-label="Slide 3"
+          aria-label="Farm Technology slide"
         ></button>
 
         <button
           class="hero-dot"
           type="button"
           data-slide="3"
-          aria-label="Slide 4"
+          aria-label="Grains and Oilseeds slide"
         ></button>
 
       </div>
+
 
       <button
         class="hero-arrow hero-next"
@@ -248,104 +397,83 @@
 
   <main>
 
+
     <!-- COMPANY NUMBERS -->
-    <section class="company-numbers" id="company-numbers">
+
+    <section class="company-numbers">
 
       <div class="number-item">
-        <strong class="counter" data-target="1000" data-suffix="+">0</strong>
+
+        <strong class="counter" data-target="1000" data-suffix="+">
+          0
+        </strong>
+
         <span>Empowered Farmers</span>
+
       </div>
 
+
       <div class="number-item">
-        <strong class="counter" data-target="2000" data-suffix="+">0</strong>
+
+        <strong class="counter" data-target="2000" data-suffix="+">
+          0
+        </strong>
+
         <span>Acres Cultivated</span>
+
       </div>
 
+
       <div class="number-item">
-        <strong class="counter" data-target="15" data-suffix="+">0</strong>
+
+        <strong class="counter" data-target="15" data-suffix="+">
+          0
+        </strong>
+
         <span>Agricultural Solutions</span>
+
       </div>
+
 
       <div class="number-item">
-        <strong class="counter" data-target="5" data-suffix="+">0</strong>
+
+        <strong class="counter" data-target="5" data-suffix="+">
+          0
+        </strong>
+
         <span>States Reached</span>
-      </div>
-
-    </section>
-
-
-    <!-- ABOUT US -->
-    <section class="section about-section" id="about">
-
-      <div class="section-content">
-
-        <p class="eyebrow">ABOUT C.G. OKAFOR CO.</p>
-
-        <h2>Better farming, food for all.</h2>
-
-        <p class="large-text">
-          C.G. Okafor Co. is a privately owned food and agricultural
-          solutions and technology company. Through our businesses,
-          we work across agricultural inputs, farm technology,
-          food production and grain and oilseed markets.
-        </p>
-
-        <div class="about-buttons">
-
-          <a href="about.html" class="primary-button">
-            About Us <span>→</span>
-          </a>
-
-        </div>
 
       </div>
-
-    </section>
-
-
-    <!-- OUR HISTORY -->
-    <section class="history-feature" id="history">
-
-      <a href="history.html" class="history-image-link">
-
-        <img
-          src="our-history.jpg"
-          alt="The early beginnings of C.G. Okafor Co."
-        >
-
-        <div class="history-overlay">
-
-          <p class="eyebrow">OUR HISTORY</p>
-
-          <h2>Humble beginnings.<br>A growing vision.</h2>
-
-          <span class="history-link">
-            Discover our history →
-          </span>
-
-        </div>
-
-      </a>
 
     </section>
 
 
     <!-- OUR BUSINESSES -->
+
     <section class="section businesses-section" id="businesses">
 
       <div class="section-heading">
 
-        <p class="eyebrow">OUR BUSINESSES</p>
+        <p class="eyebrow">
+          OUR BUSINESSES
+        </p>
 
-        <h2>Our businesses</h2>
+        <h2>
+          Different capabilities.<br>
+          A shared purpose.
+        </h2>
 
       </div>
 
+
       <div class="business-grid">
+
+
+        <!-- AGRISCIENCE -->
 
         <a
           href="okafor-agriscience.html"
-          class="business-card"
+          class="business-card business-card-agriscience"
         >
 
           <div class="card-image">
@@ -359,12 +487,16 @@
 
           <div class="card-body">
 
-            <span class="card-number">01</span>
+            <span class="card-number">
+              01
+            </span>
 
-            <h3>Agriscience</h3>
+            <h3>
+              Okafor Agriscience
+            </h3>
 
             <span class="card-link">
-              Explore →
+              Learn More →
             </span>
 
           </div>
@@ -372,9 +504,11 @@
         </a>
 
 
+        <!-- FARM TECHNOLOGY -->
+
         <a
           href="okafor-farm-technology.html"
-          class="business-card"
+          class="business-card business-card-technology"
         >
 
           <div class="card-image">
@@ -388,12 +522,16 @@
 
           <div class="card-body">
 
-            <span class="card-number">02</span>
+            <span class="card-number">
+              02
+            </span>
 
-            <h3>Farm Technology</h3>
+            <h3>
+              Okafor Farm Technology
+            </h3>
 
             <span class="card-link">
-              Explore →
+              Learn More →
             </span>
 
           </div>
@@ -401,9 +539,11 @@
         </a>
 
 
+        <!-- GRAINS AND OILSEEDS -->
+
         <a
           href="okafor-grains&amp;oilseeds.html"
-          class="business-card"
+          class="business-card business-card-grains"
         >
 
           <div class="card-image">
@@ -417,12 +557,16 @@
 
           <div class="card-body">
 
-            <span class="card-number">03</span>
+            <span class="card-number">
+              03
+            </span>
 
-            <h3>Grains &amp; Oilseeds</h3>
+            <h3>
+              Grains &amp; Oilseeds
+            </h3>
 
             <span class="card-link">
-              Explore →
+              Learn More →
             </span>
 
           </div>
@@ -430,9 +574,11 @@
         </a>
 
 
+        <!-- SOILEVA -->
+
         <a
           href="https://chidubemgoodnewsokafor.github.io/soileva/"
-          class="business-card"
+          class="business-card business-card-soileva"
         >
 
           <div class="card-image">
@@ -446,12 +592,16 @@
 
           <div class="card-body">
 
-            <span class="card-number">04</span>
+            <span class="card-number">
+              04
+            </span>
 
-            <h3>Soileva</h3>
+            <h3>
+              Soileva
+            </h3>
 
             <span class="card-link">
-              Explore →
+              Learn More →
             </span>
 
           </div>
@@ -464,7 +614,8 @@
 
 
     <!-- FARMERS -->
-    <section class="farmers-section" id="farmers">
+
+    <section class="farmers-section">
 
       <div class="farmers-image">
 
@@ -475,11 +626,16 @@
 
       </div>
 
+
       <div class="farmers-content">
 
-        <p class="eyebrow">FARMERS BY OKAFOR</p>
+        <p class="eyebrow">
+          FARMERS BY OKAFOR
+        </p>
 
-        <h2>With farmers.</h2>
+        <h2>
+          With farmers.
+        </h2>
 
         <p>
           Supporting the people who grow and produce our food.
@@ -497,29 +653,46 @@
     </section>
 
 
-    <!-- FOOD SECTION -->
-    <section class="food-section" id="foods">
+    <!-- GRAINS AND OILSEEDS -->
+
+    <section class="food-section" id="grains-oilseeds">
+
 
       <div class="food-intro">
 
-        <p class="eyebrow">GRAINS &amp; OILSEEDS</p>
+        <p class="eyebrow">
+          GRAINS &amp; OILSEEDS
+        </p>
 
         <h2>
           Connecting agricultural production
           with food markets.
         </h2>
 
+        <p class="food-description">
+
+          From farm sourcing to food markets,
+          we work to strengthen connections
+          across the agricultural value chain.
+
+        </p>
+
         <a
           href="okafor-grains&amp;oilseeds.html"
-          class="primary-button"
+          class="food-button"
         >
-          Explore All <span>→</span>
+
+          Explore Grains &amp; Oilseeds
+
+          <span>→</span>
+
         </a>
 
       </div>
 
 
       <div class="food-grid">
+
 
         <div class="food-card">
 
@@ -532,6 +705,12 @@
 
           </div>
 
+          <div class="food-card-content">
+
+            <h3>Rice</h3>
+
+          </div>
+
         </div>
 
 
@@ -541,8 +720,14 @@
 
             <img
               src="food-egusi.jpg"
-              alt="Melon seeds (Egusi)"
+              alt="Melon seeds, Egusi"
             >
+
+          </div>
+
+          <div class="food-card-content">
+
+            <h3>Egusi</h3>
 
           </div>
 
@@ -555,8 +740,14 @@
 
             <img
               src="food-yam-bean.jpg"
-              alt="Yam beans (Akidi)"
+              alt="Yam beans, Akidi"
             >
+
+          </div>
+
+          <div class="food-card-content">
+
+            <h3>Yam Beans</h3>
 
           </div>
 
@@ -567,8 +758,42 @@
     </section>
 
 
+    <!-- OUR HISTORY -->
+
+    <section class="history-feature" id="history">
+
+      <a href="history.html" class="history-image-link">
+
+        <img
+          src="our-history.jpg"
+          alt="The early beginnings of C.G. Okafor Co."
+        >
+
+        <div class="history-overlay">
+
+          <p class="eyebrow">
+            OUR HISTORY
+          </p>
+
+          <h2>
+            Humble beginnings.<br>
+            A growing vision.
+          </h2>
+
+          <span class="history-link">
+            Discover our history →
+          </span>
+
+        </div>
+
+      </a>
+
+    </section>
+
+
     <!-- CAREERS -->
-    <section class="careers-section" id="careers">
+
+    <section class="careers-section">
 
       <div class="careers-image">
 
@@ -579,9 +804,12 @@
 
       </div>
 
+
       <div class="careers-content">
 
-        <p class="eyebrow">CAREERS</p>
+        <p class="eyebrow">
+          CAREERS
+        </p>
 
         <h2>
           Be You.<br>
@@ -594,7 +822,7 @@
 
         <a
           href="careers.html"
-          class="primary-button"
+          class="primary-button careers-button"
         >
           Explore Careers
         </a>
@@ -603,19 +831,23 @@
 
     </section>
 
+
   </main>
 
 
   <!-- FOOTER -->
-  <footer class="site-footer" id="footer-contact">
+
+  <footer class="site-footer">
+
 
     <div class="footer-main">
 
 
-      <!-- BRAND -->
+      <!-- COMPANY -->
+
       <div class="footer-brand">
 
-        <a href="index.html" class="logo footer-logo">
+        <a href="index.html" class="footer-logo">
 
           <img
             src="cg-okafor-logo.png"
@@ -625,7 +857,8 @@
         </a>
 
         <p>
-          A food and agricultural solutions and technology company.
+          A food and agricultural solutions
+          and technology company.
         </p>
 
         <p class="footer-slogan">
@@ -635,7 +868,8 @@
       </div>
 
 
-      <!-- ABOUT US -->
+      <!-- ABOUT -->
+
       <div class="footer-column">
 
         <h4>About Us</h4>
@@ -651,14 +885,11 @@
       </div>
 
 
-      <!-- OUR BUSINESSES -->
+      <!-- BUSINESSES -->
+
       <div class="footer-column">
 
         <h4>Our Businesses</h4>
-
-        <a href="businesses.html">
-          Business Overview
-        </a>
 
         <a href="okafor-agriscience.html">
           Agriscience
@@ -679,10 +910,11 @@
       </div>
 
 
-      <!-- EXPLORE -->
-      <div class="footer-column">
+      <!-- CONTACT -->
 
-        <h4>Explore</h4>
+      <div class="footer-column footer-contact-column">
+
+        <h4>Get in Touch</h4>
 
         <a href="careers.html">
           Careers
@@ -692,156 +924,82 @@
           Contact Us
         </a>
 
+        <a
+          href="https://wa.me/2349060485238"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
+        </a>
+
       </div>
 
     </div>
 
 
-    <!-- CONTACT & SOCIAL -->
-    <div class="footer-contact-social">
+    <!-- SOCIAL -->
 
-      <div class="footer-contact-block">
+    <div class="footer-social-area">
 
-        <span class="footer-social-label">
-          CONTACT
-        </span>
+      <span class="footer-social-label">
+        FOLLOW US
+      </span>
+
+
+      <div class="footer-social-links">
+
+
+        <!-- FACEBOOK -->
 
         <a
-          href="https://wa.me/2349060485238"
-          class="footer-whatsapp"
+          href="https://www.facebook.com/share/1BuxKzeTvz/"
+          class="social-link"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Facebook"
         >
 
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            <path
-              d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0
-              C5.55 0 .24 5.31.24 11.84
-              c0 2.09.55 4.13 1.59 5.93L.17 24
-              l6.37-1.67a11.85 11.85 0 0 0 5.54 1.37h.01
-              c6.53 0 11.84-5.31 11.84-11.84
-              0-3.16-1.23-6.13-3.41-8.38z
-              M12.09 21.67h-.01
-              a9.83 9.83 0 0 1-5.01-1.38l-.36-.21
-              -3.78.99 1.01-3.68-.23-.38
-              a9.82 9.82 0 0 1-1.51-5.17
-              C2.2 6.42 6.62 2 12.08 2
-              c2.65 0 5.14 1.03 7.01 2.9
-              a9.84 9.84 0 0 1 2.91 7
-              c0 5.45-4.43 9.77-9.91 9.77z
-              M17.48 14.59
-              c-.3-.15-1.78-.88-2.06-.98
-              -.28-.1-.48-.15-.68.15
-              -.2.3-.78.98-.95 1.18
-              -.17.2-.35.22-.65.07
-              -.3-.15-1.26-.46-2.4-1.48
-              -.89-.79-1.49-1.77-1.66-2.07
-              -.17-.3-.02-.46.13-.61
-              .13-.13.3-.35.45-.52
-              .15-.17.2-.3.3-.5
-              .1-.2.05-.37-.02-.52
-              -.07-.15-.68-1.64-.93-2.25
-              -.24-.59-.49-.51-.68-.52
-              -.17-.01-.37-.01-.57-.01
-              -.2 0-.52.07-.79.37
-              -.27.3-1.04 1.02-1.04 2.48
-              0 1.46 1.06 2.87 1.21 3.07
-              .15.2 2.09 3.19 5.07 4.48
-              .71.31 1.26.5 1.69.64
-              .71.23 1.36.2 1.87.12
-              .57-.08 1.78-.73 2.03-1.43
-              .25-.7.25-1.3.17-1.43
-              -.07-.12-.27-.2-.57-.35z"
-            />
-          </svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
 
-          <span>0906 048 5238</span>
+            <path d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.67.33-1 1-1z"/>
+
+          </svg>
 
         </a>
 
-      </div>
+
+        <!-- TIKTOK -->
+
+        <a
+          href="#"
+          class="social-link social-placeholder"
+          aria-label="TikTok coming soon"
+        >
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+
+            <path d="M19.59 6.69A4.83 4.83 0 0 1 15.5 4v8.25a6.75 6.75 0 1 1-6.75-6.75c.14 0 .28.01.42.02v3.74a3.04 3.04 0 1 0 2.58 3V0h3.75a4.83 4.83 0 0 0 4.09 4.09v2.6z"/>
+
+          </svg>
+
+        </a>
 
 
-      <div class="footer-social-block">
+        <!-- X -->
 
-        <span class="footer-social-label">
-          FOLLOW US
-        </span>
+        <a
+          href="#"
+          class="social-link social-placeholder"
+          aria-label="X coming soon"
+        >
 
-        <div class="footer-social-links">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
 
-          <!-- FACEBOOK -->
-          <a
-            href="https://www.facebook.com/share/1BuxKzeTvz/"
-            class="social-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="C.G. Okafor Co. on Facebook"
-          >
+            <path d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.56l-5.14-6.72L5.17 22H1.91l7.6-8.69L1.5 2h6.72l4.64 6.14L18.244 2zm-1.15 17.86h1.81L7.22 4.05H5.28L17.094 19.86z"/>
 
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.67.33-1 1-1z"
-              />
-            </svg>
+          </svg>
 
-          </a>
-
-
-          <!-- TIKTOK -->
-          <a
-            href="#"
-            class="social-link social-placeholder"
-            aria-label="TikTok coming soon"
-            title="TikTok link coming soon"
-          >
-
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M19.59 6.69
-                A4.83 4.83 0 0 1 15.5 4
-                v8.25a6.75 6.75 0 1 1-6.75-6.75
-                c.14 0 .28.01.42.02v3.74
-                a3.04 3.04 0 1 0 2.58 3V0h3.75
-                a4.83 4.83 0 0 0 4.09 4.09v2.6z"
-              />
-            </svg>
-
-          </a>
-
-
-          <!-- X -->
-          <a
-            href="#"
-            class="social-link social-placeholder"
-            aria-label="X coming soon"
-            title="X link coming soon"
-          >
-
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="M18.244 2H21.5l-7.11 8.13L22.75 22h-6.56
-                l-5.14-6.72L5.17 22H1.91l7.6-8.69L1.5 2h6.72
-                l4.64 6.14L18.244 2zm-1.15 17.86h1.81
-                L7.22 4.05H5.28L17.094 19.86z"
-              />
-            </svg>
-
-          </a>
-
-        </div>
+        </a>
 
       </div>
 
@@ -849,6 +1007,7 @@
 
 
     <!-- FOOTER BOTTOM -->
+
     <div class="footer-bottom">
 
       <span>
