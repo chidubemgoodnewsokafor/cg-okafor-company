@@ -324,13 +324,13 @@ const heroSlides = [
     description:
       "Empowering farmers with solutions for crop, poultry and pig farming.",
 
-    link: "okafor-agriscience.html",
+    link: "https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/",
     showLink: true
   },
 
   {
     image: "hero-farm-technology.jpg",
-    background: "#99010C",
+    background: "#360005",
     textColor: "#ffffff",
 
     title: "Okafor Farm<br>Technology",
@@ -347,10 +347,10 @@ const heroSlides = [
     background: "#F1C400",
     textColor: "#074540",
 
-    title: "Grains &<br>Oilseeds",
+    title: "Okafor Grains &<br>Oilseeds",
 
     description:
-      "Connecting agricultural production with grain and oilseed sourcing and value addition.",
+      "Connecting agricultural production with grain and oilseed sourcing, trade and value addition.",
 
     link: "okafor-grains&oilseeds.html",
     showLink: true
