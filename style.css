@@ -120,8 +120,6 @@ button {
   pointer-events: none;
 }
 
-/* MENU LOGO */
-
 .menu-button > img {
   position: absolute;
   left: 2px;
@@ -135,8 +133,6 @@ button {
   display: block;
   pointer-events: none;
 }
-
-/* HAMBURGER ICON */
 
 .menu-button > span:not(.menu-label) {
   position: absolute;
@@ -165,8 +161,6 @@ button {
   top: 34px;
 }
 
-/* MENU TEXT */
-
 .menu-label {
   position: absolute;
   color: var(--dark-teal);
@@ -185,8 +179,6 @@ button {
   white-space: nowrap;
 }
 
-/* SCROLL SLOGAN */
-
 .menu-label-slogan {
   display: none;
 
@@ -204,8 +196,6 @@ button {
   text-align: left;
   white-space: nowrap;
 }
-
-/* SCROLLED MENU STATE */
 
 .menu-button.scrolled {
   width: 270px;
@@ -247,8 +237,6 @@ button {
 .main-nav.open {
   display: flex;
 }
-
-/* NAVIGATION HEADER */
 
 .nav-header {
   position: relative;
@@ -300,8 +288,6 @@ button {
   color: var(--teal);
 }
 
-/* NAVIGATION PANELS */
-
 .nav-panel {
   display: none;
 
@@ -316,8 +302,6 @@ button {
 .nav-panel.active {
   display: flex;
 }
-
-/* NAVIGATION ITEMS */
 
 .nav-item {
   width: 100%;
@@ -356,8 +340,6 @@ button {
   text-decoration: none;
 }
 
-/* NAVIGATION ARROW */
-
 .nav-arrow {
   margin-left: 30px;
   color: var(--teal);
@@ -371,8 +353,6 @@ button {
   transform: translateX(6px);
 }
 
-/* NAVIGATION DIVIDER */
-
 .nav-divider {
   width: 100%;
   height: 1px;
@@ -381,8 +361,6 @@ button {
   background: var(--dark-teal);
   opacity: 0.25;
 }
-
-/* BACK BUTTON */
 
 .nav-back {
   width: 100%;
@@ -634,8 +612,6 @@ h2 {
   isolation: isolate;
 }
 
-/* IMAGE PANEL — 30% */
-
 .hero-visual {
   position: absolute;
   top: 0;
@@ -663,8 +639,6 @@ h2 {
 
   transition: opacity 0.5s ease;
 }
-
-/* TEXT PANEL — 70% */
 
 .hero-content {
   position: relative;
@@ -715,8 +689,6 @@ h2 {
   line-height: 1.7;
 }
 
-/* LEARN MORE BUTTON */
-
 .hero-link {
   display: inline-flex;
   align-items: center;
@@ -744,8 +716,6 @@ h2 {
 .hero-link span {
   font-size: 19px;
 }
-
-/* CAROUSEL CONTROLS */
 
 .hero-controls {
   position: absolute;
@@ -795,8 +765,6 @@ h2 {
 .hero-next {
   right: 24px;
 }
-
-/* SLIDE DOTS */
 
 .hero-dots {
   position: absolute;
@@ -895,7 +863,7 @@ h2 {
   width: min(480px, 100%);
   aspect-ratio: 1 / 1;
 
-  border-radius: 28px;
+  border-radius: 0;
   justify-self: center;
   overflow: hidden;
 }
@@ -969,7 +937,7 @@ h2 {
   min-width: 0;
   min-height: 510px;
 
-  border-radius: 28px;
+  border-radius: 0;
 
   background: var(--teal);
   color: var(--white);
@@ -1116,7 +1084,7 @@ h2 {
 
   transform: translateY(-50%);
 
-  border-radius: 28px;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -1271,7 +1239,7 @@ h2 {
   overflow: hidden;
 
   background: var(--white);
-  border-radius: 28px;
+  border-radius: 0;
 
   scroll-snap-align: start;
 
@@ -1316,7 +1284,7 @@ h2 {
 
 .insight-card {
   min-width: 0;
-  border-radius: 30px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--soft);
 
@@ -1414,7 +1382,7 @@ h2 {
   height: 420px;
   min-height: 0;
 
-  border-radius: 28px;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -1512,8 +1480,6 @@ h2 {
   transform: translateX(3px);
 }
 
-/* FOOTER CONTACT + SOCIAL */
-
 .footer-contact-social {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
@@ -1543,8 +1509,6 @@ h2 {
   letter-spacing: .12em;
 }
 
-/* WHATSAPP */
-
 .footer-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -1568,8 +1532,6 @@ h2 {
   color: var(--white);
   transform: translateX(3px);
 }
-
-/* SOCIAL LINKS */
 
 .footer-social-links {
   display: flex;
@@ -1621,8 +1583,6 @@ h2 {
   border-color: rgba(255,255,255,.2);
   transform: none;
 }
-
-/* FOOTER BOTTOM */
 
 .footer-bottom {
   width: min(var(--max-width), 90%);
@@ -1721,24 +1681,23 @@ h2 {
 
 @media (max-width: 850px) {
 
-  /* SPLIT HERO — TABLET */
-
   .hero {
     min-height: 650px;
     max-height: 850px;
   }
 
   .hero-content {
-  padding: 230px 6% 80px;
-}
+    padding: 230px 6% 80px;
+  }
 
-.hero-text {
-  transform: translateY(25px);
-}
+  .hero-text {
+    transform: translateY(25px);
+  }
 
-.hero-content h1 {
-  font-size: clamp(38px, 6vw, 58px);
-     }
+  .hero-content h1 {
+    font-size: clamp(38px, 6vw, 58px);
+  }
+
   .hero-content p {
     font-size: 15px;
   }
@@ -1750,8 +1709,6 @@ h2 {
   .hero-next {
     right: 14px;
   }
-
-  /* MOBILE FLOATING MENU */
 
   .menu-button {
     left: 50%;
@@ -1828,8 +1785,6 @@ h2 {
     gap: 50px;
   }
 
-  /* Two business cards visible at once */
-
   .business-grid {
     grid-auto-columns: calc((100% - 18px) / 2);
     gap: 18px;
@@ -1859,7 +1814,7 @@ h2 {
     height: min(500px, 90vw);
 
     margin: 0 auto 50px;
-    border-radius: 28px;
+    border-radius: 0;
   }
 
   .food-section {
@@ -1882,7 +1837,7 @@ h2 {
   .careers-image {
     height: 450px;
     min-height: 0;
-    border-radius: 28px;
+    border-radius: 0;
   }
 
   .footer-main {
@@ -1932,81 +1887,79 @@ h2 {
 
   .brand-story-mark {
     width: min(430px, 85vw);
-    border-radius: 28px;
+    border-radius: 0;
   }
 
   .leadership-links {
     margin-top: 50px;
   }
 }
+
 /* =========================================================
    SPLIT HERO — MOBILE 70/30
    ========================================================= */
 
-.hero {
-  height: 100svh;
-  min-height: 650px;
-  max-height: none;
-  display: block;
-}
+@media (max-width: 560px) {
 
-/* TEXT PANEL — UPPER 70% */
+  .hero {
+    height: 100svh;
+    min-height: 650px;
+    max-height: none;
+    display: block;
+  }
 
-.hero-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: 0;
+  .hero-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
 
-  width: 100%;
-  height: 70%;
+    width: 100%;
+    height: 70%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  padding: 205px 26px 35px;
-}
+    padding: 205px 26px 35px;
+  }
 
-.hero-text {
-  width: 100%;
-  max-width: 520px;
-  margin: auto;
-  padding: 0;
+  .hero-text {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 0;
 
-  transform: translateY(20px);
-}
+    transform: translateY(20px);
+  }
 
-.hero-content h1 {
-  font-size: clamp(34px, 8.5vw, 48px);
-  line-height: 1.08;
-}
+  .hero-content h1 {
+    font-size: clamp(34px, 8.5vw, 48px);
+    line-height: 1.08;
+  }
 
-.hero-content p {
-  margin-top: 16px;
-  font-size: 13px;
-  line-height: 1.55;
-}
+  .hero-content p {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
 
-.hero-link {
-  margin-top: 19px;
-  padding: 11px 18px;
-}
+  .hero-link {
+    margin-top: 19px;
+    padding: 11px 18px;
+  }
 
-/* IMAGE PANEL — LOWER 30% */
+  .hero-visual {
+    position: absolute;
+    top: 70%;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-.hero-visual {
-  position: absolute;
-  top: 70%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-  height: 30%;
-}
-
+    width: 100%;
+    height: 30%;
+  }
 
   .hero-arrow {
     width: 36px;
@@ -2041,8 +1994,6 @@ h2 {
     width: 180px;
     height: 180px;
   }
-
-  /* SMALL FLOATING MENU */
 
   .menu-button {
     bottom: 20px;
@@ -2087,8 +2038,6 @@ h2 {
     line-height: 1.25;
   }
 
-  /* One business card visible at a time; swipe sideways */
-
   .business-grid {
     grid-auto-columns: 88%;
     gap: 15px;
@@ -2120,8 +2069,6 @@ h2 {
     height: 43px;
   }
 
-  /* Food cards scroll horizontally on phones */
-
   .food-grid {
     grid-auto-columns: 88%;
     gap: 15px;
@@ -2149,8 +2096,6 @@ h2 {
     align-items: flex-start;
     gap: 8px;
   }
-
-  /* ABOUT US PAGE */
 
   .about-hero {
     min-height: 590px;
@@ -2477,7 +2422,7 @@ h2 {
   align-items: center;
   justify-content: center;
 
-  border-radius: 28px;
+  border-radius: 0;
   background: var(--yellow);
 }
 
@@ -2734,7 +2679,7 @@ h2 {
 
   .brand-story-mark {
     width: min(430px, 85vw);
-    border-radius: 28px;
+    border-radius: 0;
   }
 
   .leadership-links {
