@@ -356,6 +356,20 @@ const heroSlides = [
     showLink: true
   }
 
+{
+    image: "hero-soileva.jpg",
+    background: "#360005",
+    textColor: "#ffffff",
+
+    title: "Soileva<br>farms",
+
+    description:
+      "nourishment for all.",
+
+    link: "https://chidubemgoodnewsokafor.github.io/soileva/index.html",
+    showLink: true
+  },
+
 ];
 
 
