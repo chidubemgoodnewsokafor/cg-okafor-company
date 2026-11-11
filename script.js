@@ -300,20 +300,19 @@ const hero =
 
 const heroSlides = [
 
- {
-    image: "hero-all.jpg",
-    background: "#074540",
-    textColor: "#ffffff",
+   {
+  image: "hero-all.jpg",
+  background: "#074540",
+  textColor: "#ffffff",
 
-    title: "C.G. Okafor",
+  title: "C.G. Okafor",
 
-    description:
-      "Better farming, food for all.",
-}
+  description:
+    "Better farming, food for all.",
 
-    link: "index.html",
-    showLink: false
-  },
+  link: "index.html",
+  showLink: false
+},
 
   {
     image: "hero-agriscience.jpg",
