@@ -360,7 +360,7 @@ showLink: true
 
 {
 image: "hero-soileva.jpg",
-background: "#003a1f",
+background: "#43b02a",
 textColor: "#ffffff",
 
 title: "Soileva",
