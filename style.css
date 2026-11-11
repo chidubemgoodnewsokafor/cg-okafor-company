@@ -992,13 +992,13 @@ h2 {
 }
 
 .business-card:nth-child(3) {
-  background: var #F1C400;
+  background: #F1C400;
   color: var(--dark-teal);
 }
 
 .business-card:nth-child(4) {
   background: #43B02A;
-  color: var(--dark-teal);
+  color: var(--white);
 }
 
 .card-image {
