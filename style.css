@@ -991,8 +991,8 @@ h2 {
   background: var(--dark-red);
 }
 
-.business-card:nth-child(3) {
-  background: #F1C400;
+.business-grid > .business-card:nth-child(3) {
+  background-color: #F1C400 !important;
   color: var(--dark-teal);
 }
 
