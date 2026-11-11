@@ -329,49 +329,51 @@ const heroSlides = [
   },
 
   {
-    image: "hero-farm-technology.jpg",
-    background: "#360005",
-    textColor: "#ffffff",
+image: "hero-farm-technology.jpg",
+background: "#360005",
+textColor: "#ffffff",
 
-    title: "Okafor Farm<br>Technology",
+title: "Okafor Farm<br>Technology",
 
-    description:
-      "Practical farm technology for modern agricultural operations.",
+description:
+  "Practical farm technology for modern agricultural operations.",
 
-    link: "okafor-farm-technology/",
-    showLink: true
-  },
+link: "okafor-farm-technology/",
+showLink: true
 
-  {
-    image: "hero-grains-oilseeds.jpg",
-    background: "#F1C400",
-    textColor: "#074540",
-
-    title: "Okafor Grains &<br>Oilseeds",
-
-    description:
-      "Connecting agricultural production with grain and oilseed sourcing, trade and value addition.",
-
-    link: "okafor-grains&oilseeds.html",
-    showLink: true
-  }
+},
 
 {
-    image: "hero-soileva.jpg",
-    background: "#360005",
-    textColor: "#ffffff",
+image: "hero-grains-oilseeds.jpg",
+background: "#F1C400",
+textColor: "#074540",
 
-    title: "Soileva<br>farms",
+title: "Okafor Grains &<br>Oilseeds",
 
-    description:
-      "nourishment for all.",
+description:
+  "Connecting agricultural production with grain and oilseed sourcing, trade and value addition.",
 
-    link: "https://chidubemgoodnewsokafor.github.io/soileva/index.html",
-    showLink: true
-  },
+link: "okafor-grains&oilseeds.html",
+showLink: true
+
+},
+
+{
+image: "hero-soileva.jpg",
+background: "#003a1f",
+textColor: "#ffffff",
+
+title: "Soileva",
+
+description:
+  "Growing fresh food and nourishing communities through sustainable agriculture.",
+
+link: "https://chidubemgoodnewsokafor.github.io/soileva/index.html",
+showLink: true
+
+}
 
 ];
-
 
 let currentSlide = 0;
 
