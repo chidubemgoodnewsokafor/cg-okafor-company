@@ -992,12 +992,12 @@ h2 {
 }
 
 .business-card:nth-child(3) {
-  background: var(--yellow);
+  background: var #f1c400;
   color: var(--dark-teal);
 }
 
 .business-card:nth-child(4) {
-  background: #eef4f2;
+  background: #43b02a;
   color: var(--dark-teal);
 }
 
