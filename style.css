@@ -15,6 +15,9 @@
   --soft: #f5f7f6;
   --line: #dfe6e3;
 
+  --soft-teal: #F0F8F7;
+  --light-teal: #D9EFEC;
+
   --max-width: 1280px;
   --radius: 32px;
   --circle: 50%;
@@ -571,7 +574,7 @@ h2 {
   background:
     radial-gradient(
       circle at 30% 25%,
-      rgba(255, 229, 0, 0.28),
+      rgba(1,153,142,0.20),
       transparent 30%
     ),
     linear-gradient(135deg, #dce9e6, #b8d6d1);
@@ -959,6 +962,8 @@ h2 {
   background: var(--dark-red);
 }
 
+/* GRAIN & OILSEEDS — PRESERVE EXISTING YELLOW */
+
 .business-grid > .business-card:nth-child(3) {
   background-color: #F1C400 !important;
   color: var(--dark-teal);
@@ -1053,7 +1058,7 @@ h2 {
 }
 
 .card-carousel-button:focus-visible {
-  outline: 3px solid var(--yellow);
+  outline: 3px solid var(--teal);
   outline-offset: 3px;
 }
 
@@ -1107,8 +1112,8 @@ h2 {
 }
 
 .light-button {
-  background: var(--yellow);
-  color: var(--dark-teal);
+  background: var(--teal);
+  color: var(--white);
 }
 
 /* =========================================================
@@ -1142,9 +1147,6 @@ h2 {
     height: 380px;
   }
 }
-
-
-
 
 /* =========================================================
    CAREERS
@@ -1240,7 +1242,7 @@ h2 {
 .footer-column h4 {
   margin-bottom: 10px;
 
-  color: var(--yellow);
+  color: var(--teal);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -1283,7 +1285,7 @@ h2 {
 }
 
 .footer-social-label {
-  color: var(--yellow);
+  color: var(--teal);
 
   font-size: 11px;
   font-weight: 800;
@@ -1349,8 +1351,8 @@ h2 {
 
 .social-link:hover {
   color: var(--dark-teal);
-  background: var(--yellow);
-  border-color: var(--yellow);
+  background: var(--teal);
+  border-color: var(--teal);
   transform: translateY(-3px);
 }
 
@@ -1841,78 +1843,112 @@ h2 {
   }
 }
 
-
 /* =========================================================
    ABOUT US — INTRODUCTION HEADER
    ========================================================= */
 
 .about-header {
   position: relative;
+
+  display: flex;
+  align-items: stretch;
+
   width: 100%;
   min-height: 680px;
   height: 78svh;
   max-height: 850px;
+
   overflow: hidden;
   isolation: isolate;
+
   background: var(--dark-teal);
 }
 
+/* TEXT SIDE */
+
+.about-header-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 55%;
+  min-height: 100%;
+
+  padding: 100px 5% 100px 8%;
+
+  z-index: 3;
+
+  background: var(--dark-teal);
+}
+
+.about-header-content .eyebrow {
+  color: #8CD8D0;
+  margin-bottom: 25px;
+}
+
+.about-header-content h1 {
+  max-width: 750px;
+
+  color: #5CC6BA;
+
+  font-size: clamp(48px, 6.5vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+}
+
+/* IMAGE SIDE */
+
 .about-header-image {
   position: absolute;
-  inset: 0;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 45%;
+  height: 100%;
+
   z-index: 1;
+  overflow: hidden;
 }
 
 .about-header-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
+
   display: block;
 }
 
+/* Remove the old full-image overlay */
+
 .about-header-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-    90deg,
-    rgba(7,69,64,0.96) 0%,
-    rgba(7,69,64,0.82) 45%,
-    rgba(7,69,64,0.35) 100%
-  );
+  display: none;
 }
 
-.about-header-content {
-  position: absolute;
-  left: 7%;
-  bottom: 15%;
-  z-index: 3;
-  width: min(850px, 86%);
-}
-
-.about-header-content .eyebrow {
-  color: var(--yellow);
-}
-
-.about-header-content h1 {
-  max-width: 850px;
-  color: var(--white);
-  font-size: clamp(55px, 8vw, 105px);
-  line-height: 1;
-  letter-spacing: -0.06em;
-}
+/* HISTORY BUTTON */
 
 .about-history-button {
   display: inline-flex;
   align-items: center;
   gap: 25px;
+
   margin-top: 35px;
   padding: 15px 24px;
+
   border: 1px solid var(--white);
   border-radius: 50px;
+
   color: var(--white);
+
   font-size: 13px;
   font-weight: 800;
+
   transition: background .25s ease, color .25s ease;
 }
 
@@ -1925,45 +1961,128 @@ h2 {
   font-size: 18px;
 }
 
+/* =========================================================
+   ABOUT US — INTRODUCTION
+   ========================================================= */
+
+.about-continuation {
+  width: 100%;
+
+  padding: 120px 5% 130px;
+
+  background: var(--white);
+}
+
+.about-continuation-inner {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: start;
+
+  column-gap: 100px;
+  row-gap: 25px;
+}
+
+.about-continuation-inner > .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+
+  color: var(--teal);
+}
+
+.about-continuation-inner > h1 {
+  max-width: 550px;
+
+  color: var(--dark-teal);
+
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+}
+
+.about-continuation-copy {
+  max-width: 650px;
+  padding-top: 5px;
+}
+
+.about-continuation-copy p {
+  margin-bottom: 23px;
+
+  color: #526763;
+
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.about-continuation-copy p:last-child {
+  margin-bottom: 0;
+}
 
 /* =========================================================
    ABOUT US — HISTORY SECTION
    ========================================================= */
 
 .history-cards-section {
-  width: min(var(--max-width), 90%);
+  width: 100%;
   margin: 0 auto;
-  padding: 120px 0;
+
+  padding: 110px 5% 130px;
+
+  background: var(--soft-teal);
 }
 
 .history-cards-heading {
-  max-width: 750px;
-  margin-bottom: 45px;
+  width: min(var(--max-width), 100%);
+  margin: 0 auto 55px;
+}
+
+.history-cards-heading .eyebrow {
+  color: var(--teal);
 }
 
 .history-cards-heading h2 {
   margin-bottom: 20px;
+  color: var(--dark-teal);
+
+  font-size: clamp(45px, 6vw, 76px);
+  letter-spacing: -0.05em;
 }
 
 .history-cards-heading > p:last-child {
-  max-width: 600px;
+  max-width: 650px;
+
   color: #526763;
-  font-size: 18px;
-  line-height: 1.65;
+
+  font-size: 17px;
+  line-height: 1.8;
 }
 
+/* ONE LARGE CARD PER ROW */
+
 .history-cards-grid {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 1fr;
+
+  gap: 35px;
 }
 
 .history-card {
   position: relative;
+
   display: block;
+
+  width: 100%;
   min-width: 0;
-  height: 460px;
+
+  height: 560px;
+
   overflow: hidden;
+
   background: var(--dark-teal);
   color: var(--white);
 }
@@ -1971,58 +2090,79 @@ h2 {
 .history-card > img {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
+
   display: block;
-  transition: transform .5s ease;
+
+  transition: transform .6s ease;
 }
 
 .history-card:hover > img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 .history-card-overlay {
   position: absolute;
   inset: 0;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 25px;
+
+  padding: 40px 45px;
+
   background: linear-gradient(
     180deg,
-    rgba(3,31,29,.12) 0%,
-    rgba(3,31,29,.25) 35%,
-    rgba(3,31,29,.92) 100%
+    rgba(3,31,29,.08) 0%,
+    rgba(3,31,29,.20) 35%,
+    rgba(3,31,29,.90) 100%
   );
 }
 
 .history-card-number {
-  font-size: 13px;
+  color: #8CD8D0;
+
+  font-size: 15px;
   font-weight: 800;
-  color: var(--yellow);
+  letter-spacing: .12em;
+}
+
+.history-card-content {
+  max-width: 650px;
 }
 
 .history-card-content h3 {
-  margin-bottom: 9px;
+  margin-bottom: 12px;
+
   color: var(--white);
-  font-size: clamp(20px, 2vw, 27px);
-  line-height: 1.2;
+
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.15;
 }
 
 .history-card-content > span {
   display: block;
-  color: rgba(255,255,255,.75);
-  font-size: 12px;
+
+  color: rgba(255,255,255,.8);
+
+  font-size: 14px;
 }
 
 .history-card-content strong {
   display: block;
-  margin-top: 25px;
-  color: var(--yellow);
-  font-size: 12px;
-}
 
+  margin-top: 28px;
+
+  color: #8CD8D0;
+
+  font-size: 13px;
+  font-weight: 800;
+}
 
 /* =========================================================
    ABOUT US — RESPONSIVE
@@ -2030,45 +2170,199 @@ h2 {
 
 @media (max-width: 850px) {
 
+  /* HERO */
+
   .about-header {
     min-height: 620px;
     height: 75svh;
   }
 
   .about-header-content {
-    left: 6%;
-    bottom: 12%;
-    width: 88%;
+    width: 55%;
+    padding: 80px 4% 80px 6%;
+  }
+
+  .about-header-content h1 {
+    font-size: clamp(42px, 6vw, 60px);
+  }
+
+  .about-header-image {
+    width: 45%;
+  }
+
+  /* INTRODUCTION */
+
+  .about-continuation {
+    padding: 90px 6%;
+  }
+
+  .about-continuation-inner {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-continuation-inner > h1 {
+    max-width: 650px;
+  }
+
+  .about-continuation-copy {
+    max-width: 700px;
+  }
+
+  /* HISTORY */
+
+  .history-cards-section {
+    padding: 90px 6%;
   }
 
   .history-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(220px, 1fr));
-  gap: 18px;
-  overflow-x: auto;
-}
-
-@media (max-width: 850px) {
-  .history-cards-grid {
-    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
-}
-
-@media (max-width: 560px) {
-  .history-cards-grid {
-    grid-template-columns: repeat(4, minmax(220px, 1fr));
-    gap: 10px;
-  }
-}
 
   .history-card {
-    height: 300px;
+    height: 440px;
   }
 
   .history-card-overlay {
-    padding: 12px;
+    padding: 30px;
+  }
+}
+
+/* =========================================================
+   ABOUT US — MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  /* HERO */
+
+  .about-header {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 720px;
+    height: auto;
+    max-height: none;
+
+    background: var(--dark-teal);
   }
 
+  .about-header-content {
+    position: relative;
+
+    width: 100%;
+    min-height: 390px;
+
+    padding: 115px 26px 45px;
+
+    order: 1;
+  }
+
+  .about-header-content .eyebrow {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+
+  .about-header-content h1 {
+    max-width: 480px;
+
+    font-size: clamp(40px, 10vw, 55px);
+    line-height: 1.08;
+  }
+
+  .about-header-image {
+    position: relative;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+    height: 330px;
+    min-height: 330px;
+
+    order: 2;
+  }
+
+  .about-header-image img {
+    object-position: center;
+  }
+
+  .about-history-button {
+    margin-top: 25px;
+    padding: 13px 19px;
+    font-size: 12px;
+  }
+
+  /* INTRODUCTION */
+
+  .about-continuation {
+    padding: 80px 26px;
+  }
+
+  .about-continuation-inner {
+    gap: 22px;
+  }
+
+  .about-continuation-inner > h1 {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .about-continuation-copy p {
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 20px;
+  }
+
+  /* HISTORY */
+
+  .history-cards-section {
+    padding: 75px 20px 90px;
+  }
+
+  .history-cards-heading {
+    margin-bottom: 35px;
+  }
+
+  .history-cards-heading h2 {
+    font-size: 43px;
+  }
+
+  .history-cards-heading > p:last-child {
+    font-size: 14px;
+  }
+
+  .history-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .history-card {
+    width: 100%;
+    height: 390px;
+  }
+
+  .history-card-overlay {
+    padding: 22px;
+  }
+
+  .history-card-number {
+    font-size: 12px;
+  }
+
+  .history-card-content h3 {
+    font-size: 29px;
+  }
+
+  .history-card-content > span {
+    font-size: 12px;
+  }
+
+  .history-card-content strong {
+    margin-top: 20px;
+    font-size: 11px;
+  }
 }
 
 /* =========================================================
