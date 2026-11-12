@@ -2020,22 +2020,22 @@ h2 {
   margin-bottom: 0;
 }
 
+  
+
 /* =========================================================
    ABOUT US — HISTORY SECTION
+   Horizontal cards inspired by Our Businesses
    ========================================================= */
 
 .history-cards-section {
   width: 100%;
-  margin: 0 auto;
-
-  padding: 110px 5% 130px;
-
+  padding: 110px 5% 100px;
   background: var(--soft-teal);
 }
 
 .history-cards-heading {
   width: min(var(--max-width), 100%);
-  margin: 0 auto 55px;
+  margin: 0 auto 45px;
 }
 
 .history-cards-heading .eyebrow {
@@ -2045,124 +2045,280 @@ h2 {
 .history-cards-heading h2 {
   margin-bottom: 20px;
   color: var(--dark-teal);
-
   font-size: clamp(45px, 6vw, 76px);
   letter-spacing: -0.05em;
 }
 
 .history-cards-heading > p:last-child {
   max-width: 650px;
-
   color: #526763;
-
   font-size: 17px;
   line-height: 1.8;
 }
 
-/* ONE LARGE CARD PER ROW */
+/* HORIZONTAL HISTORY CARDS */
 
 .history-cards-grid {
-  width: min(var(--max-width), 100%);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 66px) / 4);
+  grid-template-columns: unset;
+
+  gap: 22px;
+
+  width: 100%;
+  max-width: var(--max-width);
   margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: 1fr;
+  overflow-x: auto;
+  overflow-y: hidden;
 
-  gap: 35px;
+  padding: 8px 3px 24px;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--teal) #e8eeec;
+}
+
+.history-cards-grid::-webkit-scrollbar {
+  height: 7px;
+}
+
+.history-cards-grid::-webkit-scrollbar-track {
+  background: #e8eeec;
+}
+
+.history-cards-grid::-webkit-scrollbar-thumb {
+  background: var(--teal);
 }
 
 .history-card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 
-  display: block;
-
-  width: 100%;
   min-width: 0;
-
   height: 560px;
 
   overflow: hidden;
 
-  background: var(--dark-teal);
+  background: var(--teal);
   color: var(--white);
+
+  scroll-snap-align: start;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
 }
 
-.history-card > img {
-  position: absolute;
-  inset: 0;
+.history-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 55px rgba(7,69,64,.18);
+}
 
+.history-card-image {
+  width: 100%;
+  height: 390px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.history-card-image img {
+  display: block;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-  object-position: center;
 
-  display: block;
-
-  transition: transform .6s ease;
+  transition: transform .5s ease;
 }
 
-.history-card:hover > img {
+.history-card:hover .history-card-image img {
   transform: scale(1.04);
 }
 
-.history-card-overlay {
-  position: absolute;
-  inset: 0;
-
+.history-card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 40px 45px;
-
-  background: linear-gradient(
-    180deg,
-    rgba(3,31,29,.08) 0%,
-    rgba(3,31,29,.20) 35%,
-    rgba(3,31,29,.90) 100%
-  );
+  flex: 1;
+  padding: 25px;
 }
 
-.history-card-number {
-  color: #8CD8D0;
-
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: .12em;
+.history-card-body h3 {
+  color: var(--white);
+  font-size: 21px;
+  line-height: 1.3;
 }
 
-.history-card-content {
-  max-width: 650px;
-}
-
-.history-card-content h3 {
-  margin-bottom: 12px;
+.history-card-body span {
+  display: block;
+  margin-top: 20px;
 
   color: var(--white);
-
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.15;
-}
-
-.history-card-content > span {
-  display: block;
-
-  color: rgba(255,255,255,.8);
-
-  font-size: 14px;
-}
-
-.history-card-content strong {
-  display: block;
-
-  margin-top: 28px;
-
-  color: #8CD8D0;
-
   font-size: 13px;
   font-weight: 800;
 }
+
+/* HISTORY CAROUSEL CONTROLS */
+
+.history-carousel-controls {
+  width: min(var(--max-width), 100%);
+  margin: 15px auto 0;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.history-carousel-button {
+  width: 48px;
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--dark-teal);
+  border-radius: 50%;
+
+  background: var(--white);
+  color: var(--dark-teal);
+
+  font-size: 22px;
+  cursor: pointer;
+
+  transition:
+    background .25s ease,
+    color .25s ease;
+}
+
+.history-carousel-button:hover {
+  background: var(--dark-teal);
+  color: var(--white);
+}
+
+
+/* =========================================================
+   ABOUT US — FAQ SECTION
+   ========================================================= */
+
+.about-faq-section {
+  width: 100%;
+  padding: 120px 5% 130px;
+  background: var(--white);
+}
+
+.about-faq-heading {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto 55px;
+}
+
+.about-faq-heading .eyebrow {
+  color: var(--teal);
+}
+
+.about-faq-heading h2 {
+  max-width: 750px;
+  margin-bottom: 20px;
+
+  color: var(--dark-teal);
+  font-size: clamp(40px, 5.5vw, 70px);
+  letter-spacing: -0.05em;
+}
+
+.about-faq-heading > p:last-child {
+  max-width: 650px;
+  color: #526763;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-faq-list {
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
+
+  border-top: 1px solid var(--line);
+}
+
+.about-faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.about-faq-item summary {
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 25px 5px;
+
+  color: var(--dark-teal);
+  font-size: clamp(17px, 2vw, 23px);
+  font-weight: 700;
+
+  cursor: pointer;
+  list-style: none;
+}
+
+.about-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--teal);
+  font-size: 27px;
+  font-weight: 300;
+
+  transition: transform .25s ease;
+}
+
+.about-faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.about-faq-answer {
+  max-width: 750px;
+  padding: 0 45px 35px 5px;
+}
+
+.about-faq-answer p {
+  margin-bottom: 20px;
+
+  color: #526763;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.faq-business-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 800;
+
+  transition: color .2s ease;
+}
+
+.faq-business-link:hover {
+  color: var(--dark-teal);
+}
+
 
 /* =========================================================
    ABOUT US — RESPONSIVE
@@ -2216,18 +2372,25 @@ h2 {
   }
 
   .history-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    grid-auto-columns: calc((100% - 18px) / 2);
+    gap: 18px;
   }
 
   .history-card {
     height: 440px;
   }
 
-  .history-card-overlay {
-    padding: 30px;
+  .history-card-image {
+    height: 300px;
+  }
+
+  /* FAQ */
+
+  .about-faq-section {
+    padding: 90px 6%;
   }
 }
+
 
 /* =========================================================
    ABOUT US — MOBILE
@@ -2255,7 +2418,6 @@ h2 {
     min-height: 390px;
 
     padding: 115px 26px 45px;
-
     order: 1;
   }
 
@@ -2266,7 +2428,6 @@ h2 {
 
   .about-header-content h1 {
     max-width: 480px;
-
     font-size: clamp(40px, 10vw, 55px);
     line-height: 1.08;
   }
@@ -2318,7 +2479,7 @@ h2 {
   /* HISTORY */
 
   .history-cards-section {
-    padding: 75px 20px 90px;
+    padding: 75px 20px 80px;
   }
 
   .history-cards-heading {
@@ -2334,34 +2495,65 @@ h2 {
   }
 
   .history-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-auto-columns: 88%;
+    gap: 15px;
   }
 
   .history-card {
-    width: 100%;
     height: 390px;
   }
 
-  .history-card-overlay {
-    padding: 22px;
+  .history-card-image {
+    height: 260px;
   }
 
-  .history-card-number {
+  .history-card-body {
+    padding: 20px;
+  }
+
+  .history-card-body h3 {
+    font-size: 19px;
+  }
+
+  .history-card-body span {
     font-size: 12px;
   }
 
-  .history-card-content h3 {
-    font-size: 29px;
+  .history-carousel-button {
+    width: 43px;
+    height: 43px;
   }
 
-  .history-card-content > span {
-    font-size: 12px;
+  /* FAQ */
+
+  .about-faq-section {
+    padding: 80px 25px 100px;
   }
 
-  .history-card-content strong {
-    margin-top: 20px;
-    font-size: 11px;
+  .about-faq-heading {
+    margin-bottom: 35px;
+  }
+
+  .about-faq-heading h2 {
+    font-size: 40px;
+  }
+
+  .about-faq-heading > p:last-child {
+    font-size: 14px;
+  }
+
+  .about-faq-item summary {
+    min-height: 75px;
+    font-size: 16px;
+    padding: 20px 0;
+  }
+
+  .about-faq-answer {
+    padding: 0 5px 28px;
+  }
+
+  .about-faq-answer p {
+    font-size: 13px;
   }
 }
 
