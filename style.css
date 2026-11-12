@@ -1062,12 +1062,12 @@ h2 {
    ========================================================= */
 
 .farmers-section {
-  position: relative;
-  min-height: 650px;
-
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 520px;
   align-items: center;
+  gap: 70px;
 
+  min-height: 650px;
   padding: 80px 7%;
 
   background: var(--dark-teal);
@@ -1075,14 +1075,12 @@ h2 {
 }
 
 .farmers-image {
-  position: absolute;
-  right: 7%;
-  top: 50%;
+  position: relative;
 
-  width: 520px;
+  width: 100%;
   height: 520px;
 
-  transform: translateY(-50%);
+  margin: auto;
 
   border-radius: 0;
   overflow: hidden;
@@ -1091,7 +1089,9 @@ h2 {
 .farmers-content {
   position: relative;
   z-index: 2;
+
   max-width: 580px;
+  width: 100%;
 }
 
 .farmers-content h2 {
@@ -1109,6 +1109,39 @@ h2 {
 .light-button {
   background: var(--yellow);
   color: var(--dark-teal);
+}
+
+
+/* =========================================================
+   FARMERS RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .farmers-section {
+    grid-template-columns: 1fr 420px;
+    gap: 40px;
+  }
+
+  .farmers-image {
+    height: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  .farmers-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 70px 7%;
+  }
+
+  .farmers-content {
+    max-width: 100%;
+  }
+
+  .farmers-image {
+    width: 100%;
+    height: 380px;
+  }
 }
 
 /* =========================================================
