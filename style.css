@@ -2059,24 +2059,20 @@ h2 {
   }
 
   .about-header-content h1 {
-    font-size: clamp(45px, 12vw, 65px);
-  }
-
-  .about-history-button {
-    margin-top: 25px;
-  }
-
-  .history-cards-section {
-    padding: 85px 0;
+    font-size: clamp(32px, 8vw, 48px);
   }
 
   .history-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .history-card {
-    height: 430px;
+    height: 300px;
+  }
+
+  .history-card-overlay {
+    padding: 12px;
   }
 
 }
