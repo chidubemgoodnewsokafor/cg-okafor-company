@@ -2750,17 +2750,10 @@ h2 {
 }
 
 /* =========================================================
-   FORCE SQUARE CORNERS ON ALL WEBSITE CARDS
+   GLOBAL SQUARE EDGES
+   Keep existing button and control styling unchanged
    ========================================================= */
 
-.business-card,
-.food-card,
-.insight-card {
-  border-radius: 0 !important;
-}
-
-.business-card .card-image,
-.food-card .food-card-image,
-.insight-card .insight-image {
+*:not(button):not(.primary-button):not(.light-button):not(.hero-link):not(.menu-button):not(.hero-arrow):not(.hero-dot):not(.card-carousel-button):not(.nav-close):not(.social-link) {
   border-radius: 0 !important;
 }
