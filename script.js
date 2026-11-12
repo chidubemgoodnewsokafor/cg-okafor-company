@@ -1036,3 +1036,57 @@ if (
   startCounters();
 
 }
+
+/* =========================================================
+   ABOUT US — HISTORY CAROUSEL
+   ========================================================= */
+
+const historyGrid = document.querySelector(".history-cards-grid");
+
+const historyPrev = document.querySelector(".history-prev");
+const historyNext = document.querySelector(".history-next");
+
+if (historyGrid && historyPrev && historyNext) {
+
+  historyNext.addEventListener("click", () => {
+    historyGrid.scrollBy({
+      left: historyGrid.clientWidth * 0.85,
+      behavior: "smooth"
+    });
+  });
+
+  historyPrev.addEventListener("click", () => {
+    historyGrid.scrollBy({
+      left: -historyGrid.clientWidth * 0.85,
+      behavior: "smooth"
+    });
+  });
+
+}
+
+
+/* =========================================================
+   ABOUT US — FAQ ACCORDION
+   ========================================================= */
+
+const faqItems = document.querySelectorAll(".about-faq-item");
+
+faqItems.forEach(item => {
+
+  item.addEventListener("toggle", () => {
+
+    if (item.open) {
+
+      faqItems.forEach(otherItem => {
+
+        if (otherItem !== item) {
+          otherItem.open = false;
+        }
+
+      });
+
+    }
+
+  });
+
+});
