@@ -2748,3 +2748,19 @@ h2 {
     font-size: 50px;
   }
 }
+
+/* =========================================================
+   FORCE SQUARE CORNERS ON ALL WEBSITE CARDS
+   ========================================================= */
+
+.business-card,
+.food-card,
+.insight-card {
+  border-radius: 0 !important;
+}
+
+.business-card .card-image,
+.food-card .food-card-image,
+.insight-card .insight-image {
+  border-radius: 0 !important;
+}
