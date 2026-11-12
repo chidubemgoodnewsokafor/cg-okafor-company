@@ -2086,6 +2086,6 @@ h2 {
    Keep existing button and control styling unchanged
    ========================================================= */
 
-*:not(button):not(.primary-button):not(.light-button):not(.hero-link):not(.menu-button):not(.hero-arrow):not(.hero-dot):not(.card-carousel-button):not(.nav-close):not(.social-link) {
+*:not(button):not(.primary-button):not(.light-button):not(.hero-link):not(.menu-button):not(.hero-arrow):not(.hero-dot):not(.card-carousel-button):not(.nav-close):not(.social-link):not(.about-history-button) {
   border-radius: 0 !important;
 }
