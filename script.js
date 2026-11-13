@@ -322,7 +322,7 @@ const heroSlides = [
     title: "Okafor<br>Agriscience",
 
     description:
-  "We do the research, science, data and innovate solutions that make farming better.",
+  "We do the research, science, and innovate solutions that make farming better.",
     link: "https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/",
     showLink: true
   },
@@ -335,7 +335,7 @@ textColor: "#ffffff",
 title: "Okafor Farm<br>Technology",
 
 description:
-  "Making farm work faster, easier and more efficient with practical technology and solutions.",
+  "Making farm work faster, easier and more efficient with our solutions.",
 link: "okafor-farm-technology/",
 showLink: true
 
