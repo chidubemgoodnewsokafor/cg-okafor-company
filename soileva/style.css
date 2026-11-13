@@ -1,0 +1,1792 @@
+/* =========================================
+   SOILEVA
+   Colours: deep green, light green and white
+========================================= */
+
+:root {
+  --deep-green: #003a1f;
+  --light-green: #43b02a;
+  --white: #ffffff;
+  --soft-green: #eff6eb;
+  --text-green: #31533d;
+  --muted: #718074;
+  --max-width: 1320px;
+  --radius: 30px;
+  --shadow: 0 20px 55px rgba(0, 58, 31, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--deep-green);
+  font-family: "Comfortaa", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.section-padding {
+  padding: 110px max(6%, calc((100% - var(--max-width)) / 2));
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.8px;
+  line-height: 1.6;
+}
+
+.eyebrow-green {
+  color: var(--light-green);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  color: var(--deep-green);
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: -1.8px;
+}
+
+.brand-name > span {
+  color: var(--light-green);
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 10px);
+  grid-template-rows: repeat(2, 16px);
+  gap: 3px;
+  width: 25px;
+  height: 35px;
+  transform: rotate(-8deg);
+}
+
+.brand-mark span {
+  background: var(--light-green);
+  border-radius: 100% 15% 100% 15%;
+}
+
+.brand-mark span:nth-child(2),
+.brand-mark span:nth-child(3) {
+  background: var(--deep-green);
+  transform: rotate(90deg);
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.site-header {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: 100%;
+  min-height: 94px;
+  padding: 18px max(4%, calc((100% - 1400px) / 2));
+  background: var(--white);
+  border-bottom: 1px solid rgba(0, 58, 31, 0.08);
+}
+
+.site-header > .brand {
+  flex-shrink: 0;
+  margin-right: auto;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(12px, 1.6vw, 24px);
+  margin-left: auto;
+}
+
+.nav-home,
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 0;
+  color: var(--deep-green);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-home:hover,
+.nav-link:hover {
+  color: var(--light-green);
+}
+
+.nav-external {
+  color: var(--light-green);
+  font-size: 15px;
+}
+
+
+/* PRODUCE GROUP */
+
+.nav-produce {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 7px 9px 7px 12px;
+  border: 1px solid rgba(0, 58, 31, 0.1);
+  border-radius: 18px;
+  background: #f8faf6;
+}
+
+.nav-section-label {
+  align-self: center;
+  margin-right: 5px;
+  color: var(--light-green);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  min-height: 40px;
+  padding: 9px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--deep-green);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle[aria-expanded="true"] {
+  background: var(--soft-green);
+  color: var(--deep-green);
+}
+
+.dropdown-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: rgba(67, 176, 42, 0.12);
+  color: var(--light-green);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-toggle[aria-expanded="true"] .dropdown-icon {
+  transform: rotate(45deg);
+}
+
+
+/* Dropdown panels */
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  z-index: 1005;
+  display: none;
+  min-width: 220px;
+  padding: 10px;
+  border: 1px solid rgba(0, 58, 31, 0.08);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.nav-dropdown.open .dropdown-menu {
+  display: block;
+  animation: menuDrop 0.2s ease both;
+}
+
+.nav-dropdown:last-child .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 13px;
+  border-radius: 10px;
+  color: var(--deep-green);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: var(--soft-green);
+  color: var(--deep-green);
+}
+
+
+/* Contact button */
+
+.nav-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 13px 19px;
+  border-radius: 100px;
+  background: var(--deep-green);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-contact span {
+  color: #9ce786;
+  font-size: 16px;
+}
+
+.nav-contact:hover {
+  background: var(--light-green);
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+
+/* =========================================
+   HERO CAROUSEL
+========================================= */
+
+.hero {
+  position: relative;
+  min-height: 660px;
+  height: min(78vh, 800px);
+  overflow: hidden;
+  background: var(--deep-green);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 80px max(8%, calc((100% - 1250px) / 2));
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.025);
+  transition:
+    opacity 0.8s ease,
+    transform 5s ease,
+    visibility 0.8s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 34, 17, 0.88) 0%,
+      rgba(0, 34, 17, 0.62) 48%,
+      rgba(0, 34, 17, 0.12) 100%
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  color: var(--white);
+}
+
+.hero-content .eyebrow {
+  margin-bottom: 24px;
+  color: #b4f19e;
+}
+
+.hero-content h1 {
+  margin-bottom: 24px;
+  font-size: clamp(48px, 6.2vw, 88px);
+  font-weight: 900;
+  line-height: 0.99;
+}
+
+.hero-content p {
+  max-width: 490px;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 17px 22px;
+  border: 0;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.button span {
+  font-size: 17px;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.button-light {
+  background: var(--white);
+  color: var(--deep-green);
+}
+
+.button-light:hover {
+  background: #e8f7e2;
+}
+
+.button-green {
+  background: var(--deep-green);
+  color: var(--white);
+}
+
+.button-green:hover {
+  background: var(--light-green);
+}
+
+.hero-index {
+  position: absolute;
+  right: 9%;
+  bottom: 38px;
+  z-index: 3;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero-controls {
+  position: absolute;
+  bottom: 27px;
+  left: 8%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--white);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.hero-dot.active {
+  width: 23px;
+  border-radius: 10px;
+  background: var(--light-green);
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.intro {
+  padding-top: 115px;
+  padding-bottom: 115px;
+}
+
+.intro-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+  color: var(--light-green);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.label-line {
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+  background: var(--light-green);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 9%;
+  align-items: start;
+}
+
+.intro-grid h2 {
+  margin-bottom: 0;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+.intro-grid h2 span,
+.section-heading h2 span,
+.sustainability-copy h2 span {
+  color: var(--light-green);
+}
+
+.intro-copy p {
+  margin-bottom: 18px;
+  color: var(--text-green);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--light-green);
+  color: var(--deep-green);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.text-link span {
+  color: var(--light-green);
+  font-size: 17px;
+}
+
+
+/* =========================================
+   PRODUCE SECTION
+========================================= */
+
+.produce-section {
+  overflow: hidden;
+  background: #f6f9f3;
+  padding-top: 105px;
+  padding-bottom: 125px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  max-width: var(--max-width);
+  margin: 0 auto 65px;
+}
+
+.section-heading h2 {
+  margin: 12px 0 0;
+  font-size: clamp(42px, 5.3vw, 68px);
+  font-weight: 900;
+  line-height: 1.04;
+}
+
+.section-heading > p {
+  max-width: 320px;
+  margin-bottom: 4px;
+  color: var(--text-green);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* Three-card asymmetric composition */
+
+.produce-cluster {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 275px 110px 275px;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.produce-card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 34px;
+  background: var(--deep-green);
+  color: var(--white);
+  box-shadow: 0 15px 35px rgba(0, 58, 31, 0.09);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.produce-card:hover {
+  z-index: 4;
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 58, 31, 0.18);
+}
+
+/* Keep any card photos behind the card content. */
+
+.produce-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.7s ease;
+}
+
+.produce-card:hover > img {
+  transform: scale(1.06);
+}
+
+.vegetables-card {
+  grid-column: 1 / 7;
+  grid-row: 1 / 3;
+  transform: translateY(15px);
+}
+
+.poultry-card {
+  grid-column: 7 / 13;
+  grid-row: 1 / 3;
+  transform: translateY(-15px);
+}
+
+.rice-card {
+  grid-column: 4 / 10;
+  grid-row: 3 / 4;
+  transform: translateY(-4px);
+  min-height: 275px;
+}
+
+.vegetables-card:hover,
+.poultry-card:hover,
+.rice-card:hover {
+  transform: translateY(-8px);
+}
+
+
+/* =========================================
+   PRODUCE CARD SVG ILLUSTRATIONS
+   FIXED STACKING ORDER
+========================================= */
+
+/*
+   Important:
+   The SVG illustrations must not use a negative z-index.
+   Each card has isolation: isolate, so negative stacking
+   can place the illustration behind the card background.
+*/
+
+.produce-illustration {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(67, 176, 42, 0.18),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #e9f5df, #c8e4b7);
+  pointer-events: none;
+}
+
+.produce-illustration svg {
+  display: block;
+  position: relative;
+  z-index: 0;
+  width: min(90%, 330px);
+  height: auto;
+  max-height: 85%;
+  overflow: visible;
+  filter: drop-shadow(0 8px 8px rgba(0, 58, 31, 0.08));
+  transition: transform 0.7s ease;
+}
+
+/*
+   The original SVGs use very pale lines.
+   Deep green makes the fine line-art visible against
+   the light illustration backgrounds.
+*/
+
+.produce-illustration svg path,
+.produce-illustration svg ellipse,
+.produce-illustration svg circle,
+.produce-illustration svg line,
+.produce-illustration svg polyline,
+.produce-illustration svg polygon,
+.produce-illustration svg rect {
+  stroke: var(--deep-green) !important;
+  vector-effect: non-scaling-stroke;
+}
+
+.produce-card:hover .produce-illustration svg {
+  transform: scale(1.07);
+}
+
+
+/* Individual illustration backgrounds */
+
+.vegetables-illustration {
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 255, 255, 0.9),
+      transparent 62%
+    ),
+    linear-gradient(145deg, #e7f5d9, #b9dca2);
+}
+
+.poultry-illustration {
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 255, 255, 0.95),
+      transparent 65%
+    ),
+    linear-gradient(145deg, #f5f1df, #d9e9c8);
+}
+
+.rice-illustration {
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 255, 255, 0.9),
+      transparent 62%
+    ),
+    linear-gradient(145deg, #f7f1d8, #dce9b7);
+}
+
+
+/* =========================================
+   CARD OVERLAY AND CONTENT
+========================================= */
+
+/*
+   Layer order:
+   0 = illustration
+   1 = dark gradient overlay
+   2 = card labels, numbers, decorations and text
+*/
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0, 28, 14, 0.91) 0%,
+      rgba(0, 28, 14, 0.45) 43%,
+      rgba(0, 28, 14, 0.06) 100%
+    );
+  pointer-events: none;
+}
+
+.vegetables-card .card-overlay,
+.poultry-card .card-overlay,
+.rice-card .card-overlay {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0, 28, 14, 0.94) 0%,
+      rgba(0, 28, 14, 0.74) 34%,
+      rgba(0, 28, 14, 0.05) 100%
+    );
+}
+
+.card-number {
+  position: absolute;
+  top: 23px;
+  left: 24px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 900;
+  backdrop-filter: blur(8px);
+}
+
+.card-content {
+  position: absolute;
+  right: 27px;
+  bottom: 28px;
+  left: 27px;
+  z-index: 2;
+}
+
+.card-category {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #c0f3ac;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.card-content h3 {
+  margin-bottom: 9px;
+  font-size: clamp(29px, 3.5vw, 45px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.card-content p {
+  max-width: 300px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.card-link > span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--light-green);
+  color: var(--deep-green);
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.produce-card:hover .card-link > span {
+  transform: rotate(45deg);
+}
+
+.card-decoration {
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 35% 65% 40% 60%;
+  transform: rotate(35deg);
+  pointer-events: none;
+}
+
+.rice-card .card-content h3 {
+  font-size: 38px;
+}
+
+
+/* =========================================
+   SUSTAINABILITY
+========================================= */
+
+.sustainability {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 9%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.sustainability-visual {
+  position: relative;
+  min-height: 470px;
+}
+
+.sustainability-visual > img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 42% 42% 28px 28px;
+}
+
+.sustainability-stamp {
+  position: absolute;
+  right: -28px;
+  bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 115px;
+  border: 7px solid var(--white);
+  border-radius: 50%;
+  background: var(--light-green);
+  color: var(--deep-green);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  transform: rotate(-12deg);
+}
+
+.sustainability-stamp strong {
+  font-size: 15px;
+}
+
+.sustainability-copy h2 {
+  margin: 18px 0 23px;
+  font-size: clamp(38px, 4.5vw, 60px);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.sustainability-copy > p {
+  margin-bottom: 30px;
+  color: var(--text-green);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   FARMCARE BANNER
+========================================= */
+
+.farmcare-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 410px;
+  padding: 80px max(8%, calc((100% - 1150px) / 2));
+  overflow: hidden;
+  background: var(--deep-green);
+  color: var(--white);
+  isolation: isolate;
+}
+
+.farmcare-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.farmcare-copy .eyebrow {
+  margin-bottom: 20px;
+  color: #a5ed8e;
+}
+
+.farmcare-copy h2 {
+  margin-bottom: 20px;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.04;
+}
+
+.farmcare-copy p {
+  max-width: 460px;
+  margin-bottom: 27px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Retained for compatibility if the old orbit is still in the HTML. */
+
+.farmcare-orbit {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.farmcare-orbit::before,
+.farmcare-orbit::after {
+  position: absolute;
+  content: "";
+  inset: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+.farmcare-orbit::after {
+  inset: 70px;
+  border-color: rgba(67, 176, 42, 0.6);
+}
+
+.farmcare-orbit span {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 100% 10% 100% 10%;
+  background: var(--light-green);
+}
+
+.farmcare-orbit span:nth-child(1) {
+  top: 40px;
+  left: 100px;
+  transform: rotate(35deg);
+}
+
+.farmcare-orbit span:nth-child(2) {
+  top: 135px;
+  right: 25px;
+  transform: rotate(80deg);
+}
+
+.farmcare-orbit span:nth-child(3) {
+  bottom: 25px;
+  left: 140px;
+  transform: rotate(145deg);
+}
+
+.farmcare-orbit span:nth-child(4) {
+  top: 150px;
+  left: 20px;
+  transform: rotate(220deg);
+}
+
+
+/* =========================================
+   CONTACT PILL
+========================================= */
+
+.contact-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.contact-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 45px 55px;
+  border: 1px solid rgba(0, 58, 31, 0.08);
+  border-radius: 38px;
+  background: var(--soft-green);
+}
+
+.contact-copy .eyebrow {
+  margin-bottom: 12px;
+}
+
+.contact-copy h2 {
+  margin-bottom: 10px;
+  font-size: clamp(27px, 3.3vw, 42px);
+  font-weight: 900;
+}
+
+.contact-copy p {
+  margin-bottom: 0;
+  color: var(--text-green);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 45px max(6%, calc((100% - var(--max-width)) / 2));
+  border-top: 1px solid rgba(0, 58, 31, 0.1);
+}
+
+.footer-brand {
+  justify-self: start;
+}
+
+.footer-tagline {
+  justify-self: end;
+  margin-bottom: 0;
+  color: var(--text-green);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--text-green);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.footer-links a:hover {
+  color: var(--light-green);
+}
+
+.copyright {
+  justify-self: end;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes menuDrop {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   MEDIUM DESKTOP
+========================================= */
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .site-header {
+    gap: 15px;
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .brand-name {
+    font-size: 26px;
+  }
+
+  .main-nav {
+    gap: 10px;
+  }
+
+  .nav-home,
+  .nav-link {
+    font-size: 11px;
+  }
+
+  .nav-produce {
+    gap: 0;
+    padding-right: 5px;
+    padding-left: 7px;
+  }
+
+  .nav-section-label {
+    margin-right: 2px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .dropdown-toggle {
+    gap: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 11px;
+  }
+
+  .nav-contact {
+    gap: 7px;
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+
+  .produce-cluster {
+    grid-template-rows: 250px 90px 250px;
+  }
+
+  .rice-card {
+    min-height: 250px;
+  }
+}
+
+
+/* =========================================
+   TABLET AND MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 900px) {
+  .site-header {
+    min-height: 78px;
+    padding: 15px 5%;
+    gap: 15px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 47px;
+    height: 47px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--deep-green);
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 19px;
+    height: 2px;
+    background: var(--white);
+    transition: transform 0.2s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    gap: 4px;
+    max-height: calc(100dvh - 78px);
+    padding: 20px 5% 35px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--white);
+    border-top: 1px solid rgba(0, 58, 31, 0.08);
+    box-shadow: 0 20px 35px rgba(0, 58, 31, 0.1);
+  }
+
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-home,
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 10px;
+    font-size: 15px;
+  }
+
+  .nav-produce {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 14px 10px;
+    border: 1px solid rgba(0, 58, 31, 0.1);
+    border-radius: 20px;
+    background: #f8faf6;
+  }
+
+  .nav-section-label {
+    margin: 0 10px 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 58, 31, 0.09);
+  }
+
+  .nav-dropdown:last-child {
+    border-bottom: 0;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    width: 100%;
+    min-height: 49px;
+    padding: 14px 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .dropdown-icon {
+    width: 22px;
+    height: 22px;
+    font-size: 18px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    min-width: 0;
+    padding: 0 8px 12px 15px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav-dropdown:last-child .dropdown-menu {
+    right: auto;
+    left: auto;
+  }
+
+  .dropdown-menu a {
+    padding: 13px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .nav-contact {
+    justify-content: center;
+    margin-top: 12px;
+    padding: 17px 22px;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 590px;
+    height: 75vh;
+  }
+
+  .intro-grid {
+    gap: 6%;
+  }
+
+  .produce-cluster {
+    grid-template-rows: 225px 75px 225px;
+    gap: 14px;
+  }
+
+  .produce-card {
+    border-radius: 26px;
+  }
+
+  .rice-card {
+    min-height: 225px;
+  }
+
+  .sustainability {
+    gap: 7%;
+  }
+
+  .sustainability-visual {
+    min-height: 380px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .section-padding {
+    padding: 75px 6%;
+  }
+
+  .brand-name {
+    font-size: 27px;
+  }
+
+  .hero {
+    min-height: 600px;
+    height: 78vh;
+    max-height: 760px;
+  }
+
+  .hero-slide {
+    padding: 65px 7%;
+    background-position: center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 34, 17, 0.85),
+        rgba(0, 34, 17, 0.35)
+      );
+  }
+
+  .hero-content h1 {
+    font-size: clamp(44px, 12vw, 65px);
+  }
+
+  .hero-content p {
+    max-width: 340px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .hero-controls {
+    bottom: 24px;
+    left: 7%;
+  }
+
+  .hero-index {
+    right: 7%;
+    bottom: 36px;
+  }
+
+  .intro {
+    padding-top: 75px;
+    padding-bottom: 80px;
+  }
+
+  .intro-label {
+    margin-bottom: 25px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+
+  .intro-grid h2 {
+    font-size: clamp(39px, 10vw, 55px);
+  }
+
+  .intro-copy p {
+    font-size: 14px;
+  }
+
+  .section-heading {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .section-heading h2 {
+    font-size: 46px;
+  }
+
+  .section-heading > p {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  /*
+    Mobile card arrangement:
+    Vegetables spans the top.
+    Poultry and Rice sit side-by-side underneath.
+  */
+
+  .produce-cluster {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 300px 230px;
+    gap: 14px;
+  }
+
+  .produce-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
+    border-radius: 24px;
+  }
+
+  .vegetables-card {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    transform: none;
+  }
+
+  .poultry-card {
+    grid-column: 1;
+    grid-row: 2;
+    transform: none;
+  }
+
+  .rice-card {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+    transform: none;
+  }
+
+  .produce-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Keep the illustrations sized correctly on mobile. */
+
+  .produce-illustration svg {
+    width: min(86%, 260px);
+    max-height: 72%;
+  }
+
+  .poultry-card .produce-illustration svg,
+  .rice-card .produce-illustration svg {
+    width: min(90%, 180px);
+    max-height: 60%;
+  }
+
+  .card-content {
+    right: 15px;
+    bottom: 18px;
+    left: 15px;
+  }
+
+  .vegetables-card .card-content {
+    right: 22px;
+    bottom: 23px;
+    left: 22px;
+  }
+
+  .card-category {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .card-content h3 {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  .vegetables-card .card-content h3 {
+    font-size: 39px;
+  }
+
+  .card-content p {
+    margin-bottom: 12px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .card-link {
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .card-link > span {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+  }
+
+  .card-number {
+    top: 15px;
+    left: 15px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .rice-card .card-content h3 {
+    font-size: 31px;
+  }
+
+  .sustainability {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .sustainability-visual {
+    min-height: 360px;
+    margin-right: 16px;
+  }
+
+  .sustainability-stamp {
+    right: -16px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .sustainability-copy h2 {
+    font-size: 45px;
+  }
+
+  .sustainability-copy > p {
+    font-size: 13px;
+  }
+
+  .farmcare-banner {
+    min-height: 420px;
+    padding: 75px 7%;
+  }
+
+  .farmcare-copy h2 {
+    font-size: 44px;
+  }
+
+  .farmcare-copy p {
+    font-size: 13px;
+  }
+
+  .farmcare-orbit {
+    right: -130px;
+    opacity: 0.5;
+  }
+
+  .contact-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .contact-pill {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px 25px;
+    border-radius: 28px;
+  }
+
+  .contact-copy h2 {
+    font-size: 32px;
+  }
+
+  .contact-copy p {
+    font-size: 13px;
+  }
+
+  .contact-pill .button {
+    width: 100%;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    padding: 38px 6%;
+  }
+
+  .footer-tagline,
+  .copyright {
+    justify-self: start;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .site-header {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .brand {
+    gap: 7px;
+  }
+
+  .brand-name {
+    font-size: 25px;
+  }
+
+  .menu-toggle {
+    width: 43px;
+    height: 43px;
+  }
+
+  .produce-cluster {
+    grid-template-rows: 270px 215px;
+    gap: 10px;
+  }
+
+  .produce-card {
+    border-radius: 20px;
+  }
+
+  .card-content {
+    right: 11px;
+    bottom: 14px;
+    left: 11px;
+  }
+
+  .card-category {
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  .card-content h3 {
+    font-size: 25px;
+  }
+
+  .card-content p {
+    font-size: 10px;
+  }
+
+  .card-link {
+    font-size: 9px;
+  }
+
+  .rice-card .card-content h3 {
+    font-size: 28px;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--light-green);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
