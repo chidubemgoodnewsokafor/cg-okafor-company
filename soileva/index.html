@@ -1,0 +1,629 @@
+<!DOCTYPE html><html lang="en">  <head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Soileva | Growth with Nature</title><meta name="description"  
+content="Discover fresh vegetables, poultry and rice from Soileva. Growth with Nature.">  <meta name="theme-color" content="#003a1f">  <!-- Comfortaa Font -->  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="style.css">  <!-- SEED-SHAPED PRODUCE CARDS -->  <style>  
+    /* HEADER AND FOOTER LOGO IMAGES */  .brand-logo {  
+  display: block;  
+  width: 150px;  
+  max-width: 100%;  
+  height: auto;  
+  object-fit: contain;  
+}  
+
+.footer-brand .brand-logo {  
+  width: 160px;  
+}  
+
+.produce-cluster {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  gap: clamp(18px, 3vw, 42px);  
+  flex-wrap: wrap;  
+  padding: 30px 0;  
+}  
+
+.produce-card {  
+  position: relative;  
+  display: block;  
+  flex: 1 1 260px;  
+  max-width: 350px;  
+  min-height: 430px;  
+  overflow: hidden;  
+  isolation: isolate;  
+  border-radius: 72% 28% 58% 42% / 40% 44% 56% 60%;  
+  text-decoration: none;  
+  background: #e7eee4;  
+  transform-origin: center;  
+  animation: seedFloat 6s ease-in-out infinite;  
+  transition:  
+    border-radius 0.7s ease,  
+    box-shadow 0.4s ease,  
+    transform 0.4s ease;  
+}  
+
+.produce-card:nth-child(2) {  
+  animation-delay: -2s;  
+  transform: translateY(22px);  
+  border-radius: 34% 66% 43% 57% / 55% 35% 65% 45%;  
+}  
+
+.produce-card:nth-child(3) {  
+  animation-delay: -4s;  
+  transform: translateY(-12px);  
+  border-radius: 57% 43% 68% 32% / 35% 57% 43% 65%;  
+}  
+
+.produce-card:hover {  
+  z-index: 5;  
+  animation-play-state: paused;  
+  transform: translateY(-8px) scale(1.035);  
+  border-radius: 48% 52% 48% 52% / 44% 46% 54% 56%;  
+  box-shadow: 0 24px 55px rgba(0, 45, 23, 0.22);  
+}  
+
+.produce-illustration {  
+  position: absolute;  
+  inset: 0;  
+  z-index: -2;  
+  width: 100%;  
+  height: 100%;  
+  overflow: hidden;  
+}  
+
+.produce-illustration img {  
+  display: block;  
+  width: 100%;  
+  height: 100%;  
+  object-fit: cover;  
+  transition: transform 0.8s ease;  
+}  
+
+.produce-card:hover .produce-illustration img {  
+  transform: scale(1.08);  
+}  
+
+.card-overlay {  
+  position: absolute;  
+  inset: 0;  
+  z-index: -1;  
+  background: linear-gradient(  
+    180deg,  
+    rgba(0, 30, 15, 0.02) 10%,  
+    rgba(0, 30, 15, 0.12) 40%,  
+    rgba(0, 30, 15, 0.88) 100%  
+  );  
+  pointer-events: none;  
+}  
+
+.card-number {  
+  position: absolute;  
+  top: 32px;  
+  left: 34px;  
+  z-index: 1;  
+  display: inline-flex;  
+  align-items: center;  
+  justify-content: center;  
+  width: 42px;  
+  height: 42px;  
+  border: 1px solid rgba(255, 255, 255, 0.75);  
+  border-radius: 50%;  
+  color: #fff;  
+  font-size: 12px;  
+  font-weight: 700;  
+  letter-spacing: 1px;  
+  background: rgba(0, 40, 20, 0.15);  
+  backdrop-filter: blur(8px);  
+}  
+
+.card-content {  
+  position: absolute;  
+  right: 0;  
+  bottom: 0;  
+  left: 0;  
+  z-index: 2;  
+  padding: 36px 32px 42px;  
+  color: #fff;  
+}  
+
+.card-category {  
+  display: block;  
+  margin-bottom: 12px;  
+  font-size: 10px;  
+  font-weight: 700;  
+  letter-spacing: 1.7px;  
+}  
+
+.card-content h3 {  
+  margin: 0 0 12px;  
+  color: #fff;  
+  font-size: clamp(25px, 3vw, 34px);  
+  line-height: 1.15;  
+}  
+
+.card-content p {  
+  margin: 0 0 22px;  
+  color: rgba(255, 255, 255, 0.92);  
+  font-size: 13px;  
+  line-height: 1.7;  
+}  
+
+.card-link {  
+  display: inline-flex;  
+  align-items: center;  
+  gap: 12px;  
+  color: #fff;  
+  font-size: 12px;  
+  font-weight: 700;  
+}  
+
+.card-link span {  
+  display: inline-flex;  
+  align-items: center;  
+  justify-content: center;  
+  width: 30px;  
+  height: 30px;  
+  border: 1px solid rgba(255, 255, 255, 0.7);  
+  border-radius: 50%;  
+  transition: background 0.3s ease, color 0.3s ease;  
+}  
+
+.produce-card:hover .card-link span {  
+  color: #003a1f;  
+  background: #fff;  
+}  
+
+.card-decoration {  
+  position: absolute;  
+  top: 18%;  
+  right: 13%;  
+  width: 42px;  
+  height: 72px;  
+  border: 1px solid rgba(255, 255, 255, 0.55);  
+  border-radius: 80% 20% 80% 20%;  
+  transform: rotate(28deg);  
+  opacity: 0.75;  
+  pointer-events: none;  
+}  
+
+.vegetables-card {  
+  background: #527e42;  
+}  
+
+.poultry-card {  
+  background: #b7a16c;  
+}  
+
+.rice-card {  
+  background: #a7b77b;  
+}  
+
+@keyframes seedFloat {  
+  0%, 100% {  
+    translate: 0 0;  
+  }  
+
+  25% {  
+    translate: 0 -10px;  
+  }  
+
+  50% {  
+    translate: 0 4px;  
+  }  
+
+  75% {  
+    translate: 0 -5px;  
+  }  
+}  
+
+@media (max-width: 760px) {  
+  .brand-logo {  
+    width: 125px;  
+  }  
+
+  .footer-brand .brand-logo {  
+    width: 140px;  
+  }  
+
+  .produce-cluster {  
+    gap: 22px;  
+    padding: 18px 0;  
+  }  
+
+  .produce-card {  
+    flex: 0 1 100%;  
+    width: 100%;  
+    max-width: 420px;  
+    min-height: 390px;  
+  }  
+
+  .produce-card:nth-child(2) {  
+    margin-left: 24px;  
+  }  
+
+  .produce-card:nth-child(3) {  
+    margin-right: 24px;  
+  }  
+
+  .card-content {  
+    padding: 30px 28px 36px;  
+  }  
+}  
+
+@media (prefers-reduced-motion: reduce) {  
+  .produce-card {  
+    animation: none;  
+    transition: none;  
+  }  
+
+  .produce-illustration img {  
+    transition: none;  
+  }  
+}
+
+</style></head><body>  <!-- NAVIGATION -->  <header class="site-header"><a href="index.html" class="brand" aria-label="Soileva homepage">
+<img
+src="images/soileva-logo.png"
+alt="Soileva — Growth with Nature"
+class="brand-logo"
+
+> 
+
+</a>  <button class="menu-toggle"  
+id="menuToggle"  
+type="button"  
+aria-label="Open navigation"  
+aria-expanded="false"  
+aria-controls="mainNav">
+<span></span>
+<span></span>
+</button>
+
+<nav class="main-nav" id="mainNav" aria-label="Main navigation">  <a class="nav-home" href="index.html">Home</a>
+
+  <div class="nav-produce">  
+    <span class="nav-section-label">OUR PRODUCE</span>  <div class="nav-dropdown">  
+  <button class="dropdown-toggle"  
+          type="button"  
+          aria-expanded="false"  
+          aria-controls="vegetablesDropdown">  
+    <span>Vegetables</span>  
+    <span class="dropdown-icon" aria-hidden="true">+</span>  
+  </button>  
+
+  <div class="dropdown-menu" id="vegetablesDropdown">  
+    <a href="vegetables.html">All Vegetables</a>  
+    <a href="vegetables.html#cabbage">Cabbage</a>  
+    <a href="vegetables.html#cucumber">Cucumber</a>  
+    <a href="vegetables.html#peppers">Peppers</a>  
+    <a href="vegetables.html#watermelon">Watermelon</a>  
+  </div>  
+</div>  
+
+<div class="nav-dropdown">  
+  <button class="dropdown-toggle"  
+          type="button"  
+          aria-expanded="false"  
+          aria-controls="poultryDropdown">  
+    <span>Poultry</span>  
+    <span class="dropdown-icon" aria-hidden="true">+</span>  
+  </button>  
+
+  <div class="dropdown-menu" id="poultryDropdown">  
+    <a href="poultry.html">All Poultry</a>  
+    <a href="poultry.html#eggs">Eggs</a>  
+    <a href="poultry.html#broilers">Broilers</a>  
+  </div>  
+</div>  
+
+<div class="nav-dropdown">  
+  <button class="dropdown-toggle"  
+          type="button"  
+          aria-expanded="false"  
+          aria-controls="riceDropdown">  
+    <span>Rice</span>  
+    <span class="dropdown-icon" aria-hidden="true">+</span>  
+  </button>  
+
+  <div class="dropdown-menu" id="riceDropdown">  
+    <a href="rice.html">Rice Overview</a>  
+    <a href="rice.html#cultivation">Rice Cultivation</a>  
+    <a href="rice.html#sourcing">Rice Sourcing</a>  
+  </div>  
+</div>
+
+  </div>  <a class="nav-link" href="about.html">About Soileva</a>
+
+  <a class="nav-link nav-farmcare" href="farmcare.html">  
+    Soileva Farmcare  
+    <span class="nav-external" aria-hidden="true">↗</span>  
+  </a>    <a class="nav-contact" href="#contact">  
+    Contact Us  
+    <span aria-hidden="true">↗</span>  
+  </a>  </nav>    </header>  <main><!-- HERO CAROUSEL -->  
+<section class="hero" aria-label="Welcome to Soileva">    <div class="hero-slide active"  
+       style="--hero-image: url('images/hero-cabbage.jpg')">  <div class="hero-shade"></div>  
+
+<div class="hero-content">  
+  <span class="eyebrow">GROWN WITH PURPOSE</span>  
+
+  <h1>Good food<br>starts at the farm.</h1>  
+
+  <p>  
+    From the soil to your table, we're growing food  
+    with care for people and the land.  
+  </p>  
+
+  <a href="#our-produce" class="button button-light">  
+    Explore our produce <span>↘</span>  
+  </a>  
+</div>  
+
+<span class="hero-index">01 / 03</span>
+
+  </div>    <div class="hero-slide"  
+       style="--hero-image: url('images/hero-watermelon.jpg')">  <div class="hero-shade"></div>  
+
+<div class="hero-content">  
+  <span class="eyebrow">FRESH FROM OUR FIELDS</span>  
+
+  <h1>Rooted in the land.<br>Growing for you.</h1>  
+
+  <p>  
+    Thoughtful farming focused on fresh produce  
+    and a more dependable food supply.  
+  </p>  
+
+  <a href="vegetables.html" class="button button-light">  
+    Discover our vegetables <span>↗</span>  
+  </a>  
+</div>  
+
+<span class="hero-index">02 / 03</span>
+
+  </div>    <div class="hero-slide"  
+       style="--hero-image: url('images/hero-poultry.jpg')">  <div class="hero-shade"></div>  
+
+<div class="hero-content">  
+  <span class="eyebrow">FOOD FOR EVERY TABLE</span>  
+
+  <h1>Growth with Nature.</h1>  
+
+  <p>  
+    Growing and supplying food that helps nourish  
+    families and communities.  
+  </p>  
+
+  <a href="#contact" class="button button-light">  
+    Get in touch <span>↗</span>  
+  </a>  
+</div>  
+
+<span class="hero-index">03 / 03</span>
+
+  </div>    <div class="hero-controls">  <button class="hero-arrow"  
+        id="heroPrev"  
+        type="button"  
+        aria-label="Previous slide">←</button>  
+
+<div class="hero-dots" aria-label="Choose slide">  
+  <button class="hero-dot active"  
+          type="button"  
+          aria-label="Slide 1"></button>  
+
+  <button class="hero-dot"  
+          type="button"  
+          aria-label="Slide 2"></button>  
+
+  <button class="hero-dot"  
+          type="button"  
+          aria-label="Slide 3"></button>  
+</div>  
+
+<button class="hero-arrow"  
+        id="heroNext"  
+        type="button"  
+        aria-label="Next slide">→</button>
+
+  </div>  
+</section>  <!-- INTRODUCTION -->  <section class="intro section-padding">    <div class="intro-label">  
+    <span class="label-line"></span>  
+    A FARM WITH PURPOSE  
+  </div>    <div class="intro-grid">  <h2>  
+  Nourishing people.<br>  
+  <span>Growing the future.</span>  
+</h2>  
+
+<div class="intro-copy">  
+  <p>  
+    For over a decade, Soileva has been guided by a simple  
+    belief: good farming should help put good food on people's  
+    tables.  
+  </p>  
+
+  <p>  
+    We grow vegetables, raise poultry and work across the  
+    food supply chain with care for our land, our people  
+    and the communities we serve.  
+  </p>  
+
+  <a href="about.html" class="text-link">  
+    Get to know Soileva <span>↗</span>  
+  </a>  
+</div>
+
+  </div>  
+</section>  <!-- THREE FEATURE CARDS -->  <section class="produce-section section-padding" id="our-produce">    <div class="section-heading">  
+    <div>  
+      <span class="eyebrow eyebrow-green">FROM OUR FARM</span>  
+      <h2>What we're <span>growing.</span></h2>  
+    </div>  <p>  
+  Explore the different parts of our farm  
+  and the food we bring to market.  
+</p>
+
+  </div>    <div class="produce-cluster">  <!-- VEGETABLES -->  
+<a href="vegetables.html"  
+   class="produce-card vegetables-card">  
+
+  <div class="produce-illustration vegetables-illustration"  
+       aria-hidden="true">  
+    <img src="images/vegetables.jpg"  
+         alt=""  
+         loading="lazy">  
+  </div>  
+
+  <span class="card-number">01</span>  
+  <div class="card-overlay"></div>  
+
+  <div class="card-content">  
+    <span class="card-category">FRESH FROM THE FIELD</span>  
+    <h3>Vegetables</h3>  
+    <p>Freshness grown from the soil.</p>  
+
+    <span class="card-link">  
+      Explore vegetables <span>↗</span>  
+    </span>  
+  </div>  
+
+  <span class="card-decoration" aria-hidden="true"></span>  
+</a>  
+
+<!-- POULTRY -->  
+<a href="poultry.html"  
+   class="produce-card poultry-card">  
+
+  <div class="produce-illustration poultry-illustration"  
+       aria-hidden="true">  
+    <img src="images/poultry.jpg"  
+         alt=""  
+         loading="lazy">  
+  </div>  
+
+  <span class="card-number">02</span>  
+  <div class="card-overlay"></div>  
+
+  <div class="card-content">  
+    <span class="card-category">RAISED WITH CARE</span>  
+    <h3>Poultry</h3>  
+    <p>Eggs and poultry for everyday nourishment.</p>  
+
+    <span class="card-link">  
+      Explore poultry <span>↗</span>  
+    </span>  
+  </div>  
+
+  <span class="card-decoration" aria-hidden="true"></span>  
+</a>  
+
+<!-- RICE -->  
+<a href="rice.html"  
+   class="produce-card rice-card">  
+
+  <div class="produce-illustration rice-illustration"  
+       aria-hidden="true">  
+    <img src="images/rice.jpg"  
+         alt=""  
+         loading="lazy">  
+  </div>  
+
+  <span class="card-number">03</span>  
+  <div class="card-overlay"></div>  
+
+  <div class="card-content">  
+    <span class="card-category">FROM FIELD TO FOOD</span>  
+    <h3>Rice</h3>  
+    <p>Supporting the journey from harvest to table.</p>  
+
+    <span class="card-link">  
+      Explore rice <span>↗</span>  
+    </span>  
+  </div>  
+
+  <span class="card-decoration" aria-hidden="true"></span>  
+</a>
+
+  </div>  
+</section>  <!-- SUSTAINABILITY -->  <section class="sustainability section-padding"  
+         id="sustainability">    <div class="sustainability-visual">  
+    <img src="images/farmer-in-field.jpg"  
+         alt="Farmer working in a cultivated field"  
+         loading="lazy">  <div class="sustainability-stamp">  
+  <span>GROW</span>  
+  <span>WITH</span>  
+  <strong>NATURE</strong>  
+</div>
+
+  </div>    <div class="sustainability-copy">  
+    <span class="eyebrow eyebrow-green">OUR RESPONSIBILITY</span>  <h2>Care for the land.<br><span>Care for people.</span></h2>  
+
+<p>  
+  Farming is about more than what we harvest today.  
+  It's also about protecting the soil, using resources  
+  thoughtfully and creating value for the people connected  
+  to our food.  
+</p>  
+
+<a href="about.html#sustainability" class="button button-green">  
+  Our approach to sustainability <span>↗</span>  
+</a>
+
+  </div>  
+</section>  <!-- FARMCARE -->  <section class="farmcare-banner">    <div class="farmcare-copy">  
+    <span class="eyebrow">FOR FARMERS</span>  <h2>Good farming needs<br>the right support.</h2>  
+
+<p>  
+  Explore Soileva Farmcare for agricultural products  
+  and support for your farming needs.  
+</p>  
+
+<a href="farmcare.html" class="button button-light">  
+  Explore Farmcare <span>↗</span>  
+</a>
+
+  </div>    <div class="farmcare-image"  
+       style="flex: 0 1 42%; min-width: 240px; max-width: 460px;  
+              aspect-ratio: 4 / 3; overflow: hidden;  
+              border-radius: 24px;">  <img src="images/farmcare.jpg"  
+     alt="Soileva Farmcare agricultural products and support"  
+     loading="lazy"  
+     style="display: block; width: 100%; height: 100%;  
+            object-fit: cover;">
+
+  </div>  </section>  <!-- CONTACT -->  <section class="contact-section section-padding" id="contact">    <div class="contact-pill">  
+    <div class="contact-copy">  
+      <span class="eyebrow eyebrow-green">LET'S TALK</span>  <h2>Looking for fresh produce?</h2>  
+
+  <p>Contact us to discuss orders and availability.</p>  
+</div>  
+
+<a href="mailto:hello@soileva.com"  
+   class="button button-green">  
+  Contact us to order <span>↗</span>  
+</a>
+
+  </div>  
+</section>    </main>  <!-- FOOTER -->  <footer class="site-footer"><a href="index.html"  
+   class="brand footer-brand"  
+   aria-label="Soileva homepage">  <img
+src="images/soileva-logo.png"
+alt="Soileva — Growth with Nature"
+class="brand-logo"
+loading="lazy"
+
+> 
+
+</a>  <p class="footer-tagline">Growth with Nature.</p>  <div class="footer-links">  
+  <a href="vegetables.html">Vegetables</a>  
+  <a href="poultry.html">Poultry</a>  
+  <a href="rice.html">Rice</a>  
+  <a href="about.html">About Soileva</a>  
+  <a href="farmcare.html">Soileva Farmcare</a>  
+  <a href="#contact">Contact Us</a>  
+</div>  <p class="copyright">  
+  © <span id="copyrightYear"></span> Soileva. All rights reserved.  
+</p>    </footer>  <script src="script.js"></script></body>  
+</html>
