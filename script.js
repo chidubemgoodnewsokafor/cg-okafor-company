@@ -351,7 +351,7 @@ title: "Okafor Grain &<br>Oilseeds",
 description:
   "Grain and oilseed sourcing, trade and value addition.",
 
-link: "okafor-grain&oilseeds.html",
+link: "okafor-grain&oilseeds/",
 showLink: true
 
 },
