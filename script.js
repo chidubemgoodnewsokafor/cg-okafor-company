@@ -349,7 +349,7 @@ textColor: "#074540",
 title: "Okafor Grains &<br>Oilseeds",
 
 description:
-  "Connecting agricultural production with grain and oilseed sourcing, trade and value addition.",
+  "Grain and oilseed sourcing, trade and value addition.",
 
 link: "okafor-grains&oilseeds.html",
 showLink: true
