@@ -342,16 +342,16 @@ showLink: true
 },
 
 {
-image: "hero-grains-oilseeds.jpg",
+image: "hero-grain-oilseeds.jpg",
 background: "#F1C400",
 textColor: "#074540",
 
-title: "Okafor Grains &<br>Oilseeds",
+title: "Okafor Grain &<br>Oilseeds",
 
 description:
   "Grain and oilseed sourcing, trade and value addition.",
 
-link: "okafor-grains&oilseeds.html",
+link: "okafor-grain&oilseeds.html",
 showLink: true
 
 },
