@@ -322,8 +322,7 @@ const heroSlides = [
     title: "Okafor<br>Agriscience",
 
     description:
-      "Empowering farmers with solutions for crop, poultry and pig farming.",
-
+  "We do the research, science, data and innovate solutions that make farming better.",
     link: "https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/",
     showLink: true
   },
@@ -336,8 +335,7 @@ textColor: "#ffffff",
 title: "Okafor Farm<br>Technology",
 
 description:
-  "Practical farm technology for modern agricultural operations.",
-
+  "Making farm work faster, easier and more efficient with practical technology and solutions.",
 link: "okafor-farm-technology/",
 showLink: true
 
@@ -366,7 +364,7 @@ textColor: "#ffffff",
 title: "Soileva",
 
 description:
-  "Growing fresh food and nourishing communities through sustainable agriculture.",
+  "We believe everyone deserves good nourishment and access to the products and solutions that help produce it.",
 
 link: "https://chidubemgoodnewsokafor.github.io/soileva/index.html",
 showLink: true
