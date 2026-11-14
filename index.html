@@ -1,632 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>C.G. Okafor Co. | Food, Agriculture &amp; Technology</title>
-
-  <meta
-    name="description"
-    content="C.G. Okafor Co. is a food and agricultural solutions and technology company."
-  >
-
-  <!-- Comfortaa Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#003a1f">
+<meta name="description" content="Soileva Farmcare — Growth with Nature.">
+<title>Soileva Farmcare | Growth with Nature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<!-- =========================================================
-     FLOATING MENU
-     ========================================================= -->
-
-<button
-  class="menu-button"
-  aria-label="Open menu"
-  aria-expanded="false"
-  type="button"
->
-  <img src="okafor-menu-logo.png" alt="Okafor">
-
-  <span></span>
-  <span></span>
-  <span></span>
-
-  <span class="menu-label menu-label-menu">MENU</span>
-
-  <span class="menu-label menu-label-slogan">
-    <span>better farming,</span>
-    <span>Food for all</span>
-  </span>
-</button>
-
-
-<!-- =========================================================
-     MAIN NAVIGATION
-     ========================================================= -->
-
-<nav class="main-nav" aria-hidden="true">
-
-  <div class="nav-header">
-
-    <a
-      href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/index.html"
-      class="nav-logo-link"
-      aria-label="Go to C.G. Okafor Co. homepage"
-    >
-      <img
-        src="okafor-menu-logo.png"
-        alt="C.G. Okafor Co."
-        class="nav-logo"
-      >
-    </a>
-
-    <button
-      class="nav-close"
-      type="button"
-      aria-label="Close menu"
-    >
-      ×
-    </button>
-
-  </div>
-
-
-  <!-- =====================================================
-     LEVEL 1
-     ===================================================== -->
-
-<div class="nav-panel nav-panel-main active">
-
-  <button
-    class="nav-item nav-has-children"
-    data-target="about-panel"
-    type="button"
-  >
-    <span>ABOUT US</span>
-    <span class="nav-arrow">›</span>
-  </button>
-
-  <div class="nav-divider"></div>
-
-  <a
-    href="careers.html"
-    class="nav-item nav-direct"
-  >
-    CAREERS
-  </a>
-
-  <a
-    href="contact.html"
-    class="nav-item nav-direct"
-  >
-    CONTACT US
-  </a>
-
-</div>
-
-
-  <!-- =====================================================
-       ABOUT US
-       ===================================================== -->
-
-  <div
-    class="nav-panel"
-    id="about-panel"
-  >
-
-    <button
-      class="nav-back"
-      type="button"
-      data-back="main"
-    >
-      <span>←</span>
-      <span>ABOUT US</span>
-    </button>
-
-
-    <a
-      href="about.html"
-      class="nav-item nav-direct"
-    >
-      About Us Overview
-    </a>
-
-
-    <a
-      href="history.html"
-      class="nav-item nav-direct"
-    >
-      Our History
-    </a>
-
-  </div>
-    
-  
-
-</nav>
-
-
-<!-- =========================================================
-     HERO CAROUSEL
-     ========================================================= -->
-
+<header class="site-header" id="top">
+  <a class="brand" href="#top" aria-label="Soileva Farmcare home"><img src="assets/soileva-logo.png" alt="Soileva Farmcare"></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+  <nav class="main-nav" id="main-nav">
+    <a href="#farming">Farming With Us</a><a href="#stores">Find a Store Nearby</a><a href="#quality">Quality Assurance</a><a href="#contact">Contact Us</a>
+    <a class="nav-shop" href="https://example.com/your-online-store">Shop Online ↗</a>
+  </nav>
+</header>
+<main>
 <section class="hero">
-
-  <!-- COMPANY LOGO -->
-  <a href="index.html" class="hero-logo">
-    <img src="cg-okafor-logo.png" alt="C.G. Okafor Co. logo">
-  </a>
-
-
-  <!-- COLOURED TEXT PANEL -->
-  <div class="hero-content">
-
-    <div class="hero-text">
-
-      <h1 id="hero-title">
-        C.G Okafor.
-      </h1>
-
-      <p id="hero-description">
-        Better farming, food for all.
-      </p>
-
-      <a
-        id="hero-link"
-        class="hero-link"
-        href="#"
-        style="display:none;"
-      >
-        Learn more <span>→</span>
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- BUSINESS IMAGE -->
-  <div class="hero-visual">
-
-    <div
-      id="hero-image"
-      class="hero-image"
-      style="background-image: url('hero-all.jpg');"
-    ></div>
-
-  </div>
-
-
-  <!-- CAROUSEL CONTROLS -->
-  <div class="hero-controls">
-
-    <button
-      class="hero-arrow hero-prev"
-      type="button"
-      aria-label="Previous slide"
-    >←</button>
-
-    <div class="hero-dots">
-
-  <button class="hero-dot active" type="button"
-    data-slide="0" aria-label="Slide 1"></button>
-
-  <button class="hero-dot" type="button"
-    data-slide="1" aria-label="Slide 2"></button>
-
-  <button class="hero-dot" type="button"
-    data-slide="2" aria-label="Slide 3"></button>
-
-  <button class="hero-dot" type="button"
-    data-slide="3" aria-label="Slide 4"></button>
-
-  <button class="hero-dot" type="button"
-    data-slide="4" aria-label="Slide 5"></button>
-
-</div>
-
-    <button
-      class="hero-arrow hero-next"
-      type="button"
-      aria-label="Next slide"
-    >→</button>
-
-  </div>
-
+  <article class="hero-slide active" style="--hero:url('assets/images/hero-seeds.jpg')">
+    <div class="shade"></div><div class="hero-copy"><span class="eyebrow">SOILEVA FARMCARE · GROWTH WITH NATURE</span><h1>Start With the<br><em>Right Genetics.</em></h1><p>Choose quality seeds that give your crops a strong start and help you grow with confidence.</p><a class="btn bright" href="https://example.com/seeds">SHOP SEEDS <b>↗</b></a></div>
+  </article>
+  <article class="hero-slide" style="--hero:url('assets/images/hero-crop-protection.jpg')">
+    <div class="shade"></div><div class="hero-copy"><span class="eyebrow">CARE FOR EVERY CROP</span><h2>Protect Your Crops.<br><em>Protect Your Investment.</em></h2><p>Find crop protection products to help manage weeds, pests and diseases throughout the growing season.</p><a class="btn bright" href="https://example.com/crop-protection">SHOP CROP PROTECTION <b>↗</b></a></div>
+  </article>
+  <article class="hero-slide" style="--hero:url('assets/images/hero-animal-health.jpg')">
+    <div class="shade"></div><div class="hero-copy"><span class="eyebrow">SUPPORTING HEALTHIER FLOCKS</span><h2>Healthier Flocks.<br><em>Better Productivity.</em></h2><p>Explore animal health products to support the care and management of your livestock.</p><a class="btn bright" href="https://example.com/animal-health">SHOP ANIMAL HEALTH <b>↗</b></a></div>
+  </article>
+  <article class="hero-slide" style="--hero:url('assets/images/hero-plant-nutrition.jpg')">
+    <div class="shade"></div><div class="hero-copy"><span class="eyebrow">HELP YOUR CROPS THRIVE</span><h2>Give Your Crops<br><em>the Right Nutrients.</em></h2><p>Discover plant nutrition products to support healthy growth from planting to harvest.</p><a class="btn bright" href="https://example.com/plant-nutrition">SHOP PLANT NUTRITION <b>↗</b></a></div>
+  </article>
+  <div class="hero-controls"><button class="arrow" data-step="-1" aria-label="Previous slide">←</button><div class="dots"><button class="dot active" aria-label="Slide 1"></button><button class="dot" aria-label="Slide 2"></button><button class="dot" aria-label="Slide 3"></button><button class="dot" aria-label="Slide 4"></button></div><button class="arrow" data-step="1" aria-label="Next slide">→</button><span class="slide-count"><b id="slide-number">01</b> / 04</span></div>
 </section>
 
-<!-- =========================================================
-     COMPANY NUMBERS
-     ========================================================= -->
-
-<section class="company-numbers" id="company-numbers">
-
-  <div class="number-item">
-    <strong class="counter" data-target="1000" data-suffix="+">0</strong>
-    <span>Empowered Farmers</span>
-  </div>
-
-  <div class="number-item">
-    <strong class="counter" data-target="2000" data-suffix="+">0</strong>
-    <span>Acres Cultivated</span>
-  </div>
-
-  <div class="number-item">
-    <strong class="counter" data-target="15" data-suffix="+">0</strong>
-    <span>Agricultural Solutions</span>
-  </div>
-
-  <div class="number-item">
-    <strong class="counter" data-target="5" data-suffix="+">0</strong>
-    <span>States Reached</span>
-  </div>
-
+<section class="intro section">
+  <span class="kicker">— GROWTH WITH NATURE</span><div class="intro-grid"><h2>Welcome to<br><em>Soileva Farmcare.</em></h2><div><p>Your farming journey deserves the right support. At Soileva Farmcare, we bring together agricultural products and practical solutions to support farmers, growers and everyone involved in producing food.</p><p>Whether you're starting a new farm or managing an established operation, we're here to help you find what you need.</p><a class="under-link" href="https://example.com/your-online-store">Explore our online store ↗</a></div></div>
 </section>
 
-
-<!-- =========================================================
-     ABOUT
-     ========================================================= -->
-
-<section class="section about-section" id="about">
-
-
-    <p class="eyebrow">ABOUT US</p>
-
-    <h2>Since 2017, we've dared to imagine a better way to farm,
-      a better way to produce food, and a better future for agriculture.</h2>
-
-
-    <a href="about.html" class="text-link">
-      Explore About Us <span>→</span>
-    </a>
-
+<section class="featured section" id="products">
+  <div class="section-head"><div><span class="eyebrow green">CHOSEN FOR YOUR FARM</span><h2>Featured <em>Products.</em></h2></div><p>Explore selected products for your crops, livestock and everyday farming needs.</p></div>
+  <div class="promo-grid">
+    <a href="https://example.com/product-1" class="promo"><img src="assets/images/featured-01.jpg" alt="Featured product 1"></a>
+    <a href="https://example.com/product-2" class="promo"><img src="assets/images/featured-02.jpg" alt="Featured product 2"></a>
+    <a href="https://example.com/product-3" class="promo"><img src="assets/images/featured-03.jpg" alt="Featured product 3"></a>
+    <a href="https://example.com/product-4" class="promo"><img src="assets/images/featured-04.jpg" alt="Featured product 4"></a>
+    <a href="https://example.com/product-5" class="promo"><img src="assets/images/featured-05.jpg" alt="Featured product 5"></a>
+    <a href="https://example.com/product-6" class="promo"><img src="assets/images/featured-06.jpg" alt="Featured product 6"></a>
+    <a href="https://example.com/product-7" class="promo"><img src="assets/images/featured-07.jpg" alt="Featured product 7"></a>
+    <a href="https://example.com/product-8" class="promo"><img src="assets/images/featured-08.jpg" alt="Featured product 8"></a>
   </div>
+  <div class="more"><span class="eyebrow green">THERE'S MORE TO EXPLORE</span><h3>Looking for Something Else?</h3><p>Explore our full range of agricultural products in the Soileva Farmcare online store.</p><a class="btn dark" href="https://example.com/your-online-store">SHOP ALL PRODUCTS ↗</a></div>
 </section>
 
-<!-- =========================================================
-     BUSINESSES
-     ========================================================= -->
-
-<section class="section businesses-section" id="businesses">
-
-  <div class="section-heading">
-
-    <p class="eyebrow">OUR BUSINESSES</p>
-
-    <h2>Our businesses</h2>
-
-  </div>
-
-
-  <div class="business-grid">
-
-    <a
-      href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/"
-      class="business-card"
-    >
-
-      <div class="card-image">
-        <img
-          src="business-agriscience.jpg"
-          alt="Agriscience"
-        >
-      </div>
-
-      <div class="card-body">
-
-        <span class="card-number">01</span>
-
-        <h3>Agriscience</h3>
-
-        <span class="card-link">
-          VISIT →
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <a
-      href="okafor-farm-technology/"
-      class="business-card"
-    >
-
-      <div class="card-image">
-        <img
-          src="business-farm-technology.jpg"
-          alt="Farm Technology"
-        >
-      </div>
-
-      <div class="card-body">
-
-        <span class="card-number">02</span>
-
-        <h3>Farm Technology</h3>
-
-        <span class="card-link">
-          VISIT →
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <a
-      href="okafor-grain&oilbeans/"
-      class="business-card"
-    >
-
-      <div class="card-image">
-        <img
-          src="business-foods.jpg"
-          alt="Grain&oilbeans"
-        >
-      </div>
-
-      <div class="card-body">
-
-        <span class="card-number">03</span>
-
-        <h3>Grain & Oilseeds</h3>
-
-        <span class="card-link">
-          VISIT →
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <a
-      href="https://chidubemgoodnewsokafor.github.io/soileva/"
-      class="business-card"
-    >
-
-      <div class="card-image">
-        <img
-          src="business-soileva.jpg"
-          alt="Soileva"
-        >
-      </div>
-
-      <div class="card-body">
-
-        <span class="card-number">04</span>
-
-        <h3>Soileva farm</h3>
-
-        <span class="card-link">
-          VISIT →
-        </span>
-
-      </div>
-
-    </a>
-
-  </div>
-
+<section class="arrivals section"><div class="section-head"><div><span class="eyebrow green">JUST ADDED</span><h2>Fresh From<br><em>Our Store.</em></h2></div><p>Discover recently added products and explore what's new at Soileva Farmcare.</p></div>
+  <div class="arrival-grid"><a class="arrival" href="https://example.com/new-1"><img src="assets/images/new-01.jpg" alt="New arrival 1"></a><a class="arrival" href="https://example.com/new-2"><img src="assets/images/new-02.jpg" alt="New arrival 2"></a><a class="arrival" href="https://example.com/new-3"><img src="assets/images/new-03.jpg" alt="New arrival 3"></a><a class="arrival" href="https://example.com/new-4"><img src="assets/images/new-04.jpg" alt="New arrival 4"></a></div>
+  <div class="center"><a class="btn dark" href="https://example.com/your-online-store">SHOP ALL ↗</a></div>
 </section>
 
-
-<!-- =========================================================
-     FARMERS
-     ========================================================= -->
-
-<section class="farmers-section" id="farmers">
-
-  <div class="farmers-image">
-
-    <img
-      src="farmers-by-okafor.jpg"
-      alt="Farmers working in agriculture"
-    >
-
-  </div>
-
-
-  <div class="farmers-content">
-
-    <p class="eyebrow">FARMERS BY OKAFOR</p>
-
-    <h2>With farmers.</h2>
-
-    <p>
-      The people we work with, the experiences they share
-      and the relationships we build.
-    </p>
-
-    <a
-      href="impact.html"
-      class="primary-button light-button"
-    >
-      Our impact
-    </a>
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-      
-        <!-- =====================================================
-     SIMPLE CORPORATE FOOTER
-     ===================================================== -->
-
-<footer class="site-footer" id="footer-contact">
-
-  <div class="footer-main">
-
-    <!-- BRAND -->
-
-    <div class="footer-brand">
-
-      <a href="index.html" class="footer-logo">
-        <img
-          src="cg-okafor-logo.png"
-          alt="C.G. Okafor Co."
-        >
-      </a>
-
-      <p>
-        A food and agricultural solutions and technology company.
-      </p>
-
-    </div>
-
-
-    <!-- COMPANY -->
-
-    <div class="footer-column">
-
-      <h4>Company</h4>
-
-      <a href="about.html">About Us</a>
-
-      <a href="history.html">Our History</a>
-
-      <a href="careers.html">Careers</a>
-
-      <a href="contact.html">Contact Us</a>
-
-    </div>
-
-
-    <!-- BUSINESSES -->
-
-    <div class="footer-column">
-
-      <h4>Our Businesses</h4>
-
-      <a href="okafor-agriscience/">
-        Okafor Agriscience
-      </a>
-
-      <a href="okafor-farm-technology/">
-        Okafor Farm Technology
-      </a>
-
-      <a href="okafor-grain&amp;oilseeds/">
-        Okafor Grain &amp; Oilseeds
-      </a>
-
-      <a href="https://chidubemgoodnewsokafor.github.io/soileva/">
-        Soileva
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- FOOTER BOTTOM -->
-
-  <div class="footer-bottom">
-
-    <span>
-      © 2026 C.G. Okafor Co. All rights reserved.
-    </span>
-
-
-    <div class="footer-social-links">
-
-      <!-- WHATSAPP -->
-
-      <a
-        href="https://wa.me/2349060485238"
-        class="social-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
-        title="WhatsApp"
-      >
-
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-
-          <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0
-          C5.55 0 .24 5.31.24 11.84
-          c0 2.09.55 4.13 1.59 5.93L.17 24
-          l6.37-1.67a11.85 11.85 0 0 0 5.54 1.37h.01
-          c6.53 0 11.84-5.31 11.84-11.84
-          0-3.16-1.23-6.13-3.41-8.38z
-          M12.09 21.67h-.01
-          a9.83 9.83 0 0 1-5.01-1.38l-.36-.21
-          -3.78.99 1.01-3.68-.23-.38
-          a9.82 9.82 0 0 1-1.51-5.17
-          C2.2 6.42 6.62 2 12.08 2
-          c2.65 0 5.14 1.03 7.01 2.9
-          a9.84 9.84 0 0 1 2.91 7
-          c0 5.45-4.43 9.77-9.91 9.77z
-          M17.48 14.59c-.3-.15-1.78-.88-2.06-.98
-          -.28-.1-.48-.15-.68.15
-          -.2.3-.78.98-.95 1.18
-          -.17.2-.35.22-.65.07
-          -.3-.15-1.26-.46-2.4-1.48
-          -.89-.79-1.49-1.77-1.66-2.07
-          -.17-.3-.02-.46.13-.61
-          .13-.13.3-.35.45-.52
-          .15-.17.2-.3.3-.5
-          .1-.2.05-.37-.02-.52
-          -.07-.15-.68-1.64-.93-2.25
-          -.24-.59-.49-.51-.68-.52
-          -.17-.01-.37-.01-.57-.01
-          -.2 0-.52.07-.79.37
-          -.27.3-1.04 1.02-1.04 2.48
-          0 1.46 1.06 2.87 1.21 3.07
-          .15.2 2.09 3.19 5.07 4.48
-          .71.31 1.26.5 1.69.64
-          .71.23 1.36.2 1.87.12
-          .57-.08 1.78-.73 2.03-1.43
-          .25-.7.25-1.3.17-1.43
-          -.07-.12-.27-.2-.57-.35z"/>
-
-        </svg>
-
-      </a>
-
-
-      <!-- FACEBOOK -->
-
-      <a
-        href="https://www.facebook.com/share/1BuxKzeTvz/"
-        class="social-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="C.G. Okafor Co. on Facebook"
-        title="Facebook"
-      >
-
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-
-          <path d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.67.33-1 1-1z"/>
-
-        </svg>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</footer>
-
+<section class="farming section" id="farming"><div class="farm-photo"><img src="assets/images/farming-with-us.jpg" alt="Farmers working together on a farm"><span class="photo-stamp">✿<small>GROWING<br>TOGETHER</small></span></div><div class="farm-copy"><span class="eyebrow green">FARMING WITH US</span><h2>Growing Together.<br><em>Supporting Every Farmer.</em></h2><p>Farming is more than growing crops. It's the work, dedication and decisions that bring food to our tables. At Soileva, we're committed to making farming products and solutions more accessible to the people who need them.</p><div class="button-row"><a class="btn dark" href="https://example.com/your-online-store">SHOP ONLINE ↗</a><a class="btn outline" href="#stores">LOCATE A NEARBY STORE ↗</a></div></div></section>
+
+<section class="quality" id="quality"><span class="quality-flower">✿</span><span class="eyebrow">QUALITY ASSURANCE</span><h2>Good farming starts<br>with the <em>right support.</em></h2><p>We aim to make it easier for farmers and growers to find agricultural products they can choose with confidence.</p><a class="under-link light" href="#contact">Talk to our team ↗</a></section>
+
+<section class="stores section" id="stores"><div><span class="eyebrow green">COME AND FIND US</span><h2>Support is closer<br><em>than you think.</em></h2><p>Looking for a Soileva Farmcare store or need help finding a product? Get in touch and our team will help point you in the right direction.</p><a class="btn dark" href="https://wa.me/2349060485238">FIND A STORE / ASK US ↗</a></div><div class="store-art"><span>✿</span><small>GROWTH<br>WITH NATURE</small></div></section>
+
+<section class="faq section" id="faq"><div class="faq-intro"><span class="eyebrow green">HERE TO HELP</span><h2>Frequently asked<br><em>questions.</em></h2><p>Some quick answers to help you get started.</p></div><div class="faq-list">
+  <details><summary>How do I find the products I need?</summary><p>Browse our product categories or use the online store to search for specific agricultural products. You can also contact our team for assistance.</p></details>
+  <details><summary>What do IR and other resistance terms mean when choosing seeds?</summary><p>Seed varieties may carry different resistance or tolerance characteristics. Understanding these terms can help you select varieties suited to your crop and farming conditions.</p></details>
+  <details><summary>How do I choose the right dosage for my flock?</summary><p>The appropriate dosage depends on the product, animal type, age, weight and intended use. Always follow the manufacturer's instructions or consult a qualified animal health professional.</p></details>
+  <details><summary>Do you deliver to my location?</summary><p>We work to make our products accessible to customers in different locations. Contact us to confirm delivery availability and arrangements for your area.</p></details>
+  <details><summary>Can I buy now and pay later?</summary><p>Payment arrangements may vary depending on the product and applicable terms. Please contact our team to find out whether this option is available.</p></details>
+</div></section>
+
+<section class="contact section" id="contact"><div><span class="eyebrow">LET'S TALK FARMING</span><h2>Need a hand?<br><em>We're happy to help.</em></h2><p>Reach out to Soileva Farmcare for product enquiries and general assistance.</p></div><a class="btn bright" href="https://wa.me/2349060485238">CHAT WITH US ON WHATSAPP ↗</a></section>
+</main>
+<footer class="footer"><div class="footer-main"><a class="brand" href="#top"><img src="assets/soileva-logo.png" alt="Soileva Farmcare"></a><p class="tagline">Growth with Nature.</p><nav class="footer-links"><a href="#farming">Farming With Us</a><a href="#stores">Find a Store</a><a href="#quality">Quality Assurance</a><a href="#faq">FAQs</a><a href="https://example.com/your-online-store">Shop Online</a></nav><div class="social"><a href="https://wa.me/2349060485238" target="_blank" rel="noopener">WhatsApp ↗</a><a href="https://www.facebook.com/profile.php?id=61576845030849" target="_blank" rel="noopener">Facebook ↗</a></div></div><div class="footer-bottom"><span>© <span id="year"></span> Soileva Farmcare. All rights reserved.</span><span>Soileva Farmcare — A C.G. Okafor Business.</span></div></footer>
+<a class="whatsapp-float" href="https://wa.me/2349060485238" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">✆</a>
 <script src="script.js"></script>
-
-</body>
-</html>
+</body></html>
