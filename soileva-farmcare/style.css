@@ -1289,3 +1289,536 @@ animation-iteration-count: 1 !important;
 }
 
 }
+
+/* =========================================
+SOILEVA FARMCARE — RETAIL EXPERIENCE
+LARGE TYPOGRAPHY & PROMOTIONAL CARDS
+========================================= */
+
+/* GENERAL TYPOGRAPHY */
+
+body {
+  font-size: 17px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.btn {
+  font-size: 14px;
+  padding: 19px 30px;
+  min-height: 56px;
+}
+
+/* =========================================
+HERO
+========================================= */
+
+.hero-copy p {
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+.hero-copy .eyebrow {
+  font-size: 13px;
+}
+
+.hero-controls .arrow {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+}
+
+/* =========================================
+SECTION HEADINGS
+========================================= */
+
+.section-head h2 {
+  font-size: clamp(55px, 6vw, 88px);
+}
+
+.section-head > p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* =========================================
+FEATURED PRODUCTS
+LARGE RETAIL PROMOTIONAL CAROUSEL
+========================================= */
+
+.featured {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.featured-slides {
+  gap: 25px;
+  padding-bottom: 15px;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+.featured-slide {
+  flex: 0 0 88%;
+  height: min(680px, 75vw);
+  min-height: 550px;
+  scroll-snap-align: center;
+}
+
+.featured-slide img {
+  object-fit: cover;
+}
+
+.featured-arrow {
+  width: 66px;
+  height: 66px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.featured-prev {
+  left: 22px;
+}
+
+.featured-next {
+  right: 22px;
+}
+
+.card-action {
+  left: 35px;
+  bottom: 35px;
+  min-width: 175px;
+  padding: 20px 26px;
+  font-size: 14px;
+}
+
+.card-action b {
+  font-size: 22px;
+}
+
+.featured-dot {
+  width: 11px;
+  height: 11px;
+}
+
+.featured-dot.active {
+  width: 32px;
+}
+
+/* =========================================
+MORE PRODUCTS
+========================================= */
+
+.more h3 {
+  font-size: clamp(40px, 5vw, 60px);
+}
+
+.more p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* =========================================
+NEW ARRIVALS
+========================================= */
+
+.arrivals {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.arrival {
+  height: 550px;
+}
+
+.arrival-control {
+  width: 62px;
+  height: 62px;
+  font-size: 30px;
+}
+
+.arrival-pagination {
+  gap: 12px;
+}
+
+.arrival-dot {
+  width: 11px;
+  height: 11px;
+}
+
+/* =========================================
+STORES
+========================================= */
+
+.stores h2 {
+  font-size: clamp(55px, 6vw, 82px);
+}
+
+.stores p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* =========================================
+FAQ
+========================================= */
+
+.faq-intro h2 {
+  font-size: clamp(50px, 5.5vw, 76px);
+}
+
+.faq-intro p {
+  font-size: 16px;
+}
+
+.faq-list summary {
+  font-size: 17px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+.faq-list summary::after {
+  font-size: 30px;
+}
+
+.faq-list details p {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* =========================================
+CONTACT
+========================================= */
+
+.contact h2 {
+  font-size: clamp(58px, 6vw, 82px);
+}
+
+.contact p {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+.footer-links a,
+.social a {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.tagline {
+  font-size: 15px;
+}
+
+.footer-bottom {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+MOBILE EXPERIENCE
+========================================= */
+
+@media(max-width:600px) {
+
+  body {
+    font-size: 17px;
+  }
+
+  .section {
+    padding: 85px 5%;
+  }
+
+  /* HERO */
+
+  .hero {
+    min-height: 720px;
+    height: 100svh;
+  }
+
+  .hero-slide {
+    padding: 55px 7% 100px;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+  }
+
+  .hero-copy h1,
+  .hero-copy h2 {
+    font-size: clamp(52px, 12.5vw, 72px);
+    line-height: 1.04;
+  }
+
+  .hero-copy p {
+    font-size: 17px;
+    line-height: 1.85;
+    max-width: 100%;
+  }
+
+  .hero-copy .btn {
+    font-size: 14px;
+    padding: 19px 28px;
+  }
+
+  .hero-controls {
+    bottom: 25px;
+  }
+
+  .hero-controls .arrow {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* SECTION HEADINGS */
+
+  .section-head {
+    margin-bottom: 35px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(49px, 12vw, 65px);
+    line-height: 1.06;
+  }
+
+  .section-head > p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-top: 20px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  /* FEATURED PRODUCTS */
+
+  .featured {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .featured-slides {
+    gap: 12px;
+    padding-bottom: 12px;
+  }
+
+  .featured-slide {
+    flex: 0 0 96%;
+    height: 75svh;
+    min-height: 540px;
+    max-height: 720px;
+  }
+
+  .featured-slide img {
+    object-fit: cover;
+  }
+
+  .featured-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 27px;
+  }
+
+  .featured-prev {
+    left: 10px;
+  }
+
+  .featured-next {
+    right: 10px;
+  }
+
+  .card-action {
+    left: 18px;
+    bottom: 22px;
+    min-width: 155px;
+    padding: 17px 20px;
+    font-size: 13px;
+  }
+
+  .featured-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .featured-dot.active {
+    width: 28px;
+  }
+
+  /* MORE PRODUCTS */
+
+  .more {
+    margin-top: 55px;
+    padding: 45px 12px;
+  }
+
+  .more h3 {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+
+  .more p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  /* NEW ARRIVALS */
+
+  .arrivals {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .arrival-carousel {
+    grid-template-columns: 44px minmax(0,1fr) 44px;
+    gap: 7px;
+  }
+
+  .arrival-track {
+    gap: 0;
+  }
+
+  .arrival {
+    flex-basis: 100%;
+    height: 65svh;
+    min-height: 430px;
+    max-height: 600px;
+  }
+
+  .arrival-control {
+    width: 44px;
+    height: 44px;
+    font-size: 25px;
+  }
+
+  .arrival-pagination {
+    padding-top: 25px;
+  }
+
+  /* STORES */
+
+  .stores {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .stores h2 {
+    font-size: clamp(48px, 11vw, 64px);
+  }
+
+  .stores p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .store-actions .btn {
+    min-height: 58px;
+    font-size: 14px;
+  }
+
+  /* FAQ */
+
+  .faq {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+  .faq-intro h2 {
+    font-size: clamp(48px, 11vw, 62px);
+  }
+
+  .faq-intro p {
+    font-size: 16px;
+  }
+
+  .faq-list summary {
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 23px 40px 23px 0;
+  }
+
+  .faq-list details p {
+    font-size: 15px;
+    line-height: 1.9;
+    padding-bottom: 25px;
+  }
+
+  /* CONTACT */
+
+  .contact {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .contact h2 {
+    font-size: clamp(55px, 12vw, 70px);
+  }
+
+  .contact p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .contact .btn {
+    font-size: 13px;
+    min-height: 62px;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    padding: 45px 6% 25px;
+  }
+
+  .footer-links a,
+  .social a {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+  }
+
+}
+
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media(max-width:380px) {
+
+  .hero-copy h1,
+  .hero-copy h2 {
+    font-size: 49px;
+  }
+
+  .featured-slide {
+    height: 68svh;
+    min-height: 490px;
+  }
+
+  .arrival {
+    height: 60svh;
+    min-height: 400px;
+  }
+
+  }
