@@ -1,489 +1,331 @@
 (() => {
-
-/* =================================
-MOBILE NAVIGATION
-================================= */
-
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.main-nav');
-
-if (toggle && nav) {
-
-toggle.addEventListener('click', () => {
-
-  const open = toggle.getAttribute('aria-expanded') === 'true';
-
-  toggle.setAttribute('aria-expanded', String(!open));
-
-  toggle.setAttribute(
-    'aria-label',
-    open ? 'Open navigation' : 'Close navigation'
-  );
-
-  nav.classList.toggle('open', !open);
-
-  document.body.classList.toggle('menu-open', !open);
-
-});
-
-nav.querySelectorAll('a').forEach(link => {
-
-  link.addEventListener('click', () => {
-
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation');
-
-    nav.classList.remove('open');
-
-    document.body.classList.remove('menu-open');
-
-  });
-
-});
-
-window.addEventListener('resize', () => {
-
-  if (window.innerWidth > 820) {
-
-    toggle.setAttribute('aria-expanded', 'false');
-
-    nav.classList.remove('open');
-
-    document.body.classList.remove('menu-open');
-
-  }
-
-});
-
-}
-
 /* =================================
 HERO CAROUSEL
 ================================= */
 
-const slides = [
-...document.querySelectorAll('.hero-slide')
-];
-
-const dots = [
-...document.querySelectorAll('.hero-controls .dot')
-];
-
-const number = document.getElementById('slide-number');
-
-const heroArrows = [
-...document.querySelectorAll('.hero-controls .arrow')
-];
+const heroSlides = [...document.querySelectorAll('.hero-slide')];
+const heroDots = [...document.querySelectorAll('.hero-controls .dot')];
+const heroNumber = document.getElementById('slide-number');
+const heroArrows = [...document.querySelectorAll('.hero-controls .arrow')];
 
 let heroIndex = 0;
 let heroTimer;
 
-function showHero(n) {
+function showHero(index) {
+if (!heroSlides.length) return;
 
-if (!slides.length) return;
+heroIndex = (index + heroSlides.length) % heroSlides.length;
 
-heroIndex = (n + slides.length) % slides.length;
-
-slides.forEach((slide, i) => {
-
+heroSlides.forEach((slide, i) => {
   slide.classList.toggle('active', i === heroIndex);
-
 });
 
-dots.forEach((dot, i) => {
-
+heroDots.forEach((dot, i) => {
   dot.classList.toggle('active', i === heroIndex);
-
+  dot.setAttribute('aria-current', i === heroIndex ? 'true' : 'false');
 });
 
-if (number) {
-
-  number.textContent = String(heroIndex + 1).padStart(2, '0');
-
+if (heroNumber) {
+  heroNumber.textContent = String(heroIndex + 1).padStart(2, '0');
 }
 
 }
 
 function restartHero() {
-
 clearInterval(heroTimer);
 
-if (slides.length > 1) {
-
+if (
+  heroSlides.length > 1 &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
   heroTimer = setInterval(() => {
-
     showHero(heroIndex + 1);
-
   }, 6500);
-
 }
 
 }
 
 heroArrows.forEach(button => {
-
 button.addEventListener('click', () => {
-
-  showHero(heroIndex + Number(button.dataset.step));
-
-  restartHero();
-
-});
-
-});
-
-dots.forEach((dot, i) => {
-
-dot.addEventListener('click', () => {
-
-  showHero(i);
-
-  restartHero();
-
-});
-
-});
-
-if (slides.length > 1) {
-
+showHero(heroIndex + Number(button.dataset.step || 1));
 restartHero();
+});
+});
 
+heroDots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+showHero(index);
+restartHero();
+});
+});
+
+if (heroSlides.length) {
+showHero(0);
+restartHero();
 }
 
 /* =================================
-   FEATURED PRODUCTS CAROUSEL
-   ================================= */
+FEATURED PRODUCTS
+LARGE HORIZONTAL SLIDER
+================================= */
 
-const featuredSlides = [
-  ...document.querySelectorAll('.featured-slide')
-];
+const featuredTrack = document.querySelector('.featured-slides');
+const featuredSlides = featuredTrack
+? [...featuredTrack.querySelectorAll('.featured-slide')]
+: [];
 
-const featuredDotsContainer =
-  document.querySelector('.featured-dots');
+const featuredDotsContainer = document.querySelector('.featured-dots');
+const featuredPrev = document.querySelector('.featured-prev');
+const featuredNext = document.querySelector('.featured-next');
 
-const featuredPrev =
-  document.querySelector('.featured-prev');
+let featuredDots = [];
 
-const featuredNext =
-  document.querySelector('.featured-next');
+if (featuredTrack && featuredSlides.length) {
 
-let featuredIndex = 0;
-let featuredTimer;
-
-if (featuredSlides.length && featuredDotsContainer) {
-
-  // Create one navigation dot per product.
+if (featuredDotsContainer) {
+  featuredDotsContainer.innerHTML = '';
 
   featuredSlides.forEach((slide, index) => {
-
     const dot = document.createElement('button');
 
+    dot.type = 'button';
     dot.className = 'featured-dot';
-
-    dot.setAttribute(
-      'aria-label',
-      `Show product ${index + 1}`
-    );
+    dot.setAttribute('aria-label', `Go to featured product ${index + 1}`);
 
     dot.addEventListener('click', () => {
-      showFeatured(index);
-      restartFeaturedTimer();
+      slide.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start'
+      });
     });
 
     featuredDotsContainer.appendChild(dot);
-
   });
 
-  const featuredDots = [
-    ...featuredDotsContainer.querySelectorAll('.featured-dot')
-  ];
+  featuredDots = [...featuredDotsContainer.querySelectorAll('.featured-dot')];
+}
 
+function getFeaturedIndex() {
+  const trackRect = featuredTrack.getBoundingClientRect();
 
-  function showFeatured(index) {
+  let closestIndex = 0;
+  let closestDistance = Infinity;
 
-    featuredIndex =
-      (index + featuredSlides.length) % featuredSlides.length;
+  featuredSlides.forEach((slide, index) => {
+    const distance = Math.abs(
+      slide.getBoundingClientRect().left - trackRect.left
+    );
 
-    featuredSlides.forEach((slide, i) => {
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestIndex = index;
+    }
+  });
 
-      slide.classList.toggle(
-        'active',
-        i === featuredIndex
-      );
+  return closestIndex;
+}
 
-    });
+function updateFeatured() {
+  const index = getFeaturedIndex();
 
-    featuredDots.forEach((dot, i) => {
+  featuredDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+    dot.setAttribute('aria-current', i === index ? 'true' : 'false');
+  });
+}
 
-      dot.classList.toggle(
-        'active',
-        i === featuredIndex
-      );
+function moveFeatured(direction) {
+  const slide = featuredSlides[0];
+  if (!slide) return;
 
-    });
+  const styles = window.getComputedStyle(featuredTrack);
+  const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+  const distance = slide.getBoundingClientRect().width + gap;
 
-  }
+  featuredTrack.scrollBy({
+    left: direction * distance,
+    behavior: 'smooth'
+  });
+}
 
+if (featuredPrev) {
+  featuredPrev.addEventListener('click', () => moveFeatured(-1));
+}
 
-  function restartFeaturedTimer() {
+if (featuredNext) {
+  featuredNext.addEventListener('click', () => moveFeatured(1));
+}
 
-    clearInterval(featuredTimer);
+featuredTrack.addEventListener('scroll', updateFeatured, { passive: true });
 
-    featuredTimer = setInterval(() => {
+window.addEventListener('resize', updateFeatured);
 
-      showFeatured(featuredIndex + 1);
-
-    }, 5500);
-
-  }
-
-
-  if (featuredPrev) {
-
-    featuredPrev.addEventListener('click', () => {
-
-      showFeatured(featuredIndex - 1);
-
-      restartFeaturedTimer();
-
-    });
-
-  }
-
-
-  if (featuredNext) {
-
-    featuredNext.addEventListener('click', () => {
-
-      showFeatured(featuredIndex + 1);
-
-      restartFeaturedTimer();
-
-    });
-
-  }
-
-
-  showFeatured(0);
-
-  restartFeaturedTimer();
+updateFeatured();
 
 }
 
 /* =================================
-FOUR NEW ARRIVAL CARDS
+NEW SEASON ARRIVALS
 HORIZONTAL SLIDER
 ================================= */
 
 const arrivalViewport = document.querySelector('.arrival-viewport');
-
 const arrivalTrack = document.querySelector('.arrival-track');
 
 const arrivalSlides = arrivalTrack
 ? [...arrivalTrack.querySelectorAll('.arrival')]
 : [];
 
-const arrivalDots = [
-...document.querySelectorAll('.arrival-dot')
-];
+const arrivalDotsContainer = document.querySelector('.arrival-pagination');
+const arrivalPrev = document.querySelector('.arrival-prev');
+const arrivalNext = document.querySelector('.arrival-next');
 
-const previousButton = document.querySelector('.arrival-prev');
-
-const nextButton = document.querySelector('.arrival-next');
-
+let arrivalDots = [];
 let arrivalIndex = 0;
 
-/* One card on mobile, two on larger screens. */
-
-function visibleCards() {
-
+function visibleArrivalCards() {
 return window.innerWidth <= 600 ? 1 : 2;
-
 }
 
-function maximumIndex() {
-
-return Math.max(
-  0,
-  arrivalSlides.length - visibleCards()
-);
-
+function maximumArrivalIndex() {
+return Math.max(0, arrivalSlides.length - visibleArrivalCards());
 }
-
-/* Move the slider. */
 
 function updateArrival() {
-
 if (!arrivalTrack || !arrivalSlides.length) return;
 
-arrivalIndex = Math.min(
-  arrivalIndex,
-  maximumIndex()
-);
+arrivalIndex = Math.min(arrivalIndex, maximumArrivalIndex());
 
 const cardWidth = arrivalSlides[0].getBoundingClientRect().width;
-
 const styles = window.getComputedStyle(arrivalTrack);
-
 const gap = parseFloat(styles.columnGap || styles.gap) || 0;
 
 const distance = arrivalIndex * (cardWidth + gap);
 
-arrivalTrack.style.transform =
-  `translateX(-${distance}px)`;
+arrivalTrack.style.transform = `translateX(-${distance}px)`;
 
-
-/* Update pagination. */
-
-arrivalDots.forEach((dot, i) => {
-
-  dot.classList.toggle(
-    'active',
-    i === arrivalIndex
-  );
-
+arrivalDots.forEach((dot, index) => {
+  dot.classList.toggle('active', index === arrivalIndex);
+  dot.setAttribute('aria-current', index === arrivalIndex ? 'true' : 'false');
 });
 
-
-/* Disable controls at the beginning and end. */
-
-if (previousButton) {
-
-  previousButton.disabled = arrivalIndex === 0;
-
+if (arrivalPrev) {
+  arrivalPrev.disabled = arrivalIndex === 0;
 }
 
-if (nextButton) {
-
-  nextButton.disabled = arrivalIndex >= maximumIndex();
-
+if (arrivalNext) {
+  arrivalNext.disabled = arrivalIndex >= maximumArrivalIndex();
 }
 
 }
 
-/* Previous button. */
+if (arrivalSlides.length) {
 
-if (previousButton) {
+if (arrivalDotsContainer) {
+  arrivalDotsContainer.innerHTML = '';
 
-previousButton.addEventListener('click', () => {
+  for (let i = 0; i <= maximumArrivalIndex(); i++) {
+    const dot = document.createElement('button');
 
-  arrivalIndex = Math.max(
-    0,
-    arrivalIndex - 1
-  );
+    dot.type = 'button';
+    dot.className = 'arrival-dot';
+    dot.setAttribute('aria-label', `Show arrival page ${i + 1}`);
 
-  updateArrival();
+    dot.addEventListener('click', () => {
+      arrivalIndex = i;
+      updateArrival();
+    });
 
-});
+    arrivalDotsContainer.appendChild(dot);
+  }
 
+  arrivalDots = [...arrivalDotsContainer.querySelectorAll('.arrival-dot')];
 }
 
-/* Next button. */
-
-if (nextButton) {
-
-nextButton.addEventListener('click', () => {
-
-  arrivalIndex = Math.min(
-    maximumIndex(),
-    arrivalIndex + 1
-  );
-
-  updateArrival();
-
-});
-
+if (arrivalPrev) {
+  arrivalPrev.addEventListener('click', () => {
+    arrivalIndex = Math.max(0, arrivalIndex - 1);
+    updateArrival();
+  });
 }
 
-/* Pagination buttons. */
+if (arrivalNext) {
+  arrivalNext.addEventListener('click', () => {
+    arrivalIndex = Math.min(maximumArrivalIndex(), arrivalIndex + 1);
+    updateArrival();
+  });
+}
 
-arrivalDots.forEach((dot, i) => {
-
-dot.addEventListener('click', () => {
-
-  arrivalIndex = Math.min(
-    i,
-    maximumIndex()
-  );
-
-  updateArrival();
-
-});
-
-});
-
-/* =================================
-MOBILE TOUCH SWIPE
-================================= */
+/* Mobile horizontal swipe */
 
 let touchStartX = 0;
 let touchStartY = 0;
 
 if (arrivalViewport) {
+  arrivalViewport.addEventListener('touchstart', event => {
+    const touch = event.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  }, { passive: true });
 
-arrivalViewport.addEventListener('touchstart', event => {
+  arrivalViewport.addEventListener('touchend', event => {
+    const touch = event.changedTouches[0];
 
-  const touch = event.touches[0];
+    const differenceX = touch.clientX - touchStartX;
+    const differenceY = touch.clientY - touchStartY;
 
-  touchStartX = touch.clientX;
-
-  touchStartY = touch.clientY;
-
-}, { passive: true });
-
-
-arrivalViewport.addEventListener('touchend', event => {
-
-  const touch = event.changedTouches[0];
-
-  const differenceX = touch.clientX - touchStartX;
-
-  const differenceY = touch.clientY - touchStartY;
-
-  /*
-    Only change slides when the user makes
-    a deliberate horizontal swipe.
-  */
-
-  if (
-    Math.abs(differenceX) > 40 &&
-    Math.abs(differenceX) > Math.abs(differenceY)
-  ) {
-
-    if (differenceX < 0) {
-
-      arrivalIndex = Math.min(
-        maximumIndex(),
-        arrivalIndex + 1
-      );
-
-    } else {
+    if (
+      Math.abs(differenceX) > 40 &&
+      Math.abs(differenceX) > Math.abs(differenceY)
+    ) {
+      arrivalIndex += differenceX < 0 ? 1 : -1;
 
       arrivalIndex = Math.max(
         0,
-        arrivalIndex - 1
+        Math.min(arrivalIndex, maximumArrivalIndex())
       );
 
+      updateArrival();
     }
 
-    updateArrival();
-
-  }
-
-  touchStartX = 0;
-  touchStartY = 0;
-
-}, { passive: true });
-
+    touchStartX = 0;
+    touchStartY = 0;
+  }, { passive: true });
 }
 
-/* Recalculate when screen size changes. */
+window.addEventListener('resize', () => {
+  const oldIndex = arrivalIndex;
 
-window.addEventListener('resize', updateArrival);
+  if (arrivalDotsContainer) {
+    arrivalDotsContainer.innerHTML = '';
+
+    for (let i = 0; i <= maximumArrivalIndex(); i++) {
+      const dot = document.createElement('button');
+
+      dot.type = 'button';
+      dot.className = 'arrival-dot';
+      dot.setAttribute('aria-label', `Show arrival page ${i + 1}`);
+
+      dot.addEventListener('click', () => {
+        arrivalIndex = i;
+        updateArrival();
+      });
+
+      arrivalDotsContainer.appendChild(dot);
+    }
+
+    arrivalDots = [...arrivalDotsContainer.querySelectorAll('.arrival-dot')];
+  }
+
+  arrivalIndex = Math.min(oldIndex, maximumArrivalIndex());
+  updateArrival();
+});
 
 window.addEventListener('load', updateArrival);
-
 updateArrival();
+
+}
 
 /* =================================
 FOOTER YEAR
@@ -492,9 +334,7 @@ FOOTER YEAR
 const year = document.getElementById('year');
 
 if (year) {
-
 year.textContent = new Date().getFullYear();
-
 }
 
 })();
