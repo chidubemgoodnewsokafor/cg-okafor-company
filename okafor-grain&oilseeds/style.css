@@ -1,29 +1,24 @@
 
 /* =========================================================
    OKAFOR GRAIN AND OILSEEDS
-   MAIN STYLESHEET
-   Brand: Harvest Yellow | Dark Teal | Grain Brown
+   MATURE AGRIBUSINESS DESIGN
    Font: Comfortaa
 ========================================================= */
 
 :root {
   --yellow: #F1C400;
-  --yellow-light: #FFDA35;
-  --yellow-deep: #D4AA00;
-
+  --yellow-soft: #F8E9A5;
   --dark-teal: #074540;
-  --teal: #01998E;
-  --mid-teal: #23665D;
-  --soft-teal: #E8F0EC;
-
+  --teal: #23665D;
   --harvest-brown: #A66A32;
   --grain-brown: #704A2D;
 
-  --black: #171713;
+  --black: #202522;
   --white: #FFFFFF;
-  --cream: #FFF9E5;
-  --light: #F7F2DF;
-  --grey: #625F56;
+  --cream: #F7F6F0;
+  --soft-grey: #EEEFEA;
+  --grey: #626A65;
+  --line: #E3E5DF;
 
   --font: "Comfortaa", sans-serif;
 }
@@ -36,7 +31,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 95px;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -86,10 +81,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--yellow);
+  background: var(--white);
   position: relative;
   z-index: 100;
-  border-bottom: 4px solid var(--dark-teal);
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
@@ -108,8 +103,6 @@ a {
   object-fit: contain;
 }
 
-/* Desktop navigation */
-
 .main-nav {
   display: flex;
   align-items: center;
@@ -122,7 +115,7 @@ a {
   display: inline-flex;
   align-items: center;
   min-height: 50px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--dark-teal);
   white-space: nowrap;
@@ -135,8 +128,8 @@ a {
   left: 0;
   bottom: 5px;
   width: 0;
-  height: 3px;
-  background: var(--dark-teal);
+  height: 2px;
+  background: var(--yellow);
   transition: width .3s ease;
 }
 
@@ -145,12 +138,12 @@ a {
 }
 
 .main-nav a:hover {
-  color: var(--grain-brown);
+  color: var(--harvest-brown);
 }
 
 .main-nav a:last-child {
-  min-height: 52px;
-  padding: 0 29px;
+  min-height: 50px;
+  padding: 0 27px;
   border-radius: 100px;
   background: var(--dark-teal);
   color: var(--white);
@@ -158,17 +151,15 @@ a {
 }
 
 .main-nav a:last-child:hover {
-  background: var(--black);
-  color: var(--yellow);
+  background: var(--yellow);
+  color: var(--dark-teal);
   transform: translateY(-2px);
 }
 
-/* Mobile menu */
-
 .menu-toggle {
   display: none;
-  width: 51px;
-  height: 51px;
+  width: 50px;
+  height: 50px;
   border: 0;
   border-radius: 50%;
   background: var(--dark-teal);
@@ -184,7 +175,7 @@ a {
 .menu-toggle span {
   width: 22px;
   height: 2px;
-  background: var(--yellow);
+  background: var(--white);
   transition: transform .3s ease;
 }
 
@@ -236,9 +227,9 @@ a {
   background:
     linear-gradient(
       90deg,
-      rgba(7, 69, 64, .96) 0%,
-      rgba(7, 69, 64, .82) 48%,
-      rgba(7, 69, 64, .18) 100%
+      rgba(7, 35, 32, .94) 0%,
+      rgba(7, 45, 41, .82) 48%,
+      rgba(7, 45, 41, .20) 100%
     );
 }
 
@@ -252,10 +243,10 @@ a {
 }
 
 .eyebrow {
-  font-size: 15px;
-  letter-spacing: 2.2px;
+  font-size: 14px;
+  letter-spacing: 2px;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
   color: var(--yellow);
   line-height: 1.6;
 }
@@ -293,13 +284,13 @@ a {
 ========================================================= */
 
 .btn {
-  min-height: 59px;
-  padding: 0 34px;
+  min-height: 58px;
+  padding: 0 33px;
   border-radius: 100px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.3;
   transition:
@@ -404,7 +395,7 @@ a {
 ========================================================= */
 
 .section {
-  padding: 120px 7%;
+  padding: 115px 7%;
 }
 
 .section-heading {
@@ -412,7 +403,7 @@ a {
   justify-content: space-between;
   align-items: end;
   gap: 35px;
-  margin-bottom: 55px;
+  margin-bottom: 48px;
 }
 
 .section-heading .eyebrow {
@@ -428,7 +419,7 @@ a {
 }
 
 .text-link {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   white-space: nowrap;
   padding-bottom: 9px;
@@ -445,11 +436,11 @@ a {
 
 /* =========================================================
    6. COMMODITY CARDS
-   LARGE PORTRAIT CARDS
+   PORTRAIT CARDS IN A SIDE-BY-SIDE GRID
 ========================================================= */
 
 .commodities {
-  background: var(--yellow);
+  background: var(--cream);
 }
 
 .commodities .section-heading h2 {
@@ -457,7 +448,7 @@ a {
 }
 
 .commodities .eyebrow.dark {
-  color: var(--grain-brown);
+  color: var(--harvest-brown);
 }
 
 .commodities .text-link {
@@ -472,7 +463,7 @@ a {
 }
 
 .commodity-card {
-  height: 590px;
+  height: 530px;
   min-width: 0;
   position: relative;
   display: block;
@@ -486,14 +477,13 @@ a {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(7, 69, 64, .02) 15%,
-      rgba(7, 69, 64, .10) 43%,
-      rgba(7, 35, 32, .9) 100%
-    );
-  transition: background .35s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.02) 15%,
+    rgba(0,0,0,.12) 45%,
+    rgba(0,25,22,.84) 100%
+  );
+  transition: opacity .35s ease;
 }
 
 .commodity-card::after {
@@ -516,15 +506,15 @@ a {
 }
 
 .commodity-card:hover::after {
-  border-width: 6px;
+  border-width: 5px;
 }
 
 .commodity-number {
   position: absolute;
   z-index: 3;
-  top: 28px;
-  left: 28px;
-  font-size: 16px;
+  top: 25px;
+  left: 25px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--yellow);
   letter-spacing: 1.5px;
@@ -533,31 +523,31 @@ a {
 .commodity-name {
   position: absolute;
   z-index: 3;
-  bottom: 32px;
-  left: 30px;
-  right: 30px;
+  bottom: 27px;
+  left: 25px;
+  right: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 12px;
 }
 
 .commodity-name h3 {
-  font-size: clamp(24px, 2.2vw, 32px);
+  font-size: clamp(21px, 2vw, 29px);
   line-height: 1.35;
   color: var(--white);
 }
 
 .commodity-name span {
-  width: 51px;
-  height: 51px;
-  flex: 0 0 51px;
+  width: 47px;
+  height: 47px;
+  flex: 0 0 47px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--yellow);
   color: var(--dark-teal);
-  font-size: 22px;
+  font-size: 21px;
   transition: transform .3s ease, background .3s ease;
 }
 
@@ -569,7 +559,7 @@ a {
 
 /* =========================================================
    7. OPERATIONS
-   DETAILED SVG ILLUSTRATIONS
+   ILLUSTRATION BESIDE THE DESCRIPTION
 ========================================================= */
 
 .operations {
@@ -588,35 +578,36 @@ a {
   background: var(--cream);
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(115px, 38%) minmax(0, 1fr);
+  grid-template-columns: minmax(105px, 36%) minmax(0, 1fr);
   align-items: stretch;
-  border-bottom: 5px solid var(--dark-teal);
+  border: 1px solid var(--line);
+  border-bottom: 4px solid var(--dark-teal);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .operation-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(7, 69, 64, .12);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(7, 69, 64, .09);
 }
 
 .operation-visual {
   min-width: 0;
-  min-height: 270px;
-  background: var(--yellow);
+  min-height: 250px;
+  background: #E8EFEB;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 9px;
+  padding: 8px;
 }
 
 .operation-visual::before {
   content: "";
   position: absolute;
-  width: 170px;
-  height: 170px;
-  border: 2px solid rgba(7, 69, 64, .18);
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(7, 69, 64, .15);
   border-radius: 50%;
 }
 
@@ -625,7 +616,7 @@ a {
   z-index: 1;
   display: block;
   width: 100%;
-  max-width: 190px;
+  max-width: 175px;
   height: auto;
   overflow: visible;
   transition: transform .4s ease;
@@ -637,7 +628,7 @@ a {
 
 .operation-copy {
   min-width: 0;
-  padding: 27px 22px 28px;
+  padding: 25px 19px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -645,23 +636,23 @@ a {
 
 .operation-copy > span {
   color: var(--harvest-brown);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   line-height: 1.5;
 }
 
 .operation-copy h3 {
-  margin-top: 15px;
+  margin-top: 13px;
   color: var(--dark-teal);
-  font-size: 23px;
+  font-size: 21px;
   line-height: 1.4;
 }
 
 .operation-copy p {
-  margin-top: 14px;
+  margin-top: 12px;
   color: var(--grey);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -765,10 +756,10 @@ a {
 ========================================================= */
 
 .site-footer {
-  background: var(--black);
+  background: #102D29;
   color: var(--white);
   padding: 80px 7% 27px;
-  border-top: 7px solid var(--yellow);
+  border-top: 4px solid var(--yellow);
 }
 
 .footer-main {
@@ -801,12 +792,12 @@ a {
   justify-content: space-between;
   gap: 20px;
   color: rgba(255,255,255,.7);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 
 /* =========================================================
-   11. TABLET RESPONSIVE
+   11. TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -820,11 +811,11 @@ a {
   }
 
   .main-nav {
-    gap: 18px;
+    gap: 17px;
   }
 
   .main-nav a {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .section {
@@ -832,11 +823,12 @@ a {
   }
 
   .commodity-grid {
-    gap: 17px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
 
   .commodity-card {
-    height: 500px;
+    height: 490px;
   }
 
   .operations-grid {
@@ -849,32 +841,27 @@ a {
   }
 
   .operation-visual {
-    min-height: 230px;
+    min-height: 225px;
   }
 
   .operation-visual svg {
-    max-width: 190px;
+    max-width: 180px;
   }
 
   .operation-copy {
-    padding: 30px 32px;
+    padding: 28px 30px;
   }
 
   .operation-copy h3 {
-    font-size: 26px;
+    font-size: 25px;
   }
 
   .operation-copy p {
-    font-size: 18px;
-  }
-
-  .commodity-name {
-    left: 20px;
-    right: 20px;
+    font-size: 17px;
   }
 
   .commodity-name h3 {
-    font-size: 23px;
+    font-size: 25px;
   }
 }
 
@@ -898,8 +885,6 @@ a {
   .menu-toggle {
     display: flex;
   }
-
-  /* Full-screen mobile navigation */
 
   .main-nav {
     position: fixed;
@@ -974,12 +959,11 @@ a {
   }
 
   .hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(7, 69, 64, .96),
-        rgba(7, 69, 64, .72)
-      );
+    background: linear-gradient(
+      90deg,
+      rgba(7, 35, 32, .96),
+      rgba(7, 45, 41, .72)
+    );
   }
 
   .hero-content {
@@ -1037,37 +1021,40 @@ a {
   }
 
 
-  /* Commodity cards */
+  /* Commodity cards: TWO PORTRAIT COLUMNS */
 
   .commodity-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
   }
 
   .commodity-card {
-    height: 530px;
+    height: clamp(260px, 76vw, 390px);
   }
 
   .commodity-number {
-    top: 25px;
-    left: 25px;
-    font-size: 15px;
+    top: 16px;
+    left: 15px;
+    font-size: 13px;
   }
 
   .commodity-name {
-    left: 25px;
-    right: 25px;
-    bottom: 28px;
+    left: 14px;
+    right: 12px;
+    bottom: 17px;
+    gap: 7px;
   }
 
   .commodity-name h3 {
-    font-size: 28px;
+    font-size: clamp(16px, 4.2vw, 23px);
+    line-height: 1.35;
   }
 
   .commodity-name span {
-    width: 49px;
-    height: 49px;
-    flex-basis: 49px;
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+    font-size: 17px;
   }
 
 
@@ -1075,29 +1062,29 @@ a {
 
   .operations-grid {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 18px;
   }
 
   .operation-card {
-    grid-template-columns: minmax(115px, 34%) minmax(0, 1fr);
+    grid-template-columns: 175px minmax(0, 1fr);
   }
 
   .operation-visual {
-    min-height: 235px;
+    min-height: 220px;
     padding: 8px;
   }
 
   .operation-visual::before {
-    width: 125px;
-    height: 125px;
+    width: 130px;
+    height: 130px;
   }
 
   .operation-visual svg {
-    max-width: 160px;
+    max-width: 155px;
   }
 
   .operation-copy {
-    padding: 23px 20px;
+    padding: 22px 20px;
   }
 
   .operation-copy > span {
@@ -1106,7 +1093,7 @@ a {
 
   .operation-copy h3 {
     margin-top: 12px;
-    font-size: 23px;
+    font-size: 22px;
     line-height: 1.4;
   }
 
@@ -1216,16 +1203,26 @@ a {
     font-size: 14px;
   }
 
+  .commodity-grid {
+    gap: 11px;
+  }
+
   .commodity-card {
-    height: 465px;
+    height: 275px;
   }
 
   .commodity-name h3 {
-    font-size: 25px;
+    font-size: 17px;
+  }
+
+  .commodity-name span {
+    width: 31px;
+    height: 31px;
+    flex-basis: 31px;
   }
 
   .operation-card {
-    grid-template-columns: 112px minmax(0, 1fr);
+    grid-template-columns: 115px minmax(0, 1fr);
   }
 
   .operation-visual {
@@ -1234,15 +1231,15 @@ a {
   }
 
   .operation-visual svg {
-    max-width: 125px;
+    max-width: 110px;
   }
 
   .operation-copy {
-    padding: 19px 15px;
+    padding: 18px 14px;
   }
 
   .operation-copy h3 {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .operation-copy p {
