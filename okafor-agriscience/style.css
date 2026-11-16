@@ -72,8 +72,8 @@ svg { display: block; max-width: 100%; }
 .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
 
 .brand-logo {
-  width: 190px;
-  max-height: 68px;
+  width: 200px;
+  max-height: 200px;
   object-fit: contain;
   object-position: left center;
 }
@@ -841,8 +841,8 @@ svg { display: block; max-width: 100%; }
 }
 
 .footer-logo {
-  width: 190px;
-  max-height: 75px;
+  width: 200px;
+  max-height: 200px;
   object-fit: contain;
   object-position: left center;
 }
