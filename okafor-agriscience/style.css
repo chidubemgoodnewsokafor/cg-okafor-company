@@ -24,12 +24,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 112px;
+  scroll-padding-top: 90px;
 }
 
 body {
   margin: 0;
-  padding-top: 112px;
+  padding-top: 90px;
   font-family: "Comfortaa", sans-serif;
   color: var(--ink);
   background: var(--white);
@@ -86,7 +86,7 @@ svg {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 112px;
+  height: 90px;
   padding: 0 5%;
   display: flex;
   align-items: center;
@@ -105,10 +105,9 @@ svg {
 
 .brand-logo {
   display: block;
-  width: 260px;
+  width: 190px;
   height: auto;
   max-width: 100%;
-  max-height: none;
   object-fit: contain;
   object-position: left center;
 }
@@ -1013,9 +1012,8 @@ svg {
 
 .footer-logo {
   display: block;
-  width: 220px;
+  width: 165px;
   height: auto;
-  max-height: none;
   object-fit: contain;
   object-position: left center;
 }
@@ -1067,7 +1065,7 @@ svg {
 @media (max-width: 1000px) {
 
   .site-header {
-    min-height: 100px;
+    height: 82px;
   }
 
   .site-nav {
@@ -1083,15 +1081,15 @@ svg {
   }
 
   .brand-logo {
-    width: 215px;
+    width: 175px;
   }
 
   body {
-    padding-top: 100px;
+    padding-top: 82px;
   }
 
   html {
-    scroll-padding-top: 100px;
+    scroll-padding-top: 82px;
   }
 
   .hero,
@@ -1128,22 +1126,21 @@ svg {
 @media (max-width: 760px) {
 
   html {
-    scroll-padding-top: 88px;
+    scroll-padding-top: 76px;
   }
 
   body {
-    padding-top: 88px;
+    padding-top: 76px;
   }
 
   .site-header {
-    min-height: 88px;
+    height: 76px;
     padding-inline: 5%;
   }
 
   .brand-logo {
-    width: 195px;
+    width: 155px;
     height: auto;
-    max-height: none;
   }
 
   .menu-toggle {
@@ -1560,7 +1557,7 @@ svg {
   }
 
   .footer-logo {
-    width: 195px;
+    width: 145px;
   }
 
   .footer-description {
@@ -1586,7 +1583,7 @@ svg {
 @media (max-width: 390px) {
 
   .brand-logo {
-    width: 175px;
+    width: 145px;
   }
 
   .hero,
