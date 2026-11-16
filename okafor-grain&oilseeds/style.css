@@ -435,8 +435,8 @@ a {
 
 
 /* =========================================================
-   6. COMMODITY CARDS
-   PORTRAIT CARDS IN A SIDE-BY-SIDE GRID
+   6. COMMODITY CAROUSEL
+   HORIZONTAL TRACK - PORTRAIT CARDS
 ========================================================= */
 
 .commodities {
@@ -455,21 +455,37 @@ a {
   border-color: var(--dark-teal);
 }
 
+/* Horizontal scrolling track */
+
 .commodity-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 25px;
   align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 12px;
 }
 
+.commodity-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual cards */
+
 .commodity-card {
-  height: 530px;
-  min-width: 0;
   position: relative;
   display: block;
+  flex: 0 0 calc((100% - 50px) / 3);
+  min-width: 0;
+  height: 530px;
   overflow: hidden;
   background: var(--dark-teal);
   color: var(--white);
+  scroll-snap-align: start;
 }
 
 .commodity-card::before {
@@ -822,12 +838,14 @@ a {
     padding: 95px 5%;
   }
 
+  /* Commodity carousel: TWO CARDS */
+
   .commodity-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
   }
 
   .commodity-card {
+    flex-basis: calc((100% - 20px) / 2);
     height: 490px;
   }
 
@@ -1021,40 +1039,56 @@ a {
   }
 
 
-  /* Commodity cards: TWO PORTRAIT COLUMNS */
+  /* Commodity carousel: LARGE PORTRAIT CARDS */
 
   .commodity-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 6%;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-right: -6%;
+    padding-right: 6%;
+    padding-bottom: 12px;
+  }
+
+  .commodity-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .commodity-card {
-    height: clamp(260px, 76vw, 390px);
+    flex: 0 0 82%;
+    height: 440px;
+    scroll-snap-align: start;
   }
 
   .commodity-number {
-    top: 16px;
-    left: 15px;
+    top: 20px;
+    left: 19px;
     font-size: 13px;
   }
 
   .commodity-name {
-    left: 14px;
-    right: 12px;
-    bottom: 17px;
-    gap: 7px;
+    left: 19px;
+    right: 17px;
+    bottom: 20px;
+    gap: 9px;
   }
 
   .commodity-name h3 {
-    font-size: clamp(16px, 4.2vw, 23px);
+    font-size: 25px;
     line-height: 1.35;
   }
 
   .commodity-name span {
-    width: 34px;
-    height: 34px;
-    flex-basis: 34px;
-    font-size: 17px;
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+    font-size: 18px;
   }
 
 
@@ -1203,22 +1237,25 @@ a {
     font-size: 14px;
   }
 
+  /* Smaller phones: nearly full-width portrait cards */
+
   .commodity-grid {
-    gap: 11px;
+    gap: 13px;
   }
 
   .commodity-card {
-    height: 275px;
+    flex-basis: 88%;
+    height: 410px;
   }
 
   .commodity-name h3 {
-    font-size: 17px;
+    font-size: 23px;
   }
 
   .commodity-name span {
-    width: 31px;
-    height: 31px;
-    flex-basis: 31px;
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
   }
 
   .operation-card {
