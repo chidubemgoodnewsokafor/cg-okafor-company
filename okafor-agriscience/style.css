@@ -105,8 +105,8 @@ svg {
 
 .brand-logo {
   display: block;
-  width: 180px;
-  height: auto;
+  width: 145px;
+  height: 65px;
   max-width: 100%;
   object-fit: contain;
   object-position: left center;
@@ -1081,7 +1081,8 @@ svg {
   }
 
   .brand-logo {
-    width: 175px;
+    width: 135px;
+    height: 58px;
   }
 
   body {
@@ -1139,8 +1140,8 @@ svg {
   }
 
   .brand-logo {
-    width: 155px;
-    height: auto;
+    width: 125px;
+    height: 54px;
   }
 
   .menu-toggle {
@@ -1583,7 +1584,8 @@ svg {
 @media (max-width: 390px) {
 
   .brand-logo {
-    width: 145px;
+    width: 115px;
+    height: 50px;
   }
 
   .hero,
