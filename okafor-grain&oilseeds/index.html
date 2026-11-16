@@ -4,439 +4,205 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#F1C400">
-
-  <title>Okafor Grain and Oilseeds | Commodity Sourcing, Trading & Supply</title>
-
-  <meta name="description" content="Okafor Grain and Oilseeds is involved in the sourcing, trading, processing and supply of agricultural commodities.">
-
+  <meta name="description" content="Okafor Grain and Oilseeds sources, handles, processes and supplies agricultural commodities.">
+  <title>Okafor Grain and Oilseeds</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
   <header class="site-header">
-    <a href="index.html" class="brand" aria-label="Okafor Grain and Oilseeds home">
-      <span class="brand-mark">OG</span>
-      <span class="brand-name">
-        <strong>OKAFOR</strong>
-        <small>GRAIN AND OILSEEDS</small>
-      </span>
+    <a class="brand" href="index.html">
+      <img src="assets/okafor-grains-logo.png" alt="Okafor Grain and Oilseeds">
     </a>
 
-    <nav class="desktop-nav" aria-label="Main navigation">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
       <a href="#home">Home</a>
-      <a href="#about">About Us</a>
       <a href="#commodities">Commodities</a>
-      <a href="#operations">Our Operations</a>
+      <a href="#operations">What We Do</a>
+      <a href="#farmers">For Farmers</a>
       <a href="https://wa.me/2349060485238" target="_blank" rel="noopener">Contact Us</a>
     </nav>
-
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span>
-      <span></span>
-    </button>
   </header>
 
-
-  <!-- =========================
-       FULLSCREEN NAVIGATION
-  ========================== -->
-  <div class="menu-overlay" id="menu-overlay">
-    <div class="menu-overlay-top">
-      <span>OKAFOR GRAIN AND OILSEEDS</span>
-      <button class="menu-close" id="menu-close" aria-label="Close navigation">×</button>
-    </div>
-
-    <nav class="overlay-links">
-      <a href="#home"><span>01</span> Home</a>
-      <a href="#about"><span>02</span> About Us</a>
-      <a href="#commodities"><span>03</span> Commodities</a>
-      <a href="#operations"><span>04</span> Our Operations</a>
-      <a href="https://wa.me/2349060485238" target="_blank" rel="noopener">
-        <span>05</span> Contact Us <small>↗</small>
-      </a>
-    </nav>
-
-    <div class="menu-overlay-bottom">
-      <span>BETTER SOURCING. BETTER SUPPLY.</span>
-      <span>© OKAFOR GRAIN AND OILSEEDS</span>
-    </div>
-  </div>
-
-
   <main>
-
-    <!-- =========================
-         HERO CAROUSEL
-    ========================== -->
     <section class="hero" id="home">
-
       <div class="hero-slides">
-
-        <article class="hero-slide active"
-          style="background-image: url('assets/hero-grains.jpg');">
+        <article class="hero-slide active" style="background-image:url('assets/hero-grains.jpg')">
           <div class="hero-overlay"></div>
-
           <div class="hero-content">
-            <span class="eyebrow">OKAFOR GRAIN AND OILSEEDS</span>
-            <h1>A stronger link between agricultural production and the market.</h1>
-            <p>
-              Sourcing, trading and supplying agricultural commodities
-              with a focus on dependable quality and commercial value.
-            </p>
-
+            <p class="eyebrow">OKAFOR GRAIN AND OILSEEDS</p>
+            <h1>Agricultural commodities. Sourced and supplied.</h1>
+            <p>Connecting farm produce to markets through reliable sourcing, handling and supply.</p>
             <div class="hero-actions">
-              <a href="#commodities" class="button button-yellow">Explore Commodities</a>
-              <a href="https://wa.me/2349060485238" target="_blank" rel="noopener" class="button button-outline">
-                Contact Us
-              </a>
+              <a class="btn btn-yellow" href="#commodities">Explore Commodities</a>
+              <a class="btn btn-outline" href="https://wa.me/2349060485238">Sell to Us</a>
             </div>
-          </div>
-
-          <div class="hero-caption">
-            <span>01 / 03</span>
-            <span>AGRICULTURAL COMMODITIES</span>
           </div>
         </article>
 
-
-        <article class="hero-slide"
-          style="background-image: url('assets/hero-rice.jpg');">
+        <article class="hero-slide" style="background-image:url('assets/hero-rice.jpg')">
           <div class="hero-overlay"></div>
-
           <div class="hero-content">
-            <span class="eyebrow">GRAIN SOURCING & TRADE</span>
-            <h1>Connecting quality grains to commercial opportunities.</h1>
-            <p>
-              From sourcing to supply, we work across agricultural
-              commodity value chains to serve market needs.
-            </p>
-
+            <p class="eyebrow">FROM FARM TO MARKET</p>
+            <h1>Good produce deserves a good market.</h1>
+            <p>We source agricultural produce from farmers and supply buyers with care.</p>
             <div class="hero-actions">
-              <a href="#commodities" class="button button-yellow">View Our Commodities</a>
-              <a href="https://wa.me/2349060485238" target="_blank" rel="noopener" class="button button-outline">
-                Contact Us
-              </a>
+              <a class="btn btn-yellow" href="#farmers">Sell Your Produce</a>
+              <a class="btn btn-outline" href="https://wa.me/2349060485238">Contact Us</a>
             </div>
-          </div>
-
-          <div class="hero-caption">
-            <span>02 / 03</span>
-            <span>GRAIN AND OILSEEDS</span>
           </div>
         </article>
 
-
-        <article class="hero-slide"
-          style="background-image: url('assets/hero-palm-kernels.jpg');">
+        <article class="hero-slide" style="background-image:url('assets/hero-maize.jpg')">
           <div class="hero-overlay"></div>
-
           <div class="hero-content">
-            <span class="eyebrow">OILSEED SOURCING</span>
-            <h1>Agricultural resources. Real commercial value.</h1>
-            <p>
-              Supporting the movement of valuable agricultural
-              commodities from their sources to the industries and
-              markets that need them.
-            </p>
-
+            <p class="eyebrow">COMMODITY SOURCING & SUPPLY</p>
+            <h1>Reliable supply. Stronger connections.</h1>
+            <p>Working with farmers, processors and customers across the agricultural value chain.</p>
             <div class="hero-actions">
-              <a href="#operations" class="button button-yellow">Our Operations</a>
-              <a href="https://wa.me/2349060485238" target="_blank" rel="noopener" class="button button-outline">
-                Contact Us
-              </a>
+              <a class="btn btn-yellow" href="#operations">Our Operations</a>
+              <a class="btn btn-outline" href="https://wa.me/2349060485238">Contact Us</a>
             </div>
           </div>
-
-          <div class="hero-caption">
-            <span>03 / 03</span>
-            <span>COMMODITY SUPPLY</span>
-          </div>
         </article>
-
       </div>
 
-
-      <button class="hero-arrow hero-prev" id="hero-prev" aria-label="Previous slide">‹</button>
-      <button class="hero-arrow hero-next" id="hero-next" aria-label="Next slide">›</button>
-
-      <div class="hero-indicators" id="hero-indicators">
-        <button class="indicator active" aria-label="Go to slide 1"></button>
-        <button class="indicator" aria-label="Go to slide 2"></button>
-        <button class="indicator" aria-label="Go to slide 3"></button>
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         INTRODUCTION
-    ========================== -->
-    <section class="intro-section section-pad" id="about">
-      <div class="intro-label">
-        <span class="section-number">01</span>
-        <span>WHO WE ARE</span>
-      </div>
-
-      <div class="intro-main">
-        <div class="intro-heading">
-          <span class="eyebrow dark-eyebrow">ABOUT OKAFOR GRAIN AND OILSEEDS</span>
-          <h2>Moving agricultural commodities from source to market.</h2>
-        </div>
-
-        <div class="intro-copy">
-          <p>
-            Okafor Grain and Oilseeds is an agricultural commodities
-            business focused on sourcing, trading, processing and supplying
-            grains and oilseeds.
-          </p>
-
-          <p>
-            We work to connect agricultural produce with the businesses,
-            processors and markets that depend on a reliable supply of
-            quality raw materials.
-          </p>
-
-          <a href="https://wa.me/2349060485238" target="_blank" rel="noopener" class="text-link">
-            Discuss a business opportunity <span>↗</span>
-          </a>
-        </div>
+      <div class="hero-controls">
+        <button class="hero-arrow prev" id="prevSlide" aria-label="Previous slide">&#8592;</button>
+        <div class="hero-dots" id="heroDots"></div>
+        <button class="hero-arrow next" id="nextSlide" aria-label="Next slide">&#8594;</button>
       </div>
     </section>
 
-
-    <!-- =========================
-         COMMODITIES
-    ========================== -->
-    <section class="commodities-section" id="commodities">
-
-      <div class="section-heading section-pad">
+    <section class="commodities section" id="commodities">
+      <div class="section-heading">
         <div>
-          <span class="section-number">02</span>
-          <span class="eyebrow dark-eyebrow">WHAT WE SOURCE AND SUPPLY</span>
-          <h2>Our Commodities</h2>
+          <p class="eyebrow dark">OUR COMMODITIES</p>
+          <h2>What we source and supply</h2>
         </div>
-
-        <p>
-          Agricultural products with important roles across food,
-          processing and industrial value chains.
-        </p>
+        <a class="text-link" href="https://wa.me/2349060485238">Enquire about supply <span>↗</span></a>
       </div>
-
 
       <div class="commodity-grid">
+        <a class="commodity-card" href="https://wa.me/2349060485238">
+          <img src="assets/rice.jpg" alt="Rice">
+          <span class="commodity-number">01</span>
+          <div class="commodity-name"><h3>Rice</h3><span>↗</span></div>
+        </a>
 
-        <article class="commodity-card">
-          <img src="assets/rice.jpg" alt="Rice grains">
-          <div class="commodity-shade"></div>
-          <div class="commodity-info">
-            <span>01 / GRAIN</span>
-            <h3>Rice</h3>
-            <p>Rice sourcing and supply.</p>
-          </div>
-        </article>
-
-        <article class="commodity-card">
+        <a class="commodity-card" href="https://wa.me/2349060485238">
           <img src="assets/beans.jpg" alt="Beans">
-          <div class="commodity-shade"></div>
-          <div class="commodity-info">
-            <span>02 / GRAIN</span>
-            <h3>Beans</h3>
-            <p>Legume sourcing and supply.</p>
-          </div>
-        </article>
+          <span class="commodity-number">02</span>
+          <div class="commodity-name"><h3>Beans</h3><span>↗</span></div>
+        </a>
 
-        <article class="commodity-card">
-          <img src="assets/yam-bean.jpg" alt="Yam bean, also known as Akidi">
-          <div class="commodity-shade"></div>
-          <div class="commodity-info">
-            <span>03 / LEGUME</span>
-            <h3>Yam Bean</h3>
-            <p>Akidi sourcing and supply.</p>
-          </div>
-        </article>
+        <a class="commodity-card" href="https://wa.me/2349060485238">
+          <img src="assets/akidi.jpg" alt="Yam bean, Akidi">
+          <span class="commodity-number">03</span>
+          <div class="commodity-name"><h3>Yam Bean (Akidi)</h3><span>↗</span></div>
+        </a>
 
-        <article class="commodity-card">
-          <img src="assets/groundnuts.jpg" alt="Groundnuts">
-          <div class="commodity-shade"></div>
-          <div class="commodity-info">
-            <span>04 / OILSEED</span>
-            <h3>Groundnuts</h3>
-            <p>Groundnut sourcing and supply.</p>
-          </div>
-        </article>
+        <a class="commodity-card" href="https://wa.me/2349060485238">
+          <img src="assets/groundnut.jpg" alt="Groundnut">
+          <span class="commodity-number">04</span>
+          <div class="commodity-name"><h3>Groundnut</h3><span>↗</span></div>
+        </a>
 
-        <article class="commodity-card">
+        <a class="commodity-card" href="https://wa.me/2349060485238">
           <img src="assets/maize.jpg" alt="Maize">
-          <div class="commodity-shade"></div>
-          <div class="commodity-info">
-            <span>05 / GRAIN</span>
-            <h3>Maize</h3>
-            <p>Maize sourcing and supply.</p>
-          </div>
-        </article>
+          <span class="commodity-number">05</span>
+          <div class="commodity-name"><h3>Maize</h3><span>↗</span></div>
+        </a>
 
-        <article class="commodity-card">
-          <img src="assets/palm-kernels.jpg" alt="Palm kernels">
-          <div class="commodity-shade"></div>
-          <div class="commodity-info">
-            <span>06 / OILSEED</span>
-            <h3>Palm Kernels</h3>
-            <p>Raw material for palm kernel processing.</p>
-          </div>
-        </article>
-
+        <a class="commodity-card" href="https://wa.me/2349060485238">
+          <img src="assets/palm-fruit.jpg" alt="Oil palm fruit">
+          <span class="commodity-number">06</span>
+          <div class="commodity-name"><h3>Palm Fruit</h3><span>↗</span></div>
+        </a>
       </div>
     </section>
 
-
-    <!-- =========================
-         OPERATIONS
-    ========================== -->
-    <section class="operations-section" id="operations">
-      <div class="operations-image">
-        <img src="assets/commodity-handling.jpg" alt="Agricultural commodity handling">
-        <div class="operations-image-overlay"></div>
-        <span class="image-caption">AGRICULTURE • COMMERCE • SUPPLY</span>
-      </div>
-
-      <div class="operations-content">
-        <span class="section-number">03</span>
-        <span class="eyebrow dark-eyebrow">OUR BUSINESS OPERATIONS</span>
-
-        <h2>From agricultural produce to market-ready supply.</h2>
-
-        <p>
-          Our business is built around the commercial movement of
-          agricultural commodities. We focus on the activities that
-          connect producers, commodity markets, processors and buyers.
-        </p>
-
-        <div class="operation-list">
-          <div class="operation-item">
-            <span>01</span>
-            <div>
-              <h3>Sourcing</h3>
-              <p>Identifying and sourcing agricultural commodities.</p>
-            </div>
-          </div>
-
-          <div class="operation-item">
-            <span>02</span>
-            <div>
-              <h3>Trading</h3>
-              <p>Facilitating the commercial exchange of agricultural produce.</p>
-            </div>
-          </div>
-
-          <div class="operation-item">
-            <span>03</span>
-            <div>
-              <h3>Processing</h3>
-              <p>Supporting value addition and commodity preparation.</p>
-            </div>
-          </div>
-
-          <div class="operation-item">
-            <span>04</span>
-            <div>
-              <h3>Supply</h3>
-              <p>Connecting available produce with business and market demand.</p>
-            </div>
-          </div>
+    <section class="operations section" id="operations">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark">OUR OPERATIONS</p>
+          <h2>From the farm to the customer</h2>
         </div>
+      </div>
 
-        <a href="https://wa.me/2349060485238" target="_blank" rel="noopener" class="button button-dark">
-          Contact Our Team
-        </a>
+      <div class="operations-grid">
+        <article class="operation-card">
+          <img src="assets/sourcing.jpg" alt="Agricultural produce sourcing">
+          <div class="operation-copy">
+            <span>01 / SOURCING</span>
+            <h3>We source from farmers</h3>
+            <p>We connect with farmers and source quality agricultural produce.</p>
+          </div>
+        </article>
+
+        <article class="operation-card">
+          <img src="assets/aggregation.jpg" alt="Produce aggregation and handling">
+          <div class="operation-copy">
+            <span>02 / AGGREGATION</span>
+            <h3>We gather and handle produce</h3>
+            <p>We bring produce together and prepare it for its next destination.</p>
+          </div>
+        </article>
+
+        <article class="operation-card">
+          <img src="assets/processing.jpg" alt="Agricultural commodity processing">
+          <div class="operation-copy">
+            <span>03 / PROCESSING & SUPPLY</span>
+            <h3>We process and supply</h3>
+            <p>We support processing and supply for customers and business partners.</p>
+          </div>
+        </article>
       </div>
     </section>
 
-
-    <!-- =========================
-         BUSINESS CTA
-    ========================== -->
-    <section class="business-cta">
-      <div class="cta-content">
-        <span class="eyebrow">LET'S DO BUSINESS</span>
-        <h2>Looking for an agricultural commodity supply partner?</h2>
-        <p>
-          Speak with us about sourcing, trading, processing or supply
-          opportunities.
-        </p>
-
-        <a href="https://wa.me/2349060485238" target="_blank" rel="noopener" class="button button-yellow">
-          Contact Us on WhatsApp
-        </a>
+    <section class="farmer-section" id="farmers">
+      <div class="farmer-image">
+        <img src="assets/hero-rice.jpg" alt="Farmland and agricultural produce">
       </div>
-
-      <div class="cta-decoration">OG</div>
+      <div class="farmer-copy">
+        <p class="eyebrow">FOR FARMERS & PRODUCE SELLERS</p>
+        <h2>Have produce to sell?</h2>
+        <p>We are interested in hearing from farmers and produce suppliers. Talk to us about what you grow and what you have available.</p>
+        <a class="btn btn-yellow" href="https://wa.me/2349060485238">Sell to Okafor</a>
+      </div>
     </section>
 
+    <section class="buyer-section section">
+      <div class="buyer-copy">
+        <p class="eyebrow dark">FOR CUSTOMERS & BUYERS</p>
+        <h2>Looking for agricultural produce?</h2>
+        <p>Speak with our team about commodity availability, quantities and supply.</p>
+        <a class="btn btn-dark" href="https://wa.me/2349060485238">Buy from Okafor</a>
+      </div>
+      <div class="buyer-image">
+        <img src="assets/hero-maize.jpg" alt="Harvested agricultural produce">
+      </div>
+    </section>
   </main>
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
   <footer class="site-footer">
     <div class="footer-main">
-
-      <div class="footer-brand">
-        <a href="#home" class="brand footer-logo">
-          <span class="brand-mark">OG</span>
-          <span class="brand-name">
-            <strong>OKAFOR</strong>
-            <small>GRAIN AND OILSEEDS</small>
-          </span>
-        </a>
-
-        <p>
-          Agricultural commodity sourcing, trading, processing
-          and supply.
-        </p>
-      </div>
-
-      <div class="footer-column">
-        <h3>Explore</h3>
-        <a href="#about">About Us</a>
-        <a href="#commodities">Our Commodities</a>
-        <a href="#operations">Our Operations</a>
-      </div>
-
-      <div class="footer-column">
-        <h3>Commodities</h3>
-        <a href="#commodities">Rice</a>
-        <a href="#commodities">Beans</a>
-        <a href="#commodities">Yam Bean</a>
-        <a href="#commodities">Groundnuts</a>
-        <a href="#commodities">Maize</a>
-        <a href="#commodities">Palm Kernels</a>
-      </div>
-
-      <div class="footer-column">
-        <h3>Get in Touch</h3>
-        <a href="https://wa.me/2349060485238" target="_blank" rel="noopener">Contact Us</a>
-        <a href="https://wa.me/2349060485238" target="_blank" rel="noopener">Business Enquiries</a>
-      </div>
-
+      <img src="assets/okafor-grains-logo.png" alt="Okafor Grain and Oilseeds">
+      <p>Agricultural commodity sourcing, handling, processing and supply.</p>
+      <a class="btn btn-yellow" href="https://wa.me/2349060485238">Contact Us</a>
     </div>
-
     <div class="footer-bottom">
-      <span>© <span id="current-year"></span> Okafor Grain and Oilseeds.</span>
-      <span>Better farming. Food for all.</span>
-      <a href="#home">Back to top ↑</a>
+      <span>© <span id="year"></span> Okafor Grain and Oilseeds</span>
+      <span>A C.G. Okafor Co. business</span>
     </div>
   </footer>
-
 
   <script src="script.js"></script>
 </body>
