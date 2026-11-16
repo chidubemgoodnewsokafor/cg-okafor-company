@@ -190,16 +190,93 @@
 
       <div class="operations-grid">
 
-        <!-- SOURCE -->
+        <!-- SOURCE: FARMER AND PRODUCE -->
         <article class="operation-card">
 
           <div class="operation-visual">
-            <svg viewBox="0 0 120 120" role="img" aria-label="Sourcing icon">
-              <path d="M60 94V26" />
-              <path d="M60 48C42 48 31 38 31 23C48 23 60 32 60 48Z" />
-              <path d="M60 65C78 65 89 55 89 40C72 40 60 49 60 65Z" />
-              <path d="M60 81C44 81 34 72 34 59C49 59 60 68 60 81Z" />
-              <path d="M46 94H74" />
+            <svg viewBox="0 0 240 250" role="img" aria-label="Illustration of a farmer harvesting and supplying grain">
+
+              <defs>
+                <linearGradient id="sourceSky" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#FFF9E5"/>
+                  <stop offset="1" stop-color="#F1C400"/>
+                </linearGradient>
+                <linearGradient id="sourceBag" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#D99A45"/>
+                  <stop offset="1" stop-color="#A66A32"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Background landscape -->
+              <path d="M8 178 Q55 145 105 174 T232 166 V238 H8Z" fill="#D4AA00"/>
+              <path d="M8 198 Q70 170 120 194 T232 184 V240 H8Z" fill="#E7B800"/>
+
+              <!-- Sun -->
+              <circle cx="190" cy="39" r="19" fill="#FFF9E5"/>
+              <path d="M190 10V3 M190 75V68 M161 39H153 M227 39H219 M169 18L163 12 M217 66L211 60"
+                    stroke="#074540" stroke-width="3" stroke-linecap="round"/>
+
+              <!-- Distant crops -->
+              <path d="M19 179V124 M19 145L7 132 M19 151L31 136"
+                    stroke="#23665D" stroke-width="5" stroke-linecap="round"/>
+              <path d="M42 174V113 M42 137L30 125 M42 147L54 130"
+                    stroke="#23665D" stroke-width="5" stroke-linecap="round"/>
+              <path d="M216 173V121 M216 143L204 130 M216 150L228 134"
+                    stroke="#23665D" stroke-width="5" stroke-linecap="round"/>
+
+              <!-- Farmer legs -->
+              <path d="M93 155L88 202L105 202L116 160Z" fill="#074540"/>
+              <path d="M117 158L125 202L142 202L137 151Z" fill="#074540"/>
+              <path d="M88 198H110V210H83Q79 205 88 198Z" fill="#171713"/>
+              <path d="M124 198H145Q151 205 145 210H125Z" fill="#171713"/>
+
+              <!-- Farmer body -->
+              <path d="M86 92Q105 79 129 91L145 153Q120 168 85 153Z" fill="#074540"/>
+              <path d="M91 105L74 141L84 148L105 119Z" fill="#074540"/>
+              <path d="M132 105L148 133L140 143L119 120Z" fill="#074540"/>
+              <path d="M75 140Q68 143 72 151Q78 157 87 148Z" fill="#8C542E"/>
+              <path d="M141 136Q151 134 154 143Q152 153 141 146Z" fill="#8C542E"/>
+
+              <!-- Shirt details -->
+              <path d="M106 93L108 125 M121 94L117 126" stroke="#01998E" stroke-width="4"/>
+              <path d="M96 117L105 124L99 143" stroke="#FFDA35" stroke-width="3" fill="none"/>
+
+              <!-- Neck and head -->
+              <path d="M105 84V96H124V82Z" fill="#8C542E"/>
+              <ellipse cx="114" cy="68" rx="23" ry="27" fill="#A66A32"/>
+              <path d="M92 64Q91 38 115 37Q139 39 138 63L132 54Q115 47 99 57Z" fill="#171713"/>
+              <path d="M94 53Q114 34 137 50L143 58L91 59Z" fill="#074540"/>
+              <path d="M92 55L140 55L134 62H98Z" fill="#F1C400"/>
+              <circle cx="106" cy="69" r="2" fill="#171713"/>
+              <circle cx="124" cy="69" r="2" fill="#171713"/>
+              <path d="M108 82Q115 87 123 81" stroke="#704A2D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+              <!-- Produce sack -->
+              <path d="M153 157Q159 145 178 148Q198 145 204 158L211 207Q211 220 195 221H163Q147 218 148 206Z"
+                    fill="url(#sourceBag)" stroke="#704A2D" stroke-width="3"/>
+              <path d="M154 158Q177 169 204 158" fill="none" stroke="#704A2D" stroke-width="4"/>
+              <path d="M158 177Q177 184 202 177" fill="none" stroke="#EBC17B" stroke-width="3"/>
+              <path d="M162 193Q180 200 203 193" fill="none" stroke="#EBC17B" stroke-width="3"/>
+              <path d="M170 150Q177 139 188 150" fill="none" stroke="#704A2D" stroke-width="4"/>
+
+              <!-- Grain heads -->
+              <path d="M177 148V116 M177 129L166 119 M177 137L188 125 M177 121L187 111"
+                    stroke="#074540" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M166 119Q158 113 164 107Q173 109 166 119Z" fill="#F1C400"/>
+              <path d="M188 125Q199 119 194 112Q184 114 188 125Z" fill="#F1C400"/>
+              <path d="M187 111Q198 105 194 98Q184 100 187 111Z" fill="#F1C400"/>
+
+              <!-- Foreground grain -->
+              <path d="M24 225V198 M24 211L15 203 M24 215L34 204"
+                    stroke="#074540" stroke-width="3" fill="none"/>
+              <path d="M15 203Q8 197 13 192Q21 194 15 203Z" fill="#FFF9E5"/>
+              <path d="M34 204Q42 198 37 192Q29 195 34 204Z" fill="#FFF9E5"/>
+
+              <path d="M222 225V198 M222 211L213 203 M222 215L231 204"
+                    stroke="#074540" stroke-width="3" fill="none"/>
+              <path d="M213 203Q206 197 211 192Q219 194 213 203Z" fill="#FFF9E5"/>
+              <path d="M231 204Q239 198 234 192Q226 195 231 204Z" fill="#FFF9E5"/>
+
             </svg>
           </div>
 
@@ -212,19 +289,84 @@
         </article>
 
 
-        <!-- AGGREGATE -->
+        <!-- AGGREGATE: WAREHOUSE AND GRAIN SACKS -->
         <article class="operation-card">
 
           <div class="operation-visual">
-            <svg viewBox="0 0 120 120" role="img" aria-label="Aggregation icon">
-              <path d="M23 47L60 27L97 47" />
-              <path d="M29 47V94H91V47" />
-              <path d="M43 94V69H77V94" />
-              <path d="M39 57H81" />
-              <path d="M48 47V57" />
-              <path d="M60 47V57" />
-              <path d="M72 47V57" />
-              <path d="M38 18H82" />
+            <svg viewBox="0 0 240 250" role="img" aria-label="Illustration of a grain warehouse with stacked produce sacks">
+
+              <defs>
+                <linearGradient id="warehouseWall" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#FFF9E5"/>
+                  <stop offset="1" stop-color="#E8D9A7"/>
+                </linearGradient>
+                <linearGradient id="warehouseSack" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#E9B85B"/>
+                  <stop offset="1" stop-color="#A66A32"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Ground -->
+              <path d="M8 207H232V237H8Z" fill="#D4AA00"/>
+              <path d="M8 218H232" stroke="#074540" stroke-width="3"/>
+
+              <!-- Warehouse roof -->
+              <path d="M23 83L120 25L217 83Z" fill="#074540"/>
+              <path d="M34 81L120 39L206 81Z" fill="#23665D"/>
+              <path d="M18 83H222V94H18Z" fill="#171713"/>
+
+              <!-- Building -->
+              <path d="M34 94H206V207H34Z" fill="url(#warehouseWall)" stroke="#074540" stroke-width="4"/>
+              <path d="M48 108H192V207H48Z" fill="#FFF9E5"/>
+
+              <!-- Warehouse beams -->
+              <path d="M34 94H206 M48 111H192" stroke="#074540" stroke-width="4"/>
+              <path d="M60 111V207 M180 111V207" stroke="#D4AA00" stroke-width="4"/>
+
+              <!-- Ventilation -->
+              <path d="M91 106H149V127H91Z" fill="#074540"/>
+              <path d="M98 112H142 M98 119H142" stroke="#F1C400" stroke-width="3"/>
+
+              <!-- Warehouse door -->
+              <path d="M87 137H153V207H87Z" fill="#074540"/>
+              <path d="M95 145H145V207H95Z" fill="#23665D"/>
+              <path d="M120 145V207" stroke="#F1C400" stroke-width="3"/>
+              <circle cx="113" cy="179" r="2.5" fill="#FFF9E5"/>
+              <circle cx="127" cy="179" r="2.5" fill="#FFF9E5"/>
+
+              <!-- Left stack of sacks -->
+              <path d="M16 174Q19 164 34 164H61Q74 165 75 177L72 201H19Z"
+                    fill="url(#warehouseSack)" stroke="#704A2D" stroke-width="3"/>
+              <path d="M18 178Q44 187 73 178" fill="none" stroke="#704A2D" stroke-width="3"/>
+              <path d="M22 188Q45 196 70 188" fill="none" stroke="#EFD19A" stroke-width="2"/>
+
+              <path d="M24 145Q27 135 41 135H63Q75 137 76 149L72 174H25Z"
+                    fill="#D99A45" stroke="#704A2D" stroke-width="3"/>
+              <path d="M26 150Q50 157 74 150" fill="none" stroke="#704A2D" stroke-width="3"/>
+              <path d="M32 163Q49 169 69 163" fill="none" stroke="#F5D69B" stroke-width="2"/>
+
+              <!-- Right stack of sacks -->
+              <path d="M166 177Q169 165 184 165H208Q220 166 222 178L218 202H169Z"
+                    fill="url(#warehouseSack)" stroke="#704A2D" stroke-width="3"/>
+              <path d="M169 180Q193 188 220 180" fill="none" stroke="#704A2D" stroke-width="3"/>
+              <path d="M174 190Q195 197 217 190" fill="none" stroke="#EFD19A" stroke-width="2"/>
+
+              <path d="M164 146Q167 135 182 135H204Q217 137 218 150L215 176H167Z"
+                    fill="#D99A45" stroke="#704A2D" stroke-width="3"/>
+              <path d="M167 151Q192 159 216 151" fill="none" stroke="#704A2D" stroke-width="3"/>
+              <path d="M173 164Q194 171 212 164" fill="none" stroke="#F5D69B" stroke-width="2"/>
+
+              <!-- Grain emblem -->
+              <circle cx="120" cy="69" r="12" fill="#F1C400"/>
+              <path d="M120 77V60 M120 66L113 61 M120 70L127 64"
+                    stroke="#074540" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M113 61Q108 56 112 53Q118 55 113 61Z" fill="#074540"/>
+              <path d="M127 64Q133 59 129 56Q123 58 127 64Z" fill="#074540"/>
+
+              <!-- Floor details -->
+              <path d="M13 207H78 M162 207H227" stroke="#074540" stroke-width="3"/>
+              <path d="M17 231H62 M180 231H223" stroke="#FFF9E5" stroke-width="3" stroke-linecap="round"/>
+
             </svg>
           </div>
 
@@ -237,19 +379,87 @@
         </article>
 
 
-        <!-- SUPPLY -->
+        <!-- SUPPLY: COMMERCIAL DELIVERY TRUCK -->
         <article class="operation-card">
 
           <div class="operation-visual">
-            <svg viewBox="0 0 120 120" role="img" aria-label="Supply and delivery icon">
-              <path d="M15 39H72V82H15Z" />
-              <path d="M72 53H91L105 68V82H72Z" />
-              <path d="M84 53V68H105" />
-              <circle cx="37" cy="85" r="9" />
-              <circle cx="88" cy="85" r="9" />
-              <path d="M46 85H79" />
-              <path d="M25 52H60" />
-              <path d="M25 63H53" />
+            <svg viewBox="0 0 260 250" role="img" aria-label="Illustration of a commercial truck transporting agricultural produce">
+
+              <defs>
+                <linearGradient id="truckBody" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#FFF9E5"/>
+                  <stop offset="1" stop-color="#E5E0CB"/>
+                </linearGradient>
+                <linearGradient id="truckSack" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#E8B95C"/>
+                  <stop offset="1" stop-color="#A66A32"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Ground -->
+              <path d="M8 202H252V229H8Z" fill="#D4AA00"/>
+              <path d="M8 211H252" stroke="#074540" stroke-width="3"/>
+
+              <!-- Truck cargo body -->
+              <path d="M18 69H166V178H18Z" fill="url(#truckBody)" stroke="#074540" stroke-width="4"/>
+              <path d="M28 80H156V167H28Z" fill="#FFF9E5"/>
+              <path d="M28 80H156V91H28Z" fill="#074540"/>
+              <path d="M28 158H156V167H28Z" fill="#074540"/>
+
+              <!-- Cargo body divisions -->
+              <path d="M47 91V158 M77 91V158 M107 91V158 M137 91V158"
+                    stroke="#D4AA00" stroke-width="3"/>
+
+              <!-- Sacks in cargo -->
+              <path d="M31 131Q34 120 48 120H67Q78 121 80 133L77 158H34Z"
+                    fill="url(#truckSack)" stroke="#704A2D" stroke-width="2.5"/>
+              <path d="M35 134Q57 141 78 134" fill="none" stroke="#704A2D" stroke-width="2"/>
+
+              <path d="M72 117Q75 106 88 106H109Q120 107 122 119L119 158H75Z"
+                    fill="#D99A45" stroke="#704A2D" stroke-width="2.5"/>
+              <path d="M77 121Q98 128 120 121" fill="none" stroke="#704A2D" stroke-width="2"/>
+
+              <path d="M111 135Q114 124 128 124H145Q157 125 158 137L155 158H114Z"
+                    fill="url(#truckSack)" stroke="#704A2D" stroke-width="2.5"/>
+              <path d="M115 139Q136 146 157 139" fill="none" stroke="#704A2D" stroke-width="2"/>
+
+              <!-- Cab -->
+              <path d="M166 112H203L234 145V178H166Z" fill="#074540" stroke="#171713" stroke-width="4"/>
+              <path d="M179 121H199L222 146H179Z" fill="#A9D8D0" stroke="#171713" stroke-width="3"/>
+              <path d="M204 121L226 146H204Z" fill="#01998E"/>
+              <path d="M166 151H234" stroke="#F1C400" stroke-width="6"/>
+              <path d="M215 159H233V170H215Z" fill="#F1C400"/>
+
+              <!-- Cab door -->
+              <path d="M181 151V174H203V151" fill="none" stroke="#23665D" stroke-width="3"/>
+              <circle cx="197" cy="161" r="2.5" fill="#FFF9E5"/>
+
+              <!-- Front bumper -->
+              <path d="M222 178H239L244 185H221Z" fill="#171713"/>
+              <path d="M18 178H166" stroke="#171713" stroke-width="4"/>
+
+              <!-- Wheels -->
+              <circle cx="65" cy="183" r="19" fill="#171713"/>
+              <circle cx="65" cy="183" r="10" fill="#A9A9A0"/>
+              <circle cx="65" cy="183" r="4" fill="#074540"/>
+
+              <circle cx="194" cy="183" r="19" fill="#171713"/>
+              <circle cx="194" cy="183" r="10" fill="#A9A9A0"/>
+              <circle cx="194" cy="183" r="4" fill="#074540"/>
+
+              <!-- Grain symbol on cargo -->
+              <circle cx="92" cy="101" r="11" fill="#F1C400" stroke="#074540" stroke-width="2"/>
+              <path d="M92 107V94 M92 98L86 94 M92 102L98 97"
+                    stroke="#074540" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+              <!-- Decorative movement lines -->
+              <path d="M18 43H68 M30 53H58" stroke="#074540" stroke-width="4" stroke-linecap="round"/>
+              <path d="M196 47H238 M207 57H232" stroke="#074540" stroke-width="4" stroke-linecap="round"/>
+
+              <!-- Road details -->
+              <path d="M18 220H64 M93 220H137 M164 220H210"
+                    stroke="#FFF9E5" stroke-width="4" stroke-linecap="round"/>
+
             </svg>
           </div>
 
