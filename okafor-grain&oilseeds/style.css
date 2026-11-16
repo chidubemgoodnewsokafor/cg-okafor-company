@@ -1,8 +1,8 @@
 
 /* =========================================================
    OKAFOR GRAIN AND OILSEEDS
-   MAIN STYLESHEET
-   Brand: Yellow | Dark Teal | Brown | Black
+   CORPORATE AGRIBUSINESS STYLESHEET
+   Brand: Yellow | Deep Teal | White | Charcoal
    Font: Comfortaa
    ========================================================= */
 
@@ -12,24 +12,22 @@
 
 :root {
   --yellow: #F1C400;
-  --yellow-light: #FFD83D;
-  --yellow-pale: #FFF8D9;
+  --yellow-light: #FFDA35;
+  --yellow-pale: #FFF9DF;
 
   --deep-teal: #074540;
-  --dark-teal: #052F2C;
-  --teal: #0B6259;
+  --dark-teal: #032F2B;
+  --teal: #08766B;
+  --soft-teal: #EAF3F1;
 
-  --brown: #795438;
-  --dark-brown: #4D3525;
-  --light-brown: #B28A5E;
-
-  --black: #171717;
-  --dark: #202020;
-  --grey: #626262;
-  --light-grey: #E9E7E1;
+  --black: #171B1A;
+  --charcoal: #252B29;
+  --grey: #626B68;
+  --mid-grey: #A7AFAC;
+  --light-grey: #E6EAE8;
 
   --white: #FFFFFF;
-  --off-white: #F8F7F2;
+  --off-white: #F6F8F7;
 
   --font: "Comfortaa", sans-serif;
 
@@ -105,7 +103,7 @@ a:focus-visible {
 
 .section-kicker {
   display: inline-block;
-  color: var(--brown);
+  color: var(--deep-teal);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -130,7 +128,7 @@ a:focus-visible {
 }
 
 .section-heading h2 span {
-  color: var(--brown);
+  color: var(--deep-teal);
 }
 
 .section-heading > p {
@@ -186,12 +184,12 @@ a:focus-visible {
 }
 
 .button-dark {
-  background: var(--black);
+  background: var(--deep-teal);
   color: var(--white);
 }
 
 .button-dark:hover {
-  background: var(--deep-teal);
+  background: var(--dark-teal);
 }
 
 .text-link {
@@ -206,7 +204,7 @@ a:focus-visible {
 
 .text-link:hover {
   gap: 19px;
-  color: var(--brown);
+  color: var(--deep-teal);
 }
 
 
@@ -269,7 +267,7 @@ a:focus-visible {
 
 .site-nav > a:hover,
 .dropdown-trigger:hover {
-  color: var(--brown);
+  color: var(--deep-teal);
 }
 
 .dropdown-trigger span {
@@ -332,7 +330,7 @@ a:focus-visible {
 
 .dropdown-menu a:hover {
   background: var(--yellow-pale);
-  color: var(--brown);
+  color: var(--deep-teal);
 }
 
 .menu-toggle,
@@ -342,14 +340,14 @@ a:focus-visible {
 
 
 /* ---------------------------------------------------------
-   5. HERO CAROUSEL
+   5. CONVENTIONAL FULL-WIDTH HERO CAROUSEL
 --------------------------------------------------------- */
 
 .hero {
   position: relative;
-  min-height: 690px;
   height: min(760px, calc(100svh - var(--header-height)));
-  background: var(--deep-teal);
+  min-height: 620px;
+  background: var(--dark-teal);
   color: var(--white);
   overflow: hidden;
 }
@@ -363,10 +361,8 @@ a:focus-visible {
 .hero-slide {
   position: absolute;
   inset: 0;
-
-  display: grid;
-  grid-template-columns: 54% 46%;
-  align-items: stretch;
+  display: flex;
+  align-items: center;
 
   opacity: 0;
   visibility: hidden;
@@ -382,10 +378,50 @@ a:focus-visible {
   z-index: 2;
 }
 
-.hero-content {
+.hero-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 780px;
-  padding: 100px 7% 125px 10%;
+  height: 100%;
+  z-index: 0;
+  background: var(--dark-teal);
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 35, 32, 0.92) 0%,
+      rgba(3, 35, 32, 0.78) 42%,
+      rgba(3, 35, 32, 0.25) 100%
+    );
+  z-index: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.hero-content {
+  width: min(850px, 75%);
+  padding: 90px 0 125px;
+  margin-left: max(10%, calc((100% - var(--container)) / 2));
 
   display: flex;
   flex-direction: column;
@@ -400,7 +436,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 
   color: var(--yellow);
   font-size: 10px;
@@ -409,15 +445,15 @@ a:focus-visible {
 }
 
 .eyebrow > span {
-  width: 27px;
+  width: 30px;
   height: 2px;
   background: var(--yellow);
 }
 
 .hero-content h1 {
-  max-width: 680px;
-  font-size: clamp(43px, 5.6vw, 76px);
-  line-height: 1.12;
+  max-width: 790px;
+  font-size: clamp(46px, 6.2vw, 82px);
+  line-height: 1.1;
   font-weight: 700;
   letter-spacing: -3px;
 }
@@ -427,19 +463,19 @@ a:focus-visible {
 }
 
 .hero-description {
-  max-width: 510px;
-  margin-top: 27px;
-  color: rgba(255, 255, 255, 0.78);
+  max-width: 590px;
+  margin-top: 25px;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 14px;
   line-height: 2;
 }
 
 .hero-actions {
-  margin-top: 36px;
+  margin-top: 35px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 27px;
 }
 
 .hero-actions .text-link {
@@ -450,47 +486,11 @@ a:focus-visible {
   color: var(--yellow);
 }
 
-.hero-image {
-  height: 100%;
-  min-width: 0;
-  position: relative;
-  overflow: hidden;
-  background: var(--dark-brown);
-}
-
-.hero-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    90deg,
-    rgba(7, 69, 64, 0.25),
-    transparent 35%
-  );
-  pointer-events: none;
-}
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: heroZoom 9s ease-in-out infinite alternate;
-}
-
-@keyframes heroZoom {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.09);
-  }
-}
+/* Carousel arrows */
 
 .hero-arrow {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   position: absolute;
   top: 50%;
   z-index: 10;
@@ -499,9 +499,9 @@ a:focus-visible {
   display: grid;
   place-items: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.18);
 
   color: var(--white);
   font-size: 30px;
@@ -517,17 +517,19 @@ a:focus-visible {
 }
 
 .hero-prev {
-  left: 25px;
+  left: 28px;
 }
 
 .hero-next {
-  right: 25px;
+  right: 28px;
 }
+
+/* Carousel indicators */
 
 .hero-controls {
   position: absolute;
   bottom: 87px;
-  left: 10%;
+  left: max(10%, calc((100% - var(--container)) / 2));
   z-index: 10;
 
   display: flex;
@@ -535,24 +537,25 @@ a:focus-visible {
 }
 
 .hero-dot {
-  width: 28px;
+  width: 30px;
   height: 4px;
   border: 0;
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.45);
   cursor: pointer;
   transition: width var(--transition), background var(--transition);
 }
 
 .hero-dot.active {
-  width: 48px;
+  width: 52px;
   background: var(--yellow);
 }
 
 .hero-bottom {
-  width: 80%;
+  width: min(var(--container), 80%);
   position: absolute;
   bottom: 0;
-  left: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 8;
 
   min-height: 55px;
@@ -560,11 +563,11 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .hero-bottom > span {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -625,7 +628,7 @@ a:focus-visible {
 }
 
 .about-heading h2 span {
-  color: var(--brown);
+  color: var(--deep-teal);
 }
 
 .about-copy {
@@ -666,12 +669,13 @@ a:focus-visible {
 .commodity-card {
   min-width: 0;
   background: var(--white);
+  border: 1px solid var(--light-grey);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .commodity-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.09);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
 }
 
 .commodity-image {
@@ -689,7 +693,7 @@ a:focus-visible {
 }
 
 .commodity-card:hover .commodity-image img {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }
 
 .commodity-number {
@@ -713,7 +717,7 @@ a:focus-visible {
 }
 
 .commodity-type {
-  color: var(--brown);
+  color: var(--deep-teal);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -748,7 +752,7 @@ a:focus-visible {
 
 .commodity-link:hover {
   gap: 17px;
-  color: var(--brown);
+  color: var(--black);
 }
 
 
@@ -859,7 +863,7 @@ a:focus-visible {
 .approach-copy > p {
   max-width: 540px;
   margin-top: 24px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 13px;
   line-height: 2;
 }
@@ -892,7 +896,7 @@ a:focus-visible {
 
 .approach-point p {
   margin-top: 9px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 11px;
   line-height: 1.9;
 }
@@ -923,7 +927,7 @@ a:focus-visible {
 }
 
 .partners-grid h2 span {
-  color: var(--brown);
+  color: var(--deep-teal);
 }
 
 .partners-copy > p {
@@ -960,7 +964,7 @@ a:focus-visible {
   position: relative;
   overflow: hidden;
 
-  background: var(--black);
+  background: var(--charcoal);
   color: var(--white);
 }
 
@@ -984,7 +988,7 @@ a:focus-visible {
 .contact-copy p {
   max-width: 530px;
   margin-top: 20px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   line-height: 2;
 }
@@ -1026,7 +1030,7 @@ a:focus-visible {
 
 .site-footer {
   padding-top: 80px;
-  background: var(--deep-teal);
+  background: var(--dark-teal);
   color: var(--white);
 }
 
@@ -1050,7 +1054,7 @@ a:focus-visible {
 .footer-brand p {
   max-width: 280px;
   margin-top: 20px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 11px;
   line-height: 1.9;
 }
@@ -1069,7 +1073,7 @@ a:focus-visible {
 }
 
 .footer-column a {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 10px;
   transition: color var(--transition);
 }
@@ -1087,7 +1091,7 @@ a:focus-visible {
 
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 9px;
 }
 
@@ -1121,12 +1125,12 @@ a:focus-visible {
   }
 
   .hero-content {
-    padding-left: 8%;
-    padding-right: 5%;
+    margin-left: 9%;
+    width: 78%;
   }
 
   .hero-content h1 {
-    font-size: clamp(42px, 5.5vw, 60px);
+    font-size: clamp(42px, 5.5vw, 66px);
   }
 
   .about-grid {
@@ -1150,7 +1154,7 @@ a:focus-visible {
 
 
 /* ---------------------------------------------------------
-   14. MOBILE NAVIGATION
+   14. MOBILE NAVIGATION AND RESPONSIVENESS
 --------------------------------------------------------- */
 
 @media (max-width: 760px) {
@@ -1213,7 +1217,7 @@ a:focus-visible {
 
     overflow-y: auto;
 
-    background: var(--deep-teal);
+    background: var(--dark-teal);
     box-shadow: -15px 0 45px rgba(0, 0, 0, 0.2);
 
     transform: translateX(105%);
@@ -1320,24 +1324,35 @@ a:focus-visible {
     cursor: pointer;
   }
 
+
   /* HERO MOBILE */
 
   .hero {
-    min-height: 760px;
+    min-height: 690px;
     height: calc(100svh - var(--header-height));
-    max-height: 900px;
+    max-height: 850px;
   }
 
   .hero-slide {
-    display: flex;
-    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-image {
+    inset: 0;
+  }
+
+  .hero-image::after {
+    background: linear-gradient(
+      90deg,
+      rgba(3, 35, 32, 0.88),
+      rgba(3, 35, 32, 0.55)
+    );
   }
 
   .hero-content {
-    width: 100%;
-    min-height: 57%;
-    padding: 70px 35px 85px;
-    justify-content: center;
+    width: calc(100% - 90px);
+    margin-left: 45px;
+    padding: 70px 0 115px;
   }
 
   .eyebrow {
@@ -1373,43 +1388,40 @@ a:focus-visible {
     font-size: 10px;
   }
 
-  .hero-image {
-    width: 100%;
-    height: 43%;
-    min-height: 245px;
-  }
-
-  .hero-image::before {
-    background: linear-gradient(
-      180deg,
-      rgba(7, 69, 64, 0.1),
-      rgba(7, 69, 64, 0.15)
-    );
-  }
-
   .hero-arrow {
-    width: 38px;
-    height: 38px;
-    top: 79%;
-    font-size: 25px;
+    width: 37px;
+    height: 37px;
+    top: auto;
+    bottom: 83px;
+    transform: none;
+    font-size: 24px;
   }
 
   .hero-prev {
-    left: 16px;
+    left: 18px;
   }
 
   .hero-next {
-    right: 16px;
+    right: 18px;
   }
 
   .hero-controls {
-    left: 35px;
-    bottom: 72px;
+    left: 45px;
+    bottom: 83px;
+  }
+
+  .hero-dot {
+    width: 20px;
+  }
+
+  .hero-dot.active {
+    width: 37px;
   }
 
   .hero-bottom {
-    width: calc(100% - 70px);
-    left: 35px;
+    width: calc(100% - 90px);
+    left: 45px;
+    transform: none;
     min-height: 48px;
   }
 
@@ -1422,6 +1434,7 @@ a:focus-visible {
     width: 32px;
     height: 32px;
   }
+
 
   /* ABOUT */
 
@@ -1447,6 +1460,7 @@ a:focus-visible {
   .about-copy p {
     font-size: 12px;
   }
+
 
   /* COMMODITIES */
 
@@ -1508,6 +1522,7 @@ a:focus-visible {
     font-size: 10px;
   }
 
+
   /* SERVICES */
 
   .services-section {
@@ -1536,6 +1551,7 @@ a:focus-visible {
     font-size: 11px;
   }
 
+
   /* APPROACH */
 
   .approach-section {
@@ -1559,6 +1575,7 @@ a:focus-visible {
     grid-template-columns: 35px 1fr;
     gap: 14px;
   }
+
 
   /* PARTNERS */
 
@@ -1590,6 +1607,7 @@ a:focus-visible {
     font-size: 10px;
   }
 
+
   /* CONTACT */
 
   .contact-section {
@@ -1613,6 +1631,7 @@ a:focus-visible {
   .contact-copy p {
     font-size: 12px;
   }
+
 
   /* FOOTER */
 
@@ -1667,11 +1686,16 @@ a:focus-visible {
   }
 
   .hero-content {
-    padding-inline: 27px;
+    width: calc(100% - 76px);
+    margin-left: 38px;
   }
 
   .hero-content h1 {
     font-size: 38px;
+  }
+
+  .hero-description {
+    font-size: 11px;
   }
 
   .hero-actions {
@@ -1680,12 +1704,12 @@ a:focus-visible {
   }
 
   .hero-controls {
-    left: 27px;
+    left: 38px;
   }
 
   .hero-bottom {
-    width: calc(100% - 54px);
-    left: 27px;
+    width: calc(100% - 76px);
+    left: 38px;
   }
 
   .commodity-grid {
