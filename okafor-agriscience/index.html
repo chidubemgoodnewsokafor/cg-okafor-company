@@ -19,24 +19,15 @@
   <!-- HEADER -->
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="Okafor Agriscience home">
-      <span class="brand-icon" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none">
-          <path d="M24 39V19" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-          <path d="M24 26C12 26 8 19 8 10C18 10 25 15 24 26Z" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/>
-          <path d="M24 20C24 11 30 6 40 6C40 16 34 22 24 23" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/>
-          <path d="M14 39H34" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <span class="brand-name">
-        <strong>OKAFOR</strong>
-        <small>AGRISCIENCE</small>
-      </span>
+      <img src="assets/okafor-agriscience-logo.png"
+           alt="Okafor Agriscience"
+           class="brand-logo">
     </a>
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation">
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" id="menu-toggle"
+      aria-label="Open navigation" aria-expanded="false"
+      aria-controls="site-navigation">
+      <span></span><span></span><span></span>
     </button>
 
     <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
@@ -52,41 +43,226 @@
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow"><span></span> RESEARCH · TRIALS · DEVELOPMENT</p>
-        <h1>Science that<br><span>nourishes.</span></h1>
-        <p class="hero-description">
-          We bring research, experimentation and science closer to the farm,
-          developing practical solutions and farming practices that work.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-light" href="#research">Explore our work <span>↗</span></a>
-          <a class="text-link hero-link" href="#about">Discover Okafor Agriscience <span>→</span></a>
-        </div>
+    <!-- HERO CAROUSEL -->
+    <section class="hero" aria-label="Okafor Agriscience introduction">
+
+      <div class="hero-slides">
+
+        <!-- SLIDE 1: ORIGINAL BOTANICAL CONCEPT -->
+        <article class="hero-slide active">
+          <div class="hero-content">
+            <p class="eyebrow"><span></span> RESEARCH · TRIALS · DEVELOPMENT</p>
+            <h1>Science that<br><span>nourishes.</span></h1>
+            <p class="hero-description">
+              We bring research, experimentation and science closer to the farm,
+              developing practical solutions and farming practices that work.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-light" href="#research">Explore our work <span>↗</span></a>
+              <a class="text-link hero-link" href="#about">Discover Okafor Agriscience <span>→</span></a>
+            </div>
+          </div>
+
+          <div class="hero-visual botanical-visual" aria-label="Illustration of a growing plant">
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <div class="hero-visual-center">
+              <svg viewBox="0 0 220 260" fill="none" aria-hidden="true">
+                <path d="M110 239V103" stroke="#074540" stroke-width="7" stroke-linecap="round"/>
+                <path d="M110 160C62 160 37 131 39 83C85 83 117 109 110 160Z" fill="#01998E"/>
+                <path d="M110 122C108 69 140 37 188 34C191 84 160 117 110 122Z" fill="#80CFC4"/>
+                <path d="M110 239H174M110 239H47" stroke="#074540" stroke-width="7" stroke-linecap="round"/>
+                <path d="M73 102L110 160M151 63L110 122" stroke="#074540" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="110" cy="27" r="12" fill="#01998E"/>
+                <path d="M110 5V0M132 27H137M88 27H83" stroke="#01998E" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="visual-label label-top">RESEARCH</div>
+            <div class="visual-label label-bottom">BETTER FARMING</div>
+            <span class="visual-dot dot-one"></span>
+            <span class="visual-dot dot-two"></span>
+            <span class="visual-dot dot-three"></span>
+          </div>
+        </article>
+
+        <!-- SLIDE 2: FARMER AND HARVEST -->
+        <article class="hero-slide">
+          <div class="hero-content">
+            <p class="eyebrow"><span></span> BETTER FARMING · BETTER HARVESTS</p>
+            <h1>Growing<br><span>better together.</span></h1>
+            <p class="hero-description">
+              We study farming practices that help farmers grow healthy crops,
+              improve productivity and achieve better harvests.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-light" href="#focus">Explore crop research <span>↗</span></a>
+              <a class="text-link hero-link" href="#solutions">Our farming solutions <span>→</span></a>
+            </div>
+          </div>
+
+          <div class="hero-visual scene-visual">
+            <div class="scene-halo"></div>
+            <svg class="scene-svg" viewBox="0 0 480 430" role="img" aria-label="Illustration of a farmer standing proudly with a harvest">
+              <ellipse cx="240" cy="390" rx="190" ry="22" fill="#013d38" opacity=".2"/>
+              <path d="M35 345Q120 280 220 330T445 320V400H35Z" fill="#47b9ad"/>
+              <path d="M45 355Q140 310 235 350T435 345" fill="none" stroke="#80cfc4" stroke-width="5"/>
+              <path d="M72 350L55 295M95 346L113 285M390 350L408 290" stroke="#80cfc4" stroke-width="5" stroke-linecap="round"/>
+              <path d="M55 298Q20 270 40 250Q80 255 72 300M112 290Q145 250 162 270Q150 310 112 290M405 292Q430 255 450 278Q438 310 405 292" fill="#80cfc4"/>
+              <!-- legs -->
+              <path d="M190 285L178 365Q178 380 195 380H220L230 300M260 300L275 365Q278 380 295 380H315L290 280" fill="#074540"/>
+              <path d="M178 369H220M275 369H315" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+              <!-- body -->
+              <path d="M172 150Q240 120 307 155L327 285Q245 315 155 280Z" fill="#01998e"/>
+              <path d="M190 155L230 210L275 155" fill="#d9efec"/>
+              <path d="M230 210V285" stroke="#074540" stroke-width="4"/>
+              <!-- neck and head -->
+              <path d="M218 130H264V164Q240 183 218 160Z" fill="#8f573b"/>
+              <ellipse cx="242" cy="104" rx="45" ry="54" fill="#a96b49"/>
+              <path d="M199 94Q198 43 245 42Q287 45 284 98L267 80L216 81Z" fill="#30251d"/>
+              <!-- hat -->
+              <path d="M185 78Q240 4 300 78Z" fill="#d8a438"/>
+              <path d="M174 82Q240 62 311 82Q300 101 180 97Z" fill="#eab84e"/>
+              <path d="M218 113Q240 128 261 112" stroke="#543324" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <!-- arms -->
+              <path d="M174 174L130 238L161 263L205 209M300 174L340 225L319 251L279 205" fill="none" stroke="#01998e" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M130 238L111 252M340 225L359 241" stroke="#a96b49" stroke-width="19" stroke-linecap="round"/>
+              <!-- harvest basket -->
+              <path d="M105 252Q160 230 207 255L194 340H117Z" fill="#a87537"/>
+              <path d="M105 252Q155 235 207 255" stroke="#e9bd72" stroke-width="10" fill="none"/>
+              <path d="M117 275H199M120 300H195M123 325H191" stroke="#d6a15b" stroke-width="5"/>
+              <!-- produce -->
+              <path d="M130 253Q112 210 130 185Q151 207 145 250M160 253Q154 190 179 175Q192 220 172 252" fill="#47b9ad"/>
+              <path d="M139 230Q105 199 112 180Q143 190 139 230M173 227Q185 194 209 195Q206 224 173 227" fill="#80cfc4"/>
+              <path d="M147 250Q125 215 151 199Q172 225 147 250" fill="#d9efec"/>
+              <path d="M120 255Q100 228 112 210Q135 225 120 255" fill="#d0a14d"/>
+            </svg>
+            <span class="visual-label label-top">BETTER HARVESTS</span>
+            <span class="visual-label label-bottom">FARMER SUCCESS</span>
+          </div>
+        </article>
+
+        <!-- SLIDE 3: OKAFOR AGRISCIENCE WORKER -->
+        <article class="hero-slide">
+          <div class="hero-content">
+            <p class="eyebrow"><span></span> RESEARCH · FIELDWORK · DISCOVERY</p>
+            <h1>Knowledge<br><span>in action.</span></h1>
+            <p class="hero-description">
+              Our work brings scientific thinking into real farming environments,
+              helping turn research findings into practical improvements.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-light" href="#research">See how we work <span>↗</span></a>
+              <a class="text-link hero-link" href="#about">About our work <span>→</span></a>
+            </div>
+          </div>
+
+          <div class="hero-visual scene-visual">
+            <div class="scene-halo"></div>
+            <svg class="scene-svg" viewBox="0 0 480 430" role="img" aria-label="Illustration of an Okafor Agriscience field worker">
+              <ellipse cx="240" cy="390" rx="170" ry="22" fill="#013d38" opacity=".2"/>
+              <path d="M40 355Q150 300 240 345T440 335V400H40Z" fill="#47b9ad"/>
+              <!-- legs -->
+              <path d="M185 280L175 365H225L238 290M260 290L270 365H320L296 275" fill="#074540"/>
+              <path d="M172 370H229M266 370H324" stroke="#ffffff" stroke-width="13" stroke-linecap="round"/>
+              <!-- body -->
+              <path d="M168 148Q240 120 310 150L325 286Q242 310 153 286Z" fill="#01998e"/>
+              <path d="M213 143L241 181L272 144" fill="#d9efec"/>
+              <!-- neck and face -->
+              <path d="M218 119H262V159H218Z" fill="#8f573b"/>
+              <ellipse cx="240" cy="91" rx="43" ry="52" fill="#a96b49"/>
+              <path d="M198 83Q200 33 244 35Q283 37 282 86L268 67L214 68Z" fill="#30251d"/>
+              <!-- cap -->
+              <path d="M195 61Q235 25 280 56L286 75H195Z" fill="#074540"/>
+              <path d="M189 72H295V84H189Z" fill="#01998e"/>
+              <!-- face -->
+              <path d="M218 104Q240 117 261 103" fill="none" stroke="#543324" stroke-width="4" stroke-linecap="round"/>
+              <!-- arms -->
+              <path d="M174 166L127 235L153 254L205 199M305 165L349 216L329 242L278 200" fill="none" stroke="#01998e" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M127 235L115 250M349 216L363 233" stroke="#a96b49" stroke-width="18" stroke-linecap="round"/>
+              <!-- shirt logo badge -->
+              <circle cx="265" cy="210" r="25" fill="#ffffff" stroke="#80cfc4" stroke-width="3"/>
+              <image href="assets/okafor-agriscience-logo.png" x="246" y="191" width="38" height="38" preserveAspectRatio="xMidYMid meet"/>
+              <!-- clipboard -->
+              <rect x="340" y="230" width="54" height="76" rx="5" fill="#d9efec" transform="rotate(-12 340 230)"/>
+              <path d="M350 246L380 240M354 260L383 254M358 274L380 269" stroke="#074540" stroke-width="4" stroke-linecap="round"/>
+              <!-- crops -->
+              <path d="M80 350V292M100 350V300M400 350V290" stroke="#074540" stroke-width="5" stroke-linecap="round"/>
+              <path d="M80 311Q50 280 44 300Q54 325 80 311M80 325Q110 285 120 305Q108 330 80 325M400 310Q370 282 365 302Q376 325 400 310M400 327Q427 291 440 309Q428 334 400 327" fill="#80cfc4"/>
+            </svg>
+            <span class="visual-label label-top">OKAFOR AGRISCIENCE</span>
+            <span class="visual-label label-bottom">SCIENCE IN THE FIELD</span>
+          </div>
+        </article>
+
+        <!-- SLIDE 4: SCIENTIST AND RESEARCH -->
+        <article class="hero-slide">
+          <div class="hero-content">
+            <p class="eyebrow"><span></span> EXPERIMENTS · EVIDENCE · SOLUTIONS</p>
+            <h1>We investigate.<br><span>We improve.</span></h1>
+            <p class="hero-description">
+              From crop experiments to livestock trials, we investigate
+              different approaches and develop solutions informed by results.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-light" href="#research">Explore our research <span>↗</span></a>
+              <a class="text-link hero-link" href="#focus">Our research areas <span>→</span></a>
+            </div>
+          </div>
+
+          <div class="hero-visual scene-visual">
+            <div class="scene-halo"></div>
+            <svg class="scene-svg" viewBox="0 0 480 430" role="img" aria-label="Illustration of a scientist studying plants in a laboratory">
+              <ellipse cx="240" cy="390" rx="180" ry="20" fill="#013d38" opacity=".2"/>
+              <!-- lab table -->
+              <path d="M65 310H415V335H65Z" fill="#d9efec"/>
+              <path d="M95 335V375M385 335V375" stroke="#d9efec" stroke-width="9"/>
+              <!-- scientist body -->
+              <path d="M170 154Q240 130 305 160L325 307H155Z" fill="#ffffff"/>
+              <path d="M208 155L240 204L274 155" fill="#d9efec"/>
+              <path d="M240 204V305" stroke="#80cfc4" stroke-width="4"/>
+              <!-- neck -->
+              <path d="M220 121H260V162H220Z" fill="#8f573b"/>
+              <!-- head -->
+              <ellipse cx="240" cy="91" rx="42" ry="51" fill="#a96b49"/>
+              <path d="M199 86Q196 37 241 36Q280 36 282 86L268 67L212 68Z" fill="#30251d"/>
+              <!-- hair -->
+              <path d="M200 65Q180 84 197 135M280 65Q300 90 282 137" stroke="#30251d" stroke-width="13" stroke-linecap="round"/>
+              <!-- safety glasses -->
+              <path d="M207 91H234L237 104H208ZM243 91H270L268 104H243Z" stroke="#074540" stroke-width="4" fill="#d9efec" fill-opacity=".5"/>
+              <path d="M234 96H243" stroke="#074540" stroke-width="3"/>
+              <!-- coat arms -->
+              <path d="M172 169L125 242L152 259L207 203M306 170L350 240L326 258L277 203" fill="none" stroke="#ffffff" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M125 242L115 260M350 240L365 258" stroke="#a96b49" stroke-width="18" stroke-linecap="round"/>
+              <!-- test tube -->
+              <path d="M333 236V282Q333 300 350 300Q367 300 367 282V236" fill="#d9efec" stroke="#074540" stroke-width="4"/>
+              <path d="M336 273H364V284Q364 296 350 296Q336 296 336 284Z" fill="#47b9ad"/>
+              <path d="M330 236H370" stroke="#074540" stroke-width="5" stroke-linecap="round"/>
+              <!-- microscope -->
+              <path d="M80 280L112 250L133 270L102 300Z" fill="#074540"/>
+              <path d="M112 250L125 229L145 242L132 265" fill="#01998e"/>
+              <path d="M135 267Q177 285 160 314H105" fill="none" stroke="#074540" stroke-width="11" stroke-linecap="round"/>
+              <path d="M90 314H175" stroke="#074540" stroke-width="8" stroke-linecap="round"/>
+              <!-- plant sample -->
+              <path d="M235 310V255" stroke="#074540" stroke-width="5"/>
+              <path d="M235 280Q205 279 205 253Q232 253 235 280M235 267Q239 235 270 236Q267 262 235 267" fill="#01998e"/>
+              <path d="M205 311H268" stroke="#074540" stroke-width="4"/>
+            </svg>
+            <span class="visual-label label-top">SCIENTIFIC RESEARCH</span>
+            <span class="visual-label label-bottom">TEST · LEARN · DEVELOP</span>
+          </div>
+        </article>
+
       </div>
 
-      <div class="hero-visual" aria-label="Illustration representing agricultural science">
-        <div class="hero-orbit orbit-one"></div>
-        <div class="hero-orbit orbit-two"></div>
-        <div class="hero-visual-center">
-          <svg viewBox="0 0 220 260" fill="none" aria-hidden="true">
-            <path d="M110 239V103" stroke="#074540" stroke-width="7" stroke-linecap="round"/>
-            <path d="M110 160C62 160 37 131 39 83C85 83 117 109 110 160Z" fill="#01998E"/>
-            <path d="M110 122C108 69 140 37 188 34C191 84 160 117 110 122Z" fill="#80CFC4"/>
-            <path d="M110 239H174" stroke="#074540" stroke-width="7" stroke-linecap="round"/>
-            <path d="M110 239H47" stroke="#074540" stroke-width="7" stroke-linecap="round"/>
-            <path d="M73 102L110 160M151 63L110 122" stroke="#074540" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="110" cy="27" r="12" fill="#01998E"/>
-            <path d="M110 5V0M132 27H137M88 27H83" stroke="#01998E" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="visual-label label-top">RESEARCH</div>
-        <div class="visual-label label-bottom">BETTER FARMING</div>
-        <span class="visual-dot dot-one"></span>
-        <span class="visual-dot dot-two"></span>
-        <span class="visual-dot dot-three"></span>
+      <!-- CAROUSEL CONTROLS -->
+      <button class="hero-arrow hero-prev" type="button" aria-label="Previous slide">‹</button>
+      <button class="hero-arrow hero-next" type="button" aria-label="Next slide">›</button>
+
+      <div class="hero-controls" aria-label="Choose hero slide">
+        <button class="hero-dot active" aria-label="Go to slide 1" aria-current="true"></button>
+        <button class="hero-dot" aria-label="Go to slide 2"></button>
+        <button class="hero-dot" aria-label="Go to slide 3"></button>
+        <button class="hero-dot" aria-label="Go to slide 4"></button>
       </div>
 
       <div class="hero-bottom">
@@ -132,16 +308,14 @@
 
         <article class="focus-card focus-vegetable">
           <div class="focus-card-top">
-            <span>01</span>
-            <span class="focus-card-tag">CROP RESEARCH</span>
+            <span>01</span><span class="focus-card-tag">CROP RESEARCH</span>
           </div>
           <div class="focus-icon" aria-hidden="true">
             <svg viewBox="0 0 120 120" fill="none">
               <path d="M60 99V53" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
               <path d="M60 76C35 76 22 61 23 36C47 36 65 50 60 76Z" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
               <path d="M60 61C59 34 76 18 101 17C102 43 85 60 60 61Z" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
-              <path d="M60 99H91" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-              <path d="M60 99H29" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <path d="M60 99H91M60 99H29" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="focus-card-bottom">
@@ -152,19 +326,15 @@
 
         <article class="focus-card focus-poultry">
           <div class="focus-card-top">
-            <span>02</span>
-            <span class="focus-card-tag">LIVESTOCK RESEARCH</span>
+            <span>02</span><span class="focus-card-tag">LIVESTOCK RESEARCH</span>
           </div>
           <div class="focus-icon" aria-hidden="true">
             <svg viewBox="0 0 120 120" fill="none">
               <path d="M31 83C25 72 27 54 39 43C48 35 64 32 78 39C91 46 96 60 91 74C87 87 73 94 55 93C44 92 36 89 31 83Z" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
               <path d="M76 43C82 30 93 29 99 36C105 44 97 55 87 57" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-              <path d="M91 57L105 61L92 67" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
-              <path d="M45 91V104M75 91V104" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-              <path d="M42 104H51M72 104H81" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <path d="M91 57L105 61L92 67M45 91V104M75 91V104M42 104H51M72 104H81" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
               <circle cx="83" cy="49" r="2.5" fill="currentColor"/>
-              <path d="M43 39L36 29L52 32L58 23L65 34" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
-              <path d="M26 64L16 57L18 73L29 76" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M43 39L36 29L52 32L58 23L65 34M26 64L16 57L18 73L29 76" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
             </svg>
           </div>
           <div class="focus-card-bottom">
@@ -175,16 +345,13 @@
 
         <article class="focus-card focus-swine">
           <div class="focus-card-top">
-            <span>03</span>
-            <span class="focus-card-tag">LIVESTOCK RESEARCH</span>
+            <span>03</span><span class="focus-card-tag">LIVESTOCK RESEARCH</span>
           </div>
           <div class="focus-icon" aria-hidden="true">
             <svg viewBox="0 0 120 120" fill="none">
               <path d="M28 52C28 39 42 31 61 31C79 31 92 40 92 56V76C92 87 81 94 65 94H48C34 94 27 85 27 74V60" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
-              <path d="M37 38L28 23L50 30M78 34L91 22L94 43" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
-              <path d="M92 57C103 55 109 61 106 70C104 78 95 80 89 75" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-              <path d="M42 91V105M78 91V105" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-              <path d="M36 105H47M72 105H83" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <path d="M37 38L28 23L50 30M78 34L91 22L94 43M92 57C103 55 109 61 106 70C104 78 95 80 89 75" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+              <path d="M42 91V105M78 91V105M36 105H47M72 105H83" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
               <circle cx="47" cy="54" r="3" fill="currentColor"/>
               <path d="M62 67C62 62 70 62 70 67C70 73 62 73 62 67Z" stroke="currentColor" stroke-width="3"/>
               <path d="M79 67C79 62 87 62 87 67C87 73 79 73 79 67Z" stroke="currentColor" stroke-width="3"/>
@@ -196,6 +363,75 @@
           </div>
         </article>
 
+      </div>
+    </section>
+
+    <!-- RESEARCH PHOTO GALLERY -->
+    <section class="field-gallery section" aria-labelledby="gallery-title">
+      <div class="section-kicker">OUR WORK IN PICTURES</div>
+      <div class="gallery-heading">
+        <h2 id="gallery-title">Research meets the farm.</h2>
+        <p>
+          Our research covers crops and livestock. These spaces are ready
+          for photographs from our own experiments, trials and farm activities.
+        </p>
+      </div>
+
+      <!-- CROP PHOTOGRAPHS -->
+      <div class="gallery-category">
+        <div class="gallery-category-heading">
+          <h3>Crop research</h3>
+          <span>01 / FIELD TRIALS</span>
+        </div>
+        <div class="photo-grid">
+          <figure class="photo-slot">
+            <img src="assets/crop-research-1.jpg" alt="Crop research and field trials" loading="lazy">
+          </figure>
+          <figure class="photo-slot">
+            <img src="assets/crop-research-2.jpg" alt="Crop growing experiments" loading="lazy">
+          </figure>
+          <figure class="photo-slot photo-optional">
+            <img src="assets/crop-research-3.jpg" alt="Crop development research" loading="lazy">
+          </figure>
+        </div>
+      </div>
+
+      <!-- POULTRY PHOTOGRAPHS -->
+      <div class="gallery-category">
+        <div class="gallery-category-heading">
+          <h3>Poultry research</h3>
+          <span>02 / LIVESTOCK TRIALS</span>
+        </div>
+        <div class="photo-grid">
+          <figure class="photo-slot">
+            <img src="assets/poultry-research-1.jpg" alt="Poultry research and management" loading="lazy">
+          </figure>
+          <figure class="photo-slot">
+            <img src="assets/poultry-research-2.jpg" alt="Poultry farming trials" loading="lazy">
+          </figure>
+          <figure class="photo-slot photo-optional">
+            <img src="assets/poultry-research-3.jpg" alt="Poultry research activities" loading="lazy">
+          </figure>
+        </div>
+      </div>
+
+      <!-- SWINE PHOTOGRAPHS -->
+      <div class="gallery-category">
+        <div class="gallery-category-heading">
+          <h3>Swine research</h3>
+          <span>03 / LIVESTOCK TRIALS</span>
+        </div>
+        <div class="photo-grid">
+          <figure class="photo-slot">
+            <img src="assets/swine-research-1.jpg" alt="Swine research and breeding" loading="lazy">
+          </figure>
+          <figure class="photo-slot">
+            <img src="assets/swine-research-2.jpg" alt="Pig nutrition and management research" loading="lazy">
+          </figure>
+          <figure class="photo-slot photo-optional">
+            <img src="assets/swine-research-3.jpg" alt="Swine production research" loading="lazy">
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -219,31 +455,19 @@
         <div class="research-steps">
           <article class="research-step">
             <span class="step-number">01</span>
-            <div>
-              <h3>Research</h3>
-              <p>Identify challenges, study existing knowledge and explore possible approaches.</p>
-            </div>
+            <div><h3>Research</h3><p>Identify challenges, study existing knowledge and explore possible approaches.</p></div>
           </article>
           <article class="research-step">
             <span class="step-number">02</span>
-            <div>
-              <h3>Test</h3>
-              <p>Conduct experiments and trials under practical farming conditions.</p>
-            </div>
+            <div><h3>Test</h3><p>Conduct experiments and trials under practical farming conditions.</p></div>
           </article>
           <article class="research-step">
             <span class="step-number">03</span>
-            <div>
-              <h3>Evaluate</h3>
-              <p>Compare results, assess performance and learn what works best.</p>
-            </div>
+            <div><h3>Evaluate</h3><p>Compare results, assess performance and learn what works best.</p></div>
           </article>
           <article class="research-step">
             <span class="step-number">04</span>
-            <div>
-              <h3>Develop</h3>
-              <p>Turn useful findings into better practices, products and farming solutions.</p>
-            </div>
+            <div><h3>Develop</h3><p>Turn useful findings into better practices, products and farming solutions.</p></div>
           </article>
         </div>
       </div>
@@ -294,7 +518,7 @@
       </div>
     </section>
 
-    <!-- PRODUCTS -->
+    <!-- PRODUCT DEVELOPMENT -->
     <section class="products-section">
       <div class="products-inner section">
         <div>
@@ -315,7 +539,7 @@
       </div>
     </section>
 
-    <!-- CONTACT CTA -->
+    <!-- CONTACT -->
     <section class="contact-section section" id="contact">
       <div class="contact-panel">
         <div class="contact-copy">
@@ -348,19 +572,9 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-main">
-      <a class="brand footer-brand" href="#top" aria-label="Okafor Agriscience home">
-        <span class="brand-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none">
-            <path d="M24 39V19" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-            <path d="M24 26C12 26 8 19 8 10C18 10 25 15 24 26Z" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/>
-            <path d="M24 20C24 11 30 6 40 6C40 16 34 22 24 23" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/>
-            <path d="M14 39H34" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <span class="brand-name">
-          <strong>OKAFOR</strong>
-          <small>AGRISCIENCE</small>
-        </span>
+      <a class="footer-brand" href="#top" aria-label="Okafor Agriscience home">
+        <img src="assets/okafor-agriscience-logo.png"
+             alt="Okafor Agriscience" class="footer-logo">
       </a>
 
       <p class="footer-description">
