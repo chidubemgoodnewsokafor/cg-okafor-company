@@ -160,9 +160,11 @@ img {
   justify-content: space-between;
 }
 
+/* UPDATED: Larger header logo */
+
 .logo {
-  width: 190px;
-  height: 55px;
+  width: 230px;
+  height: 68px;
   object-fit: contain;
   object-position: left center;
 }
@@ -238,9 +240,11 @@ img {
   margin-bottom: 90px;
 }
 
+/* UPDATED: Larger mobile navigation logo */
+
 .mobile-nav-top img {
-  width: 175px;
-  height: 50px;
+  width: 205px;
+  height: 65px;
   object-fit: contain;
   object-position: left;
 }
@@ -302,15 +306,19 @@ img {
   visibility: visible;
 }
 
+/* UPDATED: Reduced red overlay intensity.
+   Images are now much more visible while
+   retaining enough contrast for white text. */
+
 .hero-slide::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
     linear-gradient(90deg,
-      rgba(54,0,5,.98) 0%,
-      rgba(54,0,5,.88) 40%,
-      rgba(54,0,5,.32) 100%);
+      rgba(54,0,5,.78) 0%,
+      rgba(54,0,5,.53) 40%,
+      rgba(54,0,5,.12) 100%);
   z-index: 1;
 }
 
@@ -361,7 +369,7 @@ img {
   line-height: 2;
   max-width: 520px;
   margin-top: 25px;
-  color: rgba(255,255,255,.82);
+  color: rgba(255,255,255,.92);
 }
 
 .hero-actions {
@@ -890,9 +898,11 @@ img {
   padding-bottom: 55px;
 }
 
+/* UPDATED: Larger footer logo */
+
 .footer-logo {
-  width: 190px;
-  height: 65px;
+  width: 230px;
+  height: 85px;
   object-fit: contain;
   object-position: left;
 }
@@ -1022,12 +1032,14 @@ img {
   }
 
   .header {
-    height: 75px;
+    height: 80px;
   }
 
+  /* UPDATED: Larger mobile header logo */
+
   .logo {
-    width: 155px;
-    height: 48px;
+    width: 185px;
+    height: 62px;
   }
 
   .hero {
@@ -1035,11 +1047,14 @@ img {
     height: 90svh;
   }
 
+  /* UPDATED: Lighter mobile hero overlay */
+
   .hero-slide::before {
     background: linear-gradient(
       90deg,
-      rgba(54,0,5,.94),
-      rgba(54,0,5,.64)
+      rgba(54,0,5,.72) 0%,
+      rgba(54,0,5,.42) 65%,
+      rgba(54,0,5,.18) 100%
     );
   }
 
@@ -1144,6 +1159,13 @@ img {
   .footer-top {
     flex-direction: column;
     gap: 40px;
+  }
+
+  /* UPDATED: Larger footer logo on mobile */
+
+  .footer-logo {
+    width: 220px;
+    height: 85px;
   }
 
   .footer-bottom {
@@ -1375,9 +1397,7 @@ a:focus-visible {
 </svg>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header class="header">
 
@@ -1441,15 +1461,11 @@ a:focus-visible {
 </div>
 
 
-<!-- =====================================================
-     HERO CAROUSEL
-===================================================== -->
+<!-- HERO CAROUSEL -->
 
 <section class="hero" id="home">
 
   <div class="hero-slides">
-
-    <!-- SLIDE 1 -->
 
     <div class="hero-slide active">
 
@@ -1488,8 +1504,6 @@ a:focus-visible {
     </div>
 
 
-    <!-- SLIDE 2 -->
-
     <div class="hero-slide">
 
       <img src="assets/hero-poultry.jpg"
@@ -1523,8 +1537,6 @@ a:focus-visible {
 
     </div>
 
-
-    <!-- SLIDE 3 -->
 
     <div class="hero-slide">
 
@@ -1580,9 +1592,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     VALUE STRIP
-===================================================== -->
+<!-- VALUE STRIP -->
 
 <section class="value-strip">
 
@@ -1613,9 +1623,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     ABOUT US
-===================================================== -->
+<!-- ABOUT US -->
 
 <section class="section about" id="about">
 
@@ -1700,9 +1708,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     WHAT WE DO
-===================================================== -->
+<!-- WHAT WE DO -->
 
 <section class="section what-we-do" id="solutions">
 
@@ -1793,9 +1799,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     FARM AUTOMATION
-===================================================== -->
+<!-- FARM AUTOMATION -->
 
 <section class="section automation" id="automation">
 
@@ -1866,9 +1870,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     FARM OPERATIONS
-===================================================== -->
+<!-- FARM OPERATIONS -->
 
 <section class="section operations" id="operations">
 
@@ -1905,9 +1907,6 @@ a:focus-visible {
 
       <div class="operation-grid">
 
-
-        <!-- LAYERS -->
-
         <article class="operation-card">
 
           <div class="operation-art">
@@ -1936,8 +1935,6 @@ a:focus-visible {
 
         </article>
 
-
-        <!-- BROILERS -->
 
         <article class="operation-card">
 
@@ -1983,9 +1980,6 @@ a:focus-visible {
 
       <div class="operation-grid">
 
-
-        <!-- SOW FARM -->
-
         <article class="operation-card">
 
           <div class="operation-art">
@@ -2013,8 +2007,6 @@ a:focus-visible {
         </article>
 
 
-        <!-- FATTENING -->
-
         <article class="operation-card">
 
           <div class="operation-art dark">
@@ -2041,8 +2033,6 @@ a:focus-visible {
 
         </article>
 
-
-        <!-- DUAL PURPOSE -->
 
         <article class="operation-card">
 
@@ -2080,9 +2070,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     EFFICIENCY
-===================================================== -->
+<!-- EFFICIENCY -->
 
 <section class="section efficiency">
 
@@ -2189,9 +2177,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     CALL TO ACTION
-===================================================== -->
+<!-- CALL TO ACTION -->
 
 <section class="build-right">
 
@@ -2220,9 +2206,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
+<!-- CONTACT -->
 
 <section class="section contact" id="contact">
 
@@ -2263,9 +2247,7 @@ a:focus-visible {
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -2341,9 +2323,7 @@ a:focus-visible {
 </a>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- JAVASCRIPT -->
 
 <script>
 
