@@ -1,7 +1,8 @@
+
 /* =========================================
-SOILEVA FARMCARE
-GROWTH WITH NATURE
-RETAIL EXPERIENCE
+   SOILEVA FARMCARE
+   GROWTH WITH NATURE
+   RETAIL EXPERIENCE
 ========================================= */
 
 :root {
@@ -75,8 +76,9 @@ em {
   color: var(--light-green);
 }
 
+
 /* =========================================
-BUTTONS
+   BUTTONS
 ========================================= */
 
 .btn {
@@ -126,9 +128,10 @@ BUTTONS
   background: var(--soft-green);
 }
 
+
 /* =========================================
-HERO CAROUSEL
-THE ONLY AUTOMATIC CAROUSEL
+   HERO CAROUSEL
+   THE ONLY AUTOMATIC CAROUSEL
 ========================================= */
 
 .hero {
@@ -270,8 +273,9 @@ THE ONLY AUTOMATIC CAROUSEL
   color: #a8ed91;
 }
 
+
 /* =========================================
-SECTION HEADINGS
+   SECTION HEADINGS
 ========================================= */
 
 .section-head {
@@ -296,9 +300,10 @@ SECTION HEADINGS
   line-height: 1.9;
 }
 
+
 /* =========================================
-FEATURED PRODUCTS
-LARGE RETAIL PROMOTIONAL CARDS
+   FEATURED PRODUCTS
+   LARGE RETAIL PROMOTIONAL CARDS
 ========================================= */
 
 .featured {
@@ -404,9 +409,10 @@ LARGE RETAIL PROMOTIONAL CARDS
   transform: translateY(-3px);
 }
 
+
 /* =========================================
-FEATURED CAROUSEL ARROWS
-SIMPLE </> UNDER THE CARDS
+   FEATURED CAROUSEL ARROWS
+   SIMPLE < /> UNDER THE CARDS
 ========================================= */
 
 .featured-arrow {
@@ -484,8 +490,9 @@ SIMPLE </> UNDER THE CARDS
   background: var(--light-green);
 }
 
+
 /* =========================================
-MORE PRODUCTS
+   MORE PRODUCTS
 ========================================= */
 
 .more {
@@ -509,9 +516,10 @@ MORE PRODUCTS
   line-height: 1.9;
 }
 
+
 /* =========================================
-NEW SEASON ARRIVALS
-LARGE PROMOTIONAL CARDS
+   NEW SEASON ARRIVALS
+   LARGE PROMOTIONAL CARDS
 ========================================= */
 
 .arrivals {
@@ -622,8 +630,9 @@ LARGE PROMOTIONAL CARDS
   text-align: center;
 }
 
+
 /* =========================================
-QUALITY ASSURANCE
+   QUALITY ASSURANCE
 ========================================= */
 
 .quality {
@@ -685,8 +694,9 @@ QUALITY ASSURANCE
   color: #fff;
 }
 
+
 /* =========================================
-FIND A STORE
+   FIND A STORE
 ========================================= */
 
 .stores {
@@ -760,8 +770,9 @@ FIND A STORE
   text-align: right;
 }
 
+
 /* =========================================
-FREQUENTLY ASKED QUESTIONS
+   FREQUENTLY ASKED QUESTIONS
 ========================================= */
 
 .faq {
@@ -830,8 +841,9 @@ FREQUENTLY ASKED QUESTIONS
   line-height: 1.9;
 }
 
+
 /* =========================================
-LET'S TALK FARMING
+   LET'S TALK FARMING
 ========================================= */
 
 .contact {
@@ -875,8 +887,9 @@ LET'S TALK FARMING
   flex-shrink: 0;
 }
 
+
 /* =========================================
-FOOTER
+   FOOTER
 ========================================= */
 
 .footer {
@@ -892,8 +905,9 @@ FOOTER
 }
 
 .footer .brand img {
-  width: 190px;
-  height: 62px;
+  display: block;
+  width: 280px;
+  height: 115px;
   object-fit: contain;
   object-position: left center;
 }
@@ -942,8 +956,9 @@ FOOTER
   line-height: 1.8;
 }
 
+
 /* =========================================
-WHATSAPP FLOAT
+   WHATSAPP FLOAT
 ========================================= */
 
 .whatsapp-float {
@@ -962,8 +977,9 @@ WHATSAPP FLOAT
   box-shadow: 0 8px 25px rgba(0,58,31,.2);
 }
 
+
 /* =========================================
-ACCESSIBILITY
+   ACCESSIBILITY
 ========================================= */
 
 a:focus-visible,
@@ -973,8 +989,71 @@ summary:focus-visible {
   outline-offset: 4px;
 }
 
+
 /* =========================================
-TABLET
+   HEADER
+========================================= */
+
+.site-header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,58,31,.08);
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1450px;
+  min-height: 125px;
+  margin: 0 auto;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-brand img {
+  display: block;
+  width: 290px;
+  height: 100px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.header-shop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 30px;
+  border-radius: 100px;
+  background: var(--deep-green);
+  color: #fff;
+  font-family: "Comfortaa", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .25s ease, color .25s ease;
+}
+
+.header-shop:hover {
+  background: var(--light-green);
+  color: var(--deep-green);
+}
+
+
+/* =========================================
+   TABLET
 ========================================= */
 
 @media(max-width:900px) {
@@ -1008,10 +1087,26 @@ TABLET
   .footer-main {
     gap: 30px;
   }
+
+  .header-inner {
+    min-height: 110px;
+    padding: 12px 5%;
+  }
+
+  .header-brand img {
+    width: 245px;
+    height: 90px;
+  }
+
+  .footer .brand img {
+    width: 250px;
+    height: 105px;
+  }
 }
 
+
 /* =========================================
-MOBILE
+   MOBILE
 ========================================= */
 
 @media(max-width:600px) {
@@ -1022,6 +1117,25 @@ MOBILE
 
   .section {
     padding: 85px 5%;
+  }
+
+  /* HEADER */
+
+  .header-inner {
+    min-height: 100px;
+    padding: 10px 5%;
+    gap: 12px;
+  }
+
+  .header-brand img {
+    width: 205px;
+    height: 78px;
+  }
+
+  .header-shop {
+    min-height: 43px;
+    padding: 0 15px;
+    font-size: 10px;
   }
 
   /* HERO */
@@ -1329,8 +1443,8 @@ MOBILE
   }
 
   .footer .brand img {
-    width: 175px;
-    height: 58px;
+    width: 220px;
+    height: 95px;
   }
 
   .footer-links {
@@ -1365,8 +1479,9 @@ MOBILE
   }
 }
 
+
 /* =========================================
-SMALL MOBILE
+   SMALL MOBILE
 ========================================= */
 
 @media(max-width:380px) {
@@ -1389,10 +1504,22 @@ SMALL MOBILE
   .footer-main {
     gap: 25px 12px;
   }
+
+  .header-brand img {
+    width: 175px;
+    height: 70px;
+  }
+
+  .header-shop {
+    min-height: 40px;
+    padding: 0 11px;
+    font-size: 9px;
+  }
 }
 
+
 /* =========================================
-REDUCED MOTION
+   REDUCED MOTION
 ========================================= */
 
 @media(prefers-reduced-motion:reduce) {
