@@ -1,0 +1,2364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Okafor Farm Technology designs, builds and automates poultry and swine farms for efficient farm operations.">
+
+<title>Okafor Farm Technology | Built for Efficiency</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   OKAFOR FARM TECHNOLOGY
+   FARM ENGINEERING & AUTOMATION
+===================================================== */
+
+:root {
+  --red: #99010C;
+  --deep-red: #360005;
+  --dark-red: #57000A;
+  --white: #FFFFFF;
+  --off-white: #F8F7F6;
+  --light: #F1ECEB;
+  --text: #242020;
+  --muted: #777070;
+  --line: #E9E2E1;
+
+  --font: 'Comfortaa', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(1280px, 90%);
+  margin: auto;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+.section-tag {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: clamp(30px, 4vw, 49px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -2px;
+}
+
+.section-description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  max-width: 650px;
+  margin-top: 20px;
+}
+
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  border-radius: 100px;
+  padding: 17px 28px;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.pill-button.red {
+  background: var(--red);
+  color: white;
+}
+
+.pill-button.white {
+  background: white;
+  color: var(--deep-red);
+}
+
+.pill-button:hover {
+  transform: translateY(-3px);
+  background: var(--deep-red);
+  color: white;
+}
+
+.pill-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+  height: 88px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.17);
+}
+
+.header-inner {
+  width: min(1380px, 92%);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 190px;
+  height: 55px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav a {
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.nav a:hover {
+  color: #F0B8B8;
+}
+
+.header-contact {
+  padding: 14px 24px;
+  background: white;
+  color: var(--deep-red) !important;
+  border-radius: 100px;
+}
+
+.menu-toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: var(--deep-red);
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle svg {
+  width: 23px;
+  height: 23px;
+}
+
+/* MOBILE FULL NAVIGATION */
+
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--deep-red);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 35px 7%;
+  transform: translateY(-105%);
+  transition: transform .5s cubic-bezier(.7,0,.2,1);
+}
+
+.mobile-nav.active {
+  transform: translateY(0);
+}
+
+.mobile-nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 90px;
+}
+
+.mobile-nav-top img {
+  width: 175px;
+  height: 50px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.close-menu {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  background: white;
+  color: var(--deep-red);
+  font-size: 25px;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mobile-nav-links a {
+  font-size: clamp(27px, 7vw, 43px);
+  font-weight: 700;
+}
+
+.mobile-nav-footer {
+  margin-top: auto;
+  font-size: 12px;
+  opacity: .7;
+}
+
+/* =====================================================
+   HERO CAROUSEL
+===================================================== */
+
+.hero {
+  position: relative;
+  height: min(850px, 100vh);
+  min-height: 680px;
+  background: var(--deep-red);
+  color: white;
+  overflow: hidden;
+}
+
+.hero-slides,
+.hero-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(54,0,5,.98) 0%,
+      rgba(54,0,5,.88) 40%,
+      rgba(54,0,5,.32) 100%);
+  z-index: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: min(1280px, 90%);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  max-width: 1280px;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #F2B9BC;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(43px, 6.8vw, 83px);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -4px;
+  max-width: 790px;
+}
+
+.hero h1 span {
+  color: #F2B9BC;
+}
+
+.hero-description {
+  font-size: 14px;
+  line-height: 2;
+  max-width: 520px;
+  margin-top: 25px;
+  color: rgba(255,255,255,.82);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 38px;
+}
+
+.hero-controls {
+  position: absolute;
+  z-index: 5;
+  bottom: 55px;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.hero-dot {
+  width: 30px;
+  height: 4px;
+  background: rgba(255,255,255,.35);
+  border: 0;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.hero-dot.active {
+  width: 65px;
+  background: white;
+}
+
+.hero-number {
+  font-size: 11px;
+  margin-left: 10px;
+  letter-spacing: 2px;
+}
+
+/* =====================================================
+   QUICK VALUE STRIP
+===================================================== */
+
+.value-strip {
+  background: var(--red);
+  color: white;
+}
+
+.value-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.value-item {
+  padding: 28px 20px;
+  border-right: 1px solid rgba(255,255,255,.18);
+  text-align: center;
+}
+
+.value-item:last-child {
+  border: none;
+}
+
+.value-item strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.value-item span {
+  font-size: 10px;
+  opacity: .75;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   ABOUT US
+===================================================== */
+
+.about {
+  background: var(--off-white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  min-height: 510px;
+}
+
+.about-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-image-label {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  background: white;
+  padding: 23px 26px;
+  max-width: 270px;
+}
+
+.about-image-label strong {
+  color: var(--red);
+  display: block;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.about-image-label span {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.about-copy p {
+  font-size: 13px;
+  line-height: 2.1;
+  color: var(--muted);
+  margin-top: 22px;
+}
+
+.about-points {
+  margin-top: 30px;
+  display: grid;
+  gap: 17px;
+}
+
+.about-point {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.check-icon {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #F5E3E4;
+  color: var(--red);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   WHAT WE DO
+===================================================== */
+
+.what-we-do {
+  background: white;
+}
+
+.section-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--off-white);
+  padding: 38px 32px;
+  min-height: 285px;
+  border-bottom: 4px solid transparent;
+  transition: .3s;
+}
+
+.service-card:hover {
+  border-color: var(--red);
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 65px;
+  height: 65px;
+  background: #F5E3E4;
+  color: var(--red);
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+}
+
+.service-icon svg {
+  width: 38px;
+  height: 38px;
+}
+
+.service-card h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 11px;
+  line-height: 2;
+  color: var(--muted);
+}
+
+/* =====================================================
+   AUTOMATION SOLUTIONS
+===================================================== */
+
+.automation {
+  background: var(--deep-red);
+  color: white;
+}
+
+.automation .section-tag {
+  color: #F2B9BC;
+}
+
+.automation .section-description {
+  color: rgba(255,255,255,.68);
+}
+
+.automation-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.automation-image {
+  height: 590px;
+  position: relative;
+}
+
+.automation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.automation-list {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.automation-item {
+  padding: 21px 10px 21px 0;
+  border-bottom: 1px solid rgba(255,255,255,.17);
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.automation-item svg {
+  width: 23px;
+  height: 23px;
+  color: #F2B9BC;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   FARM OPERATIONS
+===================================================== */
+
+.operations {
+  background: var(--off-white);
+}
+
+.operation-heading {
+  margin-bottom: 45px;
+}
+
+.operation-category {
+  margin-bottom: 70px;
+}
+
+.operation-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.category-title h3 {
+  font-size: 21px;
+}
+
+.category-title span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.category-line {
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+/* Portrait cards: side by side on desktop */
+
+.operation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.operation-card {
+  background: white;
+  min-width: 0;
+  overflow: hidden;
+  transition: .35s;
+  border: 1px solid var(--line);
+}
+
+.operation-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(54,0,5,.09);
+}
+
+.operation-art {
+  height: 290px;
+  background: #F2E7E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.operation-art.dark {
+  background: #E9DADB;
+}
+
+.operation-art svg {
+  width: 75%;
+  height: 75%;
+  max-width: 230px;
+  color: var(--red);
+  transition: transform .4s;
+}
+
+.operation-card:hover .operation-art svg {
+  transform: scale(1.08);
+}
+
+.operation-number {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.operation-info {
+  padding: 27px 25px 30px;
+}
+
+.operation-info h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.operation-info p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   EFFICIENCY
+===================================================== */
+
+.efficiency {
+  background: white;
+}
+
+.efficiency-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.efficiency-image {
+  height: 530px;
+}
+
+.efficiency-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.benefit-list {
+  margin-top: 30px;
+  display: grid;
+  gap: 0;
+}
+
+.benefit {
+  display: flex;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.benefit-icon {
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.benefit-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.benefit h4 {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.benefit p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   ABOUT DESIGN RIGHT / BUILD RIGHT
+===================================================== */
+
+.build-right {
+  background: var(--red);
+  color: white;
+  text-align: center;
+  padding: 95px 20px;
+}
+
+.build-right .section-tag {
+  color: #F5C3C6;
+}
+
+.build-right h2 {
+  font-size: clamp(30px, 5vw, 55px);
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.35;
+  letter-spacing: -2px;
+}
+
+.build-right p {
+  font-size: 12px;
+  line-height: 2;
+  max-width: 630px;
+  margin: 22px auto 32px;
+  color: rgba(255,255,255,.8);
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+  background: var(--off-white);
+}
+
+.contact-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact-inner h2 {
+  font-size: clamp(28px, 4vw, 45px);
+  line-height: 1.3;
+  letter-spacing: -2px;
+}
+
+.contact-inner p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 2;
+  margin-top: 15px;
+  max-width: 570px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+  background: var(--deep-red);
+  color: white;
+  padding: 65px 0 25px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-start;
+  padding-bottom: 55px;
+}
+
+.footer-logo {
+  width: 190px;
+  height: 65px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.footer-description {
+  max-width: 350px;
+  font-size: 11px;
+  line-height: 2;
+  color: rgba(255,255,255,.65);
+  margin-top: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.footer-links strong {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.footer-links a {
+  font-size: 11px;
+  color: rgba(255,255,255,.68);
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.17);
+  padding-top: 23px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: rgba(255,255,255,.55);
+}
+
+/* =====================================================
+   FLOATING WHATSAPP
+===================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #168A4A;
+  color: white;
+  display: grid;
+  place-items: center;
+  z-index: 90;
+  box-shadow: 0 8px 25px rgba(0,0,0,.2);
+  transition: .3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+  width: 29px;
+  height: 29px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width: 900px) {
+
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .about-grid,
+  .automation-layout,
+  .efficiency-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-image {
+    min-height: 430px;
+  }
+
+  .automation-image {
+    height: 420px;
+  }
+
+  .efficiency-image {
+    height: 400px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .operation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+}
+
+@media(max-width: 600px) {
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .container {
+    width: 89%;
+  }
+
+  .header {
+    height: 75px;
+  }
+
+  .logo {
+    width: 155px;
+    height: 48px;
+  }
+
+  .hero {
+    min-height: 720px;
+    height: 90svh;
+  }
+
+  .hero-slide::before {
+    background: linear-gradient(
+      90deg,
+      rgba(54,0,5,.94),
+      rgba(54,0,5,.64)
+    );
+  }
+
+  .hero-content {
+    width: 88%;
+    padding-top: 65px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 11vw, 57px);
+    letter-spacing: -2.5px;
+  }
+
+  .hero-description {
+    font-size: 12px;
+  }
+
+  .hero-controls {
+    bottom: 35px;
+  }
+
+  .value-strip-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-item {
+    padding: 22px 8px;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+
+  .value-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .section-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 235px;
+  }
+
+  .automation-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .automation-item {
+    font-size: 10px;
+  }
+
+  .operation-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .operation-card {
+    width: 100%;
+  }
+
+  .operation-art {
+    height: 340px;
+  }
+
+  .operation-art svg {
+    width: 70%;
+    height: 75%;
+  }
+
+  .operation-info {
+    padding: 25px;
+  }
+
+  .operation-category {
+    margin-bottom: 55px;
+  }
+
+  .category-title h3 {
+    font-size: 17px;
+  }
+
+  .about-image {
+    min-height: 360px;
+  }
+
+  .automation-image {
+    height: 340px;
+  }
+
+  .efficiency-image {
+    height: 340px;
+  }
+
+  .build-right {
+    padding: 75px 7%;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    right: 17px;
+    bottom: 17px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     SVG ICON DEFINITIONS
+===================================================== -->
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+  <symbol id="icon-arrow" viewBox="0 0 24 24">
+    <path d="M5 12h14M13 5l7 7-7 7"
+      fill="none" stroke="currentColor"
+      stroke-width="1.8" stroke-linecap="round"
+      stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="m5 12 5 5L20 7"
+      fill="none" stroke="currentColor"
+      stroke-width="2.2" stroke-linecap="round"
+      stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-building" viewBox="0 0 100 100">
+    <path d="M12 85V30L50 10l38 20v55M5 85h90M28 85V58h44v27M28 38h10m24 0h10M28 48h10m24 0h10"
+      fill="none" stroke="currentColor"
+      stroke-width="4" stroke-linecap="round"
+      stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-gear" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="16" fill="none"
+      stroke="currentColor" stroke-width="5"/>
+    <path d="M50 7v13m0 60v13M7 50h13m60 0h13M20 20l9 9m42 42 9 9m0-60-9 9m-42 42-9 9"
+      stroke="currentColor" stroke-width="8"
+      stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon-water" viewBox="0 0 100 100">
+    <path d="M50 8C39 28 20 48 20 64a30 30 0 0 0 60 0C80 48 61 28 50 8Z"
+      fill="none" stroke="currentColor"
+      stroke-width="5"/>
+    <path d="M35 67c2 10 9 15 18 16"
+      fill="none" stroke="currentColor"
+      stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon-thermometer" viewBox="0 0 100 100">
+    <path d="M40 58V20a10 10 0 0 1 20 0v38a20 20 0 1 1-20 0Z"
+      fill="none" stroke="currentColor" stroke-width="5"/>
+    <path d="M50 45v30"
+      stroke="currentColor" stroke-width="6"
+      stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon-egg" viewBox="0 0 100 100">
+    <path d="M50 8C33 8 19 45 19 65a31 31 0 0 0 62 0C81 45 67 8 50 8Z"
+      fill="none" stroke="currentColor" stroke-width="4"/>
+    <path d="M35 68c2 9 8 14 17 15"
+      fill="none" stroke="currentColor" stroke-width="3"
+      stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon-hen" viewBox="0 0 120 100">
+    <path d="M24 63c0-20 16-35 37-35 13 0 25 7 31 18l14-8-4 18c5 8 5 19-1 27H33c-6-5-9-12-9-20Z"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linejoin="round"/>
+    <path d="M55 28c-5-10 0-18 8-19 8 1 11 7 9 15M89 46l19 4-16 9M40 89v-12m25 12v-12m-30 12h14m9 0h14"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="81" cy="39" r="2.5" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="icon-chicken" viewBox="0 0 120 100">
+    <path d="M19 59c0-21 18-38 41-38 18 0 34 11 39 27l12 6-13 9c-4 16-19 27-38 27H39c-12 0-20-12-20-31Z"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linejoin="round"/>
+    <path d="M52 21c-4-12 7-19 14-10 7-9 17-3 12 9M96 48l16 4-15 10M40 90v-9m23 9v-9m-31 9h16m7 0h16"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linecap="round"/>
+    <circle cx="87" cy="40" r="2.5" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="icon-pig" viewBox="0 0 120 100">
+    <path d="M17 54c0-20 17-35 42-35h22c17 0 28 10 31 25l-3 20c-2 14-13 21-30 21H40c-17 0-26-12-23-31Z"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linejoin="round"/>
+    <path d="m37 22 4-16 17 15m28 0 14-13 4 24M104 48l13 6-12 9M36 84v10m26-10v10m25-10v10m-58 0h14m12 0h14m11 0h14"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="103" cy="55" rx="11" ry="8"
+      fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="93" cy="41" r="2.5" fill="currentColor"/>
+    <path d="M18 54c-13-9-13-20-3-22 7-1 7 8 1 9"
+      fill="none" stroke="currentColor" stroke-width="3"
+      stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon-sow" viewBox="0 0 120 100">
+    <use href="#icon-pig"/>
+    <path d="M45 47c7-7 17-7 24 0m-12-8v16"
+      fill="none" stroke="currentColor" stroke-width="3"
+      stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon-farm" viewBox="0 0 100 100">
+    <path d="M10 84h80M18 84V43l32-25 32 25v41M38 84V59h24v25M30 48h8m24 0h8"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-collection" viewBox="0 0 100 100">
+    <path d="M15 73h70M22 73V44h56v29M32 44V29h36v15M42 29V18h16v11"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M32 57h36M38 73V57m24 16V57"
+      fill="none" stroke="currentColor" stroke-width="4"/>
+    <circle cx="50" cy="57" r="6" fill="none"
+      stroke="currentColor" stroke-width="3"/>
+  </symbol>
+
+  <symbol id="icon-efficiency" viewBox="0 0 100 100">
+    <path d="M15 75V50h18v25m9 0V30h18v45m9 0V15h18v60M10 85h80"
+      fill="none" stroke="currentColor" stroke-width="5"
+      stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="icon-ventilation" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="9" fill="none"
+      stroke="currentColor" stroke-width="4"/>
+    <path d="M50 41C33 12 16 31 39 47M59 50c29-17 10-34-6-11M50 59c17 29 34 10 11-6M41 50C12 67 31 84 47 61"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linecap="round"/>
+    <circle cx="50" cy="50" r="39" fill="none"
+      stroke="currentColor" stroke-width="3"/>
+  </symbol>
+
+  <symbol id="icon-manure" viewBox="0 0 100 100">
+    <path d="M15 76h70M25 76V50h50v26M36 50c0-10 7-16 14-16s14 6 14 16"
+      fill="none" stroke="currentColor" stroke-width="4"
+      stroke-linecap="round"/>
+    <path d="M36 24c-6-9 4-13 1-19m16 19c-6-9 4-13 1-19m16 19c-6-9 4-13 1-19"
+      fill="none" stroke="currentColor" stroke-width="3"
+      stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+    <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"
+      fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 8c.4 3 2 4.7 5 6l1.2-1.4-2-1.2-1 1c-1-.4-1.8-1.3-2.2-2.2l1-1-1.2-2Z"
+      fill="currentColor"/>
+  </symbol>
+
+</svg>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+  <div class="header-inner">
+
+    <a href="#home">
+      <img class="logo"
+        src="assets/okafor-logo-white.png"
+        alt="Okafor Farm Technology">
+    </a>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#solutions">What We Do</a>
+      <a href="#automation">Automation</a>
+      <a href="#operations">Farm Operations</a>
+      <a href="#contact" class="header-contact">Contact Us</a>
+    </nav>
+
+    <button class="menu-toggle" id="openMenu"
+      aria-label="Open navigation">
+      <svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- MOBILE NAVIGATION -->
+
+<div class="mobile-nav" id="mobileNav">
+
+  <div class="mobile-nav-top">
+
+    <img src="assets/okafor-logo-white.png"
+      alt="Okafor Farm Technology">
+
+    <button class="close-menu" id="closeMenu"
+      aria-label="Close navigation">&times;</button>
+
+  </div>
+
+  <nav class="mobile-nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#solutions">What We Do</a>
+    <a href="#automation">Automation</a>
+    <a href="#operations">Farm Operations</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <div class="mobile-nav-footer">
+    OKAFOR FARM TECHNOLOGY · BUILT FOR EFFICIENCY
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO CAROUSEL
+===================================================== -->
+
+<section class="hero" id="home">
+
+  <div class="hero-slides">
+
+    <!-- SLIDE 1 -->
+
+    <div class="hero-slide active">
+
+      <img src="assets/hero-farm-technology.jpg"
+        alt="Modern farm engineering">
+
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          OKAFOR FARM TECHNOLOGY
+        </div>
+
+        <h1>
+          Farms designed right.
+          <span>Built for efficiency.</span>
+        </h1>
+
+        <p class="hero-description">
+          We design, build, equip and automate poultry
+          and swine farms for better farm operations.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#solutions" class="pill-button white">
+            Explore Our Solutions
+            <svg><use href="#icon-arrow"/></svg>
+          </a>
+
+          <a href="#contact" class="pill-button red">
+            Contact Us
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SLIDE 2 -->
+
+    <div class="hero-slide">
+
+      <img src="assets/hero-poultry.jpg"
+        alt="Automated poultry production">
+
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          POULTRY FARMING
+        </div>
+
+        <h1>
+          Better poultry
+          <span>farm operations.</span>
+        </h1>
+
+        <p class="hero-description">
+          From layers to broilers, we provide farm
+          construction, equipment and automation
+          solutions for poultry production.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#operations" class="pill-button white">
+            Poultry Solutions
+            <svg><use href="#icon-arrow"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SLIDE 3 -->
+
+    <div class="hero-slide">
+
+      <img src="assets/hero-swine.jpg"
+        alt="Modern commercial swine farm">
+
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          SWINE FARMING
+        </div>
+
+        <h1>
+          Smarter systems
+          <span>for swine farms.</span>
+        </h1>
+
+        <p class="hero-description">
+          Practical solutions for sow farms,
+          fattening operations and dual-purpose
+          pig production.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#operations" class="pill-button white">
+            Swine Solutions
+            <svg><use href="#icon-arrow"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-controls">
+
+    <button class="hero-dot active"
+      data-slide="0" aria-label="Slide 1"></button>
+
+    <button class="hero-dot"
+      data-slide="1" aria-label="Slide 2"></button>
+
+    <button class="hero-dot"
+      data-slide="2" aria-label="Slide 3"></button>
+
+    <span class="hero-number" id="heroNumber">01 / 03</span>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     VALUE STRIP
+===================================================== -->
+
+<section class="value-strip">
+
+  <div class="container value-strip-inner">
+
+    <div class="value-item">
+      <strong>Farm Design</strong>
+      <span>Planned for your operation</span>
+    </div>
+
+    <div class="value-item">
+      <strong>Farm Construction</strong>
+      <span>Built for practical use</span>
+    </div>
+
+    <div class="value-item">
+      <strong>Automation</strong>
+      <span>Less manual work</span>
+    </div>
+
+    <div class="value-item">
+      <strong>Farm Efficiency</strong>
+      <span>Better use of resources</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT US
+===================================================== -->
+
+<section class="section about" id="about">
+
+  <div class="container about-grid">
+
+    <div class="about-image">
+
+      <img src="assets/farm-design.jpg"
+        alt="Farm building and engineering">
+
+      <div class="about-image-label">
+        <strong>Designed right. Built right.</strong>
+        <span>Practical farm infrastructure for poultry
+          and swine operations.</span>
+      </div>
+
+    </div>
+
+
+    <div class="about-copy">
+
+      <div class="section-tag">ABOUT OKAFOR FARM TECHNOLOGY</div>
+
+      <h2 class="section-heading">
+        Good farming starts with a well-designed farm.
+      </h2>
+
+      <p>
+        Okafor Farm Technology provides farm design,
+        construction, equipment and automation solutions
+        for poultry and swine farming.
+      </p>
+
+      <p>
+        We believe farms should be designed around
+        the work they need to do. From the layout of
+        buildings to the systems that support daily
+        operations, every detail matters.
+      </p>
+
+      <p>
+        We build with efficiency in mind, helping farmers
+        reduce unnecessary labour, improve daily operations
+        and make better use of their resources.
+      </p>
+
+      <div class="about-points">
+
+        <div class="about-point">
+          <span class="check-icon">
+            <svg width="15" height="15">
+              <use href="#icon-check"/>
+            </svg>
+          </span>
+          Proper farm planning and design
+        </div>
+
+        <div class="about-point">
+          <span class="check-icon">
+            <svg width="15" height="15">
+              <use href="#icon-check"/>
+            </svg>
+          </span>
+          Practical construction and installation
+        </div>
+
+        <div class="about-point">
+          <span class="check-icon">
+            <svg width="15" height="15">
+              <use href="#icon-check"/>
+            </svg>
+          </span>
+          Efficient systems and automation
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHAT WE DO
+===================================================== -->
+
+<section class="section what-we-do" id="solutions">
+
+  <div class="container">
+
+    <div class="section-top">
+
+      <div>
+        <div class="section-tag">WHAT WE DO</div>
+
+        <h2 class="section-heading">
+          We build farms.<br>
+          We make them work better.
+        </h2>
+
+        <p class="section-description">
+          From the first design to the systems that
+          keep your farm running, we provide practical
+          solutions for poultry and swine operations.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      <article class="service-card">
+
+        <div class="service-icon">
+          <svg viewBox="0 0 100 100">
+            <use href="#icon-building"/>
+          </svg>
+        </div>
+
+        <h3>Farm Design & Planning</h3>
+
+        <p>
+          Farm layouts and building designs planned
+          around animal housing, workflow, capacity
+          and daily operations.
+        </p>
+
+      </article>
+
+
+      <article class="service-card">
+
+        <div class="service-icon">
+          <svg viewBox="0 0 100 100">
+            <use href="#icon-farm"/>
+          </svg>
+        </div>
+
+        <h3>Farm Construction & Setup</h3>
+
+        <p>
+          We build and set up poultry and swine farms,
+          including the facilities and equipment
+          needed for operation.
+        </p>
+
+      </article>
+
+
+      <article class="service-card">
+
+        <div class="service-icon">
+          <svg viewBox="0 0 100 100">
+            <use href="#icon-gear"/>
+          </svg>
+        </div>
+
+        <h3>Farm Automation</h3>
+
+        <p>
+          We automate important farm activities
+          to reduce repetitive manual work and
+          improve efficiency.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FARM AUTOMATION
+===================================================== -->
+
+<section class="section automation" id="automation">
+
+  <div class="container automation-layout">
+
+    <div class="automation-image">
+
+      <img src="assets/farm-automation.jpg"
+        alt="Automated livestock farm systems">
+
+    </div>
+
+
+    <div>
+
+      <div class="section-tag">OUR AUTOMATION SOLUTIONS</div>
+
+      <h2 class="section-heading">
+        Less manual work.<br>
+        Better farm operations.
+      </h2>
+
+      <p class="section-description">
+        Every farm needs reliable systems for its
+        daily activities. We design and automate
+        essential operations for poultry and swine farms.
+      </p>
+
+
+      <div class="automation-list">
+
+        <div class="automation-item">
+          <svg><use href="#icon-ventilation"/></svg>
+          Cooling & Ventilation
+        </div>
+
+        <div class="automation-item">
+          <svg><use href="#icon-manure"/></svg>
+          Manure Management
+        </div>
+
+        <div class="automation-item">
+          <svg><use href="#icon-gear"/></svg>
+          Automated Feeding
+        </div>
+
+        <div class="automation-item">
+          <svg><use href="#icon-water"/></svg>
+          Automated Watering
+        </div>
+
+        <div class="automation-item">
+          <svg><use href="#icon-collection"/></svg>
+          Egg Collection
+        </div>
+
+        <div class="automation-item">
+          <svg><use href="#icon-thermometer"/></svg>
+          Brooding & Piglet Heating
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FARM OPERATIONS
+===================================================== -->
+
+<section class="section operations" id="operations">
+
+  <div class="container">
+
+    <div class="operation-heading">
+
+      <div class="section-tag">OUR FARM OPERATIONS</div>
+
+      <h2 class="section-heading">
+        Solutions for every<br>
+        poultry and swine operation.
+      </h2>
+
+      <p class="section-description">
+        Different farming operations need different
+        facilities and systems. We design and build
+        around the specific needs of each farm.
+      </p>
+
+    </div>
+
+
+    <!-- POULTRY -->
+
+    <div class="operation-category">
+
+      <div class="category-title">
+        <h3>Poultry Farming</h3>
+        <span>01 — 02</span>
+        <div class="category-line"></div>
+      </div>
+
+
+      <div class="operation-grid">
+
+
+        <!-- LAYERS -->
+
+        <article class="operation-card">
+
+          <div class="operation-art">
+
+            <span class="operation-number">01</span>
+
+            <svg viewBox="0 0 120 100">
+              <use href="#icon-hen"/>
+              <use href="#icon-egg"
+                x="0" y="15" width="35" height="35"/>
+            </svg>
+
+          </div>
+
+          <div class="operation-info">
+
+            <h4>Layer Farms</h4>
+
+            <p>
+              Farm design and systems for egg production,
+              including housing, feeding, watering,
+              ventilation and egg collection.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- BROILERS -->
+
+        <article class="operation-card">
+
+          <div class="operation-art dark">
+
+            <span class="operation-number">02</span>
+
+            <svg viewBox="0 0 120 100">
+              <use href="#icon-chicken"/>
+            </svg>
+
+          </div>
+
+          <div class="operation-info">
+
+            <h4>Broiler Farms</h4>
+
+            <p>
+              Farm facilities and systems for meat
+              production, with attention to brooding,
+              feeding, watering and environmental control.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- SWINE -->
+
+    <div class="operation-category">
+
+      <div class="category-title">
+        <h3>Swine Farming</h3>
+        <span>03 — 05</span>
+        <div class="category-line"></div>
+      </div>
+
+
+      <div class="operation-grid">
+
+
+        <!-- SOW FARM -->
+
+        <article class="operation-card">
+
+          <div class="operation-art">
+
+            <span class="operation-number">03</span>
+
+            <svg viewBox="0 0 120 100">
+              <use href="#icon-sow"/>
+            </svg>
+
+          </div>
+
+          <div class="operation-info">
+
+            <h4>Sow Farms</h4>
+
+            <p>
+              Breeding and farrowing facilities designed
+              for sow management, piglet care, feeding
+              and heating systems.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- FATTENING -->
+
+        <article class="operation-card">
+
+          <div class="operation-art dark">
+
+            <span class="operation-number">04</span>
+
+            <svg viewBox="0 0 120 100">
+              <use href="#icon-pig"/>
+            </svg>
+
+          </div>
+
+          <div class="operation-info">
+
+            <h4>Fattening Farms</h4>
+
+            <p>
+              Facilities for growing and finishing pigs,
+              with efficient housing, feeding, watering
+              and manure management.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- DUAL PURPOSE -->
+
+        <article class="operation-card">
+
+          <div class="operation-art">
+
+            <span class="operation-number">05</span>
+
+            <svg viewBox="0 0 120 100">
+              <use href="#icon-pig"/>
+              <use href="#icon-egg"
+                x="0" y="5" width="30" height="30"/>
+            </svg>
+
+          </div>
+
+          <div class="operation-info">
+
+            <h4>Dual-Purpose Farms</h4>
+
+            <p>
+              Farm layouts and systems for integrated
+              breeding and pig production operations.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     EFFICIENCY
+===================================================== -->
+
+<section class="section efficiency">
+
+  <div class="container efficiency-layout">
+
+    <div class="efficiency-image">
+
+      <img src="assets/efficient-farm.jpg"
+        alt="Efficient modern livestock production">
+
+    </div>
+
+
+    <div>
+
+      <div class="section-tag">BUILT WITH EFFICIENCY IN MIND</div>
+
+      <h2 class="section-heading">
+        Every farm deserves a better way to work.
+      </h2>
+
+      <p class="section-description">
+        A well-designed farm is not just about
+        buildings. It is about how easily people,
+        animals, equipment and resources work together.
+      </p>
+
+
+      <div class="benefit-list">
+
+        <div class="benefit">
+
+          <div class="benefit-icon">
+            <svg><use href="#icon-efficiency"/></svg>
+          </div>
+
+          <div>
+            <h4>Reduce Manual Labour</h4>
+            <p>
+              Automate repetitive tasks and reduce
+              unnecessary physical work.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="benefit-icon">
+            <svg><use href="#icon-gear"/></svg>
+          </div>
+
+          <div>
+            <h4>Improve Daily Operations</h4>
+            <p>
+              Make feeding, watering, cleaning
+              and other activities easier to manage.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="benefit-icon">
+            <svg><use href="#icon-water"/></svg>
+          </div>
+
+          <div>
+            <h4>Use Resources Better</h4>
+            <p>
+              Plan systems to support more efficient
+              use of water, feed, energy and space.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="benefit-icon">
+            <svg><use href="#icon-ventilation"/></svg>
+          </div>
+
+          <div>
+            <h4>Support Better Animal Management</h4>
+            <p>
+              Provide appropriate housing and
+              environmental conditions for animals.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALL TO ACTION
+===================================================== -->
+
+<section class="build-right">
+
+  <div class="section-tag">LET'S BUILD BETTER FARMS</div>
+
+  <h2>
+    The right farm design makes all the difference.
+  </h2>
+
+  <p>
+    Planning a new poultry or swine farm?
+    Looking to improve an existing operation?
+    Let's discuss what your farm needs.
+  </p>
+
+  <a href="https://wa.me/2349060485238"
+    target="_blank"
+    rel="noopener"
+    class="pill-button white">
+
+    Talk to Us on WhatsApp
+    <svg><use href="#icon-arrow"/></svg>
+
+  </a>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="section contact" id="contact">
+
+  <div class="container contact-inner">
+
+    <div>
+
+      <div class="section-tag">CONTACT OKAFOR FARM TECHNOLOGY</div>
+
+      <h2>Ready to build your farm?</h2>
+
+      <p>
+        Tell us about your poultry or swine farming
+        project. We are ready to discuss your farm
+        design, construction and automation needs.
+      </p>
+
+    </div>
+
+
+    <a href="https://wa.me/2349060485238?text=Hello%20Okafor%20Farm%20Technology.%20I%20would%20like%20to%20discuss%20a%20farm%20project."
+      target="_blank"
+      rel="noopener"
+      class="pill-button red">
+
+      <svg width="19" height="19">
+        <use href="#icon-whatsapp"/>
+      </svg>
+
+      09060485238
+
+      <svg><use href="#icon-arrow"/></svg>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-top">
+
+      <div>
+
+        <img class="footer-logo"
+          src="assets/okafor-logo-white.png"
+          alt="Okafor Farm Technology">
+
+        <p class="footer-description">
+          We design, build and automate poultry
+          and swine farms with efficiency in mind.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <strong>Explore</strong>
+
+        <a href="#about">About Us</a>
+        <a href="#solutions">What We Do</a>
+        <a href="#automation">Automation</a>
+        <a href="#operations">Farm Operations</a>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <strong>Get in Touch</strong>
+
+        <a href="https://wa.me/2349060485238"
+          target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+
+        <a href="#contact">Contact Us</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>© <span id="year"></span> Okafor Farm Technology.</span>
+
+      <span>Built for Efficiency.</span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a href="https://wa.me/2349060485238"
+  target="_blank"
+  rel="noopener"
+  class="whatsapp-float"
+  aria-label="Chat with us on WhatsApp">
+
+  <svg><use href="#icon-whatsapp"/></svg>
+
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* MOBILE NAVIGATION */
+
+const mobileNav = document.getElementById("mobileNav");
+
+document.getElementById("openMenu").addEventListener("click", () => {
+  mobileNav.classList.add("active");
+  document.body.style.overflow = "hidden";
+});
+
+document.getElementById("closeMenu").addEventListener("click", closeNav);
+
+document.querySelectorAll(".mobile-nav-links a").forEach(link => {
+  link.addEventListener("click", closeNav);
+});
+
+function closeNav() {
+  mobileNav.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+
+/* HERO CAROUSEL */
+
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".hero-dot");
+const heroNumber = document.getElementById("heroNumber");
+
+let currentSlide = 0;
+let carouselTimer;
+
+function showSlide(index) {
+
+  slides.forEach(slide => slide.classList.remove("active"));
+  dots.forEach(dot => dot.classList.remove("active"));
+
+  currentSlide = index;
+
+  slides[currentSlide].classList.add("active");
+  dots[currentSlide].classList.add("active");
+
+  heroNumber.textContent =
+    `0${currentSlide + 1} / 03`;
+
+}
+
+function nextSlide() {
+  showSlide((currentSlide + 1) % slides.length);
+}
+
+function startCarousel() {
+  clearInterval(carouselTimer);
+  carouselTimer = setInterval(nextSlide, 6500);
+}
+
+dots.forEach(dot => {
+
+  dot.addEventListener("click", () => {
+
+    showSlide(Number(dot.dataset.slide));
+    startCarousel();
+
+  });
+
+});
+
+startCarousel();
+
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
