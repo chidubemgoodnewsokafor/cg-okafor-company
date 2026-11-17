@@ -1,3 +1,4 @@
+
 /* =========================================
    SOILEVA
    Colours: deep green, light green and white
@@ -21,7 +22,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -130,7 +131,8 @@ h3 {
 ========================================= */
 
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -700,13 +702,6 @@ h3 {
    FIXED STACKING ORDER
 ========================================= */
 
-/*
-   Important:
-   The SVG illustrations must not use a negative z-index.
-   Each card has isolation: isolate, so negative stacking
-   can place the illustration behind the card background.
-*/
-
 .produce-illustration {
   position: absolute;
   inset: 0;
@@ -735,12 +730,6 @@ h3 {
   filter: drop-shadow(0 8px 8px rgba(0, 58, 31, 0.08));
   transition: transform 0.7s ease;
 }
-
-/*
-   The original SVGs use very pale lines.
-   Deep green makes the fine line-art visible against
-   the light illustration backgrounds.
-*/
 
 .produce-illustration svg path,
 .produce-illustration svg ellipse,
@@ -794,13 +783,6 @@ h3 {
 /* =========================================
    CARD OVERLAY AND CONTENT
 ========================================= */
-
-/*
-   Layer order:
-   0 = illustration
-   1 = dark gradient overlay
-   2 = card labels, numbers, decorations and text
-*/
 
 .card-overlay {
   position: absolute;
@@ -1028,8 +1010,6 @@ h3 {
   font-size: 14px;
   line-height: 1.8;
 }
-
-/* Retained for compatibility if the old orbit is still in the HTML. */
 
 .farmcare-orbit {
   position: absolute;
@@ -1516,12 +1496,6 @@ h3 {
     font-size: 13px;
   }
 
-  /*
-    Mobile card arrangement:
-    Vegetables spans the top.
-    Poultry and Rice sit side-by-side underneath.
-  */
-
   .produce-cluster {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1559,8 +1533,6 @@ h3 {
   .produce-card:hover {
     transform: translateY(-4px);
   }
-
-  /* Keep the illustrations sized correctly on mobile. */
 
   .produce-illustration svg {
     width: min(86%, 260px);
@@ -1789,4 +1761,44 @@ button:focus-visible {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+/* =========================================
+   TOUCHSCREEN CARD BEHAVIOUR
+   Keep cards visually consistent when tapped.
+   Desktop hover effects remain unchanged.
+========================================= */
+
+@media (hover: none), (pointer: coarse) {
+
+  .produce-card,
+  .produce-card:hover,
+  .produce-card:active,
+  .produce-card:focus,
+  .vegetables-card:hover,
+  .poultry-card:hover,
+  .rice-card:hover {
+    transform: none !important;
+    box-shadow: 0 15px 35px rgba(0, 58, 31, 0.09);
+  }
+
+  .produce-card > img,
+  .produce-card:hover > img,
+  .produce-card:active > img {
+    transform: none !important;
+  }
+
+  .produce-card .produce-illustration svg,
+  .produce-card:hover .produce-illustration svg,
+  .produce-card:active .produce-illustration svg {
+    transform: none !important;
+  }
+
+  .produce-card .card-link > span,
+  .produce-card:hover .card-link > span,
+  .produce-card:active .card-link > span {
+    transform: none !important;
+  }
+
 }
