@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Okafor Farm Technology designs, builds and automates poultry and swine farms for efficient farm operations.">
+<meta name="description" content="Okafor Farm Technology provides practical farm design, construction, equipment and automation solutions for efficient poultry and swine operations.">
 
 <title>Okafor Farm Technology | Built for Efficiency</title>
 
@@ -42,7 +42,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -141,14 +141,15 @@ img {
 
 .header {
   height: 88px;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(255,255,255,.17);
+  background: var(--deep-red);
 }
 
 .header-inner {
@@ -212,7 +213,7 @@ img {
 .mobile-nav {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 2000;
   background: var(--deep-red);
   color: white;
   display: flex;
@@ -220,10 +221,14 @@ img {
   padding: 35px 7%;
   transform: translateY(-105%);
   transition: transform .5s cubic-bezier(.7,0,.2,1);
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-nav.active {
   transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-nav-top {
@@ -1152,6 +1157,63 @@ img {
     right: 17px;
     bottom: 17px;
   }
+}
+
+/* =====================================================
+   KEEP CARDS CONSISTENT ON TOUCH DEVICES
+===================================================== */
+
+@media (hover: none), (pointer: coarse) {
+
+  .service-card:hover,
+  .service-card:active,
+  .operation-card:hover,
+  .operation-card:active {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .service-card:hover {
+    border-color: transparent;
+  }
+
+  .operation-card:hover .operation-art svg,
+  .operation-card:active .operation-art svg {
+    transform: none;
+  }
+
+  .pill-button:hover,
+  .whatsapp-float:hover {
+    transform: none;
+  }
+
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #F2B9BC;
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
 }
 
 </style>
