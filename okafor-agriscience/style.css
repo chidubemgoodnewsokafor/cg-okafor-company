@@ -24,12 +24,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 135px;
 }
 
 body {
   margin: 0;
-  padding-top: 90px;
+  padding-top: 135px;
   font-family: "Comfortaa", sans-serif;
   color: var(--ink);
   background: var(--white);
@@ -86,7 +86,7 @@ svg {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 135px;
   padding: 0 5%;
   display: flex;
   align-items: center;
@@ -105,8 +105,8 @@ svg {
 
 .brand-logo {
   display: block;
-  width: 215px;
-  height: 82px;
+  width: 322.5px;
+  height: 123px;
   max-width: 100%;
   max-height: calc(100% - 8px);
   object-fit: contain;
@@ -960,8 +960,8 @@ svg {
 
 .footer-logo {
   display: block;
-  width: 215px;
-  height: 82px;
+  width: 322.5px;
+  height: 123px;
   max-width: 100%;
   object-fit: contain;
   object-position: left center;
@@ -1014,7 +1014,7 @@ svg {
 @media (max-width: 1000px) {
 
   .site-header {
-    height: 82px;
+    height: 123px;
   }
 
   .site-nav {
@@ -1030,22 +1030,22 @@ svg {
   }
 
   .brand-logo {
-    width: 195px;
-    height: 74px;
+    width: 292.5px;
+    height: 111px;
     max-height: calc(100% - 8px);
   }
 
   .footer-logo {
-    width: 195px;
-    height: 74px;
+    width: 292.5px;
+    height: 111px;
   }
 
   body {
-    padding-top: 82px;
+    padding-top: 123px;
   }
 
   html {
-    scroll-padding-top: 82px;
+    scroll-padding-top: 123px;
   }
 
   .hero,
@@ -1097,27 +1097,27 @@ svg {
 @media (max-width: 760px) {
 
   html {
-    scroll-padding-top: 76px;
+    scroll-padding-top: 114px;
   }
 
   body {
-    padding-top: 76px;
+    padding-top: 114px;
   }
 
   .site-header {
-    height: 76px;
+    height: 114px;
     padding-inline: 5%;
   }
 
   .brand-logo {
-    width: 175px;
-    height: 65px;
+    width: 262.5px;
+    height: 97.5px;
     max-height: calc(100% - 8px);
   }
 
   .footer-logo {
-    width: 175px;
-    height: 65px;
+    width: 262.5px;
+    height: 97.5px;
   }
 
   .menu-toggle {
@@ -1582,13 +1582,13 @@ svg {
 @media (max-width: 390px) {
 
   .brand-logo {
-    width: 165px;
-    height: 60px;
+    width: 247.5px;
+    height: 90px;
   }
 
   .footer-logo {
-    width: 165px;
-    height: 60px;
+    width: 247.5px;
+    height: 90px;
   }
 
   .hero,
