@@ -94,14 +94,14 @@ a {
   width: 200px;
   height: 100px;
   display: flex;
-  align-items: center;
+  align-items: left;
   flex-shrink: 0;
   position: relative;
   z-index: 102;
 }
 
 .brand img {
-  width: 200px;
+  width: 220px;
   height: 100%;
   object-fit: contain;
 }
@@ -787,7 +787,7 @@ a {
 }
 
 .footer-main img {
-  width: 200px;
+  width: 220px;
   height: 110px;
   object-fit: contain;
   object-position: left center;
@@ -824,7 +824,7 @@ a {
   }
 
   .brand {
-    width: 200px;
+    width: 220px;
   }
 
   .main-nav {
@@ -900,7 +900,7 @@ a {
   }
 
   .brand img {
-    width: 200px;
+    width: 220px;
   }
 
   .menu-toggle {
