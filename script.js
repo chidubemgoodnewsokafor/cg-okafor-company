@@ -323,7 +323,7 @@ const heroSlides = [
 
     description:
   "We do the research, science, and innovate solutions that make farming better.",
-    link: "https://chidubemgoodnewsokafor.github.io/cg-okafor-company/okafor-agriscience/",
+    link: "agriscience.html",
     showLink: true
   },
 
@@ -336,7 +336,7 @@ title: "Okafor Farm<br>Technology",
 
 description:
   "Making farm work faster, easier and more efficient with our solutions.",
-link: "okafor-farm-technology/",
+link: "farm-technology.html",
 showLink: true
 
 },
@@ -351,7 +351,7 @@ title: "Okafor Grain &<br>Oilseeds",
 description:
   "Grain and oilseed sourcing, trade and value addition.",
 
-link: "okafor-grain&oilseeds/",
+link: "grain.html",
 showLink: true
 
 },
