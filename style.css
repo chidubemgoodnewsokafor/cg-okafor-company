@@ -1,3 +1,4 @@
+
 /* =========================================================
    C.G. OKAFOR CO.
    Corporate Website
@@ -79,6 +80,7 @@ button {
   width: 200px;
   height: 200px;
   object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -499,11 +501,11 @@ main {
 .section {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
-  padding: 120px 0;
+  padding: 85px 0;
 }
 
 .eyebrow {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: var(--teal);
   font-size: 12px;
   font-weight: 800;
@@ -551,7 +553,7 @@ h2 {
   gap: 12px;
   align-items: center;
 
-  margin-top: 25px;
+  margin-top: 20px;
 
   color: var(--dark-teal);
   font-size: 14px;
@@ -655,7 +657,7 @@ h2 {
   align-items: center;
   justify-content: center;
 
-  padding: 250px 10% 65px 9%;
+  padding: 230px 10% 65px 9%;
 
   background: var(--hero-panel, var(--dark-teal));
   color: var(--hero-text, var(--white));
@@ -668,7 +670,7 @@ h2 {
   max-width: 680px;
   margin: 0;
 
-  transform: translateY(30px);
+  transform: translateY(25px);
 }
 
 .hero-content h1 {
@@ -685,7 +687,7 @@ h2 {
 
 .hero-content p {
   max-width: 540px;
-  margin: 28px 0 0;
+  margin: 24px 0 0;
 
   color: inherit;
   font-size: clamp(15px, 1.4vw, 19px);
@@ -697,7 +699,7 @@ h2 {
   align-items: center;
   gap: 22px;
 
-  margin-top: 32px;
+  margin-top: 27px;
   padding: 14px 22px;
 
   border: 1px solid currentColor;
@@ -817,7 +819,7 @@ h2 {
 }
 
 .number-item {
-  min-height: 190px;
+  min-height: 175px;
 
   display: flex;
   flex-direction: column;
@@ -842,7 +844,7 @@ h2 {
 }
 
 .number-item span {
-  margin-top: 12px;
+  margin-top: 10px;
   color: var(--teal);
 
   font-size: 12px;
@@ -859,7 +861,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 100px;
+  gap: 75px;
 }
 
 .circle-image {
@@ -876,7 +878,7 @@ h2 {
 }
 
 .large-text {
-  margin-top: 25px;
+  margin-top: 20px;
 
   font-size: clamp(22px, 2.5vw, 34px);
   line-height: 1.3;
@@ -894,7 +896,7 @@ h2 {
 }
 
 .section-heading {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
 
 .business-grid {
@@ -1070,10 +1072,10 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 520px;
   align-items: center;
-  gap: 70px;
+  gap: 60px;
 
-  min-height: 650px;
-  padding: 80px 7%;
+  min-height: 620px;
+  padding: 70px 7%;
 
   background: var(--dark-teal);
   color: var(--white);
@@ -1105,7 +1107,7 @@ h2 {
 
 .farmers-content > p:not(.eyebrow) {
   max-width: 480px;
-  margin: 25px 0 30px;
+  margin: 20px 0 25px;
 
   color: rgba(255,255,255,0.8);
   font-size: 18px;
@@ -1134,8 +1136,8 @@ h2 {
 @media (max-width: 760px) {
   .farmers-section {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 70px 7%;
+    gap: 35px;
+    padding: 60px 7%;
   }
 
   .farmers-content {
@@ -1174,12 +1176,13 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
 .careers-content {
   align-self: center;
-  padding: 70px 10%;
+  padding: 60px 10%;
 }
 
 .careers-content h2 {
@@ -1188,7 +1191,7 @@ h2 {
 }
 
 .careers-content p:not(.eyebrow) {
-  margin: 25px 0 30px;
+  margin: 20px 0 25px;
   color: rgba(255,255,255,0.8);
 }
 
@@ -1204,7 +1207,7 @@ h2 {
 .footer-main {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
-  padding: 80px 0 65px;
+  padding: 65px 0 55px;
 
   display: grid;
   grid-template-columns: 1.6fr repeat(4, 1fr);
@@ -1267,7 +1270,7 @@ h2 {
 .footer-contact-social {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
-  padding: 0 0 45px;
+  padding: 0 0 35px;
 
   display: flex;
   justify-content: flex-end;
@@ -1371,7 +1374,7 @@ h2 {
 .footer-bottom {
   width: min(var(--max-width), 90%);
   margin: 0 auto;
-  padding: 22px 0;
+  padding: 20px 0;
 
   display: flex;
   justify-content: space-between;
@@ -1382,7 +1385,7 @@ h2 {
 }
 
 /* =========================================================
-   IMAGE FIT & OVERFLOW CONTROL
+   IMAGE FIT & ALIGNMENT
    ========================================================= */
 
 .hero-image,
@@ -1391,13 +1394,15 @@ h2 {
 .farmers-image,
 .food-card-image,
 .insight-image,
-.careers-image {
+.careers-image,
+.about-header-image,
+.history-card-image {
   overflow: hidden;
 }
 
 .hero-image {
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -1406,17 +1411,38 @@ h2 {
 .farmers-image img,
 .food-card-image img,
 .insight-image img,
-.careers-image img {
+.careers-image img,
+.about-header-image img,
+.history-card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
+
+/* Keep image focal points adjustable by page-specific CSS. */
 
 .card-image img,
 .food-card-image img,
 .insight-image img {
-  object-position: center;
+  object-position: center center;
+}
+
+.farmers-image img {
+  object-position: center center;
+}
+
+.careers-image img {
+  object-position: center center;
+}
+
+.about-header-image img {
+  object-position: center center;
+}
+
+.history-card-image img {
+  object-position: center center;
 }
 
 /* =========================================================
@@ -1455,7 +1481,7 @@ h2 {
 
   .food-section {
     grid-template-columns: 0.8fr 1.2fr;
-    gap: 35px;
+    gap: 30px;
   }
 }
 
@@ -1471,11 +1497,11 @@ h2 {
   }
 
   .hero-content {
-    padding: 230px 6% 80px;
+    padding: 210px 6% 75px;
   }
 
   .hero-text {
-    transform: translateY(25px);
+    transform: translateY(20px);
   }
 
   .hero-content h1 {
@@ -1547,7 +1573,7 @@ h2 {
   }
 
   .number-item {
-    min-height: 160px;
+    min-height: 150px;
     border-bottom: 1px solid var(--line);
   }
 
@@ -1566,7 +1592,7 @@ h2 {
 
   .about-section {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
 
   .business-grid {
@@ -1597,13 +1623,13 @@ h2 {
     width: min(500px, 90vw);
     height: min(500px, 90vw);
 
-    margin: 0 auto 50px;
+    margin: 0 auto 40px;
     border-radius: 0;
   }
 
   .food-section {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
 
   .food-intro {
@@ -1636,7 +1662,7 @@ h2 {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    gap: 35px;
+    gap: 30px;
   }
 }
 
@@ -1667,7 +1693,7 @@ h2 {
     align-items: center;
     justify-content: center;
 
-    padding: 205px 26px 35px;
+    padding: 190px 26px 30px;
   }
 
   .hero-text {
@@ -1676,7 +1702,7 @@ h2 {
     margin: auto;
     padding: 0;
 
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
 
   .hero-content h1 {
@@ -1685,13 +1711,13 @@ h2 {
   }
 
   .hero-content p {
-    margin-top: 16px;
+    margin-top: 15px;
     font-size: 13px;
     line-height: 1.55;
   }
 
   .hero-link {
-    margin-top: 19px;
+    margin-top: 17px;
     padding: 11px 18px;
   }
 
@@ -1829,7 +1855,7 @@ h2 {
 
   .footer-main {
     grid-template-columns: 1fr 1fr;
-    gap: 40px 25px;
+    gap: 35px 25px;
   }
 
   .footer-brand {
@@ -1877,7 +1903,7 @@ h2 {
   width: 55%;
   min-height: 100%;
 
-  padding: 100px 5% 100px 8%;
+  padding: 90px 5% 90px 8%;
 
   z-index: 3;
 
@@ -1886,7 +1912,7 @@ h2 {
 
 .about-header-content .eyebrow {
   color: #8CD8D0;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .about-header-content h1 {
@@ -1920,7 +1946,7 @@ h2 {
   height: 100%;
 
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 
   display: block;
 }
@@ -1938,7 +1964,7 @@ h2 {
   align-items: center;
   gap: 25px;
 
-  margin-top: 35px;
+  margin-top: 28px;
   padding: 15px 24px;
 
   border: 1px solid var(--white);
@@ -1968,7 +1994,7 @@ h2 {
 .about-continuation {
   width: 100%;
 
-  padding: 120px 5% 130px;
+  padding: 85px 5% 95px;
 
   background: var(--white);
 }
@@ -1981,8 +2007,8 @@ h2 {
   grid-template-columns: 0.9fr 1.1fr;
   align-items: start;
 
-  column-gap: 100px;
-  row-gap: 25px;
+  column-gap: 80px;
+  row-gap: 20px;
 }
 
 .about-continuation-inner > .eyebrow {
@@ -2008,19 +2034,17 @@ h2 {
 }
 
 .about-continuation-copy p {
-  margin-bottom: 23px;
+  margin-bottom: 18px;
 
   color: #526763;
 
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.85;
 }
 
 .about-continuation-copy p:last-child {
   margin-bottom: 0;
 }
-
-  
 
 /* =========================================================
    ABOUT US — HISTORY SECTION
@@ -2029,13 +2053,13 @@ h2 {
 
 .history-cards-section {
   width: 100%;
-  padding: 110px 5% 100px;
+  padding: 85px 5% 80px;
   background: var(--soft-teal);
 }
 
 .history-cards-heading {
   width: min(var(--max-width), 100%);
-  margin: 0 auto 45px;
+  margin: 0 auto 35px;
 }
 
 .history-cards-heading .eyebrow {
@@ -2043,7 +2067,7 @@ h2 {
 }
 
 .history-cards-heading h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: var(--dark-teal);
   font-size: clamp(45px, 6vw, 76px);
   letter-spacing: -0.05em;
@@ -2052,7 +2076,7 @@ h2 {
 .history-cards-heading > p:last-child {
   max-width: 650px;
   color: #526763;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -2131,6 +2155,7 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 
   transition: transform .5s ease;
 }
@@ -2167,7 +2192,7 @@ h2 {
 
 .history-carousel-controls {
   width: min(var(--max-width), 100%);
-  margin: 15px auto 0;
+  margin: 12px auto 0;
 
   display: flex;
   justify-content: flex-end;
@@ -2201,20 +2226,19 @@ h2 {
   color: var(--white);
 }
 
-
 /* =========================================================
    ABOUT US — FAQ SECTION
    ========================================================= */
 
 .about-faq-section {
   width: 100%;
-  padding: 120px 5% 130px;
+  padding: 85px 5% 95px;
   background: var(--white);
 }
 
 .about-faq-heading {
   width: min(var(--max-width), 100%);
-  margin: 0 auto 55px;
+  margin: 0 auto 40px;
 }
 
 .about-faq-heading .eyebrow {
@@ -2223,7 +2247,7 @@ h2 {
 
 .about-faq-heading h2 {
   max-width: 750px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 
   color: var(--dark-teal);
   font-size: clamp(40px, 5.5vw, 70px);
@@ -2249,14 +2273,14 @@ h2 {
 }
 
 .about-faq-item summary {
-  min-height: 90px;
+  min-height: 82px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25px;
 
-  padding: 25px 5px;
+  padding: 22px 5px;
 
   color: var(--dark-teal);
   font-size: clamp(17px, 2vw, 23px);
@@ -2292,15 +2316,15 @@ h2 {
 
 .about-faq-answer {
   max-width: 750px;
-  padding: 0 45px 35px 5px;
+  padding: 0 45px 28px 5px;
 }
 
 .about-faq-answer p {
-  margin-bottom: 20px;
+  margin-bottom: 17px;
 
   color: #526763;
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.85;
 }
 
 .faq-business-link {
@@ -2319,7 +2343,6 @@ h2 {
   color: var(--dark-teal);
 }
 
-
 /* =========================================================
    ABOUT US — RESPONSIVE
    ========================================================= */
@@ -2335,7 +2358,7 @@ h2 {
 
   .about-header-content {
     width: 55%;
-    padding: 80px 4% 80px 6%;
+    padding: 70px 4% 70px 6%;
   }
 
   .about-header-content h1 {
@@ -2349,12 +2372,12 @@ h2 {
   /* INTRODUCTION */
 
   .about-continuation {
-    padding: 90px 6%;
+    padding: 75px 6%;
   }
 
   .about-continuation-inner {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
   }
 
   .about-continuation-inner > h1 {
@@ -2368,7 +2391,7 @@ h2 {
   /* HISTORY */
 
   .history-cards-section {
-    padding: 90px 6%;
+    padding: 75px 6%;
   }
 
   .history-cards-grid {
@@ -2387,10 +2410,9 @@ h2 {
   /* FAQ */
 
   .about-faq-section {
-    padding: 90px 6%;
+    padding: 75px 6%;
   }
 }
-
 
 /* =========================================================
    ABOUT US — MOBILE
@@ -2417,13 +2439,13 @@ h2 {
     width: 100%;
     min-height: 390px;
 
-    padding: 115px 26px 45px;
+    padding: 105px 26px 40px;
     order: 1;
   }
 
   .about-header-content .eyebrow {
     font-size: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .about-header-content h1 {
@@ -2447,11 +2469,11 @@ h2 {
   }
 
   .about-header-image img {
-    object-position: center;
+    object-position: center center;
   }
 
   .about-history-button {
-    margin-top: 25px;
+    margin-top: 22px;
     padding: 13px 19px;
     font-size: 12px;
   }
@@ -2459,11 +2481,11 @@ h2 {
   /* INTRODUCTION */
 
   .about-continuation {
-    padding: 80px 26px;
+    padding: 70px 26px;
   }
 
   .about-continuation-inner {
-    gap: 22px;
+    gap: 20px;
   }
 
   .about-continuation-inner > h1 {
@@ -2472,18 +2494,18 @@ h2 {
 
   .about-continuation-copy p {
     font-size: 14px;
-    line-height: 1.85;
-    margin-bottom: 20px;
+    line-height: 1.8;
+    margin-bottom: 17px;
   }
 
   /* HISTORY */
 
   .history-cards-section {
-    padding: 75px 20px 80px;
+    padding: 65px 20px 70px;
   }
 
   .history-cards-heading {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   .history-cards-heading h2 {
@@ -2527,11 +2549,11 @@ h2 {
   /* FAQ */
 
   .about-faq-section {
-    padding: 80px 25px 100px;
+    padding: 70px 25px 85px;
   }
 
   .about-faq-heading {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
   .about-faq-heading h2 {
@@ -2543,13 +2565,13 @@ h2 {
   }
 
   .about-faq-item summary {
-    min-height: 75px;
+    min-height: 72px;
     font-size: 16px;
-    padding: 20px 0;
+    padding: 18px 0;
   }
 
   .about-faq-answer {
-    padding: 0 5px 28px;
+    padding: 0 5px 24px;
   }
 
   .about-faq-answer p {
