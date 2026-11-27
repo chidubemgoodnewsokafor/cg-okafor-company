@@ -15,9 +15,144 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =====================================================
+       FARM TECHNOLOGY PAGE HEADER
+       Matching the AGRISCIENCE page presentation
+       ===================================================== */
+
+    .farm-technology-page {
+      font-family: 'Comfortaa', sans-serif;
+      color: #074540;
+      overflow: hidden;
+    }
+
+    .farm-technology-page * {
+      box-sizing: border-box;
+    }
+
+    .farm-technology-page .farm-technology-page-hero {
+      min-height: 650px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 43, 39, .91) 0%,
+          rgba(3, 43, 39, .75) 48%,
+          rgba(3, 43, 39, .30) 100%
+        ),
+        url("hero-farm-technology.jpg") center 45% / cover no-repeat;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding: 110px 8% 100px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .farm-technology-page .farm-technology-page-hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .farm-technology-page .farm-technology-page-hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .farm-technology-page .farm-technology-hero-content {
+      max-width: 850px;
+    }
+
+    .farm-technology-page .farm-technology-hero-eyebrow {
+      color: #8ED7CE;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .farm-technology-page .farm-technology-page-hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.12;
+      letter-spacing: -3px;
+      font-weight: 700;
+      max-width: 800px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .farm-technology-page .farm-technology-hero-bottom {
+      position: absolute;
+      bottom: 38px;
+      left: 8%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+    }
+
+    .farm-technology-page .farm-technology-hero-bottom span {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #01998E;
+    }
+
+    @media (max-width: 800px) {
+      .farm-technology-page .farm-technology-page-hero {
+        min-height: 570px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .farm-technology-page .farm-technology-page-hero {
+        min-height: 520px;
+        padding: 100px 7% 100px;
+        background-position: center center;
+      }
+
+      .farm-technology-page .farm-technology-page-hero h1 {
+        font-size: clamp(39px, 11vw, 58px);
+        letter-spacing: -2px;
+      }
+
+      .farm-technology-page .farm-technology-page-hero::before {
+        width: 300px;
+        height: 300px;
+        right: -180px;
+      }
+
+      .farm-technology-page .farm-technology-page-hero::after {
+        width: 220px;
+        height: 220px;
+        right: -140px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="farm-technology-page">
 
   <!-- FLOATING CORPORATE MENU -->
   <button class="menu-button" aria-label="Open menu" aria-expanded="false" type="button">
@@ -108,27 +243,26 @@
 
   <main>
 
-    <!-- FARM TECHNOLOGY HERO -->
-    <section class="farmers-section agriscience-hero" id="top">
-      <div class="farmers-image">
-        <img src="hero-farm-technology.jpg" alt="Modern farm facilities and technology">
-      </div>
+    <!-- FARM TECHNOLOGY HEADER -->
+    <section class="farm-technology-page-hero" id="top">
 
-      <div class="farmers-content">
-        <p class="eyebrow">C.G. OKAFOR CO. BUSINESS</p>
-        <h1>Okafor Farm Technology</h1>
-        <h2>Farms designed right. Built for efficiency.</h2>
+      <div class="farm-technology-hero-content">
 
-        <p>
-          We design, build, equip and automate poultry and swine farms.
-          From farm structures to the systems that support daily operations,
-          we make farm work easier, faster and more efficient.
+        <p class="farm-technology-hero-eyebrow">
+          C.G. OKAFOR CO. BUSINESS
         </p>
 
-        <a href="#what-we-do" class="primary-button light-button">
-          Discover what we do
-        </a>
+        <h1>
+          Okafor Farm Technology
+        </h1>
+
       </div>
+
+      <div class="farm-technology-hero-bottom">
+        <span></span>
+        TECHNOLOGY FOR BETTER FARM OPERATIONS
+      </div>
+
     </section>
 
 
