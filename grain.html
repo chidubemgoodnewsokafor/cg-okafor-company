@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +15,144 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =====================================================
+       GRAIN AND OILSEEDS PAGE HEADER
+       Matching the AGRISCIENCE page presentation
+       ===================================================== */
+
+    .grain-page {
+      font-family: 'Comfortaa', sans-serif;
+      color: #074540;
+      overflow: hidden;
+    }
+
+    .grain-page * {
+      box-sizing: border-box;
+    }
+
+    .grain-page .grain-page-hero {
+      min-height: 650px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 43, 39, .91) 0%,
+          rgba(3, 43, 39, .75) 48%,
+          rgba(3, 43, 39, .30) 100%
+        ),
+        url("hero-grain-oilseeds.jpg") center 45% / cover no-repeat;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding: 110px 8% 100px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .grain-page .grain-page-hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .grain-page .grain-page-hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .grain-page .grain-hero-content {
+      max-width: 850px;
+    }
+
+    .grain-page .grain-hero-eyebrow {
+      color: #8ED7CE;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .grain-page .grain-page-hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.12;
+      letter-spacing: -3px;
+      font-weight: 700;
+      max-width: 800px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .grain-page .grain-hero-bottom {
+      position: absolute;
+      bottom: 38px;
+      left: 8%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+    }
+
+    .grain-page .grain-hero-bottom span {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #01998E;
+    }
+
+    @media (max-width: 800px) {
+      .grain-page .grain-page-hero {
+        min-height: 570px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grain-page .grain-page-hero {
+        min-height: 520px;
+        padding: 100px 7% 100px;
+        background-position: center center;
+      }
+
+      .grain-page .grain-page-hero h1 {
+        font-size: clamp(39px, 11vw, 58px);
+        letter-spacing: -2px;
+      }
+
+      .grain-page .grain-page-hero::before {
+        width: 300px;
+        height: 300px;
+        right: -180px;
+      }
+
+      .grain-page .grain-page-hero::after {
+        width: 220px;
+        height: 220px;
+        right: -140px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="grain-page">
 
   <!-- FLOATING CORPORATE MENU -->
   <button class="menu-button" aria-label="Open menu" aria-expanded="false" type="button">
@@ -32,7 +168,6 @@
       <span>Food for all</span>
     </span>
   </button>
-
 
   <!-- SHARED CORPORATE NAVIGATION -->
   <nav class="main-nav" aria-hidden="true">
@@ -53,7 +188,6 @@
       </button>
 
     </div>
-
 
     <div class="nav-panel nav-panel-main active">
 
@@ -77,7 +211,6 @@
 
     </div>
 
-
     <div class="nav-panel" id="about-panel">
 
       <button class="nav-back" type="button" data-back="main">
@@ -97,55 +230,29 @@
 
   </nav>
 
-
   <main>
 
-    
-<!-- GRAIN AND OILSEEDS HERO -->
-<section class="impact-hero" id="top"
-  style="background-image: linear-gradient(90deg, rgba(0,35,32,0.94) 0%, rgba(0,45,41,0.78) 48%, rgba(0,45,41,0.30) 100%), url('hero-grain-oilseeds.jpg');">
+    <!-- GRAIN AND OILSEEDS HEADER -->
+    <section class="grain-page-hero" id="top">
 
-  <div class="impact-hero-content">
-    <p class="impact-eyebrow">C.G. OKAFOR CO. BUSINESS</p>
+      <div class="grain-hero-content">
 
-    <h1>From Harvest to Food Markets.</h1>
+        <p class="grain-hero-eyebrow">
+          C.G. OKAFOR CO. BUSINESS
+        </p>
 
-    <p>
-      Bringing agricultural produce closer to the businesses,
-      industries and people who depend on it.
-    </p>
-  </div>
+        <h1>
+          Okafor Grain and Oilseeds
+        </h1>
 
-  <div class="impact-hero-bottom">
-    <span>CONNECTING FARM OUTPUT TO FOOD VALUE</span>
-  </div>
+      </div>
 
-</section>
+      <div class="grain-hero-bottom">
+        <span></span>
+        CONNECTING FARM OUTPUT TO FOOD VALUE
+      </div>
 
-
-<!-- INTRODUCTION -->
-<section class="section about-section" id="what-we-do">
-
-  <p class="eyebrow">OKAFOR GRAIN AND OILSEEDS</p>
-
-  <h2>Making agricultural produce go further.</h2>
-
-  <p>
-    Okafor Grain and Oilseeds is the agricultural commodity
-    and food value addition business of C.G. Okafor Co.
-    We focus on the movement of agricultural produce from
-    farms into the wider food economy.
-  </p>
-
-  <p>
-    By connecting agricultural production with trade,
-    processing and food markets, we help create value
-    across the journey from harvest to consumption.
-  </p>
-
-</section>
-
-
+    </section>
 
     <!-- WHO WE ARE -->
     <section class="section about-section" id="what-we-do">
@@ -163,7 +270,6 @@
 
     </section>
 
-
     <!-- WHAT WE DO -->
     <section class="section businesses-section" id="focus">
 
@@ -174,7 +280,6 @@
         <h2>We source. We trade. We add value.</h2>
 
       </div>
-
 
       <div class="business-grid agriscience-focus-grid">
 
@@ -195,7 +300,6 @@
 
         </article>
 
-
         <article class="business-card">
 
           <div class="card-body">
@@ -212,7 +316,6 @@
           </div>
 
         </article>
-
 
         <article class="business-card">
 
@@ -235,7 +338,6 @@
 
     </section>
 
-
     <!-- OUR PRODUCTS -->
     <section class="section businesses-section agriscience-solution-list" id="products">
 
@@ -252,9 +354,7 @@
 
       </div>
 
-
       <div class="business-grid">
-
 
         <!-- RICE -->
         <article class="business-card">
@@ -280,7 +380,6 @@
 
         </article>
 
-
         <!-- EGUSI -->
         <article class="business-card">
 
@@ -304,7 +403,6 @@
           </div>
 
         </article>
-
 
         <!-- AKIDI -->
         <article class="business-card">
@@ -330,7 +428,6 @@
 
         </article>
 
-
         <!-- OIL PALM -->
         <article class="business-card">
 
@@ -355,11 +452,9 @@
 
         </article>
 
-
       </div>
 
     </section>
-
 
     <!-- CONTACT -->
     <section class="farmers-section agriscience-products" id="contact">
@@ -398,12 +493,10 @@
 
   </main>
 
-
   <!-- SHARED C.G. OKAFOR CO. FOOTER -->
   <footer class="site-footer" id="footer-contact">
 
     <div class="footer-main">
-
 
       <!-- BRAND -->
       <div class="footer-brand">
@@ -421,7 +514,6 @@
 
       </div>
 
-
       <!-- COMPANY -->
       <div class="footer-column">
 
@@ -429,14 +521,13 @@
 
         <a href="about.html">About Us</a>
 
-        <a href="about.html#our-history>Our History</a>
+        <a href="about.html#our-history">Our History</a>
 
         <a href="careers.html">Careers</a>
 
         <a href="contact.html">Contact Us</a>
 
       </div>
-
 
       <!-- BUSINESSES -->
       <div class="footer-column">
@@ -467,7 +558,6 @@
 
     </div>
 
-
     <!-- FOOTER BOTTOM -->
     <div class="footer-bottom">
 
@@ -475,9 +565,7 @@
         © 2026 C.G. Okafor Co. All rights reserved.
       </span>
 
-
       <div class="footer-social-links">
-
 
         <!-- WHATSAPP -->
         <a
@@ -531,7 +619,6 @@
 
         </a>
 
-
         <!-- FACEBOOK -->
         <a
           href="https://www.facebook.com/share/1BuxKzeTvz/"
@@ -549,14 +636,11 @@
 
         </a>
 
-
       </div>
 
     </div>
 
-
   </footer>
-
 
   <script src="script.js"></script>
 
