@@ -1,0 +1,1430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Impact | C.G. Okafor Co.</title>
+
+  <meta name="description"
+    content="Discover the impact of C.G. Okafor Co. through our agricultural contributions, the farmers we work with and the experiences they share.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =====================================================
+       IMPACT PAGE
+       ===================================================== */
+
+    .impact-page {
+      font-family: 'Comfortaa', sans-serif;
+      color: #074540;
+      overflow: hidden;
+    }
+
+    .impact-page * {
+      box-sizing: border-box;
+    }
+
+    .impact-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    /* HERO */
+
+    .impact-hero {
+      min-height: 570px;
+      background: #074540;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding: 110px 8% 90px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .impact-hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .impact-hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .impact-hero-content {
+      max-width: 850px;
+    }
+
+    .impact-hero .impact-eyebrow {
+      color: #8ED7CE;
+    }
+
+    .impact-hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.12;
+      letter-spacing: -3px;
+      font-weight: 700;
+      max-width: 800px;
+      margin: 0 0 28px;
+    }
+
+    .impact-hero-description {
+      max-width: 600px;
+      color: rgba(255,255,255,.78);
+      font-size: 15px;
+      line-height: 2;
+      margin: 0;
+    }
+
+    .impact-hero-bottom {
+      position: absolute;
+      bottom: 38px;
+      left: 8%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: rgba(255,255,255,.7);
+    }
+
+    .impact-hero-bottom span {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #43B02A;
+    }
+
+    /* NUMBERS */
+
+    .impact-numbers {
+      background: #ffffff;
+      padding: 100px 7%;
+    }
+
+    .impact-numbers-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .impact-numbers-heading {
+      max-width: 650px;
+      margin-bottom: 55px;
+    }
+
+    .impact-numbers-heading .impact-eyebrow {
+      color: #01998E;
+    }
+
+    .impact-numbers-heading h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.3;
+      margin: 0 0 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .impact-numbers-heading p:last-child {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #56736F;
+      margin: 0;
+    }
+
+    .impact-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #D5E5E2;
+      border-bottom: 1px solid #D5E5E2;
+    }
+
+    .impact-stat {
+      padding: 38px 25px 42px;
+      border-right: 1px solid #D5E5E2;
+    }
+
+    .impact-stat:last-child {
+      border-right: none;
+    }
+
+    .impact-stat strong {
+      display: block;
+      color: #01998E;
+      font-size: clamp(35px, 4.5vw, 58px);
+      font-weight: 700;
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    .impact-stat span {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.7;
+      color: #315F59;
+    }
+
+    /* FARMERS INTRO */
+
+    .farmers-intro {
+      padding: 100px 7% 70px;
+      background: #F0F8F7;
+    }
+
+    .farmers-intro-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .farmers-intro .impact-eyebrow {
+      color: #01998E;
+    }
+
+    .farmers-intro h2 {
+      font-size: clamp(34px, 4.5vw, 55px);
+      line-height: 1.25;
+      letter-spacing: -2px;
+      margin: 0;
+    }
+
+    .farmers-intro-copy {
+      font-size: 14px;
+      line-height: 2;
+      color: #426A64;
+      margin: 0;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-section {
+      background: #F0F8F7;
+      padding: 0 7% 110px;
+    }
+
+    .testimonials-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .farmer-card {
+      background: #ffffff;
+      padding: 34px;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 3px solid #01998E;
+      transition: transform .25s ease;
+    }
+
+    .farmer-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .farmer-card-top {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .farmer-illustration {
+      width: 94px;
+      height: 94px;
+      flex-shrink: 0;
+      background: #D9EFEC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .farmer-illustration svg {
+      width: 76px;
+      height: 76px;
+      display: block;
+    }
+
+    .farmer-details h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 0 0 9px;
+      color: #074540;
+    }
+
+    .farmer-location {
+      color: #66817C;
+      font-size: 11px;
+      line-height: 1.7;
+      margin: 0 0 8px;
+    }
+
+    .farmer-type {
+      display: inline-block;
+      color: #01998E;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.6;
+    }
+
+    .farmer-quote-mark {
+      color: #01998E;
+      font-family: Georgia, serif;
+      font-size: 55px;
+      line-height: .7;
+      margin-bottom: 14px;
+    }
+
+    .farmer-quote {
+      color: #315F59;
+      font-family: 'Comfortaa', sans-serif;
+      font-size: 13px;
+      line-height: 2;
+      margin: 0;
+      flex: 1;
+    }
+
+    .farmer-card-bottom {
+      border-top: 1px solid #E2EFEC;
+      margin-top: 28px;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .farmer-card-bottom span {
+      color: #78918C;
+      font-size: 9px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .farmer-card-bottom strong {
+      color: #074540;
+      font-size: 10px;
+    }
+
+    /* CLOSING SECTION */
+
+    .impact-closing {
+      background: #074540;
+      color: #ffffff;
+      padding: 105px 7%;
+      text-align: center;
+    }
+
+    .impact-closing-container {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .impact-closing .impact-eyebrow {
+      color: #8ED7CE;
+    }
+
+    .impact-closing h2 {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.3;
+      letter-spacing: -1.5px;
+      margin: 0 0 20px;
+    }
+
+    .impact-closing p {
+      max-width: 600px;
+      margin: 0 auto 34px;
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .impact-about-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      padding: 17px 27px;
+      background: #43B02A;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .impact-about-link:hover {
+      background: #31951E;
+      transform: translateY(-3px);
+    }
+
+    .impact-about-link span {
+      font-size: 17px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+
+      .impact-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .impact-stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .impact-stat:nth-child(1),
+      .impact-stat:nth-child(2) {
+        border-bottom: 1px solid #D5E5E2;
+      }
+
+      .farmers-intro-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-hero {
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .impact-hero {
+        min-height: 490px;
+        padding: 100px 7% 100px;
+      }
+
+      .impact-hero h1 {
+        font-size: clamp(39px, 11vw, 58px);
+        letter-spacing: -2px;
+      }
+
+      .impact-hero-description {
+        font-size: 13px;
+      }
+
+      .impact-hero::before {
+        width: 300px;
+        height: 300px;
+        right: -180px;
+      }
+
+      .impact-hero::after {
+        width: 220px;
+        height: 220px;
+        right: -140px;
+      }
+
+      .impact-numbers {
+        padding: 75px 7%;
+      }
+
+      .impact-numbers-heading {
+        margin-bottom: 35px;
+      }
+
+      .impact-stat {
+        padding: 27px 13px 30px;
+      }
+
+      .impact-stat strong {
+        font-size: 38px;
+      }
+
+      .impact-stat span {
+        font-size: 10px;
+      }
+
+      .farmers-intro {
+        padding: 75px 7% 45px;
+      }
+
+      .farmers-intro h2 {
+        font-size: 37px;
+      }
+
+      .testimonials-section {
+        padding: 0 7% 75px;
+      }
+
+      .farmer-card {
+        padding: 24px 20px;
+      }
+
+      .farmer-card-top {
+        gap: 14px;
+      }
+
+      .farmer-illustration {
+        width: 75px;
+        height: 75px;
+      }
+
+      .farmer-illustration svg {
+        width: 62px;
+        height: 62px;
+      }
+
+      .farmer-details h3 {
+        font-size: 14px;
+      }
+
+      .farmer-quote {
+        font-size: 12px;
+      }
+
+      .impact-closing {
+        padding: 80px 7%;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .farmer-card,
+      .impact-about-link {
+        transition: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body class="impact-page">
+
+<!-- =====================================================
+     FLOATING MENU
+     ===================================================== -->
+
+<button
+  class="menu-button"
+  aria-label="Open menu"
+  aria-expanded="false"
+  type="button"
+>
+  <img src="okafor-menu-logo.png" alt="Okafor">
+  <span></span>
+  <span></span>
+  <span></span>
+
+  <span class="menu-label menu-label-menu">MENU</span>
+
+  <span class="menu-label menu-label-slogan">
+    <span>better farming,</span>
+    <span>Food for all</span>
+  </span>
+</button>
+
+
+<!-- =====================================================
+     MAIN NAVIGATION
+     ===================================================== -->
+
+<nav class="main-nav" aria-hidden="true">
+
+  <div class="nav-header">
+
+    <a
+      href="index.html"
+      class="nav-logo-link"
+      aria-label="Go to C.G. Okafor Co. homepage"
+    >
+      <img
+        src="okafor-menu-logo.png"
+        alt="C.G. Okafor Co."
+        class="nav-logo"
+      >
+    </a>
+
+    <button
+      class="nav-close"
+      type="button"
+      aria-label="Close menu"
+    >
+      ×
+    </button>
+
+  </div>
+
+  <div class="nav-panel nav-panel-main active">
+
+    <button
+      class="nav-item nav-has-children"
+      data-target="about-panel"
+      type="button"
+    >
+      <span>ABOUT US</span>
+      <span class="nav-arrow">›</span>
+    </button>
+
+    <div class="nav-divider"></div>
+
+    <a href="careers.html" class="nav-item nav-direct">
+      CAREERS
+    </a>
+
+    <a href="contact.html" class="nav-item nav-direct">
+      CONTACT US
+    </a>
+
+  </div>
+
+  <div class="nav-panel" id="about-panel">
+
+    <button
+      class="nav-back"
+      type="button"
+      data-back="main"
+    >
+      <span>←</span>
+      <span>ABOUT US</span>
+    </button>
+
+    <a href="about.html" class="nav-item nav-direct">
+      About Us Overview
+    </a>
+
+    <a href="about.html#our-history" class="nav-item nav-direct">
+      Our History
+    </a>
+
+  </div>
+
+</nav>
+
+
+<!-- =====================================================
+     IMPACT HERO
+     ===================================================== -->
+
+<section class="impact-hero">
+
+  <div class="impact-hero-content">
+
+    <p class="impact-eyebrow">
+      OUR IMPACT
+    </p>
+
+    <h1>
+      Better farming. Meaningful impact.
+    </h1>
+
+    <p class="impact-hero-description">
+      Our work is about more than agricultural solutions.
+      It is about the farmers who use them, the land they cultivate,
+      and the food that reaches people. Every farm and every
+      relationship is part of a bigger story.
+    </p>
+
+  </div>
+
+  <div class="impact-hero-bottom">
+    <span></span>
+    GROWING TOGETHER THROUGH AGRICULTURE
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMPACT IN NUMBERS
+     ===================================================== -->
+
+<section class="impact-numbers">
+
+  <div class="impact-numbers-container">
+
+    <div class="impact-numbers-heading">
+
+      <p class="impact-eyebrow">
+        OUR REACH
+      </p>
+
+      <h2>
+        Our impact in numbers.
+      </h2>
+
+      <p>
+        A growing footprint in agriculture, measured through
+        the farmers we reach, the land cultivated and the
+        solutions we bring to farming.
+      </p>
+
+    </div>
+
+
+    <div class="impact-stat-grid">
+
+      <div class="impact-stat">
+
+        <strong>1,000+</strong>
+
+        <span>
+          Empowered Farmers
+        </span>
+
+      </div>
+
+
+      <div class="impact-stat">
+
+        <strong>2,000+</strong>
+
+        <span>
+          Acres Cultivated
+        </span>
+
+      </div>
+
+
+      <div class="impact-stat">
+
+        <strong>15+</strong>
+
+        <span>
+          Agricultural Solutions
+        </span>
+
+      </div>
+
+
+      <div class="impact-stat">
+
+        <strong>5+</strong>
+
+        <span>
+          States Reached
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FARMERS INTRODUCTION
+     ===================================================== -->
+
+<section class="farmers-intro">
+
+  <div class="farmers-intro-container">
+
+    <div>
+
+      <p class="impact-eyebrow">
+        FARMERS BY OKAFOR
+      </p>
+
+      <h2>
+        The people behind our impact.
+      </h2>
+
+    </div>
+
+    <p class="farmers-intro-copy">
+      Agriculture is built on the work of farmers.
+      Their everyday experiences, the challenges they overcome
+      and the progress they make give meaning to what we do.
+
+      <br><br>
+
+      Meet some of the farmers whose stories reflect the
+      different areas of agriculture we serve.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHAT FARMERS SAY
+     ===================================================== -->
+
+<section class="testimonials-section" id="farmers">
+
+  <div class="testimonials-container">
+
+    <div class="testimonials-grid">
+
+
+      <!-- MR KINGSLEY -->
+
+      <article class="farmer-card">
+
+        <div class="farmer-card-top">
+
+          <div class="farmer-illustration">
+
+            <svg viewBox="0 0 100 100"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
+
+              <path
+                d="M18 77H83"
+                stroke="#074540"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M24 76V46H76V76"
+                fill="#01998E"
+                fill-opacity=".12"
+                stroke="#074540"
+                stroke-width="2.5"
+              />
+
+              <path
+                d="M24 46L50 30L76 46"
+                stroke="#074540"
+                stroke-width="3"
+                stroke-linejoin="round"
+              />
+
+              <path
+                d="M34 59C34 53 39 50 44 54C49 49 55 52 55 59C55 65 50 68 44 68C38 68 34 65 34 59Z"
+                fill="#01998E"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M57 62C57 56 62 53 67 57C72 52 77 56 77 62C77 68 72 71 67 71C61 71 57 68 57 62Z"
+                fill="#01998E"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M40 54L42 49L46 54M63 57L65 52L69 57"
+                stroke="#074540"
+                stroke-width="2"
+                stroke-linejoin="round"
+              />
+
+              <path
+                d="M44 68V73M67 71V76"
+                stroke="#074540"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+
+            </svg>
+
+          </div>
+
+          <div class="farmer-details">
+
+            <h3>Mr. Kingsley</h3>
+
+            <p class="farmer-location">
+              Onitsha, Anambra State
+            </p>
+
+            <span class="farmer-type">
+              Broiler Farmer
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="farmer-quote-mark">“</div>
+
+        <p class="farmer-quote">
+          In broiler farming, getting the right support and
+          solutions makes a difference. From the quality of
+          inputs to how the birds are managed, every detail
+          matters. Good farming practices help us raise healthy
+          birds and improve our production.
+        </p>
+
+
+        <div class="farmer-card-bottom">
+
+          <span>Farmers by Okafor</span>
+
+          <strong>Broiler Production</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- SANTI FARMS -->
+
+      <article class="farmer-card">
+
+        <div class="farmer-card-top">
+
+          <div class="farmer-illustration">
+
+            <svg viewBox="0 0 100 100"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
+
+              <path
+                d="M18 78H83"
+                stroke="#074540"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M23 74V42H77V74"
+                fill="#01998E"
+                fill-opacity=".12"
+                stroke="#074540"
+                stroke-width="2.5"
+              />
+
+              <path
+                d="M23 42L50 26L77 42"
+                stroke="#074540"
+                stroke-width="3"
+                stroke-linejoin="round"
+              />
+
+              <path
+                d="M32 58C32 50 39 47 44 53C49 47 57 51 57 58C57 65 52 69 44 69C37 69 32 65 32 58Z"
+                fill="#01998E"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M48 57C48 49 55 46 60 52C65 47 73 51 73 58C73 65 67 69 60 69C53 69 48 65 48 57Z"
+                fill="#01998E"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M44 52L47 48L50 53M60 51L63 47L66 52"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M41 69V74M61 69V74"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+            </svg>
+
+          </div>
+
+          <div class="farmer-details">
+
+            <h3>Santi Farms</h3>
+
+            <p class="farmer-location">
+              Ifite Ogwari, Anambra State
+            </p>
+
+            <span class="farmer-type">
+              Layer Farm
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="farmer-quote-mark">“</div>
+
+        <p class="farmer-quote">
+          Layer farming requires consistency and attention
+          every day. From feeding and bird management to
+          maintaining good farm conditions, the little things
+          matter. Our goal is to keep our birds healthy and
+          maintain reliable egg production.
+        </p>
+
+
+        <div class="farmer-card-bottom">
+
+          <span>Farmers by Okafor</span>
+
+          <strong>Layer Production</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- PAPA ADA -->
+
+      <article class="farmer-card">
+
+        <div class="farmer-card-top">
+
+          <div class="farmer-illustration">
+
+            <svg viewBox="0 0 100 100"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
+
+              <path
+                d="M17 79H83"
+                stroke="#074540"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M25 77V60M43 77V53M62 77V59M80 77V55"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M43 53C30 50 28 39 33 30C44 32 48 41 43 53Z"
+                fill="#01998E"
+                fill-opacity=".25"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M43 53C53 40 66 42 70 49C64 59 53 60 43 53Z"
+                fill="#01998E"
+                fill-opacity=".25"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M25 60C16 55 16 47 21 42C29 45 31 52 25 60Z"
+                fill="#01998E"
+                fill-opacity=".25"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M80 55C69 47 71 38 78 34C86 40 87 48 80 55Z"
+                fill="#01998E"
+                fill-opacity=".25"
+                stroke="#074540"
+                stroke-width="2"
+              />
+
+              <path
+                d="M35 79C40 74 46 74 50 79M55 79C61 73 68 74 72 79"
+                stroke="#01998E"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M43 53C45 45 48 40 53 36"
+                stroke="#074540"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+
+            </svg>
+
+          </div>
+
+          <div class="farmer-details">
+
+            <h3>Papa Ada</h3>
+
+            <p class="farmer-location">
+              Imo State
+            </p>
+
+            <span class="farmer-type">
+              Cucumber Farmer
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="farmer-quote-mark">“</div>
+
+        <p class="farmer-quote">
+          In cucumber production, the seed you choose can
+          influence the entire farming experience. Germination,
+          plant growth, fruit quality and yield all matter.
+          Choosing a suitable variety is an important first
+          step towards a successful harvest.
+        </p>
+
+
+        <div class="farmer-card-bottom">
+
+          <span>Farmers by Okafor</span>
+
+          <strong>Cucumber Production</strong>
+
+        </div>
+
+      </article>
+
+
+      <!-- MRS OKORO -->
+
+      <article class="farmer-card">
+
+        <div class="farmer-card-top">
+
+          <div class="farmer-illustration">
+
+            <svg viewBox="0 0 100 100"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
+
+              <path
+                d="M17 80H83"
+                stroke="#074540"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M50 78V56"
+                stroke="#074540"
+                stroke-width="2.5"
+              />
+
+              <path
+                d="M50 56C32 56 27 44 33 32C43 27 50 37 50 56Z"
+                fill="#01998E"
+                fill-opacity=".2"
+                stroke="#074540"
+                stroke-width="2.5"
+              />
+
+              <path
+                d="M50 56C68 56 73 44 67 32C57 27 50 37 50 56Z"
+                fill="#01998E"
+                fill-opacity=".2"
+                stroke="#074540"
+                stroke-width="2.5"
+              />
+
+              <path
+                d="M50 42C40 34 41 22 50 17C59 22 60 34 50 42Z"
+                fill="#01998E"
+                fill-opacity=".3"
+                stroke="#074540"
+                stroke-width="2.5"
+              />
+
+              <path
+                d="M50 78C40 72 34 72 28 78M50 78C60 72 66 72 72 78"
+                stroke="#01998E"
+                stroke-width="2.5"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M34 84L30 89M50 84V91M66 84L70 89"
+                stroke="#074540"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+
+            </svg>
+
+          </div>
+
+          <div class="farmer-details">
+
+            <h3>Mrs. Okoro</h3>
+
+            <p class="farmer-location">
+              Anambra State
+            </p>
+
+            <span class="farmer-type">
+              Cabbage Farmer
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="farmer-quote-mark">“</div>
+
+        <p class="farmer-quote">
+          Cabbage farming requires careful attention from
+          nursery management to transplanting and crop
+          maintenance. Good seedlings, proper nutrition
+          and timely crop protection are important for
+          producing healthy cabbage heads and a good harvest.
+        </p>
+
+
+        <div class="farmer-card-bottom">
+
+          <span>Farmers by Okafor</span>
+
+          <strong>Cabbage Production</strong>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CLOSING / ABOUT US
+     ===================================================== -->
+
+<section class="impact-closing">
+
+  <div class="impact-closing-container">
+
+    <p class="impact-eyebrow">
+      C.G. OKAFOR CO.
+    </p>
+
+    <h2>
+      Better farming, food for all.
+    </h2>
+
+    <p>
+      Our journey continues with farmers, agricultural
+      solutions and a shared commitment to nourishing people.
+      Discover more about who we are, what we do and
+      the journey that brought us here.
+    </p>
+
+    <a href="about.html" class="impact-about-link">
+      ABOUT US
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CORPORATE FOOTER
+     ===================================================== -->
+
+<footer class="site-footer" id="footer-contact">
+
+  <div class="footer-main">
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="footer-logo">
+        <img
+          src="cg-okafor-logo.png"
+          alt="C.G. Okafor Co."
+        >
+      </a>
+
+      <p>
+        A food and agricultural solutions and technology company.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>Company</h4>
+
+      <a href="about.html">About Us</a>
+      <a href="about.html#our-history">Our History</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact Us</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h4>Our Businesses</h4>
+
+      <a href="agriscience.html">
+        Okafor Agriscience
+      </a>
+
+      <a href="farm-technology.html">
+        Okafor Farm Technology
+      </a>
+
+      <a href="grain.html">
+        Okafor Grain &amp; Oilseeds
+      </a>
+
+      <a href="soileva/">
+        Soileva
+      </a>
+
+      <a href="soileva-farmcare/">
+        Soileva Farmcare
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 C.G. Okafor Co. All rights reserved.
+    </span>
+
+
+    <div class="footer-social-links">
+
+      <!-- WHATSAPP -->
+
+      <a
+        href="https://wa.me/2349060485238"
+        class="social-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        title="WhatsApp"
+      >
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+
+          <path d="M20.52 3.48A11.82 11.82 0 0 0 12.08 0
+          C5.55 0 .24 5.31.24 11.84
+          c0 2.09.55 4.13 1.59 5.93L.17 24
+          l6.37-1.67a11.85 11.85 0 0 0 5.54 1.37h.01
+          c6.53 0 11.84-5.31 11.84-11.84
+          0-3.16-1.23-6.13-3.41-8.38z
+          M12.09 21.67h-.01
+          a9.83 9.83 0 0 1-5.01-1.38l-.36-.21
+          -3.78.99 1.01-3.68-.23-.38
+          a9.82 9.82 0 0 1-1.51-5.17
+          C2.2 6.42 6.62 2 12.08 2
+          c2.65 0 5.14 1.03 7.01 2.9
+          a9.84 9.84 0 0 1 2.91 7
+          c0 5.45-4.43 9.77-9.91 9.77z
+          M17.48 14.59c-.3-.15-1.78-.88-2.06-.98
+          -.28-.1-.48-.15-.68.15
+          -.2.3-.78.98-.95 1.18
+          -.17.2-.35.22-.65.07
+          -.3-.15-1.26-.46-2.4-1.48
+          -.89-.79-1.49-1.77-1.66-2.07
+          -.17-.3-.02-.46.13-.61
+          .13-.13.3-.35.45-.52
+          .15-.17.2-.3.3-.5
+          .1-.2.05-.37-.02-.52
+          -.07-.15-.68-1.64-.93-2.25
+          -.24-.59-.49-.51-.68-.52
+          -.17-.01-.37-.01-.57-.01
+          -.2 0-.52.07-.79.37
+          -.27.3-1.04 1.02-1.04 2.48
+          0 1.46 1.06 2.87 1.21 3.07
+          .15.2 2.09 3.19 5.07 4.48
+          .71.31 1.26.5 1.69.64
+          .71.23 1.36.2 1.87.12
+          .57-.08 1.78-.73 2.03-1.43
+          .25-.7.25-1.3.17-1.43
+          -.07-.12-.27-.2-.57-.35z"/>
+
+        </svg>
+
+      </a>
+
+
+      <!-- FACEBOOK -->
+
+      <a
+        href="https://www.facebook.com/share/1BuxKzeTvz/"
+        class="social-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="C.G. Okafor Co. on Facebook"
+        title="Facebook"
+      >
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+
+          <path d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3.5l.5-4H13V9c0-.67.33-1 1-1z"/>
+
+        </svg>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
