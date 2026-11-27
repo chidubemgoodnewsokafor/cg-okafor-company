@@ -305,7 +305,7 @@ const heroSlides = [
   background: "#074540",
   textColor: "#ffffff",
 
-  title: "C.G. Okafor",
+  title: "C.G. Okafor Co",
 
   description:
     "Better farming, food for all.",
