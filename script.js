@@ -366,7 +366,7 @@ title: "Soileva",
 description:
   "We believe everyone deserves good nourishment and access to the products and solutions that help produce it.",
 
-link: "https://chidubemgoodnewsokafor.github.io/soileva/index.html",
+link: "soileva/",
 showLink: true
 
 }
