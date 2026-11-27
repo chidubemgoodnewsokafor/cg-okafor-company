@@ -1,20 +1,157 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#074540">
+
   <title>Okafor Agriscience | C.G. Okafor Co.</title>
+
   <meta name="description" content="Okafor Agriscience develops and provides solutions for animal health, crop protection and seed, with a focus on vegetable farming, poultry and swine.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =====================================================
+       AGRISCIENCE PAGE HEADER
+       Styled to follow the IMPACT page presentation
+       ===================================================== */
+
+    .agriscience-page {
+      font-family: 'Comfortaa', sans-serif;
+      color: #074540;
+      overflow: hidden;
+    }
+
+    .agriscience-page * {
+      box-sizing: border-box;
+    }
+
+    .agriscience-page .agriscience-page-hero {
+      min-height: 650px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 43, 39, .91) 0%,
+          rgba(3, 43, 39, .75) 48%,
+          rgba(3, 43, 39, .30) 100%
+        ),
+        url("hero-agriscience.jpg") center 45% / cover no-repeat;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      padding: 110px 8% 100px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .agriscience-page .agriscience-page-hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .agriscience-page .agriscience-page-hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .agriscience-page .agriscience-hero-content {
+      max-width: 850px;
+    }
+
+    .agriscience-page .agriscience-hero-eyebrow {
+      color: #8ED7CE;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      line-height: 1.7;
+      margin: 0 0 20px;
+    }
+
+    .agriscience-page .agriscience-page-hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.12;
+      letter-spacing: -3px;
+      font-weight: 700;
+      max-width: 800px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .agriscience-page .agriscience-hero-bottom {
+      position: absolute;
+      bottom: 38px;
+      left: 8%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+    }
+
+    .agriscience-page .agriscience-hero-bottom span {
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: #01998E;
+    }
+
+    @media (max-width: 800px) {
+      .agriscience-page .agriscience-page-hero {
+        min-height: 570px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .agriscience-page .agriscience-page-hero {
+        min-height: 520px;
+        padding: 100px 7% 100px;
+        background-position: center center;
+      }
+
+      .agriscience-page .agriscience-page-hero h1 {
+        font-size: clamp(39px, 11vw, 58px);
+        letter-spacing: -2px;
+      }
+
+      .agriscience-page .agriscience-page-hero::before {
+        width: 300px;
+        height: 300px;
+        right: -180px;
+      }
+
+      .agriscience-page .agriscience-page-hero::after {
+        width: 220px;
+        height: 220px;
+        right: -140px;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="agriscience-page">
 
   <!-- FLOATING CORPORATE MENU -->
   <button class="menu-button" aria-label="Open menu" aria-expanded="false" type="button">
@@ -56,22 +193,26 @@
 
   <main>
 
-    <!-- AGRISCIENCE HERO -->
-    <section class="farmers-section agriscience-hero" id="top">
-      <div class="farmers-image">
-        <img src="hero-agriscience.jpg" alt="Agricultural solutions supporting crop and livestock farmers">
-      </div>
-      <div class="farmers-content">
-        <p class="eyebrow">C.G. OKAFOR CO. BUSINESS</p>
-        <h1>Okafor Agriscience</h1>
-        <h2>Solutions for healthier animals, protected crops and better seeds.</h2>
-        <p>
-          We develop and provide practical agricultural solutions that help
-          vegetable, poultry and swine farmers protect their crops, care for
-          their animals and improve farm performance.
+    <!-- AGRISCIENCE HEADER -->
+    <section class="agriscience-page-hero" id="top">
+
+      <div class="agriscience-hero-content">
+
+        <p class="agriscience-hero-eyebrow">
+          C.G. OKAFOR CO. BUSINESS
         </p>
-        <a href="#what-we-do" class="primary-button light-button">Discover what we do</a>
+
+        <h1>
+          Okafor Agriscience
+        </h1>
+
       </div>
+
+      <div class="agriscience-hero-bottom">
+        <span></span>
+        RESEARCH AND SOLUTIONS FOR BETTER FARMING
+      </div>
+
     </section>
 
     <!-- WHO WE ARE -->
