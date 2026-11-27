@@ -42,12 +42,19 @@
     /* HERO */
 
     .impact-hero {
-      min-height: 570px;
-      background: #074540;
+      min-height: 650px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 43, 39, .91) 0%,
+          rgba(3, 43, 39, .75) 48%,
+          rgba(3, 43, 39, .30) 100%
+        ),
+        url("farmers-by-okafor.jpg") center 45% / cover no-repeat;
       color: #ffffff;
       display: flex;
       align-items: center;
-      padding: 110px 8% 90px;
+      padding: 110px 8% 100px;
       position: relative;
       isolation: isolate;
     }
@@ -97,7 +104,7 @@
 
     .impact-hero-description {
       max-width: 600px;
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.88);
       font-size: 15px;
       line-height: 2;
       margin: 0;
@@ -113,7 +120,7 @@
       font-size: 10px;
       letter-spacing: 2px;
       font-weight: 700;
-      color: rgba(255,255,255,.7);
+      color: rgba(255,255,255,.85);
     }
 
     .impact-hero-bottom span {
@@ -378,18 +385,21 @@
       line-height: 2;
     }
 
+    /* PILL-SHAPED ABOUT US BUTTON */
+
     .impact-about-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 15px;
-      padding: 17px 27px;
+      padding: 17px 30px;
       background: #43B02A;
       color: #ffffff;
       text-decoration: none;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 1px;
+      border-radius: 999px;
       transition: background .25s ease, transform .25s ease;
     }
 
@@ -429,15 +439,16 @@
       }
 
       .impact-hero {
-        min-height: 520px;
+        min-height: 570px;
       }
     }
 
     @media (max-width: 600px) {
 
       .impact-hero {
-        min-height: 490px;
+        min-height: 520px;
         padding: 100px 7% 100px;
+        background-position: center center;
       }
 
       .impact-hero h1 {
@@ -522,7 +533,6 @@
       .impact-closing {
         padding: 80px 7%;
       }
-
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -701,46 +711,23 @@
     <div class="impact-stat-grid">
 
       <div class="impact-stat">
-
         <strong>1,000+</strong>
-
-        <span>
-          Empowered Farmers
-        </span>
-
+        <span>Empowered Farmers</span>
       </div>
 
-
       <div class="impact-stat">
-
         <strong>2,000+</strong>
-
-        <span>
-          Acres Cultivated
-        </span>
-
+        <span>Acres Cultivated</span>
       </div>
 
-
       <div class="impact-stat">
-
         <strong>15+</strong>
-
-        <span>
-          Agricultural Solutions
-        </span>
-
+        <span>Agricultural Solutions</span>
       </div>
 
-
       <div class="impact-stat">
-
         <strong>5+</strong>
-
-        <span>
-          States Reached
-        </span>
-
+        <span>States Reached</span>
       </div>
 
     </div>
@@ -771,14 +758,15 @@
     </div>
 
     <p class="farmers-intro-copy">
-      Agriculture is built on the work of farmers.
-      Their everyday experiences, the challenges they overcome
-      and the progress they make give meaning to what we do.
+      Every farmer has a story. There are challenges that
+      come with each farming season, decisions that affect
+      production and opportunities to do things better.
 
       <br><br>
 
-      Meet some of the farmers whose stories reflect the
-      different areas of agriculture we serve.
+      Through practical agricultural solutions and support,
+      we work alongside farmers to help them overcome
+      challenges and make progress on their farms.
     </p>
 
   </div>
@@ -810,55 +798,31 @@
                  xmlns="http://www.w3.org/2000/svg"
                  aria-hidden="true">
 
-              <path
-                d="M18 77H83"
-                stroke="#074540"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
+              <path d="M18 77H83"
+                stroke="#074540" stroke-width="3"
+                stroke-linecap="round"/>
 
-              <path
-                d="M24 76V46H76V76"
-                fill="#01998E"
-                fill-opacity=".12"
-                stroke="#074540"
-                stroke-width="2.5"
-              />
+              <path d="M24 76V46H76V76"
+                fill="#01998E" fill-opacity=".12"
+                stroke="#074540" stroke-width="2.5"/>
 
-              <path
-                d="M24 46L50 30L76 46"
-                stroke="#074540"
-                stroke-width="3"
-                stroke-linejoin="round"
-              />
+              <path d="M24 46L50 30L76 46"
+                stroke="#074540" stroke-width="3"
+                stroke-linejoin="round"/>
 
-              <path
-                d="M34 59C34 53 39 50 44 54C49 49 55 52 55 59C55 65 50 68 44 68C38 68 34 65 34 59Z"
-                fill="#01998E"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M34 59C34 53 39 50 44 54C49 49 55 52 55 59C55 65 50 68 44 68C38 68 34 65 34 59Z"
+                fill="#01998E" stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M57 62C57 56 62 53 67 57C72 52 77 56 77 62C77 68 72 71 67 71C61 71 57 68 57 62Z"
-                fill="#01998E"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M57 62C57 56 62 53 67 57C72 52 77 56 77 62C77 68 72 71 67 71C61 71 57 68 57 62Z"
+                fill="#01998E" stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M40 54L42 49L46 54M63 57L65 52L69 57"
-                stroke="#074540"
-                stroke-width="2"
-                stroke-linejoin="round"
-              />
+              <path d="M40 54L42 49L46 54M63 57L65 52L69 57"
+                stroke="#074540" stroke-width="2"
+                stroke-linejoin="round"/>
 
-              <path
-                d="M44 68V73M67 71V76"
-                stroke="#074540"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
+              <path d="M44 68V73M67 71V76"
+                stroke="#074540" stroke-width="2"
+                stroke-linecap="round"/>
 
             </svg>
 
@@ -880,17 +844,19 @@
 
         </div>
 
-
         <div class="farmer-quote-mark">“</div>
 
         <p class="farmer-quote">
-          In broiler farming, getting the right support and
-          solutions makes a difference. From the quality of
-          inputs to how the birds are managed, every detail
-          matters. Good farming practices help us raise healthy
-          birds and improve our production.
+          One of the challenges in broiler farming is keeping
+          production consistent while managing the cost of
+          raising the birds. I needed dependable farm inputs
+          and practical support to improve the way I manage
+          my flock. The support from Okafor helped me make
+          better-informed decisions on the farm and improve
+          my approach to broiler production. It has made
+          managing the birds more organised and given me
+          greater confidence in my production process.
         </p>
-
 
         <div class="farmer-card-bottom">
 
@@ -916,53 +882,29 @@
                  xmlns="http://www.w3.org/2000/svg"
                  aria-hidden="true">
 
-              <path
-                d="M18 78H83"
-                stroke="#074540"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
+              <path d="M18 78H83"
+                stroke="#074540" stroke-width="3"
+                stroke-linecap="round"/>
 
-              <path
-                d="M23 74V42H77V74"
-                fill="#01998E"
-                fill-opacity=".12"
-                stroke="#074540"
-                stroke-width="2.5"
-              />
+              <path d="M23 74V42H77V74"
+                fill="#01998E" fill-opacity=".12"
+                stroke="#074540" stroke-width="2.5"/>
 
-              <path
-                d="M23 42L50 26L77 42"
-                stroke="#074540"
-                stroke-width="3"
-                stroke-linejoin="round"
-              />
+              <path d="M23 42L50 26L77 42"
+                stroke="#074540" stroke-width="3"
+                stroke-linejoin="round"/>
 
-              <path
-                d="M32 58C32 50 39 47 44 53C49 47 57 51 57 58C57 65 52 69 44 69C37 69 32 65 32 58Z"
-                fill="#01998E"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M32 58C32 50 39 47 44 53C49 47 57 51 57 58C57 65 52 69 44 69C37 69 32 65 32 58Z"
+                fill="#01998E" stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M48 57C48 49 55 46 60 52C65 47 73 51 73 58C73 65 67 69 60 69C53 69 48 65 48 57Z"
-                fill="#01998E"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M48 57C48 49 55 46 60 52C65 47 73 51 73 58C73 65 67 69 60 69C53 69 48 65 48 57Z"
+                fill="#01998E" stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M44 52L47 48L50 53M60 51L63 47L66 52"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M44 52L47 48L50 53M60 51L63 47L66 52"
+                stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M41 69V74M61 69V74"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M41 69V74M61 69V74"
+                stroke="#074540" stroke-width="2"/>
 
             </svg>
 
@@ -984,17 +926,19 @@
 
         </div>
 
-
         <div class="farmer-quote-mark">“</div>
 
         <p class="farmer-quote">
-          Layer farming requires consistency and attention
-          every day. From feeding and bird management to
-          maintaining good farm conditions, the little things
-          matter. Our goal is to keep our birds healthy and
-          maintain reliable egg production.
+          With a layer farm, one challenge is maintaining
+          healthy birds and keeping egg production consistent.
+          Poor decisions around feeding and farm management
+          can affect the whole operation. The support and
+          solutions we received from Okafor helped us pay
+          closer attention to our birds' needs and improve
+          our day-to-day management. We are better equipped
+          to manage the flock and work towards more
+          consistent production.
         </p>
-
 
         <div class="farmer-card-bottom">
 
@@ -1020,64 +964,36 @@
                  xmlns="http://www.w3.org/2000/svg"
                  aria-hidden="true">
 
-              <path
-                d="M17 79H83"
-                stroke="#074540"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
+              <path d="M17 79H83"
+                stroke="#074540" stroke-width="3"
+                stroke-linecap="round"/>
 
-              <path
-                d="M25 77V60M43 77V53M62 77V59M80 77V55"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M25 77V60M43 77V53M62 77V59M80 77V55"
+                stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M43 53C30 50 28 39 33 30C44 32 48 41 43 53Z"
-                fill="#01998E"
-                fill-opacity=".25"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M43 53C30 50 28 39 33 30C44 32 48 41 43 53Z"
+                fill="#01998E" fill-opacity=".25"
+                stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M43 53C53 40 66 42 70 49C64 59 53 60 43 53Z"
-                fill="#01998E"
-                fill-opacity=".25"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M43 53C53 40 66 42 70 49C64 59 53 60 43 53Z"
+                fill="#01998E" fill-opacity=".25"
+                stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M25 60C16 55 16 47 21 42C29 45 31 52 25 60Z"
-                fill="#01998E"
-                fill-opacity=".25"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M25 60C16 55 16 47 21 42C29 45 31 52 25 60Z"
+                fill="#01998E" fill-opacity=".25"
+                stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M80 55C69 47 71 38 78 34C86 40 87 48 80 55Z"
-                fill="#01998E"
-                fill-opacity=".25"
-                stroke="#074540"
-                stroke-width="2"
-              />
+              <path d="M80 55C69 47 71 38 78 34C86 40 87 48 80 55Z"
+                fill="#01998E" fill-opacity=".25"
+                stroke="#074540" stroke-width="2"/>
 
-              <path
-                d="M35 79C40 74 46 74 50 79M55 79C61 73 68 74 72 79"
-                stroke="#01998E"
-                stroke-width="2.5"
-                stroke-linecap="round"
-              />
+              <path d="M35 79C40 74 46 74 50 79M55 79C61 73 68 74 72 79"
+                stroke="#01998E" stroke-width="2.5"
+                stroke-linecap="round"/>
 
-              <path
-                d="M43 53C45 45 48 40 53 36"
-                stroke="#074540"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
+              <path d="M43 53C45 45 48 40 53 36"
+                stroke="#074540" stroke-width="2"
+                stroke-linecap="round"/>
 
             </svg>
 
@@ -1099,17 +1015,19 @@
 
         </div>
 
-
         <div class="farmer-quote-mark">“</div>
 
         <p class="farmer-quote">
-          In cucumber production, the seed you choose can
-          influence the entire farming experience. Germination,
-          plant growth, fruit quality and yield all matter.
-          Choosing a suitable variety is an important first
-          step towards a successful harvest.
+          One of my concerns with cucumber farming was
+          choosing a seed that could perform well under
+          my growing conditions. A poor seed choice can
+          mean wasted time, effort and money. Okafor helped
+          me with seed selection and guidance on choosing
+          a suitable variety for my farm. Having a more
+          informed choice gave me greater confidence going
+          into production and helped me work towards a
+          better crop.
         </p>
-
 
         <div class="farmer-card-bottom">
 
@@ -1135,56 +1053,32 @@
                  xmlns="http://www.w3.org/2000/svg"
                  aria-hidden="true">
 
-              <path
-                d="M17 80H83"
-                stroke="#074540"
-                stroke-width="3"
-                stroke-linecap="round"
-              />
+              <path d="M17 80H83"
+                stroke="#074540" stroke-width="3"
+                stroke-linecap="round"/>
 
-              <path
-                d="M50 78V56"
-                stroke="#074540"
-                stroke-width="2.5"
-              />
+              <path d="M50 78V56"
+                stroke="#074540" stroke-width="2.5"/>
 
-              <path
-                d="M50 56C32 56 27 44 33 32C43 27 50 37 50 56Z"
-                fill="#01998E"
-                fill-opacity=".2"
-                stroke="#074540"
-                stroke-width="2.5"
-              />
+              <path d="M50 56C32 56 27 44 33 32C43 27 50 37 50 56Z"
+                fill="#01998E" fill-opacity=".2"
+                stroke="#074540" stroke-width="2.5"/>
 
-              <path
-                d="M50 56C68 56 73 44 67 32C57 27 50 37 50 56Z"
-                fill="#01998E"
-                fill-opacity=".2"
-                stroke="#074540"
-                stroke-width="2.5"
-              />
+              <path d="M50 56C68 56 73 44 67 32C57 27 50 37 50 56Z"
+                fill="#01998E" fill-opacity=".2"
+                stroke="#074540" stroke-width="2.5"/>
 
-              <path
-                d="M50 42C40 34 41 22 50 17C59 22 60 34 50 42Z"
-                fill="#01998E"
-                fill-opacity=".3"
-                stroke="#074540"
-                stroke-width="2.5"
-              />
+              <path d="M50 42C40 34 41 22 50 17C59 22 60 34 50 42Z"
+                fill="#01998E" fill-opacity=".3"
+                stroke="#074540" stroke-width="2.5"/>
 
-              <path
-                d="M50 78C40 72 34 72 28 78M50 78C60 72 66 72 72 78"
-                stroke="#01998E"
-                stroke-width="2.5"
-                stroke-linecap="round"
-              />
+              <path d="M50 78C40 72 34 72 28 78M50 78C60 72 66 72 72 78"
+                stroke="#01998E" stroke-width="2.5"
+                stroke-linecap="round"/>
 
-              <path
-                d="M34 84L30 89M50 84V91M66 84L70 89"
-                stroke="#074540"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
+              <path d="M34 84L30 89M50 84V91M66 84L70 89"
+                stroke="#074540" stroke-width="2"
+                stroke-linecap="round"/>
 
             </svg>
 
@@ -1206,17 +1100,20 @@
 
         </div>
 
-
         <div class="farmer-quote-mark">“</div>
 
         <p class="farmer-quote">
-          Cabbage farming requires careful attention from
-          nursery management to transplanting and crop
-          maintenance. Good seedlings, proper nutrition
-          and timely crop protection are important for
-          producing healthy cabbage heads and a good harvest.
+          Cabbage production comes with challenges, especially
+          getting seedlings established and managing the crop
+          through its growing stages. I wanted to make better
+          decisions about transplanting, crop nutrition and
+          protection. The guidance and agricultural solutions
+          from Okafor helped me approach these stages with
+          more confidence and pay closer attention to crop
+          development. This has helped me improve how I
+          manage my cabbage farm and work towards healthier
+          heads and a better harvest.
         </p>
-
 
         <div class="farmer-card-bottom">
 
