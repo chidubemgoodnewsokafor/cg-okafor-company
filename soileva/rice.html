@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Long-Grain Rice | Soileva — Growth with Nature</title>
+  <meta name="description" content="Discover Soileva's long-grain rice farming. Growing food with care for people and the land.">
+  <meta name="theme-color" content="#43B02A">
+
+  <!-- Comfortaa Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .brand-logo {
+      display: block;
+      width: 150px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .footer-brand .brand-logo {
+      width: 160px;
+    }
+
+    .rice-hero {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #003a1f;
+      color: #fff;
+    }
+
+    .rice-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .rice-hero-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 35, 17, 0.88) 0%,
+        rgba(0, 35, 17, 0.62) 55%,
+        rgba(0, 35, 17, 0.12) 100%
+      );
+    }
+
+    .rice-hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 48px, 1200px);
+      margin: 0 auto;
+      padding: 100px 0;
+    }
+
+    .rice-hero-content .eyebrow {
+      color: #b9e9a8;
+    }
+
+    .rice-hero-content h1 {
+      max-width: 750px;
+      margin: 22px 0;
+      color: #fff;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.12;
+    }
+
+    .rice-hero-content p {
+      max-width: 560px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .rice-intro {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: clamp(35px, 7vw, 100px);
+    }
+
+    .rice-intro h2 {
+      margin: 15px 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.3;
+    }
+
+    .rice-intro h2 span {
+      color: #43B02A;
+    }
+
+    .rice-intro p {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .rice-image {
+      width: 100%;
+      aspect-ratio: 5 / 4;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .rice-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .rice-enquiries {
+      padding: 65px 24px;
+      background: #003a1f;
+      color: #fff;
+      text-align: center;
+    }
+
+    .rice-enquiries h2 {
+      margin: 12px 0;
+      color: #fff;
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .rice-enquiries p {
+      max-width: 520px;
+      margin: 0 auto 25px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 760px) {
+      .brand-logo {
+        width: 125px;
+      }
+
+      .footer-brand .brand-logo {
+        width: 140px;
+      }
+
+      .rice-hero {
+        min-height: 540px;
+      }
+
+      .rice-hero-content {
+        width: calc(100% - 40px);
+      }
+
+      .rice-hero-shade {
+        background: rgba(0, 35, 17, 0.62);
+      }
+
+      .rice-intro {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Soileva homepage">
+      <img
+        src="images/soileva-logo.png"
+        alt="Soileva — Growth with Nature"
+        class="brand-logo"
+      >
+    </a>
+
+    <button class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mainNav">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+
+      <a class="nav-home" href="index.html">Home</a>
+
+      <div class="nav-produce">
+        <span class="nav-section-label">OUR PRODUCE</span>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="vegetablesDropdown">
+            <span>Vegetables</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="vegetablesDropdown">
+            <a href="vegetables.html">All Vegetables</a>
+            <a href="vegetables.html#cabbage">Cabbage</a>
+            <a href="vegetables.html#cucumber">Cucumber</a>
+            <a href="vegetables.html#peppers">Peppers</a>
+            <a href="vegetables.html#watermelon">Watermelon</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="poultryDropdown">
+            <span>Poultry</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="poultryDropdown">
+            <a href="poultry.html">All Poultry</a>
+            <a href="poultry.html#eggs">Eggs</a>
+            <a href="poultry.html#broilers">Broilers</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="riceDropdown">
+            <span>Rice</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="riceDropdown">
+            <a href="rice.html">Rice Overview</a>
+            <a href="rice.html#cultivation">Rice Cultivation</a>
+            <a href="rice.html#sourcing">Rice Sourcing</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="nav-link" href="about.html">About Soileva</a>
+
+      <a class="nav-link nav-farmcare" href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/soileva-farmcare/">
+        Soileva Farmcare
+        <span class="nav-external" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="nav-contact" href="https://wa.me/2349060485238">
+        Contact Us
+        <span aria-hidden="true">↗</span>
+      </a>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- RICE HERO -->
+    <section class="rice-hero" id="cultivation">
+
+      <img
+        class="rice-hero-image"
+        src="images/rice.jpg"
+        alt="Rice grown as part of Soileva's farming activities"
+      >
+
+      <div class="rice-hero-shade"></div>
+
+      <div class="rice-hero-content">
+        <span class="eyebrow">GROWN WITH PURPOSE</span>
+
+        <h1>Long-grain rice.<br>Grown with care.</h1>
+
+        <p>
+          Rice is part of our farming activities.
+          We cultivate long-grain rice as we continue
+          growing food and supporting a dependable food supply.
+        </p>
+
+        <a href="https://wa.me/2349060485238"
+          class="button button-light">
+          Make an enquiry <span>↗</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- RICE INTRODUCTION -->
+    <section class="section-padding">
+
+      <div class="rice-intro">
+
+        <div>
+          <span class="eyebrow eyebrow-green">FROM OUR FARM</span>
+
+          <h2>
+            Growing rice.<br>
+            <span>Contributing to food.</span>
+          </h2>
+
+          <p>
+            At Soileva, we farm long-grain rice as part of
+            our wider agricultural activities. From cultivation
+            to harvest, rice is one of the food crops we grow.
+          </p>
+        </div>
+
+        <div class="rice-image">
+          <img
+            src="images/rice.jpg"
+            alt="Long-grain rice farming"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RICE ENQUIRIES -->
+    <section class="rice-enquiries" id="sourcing">
+
+      <span class="eyebrow">SOILEVA RICE</span>
+
+      <h2>Interested in our rice?</h2>
+
+      <p>
+        Contact us to make enquiries about our long-grain
+        rice and its availability.
+      </p>
+
+      <a href="https://wa.me/2349060485238"
+        class="button button-light">
+        Contact Soileva <span>↗</span>
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <a href="index.html"
+      class="brand footer-brand"
+      aria-label="Soileva homepage">
+
+      <img
+        src="images/soileva-logo.png"
+        alt="Soileva — Growth with Nature"
+        class="brand-logo"
+        loading="lazy"
+      >
+    </a>
+
+    <p class="footer-tagline">Growth with Nature.</p>
+
+    <div class="footer-links">
+      <a href="vegetables.html">Vegetables</a>
+      <a href="poultry.html">Poultry</a>
+      <a href="rice.html">Rice</a>
+      <a href="about.html">About Soileva</a>
+      <a href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/soileva-farmcare/">Soileva Farmcare</a>
+      <a href="https://wa.me/2349060485238">Contact Us</a>
+    </div>
+
+    <p class="copyright">
+      © <span id="copyrightYear"></span> Soileva. All rights reserved.
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
