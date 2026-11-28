@@ -1533,3 +1533,171 @@ summary:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* =========================================
+   FIND A STORE — STORE LOCATOR
+========================================= */
+
+.stores {
+  display: block;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.store-copy {
+  max-width: 850px;
+  margin-bottom: 75px;
+}
+
+.stores h2 {
+  margin: 17px 0 23px;
+  font-size: clamp(55px, 6vw, 82px);
+  line-height: 1.04;
+}
+
+.stores p {
+  max-width: 650px;
+  color: var(--text-green);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.store-location-status {
+  min-height: 25px;
+  margin-top: 22px;
+  font-size: 14px !important;
+  font-weight: 600;
+}
+
+.store-directory-heading {
+  margin-bottom: 30px;
+}
+
+.store-directory-heading h3 {
+  margin: 12px 0;
+  font-size: clamp(35px, 4vw, 52px);
+  line-height: 1.1;
+}
+
+.store-directory-heading p {
+  margin-bottom: 0;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.store-card {
+  position: relative;
+  padding: 32px;
+  border: 1px solid rgba(0,58,31,.14);
+  background: #f6f9f3;
+  transition: border-color .25s, background .25s;
+}
+
+.store-card.nearest {
+  border: 2px solid var(--light-green);
+  background: var(--soft-green);
+}
+
+.store-card h4 {
+  margin: 15px 0;
+  font-size: 28px;
+  letter-spacing: -.05em;
+}
+
+.store-card p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.store-distance {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--light-green);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.store-nearest-label {
+  display: inline-block;
+  padding: 8px 12px;
+  background: var(--light-green);
+  color: var(--deep-green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.store-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.store-card-actions a {
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--light-green);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.store-card-actions a:hover {
+  color: var(--light-green);
+}
+
+@media(max-width:900px) {
+  .store-copy {
+    margin-bottom: 55px;
+  }
+}
+
+@media(max-width:600px) {
+  .stores {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
+  .stores h2 {
+    font-size: clamp(48px, 11vw, 64px);
+  }
+
+  .stores p {
+    font-size: 16px;
+  }
+
+  .store-actions {
+    flex-direction: column;
+  }
+
+  .store-actions .btn {
+    width: 100%;
+    min-height: 58px;
+    font-size: 13px;
+  }
+
+  .store-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .store-card {
+    padding: 25px 22px;
+  }
+
+  .store-card h4 {
+    font-size: 25px;
+  }
+}
