@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Soileva | Growth with Nature</title>
+  <meta name="description" content="Learn about Soileva, our farming activities, our purpose and our commitment to growing food with care for people and the land.">
+  <meta name="theme-color" content="#43B02A">
+
+  <!-- Comfortaa Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .brand-logo {
+      display: block;
+      width: 150px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .footer-brand .brand-logo {
+      width: 160px;
+    }
+
+    .about-hero {
+      position: relative;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #003a1f;
+      color: #fff;
+    }
+
+    .about-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-hero-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 35, 17, 0.88) 0%,
+        rgba(0, 35, 17, 0.62) 55%,
+        rgba(0, 35, 17, 0.12) 100%
+      );
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(100% - 48px, 1200px);
+      margin: 0 auto;
+      padding: 100px 0;
+    }
+
+    .about-hero-content .eyebrow {
+      color: #b9e9a8;
+    }
+
+    .about-hero-content h1 {
+      max-width: 760px;
+      margin: 22px 0;
+      color: #fff;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.12;
+    }
+
+    .about-hero-content p {
+      max-width: 560px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .about-intro {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+      gap: clamp(35px, 7vw, 100px);
+    }
+
+    .about-intro h2,
+    .about-activities h2,
+    .sustainability-copy h2 {
+      margin: 15px 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.3;
+    }
+
+    .about-intro h2 span,
+    .about-activities h2 span,
+    .sustainability-copy h2 span {
+      color: #43B02A;
+    }
+
+    .about-intro p,
+    .about-activities p,
+    .sustainability-copy p {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .about-activities {
+      background: #f3f8f1;
+    }
+
+    .activities-heading {
+      max-width: 720px;
+      margin-bottom: 40px;
+    }
+
+    .activities-heading h2 {
+      margin-bottom: 15px;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .activity-card {
+      min-width: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .activity-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .activity-card-content {
+      padding: 25px;
+    }
+
+    .activity-card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .activity-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .sustainability-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(35px, 7vw, 90px);
+      scroll-margin-top: 100px;
+    }
+
+    .sustainability-visual {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      background: #e7eee4;
+    }
+
+    .sustainability-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .sustainability-stamp {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      color: #fff;
+      background: #003a1f;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.6;
+      letter-spacing: 1px;
+    }
+
+    .sustainability-stamp strong {
+      color: #8cdb6e;
+      font-size: 13px;
+    }
+
+    .sustainability-copy h2 {
+      margin-top: 18px;
+    }
+
+    .sustainability-copy p {
+      margin-bottom: 25px;
+    }
+
+    .about-contact {
+      padding: 65px 24px;
+      background: #003a1f;
+      color: #fff;
+      text-align: center;
+    }
+
+    .about-contact h2 {
+      margin: 12px 0;
+      color: #fff;
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .about-contact p {
+      max-width: 520px;
+      margin: 0 auto 25px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 760px) {
+      .brand-logo {
+        width: 125px;
+      }
+
+      .footer-brand .brand-logo {
+        width: 140px;
+      }
+
+      .about-hero {
+        min-height: 520px;
+      }
+
+      .about-hero-content {
+        width: calc(100% - 40px);
+      }
+
+      .about-hero-shade {
+        background: rgba(0, 35, 17, 0.65);
+      }
+
+      .about-intro,
+      .sustainability-section {
+        grid-template-columns: 1fr;
+      }
+
+      .activities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sustainability-visual,
+      .sustainability-visual img {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Soileva homepage">
+      <img
+        src="images/soileva-logo.png"
+        alt="Soileva — Growth with Nature"
+        class="brand-logo"
+      >
+    </a>
+
+    <button class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mainNav">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+
+      <a class="nav-home" href="index.html">Home</a>
+
+      <div class="nav-produce">
+        <span class="nav-section-label">OUR PRODUCE</span>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="vegetablesDropdown">
+            <span>Vegetables</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="vegetablesDropdown">
+            <a href="vegetables.html">All Vegetables</a>
+            <a href="vegetables.html#cabbage">Cabbage</a>
+            <a href="vegetables.html#cucumber">Cucumber</a>
+            <a href="vegetables.html#peppers">Peppers</a>
+            <a href="vegetables.html#watermelon">Watermelon</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="poultryDropdown">
+            <span>Poultry</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="poultryDropdown">
+            <a href="poultry.html">All Poultry</a>
+            <a href="poultry.html#eggs">Eggs</a>
+            <a href="poultry.html#broilers">Broilers</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <button class="dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="riceDropdown">
+            <span>Rice</span>
+            <span class="dropdown-icon" aria-hidden="true">+</span>
+          </button>
+
+          <div class="dropdown-menu" id="riceDropdown">
+            <a href="rice.html">Rice Overview</a>
+            <a href="rice.html#cultivation">Rice Cultivation</a>
+            <a href="rice.html#sourcing">Rice Sourcing</a>
+          </div>
+        </div>
+      </div>
+
+      <a class="nav-link" href="about.html">About Soileva</a>
+
+      <a class="nav-link nav-farmcare" href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/soileva-farmcare/">
+        Soileva Farmcare
+        <span class="nav-external" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="nav-contact" href="https://wa.me/2349060485238">
+        Contact Us
+        <span aria-hidden="true">↗</span>
+      </a>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+
+      <img
+        class="about-hero-image"
+        src="images/farmer-in-field.jpg"
+        alt="Farming and food production at Soileva"
+      >
+
+      <div class="about-hero-shade"></div>
+
+      <div class="about-hero-content">
+        <span class="eyebrow">ABOUT SOILEVA</span>
+
+        <h1>Growing food.<br>Growing with nature.</h1>
+
+        <p>
+          We are a farming and food business committed to
+          growing and supplying food with care for people,
+          the land and the communities we serve.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="section-padding">
+
+      <div class="about-intro">
+
+        <div>
+          <span class="eyebrow eyebrow-green">OUR STORY</span>
+
+          <h2>
+            Rooted in farming.<br>
+            <span>Focused on food.</span>
+          </h2>
+        </div>
+
+        <div>
+          <p>
+            For over a decade, Soileva has been guided by a
+            simple belief: good farming should help put good
+            food on people's tables.
+          </p>
+
+          <p>
+            We work across farming and food production,
+            growing crops and raising poultry as part of
+            our contribution to the food supply chain.
+          </p>
+
+          <p>
+            Our work continues to grow, shaped by the needs
+            of farmers, customers and the communities
+            connected to the food we produce.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WHAT WE DO -->
+    <section class="about-activities section-padding">
+
+      <div class="activities-heading">
+        <span class="eyebrow eyebrow-green">WHAT WE DO</span>
+
+        <h2>
+          Different activities.<br>
+          <span>One purpose: food.</span>
+        </h2>
+
+        <p>
+          Our farming activities cover different parts of
+          food production, from growing crops to raising poultry.
+        </p>
+      </div>
+
+      <div class="activities-grid">
+
+        <article class="activity-card">
+          <img
+            src="images/vegetables.jpg"
+            alt="Vegetables grown at Soileva"
+            loading="lazy"
+          >
+
+          <div class="activity-card-content">
+            <h3>Vegetables</h3>
+            <p>
+              We cultivate fresh vegetables as part of
+              our work to grow food for everyday needs.
+            </p>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <img
+            src="images/poultry.jpg"
+            alt="Poultry farming at Soileva"
+            loading="lazy"
+          >
+
+          <div class="activity-card-content">
+            <h3>Poultry</h3>
+            <p>
+              We raise poultry and produce food such as
+              eggs for consumers and the wider food market.
+            </p>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <img
+            src="images/rice.jpg"
+            alt="Long-grain rice farming"
+            loading="lazy"
+          >
+
+          <div class="activity-card-content">
+            <h3>Rice</h3>
+            <p>
+              We also cultivate long-grain rice as part
+              of our crop farming activities.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- SUSTAINABILITY -->
+    <section class="sustainability-section section-padding"
+      id="sustainability">
+
+      <div class="sustainability-visual">
+        <img
+          src="images/farmer-in-field.jpg"
+          alt="Farmer working in a cultivated field"
+          loading="lazy"
+        >
+
+        <div class="sustainability-stamp">
+          <span>GROW</span>
+          <span>WITH</span>
+          <strong>NATURE</strong>
+        </div>
+      </div>
+
+      <div class="sustainability-copy">
+
+        <span class="eyebrow eyebrow-green">OUR RESPONSIBILITY</span>
+
+        <h2>
+          Care for the land.<br>
+          <span>Care for people.</span>
+        </h2>
+
+        <p>
+          Farming is about more than what we harvest today.
+          It is also about how we care for the land and the
+          resources that make food production possible.
+        </p>
+
+        <p>
+          At Soileva, we believe in using resources thoughtfully,
+          caring for the soil and considering the people and
+          communities connected to our work.
+        </p>
+
+        <p>
+          We recognise that responsible farming is an ongoing
+          effort, and we want our growth to contribute positively
+          to the land and the people we serve.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="about-contact">
+
+      <span class="eyebrow">GROWTH WITH NATURE</span>
+
+      <h2>Let's grow together.</h2>
+
+      <p>
+        Have a question about our farming activities
+        or produce? We'd be glad to hear from you.
+      </p>
+
+      <a href="https://wa.me/2349060485238"
+        class="button button-light">
+        Contact Soileva <span>↗</span>
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <a href="index.html"
+      class="brand footer-brand"
+      aria-label="Soileva homepage">
+
+      <img
+        src="images/soileva-logo.png"
+        alt="Soileva — Growth with Nature"
+        class="brand-logo"
+        loading="lazy"
+      >
+    </a>
+
+    <p class="footer-tagline">Growth with Nature.</p>
+
+    <div class="footer-links">
+      <a href="vegetables.html">Vegetables</a>
+      <a href="poultry.html">Poultry</a>
+      <a href="rice.html">Rice</a>
+      <a href="about.html">About Soileva</a>
+      <a href="https://chidubemgoodnewsokafor.github.io/cg-okafor-company/soileva-farmcare/">Soileva Farmcare</a>
+      <a href="https://wa.me/2349060485238">Contact Us</a>
+    </div>
+
+    <p class="copyright">
+      © <span id="copyrightYear"></span> Soileva. All rights reserved.
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
