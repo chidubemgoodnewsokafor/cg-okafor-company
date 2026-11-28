@@ -21,11 +21,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 30px;
+  scroll-padding-top: 145px;
 }
 
 body {
   margin: 0;
+  padding-top: 125px;
   background: #fff;
   color: var(--deep-green);
   font-family: "Comfortaa", sans-serif;
@@ -995,8 +996,10 @@ summary:focus-visible {
 ========================================= */
 
 .site-header {
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   width: 100%;
   background: #fff;
   border-bottom: 1px solid rgba(0,58,31,.08);
@@ -1028,15 +1031,21 @@ summary:focus-visible {
   object-position: left center;
 }
 
-.header-shop {
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.header-shop,
+.header-store {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 54px;
-  padding: 0 30px;
+  padding: 0 25px;
   border-radius: 100px;
-  background: var(--deep-green);
-  color: #fff;
   font-family: "Comfortaa", sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -1046,9 +1055,24 @@ summary:focus-visible {
   transition: background .25s ease, color .25s ease;
 }
 
+.header-shop {
+  background: var(--deep-green);
+  color: #fff;
+}
+
 .header-shop:hover {
   background: var(--light-green);
   color: var(--deep-green);
+}
+
+.header-store {
+  background: var(--light-green);
+  color: var(--deep-green);
+}
+
+.header-store:hover {
+  background: var(--deep-green);
+  color: #fff;
 }
 
 
@@ -1088,14 +1112,29 @@ summary:focus-visible {
     gap: 30px;
   }
 
+  body {
+    padding-top: 110px;
+  }
+
+  html {
+    scroll-padding-top: 130px;
+  }
+
   .header-inner {
     min-height: 110px;
     padding: 12px 5%;
   }
 
   .header-brand img {
-    width: 245px;
-    height: 90px;
+    width: 220px;
+    height: 85px;
+  }
+
+  .header-shop,
+  .header-store {
+    min-height: 48px;
+    padding: 0 18px;
+    font-size: 10px;
   }
 
   .footer .brand img {
@@ -1112,7 +1151,11 @@ summary:focus-visible {
 @media(max-width:600px) {
 
   html {
-    scroll-padding-top: 15px;
+    scroll-padding-top: 120px;
+  }
+
+  body {
+    padding-top: 100px;
   }
 
   .section {
@@ -1123,19 +1166,29 @@ summary:focus-visible {
 
   .header-inner {
     min-height: 100px;
-    padding: 10px 5%;
-    gap: 12px;
+    padding: 10px 4%;
+    gap: 8px;
+  }
+
+  .header-brand {
+    min-width: 0;
   }
 
   .header-brand img {
-    width: 205px;
-    height: 78px;
+    width: 125px;
+    height: 70px;
   }
 
-  .header-shop {
-    min-height: 43px;
-    padding: 0 15px;
-    font-size: 10px;
+  .header-actions {
+    gap: 7px;
+  }
+
+  .header-shop,
+  .header-store {
+    min-height: 41px;
+    padding: 0 10px;
+    font-size: 8px;
+    letter-spacing: 0;
   }
 
   /* HERO */
@@ -1506,14 +1559,19 @@ summary:focus-visible {
   }
 
   .header-brand img {
-    width: 175px;
-    height: 70px;
+    width: 110px;
+    height: 65px;
   }
 
-  .header-shop {
-    min-height: 40px;
-    padding: 0 11px;
-    font-size: 9px;
+  .header-shop,
+  .header-store {
+    min-height: 39px;
+    padding: 0 8px;
+    font-size: 7px;
+  }
+
+  .header-actions {
+    gap: 5px;
   }
 }
 
